@@ -45,30 +45,30 @@
             </div>
             <div id="circle"></div>
         </div>
-    </nav>
-    
-    <div id="menu-overlay" class="menu-overlay">
-        <div class="menu-grid">
-            <h2 class="menu-title">Menu</h2>
-            <div class="menu-nav">
-                <ul>
-                    
-                    <li><img src="/assets/arrow-right.svg"><a href="/en/">Home</a></li>
-                    
-                    <li><img src="/assets/arrow-right.svg"><a href="/en/about/">About</a></li>
-                    
-                    <li><img src="/assets/arrow-right.svg"><a href="/en/programme/">programme</a></li>
-                    
-                    <li><img src="/assets/arrow-right.svg"><a href="/en/schedule/">schedule</a></li>
-                    
-                    <li><img src="/assets/arrow-external.svg"><a href="https://bioscopenleiden.nl/" target="_blank">Tickets</a></li>
-                </ul>
-            </div>
-            <div class="menu-close">
-                <a href="#" class="close-menu">Close</a>
+        
+        <div id="menu-overlay" class="menu-overlay">
+            <div class="menu-grid grid-base">
+                <h2 class="menu-title">Menu</h2>
+                <div class="menu-nav">
+                    <ul>
+                        
+                        <li><img src="/assets/arrow-right.svg"><a href="/en/">Home</a></li>
+                        
+                        <li><img src="/assets/arrow-right.svg"><a href="/en/about/">About</a></li>
+                        
+                        <li><img src="/assets/arrow-right.svg"><a href="/en/programme/">programme</a></li>
+                        
+                        <li><img src="/assets/arrow-right.svg"><a href="/en/schedule/">schedule</a></li>
+                        
+                        <li><img src="/assets/arrow-external.svg"><a href="https://bioscopenleiden.nl/" target="_blank">Tickets</a></li>
+                    </ul>
+                </div>
+                <div class="menu-close">
+                    <a href="#" class="close-menu">Close</a>
+                </div>
             </div>
         </div>
-    </div>
+    </nav>
     
     
         
@@ -88,9 +88,20 @@
 
         
 <script>
-    // hide the logo in the nav
-    document.querySelectorAll('nav a img').forEach(function(img) {
-        img.style.display = 'none';
+    // hide logo by default, show only when menu is open
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLogo = document.getElementById('nav-logo');
+        navLogo.style.display = 'none';
+        
+        // show logo when menu opens
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('#circle-container')) {
+                setTimeout(() => navLogo.style.display = 'inline', 300);
+            }
+            if (e.target.closest('.close-menu') || e.target.id === 'menu-overlay') {
+                navLogo.style.display = 'none';
+            }
+        });
     });
 </script>
 

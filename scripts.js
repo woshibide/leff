@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const circleContainer = document.getElementById('circle-container');
     const menuOverlay = document.getElementById('menu-overlay');
     const closeButtons = document.querySelectorAll('.close-menu');
+    const nav = document.querySelector('nav');
 
     // console.log('🔍 elements found:', {
     //     circle: circle,
@@ -34,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     circleContainer.addEventListener('click', function(e) {
         //console.log('🟡 circle container clicked!', e.target);
         circle.classList.add('expanded');
+        nav.classList.add('menu-active');
+        document.body.classList.add('menu-active');
         //console.log('🟡 added expanded class to circle');
         
         setTimeout(() => {
@@ -65,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function closeMenu() {
         //console.log('🔴 closing menu...');
         menuOverlay.classList.remove('active');
+        nav.classList.remove('menu-active');
+        document.body.classList.remove('menu-active');
         //console.log('🔴 removed active class from menu');
         
         setTimeout(() => {
