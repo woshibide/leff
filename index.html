@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0;url=/en/">
+    <base href="/leff/">
+    <meta http-equiv="refresh" content="0;url=./en/">
     <title>Leiden Essay Film Festival</title>
 
 </head>
@@ -28,12 +29,23 @@
 
 
 
-    <script>
-        // hide the logo in the nav for a bigger one
-        document.querySelectorAll('nav a img').forEach(function (img) {
-            img.style.display = 'none';
+<script>
+    // hide logo by default, show only when menu is open
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLogo = document.getElementById('nav-logo');
+        navLogo.style.display = 'none';
+        
+        // show logo when menu opens
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('#circle-container')) {
+                setTimeout(() => navLogo.style.display = 'inline', 300);
+            }
+            if (e.target.closest('.close-menu') || e.target.id === 'menu-overlay') {
+                navLogo.style.display = 'none';
+            }
         });
-    </script>
+    });
+</script>
 
 
     <script src="/scripts.js"></script>
