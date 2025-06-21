@@ -2,7 +2,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
 
 @font-face {
         font-family: "switzer";
-        src: url('/assets/fonts/switzer/Switzer-Regular.woff2') format('woff2');
+        src: url('/leff/assets/fonts/switzer/Switzer-Regular.woff2') format('woff2');
         font-weight: normal;
         font-style: normal;
     }
@@ -50,33 +50,33 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
     vertical-align: baseline !important;
         
     /* custom cursor for all possible cursor types */
-    cursor: url('/assets/cursor.svg'), auto !important;
-    cursor: pointer url('/assets/cursor.svg'), pointer !important;
-    cursor: move url('/assets/cursor.svg'), move !important;
-    cursor: grab url('/assets/cursor.svg'), grab !important;
-    cursor: grabbing url('/assets/cursor.svg'), grabbing !important;
-    cursor: crosshair url('/assets/cursor.svg'), crosshair !important;
-    cursor: text url('/assets/cursor.svg'), text !important;
-    cursor: wait url('/assets/cursor.svg'), wait !important;
-    cursor: help url('/assets/cursor.svg'), help !important;
-    cursor: progress url('/assets/cursor.svg'), progress !important;
-    cursor: not-allowed url('/assets/cursor.svg'), not-allowed !important;
-    cursor: no-drop url('/assets/cursor.svg'), no-drop !important;
-    cursor: alias url('/assets/cursor.svg'), alias !important;
-    cursor: cell url('/assets/cursor.svg'), cell !important;
-    cursor: context-menu url('/assets/cursor.svg'), context-menu !important;
-    cursor: copy url('/assets/cursor.svg'), copy !important;
-    cursor: vertical-text url('/assets/cursor.svg'), vertical-text !important;
-    cursor: zoom-in url('/assets/cursor.svg'), zoom-in !important;
-    cursor: zoom-out url('/assets/cursor.svg'), zoom-out !important;
-    cursor: ew-resize url('/assets/cursor.svg'), ew-resize !important;
-    cursor: ns-resize url('/assets/cursor.svg'), ns-resize !important;
-    cursor: nesw-resize url('/assets/cursor.svg'), nesw-resize !important;
-    cursor: nwse-resize url('/assets/cursor.svg'), nwse-resize !important;
-    cursor: col-resize url('/assets/cursor.svg'), col-resize !important;
-    cursor: row-resize url('/assets/cursor.svg'), row-resize !important;
-    cursor: all-scroll url('/assets/cursor.svg'), all-scroll !important;
-    cursor: default url('/assets/cursor.svg'), default !important;
+    cursor: url('/leff/assets/cursor.svg'), auto !important;
+    cursor: pointer url('/leff/assets/cursor.svg'), pointer !important;
+    cursor: move url('/leff/assets/cursor.svg'), move !important;
+    cursor: grab url('/leff/assets/cursor.svg'), grab !important;
+    cursor: grabbing url('/leff/assets/cursor.svg'), grabbing !important;
+    cursor: crosshair url('/leff/assets/cursor.svg'), crosshair !important;
+    cursor: text url('/leff/assets/cursor.svg'), text !important;
+    cursor: wait url('/leff/assets/cursor.svg'), wait !important;
+    cursor: help url('/leff/assets/cursor.svg'), help !important;
+    cursor: progress url('/leff/assets/cursor.svg'), progress !important;
+    cursor: not-allowed url('/leff/assets/cursor.svg'), not-allowed !important;
+    cursor: no-drop url('/leff/assets/cursor.svg'), no-drop !important;
+    cursor: alias url('/leff/assets/cursor.svg'), alias !important;
+    cursor: cell url('/leff/assets/cursor.svg'), cell !important;
+    cursor: context-menu url('/leff/assets/cursor.svg'), context-menu !important;
+    cursor: copy url('/leff/assets/cursor.svg'), copy !important;
+    cursor: vertical-text url('/leff/assets/cursor.svg'), vertical-text !important;
+    cursor: zoom-in url('/leff/assets/cursor.svg'), zoom-in !important;
+    cursor: zoom-out url('/leff/assets/cursor.svg'), zoom-out !important;
+    cursor: ew-resize url('/leff/assets/cursor.svg'), ew-resize !important;
+    cursor: ns-resize url('/leff/assets/cursor.svg'), ns-resize !important;
+    cursor: nesw-resize url('/leff/assets/cursor.svg'), nesw-resize !important;
+    cursor: nwse-resize url('/leff/assets/cursor.svg'), nwse-resize !important;
+    cursor: col-resize url('/leff/assets/cursor.svg'), col-resize !important;
+    cursor: row-resize url('/leff/assets/cursor.svg'), row-resize !important;
+    cursor: all-scroll url('/leff/assets/cursor.svg'), all-scroll !important;
+    cursor: default url('/leff/assets/cursor.svg'), default !important;
 }
 
 
@@ -91,7 +91,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
 }
 
 /*
-        NAVIGATION BAR
+        navigation bar
 */
 
 a {
@@ -198,7 +198,7 @@ nav.menu-active {
 
 
 /*
-        MENU
+        menu
 */
 
 .menu-overlay {
@@ -355,7 +355,7 @@ body {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto 1fr auto; 
     min-height: 100vh;
-    background-image: url('/assets/images/La-Jet-e-Chris-Markers-mu-011.webp');
+    background-image: url('/leff/assets/images/La-Jet-e-Chris-Markers-mu-011.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -364,7 +364,7 @@ body {
 }
 
 /*
-        FOOTER
+        footer
 */
 
 footer {
@@ -391,11 +391,11 @@ footer a{
 
 
 /*
-        MAIN PAGE
+        main page
 */
 
 #main-page{
-    background-image: url('/assets/images/bg.webp');
+    background-image: url('/leff/assets/images/bg.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -487,7 +487,7 @@ footer a{
 }
 
 /*
-        ABOUT PAGE
+        about page
 */
 
 

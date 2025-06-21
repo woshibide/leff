@@ -1,5 +1,11 @@
 //console.log('🟢 scripts.js loaded');
 
+// utility function to get asset path with base path
+function getAssetPath(path) {
+    const basePath = window.BASE_PATH || '/';
+    return basePath + path.replace(/^\//, '');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     //console.log('🟢 dom content loaded');
     
