@@ -2,12 +2,14 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
 
 @font-face {
         font-family: "switzer";
-        src: url('/assets/fonts/switzer/Switzer-Regular.woff2') format('woff2');
+        src: url('/leff/assets/fonts/switzer/Switzer-Regular.woff2') format('woff2');
         font-weight: normal;
         font-style: normal;
     }
 
 :root {
+    vertical-align: baseline !important;
+
     --accent: #F0FF00; 
     --silver: #C0BEBF; 
     --text-main: #000000; 
@@ -50,33 +52,33 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
     vertical-align: baseline !important;
         
     /* custom cursor for all possible cursor types */
-    cursor: url('/assets/cursor.svg'), auto !important;
-    cursor: pointer url('/assets/cursor.svg'), pointer !important;
-    cursor: move url('/assets/cursor.svg'), move !important;
-    cursor: grab url('/assets/cursor.svg'), grab !important;
-    cursor: grabbing url('/assets/cursor.svg'), grabbing !important;
-    cursor: crosshair url('/assets/cursor.svg'), crosshair !important;
-    cursor: text url('/assets/cursor.svg'), text !important;
-    cursor: wait url('/assets/cursor.svg'), wait !important;
-    cursor: help url('/assets/cursor.svg'), help !important;
-    cursor: progress url('/assets/cursor.svg'), progress !important;
-    cursor: not-allowed url('/assets/cursor.svg'), not-allowed !important;
-    cursor: no-drop url('/assets/cursor.svg'), no-drop !important;
-    cursor: alias url('/assets/cursor.svg'), alias !important;
-    cursor: cell url('/assets/cursor.svg'), cell !important;
-    cursor: context-menu url('/assets/cursor.svg'), context-menu !important;
-    cursor: copy url('/assets/cursor.svg'), copy !important;
-    cursor: vertical-text url('/assets/cursor.svg'), vertical-text !important;
-    cursor: zoom-in url('/assets/cursor.svg'), zoom-in !important;
-    cursor: zoom-out url('/assets/cursor.svg'), zoom-out !important;
-    cursor: ew-resize url('/assets/cursor.svg'), ew-resize !important;
-    cursor: ns-resize url('/assets/cursor.svg'), ns-resize !important;
-    cursor: nesw-resize url('/assets/cursor.svg'), nesw-resize !important;
-    cursor: nwse-resize url('/assets/cursor.svg'), nwse-resize !important;
-    cursor: col-resize url('/assets/cursor.svg'), col-resize !important;
-    cursor: row-resize url('/assets/cursor.svg'), row-resize !important;
-    cursor: all-scroll url('/assets/cursor.svg'), all-scroll !important;
-    cursor: default url('/assets/cursor.svg'), default !important;
+    cursor: url('/leff/assets/cursor.svg'), auto !important;
+    cursor: pointer url('/leff/assets/cursor.svg'), pointer !important;
+    cursor: move url('/leff/assets/cursor.svg'), move !important;
+    cursor: grab url('/leff/assets/cursor.svg'), grab !important;
+    cursor: grabbing url('/leff/assets/cursor.svg'), grabbing !important;
+    cursor: crosshair url('/leff/assets/cursor.svg'), crosshair !important;
+    cursor: text url('/leff/assets/cursor.svg'), text !important;
+    cursor: wait url('/leff/assets/cursor.svg'), wait !important;
+    cursor: help url('/leff/assets/cursor.svg'), help !important;
+    cursor: progress url('/leff/assets/cursor.svg'), progress !important;
+    cursor: not-allowed url('/leff/assets/cursor.svg'), not-allowed !important;
+    cursor: no-drop url('/leff/assets/cursor.svg'), no-drop !important;
+    cursor: alias url('/leff/assets/cursor.svg'), alias !important;
+    cursor: cell url('/leff/assets/cursor.svg'), cell !important;
+    cursor: context-menu url('/leff/assets/cursor.svg'), context-menu !important;
+    cursor: copy url('/leff/assets/cursor.svg'), copy !important;
+    cursor: vertical-text url('/leff/assets/cursor.svg'), vertical-text !important;
+    cursor: zoom-in url('/leff/assets/cursor.svg'), zoom-in !important;
+    cursor: zoom-out url('/leff/assets/cursor.svg'), zoom-out !important;
+    cursor: ew-resize url('/leff/assets/cursor.svg'), ew-resize !important;
+    cursor: ns-resize url('/leff/assets/cursor.svg'), ns-resize !important;
+    cursor: nesw-resize url('/leff/assets/cursor.svg'), nesw-resize !important;
+    cursor: nwse-resize url('/leff/assets/cursor.svg'), nwse-resize !important;
+    cursor: col-resize url('/leff/assets/cursor.svg'), col-resize !important;
+    cursor: row-resize url('/leff/assets/cursor.svg'), row-resize !important;
+    cursor: all-scroll url('/leff/assets/cursor.svg'), all-scroll !important;
+    cursor: default url('/leff/assets/cursor.svg'), default !important;
 }
 
 
@@ -189,7 +191,7 @@ nav.menu-active {
 
 #circle.expanded {
     transform: scale(150);
-    background-color: var(--silver);
+    background-color: var(--accent);
     position: fixed;
     z-index: -3;
     overflow: hidden;
@@ -362,7 +364,7 @@ body {
 }
 
 .programme-title {
-    grid-column: 1 / 2;
+    grid-column: 1 / 3;
     font-size: 1rem;
     font-weight: normal;
     color: var(--text-main);
@@ -371,172 +373,68 @@ body {
     text-transform: uppercase;
 }
 
-/* programme search container styles */
+/* minimal programme search container styles */
 #programme-search-container {
-    grid-column: 2 / 5;
+    grid-column: 4 / -1;
     display: flex;
     align-items: center;
-    gap: var(--space-md);
-    background: linear-gradient(135deg, rgba(240, 255, 0, 0.08), rgba(192, 190, 191, 0.05));
-    border: 2px solid transparent;
-    border-radius: var(--radius-large);
-    padding: var(--space-md) var(--space-lg);
-    margin: var(--space-lg) 0;
-    position: relative;
-    transition: all 0.3s var(--transition);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-#programme-search-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: var(--radius-large);
-    padding: 2px;
-    background: var(--the-gradient);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: xor;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s var(--transition);
-}
-
-#programme-search-container:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(240, 255, 0, 0.2);
-}
-
-#programme-search-container:hover::before {
-    opacity: 1;
-}
-
-#programme-search-container:focus-within {
-    background: linear-gradient(135deg, rgba(240, 255, 0, 0.15), rgba(192, 190, 191, 0.08));
-    transform: translateY(-1px);
-}
-
-#programme-search-container:focus-within::before {
-    opacity: 1;
+    gap: var(--space-sm);
+    margin: var(--space-md) 0;
 }
 
 #programme-search-container p {
     margin: 0;
     white-space: nowrap;
     color: var(--text-main);
-    font-weight: 500;
     text-transform: lowercase;
-    letter-spacing: 0.02em;
-    font-size: 0.95rem;
-    opacity: 0.9;
-    transition: all 0.2s var(--transition);
-}
-
-#programme-search-container:hover p,
-#programme-search-container:focus-within p {
-    color: var(--accent);
-    opacity: 1;
 }
 
 #programme-search {
     flex: 1;
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-sm);
     border: none;
-    border-bottom: 2px solid transparent;
-    border-radius: var(--radius-medium);
-    background: rgba(30, 30, 30, 0.4);
+    border-bottom: 2px solid var(--bg-main);
+    background: transparent;
     color: var(--text-main);
     font-family: "switzer", sans-serif;
-    font-size: 1rem;
-    min-width: 0;
+    border-radius: 0;
     transition: all 0.2s var(--transition);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
 }
 
 #programme-search:focus {
+    border-radius: var(--radius-medium);
     outline: none;
-    border-bottom-color: var(--accent);
-    background: rgba(30, 30, 30, 0.6);
     color: var(--accent);
-    text-shadow: 0 0 8px rgba(240, 255, 0, 0.3);
+    background-color: var(--bg-main);
+    border: none;
 }
 
 #programme-search::placeholder {
     color: var(--silver);
-    opacity: 0.7;
-    font-style: italic;
-    transition: opacity 0.2s var(--transition);
-}
-
-#programme-search:focus::placeholder {
-    opacity: 0.4;
+    font-size: 0.8rem;
 }
 
 #search-icon {
-    width: 1.4rem;
-    height: 1.4rem;
-    opacity: 0.8;
-    transition: all 0.3s var(--transition);
-    filter: brightness(1.1);
-    position: relative;
+    width: 1.2rem;
+    height: 1.2rem;
+    transition: all 0.2s var(--transition);
+    cursor: pointer;
 }
 
-#programme-search-container:hover #search-icon {
-    opacity: 1;
-    transform: scale(1.1) rotate(5deg);
-    filter: brightness(1.3) drop-shadow(0 0 4px rgba(240, 255, 0, 0.4));
+#search-icon:hover {
+    transform: scale(1.4);
 }
 
-#programme-search-container:focus-within #search-icon {
-    opacity: 1;
-    transform: scale(1.05);
-    filter: brightness(1.2) drop-shadow(0 0 6px rgba(240, 255, 0, 0.6));
+.search-blink {
+    animation: searchBlink 0.1s var(--transition);
 }
 
-/* enhanced visual feedback for when search is active */
-#programme-search-container.searching {
-    background: linear-gradient(135deg, rgba(240, 255, 0, 0.2), rgba(192, 190, 191, 0.1));
-    animation: searchPulse 2s ease-in-out infinite;
+@keyframes searchBlink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
 }
 
-@keyframes searchPulse {
-    0%, 100% {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-    50% {
-        box-shadow: 0 6px 20px rgba(240, 255, 0, 0.25);
-    }
-}
-
-/* responsive design for smaller screens */
-@media (max-width: 768px) {
-    #programme-search-container {
-        grid-column: 1 / -1;
-        flex-direction: column;
-        align-items: stretch;
-        gap: var(--space-sm);
-        padding: var(--space-lg);
-    }
-    
-    #programme-search-container p {
-        text-align: center;
-        font-size: 0.9rem;
-    }
-    
-    #programme-search {
-        width: 100%;
-    }
-    
-    #search-icon {
-        align-self: center;
-        margin-top: var(--space-xs);
-    }
-}
 
 .programme-grid {
     grid-column: 1 / -1;
@@ -601,6 +499,7 @@ body {
 
 .programme-grid > div:not(.prgm-header):hover {
     color: var(--accent);
+    border-radius: var(--radius-medium);
     background-color: var(--bg-main);
 }
 
@@ -615,7 +514,7 @@ body {
     top: 0;
     left: 0;
     height: 100%; /* 1 cell tall */
-    background-image: url('/assets/images/sans-soleil.webp');
+    background-image: url('/leff/assets/images/sans-soleil.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -756,7 +655,7 @@ footer a{
 */
 
 #main-page{
-    background-image: url('/assets/images/bg.webp');
+    background-image: url('/leff/assets/images/bg.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
