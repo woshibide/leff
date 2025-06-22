@@ -51,34 +51,41 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
 
     vertical-align: baseline !important;
         
-    /* custom cursor for all possible cursor types */
-    cursor: url('/leff/assets/cursor.svg'), auto !important;
-    cursor: pointer url('/leff/assets/cursor.svg'), pointer !important;
-    cursor: move url('/leff/assets/cursor.svg'), move !important;
-    cursor: grab url('/leff/assets/cursor.svg'), grab !important;
-    cursor: grabbing url('/leff/assets/cursor.svg'), grabbing !important;
-    cursor: crosshair url('/leff/assets/cursor.svg'), crosshair !important;
-    cursor: text url('/leff/assets/cursor.svg'), text !important;
-    cursor: wait url('/leff/assets/cursor.svg'), wait !important;
-    cursor: help url('/leff/assets/cursor.svg'), help !important;
-    cursor: progress url('/leff/assets/cursor.svg'), progress !important;
-    cursor: not-allowed url('/leff/assets/cursor.svg'), not-allowed !important;
-    cursor: no-drop url('/leff/assets/cursor.svg'), no-drop !important;
-    cursor: alias url('/leff/assets/cursor.svg'), alias !important;
-    cursor: cell url('/leff/assets/cursor.svg'), cell !important;
-    cursor: context-menu url('/leff/assets/cursor.svg'), context-menu !important;
-    cursor: copy url('/leff/assets/cursor.svg'), copy !important;
-    cursor: vertical-text url('/leff/assets/cursor.svg'), vertical-text !important;
-    cursor: zoom-in url('/leff/assets/cursor.svg'), zoom-in !important;
-    cursor: zoom-out url('/leff/assets/cursor.svg'), zoom-out !important;
-    cursor: ew-resize url('/leff/assets/cursor.svg'), ew-resize !important;
-    cursor: ns-resize url('/leff/assets/cursor.svg'), ns-resize !important;
-    cursor: nesw-resize url('/leff/assets/cursor.svg'), nesw-resize !important;
-    cursor: nwse-resize url('/leff/assets/cursor.svg'), nwse-resize !important;
-    cursor: col-resize url('/leff/assets/cursor.svg'), col-resize !important;
-    cursor: row-resize url('/leff/assets/cursor.svg'), row-resize !important;
-    cursor: all-scroll url('/leff/assets/cursor.svg'), all-scroll !important;
-    cursor: default url('/leff/assets/cursor.svg'), default !important;
+    /* hide default cursor */
+    cursor: none !important;
+}
+
+#custom-cursor {
+    position: fixed;
+    width: 1rem;
+    height: 1rem;
+    background: var(--accent);
+    border-radius: var(--radius-full);
+    pointer-events: none;
+    box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.4);
+    transform: translate(-50%, -50%);
+    z-index: 10002; /* above nav z-index */
+    animation: pulse 2.4s var(--transition) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.4);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #custom-cursor {
+        display: none;
+    }
+
+    * {
+        /* fallback to default cursor */
+        cursor: url('/leff/assets/cursor.svg'), auto !important;
+    }
 }
 
 

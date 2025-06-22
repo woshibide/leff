@@ -9,6 +9,15 @@ function getAssetPath(path) {
 document.addEventListener('DOMContentLoaded', function() {
     //console.log('🟢 dom content loaded');
     
+    // custom cursor handler
+    const customCursor = document.getElementById('custom-cursor');
+    if (customCursor) {
+        document.addEventListener('mousemove', function(e) {
+            customCursor.style.left = e.clientX + 'px';
+            customCursor.style.top = e.clientY + 'px';
+        });
+    }
+    
     const circle = document.getElementById('circle');
     const circleContainer = document.getElementById('circle-container');
     const menuOverlay = document.getElementById('menu-overlay');
@@ -22,20 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
     //     closeButtons: closeButtons.length
     // });
 
-    if (!circle) {
-        console.error('❌ circle element not found!');
-        return;
-    }
 
-    if (!circleContainer) {
-        console.error('❌ circle-container element not found!');
-        return;
-    }
 
-    if (!menuOverlay) {
-        console.error('❌ menu-overlay element not found!');
-        return;
-    }
 
     // circle container click handler (parent of circle)
     circleContainer.addEventListener('click', function(e) {
