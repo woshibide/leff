@@ -2,7 +2,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
 
 @font-face {
         font-family: "switzer";
-        src: url('/assets/fonts/switzer/Switzer-Regular.woff2') format('woff2');
+        src: url('/leff/assets/fonts/switzer/Switzer-Regular.woff2') format('woff2');
         font-weight: normal;
         font-style: normal;
     }
@@ -83,7 +83,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
 
     * {
         /* fallback to default cursor */
-        cursor: url('/assets/cursor.svg'), auto !important;
+        cursor: url('/leff/assets/cursor.svg'), auto !important;
     }
 }
 
@@ -520,7 +520,7 @@ body {
     top: 0;
     left: 0;
     height: 100%; /* 1 cell tall */
-    background-image: url('/assets/images/sans-soleil.webp');
+    background-image: url('/leff/assets/images/sans-soleil.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -661,7 +661,7 @@ footer a{
 */
 
 #main-page{
-    background-image: url('/assets/images/bg.webp');
+    background-image: url('/leff/assets/images/bg.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
