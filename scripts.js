@@ -9,6 +9,9 @@ function getAssetPath(path) {
 document.addEventListener('DOMContentLoaded', function() {
     //console.log('🟢 dom content loaded');
     
+    // replace every occurrence of the word "leff" with italicized e
+    document.body.innerHTML = document.body.innerHTML.replace(/\bleff\b/g, 'l<em>e</em>ff');
+
     // custom cursor handler
     const customCursor = document.getElementById('custom-cursor');
     if (customCursor) {

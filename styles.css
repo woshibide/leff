@@ -11,13 +11,14 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
     vertical-align: baseline !important;
 
     --accent: #F0FF00; 
+    --accent-off: hsl(66, 100%, 50%);
     --silver: #C0BEBF; 
     --text-main: #000000; 
     --bg-main: #1e1e1e; 
     --text-info: var(--accent); 
 
     --shadow: 1px 1px 4px rgba(0,0,0,0.25);
-    --the-gradient: linear-gradient(360deg, var(--accent), var(--silver));
+    --the-gradient: linear-gradient(360deg, var(--accent-off), var(--accent));
 
     --transition: cubic-bezier(0.77, 0, 0.175, 1);
 
@@ -39,7 +40,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
     --space-4xl: 4rem;
     --space-5xl: 5rem;
 
-    font-size: 18px;
+    font-size: 16px;
 }
 
 
@@ -127,6 +128,15 @@ nav{
 
 nav.menu-active {
     height: 100vh;
+}
+nav.menu-active *{
+    color: var(--bg-main) !important;
+}
+nav.menu-active .tickets-button:hover {
+    color: var(--accent) !important;
+}
+nav.menu-active .tickets-button {
+    outline: var(--bg-main) 2px solid !important;
 }
 
 #nav-logo {
@@ -343,7 +353,7 @@ html {
 }
 
 body {
-    background: var(--the-gradient);
+    background: var(--silver);
     color: var(--text-main);
     font-family: 'switzer', Helvetica, Arial, sans-serif;
     line-height: 1.6;
@@ -445,121 +455,83 @@ body {
 .programme-grid {
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0;
+    grid-template-columns: 15% 10% 8% 10% 12% 15% 30%;
     margin: var(--space-xl) 0;
+    border: 2px solid var(--bg-main);
     overflow-x: auto;
 }
 
 .programme-grid > div {
-    align-self: start;
-    border-left: 2px solid var(--bg-main);
     padding: var(--space-sm);
     color: var(--text-main);
     font-family: "switzer", sans-serif;
+    outline: 1px solid var(--bg-main);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: start;
+    max-height: 2rem;
+    overflow: hidden;
+    vertical-align: baseline;
+    font-size: 0.75rem;
+}
+
+.programme-grid > div:nth-child(7n) {
+    /* border-right: none; */
 }
 
 .prgm-header {
     text-transform: uppercase;
-    font-weight: normal;
-    background-color: rgba(0, 0, 0, 0.1);
+    /* background-color: var(--bg-main); */
+    color: var(--text-main);
+}
+.prgm-header:hover {
+    background-color: var(--bg-main);
+    color: var(--accent);
+    transition: all 0.2s var(--transition);
 }
 
-/* positioning all 7 fields within 6-column grid */
+/* column positioning */
 .prgm-location {
-    grid-column: 1 / 2;
+    grid-column: 1;
 }
 
 .prgm-date {
-    grid-column: 2 / 3;
+    grid-column: 2;
 }
 
 .prgm-time {
-    grid-column: 2 / 3; /* shares column 2 with date */
+    grid-column: 3;
 }
 
 .prgm-block {
-    grid-column: 3 / 4;
+    grid-column: 4;
 }
 
 .prgm-director {
-    grid-column: 4 / 5;
+    grid-column: 5;
 }
 
 .prgm-title {
-    grid-column: 4 / 5; /* shares column 4 with director */
+    grid-column: 6;
 }
 
 .prgm-synopsis {
-    grid-column: 5 / 7; /* spans columns 5-6 */
-}
-
-.prgm-time {
-}
-
-.prgm-title {
+    grid-column: 7;
 }
 
 .programme-grid > div:not(.prgm-header):hover {
-    color: var(--accent);
-    border-radius: var(--radius-medium);
-    background-color: var(--bg-main);
-}
-
-.programme-grid > div:not(.prgm-header) {
-    position: relative;
-}
-
-/* create background for each row using the first column (location) */
-.programme-grid > div:not(.prgm-header).prgm-location::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%; /* 1 cell tall */
-    background-image: url('/leff/assets/images/sans-soleil.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
-    /* calculate width to span all 6 columns plus gaps */
-    width: calc(500% + 5 * var(--space-xl));
-    pointer-events: none;
-}
-
-/* ensure text appears above the background */
-.programme-grid > div:not(.prgm-header) {
-    color: var(--text-main);
-    position: relative;
-    z-index: 2;
-}
-
-.programme-grid > div:not(.prgm-header){
-    transition: all 0.1s var(--transition);
+    /* background-color: rgba(0, 0, 0, 0.05); */
 }
 
 .prgm-film-tickets {
-    position: absolute;
-    bottom: var(--space-sm);
-    left: var(--space-sm);
-    font-size: 0.8rem;
-    padding: 0.3em 0.6em;
-    z-index: 10;
+    margin-left: auto;
+    font-size: 0.7rem;
+    padding: 0.2em 0.5em;
     opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.2s var(--transition);
+    transition: opacity 0.2s var(--transition);
 }
 
 .programme-grid > div:not(.prgm-header):hover .prgm-film-tickets {
     opacity: 1;
-    transform: translateY(0);
-}
-
-.prgm-location {
-    position: relative;
 }
 
 .no-programme {
@@ -583,48 +555,47 @@ body {
     }
     
     .programme-grid {
-        font-size: 0.9rem;
-        grid-template-columns: repeat(5, 1fr); /* reduce to 5 columns on mobile */
+        font-size: 0.7rem;
+        grid-template-columns: 18% 8% 8% 10% 12% 15% 29%;
     }
     
     .programme-grid > div {
-        padding: var(--space-sm);
+        padding: var(--space-xs);
+        min-height: 2.5rem;
     }
     
-    /* adjust column positioning for mobile - collapse some columns */
+    /* all columns remain visible on mobile */
     .prgm-location {
-        grid-column: 1 / 2;
+        grid-column: 1;
     }
     
-    .prgm-date,
+    .prgm-date {
+        grid-column: 2;
+    }
+    
     .prgm-time {
-        grid-column: 2 / 3; /* date and time share column 2 */
+        grid-column: 3;
     }
     
     .prgm-block {
-        grid-column: 3 / 4;
+        grid-column: 4;
     }
     
-    .prgm-director,
+    .prgm-director {
+        grid-column: 5;
+    }
+    
     .prgm-title {
-        grid-column: 4 / 5; /* director and title share column 4 */
+        grid-column: 6;
     }
     
     .prgm-synopsis {
-        grid-column: 5 / 6; /* synopsis takes single column on mobile */
+        grid-column: 7;
     }
     
-    .prgm-time,
-    .prgm-title {
-        font-size: 0.8em;
-    }
-    
-    /* mobile specific tickets button styling */
     .prgm-film-tickets {
-        font-size: 0.7rem;
-        padding: 0.2em 0.4em;
-        bottom: var(--space-xs);
-        left: var(--space-xs);
+        font-size: 0.5rem;
+        padding: 0.1em 0.3em;
     }
 }
 
@@ -637,7 +608,6 @@ footer {
     height: 2rem;
     color: var(--text-main);
     width: 100%;
-    border-top: 1px solid var(--accent);
     margin-top: 50svh;
     padding: 0.7em 0 0.7em 0;
     text-shadow: none;
@@ -849,13 +819,13 @@ footer a{
 #languages button {
     background: none;
     border: none;
-    color: var(--silver);
+    color: var(--bg-main);
     padding: 0.4em 0.8em;
     border-radius: var(--radius-medium);
     font-family: inherit;
     transition: all 0.1s var(--transition);
     cursor: pointer;
-    text-shadow: var(--shadow);
+    /* text-shadow: var(--shadow); */
 }
 
 #languages button:hover {
