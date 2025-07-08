@@ -9,8 +9,27 @@ function getAssetPath(path) {
 document.addEventListener('DOMContentLoaded', function() {
     //console.log('🟢 dom content loaded');
     
-    // replace every occurrence of the word "leff" with italicized e
-    document.body.innerHTML = document.body.innerHTML.replace(/\bleff\b/g, 'l<em>e</em>ff');
+    // replace every occurrence of the word "leff" with italicized e in text nodes only
+    const walker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT,
+        // chatgpt magickkkkkk
+        node => node.parentElement?.tagName.match(/^(SCRIPT|STYLE|TITLE)$/) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
+    );
+    
+    const textNodes = [];
+    let node;
+    while (node = walker.nextNode()) {
+        if (/\bleff\b/.test(node.textContent)) {
+            textNodes.push(node);
+        }
+    }
+    
+    textNodes.forEach(textNode => {
+        const span = document.createElement('span');
+        span.innerHTML = textNode.textContent.replace(/\bleff\b/g, 'l<em>e</em>ff');
+        textNode.parentNode.replaceChild(span, textNode);
+    });
 
     // custom cursor handler
     const customCursor = document.getElementById('custom-cursor');

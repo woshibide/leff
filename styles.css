@@ -43,8 +43,6 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
     font-size: 16px;
 }
 
-
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -53,6 +51,10 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
     vertical-align: baseline !important;
         
     cursor: none !important;
+}
+
+em {
+    font-style: italic;
 }
 
 #custom-cursor {
