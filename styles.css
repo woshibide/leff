@@ -14,7 +14,8 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
     --accent-off: hsl(66, 100%, 50%);
     --silver: #C0BEBF; 
     --text-main: #000000; 
-    --bg-main: #1e1e1e; 
+    --bg-main: #1e1e1e;
+    --bg-main-hover: #1e1e1e31;
     --text-info: var(--accent); 
 
     --shadow: 1px 1px 4px rgba(0,0,0,0.25);
@@ -33,7 +34,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
     --space-xs: 0.25rem;
     --space-sm: 0.5rem;
     --space-md: 1rem;
-    --space-lg: 1.5rem;
+    --space-lg: 1.25rem;
     --space-xl: 2rem;
     --space-2xl: 2.5rem;
     --space-3xl: 3rem;
@@ -382,7 +383,7 @@ body {
 }
 
 .programme-title {
-    grid-column: 1 / 3;
+    grid-column: 1 / 2;
     font-size: 1rem;
     font-weight: normal;
     color: var(--text-main);
@@ -393,7 +394,7 @@ body {
 
 /* minimal programme search container styles */
 #programme-search-container {
-    grid-column: 4 / -1;
+    grid-column: 2 / 4;
     display: flex;
     align-items: center;
     gap: var(--space-sm);
@@ -454,86 +455,130 @@ body {
 }
 
 
-.programme-grid {
+.programme-table {
     grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 15% 10% 8% 10% 12% 15% 30%;
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
     margin: var(--space-xl) 0;
     border: 2px solid var(--bg-main);
     overflow-x: auto;
+    display: table;
 }
 
-.programme-grid > div {
+.programme-table th,
+.programme-table td {
     padding: var(--space-sm);
     color: var(--text-main);
     font-family: "switzer", sans-serif;
     outline: 1px solid var(--bg-main);
-    display: flex;
-    align-items: start;
-    max-height: 2rem;
-    overflow: hidden;
     vertical-align: baseline;
-    font-size: 0.75rem;
+    font-size: 1rem;
+    text-align: left;
 }
 
-.programme-grid > div:nth-child(7n) {
-    /* border-right: none; */
-}
-
-.prgm-header {
+.programme-table th {
     text-transform: uppercase;
-    /* background-color: var(--bg-main); */
     color: var(--text-main);
-}
-.prgm-header:hover {
-    background-color: var(--bg-main);
-    color: var(--accent);
+    padding-bottom: var(--space-lg);
+    position: relative;
+    cursor: pointer;
+    user-select: none;
     transition: all 0.2s var(--transition);
 }
 
-/* column positioning */
-.prgm-location {
-    grid-column: 1;
+.programme-table th:hover {
+    background-color: var(--bg-main);
+    color: var(--accent);
 }
 
-.prgm-date {
-    grid-column: 2;
+.programme-table th.sortable {
+    padding-right: var(--space-lg);
 }
 
-.prgm-time {
-    grid-column: 3;
+.sort-arrow {
+    position: absolute;
+    right: var(--space-md);
+    top: var(--space-md);
+    /* transform: translateY(-100%); */
+    width: 0.8rem;
+    height: auto;
+    opacity: 0;
+    transition: all 0.2s var(--transition);
 }
 
-.prgm-block {
-    grid-column: 4;
+.programme-table th.sort-asc .sort-arrow,
+.programme-table th.sort-desc .sort-arrow {
+    opacity: 1;
 }
 
-.prgm-director {
-    grid-column: 5;
+.programme-table th.sort-desc .sort-arrow {
+    transform: translateY(-50%) rotate(180deg);
 }
 
-.prgm-title {
-    grid-column: 6;
+.programme-table td {
+    max-height: 2rem;
+    max-width: 25vw;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    transition: all 0.3s var(--transition);
 }
 
-.prgm-synopsis {
-    grid-column: 7;
+.programme-table tr.expanded td {
+    max-height: none;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
-.programme-grid > div:not(.prgm-header):hover {
-    /* background-color: rgba(0, 0, 0, 0.05); */
+.programme-table tbody tr {
+    cursor: pointer;
+    transition: all 0.2s var(--transition);
+}
+
+.programme-table tbody tr:hover {
+    background-color: var(--bg-main-hover);
+}
+
+/* .programme-table tr.expanded .prgm-synopsis {
+    padding: var(--space-md);
+    line-height: 1.5;
+} */
+
+/* column specific styles */
+.programme-table th:nth-child(1), .programme-table td:nth-child(1) { width: 15%; }
+.programme-table th:nth-child(2), .programme-table td:nth-child(2) { width: 10%; }
+.programme-table th:nth-child(3), .programme-table td:nth-child(3) { width: 8%; }
+.programme-table th:nth-child(4), .programme-table td:nth-child(4) { width: 10%; }
+.programme-table th:nth-child(5), .programme-table td:nth-child(5) { width: 12%; }
+.programme-table th:nth-child(6), .programme-table td:nth-child(6) { width: 15%; }
+.programme-table th:nth-child(7), .programme-table td:nth-child(7) { width: 30%; }
+
+.programme-table tr.expanded .prgm-synopsis p {
+    margin-bottom: 0;   
+}
+
+.programme-table tr.expanded .prgm-synopsis p {
+    margin-bottom: var(--space-2xl);
 }
 
 .prgm-film-tickets {
-    margin-left: auto;
-    font-size: 0.7rem;
-    padding: 0.2em 0.5em;
     opacity: 0;
-    transition: opacity 0.2s var(--transition);
+    display: none;
+    transition: all 0.2s var(--transition);
+    transform: translateY(0.2rem);
 }
 
-.programme-grid > div:not(.prgm-header):hover .prgm-film-tickets {
+.prgm-film-tickets img{
+    margin-left: var(--space-md);
+}
+
+/* show tickets button only when row is expanded */
+.programme-table tr.expanded .prgm-film-tickets {
     opacity: 1;
+    display: inline;
+    transform: translateY(0);
 }
 
 .no-programme {
@@ -553,51 +598,39 @@ body {
     
     #programme-search-container {
         grid-column: 1 / -1;
-        margin-bottom: var(--space-lg);
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-md);
     }
     
-    .programme-grid {
-        font-size: 0.7rem;
-        grid-template-columns: 18% 8% 8% 10% 12% 15% 29%;
+    .programme-table {
+        font-size: 0.9rem;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
     }
     
-    .programme-grid > div {
+    .programme-table th,
+    .programme-table td {
         padding: var(--space-xs);
-        min-height: 2.5rem;
+        font-size: 0.8rem;
     }
     
-    /* all columns remain visible on mobile */
-    .prgm-location {
-        grid-column: 1;
-    }
-    
-    .prgm-date {
-        grid-column: 2;
-    }
-    
-    .prgm-time {
-        grid-column: 3;
-    }
-    
-    .prgm-block {
-        grid-column: 4;
-    }
-    
-    .prgm-director {
-        grid-column: 5;
-    }
-    
-    .prgm-title {
-        grid-column: 6;
-    }
-    
-    .prgm-synopsis {
-        grid-column: 7;
+    .sort-arrow {
+        width: 0.7rem;
+        right: var(--space-xs);
     }
     
     .prgm-film-tickets {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
         padding: 0.1em 0.3em;
+    }
+    
+    /* mobile expanded tickets visibility */
+    .programme-table tr.expanded .prgm-film-tickets {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 }
 
