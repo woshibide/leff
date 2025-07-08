@@ -733,7 +733,7 @@ footer a{
 #general-info{
     margin-top: 50svh;
     color: var(--text-main);
-    font-size: 1.333rem;
+    font-size: 1.5em;
     grid-column: 1 / 5;
     /* grid-row: 1 / 4; */
 }
@@ -772,7 +772,7 @@ footer a{
 #team h3, #board h3, #sponsors h3 {
     text-transform: lowercase;
     color: var(--text-main);
-    font-size: 1.2em;
+    font-size: 2rem;
     font-weight: normal;
     margin-bottom: 0.7em;
     letter-spacing: 0.01em;
