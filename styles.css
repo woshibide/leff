@@ -71,12 +71,25 @@ em {
     animation: pulse 2.4s var(--transition) infinite;
 }
 
+#custom-cursor.excited {
+    animation: pulse 0.4s var(--transition) infinite;
+}
+
 @keyframes pulse {
     0%, 100% {
         transform: translate(-50%, -50%) scale(1);
     }
     50% {
         transform: translate(-50%, -50%) scale(1.4);
+    }
+}
+
+@keyframes excited-pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.8);
     }
 }
 
@@ -359,7 +372,6 @@ body {
     background: var(--silver);
     color: var(--text-main);
     font-family: 'switzer', Helvetica, Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
 }
 
@@ -471,7 +483,10 @@ body {
     padding: var(--space-sm);
     color: var(--text-main);
     font-family: "switzer", sans-serif;
-    outline: 1px solid var(--bg-main);
+    border-top: 2px solid var(--bg-main);
+    border-bottom: 2px solid var(--bg-main);
+    border-left: 1px solid var(--bg-main);
+    border-right: 1px solid var(--bg-main);
     vertical-align: baseline;
     font-size: 1rem;
     text-align: left;
@@ -530,6 +545,7 @@ body {
     max-height: none;
     white-space: normal;
     word-wrap: break-word;
+    transition: all 0.2s var(--transition);
 }
 
 .programme-table tbody tr {
@@ -571,7 +587,7 @@ body {
 }
 
 .prgm-film-tickets img{
-    margin-left: var(--space-md);
+    margin-left: var(--space-sm);
 }
 
 /* show tickets button only when row is expanded */
@@ -640,16 +656,12 @@ body {
 */
 
 footer {
-    height: 2rem;
     color: var(--text-main);
     width: 100%;
-    margin-top: 50svh;
-    padding: 0.7em 0 0.7em 0;
+    margin-top: var(--space-md);
     text-shadow: none;
-    font-size: 0.95em;
     background: none;
     text-align: left;
-    letter-spacing: 0.01em;
 }
 
 footer p {
@@ -715,7 +727,6 @@ footer a{
     grid-row: 1 / 1; 
     justify-self: end; 
     align-self: end; 
-    font-weight: bold;
     color: var(--accent);
     z-index: 10;
     line-height: 1;

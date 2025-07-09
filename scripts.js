@@ -1,105 +1,238 @@
-//console.log('🟢 scripts.js loaded');
+// configuration constants
+const CONFIG = {
+    MENU_ANIMATION_DELAY: 300,
+    CLICKABLE_SELECTORS: [
+        'a', 'button', '.clickable', '[role="button"]', 
+        'input[type="submit"]', 'input[type="button"]', 
+        '.tickets-button', '.programme-table tbody tr', 
+        '.programme-table th', '#circle', '#search-icon',
+        '#languages button'
+    ]
+};
 
-// utility function to get asset path with base path
+/**
+ * utility function to get asset path with base path
+ * @param {string} path - the asset path
+ * @returns {string} - the full asset path
+ */
 function getAssetPath(path) {
     const basePath = window.BASE_PATH || '/';
     return basePath + path.replace(/^\//, '');
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    //console.log('🟢 dom content loaded');
-    
-    // replace every occurrence of the word "leff" with italicized e in text nodes only
-    const walker = document.createTreeWalker(
-        document.body,
-        NodeFilter.SHOW_TEXT,
-        // chatgpt magickkkkkk
-        node => node.parentElement?.tagName.match(/^(SCRIPT|STYLE|TITLE)$/) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
-    );
-    
-    const textNodes = [];
-    let node;
-    while (node = walker.nextNode()) {
-        if (/\bleff\b/.test(node.textContent)) {
-            textNodes.push(node);
-        }
-    }
-    
-    textNodes.forEach(textNode => {
-        const span = document.createElement('span');
-        span.innerHTML = textNode.textContent.replace(/\bleff\b/g, 'l<em>e</em>ff');
-        textNode.parentNode.replaceChild(span, textNode);
-    });
+/**
+ * text replacement module
+ * replaces "leff" with italicized version in text nodes
+ */
+const TextReplacer = {
+    /**
+     * replace all occurrences of "leff" with stylized version
+     */
+    init() {
+        const walker = document.createTreeWalker(
+            document.body,
+            NodeFilter.SHOW_TEXT,
+            this.createTextFilter()
+        );
+        
+        const textNodes = this.findTextNodes(walker);
+        this.replaceTextInNodes(textNodes);
+    },
 
-    // custom cursor handler
-    const customCursor = document.getElementById('custom-cursor');
-    if (customCursor) {
-        document.addEventListener('mousemove', function(e) {
-            customCursor.style.left = e.clientX + 'px';
-            customCursor.style.top = e.clientY + 'px';
+    /**
+     * create filter for text walker to exclude script/style/title elements
+     * @returns {function} filter function
+     */
+    createTextFilter() {
+        return node => {
+            const excludedTags = /^(SCRIPT|STYLE|TITLE)$/;
+            return node.parentElement?.tagName.match(excludedTags) 
+                ? NodeFilter.FILTER_REJECT 
+                : NodeFilter.FILTER_ACCEPT;
+        };
+    },
+
+    /**
+     * find all text nodes containing "leff"
+     * @param {TreeWalker} walker - the tree walker
+     * @returns {Array} array of text nodes
+     */
+    findTextNodes(walker) {
+        const textNodes = [];
+        let node;
+        while (node = walker.nextNode()) {
+            if (/\bleff\b/i.test(node.textContent)) {
+                textNodes.push(node);
+            }
+        }
+        return textNodes;
+    },
+
+    /**
+     * replace text in the found nodes
+     * @param {Array} textNodes - array of text nodes to process
+     */
+    replaceTextInNodes(textNodes) {
+        textNodes.forEach(textNode => {
+            const span = document.createElement('span');
+            span.innerHTML = textNode.textContent.replace(
+                /\bleff\b/gi, 
+                '<span style="text-transform: lowercase;">l<em>e</em>ff</span>'
+            );
+            textNode.parentNode.replaceChild(span, textNode);
         });
     }
-    
-    const circle = document.getElementById('circle');
-    const circleContainer = document.getElementById('circle-container');
-    const menuOverlay = document.getElementById('menu-overlay');
-    const closeButtons = document.querySelectorAll('.close-menu');
-    const nav = document.querySelector('nav');
+};
 
-    // console.log('🔍 elements found:', {
-    //     circle: circle,
-    //     circleContainer: circleContainer,
-    //     menuOverlay: menuOverlay,
-    //     closeButtons: closeButtons.length
-    // });
+/**
+ * custom cursor module
+ * handles custom cursor movement and hover effects
+ */
+const CustomCursor = {
+    cursor: null,
 
+    /**
+     * initialize custom cursor functionality
+     */
+    init() {
+        this.cursor = document.getElementById('custom-cursor');
+        if (!this.cursor) return;
 
+        this.setupMouseTracking();
+        this.setupHoverEffects();
+    },
 
+    /**
+     * setup mouse tracking for cursor movement
+     */
+    setupMouseTracking() {
+        document.addEventListener('mousemove', (e) => {
+            this.cursor.style.left = e.clientX + 'px';
+            this.cursor.style.top = e.clientY + 'px';
+        });
+    },
 
-    // circle container click handler (parent of circle)
-    circleContainer.addEventListener('click', function(e) {
-        //console.log('🟡 circle container clicked!', e.target);
-        circle.classList.add('expanded');
-        nav.classList.add('menu-active');
+    /**
+     * setup hover effects for clickable elements
+     */
+    setupHoverEffects() {
+        const selectors = CONFIG.CLICKABLE_SELECTORS.join(', ');
+        
+        document.addEventListener('mouseenter', (e) => {
+            if (e.target.matches(selectors)) {
+                this.cursor.classList.add('excited');
+            }
+        }, true);
+        
+        document.addEventListener('mouseleave', (e) => {
+            if (e.target.matches(selectors)) {
+                this.cursor.classList.remove('excited');
+            }
+        }, true);
+    }
+};
+
+/**
+ * menu system module
+ * handles menu opening, closing, and interactions
+ */
+const MenuSystem = {
+    elements: {},
+
+    /**
+     * initialize menu system
+     */
+    init() {
+        this.cacheElements();
+        this.setupEventListeners();
+    },
+
+    /**
+     * cache frequently used dom elements
+     */
+    cacheElements() {
+        this.elements = {
+            circle: document.getElementById('circle'),
+            circleContainer: document.getElementById('circle-container'),
+            menuOverlay: document.getElementById('menu-overlay'),
+            closeButtons: document.querySelectorAll('.close-menu'),
+            nav: document.querySelector('nav')
+        };
+    },
+
+    /**
+     * setup all menu-related event listeners
+     */
+    setupEventListeners() {
+        this.setupMenuToggle();
+        this.setupCloseHandlers();
+        this.setupOverlayClick();
+    },
+
+    /**
+     * setup menu toggle functionality
+     */
+    setupMenuToggle() {
+        this.elements.circleContainer.addEventListener('click', () => {
+            this.openMenu();
+        });
+    },
+
+    /**
+     * setup close button handlers
+     */
+    setupCloseHandlers() {
+        this.elements.closeButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.closeMenu();
+            });
+        });
+    },
+
+    /**
+     * setup overlay click to close menu
+     */
+    setupOverlayClick() {
+        this.elements.menuOverlay.addEventListener('click', (e) => {
+            if (e.target === this.elements.menuOverlay) {
+                this.closeMenu();
+            }
+        });
+    },
+
+    /**
+     * open the menu with animation
+     */
+    openMenu() {
+        this.elements.circle.classList.add('expanded');
+        this.elements.nav.classList.add('menu-active');
         document.body.classList.add('menu-active');
-        //console.log('🟡 added expanded class to circle');
         
         setTimeout(() => {
-            menuOverlay.classList.add('active');
-            //console.log('🟡 added active class to menu');
-        }, 300);
-    });
+            this.elements.menuOverlay.classList.add('active');
+        }, CONFIG.MENU_ANIMATION_DELAY);
+    },
 
-    // close menu handlers
-    closeButtons.forEach((button, index) => {
-        //console.log(`🟢 adding close handler to button ${index}`);
-        button.addEventListener('click', function(e) {
-            //console.log('🔴 close button clicked');
-            e.preventDefault();
-            closeMenu();
-        });
-    });
-
-    // close when clicking overlay background
-    menuOverlay.addEventListener('click', function(e) {
-        //console.log('🟡 menu overlay clicked, target:', e.target);
-        if (e.target === menuOverlay) {
-            //console.log('🔴 clicked on overlay background, closing menu');
-            closeMenu();
-        }
-    });
-
-    // close menu function
-    function closeMenu() {
-        //console.log('🔴 closing menu...');
-        menuOverlay.classList.remove('active');
-        nav.classList.remove('menu-active');
+    /**
+     * close the menu with animation
+     */
+    closeMenu() {
+        this.elements.menuOverlay.classList.remove('active');
+        this.elements.nav.classList.remove('menu-active');
         document.body.classList.remove('menu-active');
-        //console.log('🔴 removed active class from menu');
         
         setTimeout(() => {
-            circle.classList.remove('expanded');
-            //console.log('🔴 removed expanded class from circle');
-        }, 300);
+            this.elements.circle.classList.remove('expanded');
+        }, CONFIG.MENU_ANIMATION_DELAY);
     }
+};
+
+/**
+ * main application initialization
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    TextReplacer.init();
+    CustomCursor.init();
+    MenuSystem.init();
 });
