@@ -22,7 +22,7 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/leff/assets/header/android-chrome-512x512.png">
     <meta name="theme-color" content="#C0BEBF">
 
-    <title>About - Leiden Essay Film Festival</title>
+    <title>Error - Leiden Essay Film Festival</title>
     <!-- base href for github pages deployment -->
     
     <base href="/leff/">
@@ -32,32 +32,46 @@
 
     
 <style>
-    /*
-        ABOUT PAGE
-    */
-
-    #general-info {
+    /* full screen canvas error page */
+    body {
+        overflow: hidden; /* prevent scrollbars */
+    }
+    
+    #error-canvas-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
+        background: var(--silver); 
+    }
+    
+    /* hide navigation and other elements for full screen effect */
+    header, nav, footer, .footer-negative-space {
+        display: none !important;
+    }
+    
+    /* error message overlay */
+    #error-message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         color: var(--text-main);
-        grid-column: 1 / 5;
-        font-size: 1.875rem;
-        /* grid-row: 1 / 4; */
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+        z-index: 1001;
+        pointer-events: none;
     }
-
-    #general-info *:not(h2) {
-        margin-top: var(--space-xl);
+    
+    @media (max-width: 768px) {
+        #error-message {
+            font-size: 1.5rem;
+            padding: 0 1rem;
+        }
     }
-
-    #general-info h2{
-        margin-top: var(--space-5xl);
-        grid-column: 1 / 2;
-        font-size: inherit;
-        font-weight: normal;
-        color: var(--text-main);
-        /* margin: var(--space-2xl) 60px; */
-        align-self: center;
-        text-transform: uppercase;
-    }
-
 </style>
 
 </head>
@@ -76,7 +90,7 @@
             <div id="languages">
                 
                 
-                <a href="/leff/en/about/">
+                <a href="/leff/en/error/">
                     <button>EN</button>
                 </a>
                 
@@ -189,43 +203,94 @@
     
     <section class="page-contents">
         
-<div class="grid-base">
-    <h1 class="page-title">
-        Over
-    </h1>
+<div id="error-canvas-container"></div>
+<div id="error-message">pagina niet gevonden, klik of druk op een toets om terug te gaan</div>
 
-    <div id="general-info">
-        <p>
-            leff is het eerste festival in Nederland dat geheel gewijd is aan de essayfilm. Onder filmmakers en filmliefhebbers wint het genre de laatste jaren snel aan populariteit. Het duikt op in festivals, is onderwerp van studie door filmwetenschappers en zowel in het Westen als in het globale Zuiden kent de essayfilm een schare aan innovatieve beoefenaren.
-        </p>
-        <p> 
-            Net als het geschreven essay, worden filmessays zowel door kunstenaars als wetenschappers gemaakt. In zeer uiteenlopende films verkennen zij de wereld vanuit hun persoonlijke gezichtspunten. Behalve persoonlijk zijn essayfilms reflectief. De makers denken na over de wereld en over de manier waarop ze die waarnemen. Ze vermengen non-fictie met fictie en weten diverse stijlen en genres soepel met elkaar te verbinden. Hun avontuurlijke drang om vragen te stellen gaat hand in hand met het vrijelijk exploreren van mogelijke antwoorden.
-        </p>
-
-        <h2>
-            Nieuwe vormen
-        </h2>
-        <p>
-            De essayfilm is ontstaan uit pogingen van filmmakers, al vroeg in de geschiedenis van het medium film, om abstracte onderwerpen te behandelen en de wereld niet alleen te representeren, maar die ook ter discussie te stellen. Een tijdlang was het genre verbonden met de documentaire. De naamgever, de vroegere dadaïst Hans Richter, zag het in 1940 dan ook als een nieuwe vorm van documentairefilm.
-        </p>
-        <p>
-            Sinds het midden van de jaren vijftig van de vorige eeuw maakt de essayfilm een gestage opmars door. De eerste films hadden antropologische, geschiedkundige en politieke onderwerpen. Maar als alle essayfilms waren ze ook discipline-overstijgend, hybride, poëtisch en experimenteel van aard. In dat laatste ligt de kern van het genre: de filmmaker tracht al zoekende de wereld beter te begrijpen en ondervraagt daarbij ook het eigen perspectief op de wereld.
-        </p>
-
-        <h2>
-            Rijkdom
-        </h2>
-        <p>
-            Een decennium geleden constateerde de Britse krant The Guardian: ‘For years the essay film has been a neglected form, but now its unorthodox approach to constructing reality is winning over a younger, tech-savvy crowd.’ Die ontwikkeling is sindsdien, mede dankzij de onstuimige groei van digitale gereedschappen en platforms, in een stroomversnelling geraakt. Dat maakt leff uiterst actueel.
-        </p>
-        <p>
-            Deze eerste editie van leff ontsluit de rijkdom van recente en gevestigde producties. Jonge makers krijgen een podium geboden en bezoekers worden betrokken bij de inhoud van de films door middel van lezingen, discussies en ontmoetingen met makers en beschouwers. Net als de essayfilms zelf is leff is persoonlijk, reflectief en hybride. Het festival verkent de werkelijkheid zoals ook de filmmakers dat doen.
-        </p>
-
-    </div>
-</div>
-
-<div class="footer-negative-space"></div>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+<script>
+    // bouncing logo variables
+    let logo;
+    let x, y;
+    let xSpeed, ySpeed;
+    let logoSize = 120;
+    let logoLoaded = false;
+    
+    function preload() {
+        // load the leff logo svg
+        logo = loadImage('/leff/assets/leff-logo-yellow.svg');
+    }
+    
+    function setup() {
+        // create full screen canvas
+        let canvas = createCanvas(windowWidth, windowHeight);
+        canvas.parent('error-canvas-container');
+        
+        // initialize position and speed
+        x = random(logoSize, width - logoSize);
+        y = random(logoSize, height - logoSize);
+        
+        // random initial speed (dvd screensaver style)
+        xSpeed = random(2, 4) * (random() > 0.5 ? 1 : -1);
+        ySpeed = random(2, 4) * (random() > 0.5 ? 1 : -1);
+        
+        colorMode(HSB, 360, 100, 100);
+        logoLoaded = true;
+    }
+    
+    function draw() {
+        background(330, 1.56, 75); // silver
+        
+        if (logoLoaded && logo) {
+            // update position
+            x += xSpeed;
+            y += ySpeed;
+            
+            // bounce off edges (classic dvd screensaver behavior)
+            if (x <= 0 || x >= width - logoSize) {
+                xSpeed *= -1;
+                // ensure logo stays within bounds
+                x = constrain(x, 0, width - logoSize);
+            }
+            
+            if (y <= 0 || y >= height - logoSize) {
+                ySpeed *= -1;
+                // ensure logo stays within bounds
+                y = constrain(y, 0, height - logoSize);
+            }
+            
+            // draw logo as is without color modifications
+            image(logo, x, y, logoSize, logoSize);
+            
+        } else {
+            // fallback if logo doesn't load - draw simple leff text
+            fill(64, 100, 50); // yellow
+            textAlign(CENTER, CENTER);
+            textSize(48);
+            textStyle(BOLD);
+            text('leff', x + logoSize/2, y + logoSize/2);
+        }
+    }
+    
+    
+    function windowResized() {
+        // resize canvas when window is resized
+        resizeCanvas(windowWidth, windowHeight);
+        
+        // keep logo within new bounds
+        x = constrain(x, 0, width - logoSize);
+        y = constrain(y, 0, height - logoSize);
+    }
+    
+    // click to return to home page
+    function mousePressed() {
+        window.location.href = '/leff/nl/';
+    }
+    
+    // press any key to return to home page
+    function keyPressed() {
+        window.location.href = '/leff/nl/';
+    }
+</script>
 
     </section>
 

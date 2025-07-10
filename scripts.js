@@ -1,12 +1,13 @@
 // configuration constants
 const CONFIG = {
-    MENU_ANIMATION_DELAY: 400,
+    MENU_ANIMATION_DELAY: 200,
     CLICKABLE_SELECTORS: [
         'a', 'button', '.clickable', '[role="button"]', 
         'input[type="submit"]', 'input[type="button"]', 
         '.tickets-button', '.programme-table tbody tr', 
         '.programme-table th', '#circle', '#search-icon',
-        '#languages button', '.schedule-event-cell', '#menu-close', '#popup-close'
+        '#languages button', '.schedule-event-cell', '#menu-close', '#popup-close',
+        '#circle-placeholder'
     ]
 };
 
@@ -177,7 +178,7 @@ const MenuSystem = {
             
             // add load handler to confirm success
             this.elements.logo.onload = () => {
-                console.log('logo loaded successfully');
+                // console.log('logo loaded successfully');
             };
             
             // add error handler in case the logo fails to load
@@ -211,7 +212,7 @@ const MenuSystem = {
      * setup menu toggle functionality
      */
     setupMenuToggle() {
-        this.elements.circleContainer.addEventListener('click', () => {
+        this.elements.circle.addEventListener('click', () => {
             this.openMenu();
         });
     },
@@ -243,6 +244,18 @@ const MenuSystem = {
      * open the menu with animation
      */
     openMenu() {
+        // create placeholder circle to maintain nav layout
+        this.createPlaceholderCircle();
+        
+        // get circle position for expansion animation
+        const circleRect = this.elements.circle.getBoundingClientRect();
+        const circleTop = circleRect.top + (circleRect.height / 2);
+        const circleLeft = circleRect.left + (circleRect.width / 2);
+
+        // set css variables for the animation origin
+        this.elements.circle.style.setProperty('--circle-top', `${circleTop}px`);
+        this.elements.circle.style.setProperty('--circle-left', `${circleLeft}px`);
+
         this.elements.circle.classList.add('expanded');
         this.elements.nav.classList.add('menu-active');
         document.body.classList.add('menu-active');
@@ -269,11 +282,51 @@ const MenuSystem = {
         
         setTimeout(() => {
             this.elements.circle.classList.remove('expanded');
+            // remove placeholder circle
+            this.removePlaceholderCircle();
             // swap back to yellow logo after the menu animation completes
             if (this.elements.logo) {
                 this.elements.logo.src = getAssetPath('assets/leff-logo-yellow.svg');
             }
+            // clean up css variables
+            this.elements.circle.style.removeProperty('--circle-top');
+            this.elements.circle.style.removeProperty('--circle-left');
         }, CONFIG.MENU_ANIMATION_DELAY);
+    },
+
+    /**
+     * create a placeholder circle to maintain nav layout during animation
+     */
+    createPlaceholderCircle() {
+        // check if placeholder already exists
+        const existingPlaceholder = document.getElementById('circle-placeholder');
+        if (existingPlaceholder) return;
+
+        const placeholder = document.createElement('div');
+        placeholder.id = 'circle-placeholder';
+
+        // get dimensions of the circle
+        const circleRect = this.elements.circle.getBoundingClientRect();
+        placeholder.style.width = `${circleRect.width}px` / 1.8;
+        placeholder.style.height = `${circleRect.height}px` / 1.8;
+        
+        // add click handler to close menu
+        placeholder.addEventListener('click', () => {
+            this.closeMenu();
+        });
+        
+        // insert placeholder right after the circle element
+        this.elements.circle.insertAdjacentElement('afterend', placeholder);
+    },
+
+    /**
+     * remove the placeholder circle
+     */
+    removePlaceholderCircle() {
+        const placeholder = document.getElementById('circle-placeholder');
+        if (placeholder) {
+            placeholder.remove();
+        }
     }
 };
 
@@ -305,7 +358,7 @@ const MenuDropdown = {
 
     /**
      * toggle dropdown open/close state
-     * @param {Element} toggle - the dropdown toggle button
+     * @param {element} toggle - the dropdown toggle button
      */
     toggleDropdown(toggle) {
         const dropdownId = toggle.dataset.dropdown + '-dropdown';
@@ -313,27 +366,9 @@ const MenuDropdown = {
         
         if (!dropdownContent) return;
 
-        const isExpanded = toggle.classList.contains('expanded');
-        
-        // close all other dropdowns first
-        this.closeAllDropdowns();
-        
-        if (!isExpanded) {
-            // open this dropdown
-            toggle.classList.add('expanded');
-            dropdownContent.classList.add('expanded');
-        }
-    },
-
-    /**
-     * close all open dropdowns
-     */
-    closeAllDropdowns() {
-        const allToggles = document.querySelectorAll('.menu-dropdown-toggle');
-        const allContents = document.querySelectorAll('.menu-dropdown-content');
-        
-        allToggles.forEach(toggle => toggle.classList.remove('expanded'));
-        allContents.forEach(content => content.classList.remove('expanded'));
+        // toggle 'expanded' class on both the toggle and the content
+        toggle.classList.toggle('expanded');
+        dropdownContent.classList.toggle('expanded');
     }
 };
 

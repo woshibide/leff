@@ -37,94 +37,27 @@
     */
 
     #general-info {
-        margin-top: 50svh;
         color: var(--text-main);
-        font-size: 1.5em;
         grid-column: 1 / 5;
+        font-size: 1.875rem;
         /* grid-row: 1 / 4; */
     }
 
-    #general-info :nth-child(2) {
-        margin-top: var(--space-4xl);
+    #general-info *:not(h2) {
+        margin-top: var(--space-xl);
     }
 
-    #people {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: auto auto;
-        grid-column: 1 / -1;
-        gap: 0 var(--space-4xl);
-        margin-top: var(--space-4xl);
-    }
-
-    #team {
-        grid-column: 1 / 4;
-        grid-row: 1;
-        align-self: start;
-    }
-
-    #board {
-        grid-column: 4 / 7;
-        grid-row: 1;
-        align-self: start;
-    }
-
-    #sponsors {
-        grid-column: 1 / 7;
-        grid-row: 2;
-        margin-top: var(--space-4xl);
-    }
-
-    #team h3,
-    #board h3,
-    #sponsors h3 {
-        text-transform: lowercase;
-        color: var(--text-main);
-        font-size: 2rem;
+    #general-info h2{
+        margin-top: var(--space-5xl);
+        grid-column: 1 / 2;
+        font-size: inherit;
         font-weight: normal;
-        margin-bottom: 0.7em;
-        letter-spacing: 0.01em;
-    }
-
-    #team ul,
-    #board ul,
-    #sponsors ul {
-        list-style: none;
-        padding-left: 0;
-        margin: 0;
-    }
-
-    #team li,
-    #board li,
-    #sponsors li {
-        margin-bottom: 0.4em;
-        font-size: 1em;
         color: var(--text-main);
-        line-height: 1.5;
+        /* margin: var(--space-2xl) 60px; */
+        align-self: center;
+        text-transform: uppercase;
     }
 
-
-
-    @media (max-width: 900px) {
-        #people {
-            grid-template-columns: 1fr;
-            gap: 0;
-        }
-
-        #team,
-        #board,
-        #sponsors {
-            grid-column: 1 / -1;
-        }
-
-        #board {
-            margin-top: var(--space-3xl);
-        }
-
-        #sponsors {
-            margin-top: var(--space-3xl);
-        }
-    }
 </style>
 
 </head>
@@ -132,7 +65,8 @@
     <nav>
         <a href="/leff/en/"><img src="/leff/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
-        <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
+        <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button"
+            style="display: none;">
             Tickets 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -157,7 +91,7 @@
 
         <div id="menu-overlay" class="menu-overlay">
             <div class="menu-grid grid-base">
-                <!-- <h2 class="menu-title">Menu</h2> -->
+                <!-- <h2 class="menu-title"></h2> -->
                 <div class="menu-nav">
                     <ul>
                         
@@ -177,35 +111,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
                             </svg>
-                            <a href="/leff/en/about/">About</a>
-                            
-                        </li>
-                        
-                        <li>
-                            
-                            <!-- programme dropdown -->
-                            <div class="menu-dropdown-item">
-                                <button class="menu-dropdown-toggle" data-dropdown="programme">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow dropdown-arrow">
-                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <span>Programme 2025</span>
-                                </button>
-                                <ul class="menu-dropdown-content" id="programme-dropdown">
-                                    <li>
-                                        <a href="/leff/en/programme/">A—Z film</a>
-                                    </li>
-                                    <li>
-                                        <a href="/leff/en/programme/">A—Z directors</a>
-                                    </li>
-                                    <li>
-                                        <a href="/leff/en/programme/">Time</a>
-                                    </li>
-                                    <li>
-                                        <a href="/leff/en/programme/">Location</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <a href="/leff/en/programme/">Programme 2025</a>
                             
                         </li>
                         
@@ -221,20 +127,50 @@
                         
                         <li>
                             
-                            <!-- regular menu item -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
-                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <a href="/leff/en/">How to get there</a>
+                            <!-- dropdown menu item -->
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="about">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    <span>About</span>
+                                </button>
+                                <ul class="menu-dropdown-content" id="about-dropdown">
+                                    
+                                    <!-- generic dropdown items from config -->
+                                    
+                                    <li>
+                                        <a href="/leff/en/about/">
+                                            
+                                                Festival
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/en/organisation/">
+                                            
+                                                Organisation
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </div>
                             
                         </li>
                         
                         <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon north-east-arrow">
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
                             </svg>
-                            <a href="https://bioscopenleiden.nl/"target="_blank">Tickets</a>
+                            <a href="/leff/en/tickets/">Tickets</a>
+                            
                         </li>
+                        
                     </ul>
                 </div>
                 <div class="menu-close">
@@ -251,64 +187,47 @@
 
     
     
+    <section class="page-contents">
+        
 <div class="grid-base">
+    <h1 class="page-title">
+        About
+    </h1>
+
     <div id="general-info">
         <p>
-            In film studies and festivals, a lot of attention has been paid in recent years to a special type of film: the essay film. It is the visual variant of the time-honoured written essay. With this, it has in common that it connects a personal quest with reflection and is practised both in art and science. At Leiden University, a team led by ACPA, the Academy of Creative and Performing Arts, is working on the first Dutch Essay Film Festival under the name LEFF. It will take place on 14 and 15 September at the Stadsgehoorzaal and the Kijkhuis in Leiden.<br>
-            In this first edition of LEFF, many films will be screened, from the most current to classics. In the spirit of the essay, with lectures and discussions, LEFF also aims to be a place of reflection and dialogue. A broadly composed audience of film lovers, students, researchers and interested parties can get to know new film essays, filmmakers and theorists, and continue with them and each other the quests begun in the films.
+            leff is the first festival in the Netherlands dedicated entirely to the essay film. This genre has been gaining popularity in recent years among filmmakers and cinephiles alike. Essay films are increasingly featured at festivals, studied by film scholars, and practiced innovatively by filmmakers both in the West and the Global South.
+        </p>
+        <p> 
+            Like written essays, film essays are made by both artists and scholars. In their very diverse films, they explore the world from personal perspectives. Essay films are not only personal but also reflective. The filmmakers think critically about the world and about how they perceive it. They blend fiction and non-fiction and fluidly combine a wide range of styles and genres. Their adventurous urge to ask questions goes hand in hand with a free-spirited exploration of possible answers.
         </p>
 
-        <h3>What is an essay film?</h3>
+        <h2>
+            NEW FORMS
+        </h2>
         <p>
-            The essay film is a special film genre. It grew out of attempts by filmmakers, early in the history of the film medium, to deal with abstract subjects, and not only represent the world but also reflect on it. For a while, the genre was linked to documentary. Its namesake, Hans Richter, therefore saw it as a new form of documentary film in 1940. Since the mid-1950s, the essay film has experienced a steady rise. The first films had anthropological, historical and political subjects, but they were also, like all essay films, cross-disciplinary, hybrid, experimental and probing in nature. In the latter lies the core of the genre: they are films in which the maker seeks to better understand the world while searching, and also the own perspective under which the world is perceived.
+            The essay film emerged from early attempts by filmmakers to address abstract subjects and not merely represent the world but also interrogate it. For a time, the genre was closely associated with documentary. The term was coined by former Dadaist Hans Richter, who in 1940 saw it as a new form of documentary filmmaking.
         </p>
-    </div>
+        <p>
+            Since the mid-1950s, the essay film has been steadily on the rise. The earliest examples addressed anthropological, historical, and political themes. But like all essay films, they transcended disciplines, and were hybrid, poetic, and experimental in nature. That experimental spirit lies at the heart of the genre: the filmmaker seeks to better understand the world through the act of searching—and in doing so, questions their own perspective as well.
+        </p>
 
-    <div id="people">
-        <div id="team">
-            <h3>Team</h3>
-            <ul>
-                <li>Georgie Brinkman - Coordinator lectureship FILM, University of the Arts The Hague</li>
-                <li>Emma de Looij - Coordinator and Communications Officer ACPA</li>
-                <li>Annemarie Montulet - Advisor Fundraising</li>
-                <li>Rosalien van der Poel - ACPA Institute Manager</li>
-                <li>Gabriel Paiuk - Project leader Outreach education and research ACPA</li>
-                <li>Erik Viskil - Professor of Research and Discourse in Artistic Practice Leiden University/ACPA</li>
-                <li>Bo Wang - Filmmaker, researcher and University Lecturer, Leiden University Center for the Arts in Society</li>
-                <li>Thijs Witty - University Lecturer in Film and Literature Studies, Leiden University Center for the Arts in Society</li>
-            </ul>
-        </div>
-        <div id="board">
-            <h3>Board</h3>
-            <ul>
-                <li>Matthew Barrington - Researcher Birkbeck Institute of the Moving Image, Curator Essay Film Festival London</li>
-                <li>Janilda Bartholomeu - Filmmaker, programmer, researcher</li>
-                <li>María Palacios Cruz - Director Open City Documentary Festival, London [not yet confirmed].</li>
-                <li>Joost Daamen - Chief programmer IDFA, Amsterdam</li>
-                <li>Linda van Deursen - Designer, lecturer KABK The Hague, Yale School of Art, New Haven, Connecticut</li>
-                <li>Julia Morandeira Arrizabalaga - Director of Studies, Reina Sofia Museum, Madrid</li>
-                <li>Julian Ross - Head of Programming and Distribution, Eye Filmmuseum Amsterdam</li>
-                <li>Ali Shobeiri - Associate Professor of Photography and Visual Culture, Leiden University Center for the Arts in Society</li>
-                <li>Ingrid van Tol - Advisor and Coach Documentary Film</li>
-                <li>Barbara Visser - Visual artist, former Director IDFA and President Academy of Arts KNAW</li>
-            </ul>
-        </div>
-        <div id="sponsors">
-            <h3>Partner and Sponsor</h3>
-            <ul>
-                <li>Georgie Brinkman - Coordinator lectureship FILM, University of the Arts The Hague</li>
-                <li>Emma de Looij - Coordinator and Communications Officer ACPA</li>
-                <li>Annemarie Montulet - Advisor Fundraising</li>
-                <li>Rosalien van der Poel - ACPA Institute Manager</li>
-                <li>Gabriel Paiuk - Project leader Outreach education and research ACPA</li>
-                <li>Erik Viskil - Professor of Research and Discourse in Artistic Practice Leiden University/ACPA</li>
-                <li>Bo Wang - Filmmaker, researcher and University Lecturer, Leiden University Center for the Arts in Society</li>
-                <li>Thijs Witty - University Lecturer in Film and Literature Studies, Leiden University Center for the Arts in Society</li>
-            </ul>
-        </div>
+        <h2>
+            RICHNESS
+        </h2>
+        <p>
+            A decade ago, the British newspaper The Guardian observed: “For years the essay film has been a neglected form, but now its unorthodox approach to constructing reality is winning over a younger, tech-savvy crowd.” Since then, thanks in part to the rapid growth of digital tools and platforms, that development has accelerated—making leff more timely than ever.
+        </p>
+        <p>
+            This first edition of leff presents a rich selection of recent and established productions. It offers a platform for emerging filmmakers and actively involves audiences through lectures, discussions, and encounters with filmmakers and critics. Like essay films themselves, leff is personal, reflective, and hybrid. The festival explores reality just as the filmmakers do.
+        </p>
+
     </div>
 </div>
 
+<div class="footer-negative-space"></div>
+
+    </section>
 
     <footer class="grid-base">
         <p>This website was designed by Michela Meliddo and Ellen Owen and developed by <a href="https://wshbd.com"

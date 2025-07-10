@@ -32,7 +32,28 @@
 
     
 <style>
+#general-info {
+        color: var(--text-main);
+        grid-column: 1 / 5;
+        grid-row: 2 / 3;
+        font-size: 1.875rem;
+        /* grid-row: 1 / 4; */
+    }
 
+    #general-info *:not(h2) {
+        margin-top: var(--space-xl);
+    }
+
+    #general-info h2 {
+        margin-top: var(--space-5xl);
+        grid-column: 1 / 2;
+        font-size: inherit;
+        font-weight: normal;
+        color: var(--text-main);
+        /* margin: var(--space-2xl) 60px; */
+        align-self: center;
+        text-transform: uppercase;
+}
 </style>
 
 </head>
@@ -40,7 +61,8 @@
     <nav>
         <a href="/leff/nl/"><img src="/leff/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
-        <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
+        <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button"
+            style="display: none;">
             Tickets 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -65,7 +87,7 @@
 
         <div id="menu-overlay" class="menu-overlay">
             <div class="menu-grid grid-base">
-                <!-- <h2 class="menu-title">Menu</h2> -->
+                <!-- <h2 class="menu-title"></h2> -->
                 <div class="menu-nav">
                     <ul>
                         
@@ -85,35 +107,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
                             </svg>
-                            <a href="/leff/nl/about/">Over</a>
-                            
-                        </li>
-                        
-                        <li>
-                            
-                            <!-- programme dropdown -->
-                            <div class="menu-dropdown-item">
-                                <button class="menu-dropdown-toggle" data-dropdown="programme">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow dropdown-arrow">
-                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <span>Programma 2025</span>
-                                </button>
-                                <ul class="menu-dropdown-content" id="programme-dropdown">
-                                    <li>
-                                        <a href="/leff/nl/programme/">A—Z film</a>
-                                    </li>
-                                    <li>
-                                        <a href="/leff/nl/programme/">A—Z regisseurs</a>
-                                    </li>
-                                    <li>
-                                        <a href="/leff/nl/programme/">Tijd</a>
-                                    </li>
-                                    <li>
-                                        <a href="/leff/nl/programme/">Locatie</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <a href="/leff/nl/programme/">Programma 2025</a>
                             
                         </li>
                         
@@ -129,20 +123,50 @@
                         
                         <li>
                             
-                            <!-- regular menu item -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
-                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <a href="/leff/nl/">Routebeschrijving</a>
+                            <!-- dropdown menu item -->
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="about">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    <span>Over</span>
+                                </button>
+                                <ul class="menu-dropdown-content" id="about-dropdown">
+                                    
+                                    <!-- generic dropdown items from config -->
+                                    
+                                    <li>
+                                        <a href="/leff/nl/about/">
+                                            
+                                                Festival
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/nl/organisation/">
+                                            
+                                                Organisatie
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </div>
                             
                         </li>
                         
                         <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon north-east-arrow">
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
                             </svg>
-                            <a href="https://bioscopenleiden.nl/"target="_blank">Tickets</a>
+                            <a href="/leff/nl/tickets/">Tickets</a>
+                            
                         </li>
+                        
                     </ul>
                 </div>
                 <div class="menu-close">
@@ -159,11 +183,21 @@
 
     
     
+    <section class="page-contents">
+        
 <div class="grid-base">
-    <h1 class="page-title">Tickets</h1>
-    yeah this is gonna be info about tickets
+    <h1 class="page-title">
+        Tickets
+    </h1>
+
+    <div id="general-info">
+        <p class="readeable-text">De online kaartverkoop van leff begint op vrijdag 22 augustus. Naast tickets voor afzonderlijke films of filmblokken zullen er tickets tegen gereduceerd tarief beschikbaar zijn, onder meer voor studenten. Een voordelig passe-partout geeft toegang tot het gehele programma, inclusief opening.</p>
+    </div>
 </div>
 
+<div class="footer-negative-space"></div>
+
+    </section>
 
     <footer class="grid-base">
         <p>This website was designed by Michela Meliddo and Ellen Owen and developed by <a href="https://wshbd.com"
