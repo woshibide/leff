@@ -34,7 +34,7 @@
 <style>
     /*
     ORGANISATION PAGE
-*/
+    */
 
     h2 {
         font-size: 1.875rem;
@@ -80,6 +80,18 @@
 
     #credits > div:last-child {
         grid-column: 4 / 7;
+    }
+
+    /* stack credits sections on mobile */
+    @media (max-width: 768px) {
+        #credits {
+            display: block;
+        }
+        #credits > div:first-child,
+        #credits > div:last-child {
+            margin-bottom: var(--space-3xl);
+            grid-column: auto;
+        }
     }
 
     #credits ul {

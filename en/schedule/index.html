@@ -35,7 +35,11 @@
     /*
         SCHEDULE PAGE
     */
-
+    @media (max-width: 768px) {
+        #schedule-placeholder, .page-title{
+            padding-inline: 0.625rem;
+        }
+    }
     #schedule-page {
         /* UN / COMMENT FOR PUBLIC */
         /* margin-top: var(--space-5xl);
@@ -628,7 +632,7 @@
     <h1 class="page-title">Schedule</h1>
     
     <!-- fallback content if no schedule data -->
-    <div class="placeholder">
+    <div class="placeholder" id="schedule-placeholder">
         <p>The full block schedule will also be announced on 22 August.</p>
     </div>
     

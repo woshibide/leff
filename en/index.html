@@ -70,7 +70,13 @@ body.index-page #nav-logo {
     width: calc(100% - 1.5rem);
     height: auto;
     z-index: 10;
-    display: block !important; /* override the hide script */
+    display: block !important;
+}
+@media (max-width: 768px) {
+    body.index-page #nav-logo {
+        width: auto;
+        height: 100%;
+    }
 }
 
 /* hide footer on index page */
@@ -93,6 +99,13 @@ body.index-page.menu-open #nav-logo {
     text-shadow: var(--shadow);
     margin: 0;
 }
+@media (max-width: 768px) {
+    #hero-h1 {
+        font-size: 3rem;
+        position: absolute;
+        bottom: var(--space-md);
+    }
+}
 
 /* when hero text is moved into nav */
 nav #hero-h1 {
@@ -103,7 +116,7 @@ nav #hero-h1 {
 
 nav.menu-active #hero-h1 {
     text-shadow: none;
-    color: var(--main-bg);ddddd
+    color: var(--main-bg);
 }
 
 #logo {
@@ -117,53 +130,8 @@ nav.menu-active #hero-h1 {
     padding-bottom: var(--space-xl);
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 0 var(--space-sm);
-        grid-column-gap: var(--space-sm);
-    }
 
-    .grid-base {
-        padding: 0 var(--space-sm);
-        grid-column-gap: var(--space-sm);
-    }
 
-    h1 {
-        grid-column: 1 / -1;
-        grid-row: 1 / 2;
-    }
-
-    /* logo takes full column width on mobile */
-    body.index-page #nav-logo {
-        grid-column: 1 / 2;
-        grid-row: 1 / 1;
-        width: 100%;
-    }
-
-    /* when menu is open on mobile, remove grid positioning */
-    body.index-page.menu-open #nav-logo {
-        grid-column: unset;
-        grid-row: unset;
-        width: auto;
-    }
-
-    #logo {
-        grid-column: 1 / -1;
-        grid-row: 3 / 4;
-        justify-self: center;
-        font-size: 6em;
-        padding-bottom: var(--space-md);
-    }
-
-    .caption {
-        grid-column: 1 / -1;
-        grid-row: 4 / 4;
-        justify-self: left;
-        text-align: left;
-        font-size: 0.778rem;
-        /* padding-bottom: 10px; */
-    }
-}
 </style>
 
 </head>
@@ -298,7 +266,7 @@ nav.menu-active #hero-h1 {
 <div id="main-page">
     <div class="grid-base">
         <h1 id="hero-h1">
-            The first festival in the Netherlands entirely dedicated to the Essay Film
+            leff is the first festival in the Netherlands dedicated entirely to the Essay Film
         </h1>
     </div>
 </div>
@@ -320,8 +288,8 @@ nav.menu-active #hero-h1 {
         const heroText = document.getElementById('hero-h1');
         const nav = document.querySelector('nav');
         
-        // move hero text into nav to align with other nav elements
-        if (heroText && nav) {
+        // only move hero text into nav if screen size is larger than 768px
+        if (window.innerWidth > 768 && heroText && nav) {
             nav.appendChild(heroText);
         }
         
