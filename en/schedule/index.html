@@ -29,7 +29,7 @@
     
     <link rel="stylesheet" href="/leff/styles.css">
     
-    
+
     
 <style>
     /*
@@ -62,14 +62,29 @@
     .schedule-table {
         width: 100%;
         border-collapse: collapse;
+        border: none;
         background: var(--silver);
         font-family: "switzer", sans-serif;
         margin-bottom: var(--space-xl);
     }
 
+    .schedule-table * tr{
+        background-color: var(--silver);
+        transition: all 0.3s var(--transition);
+    }
+
+    .schedule-table tbody{
+        border: var(--text-main) 1px solid;
+    }
+
+    .schedule-table * tr:hover{
+        background-color: var(--bg-main-hover);
+    }
+    
+
     .schedule-table th,
     .schedule-table td {
-        border: 1px solid var(--bg-main);
+        border-top: 2px solid var(--bg-main);
         padding: var(--space-sm);
         text-align: left;
         vertical-align: top;
@@ -77,7 +92,6 @@
 
     .schedule-table th {
         position: relative;
-        border: none;
         vertical-align: top;
         bottom: 0px;
         height: 2rem;
@@ -102,9 +116,10 @@
     }
 
     .schedule-venue-header {
+        border: none !important;
         background: var(--accent);
         color: var(--text-main);
-        font-weight: bold;
+        /* font-weight: bold; */
         text-transform: uppercase;
         width: 120px;
         height: 2rem;
@@ -112,19 +127,19 @@
     }
 
     .schedule-time-header {
+        border: none !important;
         background: var(--accent);
         color: var(--text-main);
-        font-weight: bold;
+        /* font-weight: bold; */
         text-align: center;
         min-width: 100px;
         white-space: nowrap;
     }
 
     .schedule-venue-cell {
-        background: var(--silver);
         color: var(--text-main);
         text-transform: lowercase;
-        width: 120px;
+        width: auto;
         min-width: 120px;
         position: sticky;
         left: 0;
@@ -132,8 +147,7 @@
     }
 
     .schedule-event-cell {
-        background: var(--silver);
-        min-height: 60px;
+        /* min-height: 60px; */
         padding: var(--space-xs);
         position: relative;
     }
@@ -149,7 +163,7 @@
         width: 100%;
         min-height: 50px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: flex-start;
         cursor: pointer;
     }
@@ -167,7 +181,8 @@
     }
 
     .event-title {
-        font-weight: bold;
+        /* font-weight: bold; */
+        white-space: nowrap;
         margin-bottom: var(--space-xs);
         line-height: 1.1;
     }
@@ -206,7 +221,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: var(--bg-main-hover);
+        background: var(--bg-main-overlay);
         z-index: 10000;
         opacity: 0;
         visibility: hidden;
@@ -223,15 +238,15 @@
         top: var(--space-5xl);
         left: 50%;
         transform: translateX(-50%);
-        width: 90%;
-        max-width: 1200px;
+        /* to be changed for mobile or other implementation preferably just reuse grid */
+        width: calc(100% - 160px); 
         background: var(--accent);
         color: var(--text-main);
         z-index: 10001;
         opacity: 0;
         transform: translateX(-50%) translateY(-2rem);
         transition: all 0.3s var(--transition);
-        padding: var(--space-2xl);
+        padding: 0 var(--space-2xl);
     }
 
     .popup-overlay.active .popup-container {
@@ -241,8 +256,9 @@
 
     .popup-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-xl);
+        grid-template-columns: repeat(6, 1fr);
+        grid-column-gap: var(--space-xl);
+        padding: var(--space-2xl) 0;
         height: 100%;
     }
 
@@ -250,40 +266,29 @@
         display: flex;
         flex-direction: column;
         gap: var(--space-md);
+        grid-column: 1 / 4;
     }
 
     .popup-right {
         display: flex;
         flex-direction: column;
         position: relative;
+        grid-column: 4 / 7;
     }
 
-    .popup-close {
+    .popup-right > *:nth-child(2), .popup-left > *:nth-child(2) {
+        margin-top: var(--space-5xl);
+    }
+
+    #popup-close {
         position: absolute;
         top: 0;
         right: 0;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        color: var(--text-main);
-        cursor: pointer;
-        padding: 0;
-        width: 2rem;
-        height: 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.2s var(--transition);
-    }
-
-    .popup-close:hover {
-        color: var(--bg-main);
-        transform: scale(1.2);
     }
 
     .popup-title {
         font-size: 2rem;
-        font-weight: bold;
+        /* font-weight: bold; */
         margin: 0;
         text-transform: lowercase;
     }
@@ -323,36 +328,40 @@
         opacity: 0.8;
     }
 
-    .popup-tickets {
-        background: var(--bg-main);
-        color: var(--accent);
+    #popup-tickets {
+        background: var(--accent);
+        color: var(--text-main);
         border: none;
-        padding: var(--space-sm) var(--space-md);
-        text-transform: lowercase;
-        font-family: inherit;
-        cursor: pointer;
-        transition: all 0.2s var(--transition);
+        outline: 2px solid var(--bg-main);
         text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: var(--space-xs);
+        transition: all 0.2s var(--transition);
     }
 
-    .popup-tickets:hover {
+    #popup-tickets:hover {
+        color: var(--accent);
+        text-decoration: underline 2px solid;
         background: var(--text-main);
-        transform: scale(1.05);
     }
 
     @media (max-width: 768px) {
         .popup-container {
             top: var(--space-xl);
             width: 95%;
-            padding: var(--space-md);
+            padding: 0 var(--space-sm);
         }
 
         .popup-grid {
             grid-template-columns: 1fr;
+            padding: var(--space-md) 0;
             gap: var(--space-md);
+        }
+
+        .popup-left {
+            grid-column: 1;
+        }
+
+        .popup-right {
+            grid-column: 1;
         }
 
         .popup-title {
@@ -454,9 +463,14 @@
 </head>
 <body>
     <nav>
-        <a href="/leff/en/"><img src="/leff/assets/leff-logo.svg"
+        <a href="/leff/en/"><img src="/leff/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
-        <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
+        <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
+            Tickets 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </a>
         <div id="circle-container">
             <div id="languages">
                 
@@ -476,24 +490,93 @@
 
         <div id="menu-overlay" class="menu-overlay">
             <div class="menu-grid grid-base">
-                <h2 class="menu-title">Menu</h2>
+                <!-- <h2 class="menu-title">Menu</h2> -->
                 <div class="menu-nav">
                     <ul>
                         
-                        <li><img src="/leff/assets/arrow-right.svg"><a href="/leff/en/">Home</a></li>
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/leff/en/">Home</a>
+                            
+                        </li>
                         
-                        <li><img src="/leff/assets/arrow-right.svg"><a href="/leff/en/about/">About</a></li>
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/leff/en/about/">About</a>
+                            
+                        </li>
                         
-                        <li><img src="/leff/assets/arrow-right.svg"><a href="/leff/en/programme/">Programme 2025</a></li>
+                        <li>
+                            
+                            <!-- programme dropdown -->
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="programme">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    <span>Programme 2025</span>
+                                </button>
+                                <ul class="menu-dropdown-content" id="programme-dropdown">
+                                    <li>
+                                        <a href="/leff/en/programme/">A—Z film</a>
+                                    </li>
+                                    <li>
+                                        <a href="/leff/en/programme/">A—Z directors</a>
+                                    </li>
+                                    <li>
+                                        <a href="/leff/en/programme/">Time</a>
+                                    </li>
+                                    <li>
+                                        <a href="/leff/en/programme/">Location</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </li>
                         
-                        <li><img src="/leff/assets/arrow-right.svg"><a href="/leff/en/schedule/">Schedule</a></li>
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/leff/en/schedule/">Schedule</a>
+                            
+                        </li>
                         
-                        <li><img src="/leff/assets/arrow-external.svg"><a href="https://bioscopenleiden.nl/"
-                                target="_blank">Tickets</a></li>
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/leff/en/">How to get there</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon north-east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="https://bioscopenleiden.nl/"target="_blank">Tickets</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="menu-close">
-                    <a href="#" class="close-menu">Close</a>
+                    <button class="close-icon" id="menu-close" aria-label="close">
+                        <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                            <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
+                            <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -511,13 +594,22 @@
                 <p class="popup-synopsis" id="popup-synopsis"></p>
             </div>
             <div class="popup-right">
-                <button class="popup-close" id="popup-close">×</button>
-                <img class="popup-image" id="popup-image" src="" alt="" style="display: none;">
+                <button class="close-icon" id="popup-close" aria-label="close">
+                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+                <img class="popup-image" id="popup-image" src="/leff/assets/images/sans-soleil.webp" alt="">
                 <div class="popup-details">
-                    <div class="popup-info" id="popup-info"></div>
-                    <a class="popup-tickets" id="popup-tickets" href="#" style="display: none;">
-                        tickets
-                        <img src="/leff/assets/tickets-arrow.svg" alt="→" width="12">
+                    <div class="popup-info" id="popup-info">
+                        
+                    </div>
+                    <a href="https://bioscopenleiden.nl/" target="_blank" id="popup-tickets" class="tickets-button">
+                        Tickets 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                            <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -526,7 +618,7 @@
 </div>
 
 <div id="schedule-page" class="grid-base">
-    <h1> Schedule </h1>
+    <h1 class="page-title">Schedule</h1>
     <div id="schedule-container">
         
         
@@ -534,6 +626,10 @@
 
 
             <!-- collect all times and venues for this date -->
+            
+            
+            
+            
             
             
             
@@ -674,7 +770,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            02:00
+                            <time datetime="02:00">02:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -684,7 +780,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            04:00
+                            <time datetime="04:00">04:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -694,7 +790,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            06:00
+                            <time datetime="06:00">06:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -704,7 +800,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            08:00
+                            <time datetime="08:00">08:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -714,7 +810,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            10:00
+                            <time datetime="10:00">10:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -724,7 +820,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            10:30
+                            <time datetime="10:30">10:30</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -734,7 +830,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            12:00
+                            <time datetime="12:00">12:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -744,7 +840,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            12:30
+                            <time datetime="12:30">12:30</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -754,7 +850,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            14:00
+                            <time datetime="14:00">14:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -764,7 +860,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            14:30
+                            <time datetime="14:30">14:30</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -774,7 +870,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            16:00
+                            <time datetime="16:00">16:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -784,7 +880,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            18:00
+                            <time datetime="18:00">18:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -794,7 +890,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            20:00
+                            <time datetime="20:00">20:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -804,7 +900,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            22:00
+                            <time datetime="22:00">22:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -814,7 +910,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            24:00
+                            <time datetime="24:00">24:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -840,13 +936,13 @@
                             <div class="schedule-event" 
                                  data-title="Letters"
                                  data-director="Chantal Akerman"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="letters from a wandering soul recount the echo of footsteps in ancient temples, the laughter of strangers in cape verde, and the shimmering lights of paris at dusk. the journey unfolds through shifting landscapes, where every city whispers secrets and every street corner holds a forgotten story."
+                                 data-block="01:32:00"
                                  data-location="zaal 1"
                                  data-time="04:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:32:00</div>
                                 <div class="event-title">Letters</div>
                                 
                                 <div class="event-director">Chantal Akerman</div>
@@ -869,13 +965,13 @@
                             <div class="schedule-event" 
                                  data-title="Letters"
                                  data-director="Chantal Akerman"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="a mysterious traveler sends poetic messages from distant cities, describing neon-lit nights in tokyo, the quiet of icelandic mornings, and the bustling markets of cape verde. each letter reveals new wonders, from the foggy streets of san francisco to the hidden shrines of paris, weaving a tapestry of memories and dreams."
+                                 data-block="01:32:00"
                                  data-location="zaal 1"
                                  data-time="10:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:32:00</div>
                                 <div class="event-title">Letters</div>
                                 
                                 <div class="event-director">Chantal Akerman</div>
@@ -890,13 +986,13 @@
                             <div class="schedule-event" 
                                  data-title="Letters"
                                  data-director="Chantal Akerman"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="a mysterious traveler sends poetic messages from distant cities, describing neon-lit nights in tokyo, the quiet of icelandic mornings, and the bustling markets of cape verde. each letter reveals new wonders, from the foggy streets of san francisco to the hidden shrines of paris, weaving a tapestry of memories and dreams."
+                                 data-block="01:32:00"
                                  data-location="zaal 1"
                                  data-time="10:30"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:32:00</div>
                                 <div class="event-title">Letters</div>
                                 
                                 <div class="event-director">Chantal Akerman</div>
@@ -926,17 +1022,17 @@
                             
                             <div class="schedule-event" 
                                  data-title="Letters"
-                                 data-director="Chantal Akerman"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-director="Faina Ranevskaya"
+                                 data-synopsis="a series of letters brings to life the pulse of distant cities, the hush of ancient forests, and the shimmering reflections on rainy streets. the traveler’s words invite us to wander with them, discovering hidden stories and quiet moments that linger long after the journey ends."
+                                 data-block="01:2:00"
                                  data-location="zaal 1"
                                  data-time="16:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:2:00</div>
                                 <div class="event-title">Letters</div>
                                 
-                                <div class="event-director">Chantal Akerman</div>
+                                <div class="event-director">Faina Ranevskaya</div>
                                 
                             </div>
                             
@@ -956,18 +1052,100 @@
                             <div class="schedule-event" 
                                  data-title="Letters"
                                  data-director="Chantal Akerman"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="a collection of letters brings together the sights and sounds of distant cities, the hush of ancient forests, and the glow of city lights. the traveler’s words invite us to wander with them, discovering the hidden stories that shape our world."
+                                 data-block="01:32:00"
                                  data-location="zaal 1"
                                  data-time="22:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:32:00</div>
                                 <div class="event-title">Letters</div>
                                 
                                 <div class="event-director">Chantal Akerman</div>
                                 
                             </div>
+                            
+                        </td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                        </td>
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td class="schedule-venue-cell">zaal 2</td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                        </td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                        </td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                        </td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                        </td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                            
+                            <div class="schedule-event" 
+                                 data-title="Soleil au Desert"
+                                 data-director="Nikita Mihalkov"
+                                 data-synopsis="letters from a wandering soul recount the echo of footsteps in ancient temples, the laughter of strangers in cape verde, and the shimmering lights of paris at dusk. the journey unfolds through shifting landscapes, where every city whispers secrets and every street corner holds a forgotten story."
+                                 data-block="02:32:00"
+                                 data-location="zaal 2"
+                                 data-time="10:00"
+                                 data-image=""
+                                 data-tickets="">
+                                <div class="event-block">02:32:00</div>
+                                <div class="event-title">Soleil au Desert</div>
+                                
+                                <div class="event-director">Nikita Mihalkov</div>
+                                
+                            </div>
+                            
+                        </td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                        </td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                        </td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                        </td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                        </td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                        </td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                        </td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                        </td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                        </td>
+                        
+                        <td class="schedule-event-cell">
                             
                         </td>
                         
@@ -994,13 +1172,13 @@
                             <div class="schedule-event" 
                                  data-title="Sans Soleil"
                                  data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="a traveler’s journal reveals the music of city streets, the silence of distant mountains, and the warmth of shared stories. from the lively avenues of guinea-bissau to the tranquil parks of iceland, each passage is a window into a world both familiar and strange, filled with longing and hope."
+                                 data-block="03:02:00"
                                  data-location="zaal 3"
                                  data-time="06:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">03:02:00</div>
                                 <div class="event-title">Sans Soleil</div>
                                 
                                 <div class="event-director">Chris Marker</div>
@@ -1027,13 +1205,13 @@
                             <div class="schedule-event" 
                                  data-title="Sans Soleil"
                                  data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="a collection of vivid impressions: the hum of city life in tokyo, the serene beauty of iceland, and the vibrant colors of guinea-bissau. through a series of letters, the traveler paints scenes of bustling markets, silent temples, and the ever-changing faces of the world, inviting us to see through their eyes."
+                                 data-block="03:12:00"
                                  data-location="zaal 3"
                                  data-time="12:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">03:12:00</div>
                                 <div class="event-title">Sans Soleil</div>
                                 
                                 <div class="event-director">Chris Marker</div>
@@ -1048,13 +1226,13 @@
                             <div class="schedule-event" 
                                  data-title="Sans Soleil"
                                  data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="in a world stitched together by letters, a traveler describes the glow of lanterns in tokyo, the icy winds of iceland, and the laughter echoing through cape verde’s alleys. each message is a fragment of a larger mosaic, revealing the beauty and solitude found in every corner of the globe."
+                                 data-block="01:32:00"
                                  data-location="zaal 3"
                                  data-time="12:30"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:32:00</div>
                                 <div class="event-title">Sans Soleil</div>
                                 
                                 <div class="event-director">Chris Marker</div>
@@ -1080,17 +1258,17 @@
                             
                             <div class="schedule-event" 
                                  data-title="Sans Soleil"
-                                 data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-director="Trinity Kaitron"
+                                 data-synopsis="through a patchwork of letters, the traveler shares the rhythm of city nights, the silence of snowy fields, and the vibrant life of distant markets. their words create a bridge between worlds, inviting us to experience the wonder and melancholy of endless exploration."
+                                 data-block="01:45:00"
                                  data-location="zaal 3"
                                  data-time="18:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:45:00</div>
                                 <div class="event-title">Sans Soleil</div>
                                 
-                                <div class="event-director">Chris Marker</div>
+                                <div class="event-director">Trinity Kaitron</div>
                                 
                             </div>
                             
@@ -1110,13 +1288,13 @@
                             <div class="schedule-event" 
                                  data-title="Sans Soleil"
                                  data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="a traveler’s letters describe the pulse of city life, the silence of snowy landscapes, and the ever-changing faces of the world. each passage is a meditation on memory, place, and the endless search for connection across continents."
+                                 data-block="00:20:00"
                                  data-location="zaal 3"
                                  data-time="24:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">00:20:00</div>
                                 <div class="event-title">Sans Soleil</div>
                                 
                                 <div class="event-director">Chris Marker</div>
@@ -1136,13 +1314,13 @@
                             <div class="schedule-event" 
                                  data-title="Sans Soleil"
                                  data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="the traveler’s letters capture fleeting glimpses of life: a sunrise over guinea-bissau, the hush of a parisian café, and the endless movement of people in tokyo. each passage is a meditation on time, place, and the invisible threads that connect us all."
+                                 data-block="01:32:00"
                                  data-location="zaal 5"
                                  data-time="02:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:32:00</div>
                                 <div class="event-title">Sans Soleil</div>
                                 
                                 <div class="event-director">Chris Marker</div>
@@ -1165,13 +1343,13 @@
                             <div class="schedule-event" 
                                  data-title="Sans Soleil"
                                  data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="through a patchwork of letters, the traveler shares the rhythm of city nights, the silence of snowy fields, and the vibrant life of distant markets. their words create a bridge between worlds, inviting us to experience the wonder and melancholy of endless exploration."
+                                 data-block="02:22:00"
                                  data-location="zaal 5"
                                  data-time="08:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">02:22:00</div>
                                 <div class="event-title">Sans Soleil</div>
                                 
                                 <div class="event-director">Chris Marker</div>
@@ -1200,18 +1378,18 @@
                             
                             
                             <div class="schedule-event" 
-                                 data-title="Sans Soleil"
-                                 data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-title=" Elegy of Life: Rostropovich &amp; Vishnevskaya"
+                                 data-director="Alexander Konstantinovich Kokurov"
+                                 data-synopsis="a traveler’s journal reveals the music of city streets, the silence of distant mountains, and the warmth of shared stories. from the lively avenues of guinea-bissau to the tranquil parks of iceland, each passage is a window into a world both familiar and strange, filled with longing and hope."
+                                 data-block="00:32:00"
                                  data-location="zaal 5"
                                  data-time="14:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
-                                <div class="event-title">Sans Soleil</div>
+                                <div class="event-block">00:32:00</div>
+                                <div class="event-title"> Elegy of Life: Rostropovich &amp; Vishnevskaya</div>
                                 
-                                <div class="event-director">Chris Marker</div>
+                                <div class="event-director">Alexander Konstantinovich Kokurov</div>
                                 
                             </div>
                             
@@ -1223,13 +1401,13 @@
                             <div class="schedule-event" 
                                  data-title="Sans Soleil"
                                  data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="the traveler’s letters capture fleeting glimpses of life: a sunrise over guinea-bissau, the hush of a parisian café, and the endless movement of people in tokyo. each passage is a meditation on time, place, and the invisible threads that connect us all."
+                                 data-block="01:28:00"
                                  data-location="zaal 5"
                                  data-time="14:30"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:28:00</div>
                                 <div class="event-title">Sans Soleil</div>
                                 
                                 <div class="event-director">Chris Marker</div>
@@ -1251,17 +1429,17 @@
                             
                             <div class="schedule-event" 
                                  data-title="Sans Soleil"
-                                 data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-director="Birobijan Akladzhukov"
+                                 data-synopsis="a traveler’s words drift across continents, describing the glow of lanterns in tokyo, the laughter in cape verde, and the stillness of icelandic nights. each letter is a window into a world of fleeting encounters and lasting impressions, woven together by memory and longing."
+                                 data-block="05:32:00"
                                  data-location="zaal 5"
                                  data-time="20:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">05:32:00</div>
                                 <div class="event-title">Sans Soleil</div>
                                 
-                                <div class="event-director">Chris Marker</div>
+                                <div class="event-director">Birobijan Akladzhukov</div>
                                 
                             </div>
                             
@@ -1405,14 +1583,6 @@
             
             
             
-            
-            
-            
-            
-            
-            
-            
-            
 
             <!-- schedule table -->
             <table class="schedule-table">
@@ -1423,7 +1593,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            01:00
+                            <time datetime="01:00">01:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -1433,7 +1603,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            03:00
+                            <time datetime="03:00">03:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -1443,7 +1613,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            05:00
+                            <time datetime="05:00">05:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -1453,7 +1623,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            07:00
+                            <time datetime="07:00">07:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -1463,7 +1633,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            09:00
+                            <time datetime="09:00">09:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -1473,7 +1643,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            11:00
+                            <time datetime="11:30">11:30</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -1483,7 +1653,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            11:30
+                            <time datetime="13:00">13:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -1493,7 +1663,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            13:00
+                            <time datetime="13:30">13:30</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -1503,7 +1673,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            13:30
+                            <time datetime="15:00">15:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -1513,7 +1683,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            15:00
+                            <time datetime="15:30">15:30</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -1523,7 +1693,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            15:30
+                            <time datetime="17:00">17:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -1533,7 +1703,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            17:00
+                            <time datetime="19:00">19:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -1543,7 +1713,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            19:00
+                            <time datetime="21:00">21:00</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -1553,17 +1723,7 @@
                         </th>
                         
                         <th class="schedule-time-header">
-                            21:00
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            23:00
+                            <time datetime="22:30">22:30</time>
                             <div class="time-markers">
                                 <div class="time-marker-stick"></div>
                                 <div class="time-marker-stick"></div>
@@ -1587,18 +1747,18 @@
                             
                             
                             <div class="schedule-event" 
-                                 data-title="Sans Soleil"
-                                 data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-title="a collection of vivid impressions: the hum of city life in tokyo, the serene beauty of iceland, and the vibrant colors of guinea-bissau. through a series of letters, the traveler paints scenes of bustling markets, silent temples, and the ever-changing faces of the world, inviting us to see through their eyes."
+                                 data-director="Sans Soleil"
+                                 data-synopsis="https://bioscopenleiden.nl"
+                                 data-block="00:32:00"
                                  data-location="zaal 2"
                                  data-time="03:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
-                                <div class="event-title">Sans Soleil</div>
+                                <div class="event-block">00:32:00</div>
+                                <div class="event-title">a collection of vivid impressions: the hum of city life in tokyo, the serene beauty of iceland, and the vibrant colors of guinea-bissau. through a series of letters, the traveler paints scenes of bustling markets, silent temples, and the ever-changing faces of the world, inviting us to see through their eyes.</div>
                                 
-                                <div class="event-director">Chris Marker</div>
+                                <div class="event-director">Sans Soleil</div>
                                 
                             </div>
                             
@@ -1610,13 +1770,13 @@
                             <div class="schedule-event" 
                                  data-title="Soleil au Desert"
                                  data-director="Nikita Mihalkov"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="in a world stitched together by letters, a traveler describes the glow of lanterns in tokyo, the icy winds of iceland, and the laughter echoing through cape verde’s alleys. each message is a fragment of a larger mosaic, revealing the beauty and solitude found in every corner of the globe."
+                                 data-block="01:32:00"
                                  data-location="zaal 2"
                                  data-time="05:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:32:00</div>
                                 <div class="event-title">Soleil au Desert</div>
                                 
                                 <div class="event-director">Nikita Mihalkov</div>
@@ -1635,13 +1795,13 @@
                             <div class="schedule-event" 
                                  data-title="Sans Soleil"
                                  data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="a traveler’s words drift across continents, describing the glow of lanterns in tokyo, the laughter in cape verde, and the stillness of icelandic nights. each letter is a window into a world of fleeting encounters and lasting impressions, woven together by memory and longing."
+                                 data-block="01:32:00"
                                  data-location="zaal 2"
                                  data-time="09:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:32:00</div>
                                 <div class="event-title">Sans Soleil</div>
                                 
                                 <div class="event-director">Chris Marker</div>
@@ -1656,34 +1816,13 @@
                             <div class="schedule-event" 
                                  data-title="Soleil au Desert"
                                  data-director="Nikita Mihalkov"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
-                                 data-location="zaal 2"
-                                 data-time="11:00"
-                                 data-image=""
-                                 data-tickets="">
-                                <div class="event-block">Classic</div>
-                                <div class="event-title">Soleil au Desert</div>
-                                
-                                <div class="event-director">Nikita Mihalkov</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" 
-                                 data-title="Soleil au Desert"
-                                 data-director="Nikita Mihalkov"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="letters from a wandering soul capture the shifting moods of cities, the quiet of dawn in iceland, and the vibrant life of cape verde. each message is a fragment of a larger story, revealing the beauty and complexity of the world through the eyes of a traveler."
+                                 data-block="01:32:00"
                                  data-location="zaal 2"
                                  data-time="11:30"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:32:00</div>
                                 <div class="event-title">Soleil au Desert</div>
                                 
                                 <div class="event-director">Nikita Mihalkov</div>
@@ -1706,13 +1845,13 @@
                             <div class="schedule-event" 
                                  data-title="Sans Soleil"
                                  data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="in a world stitched together by letters, a traveler describes the glow of lanterns in tokyo, the icy winds of iceland, and the laughter echoing through cape verde’s alleys. each message is a fragment of a larger mosaic, revealing the beauty and solitude found in every corner of the globe."
+                                 data-block="00:22:00"
                                  data-location="zaal 2"
                                  data-time="15:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">00:22:00</div>
                                 <div class="event-title">Sans Soleil</div>
                                 
                                 <div class="event-director">Chris Marker</div>
@@ -1727,13 +1866,13 @@
                             <div class="schedule-event" 
                                  data-title="Sans Soleil"
                                  data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="a collection of vivid impressions: the hum of city life in tokyo, the serene beauty of iceland, and the vibrant colors of guinea-bissau. through a series of letters, the traveler paints scenes of bustling markets, silent temples, and the ever-changing faces of the world, inviting us to see through their eyes."
+                                 data-block="01:32:00"
                                  data-location="zaal 2"
                                  data-time="15:30"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:32:00</div>
                                 <div class="event-title">Sans Soleil</div>
                                 
                                 <div class="event-director">Chris Marker</div>
@@ -1748,13 +1887,13 @@
                             <div class="schedule-event" 
                                  data-title="Soleil au Desert"
                                  data-director="Nikita Mihalkov"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="the traveler’s letters capture fleeting glimpses of life: a sunrise over guinea-bissau, the hush of a parisian café, and the endless movement of people in tokyo. each passage is a meditation on time, place, and the invisible threads that connect us all."
+                                 data-block="00:42:00"
                                  data-location="zaal 2"
                                  data-time="17:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">00:42:00</div>
                                 <div class="event-title">Soleil au Desert</div>
                                 
                                 <div class="event-director">Nikita Mihalkov</div>
@@ -1773,13 +1912,13 @@
                             <div class="schedule-event" 
                                  data-title="Sans Soleil"
                                  data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="the traveler’s letters reveal a world in motion: neon reflections in tokyo, the calm of iceland, and the vibrant chaos of cape verde. each passage is a meditation on the beauty of the everyday, the strangeness of the familiar, and the endless search for meaning."
+                                 data-block="00:52:00"
                                  data-location="zaal 2"
                                  data-time="21:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">00:52:00</div>
                                 <div class="event-title">Sans Soleil</div>
                                 
                                 <div class="event-director">Chris Marker</div>
@@ -1794,13 +1933,13 @@
                             <div class="schedule-event" 
                                  data-title="Soleil au Desert"
                                  data-director="Nikita Mihalkov"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="letters from a wandering soul capture the shifting moods of cities, the quiet of dawn in iceland, and the vibrant life of cape verde. each message is a fragment of a larger story, revealing the beauty and complexity of the world through the eyes of a traveler."
+                                 data-block="00:15:00"
                                  data-location="zaal 2"
-                                 data-time="23:00"
+                                 data-time="22:30"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">00:15:00</div>
                                 <div class="event-title">Soleil au Desert</div>
                                 
                                 <div class="event-director">Nikita Mihalkov</div>
@@ -1819,17 +1958,17 @@
                             
                             <div class="schedule-event" 
                                  data-title="Letters from Siberia"
-                                 data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-director="Jean Luc Godard"
+                                 data-synopsis="postcards from siberia reveal the quiet beauty of winter mornings, the distant hum of city life, and the gentle unfolding of memories. the traveler’s reflections move between continents, capturing the essence of places both near and far, real and imagined."
+                                 data-block="01:32:00"
                                  data-location="zaal 4"
                                  data-time="01:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:32:00</div>
                                 <div class="event-title">Letters from Siberia</div>
                                 
-                                <div class="event-director">Chris Marker</div>
+                                <div class="event-director">Jean Luc Godard</div>
                                 
                             </div>
                             
@@ -1848,23 +1987,19 @@
                             
                             <div class="schedule-event" 
                                  data-title="Letters from Siberia"
-                                 data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-director="Mikhail Galustya"
+                                 data-synopsis="a series of letters brings to life the pulse of distant cities, the hush of ancient forests, and the shimmering reflections on rainy streets. the traveler’s words invite us to wander with them, discovering hidden stories and quiet moments that linger long after the journey ends."
+                                 data-block="01:32:00"
                                  data-location="zaal 4"
                                  data-time="07:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:32:00</div>
                                 <div class="event-title">Letters from Siberia</div>
                                 
-                                <div class="event-director">Chris Marker</div>
+                                <div class="event-director">Mikhail Galustya</div>
                                 
                             </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
                             
                         </td>
                         
@@ -1881,17 +2016,17 @@
                             
                             <div class="schedule-event" 
                                  data-title="Letters from Siberia"
-                                 data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-director="Andryusha Tarkovsky"
+                                 data-synopsis="postcards from the edge of the world: snow-covered roads in siberia, the golden glow of parisian evenings, and the distant call of seagulls in san francisco. the traveler’s words drift between reality and memory, capturing fleeting moments and the quiet wonder of discovery."
+                                 data-block="01:52:00"
                                  data-location="zaal 4"
                                  data-time="13:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:52:00</div>
                                 <div class="event-title">Letters from Siberia</div>
                                 
-                                <div class="event-director">Chris Marker</div>
+                                <div class="event-director">Andryusha Tarkovsky</div>
                                 
                             </div>
                             
@@ -1901,18 +2036,18 @@
                             
                             
                             <div class="schedule-event" 
-                                 data-title="Letters from Siberia"
-                                 data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-title="Orders from Heaven"
+                                 data-director="Vladimir Zhirinovsky"
+                                 data-synopsis="a traveler’s journal reveals the music of city streets, the silence of distant mountains, and the warmth of shared stories. from the lively avenues of guinea-bissau to the tranquil parks of iceland, each passage is a window into a world both familiar and strange, filled with longing and hope."
+                                 data-block="01:32:00"
                                  data-location="zaal 4"
                                  data-time="13:30"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
-                                <div class="event-title">Letters from Siberia</div>
+                                <div class="event-block">01:32:00</div>
+                                <div class="event-title">Orders from Heaven</div>
                                 
-                                <div class="event-director">Chris Marker</div>
+                                <div class="event-director">Vladimir Zhirinovsky</div>
                                 
                             </div>
                             
@@ -1936,13 +2071,13 @@
                             <div class="schedule-event" 
                                  data-title="Letters from Siberia"
                                  data-director="Chris Marker"
-                                 data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations."
-                                 data-block="Classic"
+                                 data-synopsis="letters from siberia reveal the quiet beauty of winter mornings, the distant hum of city life, and the gentle unfolding of memories. the traveler’s reflections move between continents, capturing the essence of places both near and far, real and imagined."
+                                 data-block="01:02:00"
                                  data-location="zaal 4"
                                  data-time="19:00"
                                  data-image=""
                                  data-tickets="">
-                                <div class="event-block">Classic</div>
+                                <div class="event-block">01:02:00</div>
                                 <div class="event-title">Letters from Siberia</div>
                                 
                                 <div class="event-director">Chris Marker</div>
@@ -1985,7 +2120,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const popupSynopsis = document.getElementById('popup-synopsis');
     const popupImage = document.getElementById('popup-image');
     const popupInfo = document.getElementById('popup-info');
-    const popupTickets = document.getElementById('popup-tickets');
+    // const popupTickets = document.getElementById('popup-tickets');
     const popupClose = document.getElementById('popup-close');
 
     // get all schedule events
@@ -2014,28 +2149,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 popupImage.src = image;
                 popupImage.style.display = 'block';
             } else {
-                popupImage.style.display = 'none';
+                // to be changed later
+                popupImage.style.display = 'block';
             }
 
             // populate info section
             popupInfo.textContent = `${location} | ${time} | ${block}`;
 
-            // handle tickets button
-            if (ticketsUrl) {
-                popupTickets.href = ticketsUrl;
-                popupTickets.style.display = 'inline-flex';
-            } else {
-                popupTickets.style.display = 'none';
-            }
+            // // handle tickets button
+            // if (ticketsUrl) {
+            //     popupTickets.href = ticketsUrl;
+            //     popupTickets.style.display = 'inline-flex';
+            // } else {
+            //     popupTickets.style.display = 'none';
+            // }
 
             // show popup
             popupOverlay.classList.add('active');
-            
-            // make cursor excited
-            const cursor = document.getElementById('custom-cursor');
-            if (cursor) {
-                cursor.classList.add('excited');
-            }
         });
     });
 

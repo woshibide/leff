@@ -29,14 +29,144 @@
     
     <link rel="stylesheet" href="/leff/styles.css">
     
+
     
-    
+<style>
+    /*
+        MAIN PAGE
+*/
+
+#main-page {
+    background-image: url('/leff/assets/images/bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    padding-top: var(--space-2xl);
+}
+
+#main-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    background: linear-gradient(to bottom, #00000080 0%, transparent 100%);
+}
+
+/* position nav logo in first grid column on index page */
+body.index-page #nav-logo {
+    position: static;
+    grid-column: 1 / 2;
+    grid-row: 1 / 1;
+    width: calc(100% - 1.5rem);
+    height: auto;
+    z-index: 10;
+    display: block !important; /* override the hide script */
+}
+
+/* when menu is open on index page, remove grid positioning */
+body.index-page.menu-open #nav-logo {
+    grid-column: unset;
+    grid-row: unset;
+    width: auto;
+}
+
+#hero-h1 {
+    z-index: 10;
+    font-size: 1.125rem;
+    font-weight: normal;
+    color: var(--accent);
+    text-shadow: var(--shadow);
+    margin: 0;
+}
+
+/* when hero text is moved into nav */
+nav #hero-h1 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 1;
+    align-self: end;
+}
+
+nav.menu-active #hero-h1 {
+    display: none;
+}
+
+#logo {
+    grid-column: 5 / 7;
+    grid-row: 1 / 1;
+    justify-self: end;
+    align-self: end;
+    color: var(--accent);
+    z-index: 10;
+    line-height: 1;
+    padding-bottom: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-sm);
+        grid-column-gap: var(--space-sm);
+    }
+
+    .grid-base {
+        padding: 0 var(--space-sm);
+        grid-column-gap: var(--space-sm);
+    }
+
+    h1 {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+
+    /* logo takes full column width on mobile */
+    body.index-page #nav-logo {
+        grid-column: 1 / 2;
+        grid-row: 1 / 1;
+        width: 100%;
+    }
+
+    /* when menu is open on mobile, remove grid positioning */
+    body.index-page.menu-open #nav-logo {
+        grid-column: unset;
+        grid-row: unset;
+        width: auto;
+    }
+
+    #logo {
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;
+        justify-self: center;
+        font-size: 6em;
+        padding-bottom: var(--space-md);
+    }
+
+    .caption {
+        grid-column: 1 / -1;
+        grid-row: 4 / 4;
+        justify-self: left;
+        text-align: left;
+        font-size: 0.778rem;
+        /* padding-bottom: 10px; */
+    }
+}
+</style>
+
 </head>
 <body>
     <nav>
-        <a href="/leff/en/"><img src="/leff/assets/leff-logo.svg"
+        <a href="/leff/en/"><img src="/leff/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
-        <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
+        <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
+            Tickets 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </a>
         <div id="circle-container">
             <div id="languages">
                 
@@ -56,24 +186,93 @@
 
         <div id="menu-overlay" class="menu-overlay">
             <div class="menu-grid grid-base">
-                <h2 class="menu-title">Menu</h2>
+                <!-- <h2 class="menu-title">Menu</h2> -->
                 <div class="menu-nav">
                     <ul>
                         
-                        <li><img src="/leff/assets/arrow-right.svg"><a href="/leff/en/">Home</a></li>
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/leff/en/">Home</a>
+                            
+                        </li>
                         
-                        <li><img src="/leff/assets/arrow-right.svg"><a href="/leff/en/about/">About</a></li>
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/leff/en/about/">About</a>
+                            
+                        </li>
                         
-                        <li><img src="/leff/assets/arrow-right.svg"><a href="/leff/en/programme/">Programme 2025</a></li>
+                        <li>
+                            
+                            <!-- programme dropdown -->
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="programme">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    <span>Programme 2025</span>
+                                </button>
+                                <ul class="menu-dropdown-content" id="programme-dropdown">
+                                    <li>
+                                        <a href="/leff/en/programme/">A—Z film</a>
+                                    </li>
+                                    <li>
+                                        <a href="/leff/en/programme/">A—Z directors</a>
+                                    </li>
+                                    <li>
+                                        <a href="/leff/en/programme/">Time</a>
+                                    </li>
+                                    <li>
+                                        <a href="/leff/en/programme/">Location</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </li>
                         
-                        <li><img src="/leff/assets/arrow-right.svg"><a href="/leff/en/schedule/">Schedule</a></li>
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/leff/en/schedule/">Schedule</a>
+                            
+                        </li>
                         
-                        <li><img src="/leff/assets/arrow-external.svg"><a href="https://bioscopenleiden.nl/"
-                                target="_blank">Tickets</a></li>
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/leff/en/">How to get there</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon north-east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="https://bioscopenleiden.nl/"target="_blank">Tickets</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="menu-close">
-                    <a href="#" class="close-menu">Close</a>
+                    <button class="close-icon" id="menu-close" aria-label="close">
+                        <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                            <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
+                            <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -83,7 +282,6 @@
     
 <div id="main-page">
     <div class="grid-base">
-        <img src="/leff/assets/leff-logo.svg" alt="leiden essay film festival logo" id="hero-logo">
         <h1 id="hero-h1">
             The first festival in the Netherlands entirely dedicated to the Essay Film
         </h1>
@@ -98,18 +296,31 @@
 
     
 <script>
-    // hide logo by default, show only when menu is open
+    // add index page class to body for styling
     document.addEventListener('DOMContentLoaded', function() {
-        const navLogo = document.getElementById('nav-logo');
-        navLogo.style.display = 'none';
+        document.body.classList.add('index-page');
         
-        // show logo when menu opens
+        const navLogo = document.getElementById('nav-logo');
+        const heroText = document.getElementById('hero-h1');
+        const nav = document.querySelector('nav');
+        
+        // move hero text into nav to align with other nav elements
+        if (heroText && nav) {
+            nav.appendChild(heroText);
+        }
+        
+        // when menu opens, hide the scaled logo and show normal nav logo
         document.addEventListener('click', function(e) {
             if (e.target.closest('#circle-container')) {
-                setTimeout(() => navLogo.style.display = 'inline', 300);
+                // give time for menu animation to start
+                setTimeout(() => {
+                    document.body.classList.add('menu-open');
+                }, 50);
             }
-            if (e.target.closest('.close-menu') || e.target.id === 'menu-overlay') {
-                navLogo.style.display = 'none';
+            
+            // when menu closes, show scaled logo again
+            if (e.target.closest('#menu-close') || e.target.id === 'menu-overlay') {
+                document.body.classList.remove('menu-open');
             }
         });
     });

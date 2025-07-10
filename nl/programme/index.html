@@ -29,14 +29,271 @@
     
     <link rel="stylesheet" href="/leff/styles.css">
     
+
     
+<style>
+    /* 
+        PROGRAMME
+*/
+
+#programme-page {
+    margin-top: 50svh;
+}
+
+/* minimal programme search container styles */
+#programme-search-container {
+    grid-column: 2 / 4;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin: var(--space-md) 0;
+}
+
+#programme-search-container p {
+    margin: 0;
+    white-space: nowrap;
+    color: var(--text-main);
+    text-transform: lowercase;
+}
+
+#programme-search {
+    flex: 1;
+    padding: var(--space-sm);
+    border: none;
+    border-bottom: 2px solid var(--bg-main);
+    background: transparent;
+    color: var(--text-main);
+    font-family: "switzer", sans-serif;
+    border-radius: 0;
+    transition: all 0.2s var(--transition);
+}
+
+#programme-search:focus {
+    border-radius: var(--radius-medium);
+    outline: none;
+    color: var(--accent);
+    background-color: var(--bg-main);
+    border: none;
+}
+
+#programme-search::placeholder {
+    color: var(--silver);
+    font-size: 0.8rem;
+}
+
+#search-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    transition: all 0.2s var(--transition);
+    cursor: pointer;
+}
+
+#search-icon:hover {
+    transform: scale(1.4);
+}
+
+.search-blink {
+    animation: searchBlink 0.1s var(--transition);
+}
+
+@keyframes searchBlink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+
+.programme-table {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-xl) 0;
+    border: 2px solid var(--bg-main);
+    overflow-x: auto;
+    display: table;
+}
+
+.programme-table th,
+.programme-table td {
+    padding: var(--space-sm);
+    color: var(--text-main);
+    font-family: "switzer", sans-serif;
+    border-top: 2px solid var(--bg-main);
+    border-bottom: 2px solid var(--bg-main);
+    border-left: 1px solid var(--bg-main);
+    border-right: 1px solid var(--bg-main);
+    vertical-align: baseline;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.programme-table th {
+    text-transform: uppercase;
+    color: var(--text-main);
+    padding-bottom: var(--space-lg);
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s var(--transition);
+}
+
+.programme-table th:hover {
+    background-color: var(--bg-main);
+    color: var(--accent);
+}
+
+.programme-table th.sortable {
+    padding-right: var(--space-lg);
+}
+
+.sort-arrow {
+    position: absolute;
+    right: var(--space-md);
+    top: var(--space-md);
+    /* transform: translateY(-100%); */
+    width: 0.8rem;
+    height: auto;
+    opacity: 0;
+    transition: all 0.2s var(--transition);
+}
+
+.programme-table th.sort-asc .sort-arrow,
+.programme-table th.sort-desc .sort-arrow {
+    opacity: 1;
+}
+
+.programme-table th.sort-desc .sort-arrow {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.programme-table td {
+    max-height: 2rem;
+    max-width: 25vw;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    transition: all 0.3s var(--transition);
+}
+
+.programme-table tr.expanded td {
+    max-height: none;
+    white-space: normal;
+    word-wrap: break-word;
+    transition: all 0.2s var(--transition);
+}
+
+.programme-table tbody tr {
+    cursor: pointer;
+    transition: all 0.2s var(--transition);
+}
+
+.programme-table tbody tr:hover {
+    background-color: var(--bg-main-hover);
+}
+
+/* .programme-table tr.expanded .prgm-synopsis {
+    padding: var(--space-md);
+    line-height: 1.5;
+} */
+
+/* column specific styles */
+.programme-table th:nth-child(1), .programme-table td:nth-child(1) { width: 15%; }
+.programme-table th:nth-child(2), .programme-table td:nth-child(2) { width: 10%; }
+.programme-table th:nth-child(3), .programme-table td:nth-child(3) { width: 8%; }
+.programme-table th:nth-child(4), .programme-table td:nth-child(4) { width: 10%; }
+.programme-table th:nth-child(5), .programme-table td:nth-child(5) { width: 12%; }
+.programme-table th:nth-child(6), .programme-table td:nth-child(6) { width: 15%; }
+.programme-table th:nth-child(7), .programme-table td:nth-child(7) { width: 30%; }
+
+.programme-table tr.expanded .prgm-synopsis p {
+    margin-bottom: 0;   
+}
+
+.programme-table tr.expanded .prgm-synopsis p {
+    margin-bottom: var(--space-2xl);
+}
+
+.prgm-film-tickets {
+    opacity: 0;
+    display: none;
+    transition: all 0.2s var(--transition);
+    transform: translateY(0.2rem);
+}
+
+.prgm-film-tickets img{
+    margin-left: var(--space-sm);
+}
+
+/* show tickets button only when row is expanded */
+.programme-table tr.expanded .prgm-film-tickets {
+    opacity: 1;
+    display: inline;
+    transform: translateY(0);
+}
+
+.no-programme {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: var(--space-4xl) 0;
+    font-size: 1.5rem;
+    color: var(--text-main);
+}
+
+@media (max-width: 768px) {
     
+    #programme-search-container {
+        grid-column: 1 / -1;
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-md);
+    }
+    
+    .programme-table {
+        font-size: 0.9rem;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+    }
+    
+    .programme-table th,
+    .programme-table td {
+        padding: var(--space-xs);
+        font-size: 0.8rem;
+    }
+    
+    .sort-arrow {
+        width: 0.7rem;
+        right: var(--space-xs);
+    }
+    
+    .prgm-film-tickets {
+        font-size: 0.6rem;
+        padding: 0.1em 0.3em;
+    }
+    
+    /* mobile expanded tickets visibility */
+    .programme-table tr.expanded .prgm-film-tickets {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+</style>
+
 </head>
 <body>
     <nav>
-        <a href="/leff/nl/"><img src="/leff/assets/leff-logo.svg"
+        <a href="/leff/nl/"><img src="/leff/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
-        <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
+        <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
+            Tickets 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </a>
         <div id="circle-container">
             <div id="languages">
                 
@@ -56,24 +313,93 @@
 
         <div id="menu-overlay" class="menu-overlay">
             <div class="menu-grid grid-base">
-                <h2 class="menu-title">Menu</h2>
+                <!-- <h2 class="menu-title">Menu</h2> -->
                 <div class="menu-nav">
                     <ul>
                         
-                        <li><img src="/leff/assets/arrow-right.svg"><a href="/leff/nl/">Home</a></li>
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/leff/nl/">Home</a>
+                            
+                        </li>
                         
-                        <li><img src="/leff/assets/arrow-right.svg"><a href="/leff/nl/about/">Over</a></li>
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/leff/nl/about/">Over</a>
+                            
+                        </li>
                         
-                        <li><img src="/leff/assets/arrow-right.svg"><a href="/leff/nl/programme/">Programma 2025</a></li>
+                        <li>
+                            
+                            <!-- programme dropdown -->
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="programme">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    <span>Programma 2025</span>
+                                </button>
+                                <ul class="menu-dropdown-content" id="programme-dropdown">
+                                    <li>
+                                        <a href="/leff/nl/programme/">A—Z film</a>
+                                    </li>
+                                    <li>
+                                        <a href="/leff/nl/programme/">A—Z regisseurs</a>
+                                    </li>
+                                    <li>
+                                        <a href="/leff/nl/programme/">Tijd</a>
+                                    </li>
+                                    <li>
+                                        <a href="/leff/nl/programme/">Locatie</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </li>
                         
-                        <li><img src="/leff/assets/arrow-right.svg"><a href="/leff/nl/schedule/">Schema</a></li>
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/leff/nl/schedule/">Schema</a>
+                            
+                        </li>
                         
-                        <li><img src="/leff/assets/arrow-external.svg"><a href="https://bioscopenleiden.nl/"
-                                target="_blank">Tickets</a></li>
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/leff/nl/">Routebeschrijving</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon north-east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="https://bioscopenleiden.nl/"target="_blank">Tickets</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="menu-close">
-                    <a href="#" class="close-menu">Sluiten</a>
+                    <button class="close-icon" id="menu-close" aria-label="close">
+                        <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                            <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
+                            <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -82,7 +408,7 @@
     
     
 <div class="grid-base" id="programme-page">
-    <h1 class="programme-title">Programma 2025</h1>
+    <h1 class="page-title">Programma 2025</h1>
     <div id="programme-search-container">
         <p>Find film and events: </p>
         <input type="text" id="programme-search" name="programme-search" placeholder="search..." />
@@ -125,362 +451,362 @@
         </thead>
         <tbody>
             
-            <tr data-location="" data-date="15 sept" data-time="10:00" data-block="Klassic" data-director="Chantal Akerman" data-title="Letters" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 1" data-date="15 sept" data-time="10:00" data-block="01:32:00" data-director="Chantal Akerman" data-title="Letters" data-synopsis="een mysterieuze reiziger stuurt poëtische berichten uit verre steden, beschrijft neonverlichte nachten in tokio, de stilte van ochtenden op ijsland en de bruisende markten van kaapverdië. elke brief onthult nieuwe wonderen, van de mistige straten van san francisco tot de verborgen tempels van parijs, en weeft een tapijt van herinneringen en dromen.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 1 </p> </td>
                 <td class="prgm-date">      <p> 15 sept </p> </td>
                 <td class="prgm-time">      <p> 10:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 01:32:00 </p> </td>
                 <td class="prgm-director">  <p> Chantal Akerman </p> </td>
                 <td class="prgm-title">     <p> Letters </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> een mysterieuze reiziger stuurt poëtische berichten uit verre steden, beschrijft neonverlichte nachten in tokio, de stilte van ochtenden op ijsland en de bruisende markten van kaapverdië. elke brief onthult nieuwe wonderen, van de mistige straten van san francisco tot de verborgen tempels van parijs, en weeft een tapijt van herinneringen en dromen. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="16 sept" data-time="11:00" data-block="Klassic" data-director="Nikita Mihalkov" data-title="Soleil au Desert" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
-                <td class="prgm-date">      <p> 16 sept </p> </td>
-                <td class="prgm-time">      <p> 11:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+            <tr data-location="kijkhuis, zaal 2" data-date="15 sept" data-time="10:00" data-block="02:32:00" data-director="Nikita Mihalkov" data-title="Soleil au Desert" data-synopsis="brieven van een zwervende ziel vertellen over de echo van voetstappen in oude tempels, het gelach van vreemden in kaapverdië en de fonkelende lichten van parijs bij schemering. de reis ontvouwt zich door veranderende landschappen, waar elke stad geheimen fluistert en elke straathoek een vergeten verhaal bewaart.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 2 </p> </td>
+                <td class="prgm-date">      <p> 15 sept </p> </td>
+                <td class="prgm-time">      <p> 10:00 </p> </td>
+                <td class="prgm-block">     <p> 02:32:00 </p> </td>
                 <td class="prgm-director">  <p> Nikita Mihalkov </p> </td>
                 <td class="prgm-title">     <p> Soleil au Desert </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> brieven van een zwervende ziel vertellen over de echo van voetstappen in oude tempels, het gelach van vreemden in kaapverdië en de fonkelende lichten van parijs bij schemering. de reis ontvouwt zich door veranderende landschappen, waar elke stad geheimen fluistert en elke straathoek een vergeten verhaal bewaart. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="15 sept" data-time="12:00" data-block="Klassic" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 3" data-date="15 sept" data-time="12:00" data-block="03:12:00" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="een verzameling levendige indrukken: het gezoem van het stadsleven in tokio, de serene schoonheid van ijsland en de felle kleuren van guinee-bissau. via een reeks brieven schildert de reiziger taferelen van drukke markten, stille tempels en de steeds veranderende gezichten van de wereld, en nodigt ons uit om door hun ogen te kijken.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 3 </p> </td>
                 <td class="prgm-date">      <p> 15 sept </p> </td>
                 <td class="prgm-time">      <p> 12:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 03:12:00 </p> </td>
                 <td class="prgm-director">  <p> Chris Marker </p> </td>
                 <td class="prgm-title">     <p> Sans Soleil </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> een verzameling levendige indrukken: het gezoem van het stadsleven in tokio, de serene schoonheid van ijsland en de felle kleuren van guinee-bissau. via een reeks brieven schildert de reiziger taferelen van drukke markten, stille tempels en de steeds veranderende gezichten van de wereld, en nodigt ons uit om door hun ogen te kijken. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="16 sept" data-time="13:00" data-block="Klassic" data-director="Chris Marker" data-title="Letters from Siberia" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 4" data-date="16 sept" data-time="13:00" data-block="01:52:00" data-director="Andryusha Tarkovsky" data-title="Letters from Siberia" data-synopsis="ansichtkaarten van de rand van de wereld: met sneeuw bedekte wegen in siberië, de gouden gloed van parijse avonden en het verre geroep van meeuwen in san francisco. de woorden van de reiziger zweven tussen realiteit en herinnering, vangen vluchtige momenten en het stille wonder van ontdekking.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 4 </p> </td>
                 <td class="prgm-date">      <p> 16 sept </p> </td>
                 <td class="prgm-time">      <p> 13:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
-                <td class="prgm-director">  <p> Chris Marker </p> </td>
+                <td class="prgm-block">     <p> 01:52:00 </p> </td>
+                <td class="prgm-director">  <p> Andryusha Tarkovsky </p> </td>
                 <td class="prgm-title">     <p> Letters from Siberia </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> ansichtkaarten van de rand van de wereld: met sneeuw bedekte wegen in siberië, de gouden gloed van parijse avonden en het verre geroep van meeuwen in san francisco. de woorden van de reiziger zweven tussen realiteit en herinnering, vangen vluchtige momenten en het stille wonder van ontdekking. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="15 sept" data-time="14:00" data-block="Klassic" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 5" data-date="15 sept" data-time="14:00" data-block="00:32:00" data-director="Alexander Konstantinovich Kokurov" data-title=" Elegy of Life: Rostropovich &amp; Vishnevskaya" data-synopsis="het dagboek van een reiziger onthult de muziek van stadsstraten, de stilte van verre bergen en de warmte van gedeelde verhalen. van de levendige lanen van guinee-bissau tot de rustige parken van ijsland, elke passage is een venster op een wereld die zowel vertrouwd als vreemd is, vol verlangen en hoop.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 5 </p> </td>
                 <td class="prgm-date">      <p> 15 sept </p> </td>
                 <td class="prgm-time">      <p> 14:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
-                <td class="prgm-director">  <p> Chris Marker </p> </td>
-                <td class="prgm-title">     <p> Sans Soleil </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-block">     <p> 00:32:00 </p> </td>
+                <td class="prgm-director">  <p> Alexander Konstantinovich Kokurov </p> </td>
+                <td class="prgm-title">     <p>  Elegy of Life: Rostropovich &amp; Vishnevskaya </p> </td>
+                <td class="prgm-synopsis">  <p> het dagboek van een reiziger onthult de muziek van stadsstraten, de stilte van verre bergen en de warmte van gedeelde verhalen. van de levendige lanen van guinee-bissau tot de rustige parken van ijsland, elke passage is een venster op een wereld die zowel vertrouwd als vreemd is, vol verlangen en hoop. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="16 sept" data-time="15:00" data-block="Klassic" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 2" data-date="16 sept" data-time="15:00" data-block="00:22:00" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="in een wereld die aan elkaar is genaaid door brieven, beschrijft een reiziger de gloed van lantaarns in tokio, de ijzige winden van ijsland en het gelach dat weerklinkt door de steegjes van kaapverdië. elk bericht is een fragment van een groter mozaïek, dat de schoonheid en eenzaamheid in elke uithoek van de wereld onthult.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 2 </p> </td>
                 <td class="prgm-date">      <p> 16 sept </p> </td>
                 <td class="prgm-time">      <p> 15:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 00:22:00 </p> </td>
                 <td class="prgm-director">  <p> Chris Marker </p> </td>
                 <td class="prgm-title">     <p> Sans Soleil </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> in een wereld die aan elkaar is genaaid door brieven, beschrijft een reiziger de gloed van lantaarns in tokio, de ijzige winden van ijsland en het gelach dat weerklinkt door de steegjes van kaapverdië. elk bericht is een fragment van een groter mozaïek, dat de schoonheid en eenzaamheid in elke uithoek van de wereld onthult. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="15 sept" data-time="16:00" data-block="Klassic" data-director="Chantal Akerman" data-title="Letters" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 1" data-date="15 sept" data-time="16:00" data-block="01:2:00" data-director="Faina Ranevskaya" data-title="Letters" data-synopsis="een reeks brieven brengt het ritme van verre steden tot leven, de stilte van oude bossen en de glinsterende reflecties op natte straten. de woorden van de reiziger nodigen ons uit om met hen mee te dwalen, verborgen verhalen en stille momenten te ontdekken die lang na het einde van de reis blijven hangen.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 1 </p> </td>
                 <td class="prgm-date">      <p> 15 sept </p> </td>
                 <td class="prgm-time">      <p> 16:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
-                <td class="prgm-director">  <p> Chantal Akerman </p> </td>
+                <td class="prgm-block">     <p> 01:2:00 </p> </td>
+                <td class="prgm-director">  <p> Faina Ranevskaya </p> </td>
                 <td class="prgm-title">     <p> Letters </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> een reeks brieven brengt het ritme van verre steden tot leven, de stilte van oude bossen en de glinsterende reflecties op natte straten. de woorden van de reiziger nodigen ons uit om met hen mee te dwalen, verborgen verhalen en stille momenten te ontdekken die lang na het einde van de reis blijven hangen. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="16 sept" data-time="17:00" data-block="Klassic" data-director="Nikita Mihalkov" data-title="Soleil au Desert" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 2" data-date="16 sept" data-time="17:00" data-block="00:42:00" data-director="Nikita Mihalkov" data-title="Soleil au Desert" data-synopsis="de brieven van de reiziger vangen vluchtige momenten van het leven: een zonsopgang boven guinee-bissau, de stilte van een parijs café en de eindeloze beweging van mensen in tokio. elke passage is een meditatie over tijd, plaats en de onzichtbare draden die ons allemaal verbinden.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 2 </p> </td>
                 <td class="prgm-date">      <p> 16 sept </p> </td>
                 <td class="prgm-time">      <p> 17:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 00:42:00 </p> </td>
                 <td class="prgm-director">  <p> Nikita Mihalkov </p> </td>
                 <td class="prgm-title">     <p> Soleil au Desert </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> de brieven van de reiziger vangen vluchtige momenten van het leven: een zonsopgang boven guinee-bissau, de stilte van een parijs café en de eindeloze beweging van mensen in tokio. elke passage is een meditatie over tijd, plaats en de onzichtbare draden die ons allemaal verbinden. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="15 sept" data-time="18:00" data-block="Klassic" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 3" data-date="15 sept" data-time="18:00" data-block="01:45:00" data-director="Trinity Kaitron" data-title="Sans Soleil" data-synopsis="door een lappendeken van brieven deelt de reiziger het ritme van stadsnachten, de stilte van besneeuwde velden en het levendige leven van verre markten. hun woorden vormen een brug tussen werelden en nodigen ons uit om het wonder en de melancholie van eindeloze ontdekking te ervaren.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 3 </p> </td>
                 <td class="prgm-date">      <p> 15 sept </p> </td>
                 <td class="prgm-time">      <p> 18:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
-                <td class="prgm-director">  <p> Chris Marker </p> </td>
+                <td class="prgm-block">     <p> 01:45:00 </p> </td>
+                <td class="prgm-director">  <p> Trinity Kaitron </p> </td>
                 <td class="prgm-title">     <p> Sans Soleil </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> door een lappendeken van brieven deelt de reiziger het ritme van stadsnachten, de stilte van besneeuwde velden en het levendige leven van verre markten. hun woorden vormen een brug tussen werelden en nodigen ons uit om het wonder en de melancholie van eindeloze ontdekking te ervaren. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="16 sept" data-time="19:00" data-block="Klassic" data-director="Chris Marker" data-title="Letters from Siberia" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 4" data-date="16 sept" data-time="19:00" data-block="01:02:00" data-director="Chris Marker" data-title="Letters from Siberia" data-synopsis="brieven uit siberië onthullen de stille schoonheid van winterochtenden, het verre gezoem van het stadsleven en het zachte ontvouwen van herinneringen. de overdenkingen van de reiziger bewegen zich tussen continenten en vangen de essentie van plaatsen dichtbij en veraf, echt en ingebeeld.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 4 </p> </td>
                 <td class="prgm-date">      <p> 16 sept </p> </td>
                 <td class="prgm-time">      <p> 19:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 01:02:00 </p> </td>
                 <td class="prgm-director">  <p> Chris Marker </p> </td>
                 <td class="prgm-title">     <p> Letters from Siberia </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> brieven uit siberië onthullen de stille schoonheid van winterochtenden, het verre gezoem van het stadsleven en het zachte ontvouwen van herinneringen. de overdenkingen van de reiziger bewegen zich tussen continenten en vangen de essentie van plaatsen dichtbij en veraf, echt en ingebeeld. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="15 sept" data-time="20:00" data-block="Klassic" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 5" data-date="15 sept" data-time="20:00" data-block="05:32:00" data-director="Birobijan Akladzhukov" data-title="Sans Soleil" data-synopsis="de woorden van een reiziger zweven over continenten, beschrijven de gloed van lantaarns in tokio, het gelach in kaapverdië en de stilte van ijskoude nachten. elke brief is een venster op een wereld van vluchtige ontmoetingen en blijvende indrukken, samengeweven door herinnering en verlangen.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 5 </p> </td>
                 <td class="prgm-date">      <p> 15 sept </p> </td>
                 <td class="prgm-time">      <p> 20:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
-                <td class="prgm-director">  <p> Chris Marker </p> </td>
+                <td class="prgm-block">     <p> 05:32:00 </p> </td>
+                <td class="prgm-director">  <p> Birobijan Akladzhukov </p> </td>
                 <td class="prgm-title">     <p> Sans Soleil </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> de woorden van een reiziger zweven over continenten, beschrijven de gloed van lantaarns in tokio, het gelach in kaapverdië en de stilte van ijskoude nachten. elke brief is een venster op een wereld van vluchtige ontmoetingen en blijvende indrukken, samengeweven door herinnering en verlangen. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="16 sept" data-time="21:00" data-block="Klassic" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 2" data-date="16 sept" data-time="21:00" data-block="00:52:00" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="de brieven van de reiziger onthullen een wereld in beweging: neonreflecties in tokio, de rust van ijsland en de levendige chaos van kaapverdië. elke passage is een meditatie over de schoonheid van het alledaagse, de vreemdheid van het bekende en de eindeloze zoektocht naar betekenis.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 2 </p> </td>
                 <td class="prgm-date">      <p> 16 sept </p> </td>
                 <td class="prgm-time">      <p> 21:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 00:52:00 </p> </td>
                 <td class="prgm-director">  <p> Chris Marker </p> </td>
                 <td class="prgm-title">     <p> Sans Soleil </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> de brieven van de reiziger onthullen een wereld in beweging: neonreflecties in tokio, de rust van ijsland en de levendige chaos van kaapverdië. elke passage is een meditatie over de schoonheid van het alledaagse, de vreemdheid van het bekende en de eindeloze zoektocht naar betekenis. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="15 sept" data-time="22:00" data-block="Klassic" data-director="Chantal Akerman" data-title="Letters" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 1" data-date="15 sept" data-time="22:00" data-block="01:32:00" data-director="Chantal Akerman" data-title="Letters" data-synopsis="een verzameling brieven brengt de beelden en geluiden van verre steden samen, de stilte van oude bossen en de gloed van stadslichten. de woorden van de reiziger nodigen ons uit om met hen te dwalen en de verborgen verhalen te ontdekken die onze wereld vormen.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 1 </p> </td>
                 <td class="prgm-date">      <p> 15 sept </p> </td>
                 <td class="prgm-time">      <p> 22:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 01:32:00 </p> </td>
                 <td class="prgm-director">  <p> Chantal Akerman </p> </td>
                 <td class="prgm-title">     <p> Letters </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> een verzameling brieven brengt de beelden en geluiden van verre steden samen, de stilte van oude bossen en de gloed van stadslichten. de woorden van de reiziger nodigen ons uit om met hen te dwalen en de verborgen verhalen te ontdekken die onze wereld vormen. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="16 sept" data-time="23:00" data-block="Klassic" data-director="Nikita Mihalkov" data-title="Soleil au Desert" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 2" data-date="16 sept" data-time="22:30" data-block="00:15:00" data-director="Nikita Mihalkov" data-title="Soleil au Desert" data-synopsis="brieven van een zwervende ziel vangen de wisselende stemmingen van steden, de stilte van de dageraad op ijsland en het levendige leven van kaapverdië. elk bericht is een fragment van een groter verhaal, dat de schoonheid en complexiteit van de wereld onthult door de ogen van een reiziger.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 2 </p> </td>
                 <td class="prgm-date">      <p> 16 sept </p> </td>
-                <td class="prgm-time">      <p> 23:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-time">      <p> 22:30 </p> </td>
+                <td class="prgm-block">     <p> 00:15:00 </p> </td>
                 <td class="prgm-director">  <p> Nikita Mihalkov </p> </td>
                 <td class="prgm-title">     <p> Soleil au Desert </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> brieven van een zwervende ziel vangen de wisselende stemmingen van steden, de stilte van de dageraad op ijsland en het levendige leven van kaapverdië. elk bericht is een fragment van een groter verhaal, dat de schoonheid en complexiteit van de wereld onthult door de ogen van een reiziger. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="15 sept" data-time="24:00" data-block="Klassic" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 3" data-date="15 sept" data-time="24:00" data-block="00:20:00" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="de brieven van een reiziger beschrijven het ritme van het stadsleven, de stilte van besneeuwde landschappen en de steeds veranderende gezichten van de wereld. elke passage is een meditatie over herinnering, plaats en de eindeloze zoektocht naar verbinding over continenten heen.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 3 </p> </td>
                 <td class="prgm-date">      <p> 15 sept </p> </td>
                 <td class="prgm-time">      <p> 24:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 00:20:00 </p> </td>
                 <td class="prgm-director">  <p> Chris Marker </p> </td>
                 <td class="prgm-title">     <p> Sans Soleil </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> de brieven van een reiziger beschrijven het ritme van het stadsleven, de stilte van besneeuwde landschappen en de steeds veranderende gezichten van de wereld. elke passage is een meditatie over herinnering, plaats en de eindeloze zoektocht naar verbinding over continenten heen. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="16 sept" data-time="01:00" data-block="Klassic" data-director="Chris Marker" data-title="Letters from Siberia" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 4" data-date="16 sept" data-time="01:00" data-block="01:32:00" data-director="Jean Luc Godard" data-title="Letters from Siberia" data-synopsis="ansichtkaarten uit siberië onthullen de stille schoonheid van winterochtenden, het verre gezoem van het stadsleven en het zachte ontvouwen van herinneringen. de overdenkingen van de reiziger bewegen zich tussen continenten en vangen de essentie van plaatsen dichtbij en veraf, echt en ingebeeld.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 4 </p> </td>
                 <td class="prgm-date">      <p> 16 sept </p> </td>
                 <td class="prgm-time">      <p> 01:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
-                <td class="prgm-director">  <p> Chris Marker </p> </td>
+                <td class="prgm-block">     <p> 01:32:00 </p> </td>
+                <td class="prgm-director">  <p> Jean Luc Godard </p> </td>
                 <td class="prgm-title">     <p> Letters from Siberia </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> ansichtkaarten uit siberië onthullen de stille schoonheid van winterochtenden, het verre gezoem van het stadsleven en het zachte ontvouwen van herinneringen. de overdenkingen van de reiziger bewegen zich tussen continenten en vangen de essentie van plaatsen dichtbij en veraf, echt en ingebeeld. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="15 sept" data-time="02:00" data-block="Klassic" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 5" data-date="15 sept" data-time="02:00" data-block="01:32:00" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="de brieven van de reiziger vangen vluchtige momenten van het leven: een zonsopgang boven guinee-bissau, de stilte van een parijs café en de eindeloze beweging van mensen in tokio. elke passage is een meditatie over tijd, plaats en de onzichtbare draden die ons allemaal verbinden.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 5 </p> </td>
                 <td class="prgm-date">      <p> 15 sept </p> </td>
                 <td class="prgm-time">      <p> 02:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 01:32:00 </p> </td>
                 <td class="prgm-director">  <p> Chris Marker </p> </td>
                 <td class="prgm-title">     <p> Sans Soleil </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> de brieven van de reiziger vangen vluchtige momenten van het leven: een zonsopgang boven guinee-bissau, de stilte van een parijs café en de eindeloze beweging van mensen in tokio. elke passage is een meditatie over tijd, plaats en de onzichtbare draden die ons allemaal verbinden. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="16 sept" data-time="03:00" data-block="Klassic" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 2" data-date="16 sept" data-time="03:00" data-block="00:32:00" data-director="Chris Marker" data-title=" Sans Soleil" data-synopsis="een verzameling levendige indrukken: het gezoem van het stadsleven in tokio, de serene schoonheid van ijsland en de felle kleuren van guinee-bissau. via een reeks brieven schildert de reiziger taferelen van drukke markten, stille tempels en de steeds veranderende gezichten van de wereld, en nodigt ons uit om door hun ogen te kijken.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 2 </p> </td>
                 <td class="prgm-date">      <p> 16 sept </p> </td>
                 <td class="prgm-time">      <p> 03:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 00:32:00 </p> </td>
                 <td class="prgm-director">  <p> Chris Marker </p> </td>
-                <td class="prgm-title">     <p> Sans Soleil </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-title">     <p>  Sans Soleil </p> </td>
+                <td class="prgm-synopsis">  <p> een verzameling levendige indrukken: het gezoem van het stadsleven in tokio, de serene schoonheid van ijsland en de felle kleuren van guinee-bissau. via een reeks brieven schildert de reiziger taferelen van drukke markten, stille tempels en de steeds veranderende gezichten van de wereld, en nodigt ons uit om door hun ogen te kijken. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="15 sept" data-time="04:00" data-block="Klassic" data-director="Chantal Akerman" data-title="Letters" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 1" data-date="15 sept" data-time="04:00" data-block="01:32:00" data-director="Chantal Akerman" data-title="Letters" data-synopsis="brieven van een zwervende ziel vertellen over de echo van voetstappen in oude tempels, het gelach van vreemden in kaapverdië en de fonkelende lichten van parijs bij schemering. de reis ontvouwt zich door veranderende landschappen, waar elke stad geheimen fluistert en elke straathoek een vergeten verhaal bewaart.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 1 </p> </td>
                 <td class="prgm-date">      <p> 15 sept </p> </td>
                 <td class="prgm-time">      <p> 04:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 01:32:00 </p> </td>
                 <td class="prgm-director">  <p> Chantal Akerman </p> </td>
                 <td class="prgm-title">     <p> Letters </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> brieven van een zwervende ziel vertellen over de echo van voetstappen in oude tempels, het gelach van vreemden in kaapverdië en de fonkelende lichten van parijs bij schemering. de reis ontvouwt zich door veranderende landschappen, waar elke stad geheimen fluistert en elke straathoek een vergeten verhaal bewaart. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="16 sept" data-time="05:00" data-block="Klassic" data-director="Nikita Mihalkov" data-title="Soleil au Desert" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 2" data-date="16 sept" data-time="05:00" data-block="01:32:00" data-director="Nikita Mihalkov" data-title="Soleil au Desert" data-synopsis="in een wereld die aan elkaar is genaaid door brieven, beschrijft een reiziger de gloed van lantaarns in tokio, de ijzige winden van ijsland en het gelach dat weerklinkt door de steegjes van kaapverdië. elk bericht is een fragment van een groter mozaïek, dat de schoonheid en eenzaamheid in elke uithoek van de wereld onthult.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 2 </p> </td>
                 <td class="prgm-date">      <p> 16 sept </p> </td>
                 <td class="prgm-time">      <p> 05:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 01:32:00 </p> </td>
                 <td class="prgm-director">  <p> Nikita Mihalkov </p> </td>
                 <td class="prgm-title">     <p> Soleil au Desert </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> in een wereld die aan elkaar is genaaid door brieven, beschrijft een reiziger de gloed van lantaarns in tokio, de ijzige winden van ijsland en het gelach dat weerklinkt door de steegjes van kaapverdië. elk bericht is een fragment van een groter mozaïek, dat de schoonheid en eenzaamheid in elke uithoek van de wereld onthult. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="15 sept" data-time="06:00" data-block="Klassic" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 3" data-date="15 sept" data-time="06:00" data-block="03:02:00" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="het dagboek van een reiziger onthult de muziek van stadsstraten, de stilte van verre bergen en de warmte van gedeelde verhalen. van de levendige lanen van guinee-bissau tot de rustige parken van ijsland, elke passage is een venster op een wereld die zowel vertrouwd als vreemd is, vol verlangen en hoop.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 3 </p> </td>
                 <td class="prgm-date">      <p> 15 sept </p> </td>
                 <td class="prgm-time">      <p> 06:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 03:02:00 </p> </td>
                 <td class="prgm-director">  <p> Chris Marker </p> </td>
                 <td class="prgm-title">     <p> Sans Soleil </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> het dagboek van een reiziger onthult de muziek van stadsstraten, de stilte van verre bergen en de warmte van gedeelde verhalen. van de levendige lanen van guinee-bissau tot de rustige parken van ijsland, elke passage is een venster op een wereld die zowel vertrouwd als vreemd is, vol verlangen en hoop. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="16 sept" data-time="07:00" data-block="Klassic" data-director="Chris Marker" data-title="Letters from Siberia" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 4" data-date="16 sept" data-time="07:00" data-block="01:32:00" data-director="Mikhail Galustya" data-title="Letters from Siberia" data-synopsis="een reeks brieven brengt het ritme van verre steden tot leven, de stilte van oude bossen en de glinsterende reflecties op natte straten. de woorden van de reiziger nodigen ons uit om met hen mee te dwalen, verborgen verhalen en stille momenten te ontdekken die lang na het einde van de reis blijven hangen.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 4 </p> </td>
                 <td class="prgm-date">      <p> 16 sept </p> </td>
                 <td class="prgm-time">      <p> 07:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
-                <td class="prgm-director">  <p> Chris Marker </p> </td>
+                <td class="prgm-block">     <p> 01:32:00 </p> </td>
+                <td class="prgm-director">  <p> Mikhail Galustya </p> </td>
                 <td class="prgm-title">     <p> Letters from Siberia </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> een reeks brieven brengt het ritme van verre steden tot leven, de stilte van oude bossen en de glinsterende reflecties op natte straten. de woorden van de reiziger nodigen ons uit om met hen mee te dwalen, verborgen verhalen en stille momenten te ontdekken die lang na het einde van de reis blijven hangen. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="15 sept" data-time="08:00" data-block="Klassic" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 5" data-date="15 sept" data-time="08:00" data-block="02:22:00" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="door een lappendeken van brieven deelt de reiziger het ritme van stadsnachten, de stilte van besneeuwde velden en het levendige leven van verre markten. hun woorden vormen een brug tussen werelden en nodigen ons uit om het wonder en de melancholie van eindeloze ontdekking te ervaren.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 5 </p> </td>
                 <td class="prgm-date">      <p> 15 sept </p> </td>
                 <td class="prgm-time">      <p> 08:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 02:22:00 </p> </td>
                 <td class="prgm-director">  <p> Chris Marker </p> </td>
                 <td class="prgm-title">     <p> Sans Soleil </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> door een lappendeken van brieven deelt de reiziger het ritme van stadsnachten, de stilte van besneeuwde velden en het levendige leven van verre markten. hun woorden vormen een brug tussen werelden en nodigen ons uit om het wonder en de melancholie van eindeloze ontdekking te ervaren. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="16 sept" data-time="09:00" data-block="Klassic" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 2" data-date="16 sept" data-time="09:00" data-block="01:32:00" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="de woorden van een reiziger zweven over continenten, beschrijven de gloed van lantaarns in tokio, het gelach in kaapverdië en de stilte van ijskoude nachten. elke brief is een venster op een wereld van vluchtige ontmoetingen en blijvende indrukken, samengeweven door herinnering en verlangen.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 2 </p> </td>
                 <td class="prgm-date">      <p> 16 sept </p> </td>
                 <td class="prgm-time">      <p> 09:00 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 01:32:00 </p> </td>
                 <td class="prgm-director">  <p> Chris Marker </p> </td>
                 <td class="prgm-title">     <p> Sans Soleil </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> de woorden van een reiziger zweven over continenten, beschrijven de gloed van lantaarns in tokio, het gelach in kaapverdië en de stilte van ijskoude nachten. elke brief is een venster op een wereld van vluchtige ontmoetingen en blijvende indrukken, samengeweven door herinnering en verlangen. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="15 sept" data-time="10:30" data-block="Klassic" data-director="Chantal Akerman" data-title="Letters" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 1" data-date="15 sept" data-time="10:30" data-block="01:32:00" data-director="Chantal Akerman" data-title="Letters" data-synopsis="een mysterieuze reiziger stuurt poëtische berichten uit verre steden, beschrijft neonverlichte nachten in tokio, de stilte van ochtenden op ijsland en de bruisende markten van kaapverdië. elke brief onthult nieuwe wonderen, van de mistige straten van san francisco tot de verborgen tempels van parijs, en weeft een tapijt van herinneringen en dromen.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 1 </p> </td>
                 <td class="prgm-date">      <p> 15 sept </p> </td>
                 <td class="prgm-time">      <p> 10:30 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 01:32:00 </p> </td>
                 <td class="prgm-director">  <p> Chantal Akerman </p> </td>
                 <td class="prgm-title">     <p> Letters </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> een mysterieuze reiziger stuurt poëtische berichten uit verre steden, beschrijft neonverlichte nachten in tokio, de stilte van ochtenden op ijsland en de bruisende markten van kaapverdië. elke brief onthult nieuwe wonderen, van de mistige straten van san francisco tot de verborgen tempels van parijs, en weeft een tapijt van herinneringen en dromen. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="16 sept" data-time="11:30" data-block="Klassic" data-director="Nikita Mihalkov" data-title="Soleil au Desert" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 2" data-date="16 sept" data-time="11:30" data-block="01:32:00" data-director="Nikita Mihalkov" data-title="Soleil au Desert" data-synopsis="brieven van een zwervende ziel vangen de wisselende stemmingen van steden, de stilte van de dageraad op ijsland en het levendige leven van kaapverdië. elk bericht is een fragment van een groter verhaal, dat de schoonheid en complexiteit van de wereld onthult door de ogen van een reiziger.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 2 </p> </td>
                 <td class="prgm-date">      <p> 16 sept </p> </td>
                 <td class="prgm-time">      <p> 11:30 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 01:32:00 </p> </td>
                 <td class="prgm-director">  <p> Nikita Mihalkov </p> </td>
                 <td class="prgm-title">     <p> Soleil au Desert </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> brieven van een zwervende ziel vangen de wisselende stemmingen van steden, de stilte van de dageraad op ijsland en het levendige leven van kaapverdië. elk bericht is een fragment van een groter verhaal, dat de schoonheid en complexiteit van de wereld onthult door de ogen van een reiziger. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="15 sept" data-time="12:30" data-block="Klassic" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 3" data-date="15 sept" data-time="12:30" data-block="01:32:00" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="in een wereld die aan elkaar is genaaid door brieven, beschrijft een reiziger de gloed van lantaarns in tokio, de ijzige winden van ijsland en het gelach dat weerklinkt door de steegjes van kaapverdië. elk bericht is een fragment van een groter mozaïek, dat de schoonheid en eenzaamheid in elke uithoek van de wereld onthult.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 3 </p> </td>
                 <td class="prgm-date">      <p> 15 sept </p> </td>
                 <td class="prgm-time">      <p> 12:30 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 01:32:00 </p> </td>
                 <td class="prgm-director">  <p> Chris Marker </p> </td>
                 <td class="prgm-title">     <p> Sans Soleil </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> in een wereld die aan elkaar is genaaid door brieven, beschrijft een reiziger de gloed van lantaarns in tokio, de ijzige winden van ijsland en het gelach dat weerklinkt door de steegjes van kaapverdië. elk bericht is een fragment van een groter mozaïek, dat de schoonheid en eenzaamheid in elke uithoek van de wereld onthult. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="16 sept" data-time="13:30" data-block="Klassic" data-director="Chris Marker" data-title="Letters from Siberia" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 4" data-date="16 sept" data-time="13:30" data-block="01:32:00" data-director="Vladimir Zhirinovsky" data-title="Orders from Heaven" data-synopsis="het dagboek van een reiziger onthult de muziek van stadsstraten, de stilte van verre bergen en de warmte van gedeelde verhalen. van de levendige lanen van guinee-bissau tot de rustige parken van ijsland, elke passage is een venster op een wereld die zowel vertrouwd als vreemd is, vol verlangen en hoop.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 4 </p> </td>
                 <td class="prgm-date">      <p> 16 sept </p> </td>
                 <td class="prgm-time">      <p> 13:30 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
-                <td class="prgm-director">  <p> Chris Marker </p> </td>
-                <td class="prgm-title">     <p> Letters from Siberia </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-block">     <p> 01:32:00 </p> </td>
+                <td class="prgm-director">  <p> Vladimir Zhirinovsky </p> </td>
+                <td class="prgm-title">     <p> Orders from Heaven </p> </td>
+                <td class="prgm-synopsis">  <p> het dagboek van een reiziger onthult de muziek van stadsstraten, de stilte van verre bergen en de warmte van gedeelde verhalen. van de levendige lanen van guinee-bissau tot de rustige parken van ijsland, elke passage is een venster op een wereld die zowel vertrouwd als vreemd is, vol verlangen en hoop. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="15 sept" data-time="14:30" data-block="Klassic" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 5" data-date="15 sept" data-time="14:30" data-block="01:28:00" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="de brieven van de reiziger vangen vluchtige momenten van het leven: een zonsopgang boven guinee-bissau, de stilte van een parijs café en de eindeloze beweging van mensen in tokio. elke passage is een meditatie over tijd, plaats en de onzichtbare draden die ons allemaal verbinden.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 5 </p> </td>
                 <td class="prgm-date">      <p> 15 sept </p> </td>
                 <td class="prgm-time">      <p> 14:30 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 01:28:00 </p> </td>
                 <td class="prgm-director">  <p> Chris Marker </p> </td>
                 <td class="prgm-title">     <p> Sans Soleil </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> de brieven van de reiziger vangen vluchtige momenten van het leven: een zonsopgang boven guinee-bissau, de stilte van een parijs café en de eindeloze beweging van mensen in tokio. elke passage is een meditatie over tijd, plaats en de onzichtbare draden die ons allemaal verbinden. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
             
-            <tr data-location="" data-date="16 sept" data-time="15:30" data-block="Klassic" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations.">
-                <td class="prgm-location">  <p>  </p> </td>
+            <tr data-location="kijkhuis, zaal 2" data-date="16 sept" data-time="15:30" data-block="01:32:00" data-director="Chris Marker" data-title="Sans Soleil" data-synopsis="een verzameling levendige indrukken: het gezoem van het stadsleven in tokio, de serene schoonheid van ijsland en de felle kleuren van guinee-bissau. via een reeks brieven schildert de reiziger taferelen van drukke markten, stille tempels en de steeds veranderende gezichten van de wereld, en nodigt ons uit om door hun ogen te kijken.">
+                <td class="prgm-location">  <p> kijkhuis, zaal 2 </p> </td>
                 <td class="prgm-date">      <p> 16 sept </p> </td>
                 <td class="prgm-time">      <p> 15:30 </p> </td>
-                <td class="prgm-block">     <p> Klassic </p> </td>
+                <td class="prgm-block">     <p> 01:32:00 </p> </td>
                 <td class="prgm-director">  <p> Chris Marker </p> </td>
                 <td class="prgm-title">     <p> Sans Soleil </p> </td>
-                <td class="prgm-synopsis">  <p> An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. An unnamed woman narrates the letters and philosophical... reflections of an invisible world traveler accompanied by footage of Guinea-Bissau, Cape Verde, Iceland, Paris, San Francisco and, most significantly, Tokyo—a city whose people, streets, malls and temples inspire the traveler’s observations. </p>
+                <td class="prgm-synopsis">  <p> een verzameling levendige indrukken: het gezoem van het stadsleven in tokio, de serene schoonheid van ijsland en de felle kleuren van guinee-bissau. via een reeks brieven schildert de reiziger taferelen van drukke markten, stille tempels en de steeds veranderende gezichten van de wereld, en nodigt ons uit om door hun ogen te kijken. </p>
                     <a href="https://bioscopenleiden.nl" target="_blank" class="prgm-film-tickets tickets-button">Tickets<img src="/leff/assets/tickets-arrow.svg"></a>
                 </td>
             </tr>
