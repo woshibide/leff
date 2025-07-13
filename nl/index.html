@@ -88,7 +88,7 @@ body.index-page footer {
 body.index-page.menu-open #nav-logo {
     grid-column: unset;
     grid-row: unset;
-    width: auto;
+    width: calc(100% - 1.5rem);
 }
 
 #hero-h1 {
@@ -98,6 +98,7 @@ body.index-page.menu-open #nav-logo {
     color: var(--accent);
     text-shadow: var(--shadow);
     margin: 0;
+    line-height: 96%;
 }
 @media (max-width: 768px) {
     #hero-h1 {
@@ -106,7 +107,7 @@ body.index-page.menu-open #nav-logo {
         bottom: var(--space-md);
     }
     #hero-h1 *{
-        line-height: 12%;
+        /* line-height: 12%; */
     }
 }
 
@@ -119,7 +120,6 @@ nav #hero-h1 {
 
 nav.menu-active #hero-h1 {
     text-shadow: none;
-    color: var(--main-bg);
 }
 
 #logo {
@@ -129,17 +129,25 @@ nav.menu-active #hero-h1 {
     align-self: end;
     color: var(--accent);
     z-index: 10;
-    line-height: 1;
+    /* line-height: 1; */
     padding-bottom: var(--space-xl);
 }
 
 #festival-date{
-    position: absolute;
-    top: 260px;
-    left: 80px;
+    text-shadow: var(--shadow);
+    font-size: 2.5rem !important;
+    grid-column: 5 / 7;
+    margin-top: 60vh;
     color: var(--accent);
     z-index: 50;
-    font-size: 20px;
+}
+@media (max-width: 768px) {
+    #festival-date{
+        font-size: 1.125rem !important;
+        margin-left: var(--space-5xl);
+        grid-column: 1 / -1;
+        margin-top: 40vh;
+    }
 }
 
 </style>
@@ -171,6 +179,14 @@ nav.menu-active #hero-h1 {
                 
             </div>
             <div id="circle"></div>
+            <div class="menu-close" style="display: none;">
+                <button class="close-icon" id="menu-close" aria-label="close">
+                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <div id="menu-overlay" class="menu-overlay">
@@ -257,14 +273,7 @@ nav.menu-active #hero-h1 {
                         
                     </ul>
                 </div>
-                <div class="menu-close">
-                    <button class="close-icon" id="menu-close" aria-label="close">
-                        <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
-                            <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
-                            <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </button>
-                </div>
+                
             </div>
         </div>
     </nav>
@@ -278,9 +287,9 @@ nav.menu-active #hero-h1 {
         <h1 id="hero-h1">
             leff is het eerste festival in Nederland dat volledig gewijd is aan de Essayfilm
         </h1>
-    </div>
-    <div id="festival-date">
-        <p>17-19<br>September<br>2025</p>
+        <div id="festival-date">
+            <p>17-19<br>September<br>2025</p>
+        </div>
     </div>
 </div>
 
@@ -300,7 +309,7 @@ nav.menu-active #hero-h1 {
         const navLogo = document.getElementById('nav-logo');
         const heroText = document.getElementById('hero-h1');
         const nav = document.querySelector('nav');
-        
+
         // only move hero text into nav if screen size is larger than 768px
         if (window.innerWidth > 768 && heroText && nav) {
             nav.appendChild(heroText);

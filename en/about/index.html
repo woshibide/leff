@@ -35,6 +35,18 @@
     /*
         ABOUT PAGE
     */
+    .about-main{
+        margin-block: var(--space-2xl);
+        font-size: 2.25rem;
+    }
+
+    .about-main:last-child{
+        margin-bottom: 1rem;
+    }
+
+    .about-extra{
+        font-size: 1.875rem;
+    }
 
 </style>
 
@@ -65,6 +77,14 @@
                 
             </div>
             <div id="circle"></div>
+            <div class="menu-close" style="display: none;">
+                <button class="close-icon" id="menu-close" aria-label="close">
+                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <div id="menu-overlay" class="menu-overlay">
@@ -151,14 +171,7 @@
                         
                     </ul>
                 </div>
-                <div class="menu-close">
-                    <button class="close-icon" id="menu-close" aria-label="close">
-                        <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
-                            <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
-                            <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </button>
-                </div>
+                
             </div>
         </div>
     </nav>
@@ -173,30 +186,30 @@
     </h1>
 
     <div id="general-info">
-        <p>
+        <p class="about-main">
             leff is the first festival in the Netherlands dedicated entirely to the essay film. This genre has been gaining popularity in recent years among filmmakers and cinephiles alike. Essay films are increasingly featured at festivals, studied by film scholars, and practiced innovatively by filmmakers both in the West and the Global South.
         </p>
-        <p> 
+        <p class="about-main"> 
             Like written essays, film essays are made by both artists and scholars. In their very diverse films, they explore the world from personal perspectives. Essay films are not only personal but also reflective. The filmmakers think critically about the world and about how they perceive it. They blend fiction and non-fiction and fluidly combine a wide range of styles and genres. Their adventurous urge to ask questions goes hand in hand with a free-spirited exploration of possible answers.
         </p>
 
         <h2>
             NEW FORMS
         </h2>
-        <p>
+        <p class="about-extra">
             The essay film emerged from early attempts by filmmakers to address abstract subjects and not merely represent the world but also interrogate it. For a time, the genre was closely associated with documentary. The term was coined by former Dadaist Hans Richter, who in 1940 saw it as a new form of documentary filmmaking.
         </p>
-        <p>
+        <p class="about-extra">
             Since the mid-1950s, the essay film has been steadily on the rise. The earliest examples addressed anthropological, historical, and political themes. But like all essay films, they transcended disciplines, and were hybrid, poetic, and experimental in nature. That experimental spirit lies at the heart of the genre: the filmmaker seeks to better understand the world through the act of searching—and in doing so, questions their own perspective as well.
         </p>
 
         <h2>
             RICHNESS
         </h2>
-        <p>
+        <p class="about-extra">
             A decade ago, the British newspaper The Guardian observed: “For years the essay film has been a neglected form, but now its unorthodox approach to constructing reality is winning over a younger, tech-savvy crowd.” Since then, thanks in part to the rapid growth of digital tools and platforms, that development has accelerated—making leff more timely than ever.
         </p>
-        <p>
+        <p class="about-extra">
             This first edition of leff presents a rich selection of recent and established productions. It offers a platform for emerging filmmakers and actively involves audiences through lectures, discussions, and encounters with filmmakers and critics. Like essay films themselves, leff is personal, reflective, and hybrid. The festival explores reality just as the filmmakers do.
         </p>
 

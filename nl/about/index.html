@@ -35,6 +35,18 @@
     /*
         ABOUT PAGE
     */
+    .about-main{
+        margin-block: var(--space-2xl);
+        font-size: 2.25rem;
+    }
+
+    .about-main:last-child{
+        margin-bottom: 1rem;
+    }
+
+    .about-extra{
+        font-size: 1.875rem;
+    }
 
 </style>
 
@@ -65,6 +77,14 @@
                 
             </div>
             <div id="circle"></div>
+            <div class="menu-close" style="display: none;">
+                <button class="close-icon" id="menu-close" aria-label="close">
+                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <div id="menu-overlay" class="menu-overlay">
@@ -151,14 +171,7 @@
                         
                     </ul>
                 </div>
-                <div class="menu-close">
-                    <button class="close-icon" id="menu-close" aria-label="close">
-                        <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
-                            <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
-                            <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </button>
-                </div>
+                
             </div>
         </div>
     </nav>
@@ -173,30 +186,30 @@
     </h1>
 
     <div id="general-info">
-        <p>
+        <p class="about-main">
             leff is het eerste festival in Nederland dat geheel gewijd is aan de essayfilm. Onder filmmakers en filmliefhebbers wint het genre de laatste jaren snel aan populariteit. Het duikt op in festivals, is onderwerp van studie door filmwetenschappers en zowel in het Westen als in het globale Zuiden kent de essayfilm een schare aan innovatieve beoefenaren.
         </p>
-        <p> 
+        <p class="about-main"> 
             Net als het geschreven essay, worden filmessays zowel door kunstenaars als wetenschappers gemaakt. In zeer uiteenlopende films verkennen zij de wereld vanuit hun persoonlijke gezichtspunten. Behalve persoonlijk zijn essayfilms reflectief. De makers denken na over de wereld en over de manier waarop ze die waarnemen. Ze vermengen non-fictie met fictie en weten diverse stijlen en genres soepel met elkaar te verbinden. Hun avontuurlijke drang om vragen te stellen gaat hand in hand met het vrijelijk exploreren van mogelijke antwoorden.
         </p>
 
         <h2>
             Nieuwe vormen
         </h2>
-        <p>
+        <p class="about-extra">
             De essayfilm is ontstaan uit pogingen van filmmakers, al vroeg in de geschiedenis van het medium film, om abstracte onderwerpen te behandelen en de wereld niet alleen te representeren, maar die ook ter discussie te stellen. Een tijdlang was het genre verbonden met de documentaire. De naamgever, de vroegere dadaïst Hans Richter, zag het in 1940 dan ook als een nieuwe vorm van documentairefilm.
         </p>
-        <p>
+        <p class="about-extra">
             Sinds het midden van de jaren vijftig van de vorige eeuw maakt de essayfilm een gestage opmars door. De eerste films hadden antropologische, geschiedkundige en politieke onderwerpen. Maar als alle essayfilms waren ze ook discipline-overstijgend, hybride, poëtisch en experimenteel van aard. In dat laatste ligt de kern van het genre: de filmmaker tracht al zoekende de wereld beter te begrijpen en ondervraagt daarbij ook het eigen perspectief op de wereld.
         </p>
 
         <h2>
             Rijkdom
         </h2>
-        <p>
+        <p class="about-extra">
             Een decennium geleden constateerde de Britse krant The Guardian: ‘For years the essay film has been a neglected form, but now its unorthodox approach to constructing reality is winning over a younger, tech-savvy crowd.’ Die ontwikkeling is sindsdien, mede dankzij de onstuimige groei van digitale gereedschappen en platforms, in een stroomversnelling geraakt. Dat maakt leff uiterst actueel.
         </p>
-        <p>
+        <p class="about-extra">
             Deze eerste editie van leff ontsluit de rijkdom van recente en gevestigde producties. Jonge makers krijgen een podium geboden en bezoekers worden betrokken bij de inhoud van de films door middel van lezingen, discussies en ontmoetingen met makers en beschouwers. Net als de essayfilms zelf is leff is persoonlijk, reflectief en hybride. Het festival verkent de werkelijkheid zoals ook de filmmakers dat doen.
         </p>
 

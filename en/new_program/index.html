@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/leff/assets/header/android-chrome-512x512.png">
     <meta name="theme-color" content="#C0BEBF">
 
-    <title>About - Leiden Essay Film Festival</title>
+    <title>Leiden Essay Film Festival</title>
     <!-- base href for github pages deployment -->
     
     <base href="/leff/">
@@ -32,13 +32,61 @@
 
     
 <style>
-    
+/*
+        altered programm
+*/
+
+#film-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+.film-title {
+    width: 100%;
+    list-style: none;
+    margin: 2.25rem 0;
+    padding: 0;
+    font-size: 5rem;
+}
+
+.film-title:hover {
+    text-decoration: underline;
+}
+
+.film-image-preview {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 1s ease, visibility 0s 1s;
+}
+
+.film-image-preview.top { top: 10%; }
+.film-image-preview.middle { top: 50%; transform: translateY(-50%); }
+.film-image-preview.bottom { bottom: 10%; }
+
+
+.film-image-preview.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease;
+}
+
+.film-image-preview img {
+    width: 100%;
+    height: auto;
+}
+
 </style>
 
 </head>
 <body>
     <nav>
-        <a href="/leff/nl/"><img src="/leff/assets/leff-logo-yellow.svg"
+        <a href="/leff/en/"><img src="/leff/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
         <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button"
             style="display: none;">
@@ -51,13 +99,13 @@
             <div id="languages">
                 
                 
-                <a href="/leff/en/tickets/">
-                    <button>EN</button>
+                <button class="active">EN</button>
+                
+                
+                
+                <a href="/leff/nl/new/">
+                    <button>NL</button>
                 </a>
-                
-                
-                
-                <button class="active">NL</button>
                 
                 
             </div>
@@ -84,7 +132,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
                             </svg>
-                            <a href="/leff/nl/">Home</a>
+                            <a href="/leff/en/">Home</a>
                             
                         </li>
                         
@@ -94,7 +142,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
                             </svg>
-                            <a href="/leff/nl/programme/">Programma 2025</a>
+                            <a href="/leff/en/programme/">Programme 2025</a>
                             
                         </li>
                         
@@ -104,7 +152,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
                             </svg>
-                            <a href="/leff/nl/schedule/">Schema</a>
+                            <a href="/leff/en/schedule/">Schedule</a>
                             
                         </li>
                         
@@ -116,14 +164,14 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow dropdown-arrow">
                                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
                                     </svg>
-                                    <span>Over</span>
+                                    <span>About</span>
                                 </button>
                                 <ul class="menu-dropdown-content" id="about-dropdown">
                                     
                                     <!-- generic dropdown items from config -->
                                     
                                     <li>
-                                        <a href="/leff/nl/about/">
+                                        <a href="/leff/en/about/">
                                             
                                                 Festival
                                             
@@ -131,9 +179,9 @@
                                     </li>
                                     
                                     <li>
-                                        <a href="/leff/nl/organisation/">
+                                        <a href="/leff/en/organisation/">
                                             
-                                                Organisatie
+                                                Organisation
                                             
                                         </a>
                                     </li>
@@ -150,7 +198,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
                             </svg>
-                            <a href="/leff/nl/tickets/">Tickets</a>
+                            <a href="/leff/en/tickets/">Tickets</a>
                             
                         </li>
                         
@@ -165,17 +213,13 @@
     
     <section class="page-contents">
         
-<div class="grid-base">
-    <h1 class="page-title">
-        Tickets
-    </h1>
-
-    <div id="general-info">
-        <p class="readeable-text">De online kaartverkoop van leff begint op vrijdag 22 augustus. Naast tickets voor afzonderlijke films of filmblokken zullen er tickets tegen gereduceerd tarief beschikbaar zijn, onder meer voor studenten. Een voordelig passe-partout geeft toegang tot het gehele programma, inclusief opening.</p>
+<div id="main-page">
+    <div class="grid-base">
+        <ul id="film-list">
+            
+        </ul>
     </div>
 </div>
-
-<div class="footer-negative-space"></div>
 
     </section>
 
@@ -185,6 +229,82 @@
     </footer>
 
     
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filmTitles = document.querySelectorAll('.film-title');
+        const gridBase = document.querySelector('.grid-base');
+        const mainPage = document.getElementById('main-page');
+        const verticalPositions = ['top', 'middle', 'bottom'];
+
+        filmTitles.forEach(title => {
+            let previewElement = null;
+
+            title.addEventListener('mouseenter', () => {
+                // create a new preview element
+                previewElement = document.createElement('div');
+                previewElement.classList.add('film-image-preview');
+                
+                const img = document.createElement('img');
+                const newImage = title.getAttribute('data-image');
+                if (newImage) {
+                    img.src = newImage;
+                }
+                img.alt = "film preview";
+                previewElement.appendChild(img);
+
+                // add to dom
+                mainPage.appendChild(previewElement);
+
+                // position it
+                const gridRect = gridBase.getBoundingClientRect();
+                const gridStyle = window.getComputedStyle(gridBase);
+                const nCols = 6;
+                const nGaps = nCols - 1;
+
+                const paddingLeft = parseFloat(gridStyle.paddingLeft);
+                const columnGap = parseFloat(gridStyle.columnGap);
+
+                const netWidth = gridRect.width - paddingLeft - parseFloat(gridStyle.paddingRight);
+                const totalColWidth = netWidth - (nGaps * columnGap);
+                const colWidth = totalColWidth / nCols;
+
+                const startColumn = Math.floor(Math.random() * 5) + 1;
+                const offset = paddingLeft + (startColumn - 1) * (colWidth + columnGap);
+                
+                const left = gridRect.left + offset;
+
+                previewElement.style.left = left + 'px';
+                previewElement.style.width = (2 * colWidth + columnGap) + 'px';
+
+                const randomPosition = verticalPositions[Math.floor(Math.random() * verticalPositions.length)];
+                previewElement.classList.add(randomPosition);
+
+                // make it visible (fade in)
+                setTimeout(() => {
+                    if (previewElement) {
+                        previewElement.classList.add('visible');
+                    }
+                }, 10); 
+            });
+
+            title.addEventListener('mouseleave', () => {
+                if (previewElement) {
+                    // start fade out
+                    previewElement.classList.remove('visible');
+
+                    // remove from dom after transition
+                    previewElement.addEventListener('transitionend', () => {
+                        if (previewElement && previewElement.parentNode) {
+                            previewElement.parentNode.removeChild(previewElement);
+                        }
+                        previewElement = null;
+                    }, { once: true });
+                }
+            });
+        });
+    });
+</script>
+
 
     
 

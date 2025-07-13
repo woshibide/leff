@@ -159,7 +159,8 @@ const MenuSystem = {
             menuOverlay: document.getElementById('menu-overlay'),
             closeButton: document.getElementById('menu-close'),
             nav: document.querySelector('nav'),
-            logo: document.getElementById('nav-logo')
+            logo: document.getElementById('nav-logo'),
+            menuText: null
         };
     },
 
@@ -244,8 +245,10 @@ const MenuSystem = {
      * open the menu with animation
      */
     openMenu() {
-        // create placeholder circle to maintain nav layout
-        this.createPlaceholderCircle();
+        // show close button
+        if (this.elements.closeButton) {
+            this.elements.closeButton.parentElement.style.display = 'block';
+        }
         
         // get circle position for expansion animation
         const circleRect = this.elements.circle.getBoundingClientRect();
@@ -260,10 +263,18 @@ const MenuSystem = {
         this.elements.nav.classList.add('menu-active');
         document.body.classList.add('menu-active');
         
-        // swap to black logo after a small delay to ensure css transitions don't interfere
+        // swap logo to text 'menu'
         setTimeout(() => {
-            if (this.elements.logo) {
-                this.elements.logo.src = getAssetPath('assets/leff-logo-black.svg');
+            if (this.elements.logo && this.elements.logo.parentNode) {
+                if (!this.elements.menuText) {
+                    this.elements.menuText = document.createElement('span');
+                    this.elements.menuText.id = 'nav-logo-text';
+                    this.elements.menuText.textContent = 'MENU';
+                    if (this.elements.logo.className) {
+                        this.elements.menuText.className = this.elements.logo.className;
+                    }
+                }
+                this.elements.logo.parentNode.replaceChild(this.elements.menuText, this.elements.logo);
             }
         }, 50);
         
@@ -282,11 +293,13 @@ const MenuSystem = {
         
         setTimeout(() => {
             this.elements.circle.classList.remove('expanded');
-            // remove placeholder circle
-            this.removePlaceholderCircle();
+            // hide close button
+            if (this.elements.closeButton) {
+                this.elements.closeButton.parentElement.style.display = 'none';
+            }
             // swap back to yellow logo after the menu animation completes
-            if (this.elements.logo) {
-                this.elements.logo.src = getAssetPath('assets/leff-logo-yellow.svg');
+            if (this.elements.menuText && this.elements.menuText.parentNode) {
+                this.elements.menuText.parentNode.replaceChild(this.elements.logo, this.elements.menuText);
             }
             // clean up css variables
             this.elements.circle.style.removeProperty('--circle-top');
@@ -298,35 +311,14 @@ const MenuSystem = {
      * create a placeholder circle to maintain nav layout during animation
      */
     createPlaceholderCircle() {
-        // check if placeholder already exists
-        const existingPlaceholder = document.getElementById('circle-placeholder');
-        if (existingPlaceholder) return;
-
-        const placeholder = document.createElement('div');
-        placeholder.id = 'circle-placeholder';
-
-        // get dimensions of the circle
-        const circleRect = this.elements.circle.getBoundingClientRect();
-        placeholder.style.width = `${circleRect.width}px` / 1.8;
-        placeholder.style.height = `${circleRect.height}px` / 1.8;
-        
-        // add click handler to close menu
-        placeholder.addEventListener('click', () => {
-            this.closeMenu();
-        });
-        
-        // insert placeholder right after the circle element
-        this.elements.circle.insertAdjacentElement('afterend', placeholder);
+        // no longer needed
     },
 
     /**
      * remove the placeholder circle
      */
     removePlaceholderCircle() {
-        const placeholder = document.getElementById('circle-placeholder');
-        if (placeholder) {
-            placeholder.remove();
-        }
+        // no longer needed
     }
 };
 
