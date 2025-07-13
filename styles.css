@@ -720,7 +720,7 @@ nav:not(.menu-active) .tickets-button:hover svg {
 
 .menu-grid {
     height: 100vh;
-    margin-top: 7rem;
+    padding-top: 9.375rem;
 }
 
 .menu-title {
