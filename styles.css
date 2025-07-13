@@ -722,6 +722,11 @@ nav:not(.menu-active) .tickets-button:hover svg {
     height: 100vh;
     padding-top: 9.375rem;
 }
+@media (max-width: 768px) {
+    .menu-grid {
+        padding-top: 0;
+    }
+}
 
 .menu-title {
     position: absolute;
