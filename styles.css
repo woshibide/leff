@@ -255,6 +255,11 @@ em {
     animation: pulse 2.4s var(--transition) infinite;
 }
 
+@media (max-width: 768px) {
+#custom-cursor {
+    display: none;
+}
+
 #custom-cursor.excited {
     animation: pulse 0.4s var(--transition) infinite;
 }
@@ -285,8 +290,9 @@ em {
 
 @media (prefers-reduced-motion: reduce) {
     #custom-cursor {
-        display: none;
+        display: none !important;
     }
+}
 
     * {
         /* fallback to default cursor */
