@@ -10,22 +10,24 @@
 
     <meta property="og:title" content="Leiden Essay Film Festival">
     <meta property="og:description" content="Celebrating the art of essay film and cinema">
-    <meta property="og:image" content="/assets/header/og_1200x1200.png">
+    <meta property="og:image" content="/leff/assets/header/og_1200x1200.png">
     <meta property="og:url" content="">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="/assets/header/og_1200x1200.png">
+    <meta name="twitter:image" content="/leff/assets/header/og_1200x1200.png">
 
-    <link rel="icon" href="/assets/header/favicon.ico" sizes="any">
-    <link rel="icon" href="/assets/header/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/header/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/header/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/assets/header/android-chrome-512x512.png">
+    <link rel="icon" href="/leff/assets/header/favicon.ico" sizes="any">
+    <link rel="icon" href="/leff/assets/header/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/leff/assets/header/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/leff/assets/header/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/leff/assets/header/android-chrome-512x512.png">
     <meta name="theme-color" content="#C0BEBF">
 
     <title>Error - Leiden Essay Film Festival</title>
     <!-- base href for github pages deployment -->
     
-    <link rel="stylesheet" href="/styles.css">
+    <base href="/leff/">
+    
+    <link rel="stylesheet" href="/leff/styles.css">
     
 
     
@@ -75,7 +77,7 @@
 </head>
 <body>
     <nav>
-        <a href="/nl/"><img src="/assets/leff-logo-yellow.svg"
+        <a href="/leff/nl/"><img src="/leff/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
         <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button"
             style="display: none;">
@@ -88,7 +90,7 @@
             <div id="languages">
                 
                 
-                <a href="/en/error/">
+                <a href="/leff/en/error/">
                     <button>EN</button>
                 </a>
                 
@@ -121,7 +123,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
                             </svg>
-                            <a href="/nl/">Home</a>
+                            <a href="/leff/nl/">Home</a>
                             
                         </li>
                         
@@ -131,7 +133,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
                             </svg>
-                            <a href="/nl/programme/">Programma 2025</a>
+                            <a href="/leff/nl/programme/">Programma 2025</a>
                             
                         </li>
                         
@@ -141,7 +143,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
                             </svg>
-                            <a href="/nl/schedule/">Schema</a>
+                            <a href="/leff/nl/schedule/">Schema</a>
                             
                         </li>
                         
@@ -160,7 +162,7 @@
                                     <!-- generic dropdown items from config -->
                                     
                                     <li>
-                                        <a href="/nl/about/">
+                                        <a href="/leff/nl/about/">
                                             
                                                 Festival
                                             
@@ -168,7 +170,7 @@
                                     </li>
                                     
                                     <li>
-                                        <a href="/nl/organisation/">
+                                        <a href="/leff/nl/organisation/">
                                             
                                                 Organisatie
                                             
@@ -187,7 +189,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
                             </svg>
-                            <a href="/nl/tickets/">Tickets</a>
+                            <a href="/leff/nl/tickets/">Tickets</a>
                             
                         </li>
                         
@@ -216,7 +218,7 @@
     
     function preload() {
         // load the leff logo svg
-        logo = loadImage('/assets/leff-logo-yellow.svg');
+        logo = loadImage('/leff/assets/leff-logo-yellow.svg');
     }
     
     function setup() {
@@ -282,19 +284,19 @@
     
     // click to return to home page
     function mousePressed() {
-        window.location.href = '/nl/';
+        window.location.href = '/leff/nl/';
     }
     
     // press any key to return to home page
     function keyPressed() {
-        window.location.href = '/nl/';
+        window.location.href = '/leff/nl/';
     }
 </script>
 
     </section>
 
     <footer class="grid-base">
-        <p>This website was designed by Michela Meliddo and Ellen Owen and developed by <a href="https://wshbd.com"
+        <p>This website was designed by <a href="https://www.instagram.com/michela.meliddo" target="_blank">Michela Meliddo</a> and Ellen Owen and developed by <a href="https://wshbd.com"
                 target="_blank">Pyotr Goloub</a></p>
     </footer>
 
@@ -304,10 +306,10 @@
 
     <div id="custom-cursor"></div>
 
-    <script src="/scripts.js"></script>
+    <script src="/leff/scripts.js"></script>
     <script>
         // set base path for javascript to use
-        window.BASE_PATH = '/';
+        window.BASE_PATH = '/leff/';
     </script>
 </body>
 
