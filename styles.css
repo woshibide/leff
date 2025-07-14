@@ -325,6 +325,16 @@ h6 {
     font-weight: normal;
 }
 
+a:visited {
+    text-decoration: underline 2px solid;
+    color: var(--accent);
+}
+
+* p a:hover {
+    background: var(--bg-main);
+    color: var(--accent);
+}
+
 .grid-base {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -410,9 +420,9 @@ h6 {
     text-decoration: underline 2px solid;
 }
 
-.placeholder a:visited {
-    text-decoration: underline 2px solid;
-    color: var(--text-main);
+.placeholder a:hover {
+    background: var(--bg-main);
+    color: var(--accent);
 }
 
 .placeholder {
