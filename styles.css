@@ -710,6 +710,10 @@ nav:not(.menu-active) .tickets-button:hover svg {
     color: var(--accent);
 }
 
+.menu-active #languages button.active {
+    color: var(--bg-main);
+}
+
 /*
         MENU
 */
