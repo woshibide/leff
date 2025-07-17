@@ -40,10 +40,6 @@ body.index-page {
 }
 
 #main-page {
-    background-image: url('/leff/assets/images/bg.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     height: 100%;
     width: 100%;
     padding-top: var(--space-2xl);
@@ -51,7 +47,39 @@ body.index-page {
     top: 0;
     left: 0;
     z-index: 1;
+    overflow: hidden;
 }
+
+.background-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.background-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.background-slide.active {
+    opacity: 1;
+}
+
+/* remove this rule that causes timing issues */
+/* .background-slide:first-child {
+    opacity: 1;
+} */
 
 #main-page::before {
     content: '';
@@ -109,9 +137,6 @@ body.index-page.menu-open #nav-logo {
         position: absolute;
         bottom: var(--space-md);
     }
-    #hero-h1 *{
-        /* line-height: 12%; */
-    }
 }
 
 /* when hero text is moved into nav */
@@ -151,6 +176,69 @@ nav.menu-active #hero-h1 {
         grid-column: 1 / -1;
         margin-top: 40vh;
     }
+}
+
+#image-caption {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    align-self: end;
+    z-index: 50;
+    color: var(--accent);
+    text-shadow: var(--shadow);
+    font-size: 0.875rem;
+    line-height: 1.4;
+    padding: var(--space-sm);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    margin-bottom: var(--space-lg);
+}
+
+#image-caption.visible {
+    opacity: 1;
+}
+
+#image-caption .film-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+#image-caption .film-details {
+    opacity: 0.9;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    #image-caption {
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+        align-self: start;
+        justify-self: start;
+        margin-top: var(--space-md);
+        margin-bottom: 0;
+        font-size: 0.8rem;
+    }
+    
+    #image-caption .film-title {
+        font-size: 0.9rem;
+    }
+    
+    #image-caption .film-details {
+        font-size: 0.8rem;
+    }
+}
+
+/* screen reader only content for seo */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 </style>
@@ -286,10 +374,193 @@ nav.menu-active #hero-h1 {
     <section class="page-contents">
         
 <div id="main-page">
+    <div class="background-slideshow">
+        <!-- gallery images from csv -->
+        
+        <div class="background-slide active" 
+             style="background-image: url('/assets/images/home-gallery/FTC - still 9.webp');" 
+             data-title="Free to Choose" 
+             data-director="Bahar Noorizadeh" 
+             data-country="UK" 
+             data-year="2023">
+            <!-- seo-friendly hidden content -->
+            <div class="sr-only">
+                <h2>Free to Choose</h2>
+                <p>directed by Bahar Noorizadeh (UK, 2023)</p>
+            </div>
+        </div>
+        
+        <div class="background-slide" 
+             style="background-image: url('/assets/images/home-gallery/FTC - still 6.webp');" 
+             data-title="Free to Choose" 
+             data-director="Bahar Noorizadeh" 
+             data-country="UK" 
+             data-year="2023">
+            <!-- seo-friendly hidden content -->
+            <div class="sr-only">
+                <h2>Free to Choose</h2>
+                <p>directed by Bahar Noorizadeh (UK, 2023)</p>
+            </div>
+        </div>
+        
+        <div class="background-slide" 
+             style="background-image: url('/assets/images/home-gallery/AAGS_02.webp');" 
+             data-title="An Asian Ghost Story" 
+             data-director="Bo Wang" 
+             data-country="Hong Kong" 
+             data-year="2023">
+            <!-- seo-friendly hidden content -->
+            <div class="sr-only">
+                <h2>An Asian Ghost Story</h2>
+                <p>directed by Bo Wang (Hong Kong, 2023)</p>
+            </div>
+        </div>
+        
+        <div class="background-slide" 
+             style="background-image: url('/assets/images/home-gallery/AAGS_03.webp');" 
+             data-title="An Asian Ghost Story" 
+             data-director="Bo Wang" 
+             data-country="Hong Kong" 
+             data-year="2023">
+            <!-- seo-friendly hidden content -->
+            <div class="sr-only">
+                <h2>An Asian Ghost Story</h2>
+                <p>directed by Bo Wang (Hong Kong, 2023)</p>
+            </div>
+        </div>
+        
+        <div class="background-slide" 
+             style="background-image: url('/assets/images/home-gallery/Home Invasion - still 5.webp');" 
+             data-title="Home Invasion" 
+             data-director="Graeme Arnfield" 
+             data-country="US" 
+             data-year="2024">
+            <!-- seo-friendly hidden content -->
+            <div class="sr-only">
+                <h2>Home Invasion</h2>
+                <p>directed by Graeme Arnfield (US, 2024)</p>
+            </div>
+        </div>
+        
+        <div class="background-slide" 
+             style="background-image: url('/assets/images/home-gallery/timessquare-presse3.webp');" 
+             data-title="Henry Fonda for President" 
+             data-director="Alexander Horwath" 
+             data-country="US" 
+             data-year="2024">
+            <!-- seo-friendly hidden content -->
+            <div class="sr-only">
+                <h2>Henry Fonda for President</h2>
+                <p>directed by Alexander Horwath (US, 2024)</p>
+            </div>
+        </div>
+        
+        <div class="background-slide" 
+             style="background-image: url('/assets/images/home-gallery/printcrvenojbojizarenezemlje (1).webp');" 
+             data-title="To the Earthern Red" 
+             data-director="Nika Pećarina" 
+             data-country="Netherlands" 
+             data-year="2022">
+            <!-- seo-friendly hidden content -->
+            <div class="sr-only">
+                <h2>To the Earthern Red</h2>
+                <p>directed by Nika Pećarina (Netherlands, 2022)</p>
+            </div>
+        </div>
+        
+        <div class="background-slide" 
+             style="background-image: url('/assets/images/home-gallery/printcrvenojbojizarenezemlje (2).webp');" 
+             data-title="To the Earthern Red" 
+             data-director="Nika Pećarina" 
+             data-country="Netherlands" 
+             data-year="2022">
+            <!-- seo-friendly hidden content -->
+            <div class="sr-only">
+                <h2>To the Earthern Red</h2>
+                <p>directed by Nika Pećarina (Netherlands, 2022)</p>
+            </div>
+        </div>
+        
+        <div class="background-slide" 
+             style="background-image: url('/assets/images/home-gallery/printcrvenojbojizarenezemlje.webp');" 
+             data-title="To the Earthern Red" 
+             data-director="Nika Pećarina" 
+             data-country="Netherlands" 
+             data-year="2022">
+            <!-- seo-friendly hidden content -->
+            <div class="sr-only">
+                <h2>To the Earthern Red</h2>
+                <p>directed by Nika Pećarina (Netherlands, 2022)</p>
+            </div>
+        </div>
+        
+        <div class="background-slide" 
+             style="background-image: url('/assets/images/home-gallery/nhd_1.webp');" 
+             data-title="The Natural History of Destruction" 
+             data-director="Sergei Loznitsa" 
+             data-country="Poland" 
+             data-year="2022">
+            <!-- seo-friendly hidden content -->
+            <div class="sr-only">
+                <h2>The Natural History of Destruction</h2>
+                <p>directed by Sergei Loznitsa (Poland, 2022)</p>
+            </div>
+        </div>
+        
+        <div class="background-slide" 
+             style="background-image: url('/assets/images/home-gallery/nhd_2.webp');" 
+             data-title="The Natural History of Destruction" 
+             data-director="Sergei Loznitsa" 
+             data-country="Poland" 
+             data-year="2022">
+            <!-- seo-friendly hidden content -->
+            <div class="sr-only">
+                <h2>The Natural History of Destruction</h2>
+                <p>directed by Sergei Loznitsa (Poland, 2022)</p>
+            </div>
+        </div>
+        
+        <div class="background-slide" 
+             style="background-image: url('/assets/images/home-gallery/nhd_3.webp');" 
+             data-title="The Natural History of Destruction" 
+             data-director="Sergei Loznitsa" 
+             data-country="Poland" 
+             data-year="2022">
+            <!-- seo-friendly hidden content -->
+            <div class="sr-only">
+                <h2>The Natural History of Destruction</h2>
+                <p>directed by Sergei Loznitsa (Poland, 2022)</p>
+            </div>
+        </div>
+        
+        <div class="background-slide" 
+             style="background-image: url('/assets/images/home-gallery/Factory Gate_1.webp');" 
+             data-title="Twenty-Four Cinematic Points of View of a Factory Gate in China" 
+             data-director="Ho Rui An" 
+             data-country="China" 
+             data-year="2023">
+            <!-- seo-friendly hidden content -->
+            <div class="sr-only">
+                <h2>Twenty-Four Cinematic Points of View of a Factory Gate in China</h2>
+                <p>directed by Ho Rui An (China, 2023)</p>
+            </div>
+        </div>
+        
+        
+        <!-- fallback if no gallery images -->
+        
+    </div>
+    
     <div class="grid-base">
+        <div id="image-caption">
+            <div class="film-title"></div>
+            <div class="film-details"></div>
+        </div>
+        
         <h1 id="hero-h1">
             leff is het eerste festival in Nederland dat volledig gewijd is aan de Essayfilm
         </h1>
+        
         <div id="festival-date">
             <p>17-19 September 2025</p>
         </div>
@@ -332,6 +603,75 @@ nav.menu-active #hero-h1 {
                 document.body.classList.remove('menu-open');
             }
         });
+        
+        // background slideshow functionality
+        const slides = document.querySelectorAll('.background-slide');
+        const caption = document.getElementById('image-caption');
+        const titleElement = caption.querySelector('.film-title');
+        const detailsElement = caption.querySelector('.film-details');
+        let currentSlide = 0;
+        let slideInterval = null;
+        
+        console.log('slideshow initialized with', slides.length, 'slides');
+        
+        function updateCaption(slide) {
+            const title = slide.dataset.title || '';
+            const director = slide.dataset.director || '';
+            const country = slide.dataset.country || '';
+            const year = slide.dataset.year || '';
+            
+            console.log('updating caption for:', title);
+            
+            // clear previous content
+            titleElement.textContent = '';
+            detailsElement.textContent = '';
+            
+            // only show caption if we have meaningful content
+            if (title && title !== 'Leiden Essay Film Festival') {
+                titleElement.textContent = title;
+                
+                let details = '';
+                if (director) details += director;
+                if (country) details += (details ? ', ' : '') + country;
+                if (year) details += (details ? ', ' : '') + year;
+                
+                detailsElement.textContent = details;
+                caption.classList.add('visible');
+            } else {
+                caption.classList.remove('visible');
+            }
+        }
+        
+        function showSlide(index) {
+            console.log('showing slide:', index);
+            
+            // remove active from all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            // add active to current slide
+            if (slides[index]) {
+                slides[index].classList.add('active');
+                updateCaption(slides[index]);
+            }
+        }
+        
+        function nextSlide() {
+            const timestamp = new Date().toLocaleTimeString();
+            console.log(`[${timestamp}] advancing to next slide`);
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        // initialize and start slideshow
+        if (slides.length > 0) {
+            console.log('starting slideshow');
+            showSlide(0);
+            
+            if (slides.length > 1) {
+                slideInterval = setInterval(nextSlide, 5000);
+                console.log('interval started');
+            }
+        }
     });
 </script>
 
