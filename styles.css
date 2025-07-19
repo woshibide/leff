@@ -365,6 +365,11 @@ a:visited {
     color: var(--bg-main);
     font-size: 1.875rem;
 }
+@media (max-width: 768px) {
+    .readeable-text{
+        font-size: 1.25rem;
+    }
+}
 
 .page-contents {
     /* min-height: 80vh; */
@@ -393,12 +398,18 @@ a:visited {
         PRE LAUNCH
 */
 #general-info {
-        color: var(--text-main);
-        grid-column: 1 / 6;
-        grid-row: 2 / 3;
-        font-size: 1.875rem;
-        /* grid-row: 1 / 4; */
+    color: var(--text-main);
+    grid-column: 1 / 6;
+    grid-row: 2 / 3;
+    font-size: 1.875rem;
+    /* grid-row: 1 / 4; */
+}
+
+@media (max-width: 768px) {
+    #general-info {
+        font-size: 1.25rem;
     }
+}
 
 #general-info *:not(h2, em) {
     /* margin-top: 6rem; */
@@ -474,7 +485,7 @@ nav {
 }
 @media (max-width: 768px) {
     nav {
-        align-items: center;
+        align-items: start;
         grid-template-columns: repeat(3, 1fr);
         padding: 0.625rem;
     }
@@ -786,7 +797,12 @@ nav:not(.menu-active) .tickets-button:hover svg {
     color: var(--bg-main);
     font-size: 2rem;
     transition: all 0.3s var(--transition);
+    margin-left: 0.875rem;
 }
+.menu-dropdown-toggle span{
+    margin-left: 1rem;
+}
+
 
 .north-east-arrow {
     rotate: -45deg;
