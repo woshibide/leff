@@ -133,9 +133,9 @@ body.index-page.menu-open #nav-logo {
 }
 @media (max-width: 768px) {
     #hero-h1 {
-        font-size: 3rem;
+        font-size: 2.75rem;
         position: absolute;
-        bottom: var(--space-md);
+        bottom: 10vh;
     }
 }
 
@@ -174,7 +174,7 @@ nav.menu-active #hero-h1 {
         font-size: 1.125rem !important;
         margin-left: var(--space-5xl);
         grid-column: 1 / -1;
-        margin-top: 40vh;
+        margin-top: 35vh;
     }
 }
 
@@ -210,12 +210,11 @@ nav.menu-active #hero-h1 {
 
 @media (max-width: 768px) {
     #image-caption {
-        grid-column: 1 / -1;
-        grid-row: 2 / 3;
+        position: absolute;
         align-self: start;
         justify-self: start;
-        margin-top: var(--space-md);
-        margin-bottom: 0;
+        bottom: var(--space-md);
+        margin: 0;
         font-size: 0.8rem;
     }
     
