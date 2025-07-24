@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Leiden Essay Film Festival">
+    <meta name="keywords" content="film festival, essay film, leiden, cinema, documentary">
+    <meta name="description" content="Celebrating the art of essay film and cinema">
+
+    <meta property="og:title" content="Leiden Essay Film Festival">
+    <meta property="og:description" content="Celebrating the art of essay film and cinema">
+    <meta property="og:image" content="../assets/header/og_1200x1200.png">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="../assets/header/og_1200x1200.png">
+
+    <link rel="icon" href="../assets/header/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/header/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/header/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/header/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/header/android-chrome-512x512.png">
+    <meta name="theme-color" content="#C0BEBF">
+
+    <title>Leiden Essay Film Festival</title>
+    <!-- base href for github pages deployment -->
+    
+    <link rel="stylesheet" href="../styles.css">
+    
+
+    
+<style>
+    /*
+        SCHEDULE PAGE
+    */
+    @media (max-width: 768px) {
+        #schedule-placeholder, .page-title{
+            padding-inline: 0.625rem;
+        }
+    }
+    #schedule-page {
+        /* UN / COMMENT FOR PUBLIC */
+        /* margin-top: var(--space-5xl);
+        padding: var(--space-2xl) var(--space-md); */
+        min-height: 100vh;
+    }
+
+    #schedule-container {
+        width: 100%;
+        overflow-x: auto;
+        grid-column: 1 / -1;
+    }
+
+    .schedule-day {
+        margin-bottom: var(--space-5xl);
+    }
+
+    .schedule-date-title {
+        color: var(--text-main);
+        text-transform: uppercase;
+        padding: var(--space-md);
+        background: var(--accent);
+    }
+
+    .schedule-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: none;
+        background: var(--silver);
+        font-family: "switzer", sans-serif;
+        margin-bottom: var(--space-xl);
+    }
+
+    .schedule-table * tr {
+        background-color: var(--silver);
+        transition: all 0.3s var(--transition);
+    }
+
+    .schedule-table tbody {
+        border: var(--text-main) 1px solid;
+    }
+
+    .schedule-table * tr:hover {
+        background-color: var(--bg-main-hover);
+    }
+
+
+    .schedule-table th,
+    .schedule-table td {
+        border-top: 2px solid var(--bg-main);
+        padding: var(--space-sm);
+        text-align: left;
+        vertical-align: top;
+    }
+
+    .schedule-table th {
+        position: relative;
+        vertical-align: top;
+        bottom: 0px;
+        height: 2rem;
+    }
+
+    /* time marker sticks container */
+    .time-markers {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .time-marker-stick {
+        width: 1px;
+        height: 10px;
+        background: var(--bg-main);
+    }
+
+    .schedule-venue-header {
+        border: none !important;
+        background: var(--accent);
+        color: var(--text-main);
+        /* font-weight: bold; */
+        text-transform: uppercase;
+        width: 120px;
+        height: 2rem;
+        min-width: 120px;
+    }
+
+    .schedule-time-header {
+        border: none !important;
+        background: var(--accent);
+        color: var(--text-main);
+        /* font-weight: bold; */
+        text-align: center;
+        min-width: 100px;
+        white-space: nowrap;
+    }
+
+    .schedule-venue-cell {
+        color: var(--text-main);
+        text-transform: lowercase;
+        width: auto;
+        min-width: 120px;
+        position: sticky;
+        left: 0;
+        z-index: 1;
+    }
+
+    .schedule-event-cell {
+        /* min-height: 60px; */
+        padding: var(--space-xs);
+        position: relative;
+    }
+
+    .schedule-event {
+        color: var(--accent);
+        background: var(--silver);
+        outline: var(--accent) 2px solid;
+        padding: var(--space-xs) var(--space-sm);
+        font-size: 2rem;
+        transition: all 0.2s var(--transition);
+        height: 100%;
+        width: 100%;
+        min-height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        cursor: pointer;
+    }
+
+    .schedule-event:hover {
+        background: var(--bg-main);
+        transform: scale(1.02);
+    }
+
+    .event-block {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        opacity: 0.8;
+        margin-bottom: var(--space-xs);
+    }
+
+    .event-title {
+        /* font-weight: bold; */
+        white-space: nowrap;
+        margin-bottom: var(--space-xs);
+        line-height: 1.1;
+    }
+
+    .event-director {
+        font-size: 0.7rem;
+        opacity: 0.7;
+        margin-top: auto;
+    }
+
+    .no-schedule {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: var(--space-5xl);
+        color: var(--text-main);
+    }
+
+    .no-schedule h2 {
+        font-size: 2rem;
+        margin-bottom: var(--space-xl);
+        color: var(--text-main);
+        text-transform: uppercase;
+    }
+
+    .no-schedule p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto var(--space-lg);
+    }
+
+    /* popup styles */
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--bg-main-overlay);
+        z-index: 10000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s var(--transition);
+    }
+
+    .popup-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .popup-container {
+        position: fixed;
+        top: var(--space-5xl);
+        left: 50%;
+        transform: translateX(-50%);
+        /* to be changed for mobile or other implementation preferably just reuse grid */
+        width: calc(100% - 160px);
+        background: var(--accent);
+        color: var(--text-main);
+        z-index: 10001;
+        opacity: 0;
+        transform: translateX(-50%) translateY(-2rem);
+        transition: all 0.3s var(--transition);
+        padding: 0 var(--space-2xl);
+    }
+
+    .popup-overlay.active .popup-container {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .popup-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-column-gap: var(--space-xl);
+        padding: var(--space-2xl) 0;
+        height: 100%;
+    }
+
+    .popup-left {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+        grid-column: 1 / 4;
+    }
+
+    .popup-right {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        grid-column: 4 / 7;
+    }
+
+    .popup-right>*:nth-child(2),
+    .popup-left>*:nth-child(2) {
+        margin-top: var(--space-5xl);
+    }
+
+    #popup-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .popup-title {
+        font-size: 2rem;
+        /* font-weight: bold; */
+        margin: 0;
+        text-transform: lowercase;
+    }
+
+    .popup-director {
+        font-size: 1.2rem;
+        opacity: 0.8;
+        margin: 0;
+    }
+
+    .popup-synopsis {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .popup-image {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+        margin: var(--space-md) 0;
+    }
+
+    .popup-details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-md);
+        margin-top: auto;
+        padding-top: var(--space-md);
+    }
+
+    .popup-info {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        opacity: 0.8;
+    }
+
+    #popup-tickets {
+        background: var(--accent);
+        color: var(--text-main);
+        border: none;
+        outline: 2px solid var(--bg-main);
+        text-decoration: none;
+        transition: all 0.2s var(--transition);
+    }
+
+    #popup-tickets:hover {
+        color: var(--accent);
+        text-decoration: underline 2px solid;
+        background: var(--text-main);
+    }
+
+    @media (max-width: 768px) {
+        .popup-container {
+            top: var(--space-xl);
+            width: 95%;
+            padding: 0 var(--space-sm);
+        }
+
+        .popup-grid {
+            grid-template-columns: 1fr;
+            padding: var(--space-md) 0;
+            gap: var(--space-md);
+        }
+
+        .popup-left {
+            grid-column: 1;
+        }
+
+        .popup-right {
+            grid-column: 1;
+        }
+
+        .popup-title {
+            font-size: 1.5rem;
+        }
+
+        .popup-director {
+            font-size: 1rem;
+        }
+
+        .popup-synopsis {
+            font-size: 0.9rem;
+        }
+
+        .popup-details {
+            flex-direction: column;
+            align-items: stretch;
+            gap: var(--space-sm);
+        }
+    }
+
+    /* responsive design for schedule */
+    @media (max-width: 1200px) {
+        .schedule-table {
+            font-size: 0.9rem;
+        }
+
+        .schedule-venue-header,
+        .schedule-venue-cell {
+            width: 100px;
+            min-width: 100px;
+        }
+
+        .schedule-time-header {
+            min-width: 80px;
+        }
+
+        .schedule-event {
+            font-size: 0.75rem;
+            padding: var(--space-xs);
+            min-height: 45px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #schedule-page {
+            padding: var(--space-xl) 0;
+            margin-top: var(--space-xl);
+        }
+
+        #schedule-container {
+            padding: 0 var(--space-sm);
+        }
+
+        .schedule-date-title {
+            padding: var(--space-sm);
+        }
+
+        .schedule-table {
+            font-size: 0.8rem;
+        }
+
+        .schedule-venue-header,
+        .schedule-venue-cell {
+            width: 80px;
+            min-width: 80px;
+            font-size: 0.7rem;
+        }
+
+        .schedule-time-header {
+            min-width: 70px;
+            font-size: 0.7rem;
+            padding: var(--space-xs);
+        }
+
+        .schedule-event-cell {
+            padding: 2px;
+            min-height: 40px;
+        }
+
+        .schedule-event {
+            font-size: 0.65rem;
+            padding: var(--space-xs);
+            min-height: 35px;
+            border-radius: 2px;
+        }
+
+        .event-block {
+            font-size: 0.6rem;
+        }
+
+        .event-director {
+            font-size: 0.6rem;
+        }
+    }
+</style>
+
+
+</head>
+<body>
+    <nav>
+        <a href="../en/"><img src="../assets/leff-logo-yellow.svg"
+                alt="leiden essay film festival logo" id="nav-logo"></a>
+        <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button"
+            style="display: none;">
+            Tickets 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </a>
+        <div id="circle-container">
+            <div id="languages">
+                
+                
+                <button class="active">EN</button>
+                
+                
+                
+                <a href="../nl/schedule/">
+                    <button>NL</button>
+                </a>
+                
+                
+            </div>
+            <div id="circle"></div>
+            <div class="menu-close" style="display: none;">
+                <button class="close-icon" id="menu-close" aria-label="close">
+                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="menu-overlay" class="menu-overlay">
+            <div class="menu-grid grid-base">
+                <!-- <h2 class="menu-title"></h2> -->
+                <div class="menu-nav">
+                    <ul>
+                        
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/"></a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/programme/"></a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/schedule/"></a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <!-- dropdown menu item -->
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="about">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    <span></span>
+                                </button>
+                                <ul class="menu-dropdown-content" id="about-dropdown">
+                                    
+                                    <!-- generic dropdown items from config -->
+                                    
+                                    <li>
+                                        <a href="/about/">
+                                            
+                                                Festival
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/organisation/">
+                                            
+                                                Organisation
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/tickets/"></a>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+
+    
+    
+    <section class="page-contents">
+        
+<!-- popup overlay -->
+<div class="popup-overlay" id="popup-overlay">
+    <div class="popup-container">
+        <div class="popup-grid">
+            <div class="popup-left">
+                <h3 class="popup-title" id="popup-title"></h3>
+                <p class="popup-director" id="popup-director"></p>
+                <p class="popup-synopsis" id="popup-synopsis"></p>
+            </div>
+            <div class="popup-right">
+                <button class="close-icon" id="popup-close" aria-label="close">
+                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </button>
+                <img class="popup-image" id="popup-image" src="../assets/images/sans-soleil.webp" alt="">
+                <div class="popup-details">
+                    <div class="popup-info" id="popup-info">
+
+                    </div>
+                    <a href="https://bioscopenleiden.nl/" target="_blank" id="popup-tickets" class="tickets-button">
+                        Tickets
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                            <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="schedule-page" class="grid-base">
+    <h1 class="page-title">Schedule</h1>
+    
+    <div id="schedule-container">
+        
+        <div class="schedule-day">
+
+
+            <!-- collect all times and venues for this date -->
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            <!-- schedule table -->
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th class="schedule-venue-header">
+                            <h2 class="schedule-date-title"> 15 sept 2025</h2>
+                        </th>
+                        
+                        <th class="schedule-time-header">
+                            <time datetime="10:00">10:00</time>
+                            <div class="time-markers">
+                                <div class="time-marker-stick"></div>
+                                <div class="time-marker-stick"></div>
+                                <div class="time-marker-stick"></div>
+                                <div class="time-marker-stick"></div>
+                            </div>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="schedule-venue-cell">zaal 1</td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                            
+                            <div class="schedule-event" data-title="In Praise of Slowness"
+                                data-director="Hicham Gardaf" data-synopsis="The ears tell the eyes where to look.” An exploration of how waiting and listening creates stillness, in an effort to reverse the speed of capitalist rhythms."
+                                data-block="classic" data-location="zaal 1" data-time="10:00"
+                                data-image="" data-tickets="">
+                                <div class="event-block">classic</div>
+                                <div class="event-title">In Praise of Slowness</div>
+                                
+                                <div class="event-director">Hicham Gardaf</div>
+                                
+                            </div>
+                            
+                        </td>
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td class="schedule-venue-cell">zaal 2</td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                            
+                            <div class="schedule-event" data-title="The Sending of the Crows"
+                                data-director="Judith Westerveld" data-synopsis="An audiovisual meditation of a language and culture from a colonial past, “moving through time, reflecting on the truth of the people forgotten”."
+                                data-block="classic" data-location="zaal 2" data-time="10:00"
+                                data-image="" data-tickets="">
+                                <div class="event-block">classic</div>
+                                <div class="event-title">The Sending of the Crows</div>
+                                
+                                <div class="event-director">Judith Westerveld</div>
+                                
+                            </div>
+                            
+                        </td>
+                        
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="schedule-day">
+
+
+            <!-- collect all times and venues for this date -->
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            <!-- schedule table -->
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th class="schedule-venue-header">
+                            <h2 class="schedule-date-title"> 16 sept 2025</h2>
+                        </th>
+                        
+                        <th class="schedule-time-header">
+                            <time datetime="10:00">10:00</time>
+                            <div class="time-markers">
+                                <div class="time-marker-stick"></div>
+                                <div class="time-marker-stick"></div>
+                                <div class="time-marker-stick"></div>
+                                <div class="time-marker-stick"></div>
+                            </div>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="schedule-venue-cell">zaal 1</td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                            
+                            <div class="schedule-event" data-title="Message from Mukalap"
+                                data-director="Judith Westerveld" data-synopsis="Through a multilingual response to a sound recording from a man called Mukalap, in the no longer living language !ora, colonial legacies echo through."
+                                data-block="classic" data-location="zaal 1" data-time="10:00"
+                                data-image="" data-tickets="">
+                                <div class="event-block">classic</div>
+                                <div class="event-title">Message from Mukalap</div>
+                                
+                                <div class="event-director">Judith Westerveld</div>
+                                
+                            </div>
+                            
+                        </td>
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td class="schedule-venue-cell">zaal 2</td>
+                        
+                        <td class="schedule-event-cell">
+                            
+                            
+                            <div class="schedule-event" data-title="Disquiet"
+                                data-director="Lis Rhodes" data-synopsis="Revered essay filmmaker Lis Rhodes&#39; latest work opens with a haunting reference to the atomic bomb in Hiroshima, setting the tone for an essay film that explores the intersections of sound, power, and history. Through fragmented imagery and often jarring audio, Rhodes incites us to reflect on the lingering impacts of violence and the structures of control in modern life."
+                                data-block="classic" data-location="zaal 2" data-time="10:00"
+                                data-image="" data-tickets="">
+                                <div class="event-block">classic</div>
+                                <div class="event-title">Disquiet</div>
+                                
+                                <div class="event-director">Lis Rhodes</div>
+                                
+                            </div>
+                            
+                        </td>
+                        
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    
+</div>
+
+    </section>
+
+    <footer class="grid-base">
+        <p>This website was designed by <a href="https://www.instagram.com/michela.meliddo" target="_blank">Michela Meliddo</a> and Ellen Owens and developed by <a href="https://wshbd.com"
+                target="_blank">Pyotr Goloub</a></p>
+    </footer>
+
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // get popup elements
+        const popupOverlay = document.getElementById('popup-overlay');
+        const popupTitle = document.getElementById('popup-title');
+        const popupDirector = document.getElementById('popup-director');
+        const popupSynopsis = document.getElementById('popup-synopsis');
+        const popupImage = document.getElementById('popup-image');
+        const popupInfo = document.getElementById('popup-info');
+        // const popupTickets = document.getElementById('popup-tickets');
+        const popupClose = document.getElementById('popup-close');
+
+        // get all schedule events
+        const scheduleEvents = document.querySelectorAll('.schedule-event');
+
+        // add click listeners to schedule events
+        scheduleEvents.forEach(event => {
+            event.addEventListener('click', function () {
+                // get data from clicked event
+                const title = this.dataset.title;
+                const director = this.dataset.director;
+                const synopsis = this.dataset.synopsis;
+                const block = this.dataset.block;
+                const location = this.dataset.location;
+                const time = this.dataset.time;
+                const image = this.dataset.image;
+                const ticketsUrl = this.dataset.tickets;
+
+                // populate popup content
+                popupTitle.textContent = title;
+                popupDirector.textContent = director;
+                popupSynopsis.textContent = synopsis;
+
+                // handle image
+                if (image) {
+                    popupImage.src = image;
+                    popupImage.style.display = 'block';
+                } else {
+                    // to be changed later
+                    popupImage.style.display = 'block';
+                }
+
+                // populate info section
+                popupInfo.textContent = `${location} | ${time} | ${block}`;
+
+                // // handle tickets button
+                // if (ticketsUrl) {
+                //     popupTickets.href = ticketsUrl;
+                //     popupTickets.style.display = 'inline-flex';
+                // } else {
+                //     popupTickets.style.display = 'none';
+                // }
+
+                // show popup
+                popupOverlay.classList.add('active');
+            });
+        });
+
+        // close popup functionality
+        function closePopup() {
+            popupOverlay.classList.remove('active');
+
+            // remove excited cursor
+            const cursor = document.getElementById('custom-cursor');
+            if (cursor) {
+                cursor.classList.remove('excited');
+            }
+        }
+
+        // close button
+        popupClose.addEventListener('click', closePopup);
+
+        // close on overlay click (but not on popup container)
+        popupOverlay.addEventListener('click', function (e) {
+            if (e.target === popupOverlay) {
+                closePopup();
+            }
+        });
+
+        // close on escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
+                closePopup();
+            }
+        });
+    });
+</script>
+
+
+    
+
+    <div id="custom-cursor"></div>
+
+    <script src="../scripts.js"></script>
+    <script>
+        // set base path for javascript to use
+        window.BASE_PATH = '../';
+    </script>
+</body>
+
+</html>

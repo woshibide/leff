@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Leiden Essay Film Festival">
+    <meta name="keywords" content="film festival, essay film, leiden, cinema, documentary">
+    <meta name="description" content="Celebrating the art of essay film and cinema">
+
+    <meta property="og:title" content="Leiden Essay Film Festival">
+    <meta property="og:description" content="Celebrating the art of essay film and cinema">
+    <meta property="og:image" content="../assets/header/og_1200x1200.png">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="../assets/header/og_1200x1200.png">
+
+    <link rel="icon" href="../assets/header/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/header/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/header/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/header/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/header/android-chrome-512x512.png">
+    <meta name="theme-color" content="#C0BEBF">
+
+    <title>Organisation - Leiden Essay Film Festival</title>
+    <!-- base href for github pages deployment -->
+    
+    <link rel="stylesheet" href="../styles.css">
+    
+
+    
+<style>
+    /*
+    ORGANISATION PAGE
+    */
+
+    h2 {
+        font-size: 1.875rem;
+    }
+    @media (max-width: 768px) {
+        h2 {
+        font-size: 1.25rem;
+        }
+    }
+
+    #credits * {
+        /* font-size: 1.875rem; */
+    }
+
+    #credits {
+        grid-column: 1 / 7;
+        grid-row: 3 / 4;
+        margin-top: var(--space-3xl);
+        padding: 0 !important;
+    }
+
+    #credits > div:first-child {
+        grid-column: 1 / 4;
+    }
+
+    #credits > div:last-child {
+        grid-column: 4 / 7;
+    }
+
+    /* stack credits sections on mobile */
+    @media (max-width: 768px) {
+        #credits {
+            display: block;
+        }
+        #credits > div:first-child,
+        #credits > div:last-child {
+            margin-bottom: var(--space-3xl);
+            grid-column: auto;
+        }
+    }
+
+    #credits ul {
+        list-style: none;
+        padding: 0;
+    }
+</style>
+
+</head>
+<body>
+    <nav>
+        <a href="../en/"><img src="../assets/leff-logo-yellow.svg"
+                alt="leiden essay film festival logo" id="nav-logo"></a>
+        <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button"
+            style="display: none;">
+            Tickets 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </a>
+        <div id="circle-container">
+            <div id="languages">
+                
+                
+                <button class="active">EN</button>
+                
+                
+                
+                <a href="../nl/organisation/">
+                    <button>NL</button>
+                </a>
+                
+                
+            </div>
+            <div id="circle"></div>
+            <div class="menu-close" style="display: none;">
+                <button class="close-icon" id="menu-close" aria-label="close">
+                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="menu-overlay" class="menu-overlay">
+            <div class="menu-grid grid-base">
+                <!-- <h2 class="menu-title"></h2> -->
+                <div class="menu-nav">
+                    <ul>
+                        
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/"></a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/programme/"></a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/schedule/"></a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <!-- dropdown menu item -->
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="about">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    <span></span>
+                                </button>
+                                <ul class="menu-dropdown-content" id="about-dropdown">
+                                    
+                                    <!-- generic dropdown items from config -->
+                                    
+                                    <li>
+                                        <a href="/about/">
+                                            
+                                                Festival
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/organisation/">
+                                            
+                                                Organisation
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/tickets/"></a>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+
+    
+    
+    <section class="page-contents">
+        
+<div class="grid-base">
+    <h1 class="page-title" style="grid-row: 1 / 2;">
+        Organisation
+    </h1>
+
+    <div id="general-info">
+        <p class="readeable-text">
+            leff is a joint initiative. Born from an idea by the Academy of Creative and Performing Arts at Leiden University, the Discursive Film Foundation was established, joined by the FILM lectoraat of the Royal Conservatoire The Hague and ReCNTR (which focuses on the integration of image and sound in the sciences). leff is a partner and part of the Days of Art &amp; Science. We Are Public, Cineville, LIFF (Leiden International Film Festival), and Leiden Global are partners in reaching our audience.
+        </p>
+    </div>
+    <div id="credits" class="grid-base">
+        <div>
+            <h2>
+                TEAM
+            </h2>
+            <ul>
+                <li>Lelani Antar – coordination of film descriptions</li>
+                <li>Georgie Brinkman – programming</li>
+                <li>Anna Chatzioti – film descriptions</li>
+                <li>Pyotr Goloub – website development</li>
+                <li>Emma de Looij – communications</li>
+                <li>Annemarie Montulet – fundraising</li>
+                <li>Michela Meliddo – visual identity design, website, print materials</li>
+                <li>Veronica Munteanu – film descriptions</li>
+                <li>Ellen Owens – visual identity design, website, print materials</li>
+                <li>Rosalien van der Poel – overall coordination</li>
+                <li>Gabriel Paiuk – programming</li>
+                <li>Merel Pol – film descriptions</li>
+                <li>Gert Staal – texts and fundraising</li>
+                <li>Frederique van Staveren – film descriptions</li>
+                <li>Erik Viskil – programming and overall coordination</li>
+                <li>Esmee de Vette – film descriptions</li>
+                <li>Bo Wang – programming</li>
+                <li>Thijs Witty – programming and overall coordination</li>
+            </ul>
+        </div>
+        <div>
+            <h2>
+                ADVISORY BOARD
+            </h2>
+            <ul>
+                <li>Matthew Barrington – Researcher at Birkbeck Institute of the Moving Image, Curator Essay Film Festival
+                London</li>
+                <li>Janilda Bartholomeu – Filmmaker, programmer, researcher</li>
+                <li>María Palacios Cruz – Director Open City Documentary Festival, London</li>
+                <li>Joost Daamen – Head Programmer IDFA, Amsterdam</li>
+                <li>Linda van Deursen – Designer, lecturer KABK The Hague, Yale School of Art, New Haven, Connecticut</li>
+                <li>Julia Morandeira Arrizabalaga – Director of Studies, Reina Sofia Museum, Madrid</li>
+                <li>Francesco Ragazzi – Associate Professor, Institute of Political Science and co-director ReCNTR, Leiden
+                University</li>
+                <li>Julian Ross – Head of Programming and Distribution, Eye Filmmuseum Amsterdam</li>
+                <li>Ali Shobeiri – Assistant Professor Photography and Visual Culture, Leiden University Center for the Arts
+                in
+                Society</li>
+                <li>Ingrid van Tol – Documentary Film Advisor and Coach</li>
+                <li>Barbara Visser – Visual artist, former Director IDFA and Chair of the Royal Academy of Arts KNAW</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="footer-negative-space"></div>
+
+    </section>
+
+    <footer class="grid-base">
+        <p>This website was designed by <a href="https://www.instagram.com/michela.meliddo" target="_blank">Michela Meliddo</a> and Ellen Owens and developed by <a href="https://wshbd.com"
+                target="_blank">Pyotr Goloub</a></p>
+    </footer>
+
+    
+
+    
+
+    <div id="custom-cursor"></div>
+
+    <script src="../scripts.js"></script>
+    <script>
+        // set base path for javascript to use
+        window.BASE_PATH = '../';
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Leiden Essay Film Festival">
+    <meta name="keywords" content="film festival, essay film, leiden, cinema, documentary">
+    <meta name="description" content="Celebrating the art of essay film and cinema">
+
+    <meta property="og:title" content="Leiden Essay Film Festival">
+    <meta property="og:description" content="Celebrating the art of essay film and cinema">
+    <meta property="og:image" content="../assets/header/og_1200x1200.png">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="../assets/header/og_1200x1200.png">
+
+    <link rel="icon" href="../assets/header/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/header/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/header/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/header/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/header/android-chrome-512x512.png">
+    <meta name="theme-color" content="#C0BEBF">
+
+    <title>Leiden Essay Film Festival</title>
+    <!-- base href for github pages deployment -->
+    
+    <link rel="stylesheet" href="../styles.css">
+    
+
+    
+<style>
+    .programme-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    #film-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .film-item {
+        margin-bottom: 2rem;
+        cursor: pointer;
+    }
+
+    .film-title {
+        font-size: 4rem;
+        line-height: 90%;
+    }
+
+    .film-details {
+        display: none;
+        margin-top: 1rem;
+    }
+
+    .film-item.active .film-details {
+        display: block;
+    }
+
+    #image-container {
+        position: sticky;
+        top: 2rem;
+        height: 80vh;
+    }
+
+    .film-image {
+        display: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .film-image.active {
+        display: block;
+    }
+
+    /* for mobile */
+    @media (max-width: 768px) {
+        .programme-container {
+            grid-template-columns: 1fr;
+        }
+
+        #image-container {
+            display: none; /* hide on mobile for now */
+        }
+    }
+</style>
+
+</head>
+<body>
+    <nav>
+        <a href="../en/"><img src="../assets/leff-logo-yellow.svg"
+                alt="leiden essay film festival logo" id="nav-logo"></a>
+        <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button"
+            style="display: none;">
+            Tickets 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </a>
+        <div id="circle-container">
+            <div id="languages">
+                
+                
+                <button class="active">EN</button>
+                
+                
+                
+                <a href="../nl/new_program/">
+                    <button>NL</button>
+                </a>
+                
+                
+            </div>
+            <div id="circle"></div>
+            <div class="menu-close" style="display: none;">
+                <button class="close-icon" id="menu-close" aria-label="close">
+                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="menu-overlay" class="menu-overlay">
+            <div class="menu-grid grid-base">
+                <!-- <h2 class="menu-title"></h2> -->
+                <div class="menu-nav">
+                    <ul>
+                        
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/"></a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/programme/"></a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/schedule/"></a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <!-- dropdown menu item -->
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="about">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    <span></span>
+                                </button>
+                                <ul class="menu-dropdown-content" id="about-dropdown">
+                                    
+                                    <!-- generic dropdown items from config -->
+                                    
+                                    <li>
+                                        <a href="/about/">
+                                            
+                                                Festival
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/organisation/">
+                                            
+                                                Organisation
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <a href="/tickets/"></a>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+
+    
+    
+    <section class="page-contents">
+        
+<div class="grid-base">
+    <h1 class="page-title" style="grid-row: 1 / 2;">
+        
+    </h1>
+</div>
+
+<div class="programme-container">
+    <ul id="film-list">
+        
+        <li class="film-item" data-image-id="image-0">
+            <span class="film-title">Sans Soleil</span>
+            <div class="film-details">
+                <p>Widely considered the foundational essay film, Sans Soleil is a contemplative journey through memory and time through distant lands – Japan, Guinea-Bissau, and the Cape Verde islands – blending personal reflections with observations on modern existence.</p>
+                <span>Chris Marker</span>
+                <span>France, 1982</span>
+                <span>110&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-1">
+            <span class="film-title">Juste Une Mouvement</span>
+            <div class="film-details">
+                <p>Juste Une Mouvement by Vincent Meessen revisits Jean-Luc Godard’s La Chinoise through the story of Omar Blondin Diop, blending essay, biography, and political cinema into a layered recontextualization.</p>
+                <span>Vincent Meessen</span>
+                <span>Belgium, 2021</span>
+                <span>108&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-2">
+            <span class="film-title">Twenty-Four Cinematic Points of View of a Factory Gate in China</span>
+            <div class="film-details">
+                <p>An investigation of a factory gate in China leads to an in depth reflection on the history of cinema and capitalism. </p>
+                <span>Ho Rui An</span>
+                <span>China, 2023</span>
+                <span>25&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-3">
+            <span class="film-title">Workers Leaving the Googleplex</span>
+            <div class="film-details">
+                <p>A surreal investigation into hidden labour at Google, where access, surveillance, and exclusion expose the deeper hierarchies shaping the digital economy and corporate power.</p>
+                <span></span>
+                <span>Andrew Norman Wilson US, 2011</span>
+                <span>11&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-4">
+            <span class="film-title">Arbeiter verlassen die Fabrik</span>
+            <div class="film-details">
+                <p>A spiritual sequel to the Lumière brothers’ iconic 1895 film, Harun Farocki’s Arbeiter verlassen die Fabrik traces how the image of workers exiting factories has persisted—and evolved—through cinema’s history.</p>
+                <span>Harun Farocki</span>
+                <span>Germany, 1995</span>
+                <span>36&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-5">
+            <span class="film-title">Was ist Los?</span>
+            <div class="film-details">
+                <p>In Was ist los? Harun Farocki dissects media narratives and televised imagery in reunified Germany, exposing how everyday broadcasts shape public perception, ideology, and the construction of “reality.”</p>
+                <span>Farocki</span>
+                <span>Germany, 1991</span>
+                <span>60&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-6">
+            <span class="film-title">Gegen-Musik</span>
+            <div class="film-details">
+                <p>Gegen-Musik, originally intended as a two-screen installation, sees Harun Farocki examine surveillance footage, exposing how the interplay of image and sound structures perception, authority, and control.</p>
+                <span>Farocki</span>
+                <span>Germany, 2004</span>
+                <span>23&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-7">
+            <span class="film-title">Getty Abortions</span>
+            <div class="film-details">
+                <p>How do the media portray the images we associate with abortion? And how do these affect women who want to have one? An impressive blend between desktop and personal aesthetics.</p>
+                <span>Francis Kabisch</span>
+                <span>Germany, Austria, 2023</span>
+                <span>22&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-8">
+            <span class="film-title">Preemptive Listening</span>
+            <div class="film-details">
+                <p>What&#39;s a siren? What has it been? What can it be? An exploration of the siren in a myriad of forms. </p>
+                <span>Aura Satz</span>
+                <span>UK, 2024</span>
+                <span>90&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-9">
+            <span class="film-title">Home Invasion</span>
+            <div class="film-details">
+                <p>What happens when our homes and our dreams have been invaded? An exploration of the history of the doorbell and the implications of surveillance footage.</p>
+                <span>Graeme Arnfield</span>
+                <span>US, 2024</span>
+                <span>90&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-10">
+            <span class="film-title">Coma</span>
+            <div class="film-details">
+                <p>Blending animation and live action to tell the story of a teenage girl trapped in her home. Created during the COVID-19 pandemic, a surreal, nightmarish world unfolds. Perhaps only an essay film could capture to confusion of these years?</p>
+                <span>Bertrand Bonello</span>
+                <span>France, 2022</span>
+                <span>80&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-11">
+            <span class="film-title">Free to Choose</span>
+            <div class="film-details">
+                <p>A speculative sci-fi journey through neoliberalism’s promises and failures, where time travel becomes a metaphor for credit, access, and the cost of economic freedom.</p>
+                <span>Bahar Noorizadeh</span>
+                <span>UK, 2023</span>
+                <span>35&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-12">
+            <span class="film-title">An Asian Ghost Story</span>
+            <div class="film-details">
+                <p>A haunting meditation on Hong Kong’s role in Cold War trade, where human hair becomes a ghostly link between imperial histories, migration, and spectral memory.</p>
+                <span>Bo Wang</span>
+                <span>Hong Kong, 2023</span>
+                <span>37&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-13">
+            <span class="film-title">Room 404</span>
+            <div class="film-details">
+                <p>ERROR: ROOM 404 A POTENTIAL THREAT – the courage and doubt of artists continuing to create in uncertain times, resisting the rising media control in Hong Kong.</p>
+                <span>Elysa Wendi</span>
+                <span>Hong Kong, 2024</span>
+                <span>29&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-14">
+            <span class="film-title">The Natural History of Destruction</span>
+            <div class="film-details">
+                <p>Looking at archival footage of the British targeting of German civilians during WWII, moral ambiguities and the silence surrounding these actions are explored.</p>
+                <span>Sergei Loznitsa</span>
+                <span>Poland, 2022</span>
+                <span>110&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-15">
+            <span class="film-title">sr</span>
+            <div class="film-details">
+                <p>Traversing global landscapes and human activities through a recurring giraffe motif, themes of power, culture and perception are explored.</p>
+                <span>Lea Hartlaub</span>
+                <span>Germany, 2024</span>
+                <span>110&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-16">
+            <span class="film-title">Letters from Panduranga</span>
+            <div class="film-details">
+                <p>Explores the erasure of indigenous Cham culture amid Vietnam’s nuclear power plans through a letter exchange between a man and a woman.</p>
+                <span>Nguyen Trinh-ti</span>
+                <span>Vietnam, 2015</span>
+                <span>35&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-17">
+            <span class="film-title">How to Improve the World</span>
+            <div class="film-details">
+                <p>Do you trust sound or image better? Listen closely to the sounds and images of the Indigenous peoples in the Central Highlands of Vietnam. </p>
+                <span>Nguyen Trinh-ti</span>
+                <span>Vietnam, 2021</span>
+                <span>47&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-18">
+            <span class="film-title">Where can I get Lost?</span>
+            <div class="film-details">
+                <p>Wanderers of all paths of life gather through the lens of the anthropological filmmaker, in search of a world larger than the one they know.</p>
+                <span>Mattijs van de Port</span>
+                <span>Netherlands, 2024</span>
+                <span>70&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-19">
+            <span class="film-title">Man Number 4</span>
+            <div class="film-details">
+                <p>Zooming into a disturbing image of detained Gazans circulating on social media, our passive consumption and complicity of the genocide is questioned.</p>
+                <span>Miranda Pennell</span>
+                <span>UK, 2024</span>
+                <span>10&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-20">
+            <span class="film-title">Capricorn Sunset</span>
+            <div class="film-details">
+                <p>Exploring boundless space for meaning-making. This essay film opens our eyes to the interplay of images, memory, and personal interpretation.</p>
+                <span>Johannes Binotto</span>
+                <span>Switzerland, 2023</span>
+                <span>5&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-21">
+            <span class="film-title">A Fidai Film</span>
+            <div class="film-details">
+                <p>Red silhouettes draw an alternative future in looted Palestinian archival footage. A compelling film re-interpreting a past and possible future. </p>
+                <span>Kamal Aljafari</span>
+                <span>Palestine, 2024</span>
+                <span>78&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-22">
+            <span class="film-title">Henry Fonda for President</span>
+            <div class="film-details">
+                <p>A meditation on Henry Fonda’s screen legacy and the stories America tells about itself — idealism, doubt, and the distance between image and reality. </p>
+                <span>Alexander Horwath</span>
+                <span>US, 2024</span>
+                <span>180&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-23">
+            <span class="film-title">Face Value</span>
+            <div class="film-details">
+                <p>Johan van der Keuken’s formally distinct essay film navigates the politics of vision across Europe, but also experiments with cinematic portraiture in wild ways. Through a mosaic of vignettes—of faces, places, and voices—this classic essay film explores the desire and fear of being seen, the struggle for self-perception, and the tensions within shifting cultural landscapes. A prescient film in many ways.</p>
+                <span>Johan van der Keuken</span>
+                <span>Netherlands, 1991</span>
+                <span>120&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-24">
+            <span class="film-title">My Want of You Partakes of Me</span>
+            <div class="film-details">
+                <p>A poetic and philosophical reflection on (un)ethical digestion, revealing the interdependence of the human body on its surroundings, for “all that you change changes you”.</p>
+                <span>Sasha Litvintseva &amp; Beny Wagner</span>
+                <span>UK, 2024</span>
+                <span>55&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-25">
+            <span class="film-title">Perpetual Radiance</span>
+            <div class="film-details">
+                <p>A poetic reflection on artificial light and the disappearance of night. In this imagined future, nature flickers in pink and black – disrupted, studied, and slowly fading.</p>
+                <span>Michela Mellido</span>
+                <span>Netherlands, 2024</span>
+                <span>14&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-26">
+            <span class="film-title">To the Earthern Red</span>
+            <div class="film-details">
+                <p>“The enduring material bond between soil and soul”; entanglement of the earth’s materiality and the inner world, poetically reflected upon by a young Czechian artist.</p>
+                <span>Nika Pećarina</span>
+                <span>Netherlands, 2022</span>
+                <span>19&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-27">
+            <span class="film-title">Mariam Jafri vs Maryam Jafri</span>
+            <div class="film-details">
+                <p>Mariam Jafri vs. Maryam Jafri explores identity and authorship through a sculptural work that shifts from object to photo to video, each stage marked by superimposed watermarks. Jafri&#39;s self-reflection questions the commodification of art and the fluidity of value in a global context.</p>
+                <span>Maryam Jafri</span>
+                <span>Austria/Canada, 2019</span>
+                <span>9&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-28">
+            <span class="film-title">Haunted, the Hollow</span>
+            <div class="film-details">
+                <p>Exploring industrial decline’s lingering impact through past trauma – Haunted, the Hollow reflects on memory, community, and the uncertainty of the future.</p>
+                <span>Veronica Munteau, Karin Nakajima, Sara Ouljour</span>
+                <span>Netherlands, 2025</span>
+                <span>13&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-29">
+            <span class="film-title">Searching for the Perfect Gentleman</span>
+            <div class="film-details">
+                <p>How can one travel the world by still staying put? The journey of discovering the story behind a poster hanging at an African barbershop’s window.</p>
+                <span>Lena Windisch</span>
+                <span>Germany, 2019</span>
+                <span>10&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-30">
+            <span class="film-title">In Praise of Slowness</span>
+            <div class="film-details">
+                <p>The ears tell the eyes where to look.” An exploration of how waiting and listening creates stillness, in an effort to reverse the speed of capitalist rhythms.</p>
+                <span>Hicham Gardaf</span>
+                <span>UK/Italy, 2024</span>
+                <span>17&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-31">
+            <span class="film-title">A Letter from Yene</span>
+            <div class="film-details">
+                <p>A reflective portrait of life in a Senegalese coastal town, where shifting landscapes prompt conversations about the environment, labour, and our shared place in it.</p>
+                <span>Manthia Diawara</span>
+                <span>Senegal, 2022</span>
+                <span>50&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-32">
+            <span class="film-title">De L’autre coté</span>
+            <div class="film-details">
+                <p>An emotional exploration on border politics, relevant now more than ever. Personal, plural and captivating in its ability to make us listen and watch carefully. </p>
+                <span>Chantal Akerman</span>
+                <span>Belgium, 2006</span>
+                <span>100&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-33">
+            <span class="film-title">The Cave Mouth and The Giant Voice</span>
+            <div class="film-details">
+                <p>Exploring the memory of Okinawan islander Yogi-San and his experiences sheltering from the 1945 US Naval bombardment, the resonant space of the cave turns war memory into a way of listening.</p>
+                <span>Rupert Cox and Angus Carlyle</span>
+                <span>UK, 2015</span>
+                <span>10&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-34">
+            <span class="film-title">Kapotte Muziek – Track 1</span>
+            <div class="film-details">
+                <p>Rather than documentary or naturalistic, sound artist Toshiya Tsunoda’s field recordings explores the relation between space and cognition, the depth of the landscape and the vital breathing of things.</p>
+                <span>Toshiya Tsunoda</span>
+                <span>Netherlands, 2004</span>
+                <span>7&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-35">
+            <span class="film-title">Where no bell rings (2023) by David Petráš</span>
+            <div class="film-details">
+                <p>Practices of witchcraft and healing rituals in folk songs and stories of survival from older women living in remote locations on the border zone of Slovakia, Ukraine, and Romania become transition zones to a mythical, unknown world.</p>
+                <span></span>
+                <span>, </span>
+                <span></span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-36">
+            <span class="film-title">Message from Mukalap</span>
+            <div class="film-details">
+                <p>Through a multilingual response to a sound recording from a man called Mukalap, in the no longer living language !ora, colonial legacies echo through.</p>
+                <span>Judith Westerveld</span>
+                <span>Netherlands, 2021</span>
+                <span>15&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-37">
+            <span class="film-title">The Sending of the Crows</span>
+            <div class="film-details">
+                <p>An audiovisual meditation of a language and culture from a colonial past, “moving through time, reflecting on the truth of the people forgotten”.</p>
+                <span>Judith Westerveld</span>
+                <span>Netherlands, 2024</span>
+                <span>15&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-38">
+            <span class="film-title">Nowhere Near</span>
+            <div class="film-details">
+                <p>Nowhere Near by Miko Revereza is a poignant essay film that explores  displacement and the immigrant experience. Through personal meditations and striking visuals, Revereza reflects on the complexities of belonging and the struggle to bridge cultural gaps.</p>
+                <span></span>
+                <span>Miko Revereza, 2023</span>
+                <span>96&#39;</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-39">
+            <span class="film-title">Disquiet</span>
+            <div class="film-details">
+                <p>Revered essay filmmaker Lis Rhodes&#39; latest work opens with a haunting reference to the atomic bomb in Hiroshima, setting the tone for an essay film that explores the intersections of sound, power, and history. Through fragmented imagery and often jarring audio, Rhodes incites us to reflect on the lingering impacts of violence and the structures of control in modern life.</p>
+                <span>Lis Rhodes</span>
+                <span>UK, 2022</span>
+                <span>80&#39;</span>
+            </div>
+        </li>
+        
+    </ul>
+    <div id="image-container">
+        
+        
+        
+        
+        
+        
+        <img src="../assets/images/home-gallery/Factory Gate_1.webp" alt="Twenty-Four Cinematic Points of View of a Factory Gate in China" class="film-image" id="image-2">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <img src="../assets/images/home-gallery/Home Invasion - still 5.webp" alt="Home Invasion" class="film-image" id="image-9">
+        
+        
+        
+        
+        
+        <img src="../assets/images/home-gallery/FTC - still 6.webp" alt="Free to Choose" class="film-image" id="image-11">
+        
+        
+        
+        <img src="../assets/images/home-gallery/AAGS_03.webp" alt="An Asian Ghost Story" class="film-image" id="image-12">
+        
+        
+        
+        
+        
+        <img src="../assets/images/home-gallery/nhd_3.webp" alt="The Natural History of Destruction" class="film-image" id="image-14">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <img src="../assets/images/home-gallery/timessquare-presse3.webp" alt="Henry Fonda for President" class="film-image" id="image-22">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <img src="../assets/images/home-gallery/printcrvenojbojizarenezemlje.webp" alt="To the Earthern Red" class="film-image" id="image-26">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>
+</div>
+
+    </section>
+
+    <footer class="grid-base">
+        <p>This website was designed by <a href="https://www.instagram.com/michela.meliddo" target="_blank">Michela Meliddo</a> and Ellen Owens and developed by <a href="https://wshbd.com"
+                target="_blank">Pyotr Goloub</a></p>
+    </footer>
+
+    
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const filmItems = document.querySelectorAll('.film-item');
+    const filmImages = document.querySelectorAll('.film-image');
+
+    // show the first image by default
+    if (filmImages.length > 0) {
+        filmImages[0].classList.add('active');
+    }
+
+    filmItems.forEach((item, index) => {
+        // show corresponding image on hover
+        item.addEventListener('mouseenter', () => {
+            const imageId = item.getAttribute('data-image-id');
+            
+            filmImages.forEach(image => {
+                image.classList.remove('active');
+            });
+
+            const targetImage = document.getElementById(imageId);
+            if (targetImage) {
+                targetImage.classList.add('active');
+            }
+        });
+
+        // toggle film details on click
+        item.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+});
+</script>
+
+
+    
+
+    <div id="custom-cursor"></div>
+
+    <script src="../scripts.js"></script>
+    <script>
+        // set base path for javascript to use
+        window.BASE_PATH = '../';
+    </script>
+</body>
+
+</html>

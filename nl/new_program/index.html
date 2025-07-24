@@ -32,55 +32,56 @@
 
     
 <style>
-/*
-        altered programm
-*/
+    .programme-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
 
-#film-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    grid-column: 1 / -1;
-    width: 100%;
-}
+    #film-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
-.film-title {
-    width: 100%;
-    list-style: none;
-    margin: 2.25rem 0;
-    padding: 0;
-    font-size: 5rem;
-}
+    .film-item {
+        margin-bottom: 2rem;
+    }
 
-.film-title:hover {
-    text-decoration: underline;
-}
+    .film-title {
+        font-size: 4rem;
+        cursor: pointer;
+        line-height: 90%;
+    }
 
-.film-image-preview {
-    opacity: 0;
-    visibility: hidden;
-    position: fixed;
-    pointer-events: none;
-    z-index: 10;
-    transition: opacity 1s ease, visibility 0s 1s;
-}
+    #image-container {
+        position: sticky;
+        top: 2rem;
+        height: 80vh;
+    }
 
-.film-image-preview.top { top: 10%; }
-.film-image-preview.middle { top: 50%; transform: translateY(-50%); }
-.film-image-preview.bottom { bottom: 10%; }
+    .film-image {
+        display: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
+    .film-image.active {
+        display: block;
+    }
 
-.film-image-preview.visible {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.2s ease;
-}
+    /* for mobile */
+    @media (max-width: 768px) {
+        .programme-container {
+            grid-template-columns: 1fr;
+        }
 
-.film-image-preview img {
-    width: 100%;
-    height: auto;
-}
-
+        #image-container {
+            display: none; /* hide on mobile for now */
+        }
+    }
 </style>
 
 </head>
@@ -99,7 +100,7 @@
             <div id="languages">
                 
                 
-                <a href="/leff/en/new/">
+                <a href="/leff/en/new_program/">
                     <button>EN</button>
                 </a>
                 
@@ -213,11 +214,148 @@
     
     <section class="page-contents">
         
-<div id="main-page">
-    <div class="grid-base">
-        <ul id="film-list">
-            
-        </ul>
+<div class="grid-base">
+    <h1 class="page-title" style="grid-row: 1 / 2;">
+        
+    </h1>
+</div>
+
+<div class="programme-container">
+    <ul id="film-list">
+        
+        <li class="film-item" data-image-id="image-0">
+            <span class="film-title">Free to Choose</span>
+            <div class="film-details">
+                <span>Bahar Noorizadeh</span>
+                <span>UK, 2023</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-1">
+            <span class="film-title">Free to Choose</span>
+            <div class="film-details">
+                <span>Bahar Noorizadeh</span>
+                <span>UK, 2023</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-2">
+            <span class="film-title">An Asian Ghost Story</span>
+            <div class="film-details">
+                <span>Bo Wang</span>
+                <span>Hong Kong, 2023</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-3">
+            <span class="film-title">An Asian Ghost Story</span>
+            <div class="film-details">
+                <span>Bo Wang</span>
+                <span>Hong Kong, 2023</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-4">
+            <span class="film-title">Home Invasion</span>
+            <div class="film-details">
+                <span>Graeme Arnfield</span>
+                <span>US, 2024</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-5">
+            <span class="film-title">Henry Fonda for President</span>
+            <div class="film-details">
+                <span>Alexander Horwath</span>
+                <span>US, 2024</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-6">
+            <span class="film-title">To the Earthern Red</span>
+            <div class="film-details">
+                <span>Nika Pećarina</span>
+                <span>Netherlands, 2022</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-7">
+            <span class="film-title">To the Earthern Red</span>
+            <div class="film-details">
+                <span>Nika Pećarina</span>
+                <span>Netherlands, 2022</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-8">
+            <span class="film-title">To the Earthern Red</span>
+            <div class="film-details">
+                <span>Nika Pećarina</span>
+                <span>Netherlands, 2022</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-9">
+            <span class="film-title">The Natural History of Destruction</span>
+            <div class="film-details">
+                <span>Sergei Loznitsa</span>
+                <span>Poland, 2022</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-10">
+            <span class="film-title">The Natural History of Destruction</span>
+            <div class="film-details">
+                <span>Sergei Loznitsa</span>
+                <span>Poland, 2022</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-11">
+            <span class="film-title">The Natural History of Destruction</span>
+            <div class="film-details">
+                <span>Sergei Loznitsa</span>
+                <span>Poland, 2022</span>
+            </div>
+        </li>
+        
+        <li class="film-item" data-image-id="image-12">
+            <span class="film-title">Twenty-Four Cinematic Points of View of a Factory Gate in China</span>
+            <div class="film-details">
+                <span>Ho Rui An</span>
+                <span>China, 2023</span>
+            </div>
+        </li>
+        
+    </ul>
+    <div id="image-container">
+        
+        <img src="/leff//leff/assets/images/home-gallery/FTC - still 9.webp" alt="Free to Choose" class="film-image" id="image-0">
+        
+        <img src="/leff//leff/assets/images/home-gallery/FTC - still 6.webp" alt="Free to Choose" class="film-image" id="image-1">
+        
+        <img src="/leff//leff/assets/images/home-gallery/AAGS_02.webp" alt="An Asian Ghost Story" class="film-image" id="image-2">
+        
+        <img src="/leff//leff/assets/images/home-gallery/AAGS_03.webp" alt="An Asian Ghost Story" class="film-image" id="image-3">
+        
+        <img src="/leff//leff/assets/images/home-gallery/Home Invasion - still 5.webp" alt="Home Invasion" class="film-image" id="image-4">
+        
+        <img src="/leff//leff/assets/images/home-gallery/timessquare-presse3.webp" alt="Henry Fonda for President" class="film-image" id="image-5">
+        
+        <img src="/leff//leff/assets/images/home-gallery/printcrvenojbojizarenezemlje (1).webp" alt="To the Earthern Red" class="film-image" id="image-6">
+        
+        <img src="/leff//leff/assets/images/home-gallery/printcrvenojbojizarenezemlje (2).webp" alt="To the Earthern Red" class="film-image" id="image-7">
+        
+        <img src="/leff//leff/assets/images/home-gallery/printcrvenojbojizarenezemlje.webp" alt="To the Earthern Red" class="film-image" id="image-8">
+        
+        <img src="/leff//leff/assets/images/home-gallery/nhd_1.webp" alt="The Natural History of Destruction" class="film-image" id="image-9">
+        
+        <img src="/leff//leff/assets/images/home-gallery/nhd_2.webp" alt="The Natural History of Destruction" class="film-image" id="image-10">
+        
+        <img src="/leff//leff/assets/images/home-gallery/nhd_3.webp" alt="The Natural History of Destruction" class="film-image" id="image-11">
+        
+        <img src="/leff//leff/assets/images/home-gallery/Factory Gate_1.webp" alt="Twenty-Four Cinematic Points of View of a Factory Gate in China" class="film-image" id="image-12">
+        
     </div>
 </div>
 
@@ -230,79 +368,35 @@
 
     
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const filmTitles = document.querySelectorAll('.film-title');
-        const gridBase = document.querySelector('.grid-base');
-        const mainPage = document.getElementById('main-page');
-        const verticalPositions = ['top', 'middle', 'bottom'];
+document.addEventListener('DOMContentLoaded', () => {
+    const filmItems = document.querySelectorAll('.film-item');
+    const filmImages = document.querySelectorAll('.film-image');
 
-        filmTitles.forEach(title => {
-            let previewElement = null;
+    if (filmImages.length > 0) {
+        filmImages[0].classList.add('active');
+    }
 
-            title.addEventListener('mouseenter', () => {
-                // create a new preview element
-                previewElement = document.createElement('div');
-                previewElement.classList.add('film-image-preview');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const imageId = entry.target.getAttribute('data-image-id');
                 
-                const img = document.createElement('img');
-                const newImage = title.getAttribute('data-image');
-                if (newImage) {
-                    img.src = newImage;
+                filmImages.forEach(image => {
+                    image.classList.remove('active');
+                });
+
+                const targetImage = document.getElementById(imageId);
+                if (targetImage) {
+                    targetImage.classList.add('active');
                 }
-                img.alt = "film preview";
-                previewElement.appendChild(img);
-
-                // add to dom
-                mainPage.appendChild(previewElement);
-
-                // position it
-                const gridRect = gridBase.getBoundingClientRect();
-                const gridStyle = window.getComputedStyle(gridBase);
-                const nCols = 6;
-                const nGaps = nCols - 1;
-
-                const paddingLeft = parseFloat(gridStyle.paddingLeft);
-                const columnGap = parseFloat(gridStyle.columnGap);
-
-                const netWidth = gridRect.width - paddingLeft - parseFloat(gridStyle.paddingRight);
-                const totalColWidth = netWidth - (nGaps * columnGap);
-                const colWidth = totalColWidth / nCols;
-
-                const startColumn = Math.floor(Math.random() * 5) + 1;
-                const offset = paddingLeft + (startColumn - 1) * (colWidth + columnGap);
-                
-                const left = gridRect.left + offset;
-
-                previewElement.style.left = left + 'px';
-                previewElement.style.width = (2 * colWidth + columnGap) + 'px';
-
-                const randomPosition = verticalPositions[Math.floor(Math.random() * verticalPositions.length)];
-                previewElement.classList.add(randomPosition);
-
-                // make it visible (fade in)
-                setTimeout(() => {
-                    if (previewElement) {
-                        previewElement.classList.add('visible');
-                    }
-                }, 10); 
-            });
-
-            title.addEventListener('mouseleave', () => {
-                if (previewElement) {
-                    // start fade out
-                    previewElement.classList.remove('visible');
-
-                    // remove from dom after transition
-                    previewElement.addEventListener('transitionend', () => {
-                        if (previewElement && previewElement.parentNode) {
-                            previewElement.parentNode.removeChild(previewElement);
-                        }
-                        previewElement = null;
-                    }, { once: true });
-                }
-            });
+            }
         });
+    }, { threshold: 0.5 });
+
+    filmItems.forEach(item => {
+        observer.observe(item);
     });
+});
 </script>
 
 
