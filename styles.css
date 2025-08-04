@@ -176,7 +176,7 @@ template {
 
 @font-face {
     font-family: "switzer";
-    src: url('/leff/assets/fonts/switzer/Switzer-Regular.woff2') format('woff2');
+    src: url('/assets/fonts/switzer/Switzer-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -255,17 +255,11 @@ em {
     animation: pulse 2.4s var(--transition) infinite;
 }
 
-@media (max-width: 768px) {
-#custom-cursor {
-    display: none;
-}
-
 #custom-cursor.excited {
-    animation: pulse 0.4s var(--transition) infinite;
+    animation: excited-pulse 0.4s var(--transition) infinite;
 }
 
 @keyframes pulse {
-
     0%,
     100% {
         transform: translate(-50%, -50%) scale(1);
@@ -277,7 +271,6 @@ em {
 }
 
 @keyframes excited-pulse {
-
     0%,
     100% {
         transform: translate(-50%, -50%) scale(1);
@@ -288,11 +281,10 @@ em {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (max-width: 768px) {
     #custom-cursor {
-        display: none !important;
+        display: none;
     }
-}
 
     * {
         /* fallback to default cursor */
@@ -300,6 +292,11 @@ em {
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    #custom-cursor {
+        display: none !important;
+    }
+}
 
 ::selection {
     color: var(--accent);
@@ -795,12 +792,12 @@ nav:not(.menu-active) .tickets-button:hover svg {
 
 .menu-nav a {
     color: var(--bg-main);
-    font-size: 2rem;
+    font-size: 1.875rem;
     transition: all 0.3s var(--transition);
     margin-left: 0.875rem;
 }
-.menu-dropdown-toggle span{
-    margin-left: 1rem;
+.menu-dropdown-toggle .drp-dwn-item-txt{
+    margin-left: 0.875rem;
 }
 
 
@@ -911,7 +908,7 @@ nav:not(.menu-active) .tickets-button:hover svg {
     border: none;
     color: var(--bg-main);
     font-family: inherit;
-    font-size: 2rem;
+    font-size: 1.875rem; /* TODO: inheirt font size */
     display: flex;
     align-items: center;
     width: 100%;
@@ -934,27 +931,34 @@ nav:not(.menu-active) .tickets-button:hover svg {
 
 }
 
+.menu-dropdown-item ul {
+    margin: 0;
+    padding: 0;
+}
+
 .menu-dropdown-content {
-    display: none;
     max-height: 0;
     overflow: hidden;
     padding: 0;
-    transition: max-height 0.3s var(--transition);
+    margin: 0;
+    opacity: 0;
     margin-left: var(--space-2xl) !important;
     margin-top: var(--space-sm) !important;
+    transition: max-height 0.4s var(--transition), opacity 0.3s var(--transition), padding 0.4s var(--transition);
 }
 
 .menu-dropdown-content.expanded {
-    display: block;
     padding-block: var(--space-sm) var(--space-lg);
-    max-height: 300px;
+    max-height: 400px;
+    opacity: 1;
 }
 
 .menu-dropdown-content a {
     color: var(--bg-main);
-    font-size: 2rem;
+    /* TODO: inheirt font size */
+    font-size: 1.875rem;
     display: block;
-    margin: var(--space-xs) 0;
+    /* margin: var(--space-xs) 0; */
     transition: all 0.3s var(--transition);
 }
 
@@ -966,6 +970,10 @@ nav:not(.menu-active) .tickets-button:hover svg {
 /*
         FOOTER
 */
+
+
+
+
 
 .footer-negative-space {
     height: 50vh;
@@ -994,4 +1002,13 @@ footer a {
 footer a:hover {
     background-color: #000000;
     color: var(--accent);
+}
+
+/* email  */
+#mc_embed_signup {
+    background: #fff;
+    false;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    width: 600px;
 }

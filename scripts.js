@@ -121,6 +121,7 @@ const CustomCursor = {
         
         document.addEventListener('mouseenter', (e) => {
             if (e.target.matches(selectors)) {
+                console.log('cursor should be excited')
                 this.cursor.classList.add('excited');
             }
         }, true);
