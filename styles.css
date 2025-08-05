@@ -971,44 +971,302 @@ nav:not(.menu-active) .tickets-button:hover svg {
         FOOTER
 */
 
-
-
-
-
-.footer-negative-space {
-    height: 50vh;
+footer {
     width: 100%;
+    margin-top: var(--space-4xl);
+    background: var(--accent);
+    border-top: 2px solid var(--bg-main);
+    position: relative;
 }
 
-footer {
-    color: var(--text-main);
-    width: 100%;
-    margin-top: var(--space-md);
-    text-shadow: none;
+/* subtle background pattern */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: none;
+    pointer-events: none;
+}
+
+.footer-container {
+    position: relative;
+    z-index: 1;
+    padding-top: var(--space-4xl);
+    padding-bottom: var(--space-2xl);
+}
+
+/* footer grid layout - desktop */
+.footer-newsletter-section {
+    grid-column: 1 / 3;
+}
+
+.footer-nav {
+    grid-column: 4 / 5;
+}
+
+.footer-info {
+    grid-column: 5 / 6;
+}
+
+.footer-legal {
+    grid-column: 6 / 7;
+}
+
+.footer-spacer {
+    grid-column: 2 / 3;
+}
+
+/* footer bottom section */
+.footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
     text-align: left;
-    margin-block: 1rem;
+}
+
+.footer-bottom p {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--bg-main);
+}
+
+/* mobile responsive footer */
+@media (max-width: 768px) {
+    .footer-container {
+        padding-top: var(--space-2xl);
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg) var(--space-md);
+    }
+    
+    .footer-newsletter-section {
+        grid-column: 1 / -1;
+        margin-bottom: var(--space-lg);
+    }
+    
+    .footer-nav {
+        grid-column: 1 / 2;
+    }
+    
+    .footer-info {
+        grid-column: 2 / 3;
+    }
+    
+    .footer-legal {
+        grid-column: 1 / 2;
+    }
+    
+    .footer-spacer {
+        display: none;
+    }
+}
+
+/* footer typography */
+footer h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+    color: var(--bg-main);
+    font-weight: normal;
+}
+
+footer h4 {
+    font-size: 1rem;
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--bg-main);
 }
 
 footer p {
-    grid-column: 1 / -1;
+    margin-bottom: var(--space-sm);
+    line-height: 1.5;
+    font-size: 0.9rem;
+    color: var(--bg-main);
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    margin-bottom: var(--space-xs);
 }
 
 footer a {
-    color: inherit;
-    text-decoration: underline solid 2px;
+    color: var(--bg-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s var(--transition);
+    border-bottom: 1px solid transparent;
+}
+
+footer a:visited {
+    color: var(--bg-main);
 }
 
 footer a:hover {
-    background-color: #000000;
-    color: var(--accent);
+    color: var(--bg-main);
+    text-decoration: underline 2px solid var(--bg-main);
+    border-bottom: none;
 }
 
-/* email  */
+/* newsletter signup styling */
 #mc_embed_signup {
-    background: #fff;
-    false;
-    clear: left;
-    font: 14px Helvetica, Arial, sans-serif;
-    width: 600px;
+    background: none;
+    clear: none;
+    font-family: inherit;
+    width: 100%;
+    margin: 0;
+}
+
+#mc_embed_signup_scroll {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.mc-field-group {
+    margin-bottom: 0;
+}
+
+.mc-field-group:first-of-type {
+    display: flex;
+    gap: var(--space-xs);
+    align-items: stretch;
+    width: 100%;
+}
+
+/* styling for the email input and button container */
+.mc-field-group:nth-of-type(2) {
+    display: flex;
+    gap: var(--space-xs);
+    align-items: stretch;
+    width: 100%;
+}
+
+.mc-field-group input[type="email"] {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    max-width: none;
+    padding: var(--space-sm);
+    border: 1px solid var(--bg-main);
+    border-radius: var(--radius-medium);
+    background: var(--silver);
+    color: var(--bg-main);
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.mc-field-group input[type="email"]:focus {
+    outline: none;
+    border-color: var(--bg-main);
+    box-shadow: 0 0 0 2px rgba(30, 30, 30, 0.2);
+}
+
+.mc-field-group input[type="email"]::placeholder {
+    color: rgba(30, 30, 30, 0.6);
+}
+
+.mc-field-group .button {
+    flex-shrink: 0;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-main);
+    color: var(--accent);
+    border: none;
+    border-radius: var(--radius-medium);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s var(--transition);
+    white-space: nowrap;
+}
+
+.mc-field-group .button:hover {
+    background: var(--silver);
+    color: var(--bg-main);
+    transform: translateY(-1px);
+}
+
+/* checkbox styling */
+.footer-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-xs);
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-top: var(--space-sm);
+}
+
+.footer-checkbox input[type="radio"] {
+    margin: 0;
+    flex-shrink: 0;
+    margin-top: 0.2em;
+    accent-color: var(--bg-main);
+}
+
+.footer-checkbox label {
+    cursor: pointer;
+    color: var(--bg-main);
+}
+
+.footer-checkbox a {
+    font-size: inherit;
+    color: var(--bg-main);
+    text-decoration: underline;
+}
+
+.footer-checkbox a:hover {
+    color: var(--bg-main);
+    text-decoration: underline 2px solid var(--bg-main);
+}
+
+/* screen reader only class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* mailchimp response messages */
+#mce-responses {
+    margin-top: var(--space-xs);
+}
+
+.response {
+    font-size: 0.8rem;
+    padding: var(--space-xs);
+    border-radius: var(--radius-medium);
+    margin-bottom: var(--space-xs);
+    display: none;
+}
+
+#mce-error-response {
+    background: rgba(255, 0, 0, 0.1);
+    color: #cc0000;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+#mce-success-response {
+    background: rgba(0, 255, 0, 0.1);
+    color: #006600;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+/* clear utility class for mailchimp */
+.clear {
+    clear: both;
 }

@@ -325,47 +325,115 @@
 
     </section>
 
-    <footer class="grid-base">
-        <div class="email-signup">
+    <footer>
+        <div class="footer-container grid-base">
+            <!-- newsletter signup -->
+            <div class="footer-newsletter-section">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to hear more from Leiden Essay Film Festival</p>
                 <div id="mc_embed_signup">
                     <form
-                        action=https://kabk.us8.list-manage.com/subscribe/post?u=fe6f0920a56a052079924e663&amp;id=0bef5e214f&amp;f_id=00bac6e2f0
+                        action="https://kabk.us8.list-manage.com/subscribe/post?u=fe6f0920a56a052079924e663&amp;id=0bef5e214f&amp;f_id=00bac6e2f0"
                         method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
                         target="_blank">
                         <div id="mc_embed_signup_scroll">
-                            <h2>Subscribe to hear more from Leiden Essay Film Festival</h2>
-                            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                            <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span
-                                        class="asterisk">*</span></label><input type="email" name="EMAIL"
-                                    class="required email" id="mce-EMAIL" required="" value=""></div>
-                            <div class="mc-field-group input-group"><strong>Newsletter </strong>
-                                <ul>
-                                    <li><input type="radio" name="MMERGE5" id="mce-MMERGE50"
-                                            value="I agree to the processing of my data as described in the privacy policy and to receive the leff newsletter and updates."><label
-                                            for="mce-MMERGE50">I agree to the processing of my data as described in the
-                                            privacy policy and to receive the leff newsletter and updates.</label></li>
-                                </ul>
+                            <div class="mc-field-group input-group footer-checkbox">
+                                <input type="radio" name="MMERGE5" id="mce-MMERGE50" required
+                                       value="I agree to the processing of my data as described in the privacy policy and to receive the leff newsletter and updates.">
+                                <label for="mce-MMERGE50">
+                                    I agree to the processing of my data as described in the 
+                                    <a href="/privacy/">privacy policy</a> and to receive the leff newsletter and updates.
+                                </label>
+                            </div>
+                            <div class="mc-field-group">
+                                <label for="mce-EMAIL" class="sr-only">Subscribe to hear more from Leiden Essay Film Festival</label>
+                                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" 
+                                       placeholder="Enter your email" value="">
+                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" 
+                                       class="button" value="Subscribe">
                             </div>
                             <div id="mce-responses" class="clear">
                                 <div class="response" id="mce-error-response" style="display: none;"></div>
                                 <div class="response" id="mce-success-response" style="display: none;"></div>
                             </div>
-                            <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text"
-                                    name="b_fe6f0920a56a052079924e663_0bef5e214f" tabindex="-1" value=""></div>
-                            <div class="clear"><input type="submit" name="subscribe" id="mc-embedded-subscribe"
-                                    class="button" value="Subscribe"></div>
+                            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                <input type="text" name="b_fe6f0920a56a052079924e663_0bef5e214f" tabindex="-1" value="">
+                            </div>
                         </div>
                     </form>
                 </div>
-                <script type="text/javascript"
-                    src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-                <script
-                    type="text/javascript">(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[5] = 'MMERGE5'; ftypes[5] = 'radio'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
             </div>
+
+            <!-- navigation links -->
+            <div class="footer-nav">
+                <h4>Navigation</h4>
+                <ul>
+                    
+                        <li><a href="/en/">Home</a></li>
+                    
+                        <li><a href="/en/programme/">Programme 2025</a></li>
+                    
+                        <li><a href="/en/schedule/">Block Schedule</a></li>
+                    
+                        <li><a href="/en/location/">Venues</a></li>
+                    
+                        <li><a href="/en/tickets/">Tickets</a></li>
+                    
+                        <li><a href="/en/about/">About leff</a></li>
+                    
+                </ul>
+            </div>
+
+            <!-- festival info -->
+            <div class="footer-info">
+                <h4>About leff</h4>
+                <ul>
+                    <li><a href="/en/about/">Festival</a></li>
+                    <li><a href="/en/organisation/">Organisation</a></li>
+                    <li><a href="/en/location/">Venues</a></li>
+                </ul>
+            </div>
+
+            <!-- legal links -->
+            <div class="footer-legal">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li>
+                    <li><a href="/en/privacy/">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- empty space for layout -->
+            <div class="footer-spacer"></div>
         </div>
-        <p>This website was made possible by <a href="https://www.instagram.com/michela.meliddo" target="_blank">Michela
-                Meliddo</a>, Ellen Owens and <a href="https://wshbd.com" target="_blank">Pyotr Goloub</a></p>
+        
+        <!-- bottom section with credits text -->
+        <div class="footer-bottom grid-base">
+            <p>This website was made possible by <a href="https://www.instagram.com/michela.meliddo" target="_blank" rel="noopener">Michela Meliddo</a>, Ellen Owens and <a href="https://wshbd.com" target="_blank" rel="noopener">Pyotr Goloub</a></p>
+        </div>
     </footer>
+
+    <!-- mailchimp scripts -->
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">
+        (function ($) { 
+            window.fnames = new Array(); 
+            window.ftypes = new Array(); 
+            fnames[0] = 'EMAIL'; 
+            ftypes[0] = 'email'; 
+            fnames[5] = 'MMERGE5'; 
+            ftypes[5] = 'radio'; 
+            fnames[1] = 'FNAME'; 
+            ftypes[1] = 'text'; 
+            fnames[2] = 'LNAME'; 
+            ftypes[2] = 'text'; 
+            fnames[3] = 'ADDRESS'; 
+            ftypes[3] = 'address'; 
+            fnames[4] = 'PHONE'; 
+            ftypes[4] = 'phone'; 
+        }(jQuery)); 
+        var $mcj = jQuery.noConflict(true);
+    </script>
 
     
 
