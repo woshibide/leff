@@ -360,7 +360,7 @@ a:visited {
 
 .readeable-text {
     color: var(--bg-main);
-    font-size: 1.875rem;
+    font-size: 1.5rem;
 }
 @media (max-width: 768px) {
     .readeable-text{
@@ -398,7 +398,7 @@ a:visited {
     color: var(--text-main);
     grid-column: 1 / 6;
     grid-row: 2 / 3;
-    font-size: 1.875rem;
+    font-size: 1.5rem;
     /* grid-row: 1 / 4; */
 }
 
