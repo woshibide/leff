@@ -93,6 +93,15 @@ body.index-page {
     background: linear-gradient(to bottom, #00000080 0%, transparent 100%);
 }
 
+#main-page .grid-base {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
 /* position nav logo in first grid column on index page */
 body.index-page #nav-logo {
     position: static;
@@ -124,7 +133,7 @@ body.index-page.menu-open #nav-logo {
 
 #hero-h1 {
     z-index: 10;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: normal;
     color: var(--accent);
     text-shadow: var(--shadow);
@@ -163,12 +172,35 @@ nav.menu-active #hero-h1 {
 
 #festival-date{
     text-shadow: var(--shadow);
-    font-size: 1.875rem;
-    grid-column: 4 / 7;
-    margin-top: 55vh;
+    font-size: 1.25rem;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
     color: var(--accent);
     z-index: 50;
+    align-self: center;
+    justify-self: center;
 }
+#tagline {
+    grid-column: 1 / 4;
+    grid-row: 7 / 8;
+    z-index: 10;
+    color: var(--accent);
+    text-shadow: var(--shadow);
+    align-self: center;
+    margin-left: var(--space-md);
+    font-size: 2.25rem;
+}
+
+#location-spots {
+    grid-column: 5 / 6;
+    grid-row: 4 / 5;
+    z-index: 10;
+    color: var(--accent);
+    text-shadow: var(--shadow);
+    align-self: center;
+    justify-self: center;
+}
+
 @media (max-width: 768px) {
     #festival-date{
         font-size: 1.125rem !important;
@@ -179,21 +211,21 @@ nav.menu-active #hero-h1 {
 }
 
 #image-caption {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-    align-self: end;
-    z-index: 50;
-    color: var(--accent);
-    text-shadow: var(--shadow);
-    font-size: 0.875rem;
-    line-height: 1.4;
-    padding: var(--space-sm);
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    margin-bottom: var(--space-lg);
-}
-
-#image-caption.visible {
+	grid-column: 6 / 7;
+	grid-row: 6 / 7;
+	align-self: center;
+	z-index: 50;
+    width: 40vh;
+	color: var(--accent);
+	text-shadow: var(--shadow);
+	font-size: 1rem;
+	line-height: 1.4;
+	padding: var(--space-sm);
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	transform-origin: bottom right;
+    transform: translateX(100%) rotate(-90deg);
+}#image-caption.visible {
     opacity: 1;
 }
 
@@ -302,36 +334,11 @@ nav.menu-active #hero-h1 {
                         
                         <li>
                             
-                            <!-- dropdown menu item -->
-                            <div class="menu-dropdown-item">
-                                <button class="menu-dropdown-toggle" data-dropdown="programme">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                        class="arrow-icon east-arrow dropdown-arrow">
-                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
-                                            stroke-width="2" />
-                                    </svg>
-                                    <div class="drp-dwn-item-txt">Programma 2025</div>
-                                </button>
-                                <ul class="menu-dropdown-content" id="programme-dropdown">
-                                    
-                                    <li>
-                                        <a href="/leff/nl/programme/">A—Z film</a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="/leff/nl/programme/">A—Z regisseurs</a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="/leff/nl/programme/">Tijd</a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="/leff/nl/programme/">Locatie</a>
-                                    </li>
-                                    
-                                </ul>
-                            </div>
+                            <!-- regular menu item -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/nl/programme/">Programma 2025</a>
                             
                         </li>
                         
@@ -405,7 +412,6 @@ nav.menu-active #hero-h1 {
         
 <div id="main-page">
     <div class="background-slideshow">
-        <!-- gallery images from csv -->
         
         <div class="background-slide active" 
              style="background-image: url('/leff/assets/images/home-gallery/Preemptive-Listening.webp');" 
@@ -413,7 +419,7 @@ nav.menu-active #hero-h1 {
              data-director="Aura Satz" 
              data-country="Spain" 
              data-year="2024">
-            <!-- seo-friendly hidden content -->
+            <!-- seo-friendlifier -->
             <div class="sr-only">
                 <h2>Preemptive Listening</h2>
                 <p>directed by Aura Satz (Spain, 2024)</p>
@@ -426,7 +432,7 @@ nav.menu-active #hero-h1 {
              data-director="Chris Marker" 
              data-country="France" 
              data-year="1983 Argos film,all rights reserved">
-            <!-- seo-friendly hidden content -->
+            <!-- seo-friendlifier -->
             <div class="sr-only">
                 <h2>Sans Soleil</h2>
                 <p>directed by Chris Marker (France, 1983 Argos film,all rights reserved)</p>
@@ -439,7 +445,7 @@ nav.menu-active #hero-h1 {
              data-director="Bahar Noorizadeh" 
              data-country="UK" 
              data-year="2023">
-            <!-- seo-friendly hidden content -->
+            <!-- seo-friendlifier -->
             <div class="sr-only">
                 <h2>Free to Choose</h2>
                 <p>directed by Bahar Noorizadeh (UK, 2023)</p>
@@ -452,7 +458,7 @@ nav.menu-active #hero-h1 {
              data-director="Bo Wang" 
              data-country="Hong Kong" 
              data-year="2023">
-            <!-- seo-friendly hidden content -->
+            <!-- seo-friendlifier -->
             <div class="sr-only">
                 <h2>An Asian Ghost Story</h2>
                 <p>directed by Bo Wang (Hong Kong, 2023)</p>
@@ -465,7 +471,7 @@ nav.menu-active #hero-h1 {
              data-director="Graeme Arnfield" 
              data-country="US" 
              data-year="2024">
-            <!-- seo-friendly hidden content -->
+            <!-- seo-friendlifier -->
             <div class="sr-only">
                 <h2>Home Invasion</h2>
                 <p>directed by Graeme Arnfield (US, 2024)</p>
@@ -478,7 +484,7 @@ nav.menu-active #hero-h1 {
              data-director="Alexander Horwath" 
              data-country="US" 
              data-year="2024">
-            <!-- seo-friendly hidden content -->
+            <!-- seo-friendlifier -->
             <div class="sr-only">
                 <h2>Henry Fonda for President</h2>
                 <p>directed by Alexander Horwath (US, 2024)</p>
@@ -491,7 +497,7 @@ nav.menu-active #hero-h1 {
              data-director="Michela Meliddo" 
              data-country="Italy" 
              data-year="2024">
-            <!-- seo-friendly hidden content -->
+            <!-- seo-friendlifier -->
             <div class="sr-only">
                 <h2>Perpetual Radiance</h2>
                 <p>directed by Michela Meliddo (Italy, 2024)</p>
@@ -504,7 +510,7 @@ nav.menu-active #hero-h1 {
              data-director="Susanna Tomassini" 
              data-country="Italy" 
              data-year="2023  ">
-            <!-- seo-friendly hidden content -->
+            <!-- seo-friendlifier -->
             <div class="sr-only">
                 <h2>The Southern Thruway</h2>
                 <p>directed by Susanna Tomassini (Italy, 2023  )</p>
@@ -517,7 +523,7 @@ nav.menu-active #hero-h1 {
              data-director="Sergei Loznitsa" 
              data-country="Poland" 
              data-year="2022">
-            <!-- seo-friendly hidden content -->
+            <!-- seo-friendlifier -->
             <div class="sr-only">
                 <h2>The Natural History of Destruction</h2>
                 <p>directed by Sergei Loznitsa (Poland, 2022)</p>
@@ -530,7 +536,7 @@ nav.menu-active #hero-h1 {
              data-director="Nika Pećarina" 
              data-country="Netherlands" 
              data-year="2022">
-            <!-- seo-friendly hidden content -->
+            <!-- seo-friendlifier -->
             <div class="sr-only">
                 <h2>To the Earthern Red</h2>
                 <p>directed by Nika Pećarina (Netherlands, 2022)</p>
@@ -543,7 +549,7 @@ nav.menu-active #hero-h1 {
              data-director="Ho Rui An" 
              data-country="China" 
              data-year="2023">
-            <!-- seo-friendly hidden content -->
+            <!-- seo-friendlifier -->
             <div class="sr-only">
                 <h2>Twenty-Four Cinematic Points of View of a Factory Gate in China</h2>
                 <p>directed by Ho Rui An (China, 2023)</p>
@@ -556,7 +562,7 @@ nav.menu-active #hero-h1 {
              data-director="Sasha Litvintseva &amp; Beny Wagner" 
              data-country="UK" 
              data-year="2024">
-            <!-- seo-friendly hidden content -->
+            <!-- seo-friendlifier -->
             <div class="sr-only">
                 <h2>My Want of You Partakes of Me</h2>
                 <p>directed by Sasha Litvintseva &amp; Beny Wagner (UK, 2024)</p>
@@ -569,7 +575,7 @@ nav.menu-active #hero-h1 {
              data-director="Nguyen Trinh-ti" 
              data-country="Vietnam" 
              data-year="2015">
-            <!-- seo-friendly hidden content -->
+            <!-- seo-friendlifier -->
             <div class="sr-only">
                 <h2>Letters from Panduranga</h2>
                 <p>directed by Nguyen Trinh-ti (Vietnam, 2015)</p>
@@ -582,7 +588,7 @@ nav.menu-active #hero-h1 {
              data-director="Hicham Gardaf" 
              data-country="UK/Italy" 
              data-year="2024">
-            <!-- seo-friendly hidden content -->
+            <!-- seo-friendlifier -->
             <div class="sr-only">
                 <h2>In Praise of Slowness</h2>
                 <p>directed by Hicham Gardaf (UK/Italy, 2024)</p>
@@ -595,7 +601,7 @@ nav.menu-active #hero-h1 {
              data-director="Manthia Diawara" 
              data-country="Senegal" 
              data-year="2022">
-            <!-- seo-friendly hidden content -->
+            <!-- seo-friendlifier -->
             <div class="sr-only">
                 <h2>A Letter from Yene</h2>
                 <p>directed by Manthia Diawara (Senegal, 2022)</p>
@@ -614,12 +620,14 @@ nav.menu-active #hero-h1 {
         </div>
         
         <h1 id="hero-h1">
-            Het eerste festival in Nederland volledig gewijd aan de essayfilm
+            Leiden Essay Film Festival
         </h1>
         
-        <div id="festival-date">
-            <p>14 – 16 September 2025</p>
-        </div>
+        <h2 id="tagline">
+            Het eerste festival in Nederland volledig gewijd aan de essayfilm
+        </h2>
+        <p id="festival-date">14 – 16 September 2025</p>
+        <p id="location-spots">Cinema Kijkhuis & Museum De Lakenhal</p>
     </div>
 </div>
 

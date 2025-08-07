@@ -249,17 +249,17 @@ em {
     border-radius: var(--radius-full);
     pointer-events: none;
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.4);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     z-index: 10002;
-    /* above nav z-index */
-    animation: pulse 2.4s var(--transition) infinite;
+    /* transition: translate 0.3s var(--transition); */
+    /* animation: pulse 2.4s var(--transition) infinite; */
 }
 
 #custom-cursor.excited {
-    animation: excited-pulse 0.4s var(--transition) infinite;
+    animation: excited-pulse 1.4s var(--transition) infinite;
 }
 
-@keyframes pulse {
+/* @keyframes pulse {
     0%,
     100% {
         transform: translate(-50%, -50%) scale(1);
@@ -268,16 +268,16 @@ em {
     50% {
         transform: translate(-50%, -50%) scale(1.4);
     }
-}
+} */
 
 @keyframes excited-pulse {
     0%,
     100% {
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(2);
     }
 
     50% {
-        transform: translate(-50%, -50%) scale(1.8);
+        transform: translate(-50%, -50%) scale(3.8);
     }
 }
 
