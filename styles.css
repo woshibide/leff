@@ -176,7 +176,7 @@ template {
 
 @font-face {
     font-family: "switzer";
-    src: url('/leff/assets/fonts/switzer/Switzer-Regular.woff2') format('woff2');
+    src: url('/assets/fonts/switzer/Switzer-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -360,7 +360,7 @@ a:visited {
 
 .readeable-text {
     color: var(--bg-main);
-    font-size: 1.5rem;
+    font-size: 1.875rem;
 }
 @media (max-width: 768px) {
     .readeable-text{
@@ -398,7 +398,7 @@ a:visited {
     color: var(--text-main);
     grid-column: 1 / 6;
     grid-row: 2 / 3;
-    font-size: 1.5rem;
+    font-size: 1.875rem;
     /* grid-row: 1 / 4; */
 }
 
@@ -443,7 +443,7 @@ a:visited {
     display: grid;
     grid-column: 1 / 6;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.875rem;
     color: var(--text-main);
 }
 
@@ -1066,7 +1066,7 @@ footer::before {
 
 /* footer typography */
 footer h3 {
-    font-size: 1.5rem;
+    font-size: 1.875rem;
     margin-bottom: var(--space-sm);
     color: var(--bg-main);
     font-weight: normal;
