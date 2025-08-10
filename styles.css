@@ -187,6 +187,7 @@ template {
     --accent: #F0FF00;
     --accent-off: hsl(66, 100%, 50%);
     --silver: #C0BEBF;
+    --dark-silver: #979797;
     --text-main: #000000;
     --bg-main: #1e1e1e;
     --bg-main-overlay: #1e1e1e64;
@@ -373,7 +374,7 @@ a:visited {
 }
 
 .page-contents {
-    min-height: 100svh;
+    min-height: 50svh;
 }
 
 .page-title {
@@ -427,6 +428,9 @@ a:visited {
     text-transform: uppercase;
 }
 
+
+
+/* "placeholder" is used on programme and schedule pages */
 .placeholder p {
     max-width: 75ch;
     text-align: left;
@@ -453,9 +457,11 @@ a:visited {
 
 @media (max-width: 768px) {
     .placeholder {
+        font-size: 1.25rem;
         grid-column: 1 / -1;
     }
 }
+
 /*
         NAVIGATION BAR
 */
@@ -977,14 +983,14 @@ nav:not(.menu-active) .tickets-button:hover svg {
 
 footer {
     width: 100%;
-    margin-top: var(--space-4xl);
-    background: var(--accent);
+    margin-top: 50vh;
+    background: transparent;
     border-top: 2px solid var(--bg-main);
     position: relative;
 }
 
 /* subtle background pattern */
-footer::before {
+/* footer::before {
     content: '';
     position: absolute;
     top: 0;
@@ -993,7 +999,7 @@ footer::before {
     bottom: 0;
     background: none;
     pointer-events: none;
-}
+} */
 
 .footer-container {
     position: relative;
@@ -1015,7 +1021,7 @@ footer::before {
     grid-column: 5 / 6;
 }
 
-.footer-legal {
+.footer-outside-links {
     grid-column: 6 / 7;
 }
 
@@ -1025,17 +1031,20 @@ footer::before {
 
 /* footer bottom section */
 .footer-bottom {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding-top: var(--space-md);
     padding-bottom: var(--space-md);
     text-align: left;
 }
 
 .footer-bottom p {
-    grid-column: 1 / -1;
+    grid-column: 4 / -1;
     margin: 0;
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: var(--bg-main);
+}
+.footer-bottom * a {
+    font-size: 1rem;
+    text-decoration: underline 2px solid var(--text-main);
 }
 
 /* mobile responsive footer */
@@ -1059,7 +1068,7 @@ footer::before {
         grid-column: 2 / 3;
     }
     
-    .footer-legal {
+    .footer-outside-links {
         grid-column: 1 / 2;
     }
     
@@ -1077,17 +1086,16 @@ footer h3 {
 }
 
 footer h4 {
-    font-size: 1rem;
+    font-size: 1.25rem;
     margin-bottom: var(--space-sm);
-    text-transform: uppercase;
-    font-weight: 600;
+    font-weight: normal;
     color: var(--bg-main);
 }
 
 footer p {
     margin-bottom: var(--space-sm);
     line-height: 1.5;
-    font-size: 0.9rem;
+    font-size: 1.25rem;
     color: var(--bg-main);
 }
 
@@ -1104,7 +1112,7 @@ footer ul li {
 footer a {
     color: var(--bg-main);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1.25rem;
     transition: all 0.2s var(--transition);
     border-bottom: 1px solid transparent;
 }
@@ -1113,10 +1121,11 @@ footer a:visited {
     color: var(--bg-main);
 }
 
-footer a:hover {
-    color: var(--bg-main);
+footer * a:hover{
+    color: var(--accent);
     text-decoration: underline 2px solid var(--bg-main);
     border-bottom: none;
+    background-color: var(--bg-main);
 }
 
 /* newsletter signup styling */
@@ -1160,18 +1169,18 @@ footer a:hover {
     width: 100%;
     max-width: none;
     padding: var(--space-sm);
-    border: 1px solid var(--bg-main);
+    border: 2px solid var(--bg-main);
     border-radius: var(--radius-medium);
-    background: var(--silver);
+    background: transparent;
     color: var(--bg-main);
     font-family: inherit;
     font-size: 0.9rem;
 }
 
 .mc-field-group input[type="email"]:focus {
-    outline: none;
-    border-color: var(--bg-main);
-    box-shadow: 0 0 0 2px rgba(30, 30, 30, 0.2);
+    outline: solid 2px var(--accent);
+    border-color: var(--accent);
+    background: var(--dark-silver);
 }
 
 .mc-field-group input[type="email"]::placeholder {
@@ -1180,23 +1189,32 @@ footer a:hover {
 
 .mc-field-group .button {
     flex-shrink: 0;
+    border: 2px solid var(--bg-main);
     padding: var(--space-sm) var(--space-md);
-    background: var(--bg-main);
-    color: var(--accent);
-    border: none;
+    background: transparent;
+    color: var(--bg-main);
     border-radius: var(--radius-medium);
     font-family: inherit;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: normal;
     cursor: pointer;
     transition: all 0.2s var(--transition);
     white-space: nowrap;
 }
 
+/* TODO: position it beneath the thingy */
+.mce_inline_error {
+	background-color: #ff0035 !important;
+	margin: 0 0 1em 0;
+	padding: 5px 10px;
+	font-weight: bold;
+	z-index: 1;
+	color: #fff;
+}
+
 .mc-field-group .button:hover {
-    background: var(--silver);
-    color: var(--bg-main);
-    transform: translateY(-1px);
+    background: var(--bg-main);
+    color: var(--accent);
 }
 
 /* checkbox styling */
@@ -1210,15 +1228,52 @@ footer a:hover {
 }
 
 .footer-checkbox input[type="radio"] {
-    margin: 0;
-    flex-shrink: 0;
-    margin-top: 0.2em;
-    accent-color: var(--bg-main);
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
 .footer-checkbox label {
+    font-size: 1rem;
+    position: relative;
+    padding-left: 1.8rem;
     cursor: pointer;
     color: var(--bg-main);
+}
+
+.footer-checkbox label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    width: 1.1rem;
+    height: 1.1rem;
+    border: 2px solid var(--bg-main);
+    background: transparent;
+    transition: all 0.2s var(--transition);
+}
+
+.footer-checkbox label:hover::before {
+    background: var(--bg-main-hover);
+}
+
+.footer-checkbox input[type="radio"]:checked + label::before {
+    background: var(--bg-main);
+}
+
+.footer-checkbox input[type="radio"]:checked + label::after {
+    content: '';
+    position: absolute;
+    left: 0.4rem;
+    top: 0.25em;
+    width: 0.3rem;
+    height: 0.7rem;
+    border: solid var(--accent);
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    transition: all 0.2s var(--transition);
 }
 
 .footer-checkbox a {
@@ -1270,7 +1325,28 @@ footer a:hover {
     border: 1px solid rgba(0, 255, 0, 0.2);
 }
 
-/* clear utility class for mailchimp */
-.clear {
-    clear: both;
+/* custom mailchimp responses */
+#custom-mce-responses {
+    margin-top: var(--space-sm);
+    font-size: 1rem;
+    color: var(--bg-main);
+}
+
+.status-message {
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-small);
+    margin-bottom: var(--space-sm);
+    border: 1px solid transparent;
+}
+
+.status-message.error {
+    color: #ff0035;
+    border-color: #ff0035;
+    background-color: #fdd;
+}
+
+.status-message.success {
+    color: #080;
+    border-color: #080;
+    background-color: #dfd;
 }

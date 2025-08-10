@@ -23,6 +23,10 @@
     <meta name="theme-color" content="#C0BEBF">
 
     <title>Organisation - Leiden Essay Film Festival</title>
+
+    <!-- mailchimp email sign up -->
+    <!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css"> -->
+
     <!-- base href for github pages deployment -->
     
     <base href="/leff/">
@@ -49,6 +53,12 @@
         font-size: 1.875rem;
     }
 
+    @media (max-width: 769px){
+        #credits * {
+        font-size: 1.25rem;
+        }
+    }
+
     #credits {
         grid-column: 1 / 7;
         grid-row: 3 / 4;
@@ -71,12 +81,16 @@
     /* stack credits sections on mobile */
     @media (max-width: 768px) {
         #credits {
+            font-size: 1.25rem;
             display: block;
         }
         #credits > div:first-child,
         #credits > div:last-child {
-            margin-bottom: var(--space-3xl);
+            margin-bottom: var(--space-5xl);
             grid-column: auto;
+        }
+        #credits * {
+            font-size: 1.25rem;
         }
     }
 
@@ -94,9 +108,6 @@
 
 
     
-    
-    <!-- email sign up -->
-    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -291,9 +302,9 @@
 
     <footer>
         <div class="footer-container grid-base">
-            <!-- newsletter signup -->
+            <!-- email newsletter signup -->
             <div class="footer-newsletter-section">
-                <h3>Blijf op de Hoogte</h3>
+                <h3 style="text-transform: uppercase;">Blijf op de Hoogte</h3>
                 <p>Schrijf je in om meer te horen van Leiden Essay Film Festival</p>
                 <div id="mc_embed_signup">
                     <form
@@ -316,7 +327,8 @@
                                 <input type="submit" name="subscribe" id="mc-embedded-subscribe" 
                                        class="button" value="Subscribe">
                             </div>
-                            <div id="mce-responses" class="clear">
+                            <div id="custom-mce-responses"></div>
+                            <div id="mce-responses" class="clear" style="display: none;">
                                 <div class="response" id="mce-error-response" style="display: none;"></div>
                                 <div class="response" id="mce-success-response" style="display: none;"></div>
                             </div>
@@ -343,8 +355,6 @@
                     
                         <li><a href="/leff/nl/tickets/">Tickets</a></li>
                     
-                        <li><a href="/leff/nl/about/">Over leff</a></li>
-                    
                 </ul>
             </div>
 
@@ -354,15 +364,15 @@
                 <ul>
                     <li><a href="/leff/nl/about/">Festival</a></li>
                     <li><a href="/leff/nl/organisation/">Organisatie</a></li>
-                    <li><a href="/leff/nl/location/">Locaties</a></li>
                 </ul>
             </div>
 
             <!-- legal links -->
-            <div class="footer-legal">
+            <div class="footer-outside-links">
                 <h4>Contact</h4>
                 <ul>
-                    <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li>
+                    <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
+                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank">Instagram</a></li>
                     <li><a href="/leff/nl/privacy/">Privacybeleid</a></li>
                 </ul>
             </div>
@@ -377,8 +387,9 @@
         </div>
     </footer>
 
+
     <!-- mailchimp scripts -->
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <!-- <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     <script type="text/javascript">
         (function ($) { 
             window.fnames = new Array(); 
@@ -396,7 +407,7 @@
             fnames[4] = 'PHONE'; 
             ftypes[4] = 'phone'; 
         }(jQuery)); 
-        var $mcj = jQuery.noConflict(true);
+        var $mcj = jQuery.noConflict(true); -->
     </script>
 
     

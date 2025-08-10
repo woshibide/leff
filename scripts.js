@@ -366,11 +366,94 @@ const MenuDropdown = {
 };
 
 /**
+ * form validation module
+ * handles custom validation for the mailchimp signup form
+ */
+
+// TODO: not rely on browsers defaults
+const ValidationInputCheck = {
+    form: null,
+    emailInput: null,
+    radioInput: null,
+    responseContainer: null,
+
+    /**
+     * initialize the validation module
+     */
+    init() {
+        this.form = document.getElementById('mc-embedded-subscribe-form');
+        if (!this.form) return;
+
+        this.emailInput = document.getElementById('mce-EMAIL');
+        this.radioInput = document.getElementById('mce-MMERGE50');
+        this.responseContainer = document.getElementById('custom-mce-responses');
+
+        this.form.addEventListener('submit', this.validate.bind(this));
+    },
+
+    /**
+     * validate the form on submission
+     * @param {event} e - the submit event
+     */
+    validate(e) {
+        this.clearMessages();
+        let isValid = true;
+
+        const email = this.emailInput.value.trim();
+        if (!this.isValidEmail(email)) {
+            this.displayMessage('please enter a valid email address.', 'error');
+            isValid = false;
+        }
+
+        if (!this.radioInput.checked) {
+            this.displayMessage('please agree to the privacy policy to subscribe.', 'error');
+            isValid = false;
+        }
+
+        if (!isValid) {
+            e.preventDefault();
+        }
+        // if valid, the form will submit as normal
+    },
+
+    /**
+     * check if an email address is valid
+     * @param {string} email - the email to validate
+     * @returns {boolean} - true if valid, false otherwise
+     */
+    isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    },
+
+    /**
+     * display a status message to the user
+     * @param {string} message - the message to display
+     * @param {string} type - the type of message ('success' or 'error')
+     */
+    displayMessage(message, type) {
+        const messageElement = document.createElement('div');
+        messageElement.className = `status-message ${type}`;
+        messageElement.textContent = message;
+        this.responseContainer.appendChild(messageElement);
+    },
+
+    /**
+     * clear all status messages
+     */
+    clearMessages() {
+        this.responseContainer.innerHTML = '';
+    }
+};
+
+
+/**
  * main application initialization
  */
 document.addEventListener('DOMContentLoaded', function() {
-    TextReplacer.init();
+    // TextReplacer.init();
     CustomCursor.init();
     MenuSystem.init();
     MenuDropdown.init();
+    ValidationInputCheck.init();
 });
