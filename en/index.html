@@ -38,10 +38,13 @@
 <style>
     /*
         MAIN PAGE
-*/
-body.index-page {
-    height: 100vh;
+    */
+
+/* hide footer on index page */
+body.index-page footer {
+    display: none;
 }
+
 
 #main-page {
     height: 100%;
@@ -80,11 +83,6 @@ body.index-page {
     opacity: 1;
 }
 
-/* remove this rule that causes timing issues */
-/* .background-slide:first-child {
-    opacity: 1;
-} */
-
 #main-page::before {
     content: '';
     position: absolute;
@@ -97,7 +95,7 @@ body.index-page {
     background: linear-gradient(to bottom, #00000080 0%, transparent 100%);
 }
 
-/* position nav logo in first grid column on index page */
+/* nav logo */
 body.index-page #nav-logo {
     position: static;
     grid-column: 1 / 2;
@@ -112,11 +110,6 @@ body.index-page #nav-logo {
         width: auto;
         height: 100%;
     }
-}
-
-/* hide footer on index page */
-body.index-page footer {
-    display: none;
 }
 
 /* when menu is open on index page, remove grid positioning */
@@ -165,11 +158,16 @@ nav.menu-active #hero-h1 {
     padding-bottom: var(--space-xl);
 }
 
+.text-layer {
+    max-height: 90svh;
+    height: 100%;
+}
+
 #festival-date{
     text-shadow: var(--shadow);
     font-size: 1.25rem;
-    grid-column: 4 / 6;
-    margin-top: 55vh;
+    grid-column: 3 / 5;
+    margin-top: 35vh;
     color: var(--accent);
     z-index: 50;
 }
@@ -180,13 +178,11 @@ nav.menu-active #hero-h1 {
     color: var(--accent);
     text-shadow: var(--shadow);
     align-self: center;
-    margin-left: var(--space-md);
     font-size: 2.25rem;
 }
 
 #location-spots {
-    grid-column: 5 / 6;
-    grid-row: 3 / 4;
+    grid-column: 4 / 6;
     z-index: 10;
     color: var(--accent);
     text-shadow: var(--shadow);
@@ -203,26 +199,50 @@ nav.menu-active #hero-h1 {
     }
 }
 
+/* fucking caption */
 #image-caption {
-	grid-column: 6 / 6;
-	grid-row: 6 / 8;
-	align-self: end;
-	z-index: 50;
+    position: fixed;
+    right: auto;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    color: var(--accent);
+    text-shadow: var(--shadow);
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    text-align: left;
+    pointer-events: none; /* let clicks pass through unless on inner */
     width: 100%;
-	color: var(--accent);
-	text-shadow: var(--shadow);
-	font-size: 1rem;
-	line-height: 1.4;
-	padding: var(--space-sm);
-	opacity: 0;
-	transition: opacity 0.5s ease-in-out;
-	margin-bottom: var(--space-lg);
-	rotate: -90deg;
-	translate: 50%;
+    height: 100%;
+    border: 6px red solid;
 }
 
 #image-caption.visible {
     opacity: 1;
+}
+
+#image-caption .image-caption-inner {
+	border: 3px greenyellow solid;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: flex-start;
+	transform-origin: bottom left;
+	pointer-events: auto;
+	height: 100%;
+	width: calc((100vw - 60px)/6);
+}
+
+.actual-fucking-text {
+	border: 3px slateblue solid;
+	rotate: -90deg;
+    transform: translateY(calc(50% + 60px));
+	width: 80vh;
+	transform-origin: bottom left;
 }
 
 #image-caption .film-title {
@@ -231,18 +251,21 @@ nav.menu-active #hero-h1 {
 }
 
 #image-caption .film-details {
-    opacity: 0.9;
-    font-size: 0.875rem;
+    font-size: 1rem;
 }
 
 @media (max-width: 768px) {
     #image-caption {
-        position: absolute;
-        align-self: start;
-        justify-self: start;
+        right: var(--space-md);
         bottom: var(--space-md);
-        margin: 0;
-        font-size: 0.8rem;
+        padding: var(--space-sm);
+        text-align: right;
+    }
+
+    #image-caption .image-caption-inner {
+        rotate: 0deg; /* keep horizontal on small screens */
+        transform-origin: initial;
+        align-items: flex-end;
     }
     
     #image-caption .film-title {
@@ -404,6 +427,30 @@ nav.menu-active #hero-h1 {
     <section class="page-contents">
         
 <div id="main-page">
+    <div class="text-layer grid-base">
+        <h1 id="hero-h1">
+            Leiden Essay<br>Film Festival
+        </h1>
+        
+        <h2 id="tagline">
+            The first festival in the Netherlands entirely dedicated to the essay film
+        </h2>
+        
+        <p id="festival-date">14 – 16 September 2025</p>
+        
+        <p id="location-spots">Cinema Kijkhuis &amp; Museum De Lakenhal</p>
+
+        <div id="image-caption">
+            <div class="image-caption-inner">
+                <div class="actual-fucking-text">
+                    <div class="film-title"></div>
+                    <div class="film-details"></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
     <div class="background-slideshow">
         
         <div class="background-slide active" 
@@ -605,23 +652,6 @@ nav.menu-active #hero-h1 {
         <!-- fallback if no gallery images -->
         
     </div>
-    
-    <div class="grid-base">
-        <div id="image-caption">
-            <div class="film-title"></div>
-            <div class="film-details"></div>
-        </div>
-        
-        <h1 id="hero-h1">
-            Leiden Essay Film Festival
-        </h1>
-        
-        <h2 id="tagline">
-            The first festival in the Netherlands entirely dedicated to the essay film
-        </h2>
-        <p id="festival-date">14 – 16 September 2025</p>
-        <p id="location-spots">Cinema Kijkhuis &amp; Museum De Lakenhal</p>
-    </div>
 </div>
 
     </section>
@@ -774,7 +804,7 @@ nav.menu-active #hero-h1 {
         let currentSlide = 0;
         let slideInterval = null;
         
-        console.log('slideshow initialized with', slides.length, 'slides');
+        // console.log('slideshow initialized with', slides.length, 'slides');
         
         function updateCaption(slide) {
             const title = slide.dataset.title || '';
@@ -782,7 +812,7 @@ nav.menu-active #hero-h1 {
             const country = slide.dataset.country || '';
             const year = slide.dataset.year || '';
             
-            console.log('updating caption for:', title);
+            // console.log('updating caption for:', title);
             
             // clear previous content
             titleElement.textContent = '';
@@ -805,7 +835,7 @@ nav.menu-active #hero-h1 {
         }
         
         function showSlide(index) {
-            console.log('showing slide:', index);
+            // console.log('showing slide:', index);
             
             // remove active from all slides
             slides.forEach(slide => slide.classList.remove('active'));
@@ -819,19 +849,19 @@ nav.menu-active #hero-h1 {
         
         function nextSlide() {
             const timestamp = new Date().toLocaleTimeString();
-            console.log(`[${timestamp}] advancing to next slide`);
+            // console.log(`[${timestamp}] advancing to next slide`);
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         }
         
         // initialize and start slideshow
         if (slides.length > 0) {
-            console.log('starting slideshow');
+            // console.log('starting slideshow');
             showSlide(0);
             
             if (slides.length > 1) {
                 slideInterval = setInterval(nextSlide, 8000);
-                console.log('interval started');
+                // console.log('interval started');
             }
         }
     });

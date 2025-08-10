@@ -359,9 +359,15 @@ a:visited {
     }
 }
 
+/* ultra wide monitors */
+@media (min-width: 2560px) {
+    .grid-base {
+        max-width: 2560px;
+    }
+}
 /*
         PAGES CONTENTS
-*/
+*/`
 
 .readeable-text {
     color: var(--bg-main);
@@ -375,6 +381,7 @@ a:visited {
 
 .page-contents {
     min-height: 50svh;
+    height: fit-content;
 }
 
 .page-title {
