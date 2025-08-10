@@ -24,9 +24,6 @@
 
     <title>Leiden Essay Film Festival</title>
 
-    <!-- mailchimp email sign up -->
-    <!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css"> -->
-
     <!-- base href for github pages deployment -->
     
     <base href="/leff/">
@@ -55,6 +52,11 @@ body.index-page footer {
     left: 0;
     z-index: 1;
     overflow: hidden;
+}
+@media (max-width: 768px) {
+    #main-page {
+        min-height: 100vh;
+    }
 }
 
 .background-slideshow {
@@ -120,6 +122,7 @@ body.index-page.menu-open #nav-logo {
 }
 
 #hero-h1 {
+    background-color: transparent;
     z-index: 10;
     font-size: 1rem;
     font-weight: normal;
@@ -130,9 +133,9 @@ body.index-page.menu-open #nav-logo {
 }
 @media (max-width: 768px) {
     #hero-h1 {
-        font-size: 2.75rem;
+        font-size: 1.25rem;
         position: absolute;
-        bottom: 10vh;
+        top: 6.5rem;
     }
 }
 
@@ -159,7 +162,7 @@ nav.menu-active #hero-h1 {
 }
 
 .text-layer {
-    max-height: 90svh;
+    max-height: 110svh;
     height: 100%;
 }
 
@@ -171,6 +174,7 @@ nav.menu-active #hero-h1 {
     color: var(--accent);
     z-index: 50;
 }
+
 #tagline {
     grid-column: 1 / 4;
     grid-row: 6 / 7;
@@ -191,11 +195,22 @@ nav.menu-active #hero-h1 {
 }
 
 @media (max-width: 768px) {
-    #festival-date{
-        font-size: 1.125rem !important;
-        margin-left: var(--space-5xl);
+    #tagline {
+        /* grid-column: 1 / -1; */
+        font-size: 2.8rem !important;
+        line-height: 1.1;
+        /* margin-top: 25vh; */
+    }
+
+    #location-spots {
         grid-column: 1 / -1;
-        margin-top: 35vh;
+        justify-self: start;
+        /* margin-top: var(--space-lg); */
+    }
+    #festival-date{
+        font-size: 1.25rem;
+        grid-column: 2 / 3;
+        /* margin-top: 15vh; */
     }
 }
 
@@ -247,7 +262,6 @@ nav.menu-active #hero-h1 {
 	position: absolute;
 	/* border: 3px slateblue solid; */
 	rotate: -90deg;
-	/* transform: translateY(calc(50% + 60px)); */
 	width: 80vh;
 	transform-origin: top left;
 	bottom: 0;
@@ -271,17 +285,26 @@ nav.menu-active #hero-h1 {
     }
 
     #image-caption .image-caption-inner {
-        rotate: 0deg; /* keep horizontal on small screens */
         transform-origin: initial;
         align-items: flex-end;
+        width: 100%;
+        padding: 0;
+        height: auto;
     }
     
     #image-caption .film-title {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     #image-caption .film-details {
-        font-size: 0.8rem;
+        font-size: 1rem;
+    }
+    
+    .actual-fucking-text {
+        position: relative;
+        rotate: 0deg;
+        width: auto;
+        border: none;
     }
 }
 
@@ -342,13 +365,11 @@ nav.menu-active #hero-h1 {
 
         <div id="menu-overlay" class="menu-overlay">
             <div class="menu-grid grid-base">
-                <!-- <h2 class="menu-title"></h2> -->
                 <div class="menu-nav">
                     <ul>
                         
                         <li>
                             
-                            <!-- regular menu item -->
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
@@ -358,7 +379,6 @@ nav.menu-active #hero-h1 {
                         
                         <li>
                             
-                            <!-- regular menu item -->
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
@@ -368,7 +388,6 @@ nav.menu-active #hero-h1 {
                         
                         <li>
                             
-                            <!-- regular menu item -->
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
@@ -378,7 +397,6 @@ nav.menu-active #hero-h1 {
                         
                         <li>
                             
-                            <!-- regular menu item -->
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
@@ -388,7 +406,6 @@ nav.menu-active #hero-h1 {
                         
                         <li>
                             
-                            <!-- regular menu item -->
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
@@ -398,7 +415,6 @@ nav.menu-active #hero-h1 {
                         
                         <li>
                             
-                            <!-- dropdown menu item -->
                             <div class="menu-dropdown-item">
                                 <button class="menu-dropdown-toggle" data-dropdown="about">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -704,7 +720,6 @@ nav.menu-active #hero-h1 {
                 </div>
             </div>
 
-            <!-- navigation links -->
             <div class="footer-nav">
                 <h4>Navigation</h4>
                 <ul>
@@ -722,7 +737,6 @@ nav.menu-active #hero-h1 {
                 </ul>
             </div>
 
-            <!-- festival info -->
             <div class="footer-info">
                 <h4>About leff</h4>
                 <ul>
@@ -731,7 +745,6 @@ nav.menu-active #hero-h1 {
                 </ul>
             </div>
 
-            <!-- legal links -->
             <div class="footer-outside-links">
                 <h4>Contact</h4>
                 <ul>
@@ -745,34 +758,11 @@ nav.menu-active #hero-h1 {
             <div class="footer-spacer"></div>
         </div>
         
-        <!-- bottom section with credits text -->
+        <!-- credits -->
         <div class="footer-bottom grid-base">
-            <p>This website was made possible by <a href="https://www.instagram.com/michela.meliddo" target="_blank" rel="noopener">Michela Meliddo</a>, Ellen Owens and <a href="https://wshbd.com" target="_blank" rel="noopener">Pyotr Goloub</a></p>
+            <p>This website was designed by <a href="https://www.instagram.com/michela.meliddo" target="_blank" rel="noopener">Michela Meliddo</a>, Ellen Owens and coded by <a href="https://wshbd.com" target="_blank" rel="noopener">Pyotr Goloub</a></p>
         </div>
     </footer>
-
-
-    <!-- mailchimp scripts -->
-    <!-- <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script type="text/javascript">
-        (function ($) { 
-            window.fnames = new Array(); 
-            window.ftypes = new Array(); 
-            fnames[0] = 'EMAIL'; 
-            ftypes[0] = 'email'; 
-            fnames[5] = 'MMERGE5'; 
-            ftypes[5] = 'radio'; 
-            fnames[1] = 'FNAME'; 
-            ftypes[1] = 'text'; 
-            fnames[2] = 'LNAME'; 
-            ftypes[2] = 'text'; 
-            fnames[3] = 'ADDRESS'; 
-            ftypes[3] = 'address'; 
-            fnames[4] = 'PHONE'; 
-            ftypes[4] = 'phone'; 
-        }(jQuery)); 
-        var $mcj = jQuery.noConflict(true); -->
-    </script>
 
     
 <script>
@@ -884,6 +874,19 @@ nav.menu-active #hero-h1 {
     <script>
         // set base path for javascript to use
         window.BASE_PATH = '/leff/';
+
+        // hello screen
+        console.log("\n\n\n\t" +
+            "oooo             .o88o.  .o88o. \n\t" +
+            "`888             888 `\"  888 `\" \n\t" +
+            " 888   .ooooo.  o888oo  o888oo  \n\t" +
+            " 888  d88' `88b  888     888    \n\t" +
+            " 888  888ooo888  888     888    \n\t" +
+            " 888  888    .o  888     888    \n\t" +
+            "o888o `Y8bod8P' o888o   o888o   \n\n\t" +
+            "  Leiden Essay Film Festival\n\t"+
+            "http://github.com/woshibide/leff\n\t\t"
+        );
     </script>
 </body>
 
