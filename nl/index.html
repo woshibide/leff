@@ -215,7 +215,7 @@ nav.menu-active #hero-h1 {
     pointer-events: none; /* let clicks pass through unless on inner */
     width: 100%;
     height: 100%;
-    border: 6px red solid;
+    /* border: 3px red solid; */
 }
 
 #image-caption.visible {
@@ -223,26 +223,34 @@ nav.menu-active #hero-h1 {
 }
 
 #image-caption .image-caption-inner {
-	border: 3px greenyellow solid;
+	/* border: 3px greenyellow solid; */
 	position: absolute;
 	right: 0;
 	bottom: 0;
-	display: inline-flex;
+	display: flex;
 	flex-direction: column;
 	justify-content: end;
 	align-items: flex-start;
 	transform-origin: bottom left;
 	pointer-events: auto;
+    padding: 0 60px 60px 0;
 	height: 100%;
-	width: calc((100vw - 60px)/6);
+    /*  
+        if you know better approach
+        please reach out to hi@wshbd.com,
+        i guarantee a reward 
+    */
+	width: 7.5rem; 
 }
 
 .actual-fucking-text {
-	border: 3px slateblue solid;
+	position: absolute;
+	/* border: 3px slateblue solid; */
 	rotate: -90deg;
-    transform: translateY(calc(50% + 60px));
+	/* transform: translateY(calc(50% + 60px)); */
 	width: 80vh;
-	transform-origin: bottom left;
+	transform-origin: top left;
+	bottom: 0;
 }
 
 #image-caption .film-title {
