@@ -1,6 +1,8 @@
 # LEFF Feedback
 
-[] footer email sign up all in dutch
+Agree to the terms / Stem in met de voorwaarden
+
+[x] footer email sign up all in dutch 
 
 First version is planned to go live on 11th of august
 

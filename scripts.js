@@ -376,6 +376,16 @@ const ValidationInputCheck = {
     emailInput: null,
     radioInput: null,
     responseContainer: null,
+    messages: {
+        en: {
+            invalidEmail: 'Enter a valid email address.',
+            agreeToTerms: 'Agree to the terms.'
+        },
+        nl: {
+            invalidEmail: 'Voer een geldig e-mailadres in.',
+            agreeToTerms: 'Stem in met de voorwaarden.'
+        }
+    },
 
     /**
      * initialize the validation module
@@ -384,9 +394,36 @@ const ValidationInputCheck = {
         this.form = document.getElementById('mc-embedded-subscribe-form');
         if (!this.form) return;
 
+        // disable native validation so custom messages always show
+        this.form.setAttribute('novalidate', '');
+
         this.emailInput = document.getElementById('mce-EMAIL');
         this.radioInput = document.getElementById('mce-MMERGE50');
         this.responseContainer = document.getElementById('custom-mce-responses');
+
+        // ensure response container exists and is accessible
+        if (!this.responseContainer) {
+            this.responseContainer = document.createElement('div');
+            this.responseContainer.id = 'custom-mce-responses';
+            const scroll = this.form.querySelector('#mc_embed_signup_scroll');
+            (scroll || this.form).appendChild(this.responseContainer);
+        }
+        this.responseContainer.setAttribute('role', 'alert');
+        this.responseContainer.setAttribute('aria-live', 'polite');
+
+        // clear messages when user interacts
+        if (this.emailInput) {
+            this.emailInput.addEventListener('input', () => {
+                // do not clear all messages on input, only unmark this field
+                this.markField(this.emailInput, true);
+            });
+        }
+        if (this.radioInput) {
+            this.radioInput.addEventListener('change', () => {
+                // do not clear all messages on change, only unmark this field
+                this.markField(this.radioInput, true);
+            });
+        }
 
         this.form.addEventListener('submit', this.validate.bind(this));
     },
@@ -398,20 +435,31 @@ const ValidationInputCheck = {
     validate(e) {
         this.clearMessages();
         let isValid = true;
+        let firstInvalid = null;
+        const lang = document.documentElement.lang || 'en';
+        const currentMessages = this.messages[lang] || this.messages.en;
 
-        const email = this.emailInput.value.trim();
+        const email = this.emailInput?.value.trim() || '';
         if (!this.isValidEmail(email)) {
-            this.displayMessage('please enter a valid email address.', 'error');
+            this.displayMessage(currentMessages.invalidEmail, 'error');
+            this.markField(this.emailInput, false);
             isValid = false;
+            if (!firstInvalid && this.emailInput) firstInvalid = this.emailInput;
         }
 
-        if (!this.radioInput.checked) {
-            this.displayMessage('please agree to the privacy policy to subscribe.', 'error');
+        if (!this.radioInput || !this.radioInput.checked) {
+            this.displayMessage(currentMessages.agreeToTerms, 'error');
+            this.markField(this.radioInput, false);
             isValid = false;
+            if (!firstInvalid && this.radioInput) firstInvalid = this.radioInput;
         }
 
         if (!isValid) {
             e.preventDefault();
+            // focus the first invalid field
+            if (firstInvalid && typeof firstInvalid.focus === 'function') {
+                firstInvalid.focus();
+            }
         }
         // if valid, the form will submit as normal
     },
@@ -424,6 +472,22 @@ const ValidationInputCheck = {
     isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
+    },
+
+    /**
+     * mark/unmark a field as invalid for a11y and simple styling
+     * @param {HTMLElement} field 
+     * @param {boolean} ok
+     */
+    markField(field, ok) {
+        if (!field) return;
+        if (ok) {
+            field.removeAttribute('aria-invalid');
+            field.classList.remove('field-error');
+        } else {
+            field.setAttribute('aria-invalid', 'true');
+            field.classList.add('field-error');
+        }
     },
 
     /**
@@ -442,7 +506,7 @@ const ValidationInputCheck = {
      * clear all status messages
      */
     clearMessages() {
-        this.responseContainer.innerHTML = '';
+        if (this.responseContainer) this.responseContainer.innerHTML = '';
     }
 };
 
