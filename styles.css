@@ -176,7 +176,7 @@ template {
 
 @font-face {
     font-family: "switzer";
-    src: url('/leff/assets/fonts/switzer/Switzer-Regular.woff2') format('woff2');
+    src: url('/assets/fonts/switzer/Switzer-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
