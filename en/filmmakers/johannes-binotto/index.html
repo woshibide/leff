@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Leiden Essay Film Festival">
+    <meta name="keywords" content="film festival, essay film, leiden, cinema, documentary, Chris Marker, leff, Laura Rascaroli, Harun Farocki">
+    <meta name="description" content="The first festival in the Netherlands dedicated entirely to the essay film">
+
+    <meta property="og:title" content="Leiden Essay Film Festival">
+    <meta property="og:description" content="The first festival in the Netherlands dedicated entirely to the essay film">
+    <meta property="og:image" content="/leff/assets/header/og_1200x1200.png">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="/leff/assets/header/og_1200x1200.png">
+
+    <link rel="icon" href="/leff/assets/header/favicon.ico" sizes="any">
+    <link rel="icon" href="/leff/assets/header/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/leff/assets/header/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/leff/assets/header/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/leff/assets/header/android-chrome-512x512.png">
+    <meta name="theme-color" content="#C0BEBF">
+
+    <title>Johannes Binotto - Filmmaker - Leiden Essay Film Festival</title>
+
+    <!-- base href for github pages deployment -->
+    
+    <base href="/leff/">
+    
+    <link rel="stylesheet" href="/leff/styles.3bc8f6756f.css">
+    
+
+    
+<style>
+    /*
+        single filmmaker page
+    */
+    
+    .film-maker-hero {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 2rem;
+        margin: 2rem 0;
+        align-items: start;
+    }
+    
+    .film-maker-hero img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+    
+    .film-maker-hero h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    
+    .filmmaker-bio {
+        line-height: 1.6;
+        margin: 2rem 0;
+    }
+    
+    .back-link {
+        display: inline-block;
+        margin-bottom: 2rem;
+        color: #666;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    
+    .back-link:hover {
+        color: #000;
+    }
+    
+    .list-of-films {
+        margin-top: 3rem;
+    }
+    
+    .list-of-films h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+    }
+    
+    .film-card {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 2rem;
+        padding: 2rem 0;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .film-card:last-child {
+        border-bottom: none;
+    }
+    
+    .film-card h4 {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    
+    .film-synopsis {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+    
+    .film-meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .film-meta-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .film-meta-label {
+        font-weight: bold;
+        font-size: 0.9rem;
+        color: #666;
+        text-transform: uppercase;
+    }
+    
+    .film-meta-value {
+        font-size: 1rem;
+    }
+    
+    .film-card-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+    
+    @media (max-width: 768px) {
+        .film-maker-hero {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        .film-maker-hero img {
+            max-width: 250px;
+            justify-self: center;
+        }
+        
+        .film-card {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        .film-card-image {
+            order: -1;
+        }
+        
+        .film-card-image img {
+            max-width: 250px;
+            justify-self: center;
+        }
+        
+        .film-meta {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+</style>
+
+
+    
+</head>
+
+<body>
+    <nav>
+        <a href="/leff/en/"><img src="/leff/assets/leff-logo-yellow.svg"
+                alt="leiden essay film festival logo" id="nav-logo"></a>
+        <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button"
+            style="display: none;">
+            Tickets
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+            </svg>
+        </a>
+        <div id="circle-container">
+            <div id="languages">
+                
+                
+                <button class="active">EN</button>
+                
+                
+                
+                <a href="/leff/nl/filmmakers/johannes-binotto/">
+                    <button>NL</button>
+                </a>
+                
+                
+            </div>
+            <div id="circle"></div>
+            <div class="menu-close" style="display: none;">
+                <button class="close-icon" id="menu-close" aria-label="close">
+                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="menu-overlay" class="menu-overlay">
+            <div class="menu-grid grid-base">
+                <div class="menu-nav">
+                    <ul>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/en/">Home</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="programme">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
+                                            stroke-width="2" />
+                                    </svg>
+                                    <div class="drp-dwn-item-txt">Programme 2025</div>
+                                </button>
+                                <ul class="menu-dropdown-content" id="programme-dropdown">
+                                    
+                                    <li>
+                                        <a href="/leff/en/programme/">A—Z film</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/en/filmmakers/">A—Z directors</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/en/programme/">Time</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/en/programme/">Location</a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/en/schedule/">Block Schedule</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/en/location/">Locations</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/en/tickets/">Tickets</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="about">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
+                                            stroke-width="2" />
+                                    </svg>
+                                    <div class="drp-dwn-item-txt">About leff</div>
+                                </button>
+                                <ul class="menu-dropdown-content" id="about-dropdown">
+                                    
+                                    <li>
+                                        <a href="/leff/en/about/">Festival</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/en/organisation/">Organisation</a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <section class="page-contents">
+        
+<div class="grid-base">
+    <a href="/leff/en/filmmakers/" class="back-link">
+        ← Back to all filmmakers
+    </a>
+    
+    <h1 class="page-title">
+        Filmmaker: Johannes Binotto
+    </h1>
+
+    <div class="film-maker-hero">
+        <img src="https://via.placeholder.com/300x400/f0f0f0/666?text=Johannes%20Binotto" alt="Johannes Binotto">
+        <div>
+            <h2>Johannes Binotto</h2>
+        </div>
+    </div>
+
+    <div class="filmmaker-bio">
+        <p>Johannes Binotto (b. 1977, Switzerland; based in Lucerne and Zurich) is an experimental filmmaker, video essayist and media theorist whose academic practice interrogates perception, spatiality and the uncanny in contemporary image culture. A professor of Film &amp; Media Studies at the Lucerne School of Design &amp; Art and senior lecturer at the University of Zurich, he leads the Swiss National Science Foundation project “VideoEssay. Futures of Audiovisual Research and Teaching,” and publishes on cinema, psychoanalysis, literature and architecture.</p>
+    </div>
+
+    
+        <div class="list-of-films">
+            <h3>Films from this director (1)</h3>
+            
+            
+                <div class="film-card">
+                    <div class="film-card-text-wrapper">
+                        <h4 id="capricorn-sunset">
+                            <a href="/leff/en/programme/capricorn-sunset/" style="color: inherit; text-decoration: none;">
+                                Capricorn Sunset
+                            </a>
+                        </h4>
+                        
+                        
+                            <div class="film-synopsis">
+                                <p>Exploring boundless space for meaning-making. This essay film opens our eyes to the interplay of images, memory, and personal interpretation.</p>
+                            </div>
+                        
+                        
+                        <div class="film-meta">
+                            <div class="film-meta-item">
+                                <span class="film-meta-label">Director</span>
+                                <span class="film-meta-value">Johannes Binotto</span>
+                            </div>
+                            
+                            
+                                <div class="film-meta-item">
+                                    <span class="film-meta-label">Country</span>
+                                    <span class="film-meta-value">Switzerland</span>
+                                </div>
+                            
+                            
+                            
+                                <div class="film-meta-item">
+                                    <span class="film-meta-label">Year</span>
+                                    <span class="film-meta-value">2023</span>
+                                </div>
+                            
+                            
+                            
+                                <div class="film-meta-item">
+                                    <span class="film-meta-label">Duration</span>
+                                    <span class="film-meta-value">5&#39;</span>
+                                </div>
+                            
+                            
+                            
+                            
+                            <div class="film-meta-item">
+                                <span class="film-meta-label">LEFF 2025</span>
+                                <span class="film-meta-value">LEFF 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="film-card-image">
+                        <img src="https://via.placeholder.com/300x400/f0f0f0/666?text=Capricorn%20Sunset" alt="Capricorn Sunset">
+                    </div>
+                </div>
+            
+        </div>
+    
+</div>
+
+<div class="footer-negative-space"></div>
+
+    </section>
+
+    <footer>
+        <div class="footer-container grid-base">
+            <!-- email newsletter signup -->
+            <div class="footer-newsletter-section">
+                <h3 style="text-transform: uppercase;">Stay Updated</h3>
+                <p>Subscribe to hear more from Leiden Essay Film Festival</p>
+                <div id="mc_embed_signup">
+                    <form
+                        action="https://kabk.us8.list-manage.com/subscribe/post?u=fe6f0920a56a052079924e663&amp;id=0bef5e214f&amp;f_id=00bac6e2f0"
+                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                        target="_blank">
+                        <div id="mc_embed_signup_scroll">
+                            <div class="mc-field-group input-group footer-checkbox">
+                                <input type="radio" name="MMERGE5" id="mce-MMERGE50" required
+                                       value="I agree to the processing of my data as described in the privacy policy and to receive the leff newsletter and updates.">
+                                <label for="mce-MMERGE50">
+                                    I agree to the processing of my data as described in the
+                                    <a href="/leff/en/privacy/">Privacy Policy</a> and to receive the leff newsletter and updates.
+                                </label>
+                            </div>
+                            <div class="mc-field-group">
+                                <label for="mce-EMAIL" class="sr-only">Subscribe to hear more from Leiden Essay Film Festival</label>
+                                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" 
+                                       placeholder="Enter your email here" value="">
+                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" 
+                                       class="button" value="Subscribe">
+                            </div>
+                            <div id="custom-mce-responses"></div>
+                            <div id="mce-responses" class="clear" style="display: none;">
+                                <div class="response" id="mce-error-response" style="display: none;"></div>
+                                <div class="response" id="mce-success-response" style="display: none;"></div>
+                            </div>
+                            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                <input type="text" name="b_fe6f0920a56a052079924e663_0bef5e214f" tabindex="-1" value="">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-nav">
+                <h4>Navigation</h4>
+                <ul>
+                    
+                        <li><a href="/leff/en/">Home</a></li>
+                    
+                        <li><a href="/leff/en/programme/">Programme 2025</a></li>
+                    
+                        <li><a href="/leff/en/schedule/">Block Schedule</a></li>
+                    
+                        <li><a href="/leff/en/location/">Locations</a></li>
+                    
+                        <li><a href="/leff/en/tickets/">Tickets</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="footer-info">
+                <h4>About leff</h4>
+                <ul>
+                    <li><a href="/leff/en/about/">Festival</a></li>
+                    <li><a href="/leff/en/organisation/">Organisation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-outside-links">
+                <h4>Contact</h4>
+                <ul>
+                    <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
+                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank">Instagram</a></li>
+                    <li><a href="/leff/en/privacy/">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- empty space for layout -->
+            <div class="footer-spacer"></div>
+        </div>
+        
+        <!-- credits -->
+        <div class="footer-bottom grid-base">
+            <p>This website was designed by <a href="https://www.instagram.com/michela.meliddo" target="_blank" rel="noopener">Michela Meliddo</a>, Ellen Owens and coded by <a href="https://wshbd.com" target="_blank" rel="noopener">Pyotr Goloub</a></p>
+        </div>
+    </footer>
+
+    
+
+    
+
+    <div id="custom-cursor"></div>
+
+    <script src="/leff/scripts.js"></script>
+    <script>
+        // set base path for javascript to use
+        window.BASE_PATH = '/leff/';
+
+        // hello screen
+        console.log("\n\n\n\t" +
+            "oooo             .o88o.  .o88o. \n\t" +
+            "`888             888 `\"  888 `\" \n\t" +
+            " 888   .ooooo.  o888oo  o888oo  \n\t" +
+            " 888  d88' `88b  888     888    \n\t" +
+            " 888  888ooo888  888     888    \n\t" +
+            " 888  888    .o  888     888    \n\t" +
+            "o888o `Y8bod8P' o888o   o888o   \n\n\t" +
+            "  Leiden Essay Film Festival\n\t"+
+            "http://github.com/woshibide/leff\n\t\t"
+        );
+    </script>
+</body>
+
+</html>
