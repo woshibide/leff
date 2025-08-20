@@ -1,20 +1,48 @@
 # Public version of the website
 
+## missing images
+
+- [x] Johan van der Keuken
+- [x] Miko Revereza
+- [x] Judith Westerveld
+- [x] Harun Farocki
+- [?] Veronica Munteau, Karin Nakajima, Sara Ouljour
+- [] Mattijs van de Port
+- [] Geo Barcan
+- [] Bo Wang
+- [] Maryam Jafri
+- [] Miranda Pennell
+- [] Andrew Norman Wilson
+- [] Francis Kabisch
+- [] Johannes Binotto
+- [] Toyisha Tsunoda
+- [] Jean-Pierre Bekolo
+- [] Bahar Noorizadeh
+- [] Ho Rui An
+- [] Angus Carlyle & Rupert Cox
+- [] Graeme Arnfield
+- [] David Petráš
+- [] Lis Rhodes
+- [] Elysa Wendi
+
+
 ##
+WHATS TO BE DONE:
+
 - [] Programme
 - [] Film pages
   - [x] data is fetched
-  - [] images
+  - [~] images
   - [] styling
 
 - [] Filmakers
   - [x] data is fetched
-  - [] images
+  - [~] images
   - [] styling
 
 - [] Filmakers pages
   - [x] data is fetched
-  - [] images
+  - [~] images
   - [] styling
 
 - [] Schedule page

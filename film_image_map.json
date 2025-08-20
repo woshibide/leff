@@ -1,0 +1,1238 @@
+{
+  "generated_at": "2025-08-20",
+  "total_films": 43,
+  "films_with_images": 24,
+  "mapping": {
+    "Maria Iorio & Raphaël Cuomo::Undead Voices (2019–2021)": {
+      "director": "Maria Iorio & Raphaël Cuomo",
+      "title": "Undead Voices (2019–2021)",
+      "slug": "undead-voices-20192021",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Chris Marker::Sans Soleil": {
+      "director": "Chris Marker",
+      "title": "Sans Soleil",
+      "slug": "sans-soleil",
+      "images": [
+        "/assets/images/film-images/Chris Marker/Sans soleil - Photo 1.webp",
+        "/assets/images/film-images/Chris Marker/Sans soleil - Photo 2.webp",
+        "/assets/images/film-images/Chris Marker/Sans soleil - Photo 3.webp",
+        "/assets/images/film-images/Chris Marker/Sans soleil - Photo 4.webp",
+        "/assets/images/film-images/Chris Marker/Sans soleil - Photo 5.webp",
+        "/assets/images/film-images/Chris Marker/Sans soleil - Photo 6.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Chris Marker/Sans soleil - Photo 1.webp",
+      "image_count": 6
+    },
+    "Vincent Meessen::Juste un mouvement": {
+      "director": "Vincent Meessen",
+      "title": "Juste un mouvement",
+      "slug": "juste-un-mouvement",
+      "images": [
+        "/assets/images/film-images/Vincent Meessen/000_7029.webp",
+        "/assets/images/film-images/Vincent Meessen/1.webp",
+        "/assets/images/film-images/Vincent Meessen/10.webp",
+        "/assets/images/film-images/Vincent Meessen/11.webp",
+        "/assets/images/film-images/Vincent Meessen/11_Article_Mousse_images.webp",
+        "/assets/images/film-images/Vincent Meessen/12.webp",
+        "/assets/images/film-images/Vincent Meessen/13.webp",
+        "/assets/images/film-images/Vincent Meessen/13_Article_Mousse_images.webp",
+        "/assets/images/film-images/Vincent Meessen/14.webp",
+        "/assets/images/film-images/Vincent Meessen/15.webp",
+        "/assets/images/film-images/Vincent Meessen/2.webp",
+        "/assets/images/film-images/Vincent Meessen/3.webp",
+        "/assets/images/film-images/Vincent Meessen/4.webp",
+        "/assets/images/film-images/Vincent Meessen/5.webp",
+        "/assets/images/film-images/Vincent Meessen/6.webp",
+        "/assets/images/film-images/Vincent Meessen/7.webp",
+        "/assets/images/film-images/Vincent Meessen/8.webp",
+        "/assets/images/film-images/Vincent Meessen/9.webp",
+        "/assets/images/film-images/Vincent Meessen/9_Article_Mousse_images.webp",
+        "/assets/images/film-images/Vincent Meessen/And_1_MamadouKhoumaGueye.webp",
+        "/assets/images/film-images/Vincent Meessen/And_2_FelwineSarr.webp",
+        "/assets/images/film-images/Vincent Meessen/And_3_FouMalade.webp",
+        "/assets/images/film-images/Vincent Meessen/And_4_MameAwaLyFall.webp",
+        "/assets/images/film-images/Vincent Meessen/And_5_MadiawNjaay.webp",
+        "/assets/images/film-images/Vincent Meessen/And_6_FiLu.webp",
+        "/assets/images/film-images/Vincent Meessen/And_7_DoudouFall.webp",
+        "/assets/images/film-images/Vincent Meessen/And_8_LiYuanchao-vice-president.webp",
+        "/assets/images/film-images/Vincent Meessen/And_9_Thierno.webp",
+        "/assets/images/film-images/Vincent Meessen/JUM_ (0-26-47-03).webp",
+        "/assets/images/film-images/Vincent Meessen/_1_DialoBlondinDiop.webp",
+        "/assets/images/film-images/Vincent Meessen/_2_OusmanBlondindiop.webp",
+        "/assets/images/film-images/Vincent Meessen/_3_MarieTheresDiedhiou.webp",
+        "/assets/images/film-images/Vincent Meessen/_4_AliuonePalomaSall.webp",
+        "/assets/images/film-images/Vincent Meessen/_5_BoubaDiallo.webp",
+        "/assets/images/film-images/Vincent Meessen/_6_CheikHamalaBlondinDiop.webp",
+        "/assets/images/film-images/Vincent Meessen/_7_AlymanaBathily.webp",
+        "/assets/images/film-images/Vincent Meessen/_8_LandinSavane.webp",
+        "/assets/images/film-images/Vincent Meessen/_9_MarieAngelique.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Vincent Meessen/000_7029.webp",
+      "image_count": 38
+    },
+    "Ho Rui An::Twenty-Four Cinematic Points of View of a Factory Gate in China": {
+      "director": "Ho Rui An",
+      "title": "Twenty-Four Cinematic Points of View of a Factory Gate in China",
+      "slug": "twenty-four-cinematic-points-of-view-of-a-factory-gate-in-china",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Andrew Norman Wilson::Workers Leaving the Googleplex": {
+      "director": "Andrew Norman Wilson",
+      "title": "Workers Leaving the Googleplex",
+      "slug": "workers-leaving-the-googleplex",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Auguste & Louis Lumière::La sortie de l'usine Lumière à Lyon": {
+      "director": "Auguste & Louis Lumière",
+      "title": "La sortie de l'usine Lumière à Lyon",
+      "slug": "la-sortie-de-l-usine-lumiere-a-lyon",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Harun Farocki::Arbeiter verlassen die Fabrik": {
+      "director": "Harun Farocki",
+      "title": "Arbeiter verlassen die Fabrik",
+      "slug": "arbeiter-verlassen-die-fabrik",
+      "images": [
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_01.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_02.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_03.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_04.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_05.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_06.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_07.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_08.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_09.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_10.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_11.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_12.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_13.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_14.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_15.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_16.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_17.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_18.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_19.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_20.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_21.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_22.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_23.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_24.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_25.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_26.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_27.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_28.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_29.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_30.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_31.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_32.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_33.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_34.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_35.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_36.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_37.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_38.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_39.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_40.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_41.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_42.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_43.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_44.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_45.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_46.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_47.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_48.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_49.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_01.webp",
+      "image_count": 49
+    },
+    "Harun Farocki::Was ist Los?": {
+      "director": "Harun Farocki",
+      "title": "Was ist Los?",
+      "slug": "was-ist-los",
+      "images": [
+        "/assets/images/film-images/Harun Farocki/What's up - Was ist los/Was ist los 01.webp",
+        "/assets/images/film-images/Harun Farocki/What's up - Was ist los/Was ist los 02.webp",
+        "/assets/images/film-images/Harun Farocki/What's up - Was ist los/Was ist los 03.webp",
+        "/assets/images/film-images/Harun Farocki/What's up - Was ist los/Was ist los 04.webp",
+        "/assets/images/film-images/Harun Farocki/What's up - Was ist los/Was ist los 05.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Harun Farocki/What's up - Was ist los/Was ist los 01.webp",
+      "image_count": 5
+    },
+    "Harun Farocki::Gegen-Musik": {
+      "director": "Harun Farocki",
+      "title": "Gegen-Musik",
+      "slug": "gegen-musik",
+      "images": [
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_01.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_02.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_03.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_04.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_05.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_06.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_07.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_08.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_09.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_10.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_11.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_12.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_13.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_14.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_15.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_16.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_17.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_01.webp",
+      "image_count": 17
+    },
+    "Francis Kabisch::Getty Abortions": {
+      "director": "Francis Kabisch",
+      "title": "Getty Abortions",
+      "slug": "getty-abortions",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Aura Satz::Preemptive Listening": {
+      "director": "Aura Satz",
+      "title": "Preemptive Listening",
+      "slug": "preemptive-listening",
+      "images": [
+        "/assets/images/film-images/Aura Satz/Preemptive Listening still1.webp",
+        "/assets/images/film-images/Aura Satz/Preemptive Listening still2.webp",
+        "/assets/images/film-images/Aura Satz/Preemptive Listening still3.webp",
+        "/assets/images/film-images/Aura Satz/Preemptive Listening still4.webp",
+        "/assets/images/film-images/Aura Satz/Preemptive Listening still5.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Aura Satz/Preemptive Listening still1.webp",
+      "image_count": 5
+    },
+    "Graeme Arnfield::Home Invasion": {
+      "director": "Graeme Arnfield",
+      "title": "Home Invasion",
+      "slug": "home-invasion",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Bertrand Bonello::Coma": {
+      "director": "Bertrand Bonello",
+      "title": "Coma",
+      "slug": "coma",
+      "images": [
+        "/assets/images/film-images/Bertrand Bonello/120x160 Coma 29-09 HD.webp",
+        "/assets/images/film-images/Bertrand Bonello/COMA - STILL 2.webp",
+        "/assets/images/film-images/Bertrand Bonello/COMA - STILL 3.webp",
+        "/assets/images/film-images/Bertrand Bonello/COMA - STILL 4.webp",
+        "/assets/images/film-images/Bertrand Bonello/COMA-STILL-WEB.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Bertrand Bonello/120x160 Coma 29-09 HD.webp",
+      "image_count": 5
+    },
+    "Bahar Noorizadeh::Free to Choose": {
+      "director": "Bahar Noorizadeh",
+      "title": "Free to Choose",
+      "slug": "free-to-choose",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Bo Wang::An Asian Ghost Story": {
+      "director": "Bo Wang",
+      "title": "An Asian Ghost Story",
+      "slug": "an-asian-ghost-story",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Elysa Wendi &  Shing Lee::Room 404": {
+      "director": "Elysa Wendi &  Shing Lee",
+      "title": "Room 404",
+      "slug": "room-404",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Sergei Loznitsa::The Natural History of Destruction": {
+      "director": "Sergei Loznitsa",
+      "title": "The Natural History of Destruction",
+      "slug": "the-natural-history-of-destruction",
+      "images": [
+        "/assets/images/film-images/Sergey Loznitsa/0028555.webp",
+        "/assets/images/film-images/Sergey Loznitsa/0085797.webp",
+        "/assets/images/film-images/Sergey Loznitsa/0110449.webp",
+        "/assets/images/film-images/Sergey Loznitsa/0112788.webp",
+        "/assets/images/film-images/Sergey Loznitsa/0124983.webp",
+        "/assets/images/film-images/Sergey Loznitsa/NHD_3.205.1.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Sergey Loznitsa/0028555.webp",
+      "image_count": 6
+    },
+    "Lea Hartlaub::sr": {
+      "director": "Lea Hartlaub",
+      "title": "sr",
+      "slug": "sr",
+      "images": [
+        "/assets/images/film-images/Lea Hartlaub/sr_film-still_01_LeaHartlaub-BlinkerFilmproduktion_port-of-Eilat.webp",
+        "/assets/images/film-images/Lea Hartlaub/sr_film-still_02_LeaHartlaub-BlinkerFilmproduktion_watching-giraffe-Nairobi.webp",
+        "/assets/images/film-images/Lea Hartlaub/sr_film-still_03_LeaHartlaub-BlinkerFilmproduktion_Liuli-Factory.webp",
+        "/assets/images/film-images/Lea Hartlaub/sr_film-still_04_LeaHartlaub-BlinkerFilmproduktion_rockart-slide-copyright-by-D.Coulson.webp",
+        "/assets/images/film-images/Lea Hartlaub/sr_film-still_05_LeaHartlaub-BlinkerFilmproduktion_Field-Museum-storage-room.webp",
+        "/assets/images/film-images/Lea Hartlaub/sr_film-still_06_LeaHartlaub-BlinkerFilmproduktion_hieroglyphe-sr.webp",
+        "/assets/images/film-images/Lea Hartlaub/sr_film-still_07_LeaHartlaub-BlinkerFilmproduktion_newsreel-1945.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Lea Hartlaub/sr_film-still_01_LeaHartlaub-BlinkerFilmproduktion_port-of-Eilat.webp",
+      "image_count": 7
+    },
+    "Nguyễn Trinh Thi::Letters from Panduranga": {
+      "director": "Nguyễn Trinh Thi",
+      "title": "Letters from Panduranga",
+      "slug": "letters-from-panduranga",
+      "images": [
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/1-Thi Nguyen-Letters from Panduranga-2015.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/3-Thi Nguyen-Letters from Panduranga-2015.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/4-Thi Nguyen-Letters from Panduranga-2015.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/5-Thi Nguyen-Letters from Panduranga-2015.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters Carpeaux.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters Jaka.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters My Son 2.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters from Panduranga still_maily.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters from Panduranga still_that make it alive.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters future 1.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters future 2.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters future lake.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters old lady.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters ruins double.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters still 8.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters stones.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/1-Thi Nguyen-Letters from Panduranga-2015.webp",
+      "image_count": 16
+    },
+    "Nguyễn Trinh Thi::How to Improve the World": {
+      "director": "Nguyễn Trinh Thi",
+      "title": "How to Improve the World",
+      "slug": "how-to-improve-the-world",
+      "images": [
+        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 1.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 2.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 3.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 4.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 5.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 6.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World still_abandoned sculpture.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World still_tuning gongs.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 1.webp",
+      "image_count": 8
+    },
+    "Mattijs van de Port::Where can I get Lost?": {
+      "director": "Mattijs van de Port",
+      "title": "Where can I get Lost?",
+      "slug": "where-can-i-get-lost",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Miranda Pennell::Man Number 4": {
+      "director": "Miranda Pennell",
+      "title": "Man Number 4",
+      "slug": "man-number-4",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Johannes Binotto::Capricorn Sunset": {
+      "director": "Johannes Binotto",
+      "title": "Capricorn Sunset",
+      "slug": "capricorn-sunset",
+      "images": [
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.29.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.51.03.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.51.11.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.52.11.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.52.35.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.52.52.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.53.47.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.53.59.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.54.07.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.55.31.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.56.09.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.56.15.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.56.52.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.57.02.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
+      "image_count": 15
+    },
+    "Kamal Aljafari::A Fidai Film": {
+      "director": "Kamal Aljafari",
+      "title": "A Fidai Film",
+      "slug": "a-fidai-film",
+      "images": [
+        "/assets/images/film-images/Kamal Aljafari/Fidai Still 1.webp",
+        "/assets/images/film-images/Kamal Aljafari/Fidai Still 2.webp",
+        "/assets/images/film-images/Kamal Aljafari/Fidai Still 3.webp",
+        "/assets/images/film-images/Kamal Aljafari/Fidai Still 4.webp",
+        "/assets/images/film-images/Kamal Aljafari/Fidai Still 5.webp",
+        "/assets/images/film-images/Kamal Aljafari/Fidai Still 6.webp",
+        "/assets/images/film-images/Kamal Aljafari/Fidai Still 7.webp",
+        "/assets/images/film-images/Kamal Aljafari/Fidai Still 8.webp",
+        "/assets/images/film-images/Kamal Aljafari/Fidai Still 9.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Kamal Aljafari/Fidai Still 1.webp",
+      "image_count": 9
+    },
+    "Alexander Horwath::Henry Fonda for President": {
+      "director": "Alexander Horwath",
+      "title": "Henry Fonda for President",
+      "slug": "henry-fonda-for-president",
+      "images": [
+        "/assets/images/film-images/Alexander Horwath/parade-presse2.webp",
+        "/assets/images/film-images/Alexander Horwath/timessquare-presse3.webp",
+        "/assets/images/film-images/Alexander Horwath/village-fonda-presse1.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Alexander Horwath/parade-presse2.webp",
+      "image_count": 3
+    },
+    "Johan van der Keuken::Face Value": {
+      "director": "Johan van der Keuken",
+      "title": "Face Value",
+      "slug": "face-value",
+      "images": [
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.29.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.51.03.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.51.11.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.52.11.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.52.35.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.52.52.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.53.47.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.53.59.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.54.07.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.55.31.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.56.09.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.56.15.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.56.52.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.57.02.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
+      "image_count": 15
+    },
+    "Sasha Litvintseva & Beny Wagner::My Want of You Partakes of Me": {
+      "director": "Sasha Litvintseva & Beny Wagner",
+      "title": "My Want of You Partakes of Me",
+      "slug": "my-want-of-you-partakes-of-me",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Michela Meliddo::Perpetual Radiance": {
+      "director": "Michela Meliddo",
+      "title": "Perpetual Radiance",
+      "slug": "perpetual-radiance",
+      "images": [
+        "/assets/images/film-images/Michela Meliddo/Still.webp",
+        "/assets/images/film-images/Michela Meliddo/Still01.webp",
+        "/assets/images/film-images/Michela Meliddo/Still02.webp",
+        "/assets/images/film-images/Michela Meliddo/Still03.webp",
+        "/assets/images/film-images/Michela Meliddo/Still04.webp",
+        "/assets/images/film-images/Michela Meliddo/Still05.webp",
+        "/assets/images/film-images/Michela Meliddo/Still06.webp",
+        "/assets/images/film-images/Michela Meliddo/Still07.webp",
+        "/assets/images/film-images/Michela Meliddo/Still08.webp",
+        "/assets/images/film-images/Michela Meliddo/Still09.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Michela Meliddo/Still.webp",
+      "image_count": 10
+    },
+    "Nika Pećarina::To the Earthern Red": {
+      "director": "Nika Pećarina",
+      "title": "To the Earthern Red",
+      "slug": "to-the-earthern-red",
+      "images": [
+        "/assets/images/film-images/Nika Pećarina/crvenojbojizarenezemlje_v2_x4.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Nika Pećarina/crvenojbojizarenezemlje_v2_x4.webp",
+      "image_count": 1
+    },
+    "Maryam Jafri::Mariam Jafri vs Maryam Jafri": {
+      "director": "Maryam Jafri",
+      "title": "Mariam Jafri vs Maryam Jafri",
+      "slug": "mariam-jafri-vs-maryam-jafri",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Veronica Munteau, Karin Nakajima, Sara Ouljour::Haunted, the Hollow": {
+      "director": "Veronica Munteau, Karin Nakajima, Sara Ouljour",
+      "title": "Haunted, the Hollow",
+      "slug": "haunted-the-hollow",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Lena Windisch::Searching for the Perfect Gentleman": {
+      "director": "Lena Windisch",
+      "title": "Searching for the Perfect Gentleman",
+      "slug": "searching-for-the-perfect-gentleman",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Susanna Tomassini::The Southern Thruway": {
+      "director": "Susanna Tomassini",
+      "title": "The Southern Thruway",
+      "slug": "the-southern-thruway",
+      "images": [
+        "/assets/images/film-images/Susanna Tomassini/TST_still1.webp",
+        "/assets/images/film-images/Susanna Tomassini/TST_still2.webp",
+        "/assets/images/film-images/Susanna Tomassini/TST_still3.webp",
+        "/assets/images/film-images/Susanna Tomassini/TST_still4.webp",
+        "/assets/images/film-images/Susanna Tomassini/TST_still5.webp",
+        "/assets/images/film-images/Susanna Tomassini/TST_still6.webp",
+        "/assets/images/film-images/Susanna Tomassini/TST_still7.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Susanna Tomassini/TST_still1.webp",
+      "image_count": 7
+    },
+    "Hicham Gardaf::In Praise of Slowness": {
+      "director": "Hicham Gardaf",
+      "title": "In Praise of Slowness",
+      "slug": "in-praise-of-slowness",
+      "images": [
+        "/assets/images/film-images/Hicham Gardaf/In_Praise_of_Slowness_Film_Still_01.webp",
+        "/assets/images/film-images/Hicham Gardaf/In_Praise_of_Slowness_Film_Still_02.webp",
+        "/assets/images/film-images/Hicham Gardaf/In_Praise_of_Slowness_Film_Still_04.webp",
+        "/assets/images/film-images/Hicham Gardaf/In_Praise_of_Slowness_Film_Still_05.webp",
+        "/assets/images/film-images/Hicham Gardaf/In_Praise_of_Slowness_Film_Still_06.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Hicham Gardaf/In_Praise_of_Slowness_Film_Still_01.webp",
+      "image_count": 5
+    },
+    "Manthia Diawara::A Letter from Yene": {
+      "director": "Manthia Diawara",
+      "title": "A Letter from Yene",
+      "slug": "a-letter-from-yene",
+      "images": [
+        "/assets/images/film-images/Manthia Diawara/A Letter from Yene 1.webp",
+        "/assets/images/film-images/Manthia Diawara/A Letter from Yene 2.webp",
+        "/assets/images/film-images/Manthia Diawara/A Letter from Yene 3.webp",
+        "/assets/images/film-images/Manthia Diawara/A Letter from Yene 4.webp",
+        "/assets/images/film-images/Manthia Diawara/A Letter from Yene 5.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Manthia Diawara/A Letter from Yene 1.webp",
+      "image_count": 5
+    },
+    "Chantal Akerman::De l’autre coté": {
+      "director": "Chantal Akerman",
+      "title": "De l’autre coté",
+      "slug": "de-lautre-cote",
+      "images": [
+        "/assets/images/film-images/Chantal Akerman/FTOS 1.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 10.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 12.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 13.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 14.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 15.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 16.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 17.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 18.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 19.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 2.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 20.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 21.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 22.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 23.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 24.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 25 surveillance 1.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 26 surveillance 2.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 27 surveillance 3.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 28 surveillance 4.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 29 surveillance 5.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 30 surveillance 6.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 31 autoroute 1.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 32 autoroute 2.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 33 autoroute 3.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 34 autoroute 4.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 35 autoroute 5.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 36 autoroute 6.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 37 autoroute 7.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 4.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 5.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 6.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 6bis.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 7.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 7bis.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 8.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 9.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Chantal Akerman/FTOS 1.webp",
+      "image_count": 37
+    },
+    "Rupert Cox & Angus Carlyle::The Cave Mouth and The Giant Voice": {
+      "director": "Rupert Cox & Angus Carlyle",
+      "title": "The Cave Mouth and The Giant Voice",
+      "slug": "the-cave-mouth-and-the-giant-voice",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Toshiya Tsunoda::Kapotte Muziek – Track 1": {
+      "director": "Toshiya Tsunoda",
+      "title": "Kapotte Muziek – Track 1",
+      "slug": "kapotte-muziek-track-1",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Lucia Nimcová & David Petráš::Where no bell rings": {
+      "director": "Lucia Nimcová & David Petráš",
+      "title": "Where no bell rings",
+      "slug": "where-no-bell-rings",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    },
+    "Judith Westerveld::Message from Mukalap": {
+      "director": "Judith Westerveld",
+      "title": "Message from Mukalap",
+      "slug": "message-from-mukalap",
+      "images": [
+        "/assets/images/film-images/Judith Westerveld/Message from Mukalap/Film Still Message from Mukalap 4.webp",
+        "/assets/images/film-images/Judith Westerveld/Message from Mukalap/Film still Message from Mukalap 1.webp",
+        "/assets/images/film-images/Judith Westerveld/Message from Mukalap/Film still Message from Mukalap 2.webp",
+        "/assets/images/film-images/Judith Westerveld/Message from Mukalap/Film still Message from Mukalap 3.webp",
+        "/assets/images/film-images/Judith Westerveld/Message from Mukalap/Film still Message from Mukalap 5.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Judith Westerveld/Message from Mukalap/Film Still Message from Mukalap 4.webp",
+      "image_count": 5
+    },
+    "Judith Westerveld::The Sending of the Crows": {
+      "director": "Judith Westerveld",
+      "title": "The Sending of the Crows",
+      "slug": "the-sending-of-the-crows",
+      "images": [
+        "/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Landscape_The Sending of the Crows_1 (full resolution).webp",
+        "/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Landscape_The Sending of the Crows_2 (full resolution).webp",
+        "/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Landscape_The Sending of the Crows_3 (full resolution).webp",
+        "/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Landscape_The Sending of the Crows_4 (full resolution).webp",
+        "/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Landscape_The Sending of the Crows_5(full resolution).webp",
+        "/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Portrait_The Sending of the Crows_1 (full resolution).webp",
+        "/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Portrait_The Sending of the Crows_2 (full resolution).webp",
+        "/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Portrait_The Sending of the Crows_3 (full resolution).webp"
+      ],
+      "primary_image": "/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Landscape_The Sending of the Crows_1 (full resolution).webp",
+      "image_count": 8
+    },
+    "Miko Revereza::Nowhere Near": {
+      "director": "Miko Revereza",
+      "title": "Nowhere Near",
+      "slug": "nowhere-near",
+      "images": [
+        "/assets/images/film-images/Miko Revereza/NowhereNear_Still02.webp",
+        "/assets/images/film-images/Miko Revereza/NowhereNear_Still03.webp",
+        "/assets/images/film-images/Miko Revereza/NowhereNear_Still04.webp",
+        "/assets/images/film-images/Miko Revereza/NowhereNear_Still05.webp",
+        "/assets/images/film-images/Miko Revereza/posterLoRes.webp"
+      ],
+      "primary_image": "/assets/images/film-images/Miko Revereza/NowhereNear_Still02.webp",
+      "image_count": 5
+    },
+    "Lis Rhodes::Disquiet": {
+      "director": "Lis Rhodes",
+      "title": "Disquiet",
+      "slug": "disquiet",
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
+    }
+  },
+  "audit": [
+    {
+      "director": "Maria Iorio & Raphaël Cuomo",
+      "title": "Undead Voices (2019–2021)",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Chris Marker",
+      "title": "Sans Soleil",
+      "status": "found",
+      "image_count": 6,
+      "matched_folder": "Chris Marker",
+      "images": [
+        "/assets/images/film-images/Chris Marker/Sans soleil - Photo 1.webp",
+        "/assets/images/film-images/Chris Marker/Sans soleil - Photo 2.webp",
+        "/assets/images/film-images/Chris Marker/Sans soleil - Photo 3.webp"
+      ]
+    },
+    {
+      "director": "Vincent Meessen",
+      "title": "Juste un mouvement",
+      "status": "found",
+      "image_count": 38,
+      "matched_folder": "Vincent Meessen",
+      "images": [
+        "/assets/images/film-images/Vincent Meessen/000_7029.webp",
+        "/assets/images/film-images/Vincent Meessen/1.webp",
+        "/assets/images/film-images/Vincent Meessen/10.webp"
+      ]
+    },
+    {
+      "director": "Ho Rui An",
+      "title": "Twenty-Four Cinematic Points of View of a Factory Gate in China",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Andrew Norman Wilson",
+      "title": "Workers Leaving the Googleplex",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Auguste & Louis Lumière",
+      "title": "La sortie de l'usine Lumière à Lyon",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Harun Farocki",
+      "title": "Arbeiter verlassen die Fabrik",
+      "status": "found",
+      "image_count": 49,
+      "matched_folder": "Harun Farocki",
+      "images": [
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_01.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_02.webp",
+        "/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_03.webp"
+      ]
+    },
+    {
+      "director": "Harun Farocki",
+      "title": "Was ist Los?",
+      "status": "found",
+      "image_count": 5,
+      "matched_folder": "Harun Farocki",
+      "images": [
+        "/assets/images/film-images/Harun Farocki/What's up - Was ist los/Was ist los 01.webp",
+        "/assets/images/film-images/Harun Farocki/What's up - Was ist los/Was ist los 02.webp",
+        "/assets/images/film-images/Harun Farocki/What's up - Was ist los/Was ist los 03.webp"
+      ]
+    },
+    {
+      "director": "Harun Farocki",
+      "title": "Gegen-Musik",
+      "status": "found",
+      "image_count": 17,
+      "matched_folder": "Harun Farocki",
+      "images": [
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_01.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_02.webp",
+        "/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_03.webp"
+      ]
+    },
+    {
+      "director": "Francis Kabisch",
+      "title": "Getty Abortions",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Aura Satz",
+      "title": "Preemptive Listening",
+      "status": "found",
+      "image_count": 5,
+      "matched_folder": "Aura Satz",
+      "images": [
+        "/assets/images/film-images/Aura Satz/Preemptive Listening still1.webp",
+        "/assets/images/film-images/Aura Satz/Preemptive Listening still2.webp",
+        "/assets/images/film-images/Aura Satz/Preemptive Listening still3.webp"
+      ]
+    },
+    {
+      "director": "Graeme Arnfield",
+      "title": "Home Invasion",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Bertrand Bonello",
+      "title": "Coma",
+      "status": "found",
+      "image_count": 5,
+      "matched_folder": "Bertrand Bonello",
+      "images": [
+        "/assets/images/film-images/Bertrand Bonello/120x160 Coma 29-09 HD.webp",
+        "/assets/images/film-images/Bertrand Bonello/COMA - STILL 2.webp",
+        "/assets/images/film-images/Bertrand Bonello/COMA - STILL 3.webp"
+      ]
+    },
+    {
+      "director": "Bahar Noorizadeh",
+      "title": "Free to Choose",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Bo Wang",
+      "title": "An Asian Ghost Story",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Elysa Wendi &  Shing Lee",
+      "title": "Room 404",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Sergei Loznitsa",
+      "title": "The Natural History of Destruction",
+      "status": "found",
+      "image_count": 6,
+      "matched_folder": "Sergey Loznitsa",
+      "images": [
+        "/assets/images/film-images/Sergey Loznitsa/0028555.webp",
+        "/assets/images/film-images/Sergey Loznitsa/0085797.webp",
+        "/assets/images/film-images/Sergey Loznitsa/0110449.webp"
+      ]
+    },
+    {
+      "director": "Lea Hartlaub",
+      "title": "sr",
+      "status": "found",
+      "image_count": 7,
+      "matched_folder": "Lea Hartlaub",
+      "images": [
+        "/assets/images/film-images/Lea Hartlaub/sr_film-still_01_LeaHartlaub-BlinkerFilmproduktion_port-of-Eilat.webp",
+        "/assets/images/film-images/Lea Hartlaub/sr_film-still_02_LeaHartlaub-BlinkerFilmproduktion_watching-giraffe-Nairobi.webp",
+        "/assets/images/film-images/Lea Hartlaub/sr_film-still_03_LeaHartlaub-BlinkerFilmproduktion_Liuli-Factory.webp"
+      ]
+    },
+    {
+      "director": "Nguyễn Trinh Thi",
+      "title": "Letters from Panduranga",
+      "status": "found",
+      "image_count": 16,
+      "matched_folder": "Nguyen Trinh Thi",
+      "images": [
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/1-Thi Nguyen-Letters from Panduranga-2015.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/3-Thi Nguyen-Letters from Panduranga-2015.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/4-Thi Nguyen-Letters from Panduranga-2015.webp"
+      ]
+    },
+    {
+      "director": "Nguyễn Trinh Thi",
+      "title": "How to Improve the World",
+      "status": "found",
+      "image_count": 8,
+      "matched_folder": "Nguyen Trinh Thi",
+      "images": [
+        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 1.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 2.webp",
+        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 3.webp"
+      ]
+    },
+    {
+      "director": "Mattijs van de Port",
+      "title": "Where can I get Lost?",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Miranda Pennell",
+      "title": "Man Number 4",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Johannes Binotto",
+      "title": "Capricorn Sunset",
+      "status": "found",
+      "image_count": 15,
+      "matched_folder": "Johannes Binotto",
+      "images": [
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.29.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.51.03.webp"
+      ]
+    },
+    {
+      "director": "Kamal Aljafari",
+      "title": "A Fidai Film",
+      "status": "found",
+      "image_count": 9,
+      "matched_folder": "Kamal Aljafari",
+      "images": [
+        "/assets/images/film-images/Kamal Aljafari/Fidai Still 1.webp",
+        "/assets/images/film-images/Kamal Aljafari/Fidai Still 2.webp",
+        "/assets/images/film-images/Kamal Aljafari/Fidai Still 3.webp"
+      ]
+    },
+    {
+      "director": "Alexander Horwath",
+      "title": "Henry Fonda for President",
+      "status": "found",
+      "image_count": 3,
+      "matched_folder": "Alexander Horwath",
+      "images": [
+        "/assets/images/film-images/Alexander Horwath/parade-presse2.webp",
+        "/assets/images/film-images/Alexander Horwath/timessquare-presse3.webp",
+        "/assets/images/film-images/Alexander Horwath/village-fonda-presse1.webp"
+      ]
+    },
+    {
+      "director": "Johan van der Keuken",
+      "title": "Face Value",
+      "status": "found",
+      "image_count": 15,
+      "matched_folder": "Johan van der Keuken",
+      "images": [
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.29.webp",
+        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.51.03.webp"
+      ]
+    },
+    {
+      "director": "Sasha Litvintseva & Beny Wagner",
+      "title": "My Want of You Partakes of Me",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Michela Meliddo",
+      "title": "Perpetual Radiance",
+      "status": "found",
+      "image_count": 10,
+      "matched_folder": "Michela Meliddo",
+      "images": [
+        "/assets/images/film-images/Michela Meliddo/Still.webp",
+        "/assets/images/film-images/Michela Meliddo/Still01.webp",
+        "/assets/images/film-images/Michela Meliddo/Still02.webp"
+      ]
+    },
+    {
+      "director": "Nika Pećarina",
+      "title": "To the Earthern Red",
+      "status": "found",
+      "image_count": 1,
+      "matched_folder": "Nika Pećarina",
+      "images": [
+        "/assets/images/film-images/Nika Pećarina/crvenojbojizarenezemlje_v2_x4.webp"
+      ]
+    },
+    {
+      "director": "Maryam Jafri",
+      "title": "Mariam Jafri vs Maryam Jafri",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Veronica Munteau, Karin Nakajima, Sara Ouljour",
+      "title": "Haunted, the Hollow",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Lena Windisch",
+      "title": "Searching for the Perfect Gentleman",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Susanna Tomassini",
+      "title": "The Southern Thruway",
+      "status": "found",
+      "image_count": 7,
+      "matched_folder": "Ho Rui An",
+      "images": [
+        "/assets/images/film-images/Susanna Tomassini/TST_still1.webp",
+        "/assets/images/film-images/Susanna Tomassini/TST_still2.webp",
+        "/assets/images/film-images/Susanna Tomassini/TST_still3.webp"
+      ]
+    },
+    {
+      "director": "Hicham Gardaf",
+      "title": "In Praise of Slowness",
+      "status": "found",
+      "image_count": 5,
+      "matched_folder": "Hicham Gardaf",
+      "images": [
+        "/assets/images/film-images/Hicham Gardaf/In_Praise_of_Slowness_Film_Still_01.webp",
+        "/assets/images/film-images/Hicham Gardaf/In_Praise_of_Slowness_Film_Still_02.webp",
+        "/assets/images/film-images/Hicham Gardaf/In_Praise_of_Slowness_Film_Still_04.webp"
+      ]
+    },
+    {
+      "director": "Manthia Diawara",
+      "title": "A Letter from Yene",
+      "status": "found",
+      "image_count": 5,
+      "matched_folder": "Manthia Diawara",
+      "images": [
+        "/assets/images/film-images/Manthia Diawara/A Letter from Yene 1.webp",
+        "/assets/images/film-images/Manthia Diawara/A Letter from Yene 2.webp",
+        "/assets/images/film-images/Manthia Diawara/A Letter from Yene 3.webp"
+      ]
+    },
+    {
+      "director": "Chantal Akerman",
+      "title": "De l’autre coté",
+      "status": "found",
+      "image_count": 37,
+      "matched_folder": "Chantal Akerman",
+      "images": [
+        "/assets/images/film-images/Chantal Akerman/FTOS 1.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 10.webp",
+        "/assets/images/film-images/Chantal Akerman/FTOS 12.webp"
+      ]
+    },
+    {
+      "director": "Rupert Cox & Angus Carlyle",
+      "title": "The Cave Mouth and The Giant Voice",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Toshiya Tsunoda",
+      "title": "Kapotte Muziek – Track 1",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Lucia Nimcová & David Petráš",
+      "title": "Where no bell rings",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "Judith Westerveld",
+      "title": "Message from Mukalap",
+      "status": "found",
+      "image_count": 5,
+      "matched_folder": "Judith Westerveld",
+      "images": [
+        "/assets/images/film-images/Judith Westerveld/Message from Mukalap/Film Still Message from Mukalap 4.webp",
+        "/assets/images/film-images/Judith Westerveld/Message from Mukalap/Film still Message from Mukalap 1.webp",
+        "/assets/images/film-images/Judith Westerveld/Message from Mukalap/Film still Message from Mukalap 2.webp"
+      ]
+    },
+    {
+      "director": "Judith Westerveld",
+      "title": "The Sending of the Crows",
+      "status": "found",
+      "image_count": 8,
+      "matched_folder": "Judith Westerveld",
+      "images": [
+        "/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Landscape_The Sending of the Crows_1 (full resolution).webp",
+        "/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Landscape_The Sending of the Crows_2 (full resolution).webp",
+        "/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Landscape_The Sending of the Crows_3 (full resolution).webp"
+      ]
+    },
+    {
+      "director": "Miko Revereza",
+      "title": "Nowhere Near",
+      "status": "found",
+      "image_count": 5,
+      "matched_folder": "Miko Revereza",
+      "images": [
+        "/assets/images/film-images/Miko Revereza/NowhereNear_Still02.webp",
+        "/assets/images/film-images/Miko Revereza/NowhereNear_Still03.webp",
+        "/assets/images/film-images/Miko Revereza/NowhereNear_Still04.webp"
+      ]
+    },
+    {
+      "director": "Lis Rhodes",
+      "title": "Disquiet",
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Toyisha Tsunoda",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Toyisha Tsunoda",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Elysa Wendi",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Elysa Wendi",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Lis Rhodes",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Lis Rhodes",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "David Petráš",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "David Petráš",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Jean-Pierre Bekolo",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Jean-Pierre Bekolo",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Bo Wang",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Bo Wang",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Angus Carlyle & Rupert Cox",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Angus Carlyle & Rupert Cox",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Maryam Jafri",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Maryam Jafri",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Miranda Pennell",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Miranda Pennell",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Bahar Noorizadeh",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Bahar Noorizadeh",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Geo Barcan",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Geo Barcan",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Mattijs van de Port",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Mattijs van de Port",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Andrew Norman Wilson",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Andrew Norman Wilson",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Graeme Arnfield",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Graeme Arnfield",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Veronica Munteau, Karin Nakajima, Sara Ouljour",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Veronica Munteau, Karin Nakajima, Sara Ouljour",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Francis Kabisch",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Francis Kabisch",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Susanna Tomassini",
+      "status": "unused_folder",
+      "image_count": 7,
+      "matched_folder": "Susanna Tomassini",
+      "images": []
+    }
+  ]
+}
