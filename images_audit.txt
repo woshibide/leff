@@ -1,0 +1,79 @@
+--------------------------------------------------------------------------------
+  film image mapping audit summary
+--------------------------------------------------------------------------------
+  films with images: 24
+  films missing images: 19
+  unused director folders: 18
+
+  films missing images:
+  ------------------------------------------------------------
+    Maria Iorio & Raphaël Cuomo - Undead Voices (2019–2021)
+    Ho Rui An - Twenty-Four Cinematic Points of View of a Factory Gate in China
+    Andrew Norman Wilson - Workers Leaving the Googleplex
+    Auguste & Louis Lumière - La sortie de l'usine Lumière à Lyon
+    Francis Kabisch - Getty Abortions
+    Graeme Arnfield - Home Invasion
+    Bahar Noorizadeh - Free to Choose
+    Bo Wang - An Asian Ghost Story
+    Elysa Wendi &  Shing Lee - Room 404
+    Mattijs van de Port - Where can I get Lost?
+    Miranda Pennell - Man Number 4
+    Sasha Litvintseva & Beny Wagner - My Want of You Partakes of Me
+    Maryam Jafri - Mariam Jafri vs Maryam Jafri
+    Veronica Munteau, Karin Nakajima, Sara Ouljour - Haunted, the Hollow
+    Lena Windisch - Searching for the Perfect Gentleman
+    Rupert Cox & Angus Carlyle - The Cave Mouth and The Giant Voice
+    Toshiya Tsunoda - Kapotte Muziek – Track 1
+    Lucia Nimcová & David Petráš - Where no bell rings
+    Lis Rhodes - Disquiet
+
+  unused director folders:
+  ------------------------------------------------------------
+    Alexander Horwath (3 images)
+    Maryam Jafri (0 images)
+    Toyisha Tsunoda (0 images)
+    Johan van der Keuken (15 images)
+    Elysa Wendi (0 images)
+    Bahar Noorizadeh (0 images)
+    Andrew Norman Wilson (0 images)
+    Bertrand Bonello (5 images)
+    Jean-Pierre Bekolo (0 images)
+    Lis Rhodes (0 images)
+    Ho Rui An (0 images)
+    Angus Carlyle & Rupert Cox (0 images)
+    Francis Kabisch (0 images)
+    Veronica Munteau, Karin Nakajima, Sara Ouljour (0 images)
+    David Petráš (0 images)
+    Graeme Arnfield (0 images)
+    Geo Barcan (0 images)
+    Miranda Pennell (0 images)
+
+  films with images found:
+  ------------------------------------------------------------
+    director              title                               images  folder
+    --------------------  ----------------------------------  ------  ------
+    Chris Marker          Sans Soleil                              6  Chris Marker
+    Vincent Meessen       Juste un mouvement                      38  Vincent Meessen
+    Harun Farocki         Arbeiter verlassen die Fabrik           49  Harun Farocki
+    Harun Farocki         Was ist Los?                             5  Harun Farocki
+    Harun Farocki         Gegen-Musik                             17  Harun Farocki
+    Aura Satz             Preemptive Listening                     5  Aura Satz
+    Bertrand Bonello      Coma                                     5  Bo Wang
+    Sergei Loznitsa       The Natural History of Destruction       6  Sergey Loznitsa
+    Lea Hartlaub          sr                                       7  Lea Hartlaub
+    Nguyễn Trinh Thi      Letters from Panduranga                 16  Nguyen Trinh Thi
+    Nguyễn Trinh Thi      How to Improve the World                 8  Nguyen Trinh Thi
+    Johannes Binotto      Capricorn Sunset                        15  Johannes Binotto
+    Kamal Aljafari        A Fidai Film                             9  Kamal Aljafari
+    Alexander Horwath     Henry Fonda for President                3  Mattijs van de Port
+    Johan van der Keuken  Face Value                              15  Mattijs van de Port
+    Michela Meliddo       Perpetual Radiance                      10  Michela Meliddo
+    Nika Pećarina         To the Earthern Red                      1  Nika Pećarina
+    Susanna Tomassini     The Southern Thruway                     7  Susanna Tomassini
+    Hicham Gardaf         In Praise of Slowness                    5  Hicham Gardaf
+    Manthia Diawara       A Letter from Yene                       5  Manthia Diawara
+    Chantal Akerman       De l’autre coté                         37  Chantal Akerman
+    Judith Westerveld     Message from Mukalap                     5  Judith Westerveld
+    Judith Westerveld     The Sending of the Crows                 8  Judith Westerveld
+    Miko Revereza         Nowhere Near                             5  Miko Revereza
+--------------------------------------------------------------------------------

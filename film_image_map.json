@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-08-20",
+  "generated_at": "2025-08-21",
   "total_films": 43,
-  "films_with_images": 24,
+  "films_with_images": 20,
   "mapping": {
     "Maria Iorio & Raphaël Cuomo::Undead Voices (2019–2021)": {
       "director": "Maria Iorio & Raphaël Cuomo",
@@ -267,16 +267,9 @@
       "director": "Sergei Loznitsa",
       "title": "The Natural History of Destruction",
       "slug": "the-natural-history-of-destruction",
-      "images": [
-        "/assets/images/film-images/Sergey Loznitsa/0028555.webp",
-        "/assets/images/film-images/Sergey Loznitsa/0085797.webp",
-        "/assets/images/film-images/Sergey Loznitsa/0110449.webp",
-        "/assets/images/film-images/Sergey Loznitsa/0112788.webp",
-        "/assets/images/film-images/Sergey Loznitsa/0124983.webp",
-        "/assets/images/film-images/Sergey Loznitsa/NHD_3.205.1.webp"
-      ],
-      "primary_image": "/assets/images/film-images/Sergey Loznitsa/0028555.webp",
-      "image_count": 6
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
     },
     "Lea Hartlaub::sr": {
       "director": "Lea Hartlaub",
@@ -298,43 +291,17 @@
       "director": "Nguyễn Trinh Thi",
       "title": "Letters from Panduranga",
       "slug": "letters-from-panduranga",
-      "images": [
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/1-Thi Nguyen-Letters from Panduranga-2015.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/3-Thi Nguyen-Letters from Panduranga-2015.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/4-Thi Nguyen-Letters from Panduranga-2015.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/5-Thi Nguyen-Letters from Panduranga-2015.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters Carpeaux.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters Jaka.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters My Son 2.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters from Panduranga still_maily.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters from Panduranga still_that make it alive.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters future 1.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters future 2.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters future lake.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters old lady.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters ruins double.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters still 8.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/Letters stones.webp"
-      ],
-      "primary_image": "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/1-Thi Nguyen-Letters from Panduranga-2015.webp",
-      "image_count": 16
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
     },
     "Nguyễn Trinh Thi::How to Improve the World": {
       "director": "Nguyễn Trinh Thi",
       "title": "How to Improve the World",
       "slug": "how-to-improve-the-world",
-      "images": [
-        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 1.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 2.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 3.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 4.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 5.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 6.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World still_abandoned sculpture.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World still_tuning gongs.webp"
-      ],
-      "primary_image": "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 1.webp",
-      "image_count": 8
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
     },
     "Mattijs van de Port::Where can I get Lost?": {
       "director": "Mattijs van de Port",
@@ -356,25 +323,9 @@
       "director": "Johannes Binotto",
       "title": "Capricorn Sunset",
       "slug": "capricorn-sunset",
-      "images": [
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.29.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.51.03.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.51.11.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.52.11.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.52.35.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.52.52.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.53.47.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.53.59.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.54.07.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.55.31.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.56.09.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.56.15.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.56.52.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.57.02.webp"
-      ],
-      "primary_image": "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
-      "image_count": 15
+      "images": [],
+      "primary_image": "/assets/images/placeholder.webp",
+      "image_count": 0
     },
     "Kamal Aljafari::A Fidai Film": {
       "director": "Kamal Aljafari",
@@ -785,7 +736,7 @@
       "title": "Coma",
       "status": "found",
       "image_count": 5,
-      "matched_folder": "Bo Wang",
+      "matched_folder": "Bertrand Bonello",
       "images": [
         "/assets/images/film-images/Bertrand Bonello/120x160 Coma 29-09 HD.webp",
         "/assets/images/film-images/Bertrand Bonello/COMA - STILL 2.webp",
@@ -819,14 +770,10 @@
     {
       "director": "Sergei Loznitsa",
       "title": "The Natural History of Destruction",
-      "status": "found",
-      "image_count": 6,
-      "matched_folder": "Sergey Loznitsa",
-      "images": [
-        "/assets/images/film-images/Sergey Loznitsa/0028555.webp",
-        "/assets/images/film-images/Sergey Loznitsa/0085797.webp",
-        "/assets/images/film-images/Sergey Loznitsa/0110449.webp"
-      ]
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
     },
     {
       "director": "Lea Hartlaub",
@@ -843,26 +790,18 @@
     {
       "director": "Nguyễn Trinh Thi",
       "title": "Letters from Panduranga",
-      "status": "found",
-      "image_count": 16,
-      "matched_folder": "Nguyen Trinh Thi",
-      "images": [
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/1-Thi Nguyen-Letters from Panduranga-2015.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/3-Thi Nguyen-Letters from Panduranga-2015.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/Letters from Panduranga/4-Thi Nguyen-Letters from Panduranga-2015.webp"
-      ]
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
     },
     {
       "director": "Nguyễn Trinh Thi",
       "title": "How to Improve the World",
-      "status": "found",
-      "image_count": 8,
-      "matched_folder": "Nguyen Trinh Thi",
-      "images": [
-        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 1.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 2.webp",
-        "/assets/images/film-images/Nguyen Trinh Thi/How to Improve the World/How to Improve the World Still 3.webp"
-      ]
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
     },
     {
       "director": "Mattijs van de Port",
@@ -883,14 +822,10 @@
     {
       "director": "Johannes Binotto",
       "title": "Capricorn Sunset",
-      "status": "found",
-      "image_count": 15,
-      "matched_folder": "Ho Rui An",
-      "images": [
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.29.webp",
-        "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.51.03.webp"
-      ]
+      "status": "missing",
+      "image_count": 0,
+      "matched_folder": null,
+      "images": []
     },
     {
       "director": "Kamal Aljafari",
@@ -909,7 +844,7 @@
       "title": "Henry Fonda for President",
       "status": "found",
       "image_count": 3,
-      "matched_folder": "Ho Rui An",
+      "matched_folder": "Alexander Horwath",
       "images": [
         "/assets/images/film-images/Alexander Horwath/parade-presse2.webp",
         "/assets/images/film-images/Alexander Horwath/timessquare-presse3.webp",
@@ -921,7 +856,7 @@
       "title": "Face Value",
       "status": "found",
       "image_count": 15,
-      "matched_folder": "Ho Rui An",
+      "matched_folder": "Johan van der Keuken",
       "images": [
         "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
         "/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.50.29.webp",
@@ -987,7 +922,7 @@
       "title": "The Southern Thruway",
       "status": "found",
       "image_count": 7,
-      "matched_folder": "Ho Rui An",
+      "matched_folder": "Susanna Tomassini",
       "images": [
         "/assets/images/film-images/Susanna Tomassini/TST_still1.webp",
         "/assets/images/film-images/Susanna Tomassini/TST_still2.webp",
@@ -1100,6 +1035,54 @@
     },
     {
       "director": "UNUSED",
+      "title": "Andrew Norman Wilson",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Andrew Norman Wilson",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Angus Carlyle & Rupert Cox",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Angus Carlyle & Rupert Cox",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Bahar Noorizadeh",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Bahar Noorizadeh",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Bo Wang",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Bo Wang",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "David Petráš",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "David Petráš",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Elysa Wendi",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Elysa Wendi",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
       "title": "Francis Kabisch",
       "status": "unused_folder",
       "image_count": 0,
@@ -1116,38 +1099,6 @@
     },
     {
       "director": "UNUSED",
-      "title": "Jean-Pierre Bekolo",
-      "status": "unused_folder",
-      "image_count": 0,
-      "matched_folder": "Jean-Pierre Bekolo",
-      "images": []
-    },
-    {
-      "director": "UNUSED",
-      "title": "Elysa Wendi",
-      "status": "unused_folder",
-      "image_count": 0,
-      "matched_folder": "Elysa Wendi",
-      "images": []
-    },
-    {
-      "director": "UNUSED",
-      "title": "Bahar Noorizadeh",
-      "status": "unused_folder",
-      "image_count": 0,
-      "matched_folder": "Bahar Noorizadeh",
-      "images": []
-    },
-    {
-      "director": "UNUSED",
-      "title": "Veronica Munteau, Karin Nakajima, Sara Ouljour",
-      "status": "unused_folder",
-      "image_count": 0,
-      "matched_folder": "Veronica Munteau, Karin Nakajima, Sara Ouljour",
-      "images": []
-    },
-    {
-      "director": "UNUSED",
       "title": "Graeme Arnfield",
       "status": "unused_folder",
       "image_count": 0,
@@ -1156,82 +1107,18 @@
     },
     {
       "director": "UNUSED",
-      "title": "David Petráš",
+      "title": "Ho Rui An",
       "status": "unused_folder",
       "image_count": 0,
-      "matched_folder": "David Petráš",
+      "matched_folder": "Ho Rui An",
       "images": []
     },
     {
       "director": "UNUSED",
-      "title": "Susanna Tomassini",
-      "status": "unused_folder",
-      "image_count": 7,
-      "matched_folder": "Susanna Tomassini",
-      "images": []
-    },
-    {
-      "director": "UNUSED",
-      "title": "Alexander Horwath",
-      "status": "unused_folder",
-      "image_count": 3,
-      "matched_folder": "Alexander Horwath",
-      "images": []
-    },
-    {
-      "director": "UNUSED",
-      "title": "Angus Carlyle & Rupert Cox",
+      "title": "Jean-Pierre Bekolo",
       "status": "unused_folder",
       "image_count": 0,
-      "matched_folder": "Angus Carlyle & Rupert Cox",
-      "images": []
-    },
-    {
-      "director": "UNUSED",
-      "title": "Maryam Jafri",
-      "status": "unused_folder",
-      "image_count": 0,
-      "matched_folder": "Maryam Jafri",
-      "images": []
-    },
-    {
-      "director": "UNUSED",
-      "title": "Miranda Pennell",
-      "status": "unused_folder",
-      "image_count": 0,
-      "matched_folder": "Miranda Pennell",
-      "images": []
-    },
-    {
-      "director": "UNUSED",
-      "title": "Bertrand Bonello",
-      "status": "unused_folder",
-      "image_count": 5,
-      "matched_folder": "Bertrand Bonello",
-      "images": []
-    },
-    {
-      "director": "UNUSED",
-      "title": "Andrew Norman Wilson",
-      "status": "unused_folder",
-      "image_count": 0,
-      "matched_folder": "Andrew Norman Wilson",
-      "images": []
-    },
-    {
-      "director": "UNUSED",
-      "title": "Lis Rhodes",
-      "status": "unused_folder",
-      "image_count": 0,
-      "matched_folder": "Lis Rhodes",
-      "images": []
-    },
-    {
-      "director": "UNUSED",
-      "title": "Toyisha Tsunoda",
-      "status": "unused_folder",
-      "image_count": 0,
-      "matched_folder": "Toyisha Tsunoda",
+      "matched_folder": "Jean-Pierre Bekolo",
       "images": []
     },
     {
@@ -1244,10 +1131,18 @@
     },
     {
       "director": "UNUSED",
-      "title": "Johan van der Keuken",
+      "title": "Lis Rhodes",
       "status": "unused_folder",
-      "image_count": 15,
-      "matched_folder": "Johan van der Keuken",
+      "image_count": 0,
+      "matched_folder": "Lis Rhodes",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Maryam Jafri",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Maryam Jafri",
       "images": []
     },
     {
@@ -1256,6 +1151,46 @@
       "status": "unused_folder",
       "image_count": 0,
       "matched_folder": "Mattijs van de Port",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Miranda Pennell",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Miranda Pennell",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Nguyen Trinh Thi",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Nguyen Trinh Thi",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Sergey Loznitsa",
+      "status": "unused_folder",
+      "image_count": 6,
+      "matched_folder": "Sergey Loznitsa",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Toyisha Tsunoda",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Toyisha Tsunoda",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Veronica Munteau, Karin Nakajima, Sara Ouljour",
+      "status": "unused_folder",
+      "image_count": 0,
+      "matched_folder": "Veronica Munteau, Karin Nakajima, Sara Ouljour",
       "images": []
     }
   ]

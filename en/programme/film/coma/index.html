@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Leiden Essay Film Festival">
+    <meta name="keywords" content="film festival, essay film, leiden, cinema, documentary, Chris Marker, leff, Laura Rascaroli, Harun Farocki">
+    <meta name="description" content="The first festival in the Netherlands dedicated entirely to the essay film">
+
+    <meta property="og:title" content="Leiden Essay Film Festival">
+    <meta property="og:description" content="The first festival in the Netherlands dedicated entirely to the essay film">
+    <meta property="og:image" content="/leff/assets/header/og_1200x1200.png">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="/leff/assets/header/og_1200x1200.png">
+
+    <link rel="icon" href="/leff/assets/header/favicon.ico" sizes="any">
+    <link rel="icon" href="/leff/assets/header/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/leff/assets/header/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/leff/assets/header/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/leff/assets/header/android-chrome-512x512.png">
+    <meta name="theme-color" content="#C0BEBF">
+
+    <title> Coma - Leiden Essay Film Festival</title>
+
+    <!-- base href for github pages deployment -->
+    
+    <base href="/leff/">
+    
+    <link rel="stylesheet" href="/leff/styles.3bcb1f1136.css">
+    
+
+    
+<style>
+    /*
+        separate film page
+    */
+    
+    .gallery-container {
+        grid-column: 1 / -1;
+        position: relative;
+        margin-bottom: var(--space-5xl);
+    }
+
+    #film-shots {
+        position: relative;
+        background: var(--bg-main);
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #film-shots img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.4s var(--transition);
+    }
+
+    #film-shots img.active {
+        opacity: 1;
+    }
+
+    #film-shots img:first-child {
+        opacity: 1;
+    }
+
+    .film-info {
+        position: absolute;
+        bottom: var(--space-xl);
+        left: var(--space-xl);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+        max-width: 100%;
+    }
+
+    .film-title {
+        font-size: 6rem;
+        font-weight: normal;
+        color: var(--accent);
+        margin: 0;
+        line-height: 1.1;
+        text-shadow: var(--shadow)
+    }
+
+    .film-details {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+    }
+
+    .film-details h3 {
+        font-weight: normal;
+        color: var(--accent);
+        text-shadow: var(--shadow);
+    }
+
+    .film-details p {
+        color: var(--accent);
+        text-shadow: var(--shadow);
+    }
+
+    .film-details * {
+        font-size: 1.875rem;
+        vertical-align: baseline;
+        margin-right: var(--space-sm);
+    }
+    
+    .film-details * {
+        border-right: 2px solid var(--accent);
+        padding-right: var(--space-sm);
+    }
+    .film-details *:last-child{
+        border: none;
+        padding: 0;
+    }
+
+    .film-description {
+        grid-column: 1 / 5;
+        margin-bottom: var(--space-4xl);
+    }
+
+    .film-description p {
+        font-size: 1.875rem;
+        color: var(--bg-main);
+        line-height: 1.4;
+        max-width: 75ch;
+    }
+
+    .film-screening-info {
+        grid-column: 5 / -1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl);
+        align-self: start;
+    }
+
+    .film-screening-info ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .film-screening-info li {
+        font-size: 1.875rem;
+        color: var(--bg-main);
+        font-weight: normal;
+    }
+
+    .film-screening-info button {
+        background: transparent;
+        border: 2px solid var(--bg-main);
+        color: var(--bg-main);
+        padding: var(--space-md) var(--space-xl);
+        border-radius: var(--radius-medium);
+        font-family: inherit;
+        font-size: 1.875rem;
+        font-weight: normal;
+        cursor: pointer;
+        transition: all 0.2s var(--transition);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .film-screening-info button:hover {
+        background: var(--bg-main);
+        color: var(--accent);
+    }
+
+    .film-screening-info a {
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+        .gallery-container {
+            margin-bottom: var(--space-xl);
+        }
+
+        #film-shots {
+            aspect-ratio: 4 / 3;
+        }
+
+        .film-info {
+            position: inherit;
+            top: 0;
+            left: 0;
+            /* max-width: 70%; */
+        }
+
+        .film-title {
+            font-size: 2.25rem;
+            text-shadow: none;
+        }
+
+        .film-details *{
+            text-shadow: none !important;
+        }
+
+        .film-details h3 {
+            font-size: 1.25rem;
+        }
+
+        .film-details p {
+            font-size: 1.25rem;
+        }
+
+        .film-description {
+            grid-column: 1 / -1;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .film-description p {
+            font-size: 1.25rem;
+        }
+
+        .film-screening-info {
+            grid-column: 1 / -1;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: var(--space-lg);
+        }
+
+        .film-screening-info ul {
+            flex: 1;
+        }
+
+        .film-screening-info button {
+            padding: var(--space-sm) var(--space-lg);
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+    }
+
+</style>
+
+
+    
+</head>
+
+<body>
+    <nav>
+        <a href="/leff/en/"><img src="/leff/assets/leff-logo-yellow.svg"
+                alt="leiden essay film festival logo" id="nav-logo"></a>
+        <div id="circle-container">
+            <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
+                Tickets
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                    <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                </svg>
+            </a>
+            <div id="languages">
+                
+                
+                <button class="active">EN</button>
+                
+                
+                
+                <a href="/leff/nl/programme/film/coma/">
+                    <button>NL</button>
+                </a>
+                
+                
+            </div>
+            <div id="circle"></div>
+            <div class="menu-close" style="display: none;">
+                <button class="close-icon" id="menu-close" aria-label="close">
+                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="menu-overlay" class="menu-overlay">
+            <div class="menu-grid grid-base">
+                <div class="menu-nav">
+                    <ul>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/en/">Home</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="programme">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
+                                            stroke-width="2" />
+                                    </svg>
+                                    <div class="drp-dwn-item-txt">Programme 2025</div>
+                                </button>
+                                <ul class="menu-dropdown-content" id="programme-dropdown">
+                                    
+                                    <li>
+                                        <a href="/leff/en/programme/films">A—Z film</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/en/programme/filmmakers">A—Z directors</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/en/programme/films">Time</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/en/programme/films">Location</a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/en/schedule/">Block Schedule</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/en/location/">Locations</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/en/tickets/">Tickets</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="about">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
+                                            stroke-width="2" />
+                                    </svg>
+                                    <div class="drp-dwn-item-txt">About leff</div>
+                                </button>
+                                <ul class="menu-dropdown-content" id="about-dropdown">
+                                    
+                                    <li>
+                                        <a href="/leff/en/about/">Festival</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/en/organisation/">Organisation</a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <section class="page-contents">
+        
+<div class="grid-base">
+    <h1 class="page-title">
+        Programme 2025 / FILMS / Coma
+    </h1>
+
+    <div class="gallery-container">
+        <div id="film-shots">
+            
+            
+                
+                <img src="/leff/../../../../assets/images/film-images/Bertrand Bonello/120x160 Coma 29-09 HD.webp" alt="shot 1 from the film Coma">
+                
+                <img src="/leff/../../../../assets/images/film-images/Bertrand Bonello/COMA - STILL 2.webp" alt="shot 2 from the film Coma">
+                
+                <img src="/leff/../../../../assets/images/film-images/Bertrand Bonello/COMA - STILL 3.webp" alt="shot 3 from the film Coma">
+                
+                <img src="/leff/../../../../assets/images/film-images/Bertrand Bonello/COMA - STILL 4.webp" alt="shot 4 from the film Coma">
+                
+                <img src="/leff/../../../../assets/images/film-images/Bertrand Bonello/COMA-STILL-WEB.webp" alt="shot 5 from the film Coma">
+                
+            
+            <div class="gallery-navigation">
+                <button class="gallery-arrow" id="previous" type="button" aria-label="Previous image">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </button>
+                
+                <div class="gallery-counter">
+                    <span id="current-image">1</span> / <span id="total-images">5</span>
+                </div>
+                
+                <button class="gallery-arrow" id="next" type="button" aria-label="Next image">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="film-info">
+            <h2 class="film-title">
+                Coma
+            </h2>
+            <div class="film-details readeable-text">
+                <h3>
+                    Bertrand Bonello
+                </h3>
+                <p>
+                    France
+                </p>
+                <p>
+                    2022
+                </p>
+                <p>
+                    80&#39;
+                </p>
+                
+                <p>
+                    leff 2025
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="film-description">
+        <p>A teenage girl sits in her room. She looks around – at her room, a dollhouse, her phone. Then, a YouTuber named Patricia Coma appears. The rooms shift. Now, the girl is the one being watched. We enter the girl's dreams, her imagination, and her video calls. Suddenly, we're back in the room again.<br>A surprise project made just before production began on his feature film The Beast (2023), Bertrand Bonello describes Coma as the final installment in his trilogy on youth, following Nocturama (2016) and Zombi Child (2019). The restrictions imposed by the COVID-19 pandemic sparked a compelling kind of creative filmmaking. Coma was shot in Bonello’s own home, with a score composed by himself. The film went on to win the FIPRESCI Award for Best Film at the Berlin International Film Festival.<br>“The essayist wears proudly the confusion of an independent soul trying to grope in isolation toward the truth,” wrote film critic Phillip Lopate. That is precisely what allows Bonello to create a deeply personal reality – one in which many can recognize themselves. The film delves into the surreal world of the pandemic. Our aimless lockdown obsessions are paraded: serial killers, diets, games. What’s left after this merciless dissection? Our fears: violence against women, abandonment, our subconscious. That’s when the real horror begins. </p>
+    </div>
+    <div class="film-screening-info">
+        <ul>
+            <li>
+                15 September
+            </li>
+            <li>
+                10:45
+            </li>
+            <li>
+                Kijkhuis, Cinema 2
+            </li>
+        </ul>
+        <a href="https://bioscopenleiden.nl" target="_blank" id="nav-tickets" class="tickets-button">
+            Tickets
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+            </svg>
+        </a>
+    </div>
+</div>
+
+
+<div class="footer-negative-space"></div>
+
+    </section>
+
+    <footer>
+        <div class="footer-container grid-base">
+            <!-- email newsletter signup -->
+            <div class="footer-newsletter-section">
+                <h3 style="text-transform: uppercase;">Stay Updated</h3>
+                <p>Subscribe to hear more from Leiden Essay Film Festival</p>
+                <div id="mc_embed_signup">
+                    <form
+                        action="https://kabk.us8.list-manage.com/subscribe/post?u=fe6f0920a56a052079924e663&amp;id=0bef5e214f&amp;f_id=00bac6e2f0"
+                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                        target="_blank">
+                        <div id="mc_embed_signup_scroll">
+                            <div class="mc-field-group input-group footer-checkbox">
+                                <input type="radio" name="MMERGE5" id="mce-MMERGE50" required
+                                    value="I agree to the processing of my data as described in the privacy policy and to receive the leff newsletter and updates.">
+                                <label for="mce-MMERGE50">
+                                    I agree to the processing of my data as described in the
+                                    <a href="/leff/en/privacy/">Privacy Policy</a> and to receive the leff newsletter and updates.
+                                </label>
+                            </div>
+                            <div class="mc-field-group">
+                                <label for="mce-EMAIL" class="sr-only">Subscribe to hear more from Leiden Essay Film Festival</label>
+                                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required=""
+                                    placeholder="Enter your email here" value="">
+                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button"
+                                    value="Subscribe">
+                            </div>
+                            <div id="custom-mce-responses"></div>
+                            <div id="mce-responses" class="clear" style="display: none;">
+                                <div class="response" id="mce-error-response" style="display: none;"></div>
+                                <div class="response" id="mce-success-response" style="display: none;"></div>
+                            </div>
+                            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                <input type="text" name="b_fe6f0920a56a052079924e663_0bef5e214f" tabindex="-1" value="">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-nav">
+                <h4>Navigation</h4>
+                <ul>
+                    
+                    <li><a href="/leff/en/">Home</a></li>
+                    
+                    <li><a href="/leff/en/programme/">Programme 2025</a></li>
+                    
+                    <li><a href="/leff/en/schedule/">Block Schedule</a></li>
+                    
+                    <li><a href="/leff/en/location/">Locations</a></li>
+                    
+                    <li><a href="/leff/en/tickets/">Tickets</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="footer-info">
+                <h4>About leff</h4>
+                <ul>
+                    <li><a href="/leff/en/about/">Festival</a></li>
+                    <li><a href="/leff/en/organisation/">Organisation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-outside-links">
+                <h4>Contact</h4>
+                <ul>
+                    <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
+                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank">Instagram</a></li>
+                    <li><a href="/leff/en/privacy/">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- empty space for layout -->
+            <div class="footer-spacer"></div>
+        </div>
+
+        <!-- credits -->
+        <div class="footer-bottom grid-base">
+            <p>This website was designed by <a href="https://www.instagram.com/michela.meliddo" target="_blank"
+                    rel="noopener">Michela Meliddo</a>, Ellen Owens and coded by <a href="https://wshbd.com"
+                    target="_blank" rel="noopener">Pyotr Goloub</a></p>
+        </div>
+    </footer>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('#film-shots img');
+            const prevButton = document.getElementById('previous');
+            const nextButton = document.getElementById('next');
+            const currentImageSpan = document.getElementById('current-image');
+            let currentIndex = 0;
+            let autoSlideInterval = null;
+            let autoSlideTimeout = null;
+
+            // only initialize if there are multiple images
+            if (images.length <= 1) {
+                if (prevButton) prevButton.style.display = 'none';
+                if (nextButton) nextButton.style.display = 'none';
+                return;
+            }
+
+            function showImage(index) {
+                // remove active class from all images
+                images.forEach(img => img.classList.remove('active'));
+                
+                // add active class to current image
+                images[index].classList.add('active');
+                
+                // update counter
+                if (currentImageSpan) {
+                    currentImageSpan.textContent = index + 1;
+                }
+                
+                // update arrow opacity based on position
+                if (prevButton) {
+                    prevButton.classList.toggle('disabled', index === 0);
+                }
+                if (nextButton) {
+                    nextButton.classList.toggle('disabled', index === images.length - 1);
+                }
+            }
+
+            function nextImage() {
+                if (currentIndex < images.length - 1) {
+                    currentIndex++;
+                } else {
+                    // loop back to start for auto-advance
+                    currentIndex = 0;
+                }
+                showImage(currentIndex);
+            }
+
+            function previousImage() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    showImage(currentIndex);
+                }
+            }
+
+            function startAutoSlide() {
+                // clear any existing interval
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                }
+                
+                // start automatic slideshow every 8 seconds
+                autoSlideInterval = setInterval(() => {
+                    nextImage();
+                }, 8000);
+            }
+
+            function pauseAutoSlide() {
+                // clear the auto slide interval
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = null;
+                }
+                
+                // clear any pending timeout
+                if (autoSlideTimeout) {
+                    clearTimeout(autoSlideTimeout);
+                }
+                
+                // resume auto slide after 30 seconds
+                autoSlideTimeout = setTimeout(() => {
+                    startAutoSlide();
+                }, 30000);
+            }
+
+            // event listeners with auto-slide pause
+            if (nextButton) {
+                nextButton.addEventListener('click', () => {
+                    if (currentIndex < images.length - 1) {
+                        currentIndex++;
+                        showImage(currentIndex);
+                    }
+                    pauseAutoSlide();
+                });
+            }
+            
+            if (prevButton) {
+                prevButton.addEventListener('click', () => {
+                    previousImage();
+                    pauseAutoSlide();
+                });
+            }
+
+            // keyboard navigation with auto-slide pause
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') {
+                    if (currentIndex < images.length - 1) {
+                        currentIndex++;
+                        showImage(currentIndex);
+                    }
+                    pauseAutoSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    previousImage();
+                    pauseAutoSlide();
+                }
+            });
+
+            // initialize
+            showImage(0);
+            startAutoSlide();
+        });
+    </script>
+
+
+    
+
+    <div id="custom-cursor"></div>
+
+    <script src="/leff/scripts.js"></script>
+    <script>
+        // set base path for javascript to use
+        window.BASE_PATH = '/leff/';
+
+        // hello screen
+        console.log("\n\n\n\t" +
+            "oooo             .o88o.  .o88o. \n\t" +
+            "`888             888 `\"  888 `\" \n\t" +
+            " 888   .ooooo.  o888oo  o888oo  \n\t" +
+            " 888  d88' `88b  888     888    \n\t" +
+            " 888  888ooo888  888     888    \n\t" +
+            " 888  888    .o  888     888    \n\t" +
+            "o888o `Y8bod8P' o888o   o888o   \n\n\t" +
+            "  Leiden Essay Film Festival\n\t" +
+            "http://github.com/woshibide/leff\n\t\t"
+        );
+    </script>
+</body>
+
+</html>
