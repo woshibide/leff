@@ -1893,90 +1893,17 @@ Lucia Nimcová is an award-winning photographer and visual artist, David Petrá�
     </footer>
 
     
+<script src="/leff/search.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const searchInput = document.getElementById('filmmakers-search');
-        const alphaFilters = document.querySelectorAll('.alpha-filter');
-        const sortButtons = document.querySelectorAll('.sort-button');
-        const filmmakersContainer = document.querySelector('.filmmakers-container');
-
-        if (!filmmakersContainer) return;
-
-        const filmmakerCardLinks = Array.from(filmmakersContainer.querySelectorAll('.filmmaker-card-link'));
-
-        let activeSort = 'name';
-        let activeLetter = null;
-
-        function filterAndSortCards() {
-            const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
-
-            // filter
-            filmmakerCardLinks.forEach(cardLink => {
-                const name = cardLink.dataset.name;
-                const letter = cardLink.dataset.letter;
-
-                const matchesSearch = name.includes(searchTerm);
-                const matchesLetter = !activeLetter || letter === activeLetter;
-
-                if (matchesSearch && matchesLetter) {
-                    cardLink.style.display = 'flex';
-                } else {
-                    cardLink.style.display = 'none';
-                }
-            });
-
-            // sort
-            const sortedCardLinks = filmmakerCardLinks.sort((a, b) => {
-                const aValue = a.dataset[activeSort.replace('_', '')];
-                const bValue = b.dataset[activeSort.replace('_', '')];
-
-                if (activeSort === 'film_count') {
-                    // sort by number of films
-                    const aCount = parseInt(aValue, 10) || 0;
-                    const bCount = parseInt(bValue, 10) || 0;
-                    return bCount - aCount; // descending order
-                }
-
-                if (!aValue || !bValue) return 0;
-                return aValue.localeCompare(bValue);
-            });
-
-            // re-append to container
-            sortedCardLinks.forEach(cardLink => filmmakersContainer.appendChild(cardLink));
-        }
-
-        // event listeners
-        if (searchInput) {
-            searchInput.addEventListener('input', filterAndSortCards);
-        }
-
-        alphaFilters.forEach(button => {
-            button.addEventListener('click', () => {
-                if (button.classList.contains('active')) {
-                    activeLetter = null;
-                    button.classList.remove('active');
-                } else {
-                    alphaFilters.forEach(btn => btn.classList.remove('active'));
-                    activeLetter = button.dataset.letter;
-                    button.classList.add('active');
-                }
-                filterAndSortCards();
-            });
+        // initialize shared search utility for filmmakers page
+        SearchUtility.init({
+            searchInputId: 'filmmakers-search',
+            containerSelector: '.filmmakers-container',
+            cardLinkSelector: '.filmmaker-card-link',
+            searchFields: ['name'],
+            defaultSort: 'name'
         });
-
-        sortButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                sortButtons.forEach(btn => btn.classList.remove('active'));
-                activeSort = button.dataset.sort;
-                button.classList.add('active');
-                filterAndSortCards();
-            });
-        });
-
-        // initial sort and display
-        if (filmmakerCardLinks.length > 0) {
-            filterAndSortCards();
-        }
     });
 </script>
 

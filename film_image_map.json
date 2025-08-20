@@ -844,7 +844,7 @@
       "title": "Henry Fonda for President",
       "status": "found",
       "image_count": 3,
-      "matched_folder": "Alexander Horwath",
+      "matched_folder": "Ho Rui An",
       "images": [
         "/assets/images/film-images/Alexander Horwath/parade-presse2.webp",
         "/assets/images/film-images/Alexander Horwath/timessquare-presse3.webp",
@@ -958,7 +958,7 @@
       "title": "De l’autre coté",
       "status": "found",
       "image_count": 37,
-      "matched_folder": "Chantal Akerman",
+      "matched_folder": "Ho Rui An",
       "images": [
         "/assets/images/film-images/Chantal Akerman/FTOS 1.webp",
         "/assets/images/film-images/Chantal Akerman/FTOS 10.webp",
@@ -1035,6 +1035,14 @@
     },
     {
       "director": "UNUSED",
+      "title": "Alexander Horwath",
+      "status": "unused_folder",
+      "image_count": 3,
+      "matched_folder": "Alexander Horwath",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
       "title": "Andrew Norman Wilson",
       "status": "unused_folder",
       "image_count": 0,
@@ -1063,6 +1071,14 @@
       "status": "unused_folder",
       "image_count": 0,
       "matched_folder": "Bo Wang",
+      "images": []
+    },
+    {
+      "director": "UNUSED",
+      "title": "Chantal Akerman",
+      "status": "unused_folder",
+      "image_count": 37,
+      "matched_folder": "Chantal Akerman",
       "images": []
     },
     {
@@ -1103,14 +1119,6 @@
       "status": "unused_folder",
       "image_count": 0,
       "matched_folder": "Graeme Arnfield",
-      "images": []
-    },
-    {
-      "director": "UNUSED",
-      "title": "Ho Rui An",
-      "status": "unused_folder",
-      "image_count": 0,
-      "matched_folder": "Ho Rui An",
       "images": []
     },
     {
