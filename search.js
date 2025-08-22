@@ -81,7 +81,7 @@ const SearchUtility = {
             const matchesLetter = this.matchesLetterFilter(cardLink);
 
             if (matchesSearch && matchesLetter) {
-                cardLink.style.display = 'flex';
+                cardLink.style.display = 'block';
             } else {
                 cardLink.style.display = 'none';
             }

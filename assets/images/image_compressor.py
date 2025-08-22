@@ -1,7 +1,11 @@
 import os
 import tempfile
 import argparse
+import re
+import unicodedata
 from PIL import Image
+
+
 
 # config
 MAX_SIZE = 200000       # maximum file size in bytes
@@ -13,6 +17,7 @@ RECURSIVE = True        # whether to process subdirectories
 CONVERT_TO_WEBP = True  # whether to convert images to webp format
 WEBP_LOSSLESS = False   # whether to use lossless compression for webp (for png with alpha)
 DELETE_ORIGINALS = True # whether to delete original files after successful compression
+NORMALIZE_NAMES = False # whether to normalize filenames to slugified unicode normalized characters
 
 # list to track unsuccessful compressions
 FAILED_COMPRESSIONS = []
@@ -21,6 +26,28 @@ FAILED_COMPRESSIONS = []
 TOTAL_BYTES_BEFORE = 0
 TOTAL_BYTES_AFTER = 0
 TOTAL_FILES_PROCESSED = 0
+
+def slugify(text: str) -> str:
+    """
+    convert text to url-safe slug
+    
+    args:
+        text: the text to convert to a slug
+        
+    returns:
+        str: url-safe slug
+    """
+    # normalize unicode characters
+    text = unicodedata.normalize('NFKD', text)
+    # convert to ascii, removing non-ascii chars
+    text = text.encode('ascii', 'ignore').decode('ascii')
+    # convert to lowercase
+    text = text.lower()
+    # replace spaces and non-alphanumeric chars with hyphens
+    text = re.sub(r'[^a-z0-9]+', '-', text)
+    # remove leading/trailing hyphens
+    text = text.strip('-')
+    return text
 
 def resize_image_if_needed(img, max_dimension=MAX_DIMENSION):
     """resize image proportionally if either dimension exceeds the maximum"""
@@ -303,6 +330,13 @@ def process_directory(directory, recursive=RECURSIVE):
             try:
                 size = os.path.getsize(item_path)
                 base_filename, ext = os.path.splitext(item)
+                original_base_filename = base_filename
+                
+                # normalize filename if option is enabled
+                if NORMALIZE_NAMES:
+                    base_filename = slugify(base_filename)
+                    if base_filename != original_base_filename:
+                        print(f"  normalizing filename: '{original_base_filename}' -> '{base_filename}'")
                 
                 if size > MAX_SIZE:
                     print(f"compressing {item_path}...")
@@ -310,7 +344,7 @@ def process_directory(directory, recursive=RECURSIVE):
                     if CONVERT_TO_WEBP:
                         output_filename = os.path.join(directory, f"{OUTPUT_PREFIX}{base_filename}.webp")
                     else:
-                        output_filename = os.path.join(directory, f"{OUTPUT_PREFIX}{item}")
+                        output_filename = os.path.join(directory, f"{OUTPUT_PREFIX}{base_filename}{ext}")
                         
                     success = compress_with_optimal_quality(item_path, output_filename, MAX_SIZE)
                     count += 1
@@ -430,6 +464,7 @@ if __name__ == "__main__":
     parser.add_argument("--no-webp", action="store_false", dest="webp", help="disable webp conversion")
     parser.add_argument("--delete-originals", action="store_true", default=DELETE_ORIGINALS, help="delete original files after successful compression")
     parser.add_argument("--keep-originals", action="store_false", dest="delete_originals", help="keep original files after compression")
+    parser.add_argument("-n", "--normalize-filenames", action="store_true", default=NORMALIZE_NAMES, help="normalize found image names to slugified unicode normalized characters")
     parser.add_argument("directory", nargs="?", default=".", help="directory to process (default: current directory)")
     args = parser.parse_args()
     
@@ -441,6 +476,7 @@ if __name__ == "__main__":
     CONVERT_TO_WEBP = args.webp
     WEBP_LOSSLESS = args.lossless
     DELETE_ORIGINALS = args.delete_originals
+    NORMALIZE_NAMES = args.normalize_filenames
     
     print(f"starting with settings:")
     print(f"  max file size: {MAX_SIZE} bytes")
@@ -450,6 +486,7 @@ if __name__ == "__main__":
     print(f"  convert to webp: {'yes' if CONVERT_TO_WEBP else 'no'}")
     print(f"  lossless webp for png with alpha: {'yes' if WEBP_LOSSLESS else 'no'}")
     print(f"  delete originals: {'yes' if DELETE_ORIGINALS else 'no'}")
+    print(f"  normalize filenames: {'yes' if NORMALIZE_NAMES else 'no'}")
     print(f"  directory: {args.directory}")
     
     # process the specified directory

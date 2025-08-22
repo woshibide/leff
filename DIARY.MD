@@ -1,35 +1,52 @@
 # Public version of the website
 
+- [] alphabetical search to be doing both names
+- [] toggleable filters on the side
+
+## suggestions
+- [] gradient for galleries
+- [] image counter for galleries
+- [] galleries for directors?
+- [] filters restyle
+- [] in film card link to director and to film itself
+
 ## missing images
 
 - [x] Johan van der Keuken
 - [x] Miko Revereza
 - [x] Judith Westerveld
 - [x] Harun Farocki
-- [?] Veronica Munteau, Karin Nakajima, Sara Ouljour
-- [] Mattijs van de Port
-- [] Geo Barcan
-- [] Bo Wang
-- [] Maryam Jafri
+- [x] Mattijs van de Port
+- [x] Veronica Munteau, Karin Nakajima, Sara Ouljour
 - [] Miranda Pennell
-- [] Andrew Norman Wilson
-- [] Francis Kabisch
-- [] Johannes Binotto
-- [] Toyisha Tsunoda
 - [] Jean-Pierre Bekolo
-- [] Bahar Noorizadeh
-- [] Ho Rui An
-- [] Angus Carlyle & Rupert Cox
-- [] Graeme Arnfield
-- [] David Petráš
 - [] Lis Rhodes
-- [] Elysa Wendi
+- [x] Bo Wang
+- [x] Maryam Jafri
+- [x] Andrew Norman Wilson
+- [x] Francis Kabisch
+- [x] Johannes Binotto
+- [x] Toyisha Tsunoda
+- [x] Bahar Noorizadeh
+- [x] Ho Rui An
+- [x] Angus Carlyle & Rupert Cox
+- [x] Graeme Arnfield
+- [x] David Petráš
+- [x] Elysa Wendi
 
 
 ##
 WHATS TO BE DONE:
 
+- BUG: 
+    true one:  http://127.0.0.1:5500/en/programme/filmmakers/elysa-wendi/
+    exists:    http://127.0.0.1:5500/en/programme/filmmakers/elysa-wendi-shing-lee/
+
+
 - [] Programme
+- [] filters
+- [] styling
+
 - [] Film pages
   - [x] data is fetched
   - [~] images
@@ -47,6 +64,11 @@ WHATS TO BE DONE:
 
 - [] Schedule page
 - [] Special pages
+
+- [] block page
+- [] separate page blocks
+
+- [] page texts clean up
 
 ================================================
 
