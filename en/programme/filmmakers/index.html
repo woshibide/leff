@@ -5,28 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Leiden Essay Film Festival">
-    <meta name="keywords" content="film festival, essay film, leiden, cinema, documentary, Chris Marker, leff, Laura Rascaroli, Harun Farocki">
+    <meta name="keywords" content="leiden, film festival, leiden essay film festival, leiden film festival, leff">
     <meta name="description" content="The first festival in the Netherlands dedicated entirely to the essay film">
 
-    <meta property="og:title" content="Leiden Essay Film Festival">
+    <meta property="og:title" content="LEFF">
     <meta property="og:description" content="The first festival in the Netherlands dedicated entirely to the essay film">
-    <meta property="og:image" content="/assets/header/og_1200x1200.png">
+    <meta property="og:image" content="/leff/assets/header/og_1200x1200.png">
     <meta property="og:url" content="">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="/assets/header/og_1200x1200.png">
+    <meta name="twitter:image" content="/leff/assets/header/og_1200x1200.png">
 
-    <link rel="icon" href="/assets/header/favicon.ico" sizes="any">
-    <link rel="icon" href="/assets/header/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/header/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/header/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/assets/header/android-chrome-512x512.png">
+    <link rel="icon" href="/leff/assets/header/favicon.ico" sizes="any">
+    <link rel="icon" href="/leff/assets/header/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/leff/assets/header/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/leff/assets/header/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/leff/assets/header/android-chrome-512x512.png">
     <meta name="theme-color" content="#C0BEBF">
 
-    <title>Filmmakers - Leiden Essay Film Festival</title>
+    <title>Filmmakers - LEFF</title>
 
     <!-- base href for github pages deployment -->
     
-    <link rel="stylesheet" href="/styles.db105520e7.css">
+    <base href="/leff/">
+    
+    <link rel="stylesheet" href="/leff/styles.320e07f072.css">
     
 
     
@@ -131,23 +133,12 @@
         gap: var(--space-5xl);
     }
     
-    .filmmaker-card-link,
-    .filmmaker-card-link:visited {
-        text-decoration: none;
-        color: inherit;
-    }
-    
-    .filmmaker-card-link:hover {
-        text-decoration: none;
-    }
-    
     .filmmaker-card {
         display: grid;
-        grid-template-columns: 2fr 3fr;
+        grid-template-columns: 1fr;
         background: var(--silver);
         transition: all 0.2s var(--transition);
         height: 100%;
-        min-height: 400px;
     }
     
     .filmmaker-card-link:hover .filmmaker-card {
@@ -168,7 +159,7 @@
     }
     
     .filmmaker-card-text-wrapper {
-        grid-column: 2 / 3;
+        grid-column: 1 / -1;
         padding: var(--space-xl);
         display: flex;
         flex-direction: column;
@@ -182,8 +173,13 @@
         margin: 0;
         color: inherit;
     }
+
+    .filmmaker-card h2 a {
+        color: inherit;
+        text-decoration: none;
+    }
     
-    .filmmaker-card-link:hover h2 {
+    .filmmaker-card-link:hover h2 a {
         text-decoration: underline;
     }
     
@@ -224,8 +220,17 @@
     .filmmaker-film-info {
         font-size: 1rem;
         color: inherit;
-        opacity: 0.8;
+        /* opacity: 0.8; */
         margin-left: var(--space-sm);
+    }
+
+    .filmmaker-films-container {
+        grid-column: 1 / -1;
+        padding: 0 var(--space-xl) var(--space-xl);
+    }
+
+    .filmmaker-films-container .film-card {
+        border-top: 1px solid var(--bg-main);
     }
     
     @media (max-width: 768px) {
@@ -267,6 +272,11 @@
         .filmmaker-film-link {
             font-size: 1.125rem;
         }
+
+        .filmmaker-films-container .film-card {
+            background: var(--silver);
+            padding-top: var(--space-lg);
+        }
     }
 
 </style>
@@ -277,7 +287,7 @@
 
 <body>
     <nav>
-        <a href="/en/"><img src="/assets/leff-logo-yellow.svg"
+        <a href="/leff/en/"><img src="/leff/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
         <div id="circle-container">
             <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
@@ -293,7 +303,7 @@
                 
                 
                 
-                <a href="/nl/filmmakers/">
+                <a href="/leff/nl/programme/filmmakers/">
                     <button>NL</button>
                 </a>
                 
@@ -320,7 +330,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
-                            <a href="/en/">Home</a>
+                            <a href="/leff/en/">Home</a>
                             
                         </li>
                         
@@ -338,19 +348,15 @@
                                 <ul class="menu-dropdown-content" id="programme-dropdown">
                                     
                                     <li>
-                                        <a href="/en/programme/films">A—Z film</a>
+                                        <a href="/leff/en/programme/films">A—Z film</a>
                                     </li>
                                     
                                     <li>
-                                        <a href="/en/programme/filmmakers">A—Z filmmakers</a>
+                                        <a href="/leff/en/programme/filmmakers">A—Z filmmakers</a>
                                     </li>
                                     
                                     <li>
-                                        <a href="/en/programme/films">Time</a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="/en/programme/films">Location</a>
+                                        <a href="/leff/en/programme/theme-blocks">Theme Blocks</a>
                                     </li>
                                     
                                 </ul>
@@ -363,7 +369,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
-                            <a href="/en/schedule/">Block Schedule</a>
+                            <a href="/leff/en/schedule/">Block Schedule</a>
                             
                         </li>
                         
@@ -372,7 +378,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
-                            <a href="/en/location/">Locations</a>
+                            <a href="/leff/en/location/">Locations</a>
                             
                         </li>
                         
@@ -381,7 +387,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
-                            <a href="/en/tickets/">Tickets</a>
+                            <a href="/leff/en/tickets/">Tickets</a>
                             
                         </li>
                         
@@ -399,11 +405,11 @@
                                 <ul class="menu-dropdown-content" id="about-dropdown">
                                     
                                     <li>
-                                        <a href="/en/about/">Festival</a>
+                                        <a href="/leff/en/about/">Festival</a>
                                     </li>
                                     
                                     <li>
-                                        <a href="/en/organisation/">Organisation</a>
+                                        <a href="/leff/en/organisation/">Organisation</a>
                                     </li>
                                     
                                 </ul>
@@ -497,780 +503,1796 @@
             </div>
         </div>
 
-        <div class="filmmakers-container">
+                                <div class="filmmakers-container">
             
                 
-                    <a href="/en/programme/filmmakers/alexander-horwath/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="alexander horwath"
                        data-letter="a"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Alexander Horwath">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Alexander Horwath">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Alexander Horwath</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/alexander-horwath/">
+                                        Alexander Horwath
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Alexander Horwath (b. 1964, Vienna) is an Austrian author, curator, film historian, critic, and director. He led the Viennale (Vienna International Film Festival) from 1992 to 1997 and served as director of the Austrian Film Museum between 2002 and 2017. His 2024 debut feature Henry Fonda for President reflects decades of engagement with film history, cinematic politics, and the interplay between political narratives and cultural experience. His curatorial work includes co‑ordinating the film programme for Documenta 12 in 2007.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Henry Fonda for President</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2024, US, 180&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="henry-fonda-for-president">
+            <a href="/leff/en/programme/films/henry-fonda-for-president/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Henry Fonda for President film page">
+                Henry Fonda for President
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/alexander-horwath/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Alexander Horwath filmmaker page">
+                Alexander Horwath
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>A meditation on Henry Fonda’s screen legacy and the stories America tells about itself — idealism, doubt, and the distance between image and reality. </p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">US</span>
+            
+            
+            <span class="film-meta-item">2024</span>
+            
+            
+            <span class="film-meta-item">180&#39;</span>
+            
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Alexander Horwath/parade-presse2.webp" alt="Henry Fonda for President">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/andrew-norman-wilson/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="andrew norman wilson"
                        data-letter="a"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Andrew Norman Wilson">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Andrew Norman Wilson">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Andrew Norman Wilson</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/andrew-norman-wilson/">
+                                        Andrew Norman Wilson
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Andrew Norman Wilson (b. 1983, USA) is a New York–based conceptual artist and filmmaker whose multimedia practice includes video, installation, performance lectures and written essays. Wilson critically probes Silicon Valley’s labor structures, corporate mythologies, image cultures, automation and inequality. His early video Workers Leaving the Googleplex went viral in 2011. His work has shown internationally at Sundance, the New York and Rotterdam Film Festivals, and is held in MoMA, the Whitney and Centre Pompidou.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Workers Leaving the Googleplex</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2011, US, 11&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="workers-leaving-the-googleplex">
+            <a href="/leff/en/programme/films/workers-leaving-the-googleplex/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Workers Leaving the Googleplex film page">
+                Workers Leaving the Googleplex
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/andrew-norman-wilson/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Andrew Norman Wilson  filmmaker page">
+                Andrew Norman Wilson 
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>A surreal investigation into hidden labour at Google, where access, surveillance, and exclusion expose the deeper hierarchies shaping the digital economy and corporate power.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">US</span>
+            
+            
+            <span class="film-meta-item">2011</span>
+            
+            
+            <span class="film-meta-item">11&#39;</span>
+            
+            
+            <span class="film-meta-item">Workers Leaving the Factory</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Andrew Norman Wilson/GoogleStillComposite.webp" alt="Workers Leaving the Googleplex">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/angus-carlyle-rupert-cox/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="angus carlyle &amp; rupert cox"
                        data-letter="a"
                        data-film-count="0">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Angus Carlyle &amp; Rupert Cox">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Angus Carlyle &amp; Rupert Cox">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Angus Carlyle &amp; Rupert Cox</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/angus-carlyle-rupert-cox/">
+                                        Angus Carlyle &amp; Rupert Cox
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Angus Carlyle &amp; Rupert Cox are UK‑based collaborators working across experimental film, sound art, anthropology and landscape. Notable projects include Air Pressure (2017) and Zawawa: the sound of sugar cane in the wind, which uses field recordings, oral testimony, and sonic environments to explore wartime memory, ecology, acoustics and the impact of US military bases on Okinawa’s residents over a decade of research.</p>
                                 </div>
-                                
-                                    <div class="filmmaker-films-section">
-                                        <p><em>No films found in current programme.</em></p>
-                                    </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/aura-satz/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="aura satz"
                        data-letter="a"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Aura Satz">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Aura Satz">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Aura Satz</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/aura-satz/">
+                                        Aura Satz
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Aura Satz (b. 1974, Barcelona; lives in London) is a visual artist, filmmaker, and writer whose interdisciplinary work combines film, sound, performance and sculpture. Her research investigates voice technologies, ventriloquism, acoustic machines, notation systems and human–machine relations. Recent projects such as Preemptive Listening (2024) collapse time, sound, machine and gender, shaping a poetic and conceptual sonic cinema.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Preemptive Listening</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2024, UK, 90&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="preemptive-listening">
+            <a href="/leff/en/programme/films/preemptive-listening/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Preemptive Listening film page">
+                Preemptive Listening
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/aura-satz/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Aura Satz filmmaker page">
+                Aura Satz
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>What&#39;s a siren? What has it been? What can it be? An exploration of the siren in a myriad of forms.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">UK</span>
+            
+            
+            <span class="film-meta-item">2024</span>
+            
+            
+            <span class="film-meta-item">90&#39;</span>
+            
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Aura Satz/Preemptive Listening still1.webp" alt="Preemptive Listening">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/bahar-noorizadeh/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="bahar noorizadeh"
                        data-letter="b"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Bahar Noorizadeh">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Bahar Noorizadeh">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Bahar Noorizadeh</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/bahar-noorizadeh/">
+                                        Bahar Noorizadeh
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Bahar Noorizadeh (b. 1988, Iran; based in London/Beirut) is an artist, writer, filmmaker, platform designer and researcher. She founded the platform Weird Economies and leads research into speculation, cybernetic socialism, economic imaginaries and justice futures through film, performance, installation and writing. Currently completing a PhD in Art at Goldsmiths, she teaches at the RCA and Design Academy Eindhoven, engaging with pedagogy as farming of alternative economic narratives.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Free to Choose</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2023, UK, 35&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="free-to-choose">
+            <a href="/leff/en/programme/films/free-to-choose/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Free to Choose film page">
+                Free to Choose
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/bahar-noorizadeh/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Bahar Noorizadeh filmmaker page">
+                Bahar Noorizadeh
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>A speculative sci-fi journey through neoliberalism’s promises and failures, where time travel becomes a metaphor for credit, access, and the cost of economic freedom.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">UK</span>
+            
+            
+            <span class="film-meta-item">2023</span>
+            
+            
+            <span class="film-meta-item">35&#39;</span>
+            
+            
+            <span class="film-meta-item">Hong Kong Shorts</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Bahar Noorizadeh/FTC - still 2.webp" alt="Free to Choose">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/bertrand-bonello/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="bertrand bonello"
                        data-letter="b"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Bertrand Bonello">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Bertrand Bonello">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Bertrand Bonello</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/bertrand-bonello/">
+                                        Bertrand Bonello
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Bertrand Bonello (b. 1968, Nice) is a French filmmaker, composer, screenwriter and occasional actor. Trained as a musician, he brings a formal precision and density to films such as The Pornographer, House of Tolerance, Nocturama and Coma. Often blurring fiction with archival and essayistic modes, Bonello explores themes of desire, power, youth and the spectral traces of history. *Coma* (2022) is a hybrid essay film that fuses dream states, online media and philosophical voiceover into a reflection on confinement and the erosion of reality. His films have screened at Cannes, Venice and Locarno, and reflect a singular voice in contemporary European cinema.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Coma</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2022, France, 80&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="coma">
+            <a href="/leff/en/programme/films/coma/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Coma film page">
+                Coma
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/bertrand-bonello/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Bertrand Bonello filmmaker page">
+                Bertrand Bonello
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Blending animation and live action to tell the story of a teenage girl trapped in her home. Created during the COVID-19 pandemic, a surreal, nightmarish world unfolds. Perhaps only an essay film could capture to confusion of these years?</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">France</span>
+            
+            
+            <span class="film-meta-item">2022</span>
+            
+            
+            <span class="film-meta-item">80&#39;</span>
+            
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Bertrand Bonello/COMA-STILL-WEB.webp" alt="Coma">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/bo-wang/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="bo wang"
                        data-letter="b"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Bo Wang">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Bo Wang">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Bo Wang</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/bo-wang/">
+                                        Bo Wang
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Bo Wang (b. 1982, Chongqing; based in Amsterdam) is a filmmaker, visual artist and researcher with a background in physics (Tsinghua University) and fine arts (MFA, School of Visual Arts, New York). His award‑winning works, such as An Asian Ghost Story, examine power structures, trauma, ideology, spectrality and displacement in contemporary Asia. Exhibited internationally at MoMA (New York), Guggenheim, IFFR, CPH:DOX (New Vision award), DOKLeipzig (Golden Dove) and Visions du Réel. He is a PhD candidate at ASCA, University of Amsterdam, and currently teaches at LUCAS, Leiden University.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">An Asian Ghost Story</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2023, Hong Kong, 37&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="an-asian-ghost-story">
+            <a href="/leff/en/programme/films/an-asian-ghost-story/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View An Asian Ghost Story film page">
+                An Asian Ghost Story
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/bo-wang/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Bo Wang filmmaker page">
+                Bo Wang
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>A haunting meditation on Hong Kong’s role in Cold War trade, where human hair becomes a ghostly link between imperial histories, migration, and spectral memory.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Hong Kong</span>
+            
+            
+            <span class="film-meta-item">2023</span>
+            
+            
+            <span class="film-meta-item">37&#39;</span>
+            
+            
+            <span class="film-meta-item">Hong Kong Shorts</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Bo Wang/AAGS_01.webp" alt="An Asian Ghost Story">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/chantal-akerman/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="chantal akerman"
                        data-letter="c"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Chantal Akerman">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Chantal Akerman">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Chantal Akerman</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/chantal-akerman/">
+                                        Chantal Akerman
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Chantal Akerman (1950–2015, Brussels/Paris) was a Belgian filmmaker, installation artist and writer whose radical feminist and minimalist approach reshaped cinema. Her breakthrough Jeanne Dielman, 23 quai du Commerce, 1080 Bruxelles (1975) deconstructed domestic routine through extended takes and stillness, while films like News from Home, Je Tu Il Elle and D’Est deeply engaged themes of identity, exile, Jewish heritage and space. Over forty films and installations defined a legacy of formal rigor, emotional depth and feminist poetics.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">De l’autre coté</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2006, Belgium, 100&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="de-lautre-cote">
+            <a href="/leff/en/programme/films/de-lautre-cote/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View De l’autre coté film page">
+                De l’autre coté
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/chantal-akerman/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Chantal Akerman filmmaker page">
+                Chantal Akerman
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>An emotional exploration on border politics, relevant now more than ever. Personal, plural and captivating in its ability to make us listen and watch carefully.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Belgium</span>
+            
+            
+            <span class="film-meta-item">2006</span>
+            
+            
+            <span class="film-meta-item">100&#39;</span>
+            
+            
+            <span class="film-meta-item">Classics</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Chantal Akerman/FTOS 30 surveillance 6.webp" alt="De l’autre coté">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/chris-marker/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="chris marker"
                        data-letter="c"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Chris Marker">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Chris Marker">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Chris Marker</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/chris-marker/">
+                                        Chris Marker
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Chris Marker (1921–2012, France) was a pioneering filmmaker, writer and multimedia artist whose work shaped the cinematic essay as a form of philosophical inquiry. Best known for La Jetée and Sans Soleil, he explored memory, revolution and technology through montage, voiceover and archival fragments. His films, often elliptical and reflective, traverse time and space to interrogate personal and political histories.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Sans Soleil</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (1982, France, 110&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="sans-soleil">
+            <a href="/leff/en/programme/films/sans-soleil/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Sans Soleil film page">
+                Sans Soleil
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/chris-marker/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Chris Marker filmmaker page">
+                Chris Marker
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Widely considered the foundational essay film, Sans Soleil is a contemplative journey through memory, time, and distant lands – Japan, Guinea-Bissau, and the Cape Verde islands – blending personal reflections with observations on modern existence.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">France</span>
+            
+            
+            <span class="film-meta-item">1982</span>
+            
+            
+            <span class="film-meta-item">110&#39;</span>
+            
+            
+            <span class="film-meta-item">Classics</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Chris Marker/Sans soleil - Photo 1.webp" alt="Sans Soleil">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/elysa-wendi/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="elysa wendi"
                        data-letter="e"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Elysa Wendi">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Elysa Wendi">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Elysa Wendi</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/elysa-wendi/">
+                                        Elysa Wendi
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Elysa Wendi is a Singaporean-born filmmaker, dance artist, curator, and co‑founder of the artist-run platform Cinemovement in 2015. Based in Hong Kong, her hybrid practice merges film, choreography, performance and meta‑lecture forms. Through films like One Min of Breath (2012), 1958 Delivery (2017), Forgive or Not to Forgive (2019), Someday I Will Become a Rock (2019), and Room 404 (2024), Wendi explores themes of memory, migration, body politics, and the abstraction of place and perception. Her work has earned awards such as Best Experimental Film (South Taiwan, 2018) and Best Documentary (Hong Kong Arthouse, 2020) and has been shown at platforms like Jumping Frames, Berlinale Forum Expanded and DOK Leipzig.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Room 404</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2024, Hong Kong, 29&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="room-404">
+            <a href="/leff/en/programme/films/room-404/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Room 404 film page">
+                Room 404
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/elysa-wendi-and-shing-lee/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Elysa Wendi and Shing Lee filmmaker page">
+                Elysa Wendi and Shing Lee
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>ERROR: ROOM 404 A POTENTIAL THREAT – the courage and doubt of artists continuing to create in uncertain times, resisting the rising media control in Hong Kong.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Hong Kong</span>
+            
+            
+            <span class="film-meta-item">2024</span>
+            
+            
+            <span class="film-meta-item">29&#39;</span>
+            
+            
+            <span class="film-meta-item">Hong Kong Shorts</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Elysa Wendi &amp; Shing Lee/room 404 ext film still 3.webp" alt="Room 404">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/francis-kabisch/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="francis kabisch"
                        data-letter="f"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Francis Kabisch">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Francis Kabisch">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Francis Kabisch</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/francis-kabisch/">
+                                        Francis Kabisch
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Franzis Kabisch is a German-Austrian artistic researcher, filmmaker, writer, educator, and PhD candidate at the Academy of Fine Arts Vienna. Her 2023 desktop-essay short getty abortions deconstructs the mediated image of abortion in mainstream stock photography and teen media, earning awards at Dok Leipzig, Kassel, Hamburg, Vienna Shorts, and Regensburg. Her work combines queer‑feminist film critique, body politics, and archival intervention, and she frequently writes essays and gives talks on reproductive justice, situated gaze, and visual culture</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Getty Abortions</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2023, Germany, Austria, 22&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="getty-abortions">
+            <a href="/leff/en/programme/films/getty-abortions/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Getty Abortions film page">
+                Getty Abortions
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/francis-kabisch/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Francis Kabisch filmmaker page">
+                Francis Kabisch
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>How do the media portray the images we associate with abortion? And how do these affect women who want to have one? An impressive blend between desktop and personal aesthetics.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Germany, Austria</span>
+            
+            
+            <span class="film-meta-item">2023</span>
+            
+            
+            <span class="film-meta-item">22&#39;</span>
+            
+            
+            <span class="film-meta-item">Harun Farocki in Focus</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Franzis Kabisch/gettyabortions_still_1_en  @Franzis-Kabisch_VG-Bild-Kunst.webp" alt="Getty Abortions">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/graeme-arnfield/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="graeme arnfield"
                        data-letter="g"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Graeme Arnfield">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Graeme Arnfield">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Graeme Arnfield</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/graeme-arnfield/">
+                                        Graeme Arnfield
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Graeme Arnfield (b. 1991, UK) is an artist‑filmmaker, curator, composer, and writer whose essay films weave together networked imagery, archival materials, and sound to probe technology, ecology, and history. His work, ranging from shorts like Sitting in Darkness (2015) and Colossal Cave (2016), to feature-length essays such as Home Invasion (2023), uses investigative storytelling to interrogate digital networks, the circulation of ecological matter (like peat and asbestos), and the layered trajectories of local and global histories.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Home Invasion</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2024, US, 90&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="home-invasion">
+            <a href="/leff/en/programme/films/home-invasion/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Home Invasion film page">
+                Home Invasion
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/graeme-arnfield/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Graeme Arnfield filmmaker page">
+                Graeme Arnfield
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>What happens when our homes and our dreams have been invaded? An exploration of the history of the doorbell and the implications of surveillance footage.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">US</span>
+            
+            
+            <span class="film-meta-item">2024</span>
+            
+            
+            <span class="film-meta-item">90&#39;</span>
+            
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Graeme Arnfield/Home Invasion - Film still 6.webp" alt="Home Invasion">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/harun-farocki/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="harun farocki"
                        data-letter="h"
                        data-film-count="3">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Harun Farocki">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Harun Farocki">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Harun Farocki</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/harun-farocki/">
+                                        Harun Farocki
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Harun Farocki (1944–2014, born in Czech Republic) was a German filmmaker, media artist, writer and critic. He studied at the Deutsche Film‑ und Fernsehakademie Berlin (DFFB) between 1966 and 1968 and produced over 120 films, essays and installations. Farocki’s work frequently dissects the mechanisms of images, exploring themes such as the militarization of vision, labor under capitalism, automation and propaganda. His precise, essayistic filmmaking makes visible the structures behind perception and power.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (3):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Arbeiter verlassen die Fabrik</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (1995, Germany, 36&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Was ist Los?</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (1991, Germany, 60&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Gegen-Musik</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2004, Germany, 23&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="arbeiter-verlassen-die-fabrik">
+            <a href="/leff/en/programme/films/arbeiter-verlassen-die-fabrik/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Arbeiter verlassen die Fabrik film page">
+                Arbeiter verlassen die Fabrik
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/harun-farocki/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Harun Farocki filmmaker page">
+                Harun Farocki
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>A spiritual sequel to the Lumière brothers’ iconic 1895 film, Harun Farocki’s Arbeiter verlassen die Fabrik traces how the image of workers exiting factories has persisted—and evolved—through cinema’s history.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Germany</span>
+            
+            
+            <span class="film-meta-item">1995</span>
+            
+            
+            <span class="film-meta-item">36&#39;</span>
+            
+            
+            <span class="film-meta-item">Workers Leaving the Factory</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_39.webp" alt="Arbeiter verlassen die Fabrik">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="was-ist-los">
+            <a href="/leff/en/programme/films/was-ist-los/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Was ist Los? film page">
+                Was ist Los?
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/harun-farocki/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Harun Farocki filmmaker page">
+                Harun Farocki
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>In Was ist los? Harun Farocki dissects media narratives and televised imagery in reunified Germany, exposing how everyday broadcasts shape public perception, ideology, and the construction of “reality.”</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Germany</span>
+            
+            
+            <span class="film-meta-item">1991</span>
+            
+            
+            <span class="film-meta-item">60&#39;</span>
+            
+            
+            <span class="film-meta-item">Harun Farocki in Focus</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Harun Farocki/What&#39;s up - Was ist los/Was ist los 01.webp" alt="Was ist Los?">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="gegen-musik">
+            <a href="/leff/en/programme/films/gegen-musik/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Gegen-Musik film page">
+                Gegen-Musik
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/harun-farocki/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Harun Farocki filmmaker page">
+                Harun Farocki
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Gegen-Musik, originally intended as a two-screen installation, sees Harun Farocki examine surveillance footage, exposing how the interplay of image and sound structures perception, authority, and control.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Germany</span>
+            
+            
+            <span class="film-meta-item">2004</span>
+            
+            
+            <span class="film-meta-item">23&#39;</span>
+            
+            
+            <span class="film-meta-item">Harun Farocki in Focus</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_16.webp" alt="Gegen-Musik">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/hicham-gardaf/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="hicham gardaf"
                        data-letter="h"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Hicham Gardaf">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Hicham Gardaf">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Hicham Gardaf</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/hicham-gardaf/">
+                                        Hicham Gardaf
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Hicham Gardaf (b. 1989, Tangier, Morocco; lives in London) is a Moroccan filmmaker, visual artist, photographer and researcher whose cross-disciplinary work interrogates urban transformation, labored landscapes and sonic memory. Educated through self-directed study and prize-supported fellowships (such as the Fondazione MAST Photography Grant), his practice has taken shape through image, sound and installation. In Praise of Slowness (2023) has been screened within Forum Expanded at Berlinale 2024 and featured at festivals including IDFA and IFFR.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">In Praise of Slowness</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2024, UK/Italy, 17&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="in-praise-of-slowness">
+            <a href="/leff/en/programme/films/in-praise-of-slowness/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View In Praise of Slowness film page">
+                In Praise of Slowness
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/hicham-gardaf/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Hicham Gardaf filmmaker page">
+                Hicham Gardaf
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>The ears tell the eyes where to look.” An exploration of how waiting and listening creates stillness, in an effort to reverse the speed of capitalist rhythms.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">UK/Italy</span>
+            
+            
+            <span class="film-meta-item">2024</span>
+            
+            
+            <span class="film-meta-item">17&#39;</span>
+            
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Hicham Gardaf/In_Praise_of_Slowness_Film_Still_04.webp" alt="In Praise of Slowness">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/ho-rui-an/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="ho rui an"
                        data-letter="h"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Ho Rui An">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Ho Rui An">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Ho Rui An</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/ho-rui-an/">
+                                        Ho Rui An
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Ho Rui An (b. 1990, Singapore) is an artist, filmmaker, writer and educator whose research‑based practice spans film, performance, essay, lecture and theory. His work addresses labor, technology, governance and pedagogy in globalised Asia, often through durational, speculative works such as Student Bodies (2023). Ho’s interdisciplinary projects have been shown at venues like Centre Pompidou, and he actively contributes to debates in art and theory internationally.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Twenty-Four Cinematic Points of View of a Factory Gate in China</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2023, China, 25&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="twenty-four-cinematic-points-of-view-of-a-factory-gate-in-china">
+            <a href="/leff/en/programme/films/twenty-four-cinematic-points-of-view-of-a-factory-gate-in-china/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Twenty-Four Cinematic Points of View of a Factory Gate in China film page">
+                Twenty-Four Cinematic Points of View of a Factory Gate in China
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/ho-rui-an/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Ho Rui An filmmaker page">
+                Ho Rui An
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>An investigation of a factory gate in China leads to an in depth reflection on the history of cinema and capitalism.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">China</span>
+            
+            
+            <span class="film-meta-item">2023</span>
+            
+            
+            <span class="film-meta-item">25&#39;</span>
+            
+            
+            <span class="film-meta-item">Workers Leaving the Factory</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Ho Rui An/Factory Gate_2.webp" alt="Twenty-Four Cinematic Points of View of a Factory Gate in China">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/johan-van-der-keuken/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="johan van der keuken"
                        data-letter="j"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Johan van der Keuken">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Johan van der Keuken">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Johan van der Keuken</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/johan-van-der-keuken/">
+                                        Johan van der Keuken
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Johan van der Keuken (1938–2001, Amsterdam) was a Dutch photographer, documentary filmmaker and author. Launching his first photo book at age 17, he published nine books and created 55 documentaries over a four‑decade career, many of which focused on outsiders, disability, labor and daily life. Van der Keuken’s work, defined by a poetic essayistic style, blurs the boundaries between artistic expression social documentary.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Face Value</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (1991, Netherlands, 120&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="face-value">
+            <a href="/leff/en/programme/films/face-value/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Face Value film page">
+                Face Value
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/johan-van-der-keuken/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Johan van der Keuken filmmaker page">
+                Johan van der Keuken
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Johan van der Keuken’s formally distinct essay film navigates the politics of vision across Europe, but also experiments with cinematic portraiture in wild ways. Through a mosaic of vignettes—of faces, places, and voices—this classic essay film explores the desire and fear of being seen, the struggle for self-perception, and the tensions within shifting cultural landscapes. A prescient film in many ways.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Netherlands</span>
+            
+            
+            <span class="film-meta-item">1991</span>
+            
+            
+            <span class="film-meta-item">120&#39;</span>
+            
+            
+            <span class="film-meta-item">Classics</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.51.03.webp" alt="Face Value">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/johannes-binotto/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="johannes binotto"
                        data-letter="j"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Johannes Binotto">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Johannes Binotto">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Johannes Binotto</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/johannes-binotto/">
+                                        Johannes Binotto
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Johannes Binotto (b. 1977, Switzerland; based in Lucerne and Zurich) is an experimental filmmaker, video essayist and media theorist whose academic practice interrogates perception, spatiality and the uncanny in contemporary image culture. A professor of Film &amp; Media Studies at the Lucerne School of Design &amp; Art and senior lecturer at the University of Zurich, he leads the Swiss National Science Foundation project “VideoEssay. Futures of Audiovisual Research and Teaching,” and publishes on cinema, psychoanalysis, literature and architecture.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Capricorn Sunset</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2023, Switzerland, 5&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="capricorn-sunset">
+            <a href="/leff/en/programme/films/capricorn-sunset/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Capricorn Sunset film page">
+                Capricorn Sunset
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/johannes-binotto/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Johannes Binotto filmmaker page">
+                Johannes Binotto
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Exploring boundless space for meaning-making. This essay film opens our eyes to the interplay of images, memory, and personal interpretation.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Switzerland</span>
+            
+            
+            <span class="film-meta-item">2023</span>
+            
+            
+            <span class="film-meta-item">5&#39;</span>
+            
+            
+            <span class="film-meta-item">Kamal Aljafari in Focus</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Johannes Binotto/capricorn sunset_Still_4.webp" alt="Capricorn Sunset">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/judith-westerveld/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="judith westerveld"
                        data-letter="j"
                        data-film-count="2">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Judith Westerveld">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Judith Westerveld">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Judith Westerveld</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/judith-westerveld/">
+                                        Judith Westerveld
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Judith Westerveld (b. 1985, South Africa / Netherlands; lives between Amsterdam and Cape Town) is an audiovisual artist, filmmaker and artistic researcher whose moving‑image work engages colonial archives, oral histories and linguistic erasure. Trained at Gerrit Rietveld Academie and University of Amsterdam (MA Artistic Research, cum laude), her video-installations and film essays—distributed by LIMA and ARGOS—navigate memory, language and postcolonial transformation in works such as The Sending of the Crows and A Few Common Phrases.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (2):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Message from Mukalap</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2021, Netherlands, 15&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">The Sending of the Crows</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2024, Netherlands, 15&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="message-from-mukalap">
+            <a href="/leff/en/programme/films/message-from-mukalap/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Message from Mukalap film page">
+                Message from Mukalap
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/judith-westerveld/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Judith Westerveld filmmaker page">
+                Judith Westerveld
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Through a multilingual response to a sound recording from a man called Mukalap, in the no longer living language !ora, colonial legacies echo through.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Netherlands</span>
+            
+            
+            <span class="film-meta-item">2021</span>
+            
+            
+            <span class="film-meta-item">15&#39;</span>
+            
+            
+            <span class="film-meta-item">Listening with the Other</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Judith Westerveld/Message from Mukalap/Film Still Message from Mukalap 4.webp" alt="Message from Mukalap">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="the-sending-of-the-crows">
+            <a href="/leff/en/programme/films/the-sending-of-the-crows/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View The Sending of the Crows film page">
+                The Sending of the Crows
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/judith-westerveld/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Judith Westerveld filmmaker page">
+                Judith Westerveld
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>An audiovisual meditation of a language and culture from a colonial past, “moving through time, reflecting on the truth of the people forgotten”.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Netherlands</span>
+            
+            
+            <span class="film-meta-item">2024</span>
+            
+            
+            <span class="film-meta-item">15&#39;</span>
+            
+            
+            <span class="film-meta-item">Listening with the Other</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Landscape_The Sending of the Crows_3 (full resolution).webp" alt="The Sending of the Crows">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/kamal-aljafari/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="kamal aljafari"
                        data-letter="k"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Kamal Aljafari">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Kamal Aljafari">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Kamal Aljafari</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/kamal-aljafari/">
+                                        Kamal Aljafari
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Kamal Aljafari (b. 1972, Ramla, Palestine; based in Berlin) is a pioneering Palestinian filmmaker and visual artist whose formally nuanced work reconstructs memory and dispossession. A graduate of the Academy of Media Arts in Cologne, his poetic cinema spans feature films (The Roof, Port of Memory, Recollection) and installations such as The Camera of the Dispossessed. His films have been screened at Berlinale, Rotterdam, Locarno and CPH:DOX and at institutions including MoMA and Tate Modern.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">A Fidai Film</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2024, Palestine, 78&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="a-fidai-film">
+            <a href="/leff/en/programme/films/a-fidai-film/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View A Fidai Film film page">
+                A Fidai Film
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/kamal-aljafari/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Kamal Aljafari filmmaker page">
+                Kamal Aljafari
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Red silhouettes draw an alternative future in looted Palestinian archival footage. A compelling film re-interpreting a past and possible future.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Palestine</span>
+            
+            
+            <span class="film-meta-item">2024</span>
+            
+            
+            <span class="film-meta-item">78&#39;</span>
+            
+            
+            <span class="film-meta-item">Kamal Aljafari in Focus</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Kamal Aljafari/Fidai Still 7.webp" alt="A Fidai Film">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/lea-hartlaub/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="lea hartlaub"
                        data-letter="l"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Lea Hartlaub">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Lea Hartlaub">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Lea Hartlaub</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/lea-hartlaub/">
+                                        Lea Hartlaub
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Lea Hartlaub (b. 1981, Frankfurt, Germany) is a self‑taught photographer, filmmaker and visual essayist whose work investigates myth, ecology, post‑socialist histories and the poetics of representation. Her essay documentaries—including Sunny Night (2017) and sr (2024)—employ found footage and poetic montage to explore cultural memory and the symbolic resonance of mythic figures in collective imagination.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">sr</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2024, Germany, 110&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="sr">
+            <a href="/leff/en/programme/films/sr/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View sr film page">
+                sr
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/lea-hartlaub/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Lea Hartlaub filmmaker page">
+                Lea Hartlaub
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Traversing global landscapes and human activities through a recurring giraffe motif, themes of power, culture and perception are explored.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Germany</span>
+            
+            
+            <span class="film-meta-item">2024</span>
+            
+            
+            <span class="film-meta-item">110&#39;</span>
+            
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Lea Hartlaub/sr_film-still_06_LeaHartlaub-BlinkerFilmproduktion_hieroglyphe-sr.webp" alt="sr">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/lena-windisch/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="lena windisch"
                        data-letter="l"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Lena Windisch">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Lena Windisch">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Lena Windisch</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/lena-windisch/">
+                                        Lena Windisch
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Lena Windisch (b. 1991, Germany; based in Switzerland) is a visual researcher and filmmaker grounded in communication and information design. Educated at Burg Giebichenstein and Design Academy Eindhoven, her moving-image work, including Searching for the Perfect Gentleman (2019), combines typographic sensibilities and documentary enquiry to explore global visual forms, agency and informal aesthetics.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Searching for the Perfect Gentleman</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2019, Germany, 10&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="searching-for-the-perfect-gentleman">
+            <a href="/leff/en/programme/films/searching-for-the-perfect-gentleman/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Searching for the Perfect Gentleman film page">
+                Searching for the Perfect Gentleman
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/lena-windisch/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Lena Windisch filmmaker page">
+                Lena Windisch
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>How can one travel the world by still staying put? The journey of discovering the story behind a poster hanging at an African barbershop’s window.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Germany</span>
+            
+            
+            <span class="film-meta-item">2019</span>
+            
+            
+            <span class="film-meta-item">10&#39;</span>
+            
+            
+            <span class="film-meta-item">New Perspectives</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/placeholder.webp" alt="Searching for the Perfect Gentleman">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/lis-rhodes/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="lis rhodes"
                        data-letter="l"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Lis Rhodes">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Lis Rhodes">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Lis Rhodes</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/lis-rhodes/">
+                                        Lis Rhodes
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Lis Rhodes (b. 1942, UK; based in London) is a seminal figure in feminist and experimental film whose multidisciplinary practice reshapes the political and poetic potential of image, sound and notation. Co-founder of the women’s distribution network Circles (later Cinenova), curator at the London Filmmakers’ Coop and longtime Slade lecturer, her landmark works—such as Dresden Dynamo (1972), Light Music (1975) and Whitehall (2012)—employ minimal imagery, immersive sound and political poetics to dissolve conventions of cinematic spectatorship.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Disquiet</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2022, UK, 80&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="disquiet">
+            <a href="/leff/en/programme/films/disquiet/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Disquiet film page">
+                Disquiet
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/lis-rhodes/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Lis Rhodes filmmaker page">
+                Lis Rhodes
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Revered essay filmmaker Lis Rhodes&#39; latest work opens with a haunting reference to the atomic bomb in Hiroshima, setting the tone for an essay film that explores the intersections of sound, power, and history. Through fragmented imagery and often jarring audio, Rhodes incites us to reflect on the lingering impacts of violence and the structures of control in modern life.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">UK</span>
+            
+            
+            <span class="film-meta-item">2022</span>
+            
+            
+            <span class="film-meta-item">80&#39;</span>
+            
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/placeholder.webp" alt="Disquiet">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/lucia-nimcova-david-petras/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="lucia nimcová &amp; david petráš"
                        data-letter="l"
                        data-film-count="0">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Lucia Nimcová &amp; David Petráš">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Lucia Nimcová &amp; David Petráš">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Lucia Nimcová &amp; David Petráš</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/lucia-nimcova-david-petras/">
+                                        Lucia Nimcová &amp; David Petráš
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Ethnographers Lucia Nimcova and David Petráš work together on audiovisual research in the Carpathian Mountains since 2020. They established the foundation nohami.com which creates sustainable conditions for preserving and sharing knowledge of people living in remote villages in the border-zone of Slovakia, Ukraine and Romania. 
 
@@ -1278,501 +2300,999 @@
 
 Lucia Nimcová is an award-winning photographer and visual artist, David Petráš is a musician and sound artist. They work and live in Brussels.</p>
                                 </div>
-                                
-                                    <div class="filmmaker-films-section">
-                                        <p><em>No films found in current programme.</em></p>
-                                    </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/manthia-diawara/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="manthia diawara"
                        data-letter="m"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Manthia Diawara">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Manthia Diawara">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Manthia Diawara</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/manthia-diawara/">
+                                        Manthia Diawara
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Manthia Diawara (b. 1953, Bamako, Mali; based in New York) is a writer, filmmaker, cultural theorist and University Professor of Comparative Literature and Film at NYU, where he directs the Institute of African American Affairs. Educated in France and the U.S., his books (African Cinema: Politics &amp; Culture, We Won’t Budge) and films (Sembène: The Making of African Cinema, AI: African Intelligence, Angela Davis: A World of Greater Freedom) critically weave diasporic history, anti‑colonial thought and cinematic narrative.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">A Letter from Yene</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2022, Senegal, 50&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="a-letter-from-yene">
+            <a href="/leff/en/programme/films/a-letter-from-yene/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View A Letter from Yene film page">
+                A Letter from Yene
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/manthia-diawara/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Manthia Diawara filmmaker page">
+                Manthia Diawara
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>A reflective portrait of life in a Senegalese coastal town, where shifting landscapes prompt conversations about the environment, labour, and our shared place in it.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Senegal</span>
+            
+            
+            <span class="film-meta-item">2022</span>
+            
+            
+            <span class="film-meta-item">50&#39;</span>
+            
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Manthia Diawara/A Letter from Yene 3.webp" alt="A Letter from Yene">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/maria-iorio-raphael-cuomo/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="maria iorio &amp; raphaël cuomo"
                        data-letter="m"
                        data-film-count="0">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Maria Iorio &amp; Raphaël Cuomo">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Maria Iorio &amp; Raphaël Cuomo">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Maria Iorio &amp; Raphaël Cuomo</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/maria-iorio-raphael-cuomo/">
+                                        Maria Iorio &amp; Raphaël Cuomo
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Maria Iorio and Raphaël Cuomo are artists and filmmakers. Favouring a collaborative praxis and long-term research, their recent projects engage with past and present global mobilities. Their films manifest unheard voices, diasporic experiences and resistant subjectivities. They have created film programmes and exhibitions that revisit the historiography of moving image practices and ‘minor cinemas’. Their work has been presented in various exhibitions and film festivals, including Documenta 14, Courtisane, DOK Leipzig, Visions du Réel – where their film Chronicles of that time was awarded the Special Jury Award.</p>
                                 </div>
-                                
-                                    <div class="filmmaker-films-section">
-                                        <p><em>No films found in current programme.</em></p>
-                                    </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/maryam-jafri/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="maryam jafri"
                        data-letter="m"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Maryam Jafri">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Maryam Jafri">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Maryam Jafri</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/maryam-jafri/">
+                                        Maryam Jafri
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Maryam Jafri (b. 1972, Karachi, Pakistan; based in Copenhagen and New York) is a research-driven multimedia artist and educator whose films, photographic tableaux, performance and sculptural installations examine the visual culture of political economy, capital and colonial imaginaries. Her projects such as Independence Day 1934–1975 and Automatic Negative Thought deploy archival triggers, conceptual tableaux and filmic montage to expose systems of representation shaping labor, identity and capital.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Mariam Jafri vs Maryam Jafri</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2019, Austria/Canada, 9&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="mariam-jafri-vs-maryam-jafri">
+            <a href="/leff/en/programme/films/mariam-jafri-vs-maryam-jafri/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Mariam Jafri vs Maryam Jafri film page">
+                Mariam Jafri vs Maryam Jafri
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/maryam-jafri/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Maryam Jafri filmmaker page">
+                Maryam Jafri
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Mariam Jafri vs. Maryam Jafri explores identity and authorship through a sculptural work that shifts from object to photo to video, each stage marked by superimposed watermarks. Jafri&#39;s self-reflection questions the commodification of art and the fluidity of value in a global context.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Austria/Canada</span>
+            
+            
+            <span class="film-meta-item">2019</span>
+            
+            
+            <span class="film-meta-item">9&#39;</span>
+            
+            
+            <span class="film-meta-item">New Perspectives</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Maryam Jafri/2_MariamJafriVsMaryamJafri.webp" alt="Mariam Jafri vs Maryam Jafri">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/mattijs-van-de-port/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="mattijs van de port"
                        data-letter="m"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Mattijs van de Port">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Mattijs van de Port">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Mattijs van de Port</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/mattijs-van-de-port/">
+                                        Mattijs van de Port
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Mattijs van de Port (b. 1966, the Netherlands) is a visual anthropologist, writer and filmmaker whose cinematic practice emerges from fieldwork in Serbia, the Netherlands and Brazil. Professor at the University of Amsterdam with a PhD in cultural anthropology, his cinematic works —including Saborear Frutas Brasileiras (2013), The Possibility of Spirits (2016), Knots and Holes (2018) and The Body Won’t Close (2021)—are ethnographic essay films that explore sensual encounters, cultural visuality and temporal thresholds. His monographs and films interrogate how everyday material infrastructures and religious practices shape the lived real.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Where can I get Lost?</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2024, Netherlands, 70&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="where-can-i-get-lost">
+            <a href="/leff/en/programme/films/where-can-i-get-lost/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Where can I get Lost? film page">
+                Where can I get Lost?
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/mattijs-van-de-port/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Mattijs van de Port filmmaker page">
+                Mattijs van de Port
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Wanderers of all paths of life gather through the lens of the anthropological filmmaker, in search of a world larger than the one they know.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Netherlands</span>
+            
+            
+            <span class="film-meta-item">2024</span>
+            
+            
+            <span class="film-meta-item">70&#39;</span>
+            
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Mattijs van de Port/still.webp" alt="Where can I get Lost?">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/michela-meliddo/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="michela meliddo"
                        data-letter="m"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Michela Meliddo">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Michela Meliddo">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Michela Meliddo</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/michela-meliddo/">
+                                        Michela Meliddo
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Michela Meliddo (b. 1999, Gravina in Puglia, Italy) is graphic designer and filmmaker based in The Hague (NL). Through field research and narrative fiction she investigates contemporary issues that involve human relationships with nature and technology. Her research specifically addresses the objectification of the natural world through technological processes that have produced a dichotomy between the ‘human’ and ‘natural’.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Perpetual Radiance</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2024, Netherlands, 14&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="perpetual-radiance">
+            <a href="/leff/en/programme/films/perpetual-radiance/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Perpetual Radiance film page">
+                Perpetual Radiance
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/michela-meliddo/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Michela Meliddo filmmaker page">
+                Michela Meliddo
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>A poetic reflection on artificial light and the disappearance of night. In this imagined future, nature flickers in pink and black – disrupted, studied, and slowly fading.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Netherlands</span>
+            
+            
+            <span class="film-meta-item">2024</span>
+            
+            
+            <span class="film-meta-item">14&#39;</span>
+            
+            
+            <span class="film-meta-item">New Perspectives</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Michela Meliddo/Still04.webp" alt="Perpetual Radiance">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/miko-revereza/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="miko revereza"
                        data-letter="m"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Miko Revereza">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Miko Revereza">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Miko Revereza</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/miko-revereza/">
+                                        Miko Revereza
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Miko Revereza (b. Philippines; based in the USA) is an experimental filmmaker whose deeply personal practice reflects undocumented migration, digital infrastructure and colonial legacies. His acclaimed essay films No Data Plan (2019) and Nowhere Near (2020) use on‑call phone dialogue, train travel and hybrid narrative structures to evoke familial displacement and geopolitical awakening. His work, recognized by the Criterion Collection and the Vilcek Creative Promise Prize, is both intimate and structurally urgent.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Nowhere Near</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2023, US/Philippines, 96&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="nowhere-near">
+            <a href="/leff/en/programme/films/nowhere-near/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Nowhere Near film page">
+                Nowhere Near
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/miko-revereza/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Miko Revereza filmmaker page">
+                Miko Revereza
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Nowhere Near by Miko Revereza is a poignant essay film that explores  displacement and the immigrant experience. Through personal meditations and striking visuals, Revereza reflects on the complexities of belonging and the struggle to bridge cultural gaps.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">US/Philippines</span>
+            
+            
+            <span class="film-meta-item">2023</span>
+            
+            
+            <span class="film-meta-item">96&#39;</span>
+            
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Miko Revereza/NowhereNear_Still02.webp" alt="Nowhere Near">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/miranda-pennell/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="miranda pennell"
                        data-letter="m"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Miranda Pennell">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Miranda Pennell">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Miranda Pennell</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/miranda-pennell/">
+                                        Miranda Pennell
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Miranda Pennell (b. 1963, UK; based in London) is a London-based artist-filmmaker whose work engages archival imagery from British colonial contexts to meditate on memory, imagination and imperial legacies. Initially trained as a dancer, she shifted to essayistic filmmaking, exploring choreography in everyday life before studying visual anthropology (MA Goldsmiths, PhD Westminster). Her award-winning films—including Why Colonel Bunny Was Killed and The Host—interrogate how historical documents shape present-day imaginaries and colonial histories.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Man Number 4</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2024, UK, 10&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="man-number-4">
+            <a href="/leff/en/programme/films/man-number-4/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Man Number 4 film page">
+                Man Number 4
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/miranda-pennell/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Miranda Pennell filmmaker page">
+                Miranda Pennell
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Zooming into a disturbing image of detained Gazans circulating on social media, our passive consumption and complicity of the genocide is questioned.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">UK</span>
+            
+            
+            <span class="film-meta-item">2024</span>
+            
+            
+            <span class="film-meta-item">10&#39;</span>
+            
+            
+            <span class="film-meta-item">Kamal Aljafari in Focus</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/placeholder.webp" alt="Man Number 4">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/nguyen-trinh-thi/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="nguyễn trinh thi"
                        data-letter="n"
                        data-film-count="2">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Nguyễn Trinh Thi">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Nguyễn Trinh Thi">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Nguyễn Trinh Thi</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/nguyen-trinh-thi/">
+                                        Nguyễn Trinh Thi
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Nguyễn Trinh Thi (b. 1973, Vietnam; lives in Hanoi) is a pioneering independent filmmaker and media artist whose films and installations interrogate memory, archival silence and social trauma in post‑war Vietnam. Educated in journalism, photography and international studies (in the U.S.), she creates investigative video essays and documentary experiments that deploy found footage, sound and narrative to uncover marginalized histories and alternative imaginaries.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (2):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Letters from Panduranga</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2015, Vietnam, 35&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">How to Improve the World</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2021, Vietnam, 47&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="letters-from-panduranga">
+            <a href="/leff/en/programme/films/letters-from-panduranga/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Letters from Panduranga film page">
+                Letters from Panduranga
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/nguyen-trinh-thi/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Nguyễn Trinh Thi filmmaker page">
+                Nguyễn Trinh Thi
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Explores the erasure of indigenous Cham culture amid Vietnam’s nuclear power plans through a letter exchange between a man and a woman.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Vietnam</span>
+            
+            
+            <span class="film-meta-item">2015</span>
+            
+            
+            <span class="film-meta-item">35&#39;</span>
+            
+            
+            <span class="film-meta-item">Nguyễn Trinh Thi in Focus</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Nguyễn Trinh Thi/Letters from Panduranga/Letters from Panduranga still_maily.webp" alt="Letters from Panduranga">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="how-to-improve-the-world">
+            <a href="/leff/en/programme/films/how-to-improve-the-world/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View How to Improve the World film page">
+                How to Improve the World
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/nguyen-trinh-thi/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Nguyễn Trinh Thi filmmaker page">
+                Nguyễn Trinh Thi
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Do you trust sound or image more? Listen closely to the sounds and images of the Indigenous peoples in the Central Highlands of Vietnam.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Vietnam</span>
+            
+            
+            <span class="film-meta-item">2021</span>
+            
+            
+            <span class="film-meta-item">47&#39;</span>
+            
+            
+            <span class="film-meta-item">Nguyễn Trinh Thi in Focus</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Nguyễn Trinh Thi/How to Improve the World/How to Improve the World Still 6.webp" alt="How to Improve the World">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/nika-pecarina/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="nika pećarina"
                        data-letter="n"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Nika Pećarina">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Nika Pećarina">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Nika Pećarina</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/nika-pecarina/">
+                                        Nika Pećarina
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Nika Pećarina (b. 1992) lives in Zagreb where he is busy with audiovisual and performing arts, ceramics, poetry, and an interest towards gastronomy. He takes notice of sex, thingness, and the transformation of matter, ie. the relation of work and the physical, followed by the distinctiveness and effects of media, measure, form, and the visible, delicacy, smoothness, and smallness.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">To the Earthern Red</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2022, Netherlands, 19&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="to-the-earthern-red">
+            <a href="/leff/en/programme/films/to-the-earthern-red/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View To the Earthern Red film page">
+                To the Earthern Red
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/nika-pecarina/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Nika Pećarina filmmaker page">
+                Nika Pećarina
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>“The enduring material bond between soil and soul”; entanglement of the earth’s materiality and the inner world, poetically reflected upon by a young Czechian artist.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Netherlands</span>
+            
+            
+            <span class="film-meta-item">2022</span>
+            
+            
+            <span class="film-meta-item">19&#39;</span>
+            
+            
+            <span class="film-meta-item">New Perspectives</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Nika Pećarina/crvenojbojizarenezemlje_v2_x4.webp" alt="To the Earthern Red">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/sasha-litvintseva-beny-wagner/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="sasha litvintseva &amp; beny wagner"
                        data-letter="s"
-                       data-film-count="1">
+                       data-film-count="0">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Sasha Litvintseva &amp; Beny Wagner">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Sasha Litvintseva &amp; Beny Wagner">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Sasha Litvintseva &amp; Beny Wagner</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/sasha-litvintseva-beny-wagner/">
+                                        Sasha Litvintseva &amp; Beny Wagner
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Sasha Litvintseva &amp; Beny Wagner collaborate as filmmakers, writers and media researchers whose work explores the intersections of media, ecology, science history and epistemology. Litvintseva (b. 1989, Murmansk; PhD Goldsmiths, senior lecturer at Queen Mary University) and Wagner (b. 1985, Berlin; Bard College, Jan van Eyck fellow) have co-created a trilogy of short films—A Demonstration (2020), Constant (2022) and My Want of You Partakes of Me (2023)—that trace the political histories of monsters, measurement standards and digestion. Their practice spans cinema, writing (as in All Thoughts Fly and Geological Filmmaking) and conceptual research.</p>
                                 </div>
-                                
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">My Want of You Partakes of Me</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2024, UK, 55&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/sergey-loznitsa/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="sergey loznitsa"
                        data-letter="s"
                        data-film-count="0">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Sergey Loznitsa">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Sergey Loznitsa">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Sergey Loznitsa</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/sergey-loznitsa/">
+                                        Sergey Loznitsa
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Sergei Loznitsa (b. 1964, Belarus; raised in Kyiv) is a Ukrainian director of Belarusian origin known for both documentary and fiction films. A former applied‑mathematician who worked on AI research, he studied cinema at Moscow’s VGIK before turning to filmmaking in the mid‑1990s. His documentaries (Maidan, Austerlitz) and features (My Joy, In the Fog, The History of Natural Destruction) offer nuanced, often bleak examinations of post‑Soviet politics, memory, collective history and the erosion of truth in contemporary society.</p>
                                 </div>
-                                
-                                    <div class="filmmaker-films-section">
-                                        <p><em>No films found in current programme.</em></p>
-                                    </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/susanna-tomassini/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="susanna tomassini"
                        data-letter="s"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Susanna Tomassini">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Susanna Tomassini">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Susanna Tomassini</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/susanna-tomassini/">
+                                        Susanna Tomassini
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Susanna Tomassini is a designer based in the Netherlands. With a BA in graphic design (ISIA U, Italy) and a MA in Information Design (DAE, Netherlands) she explores visual communication with a multidisciplinary approach. She likes to print, film, write, draw, visualize, collect, research and above all learn. She is currently looking for new collaborations.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">The Southern Thruway</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2025, Netherlands, 14&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="the-southern-thruway">
+            <a href="/leff/en/programme/films/the-southern-thruway/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View The Southern Thruway film page">
+                The Southern Thruway
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/susanna-tomassini/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Susanna Tomassini filmmaker page">
+                Susanna Tomassini
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>The Southern Thruway weaves a personal story about housing precarity with the political idea of belonging, exploring themes of uncertainty, forced collectivity, transcience, and unconventional love.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Netherlands</span>
+            
+            
+            <span class="film-meta-item">2025</span>
+            
+            
+            <span class="film-meta-item">14&#39;</span>
+            
+            
+            <span class="film-meta-item">New Perspectives</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Susanna Tomassini/TST_still3.webp" alt="The Southern Thruway">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/toyisha-tsunoda/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="toyisha tsunoda"
                        data-letter="t"
                        data-film-count="0">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Toyisha Tsunoda">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Toyisha Tsunoda">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Toyisha Tsunoda</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/toyisha-tsunoda/">
+                                        Toyisha Tsunoda
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Toyisha Tsunoda (b. 1964, Kanagawa, Japan) is a pioneering sound artist whose field recordings, acoustic collages and vibrational sculptures explore the phenomenology of perception and landscape. Trained originally in oil painting at Tokyo National University of Fine Arts and Music, Tsunoda approaches field recording not as documentation but as subjective depiction—an immersive method of hearing place as alive, impermanent and in flux. Works such as Landscape and Voice and the Extract from Field Recording Archive series map vibrations and voice across spaces, drawing attention to the physical and poetic experience of listening.</p>
                                 </div>
-                                
-                                    <div class="filmmaker-films-section">
-                                        <p><em>No films found in current programme.</em></p>
-                                    </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/veronica-munteau-karin-nakajima-sara-ouljour/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="veronica munteau, karin nakajima, sara ouljour"
                        data-letter="v"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Veronica Munteau, Karin Nakajima, Sara Ouljour">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Veronica Munteau, Karin Nakajima, Sara Ouljour">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Veronica Munteau, Karin Nakajima, Sara Ouljour</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/veronica-munteau-karin-nakajima-sara-ouljour/">
+                                        Veronica Munteau, Karin Nakajima, Sara Ouljour
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Karin Nakajima, Sara Ouljour, and Veronica Munteau are filmmakers and students whose practices converge around the essay film as a space for reimagining politics, memory, and belonging. Nakajima approaches the form through its affinity with the unconventional, embracing strangeness as a way to probe how remembrance and identity take shape. Ouljour, based in Rotterdam and born in Morocco, turns to both film and writing to address questions of migration and anti-imperialism. Munteau, a Moldovan filmmaker and writer, moves fluidly between poetry, prose, and experimental cinema, her work unfolding through an intuitive process of noticing, questioning, and remembering. Together, their practices highlight the essay film’s potential as both a tool of inquiry and a mode of poetic and political expression.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Haunted, the Hollow</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2025, Netherlands, 13&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="haunted-the-hollow">
+            <a href="/leff/en/programme/films/haunted-the-hollow/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Haunted, the Hollow film page">
+                Haunted, the Hollow
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/veronica-munteau-karin-nakajima-sara-ouljour/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Veronica Munteau, Karin Nakajima, Sara Ouljour filmmaker page">
+                Veronica Munteau, Karin Nakajima, Sara Ouljour
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Exploring industrial decline’s lingering impact through past trauma – Haunted, the Hollow reflects on memory, community, and the uncertainty of the future.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Netherlands</span>
+            
+            
+            <span class="film-meta-item">2025</span>
+            
+            
+            <span class="film-meta-item">13&#39;</span>
+            
+            
+            <span class="film-meta-item">New Perspectives</span>
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Veronica Munteau, Karin Nakajima, Sara Ouljour/Screenshot 2025-08-08 at 11.08.52.webp" alt="Haunted, the Hollow">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
-                    <a href="/en/programme/filmmakers/vincent-meessen/" 
-                       class="filmmaker-card-link" 
+                    <div class="filmmaker-card-link" 
                        data-name="vincent meessen"
                        data-letter="v"
                        data-film-count="1">
                         <div class="filmmaker-card">
-                            <div class="filmmaker-card-image">
+                            <!-- <div class="filmmaker-card-image">
                                 
-                                <img src="/assets/images/placeholder.webp" alt="Vincent Meessen">
-                            </div>
+                                <img src="/leff/assets/images/placeholder.webp" alt="Vincent Meessen">
+                            </div> -->
                             <div class="filmmaker-card-text-wrapper">
-                                <h2>Vincent Meessen</h2>
+                                <h2>
+                                    <a href="/leff/en/programme/filmmakers/vincent-meessen/">
+                                        Vincent Meessen
+                                    </a>
+                                </h2>
                                 <div class="filmmaker-bio">
                                     <p>Vincent Meessen (b. 1971, Baltimore, USA; lives in Brussels) is an artist, filmmaker, curator and researcher whose transdisciplinary practice reorients narration around colonial histories and multiple gazes. A founding member of collectives like Universal Embassy and Jubilee, he represented Belgium at the 56th Venice Biennale in 2015 with Personne et les autres. His work, including films such as Juste un mouvement, uses archival gestures, institutional critique and polyphonic strategies to destabilise fixed historiographies and foreground collective subjectivities.</p>
                                 </div>
+                            </div>
+                            <div class="filmmaker-films-container">
                                 
-                                    <div class="filmmaker-films-section">
-                                        <h3>Films in programme (1):</h3>
-                                        <div class="filmmaker-films-list">
-                                            
-                                                <div>
-                                                    <span class="filmmaker-film-link">Juste un mouvement</span>
-                                                    <span class="filmmaker-film-info">
-                                                        (2021, Belgium, 108&#39;)
-                                                    </span>
-                                                </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="filmmaker-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <h4 id="juste-un-mouvement">
+            <a href="/leff/en/programme/films/juste-un-mouvement/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Juste un mouvement film page">
+                Juste un mouvement
+            </a>
+        </h4>
+        
+        <h5 style="font-size: 20px;">
+            
+            <a href="/leff/en/programme/filmmakers/vincent-meessen/" 
+               style="color: inherit; text-decoration: underline solid 2px;"
+               title="View Vincent Meessen filmmaker page">
+                Vincent Meessen
+            </a>
+        </h5>
+        
+        
+        <div class="film-synopsis">
+            <p>Juste un mouvement by Vincent Meessen revisits Jean-Luc Godard’s La Chinoise through the story of Omar Blondin Diop, blending essay, biography, and political cinema into a layered recontextualization.</p>
+        </div>
+        
+        <div class="film-meta">
+            
+            <span class="film-meta-item">Belgium</span>
+            
+            
+            <span class="film-meta-item">2021</span>
+            
+            
+            <span class="film-meta-item">108&#39;</span>
+            
+            
+            <span class="film-meta-item">leff 2025</span>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Vincent Meessen/15.webp" alt="Juste un mouvement">
+        
+    </div>
+</div>
+                                    
+                                </div>
                                 
                             </div>
                         </div>
-                    </a>
+                    </div>
                 
             
         </div>
@@ -1801,7 +3321,7 @@ Lucia Nimcová is an award-winning photographer and visual artist, David Petrá�
                                     value="I agree to the processing of my data as described in the privacy policy and to receive the leff newsletter and updates.">
                                 <label for="mce-MMERGE50">
                                     I agree to the processing of my data as described in the
-                                    <a href="/en/privacy/">Privacy Policy</a> and to receive the leff newsletter and updates.
+                                    <a href="/leff/en/privacy/">Privacy Policy</a> and to receive the leff newsletter and updates.
                                 </label>
                             </div>
                             <div class="mc-field-group">
@@ -1828,15 +3348,15 @@ Lucia Nimcová is an award-winning photographer and visual artist, David Petrá�
                 <h4>Navigation</h4>
                 <ul>
                     
-                    <li><a href="/en/">Home</a></li>
+                    <li><a href="/leff/en/">Home</a></li>
                     
-                    <li><a href="/en/programme/">Programme 2025</a></li>
+                    <li><a href="/leff/en/programme/">Programme 2025</a></li>
                     
-                    <li><a href="/en/schedule/">Block Schedule</a></li>
+                    <li><a href="/leff/en/schedule/">Block Schedule</a></li>
                     
-                    <li><a href="/en/location/">Locations</a></li>
+                    <li><a href="/leff/en/location/">Locations</a></li>
                     
-                    <li><a href="/en/tickets/">Tickets</a></li>
+                    <li><a href="/leff/en/tickets/">Tickets</a></li>
                     
                 </ul>
             </div>
@@ -1844,8 +3364,8 @@ Lucia Nimcová is an award-winning photographer and visual artist, David Petrá�
             <div class="footer-info">
                 <h4>About leff</h4>
                 <ul>
-                    <li><a href="/en/about/">Festival</a></li>
-                    <li><a href="/en/organisation/">Organisation</a></li>
+                    <li><a href="/leff/en/about/">Festival</a></li>
+                    <li><a href="/leff/en/organisation/">Organisation</a></li>
                 </ul>
             </div>
 
@@ -1854,7 +3374,7 @@ Lucia Nimcová is an award-winning photographer and visual artist, David Petrá�
                 <ul>
                     <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
                     <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank">Instagram</a></li>
-                    <li><a href="/en/privacy/">Privacy Policy</a></li>
+                    <li><a href="/leff/en/privacy/">Privacy Policy</a></li>
                 </ul>
             </div>
 
@@ -1871,7 +3391,7 @@ Lucia Nimcová is an award-winning photographer and visual artist, David Petrá�
     </footer>
 
     
-<script src="/search.js"></script>
+<script src="/leff/search.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         // initialize shared search utility for filmmakers page
@@ -1890,10 +3410,10 @@ Lucia Nimcová is an award-winning photographer and visual artist, David Petrá�
 
     <div id="custom-cursor"></div>
 
-    <script src="/scripts.js"></script>
+    <script src="/leff/scripts.js"></script>
     <script>
         // set base path for javascript to use
-        window.BASE_PATH = '/';
+        window.BASE_PATH = '/leff/';
 
         // hello screen
         console.log("\n\n\n\t" +

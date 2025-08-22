@@ -41,7 +41,8 @@ WHATS TO BE DONE:
 - BUG: 
     true one:  http://127.0.0.1:5500/en/programme/filmmakers/elysa-wendi/
     exists:    http://127.0.0.1:5500/en/programme/filmmakers/elysa-wendi-shing-lee/
-
+        BUG:
+            its also a problem with url linkage of the images and url page generation
 
 - [] Programme
 - [] filters

@@ -5,28 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Leiden Essay Film Festival">
-    <meta name="keywords" content="film festival, essay film, leiden, cinema, documentary, Chris Marker, leff, Laura Rascaroli, Harun Farocki">
+    <meta name="keywords" content="leiden, film festival, leiden essay film festival, leiden film festival, leff">
     <meta name="description" content="The first festival in the Netherlands dedicated entirely to the essay film">
 
-    <meta property="og:title" content="Leiden Essay Film Festival">
+    <meta property="og:title" content="LEFF">
     <meta property="og:description" content="The first festival in the Netherlands dedicated entirely to the essay film">
-    <meta property="og:image" content="/assets/header/og_1200x1200.png">
+    <meta property="og:image" content="/leff/assets/header/og_1200x1200.png">
     <meta property="og:url" content="">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="/assets/header/og_1200x1200.png">
+    <meta name="twitter:image" content="/leff/assets/header/og_1200x1200.png">
 
-    <link rel="icon" href="/assets/header/favicon.ico" sizes="any">
-    <link rel="icon" href="/assets/header/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/header/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/header/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/assets/header/android-chrome-512x512.png">
+    <link rel="icon" href="/leff/assets/header/favicon.ico" sizes="any">
+    <link rel="icon" href="/leff/assets/header/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/leff/assets/header/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/leff/assets/header/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/leff/assets/header/android-chrome-512x512.png">
     <meta name="theme-color" content="#C0BEBF">
 
-    <title> Was ist Los? - Leiden Essay Film Festival</title>
+    <title> Was ist Los? - LEFF</title>
 
     <!-- base href for github pages deployment -->
     
-    <link rel="stylesheet" href="/styles.db105520e7.css">
+    <base href="/leff/">
+    
+    <link rel="stylesheet" href="/leff/styles.320e07f072.css">
     
 
     
@@ -42,7 +44,6 @@
     }
 
     #film-shots {
-        background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
         position: relative;
         background: var(--bg-main);
         overflow: hidden;
@@ -51,6 +52,18 @@
         align-items: center;
         justify-content: center;
         width: 100%;
+    }
+
+    #film-shots::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+        pointer-events: none;
+        z-index: 1;
     }
 
     #film-shots img {
@@ -80,11 +93,11 @@
         display: flex;
         flex-direction: column;
         gap: var(--space-md);
-        max-width: 100%;
+        max-width: 80%;
     }
 
     .film-title {
-        font-size: 6rem;
+        font-size: 4rem;
         font-weight: normal;
         color: var(--accent);
         margin: 0;
@@ -111,7 +124,7 @@
     }
 
     .film-details * {
-        font-size: 1.875rem;
+        font-size: 1.25rem;
         vertical-align: baseline;
         margin-right: var(--space-sm);
     }
@@ -253,7 +266,7 @@
 
 <body>
     <nav>
-        <a href="/nl/"><img src="/assets/leff-logo-yellow.svg"
+        <a href="/leff/nl/"><img src="/leff/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
         <div id="circle-container">
             <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
@@ -265,7 +278,7 @@
             <div id="languages">
                 
                 
-                <a href="/en/programme/films/was-ist-los/">
+                <a href="/leff/en/programme/films/was-ist-los/">
                     <button>EN</button>
                 </a>
                 
@@ -296,7 +309,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
-                            <a href="/nl/">Home</a>
+                            <a href="/leff/nl/">Home</a>
                             
                         </li>
                         
@@ -314,19 +327,15 @@
                                 <ul class="menu-dropdown-content" id="programme-dropdown">
                                     
                                     <li>
-                                        <a href="/nl/programme/films">A—Z film</a>
+                                        <a href="/leff/nl/programme/films">A—Z film</a>
                                     </li>
                                     
                                     <li>
-                                        <a href="/nl/programme/filmmakers">A—Z filmmakers</a>
+                                        <a href="/leff/nl/programme/filmmakers">A—Z filmmakers</a>
                                     </li>
                                     
                                     <li>
-                                        <a href="/nl/programme/films">Tijd</a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="/nl/programme/films">Locatie</a>
+                                        <a href="/leff/nl/programme/theme-blocks">Thema Blokken</a>
                                     </li>
                                     
                                 </ul>
@@ -339,7 +348,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
-                            <a href="/nl/schedule/">Blokkenschema</a>
+                            <a href="/leff/nl/schedule/">Blokkenschema</a>
                             
                         </li>
                         
@@ -348,7 +357,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
-                            <a href="/nl/location/">Locaties</a>
+                            <a href="/leff/nl/location/">Locaties</a>
                             
                         </li>
                         
@@ -357,7 +366,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
-                            <a href="/nl/tickets/">Tickets</a>
+                            <a href="/leff/nl/tickets/">Tickets</a>
                             
                         </li>
                         
@@ -375,11 +384,11 @@
                                 <ul class="menu-dropdown-content" id="about-dropdown">
                                     
                                     <li>
-                                        <a href="/nl/about/">Festival</a>
+                                        <a href="/leff/nl/about/">Festival</a>
                                     </li>
                                     
                                     <li>
-                                        <a href="/nl/organisation/">Organisatie</a>
+                                        <a href="/leff/nl/organisation/">Organisatie</a>
                                     </li>
                                     
                                 </ul>
@@ -408,15 +417,15 @@
             
             
                 
-                <img src="/../../../../assets/images/film-images/Harun Farocki/What&#39;s up - Was ist los/Was ist los 01.webp" alt="shot 1 from the film Was ist Los?">
+                <img src="/leff/../../../../assets/images/film-images/Harun Farocki/What&#39;s up - Was ist los/Was ist los 01.webp" alt="shot 1 from the film Was ist Los?">
                 
-                <img src="/../../../../assets/images/film-images/Harun Farocki/What&#39;s up - Was ist los/Was ist los 03.webp" alt="shot 2 from the film Was ist Los?">
+                <img src="/leff/../../../../assets/images/film-images/Harun Farocki/What&#39;s up - Was ist los/Was ist los 03.webp" alt="shot 2 from the film Was ist Los?">
                 
-                <img src="/../../../../assets/images/film-images/Harun Farocki/What&#39;s up - Was ist los/Was ist los 02.webp" alt="shot 3 from the film Was ist Los?">
+                <img src="/leff/../../../../assets/images/film-images/Harun Farocki/What&#39;s up - Was ist los/Was ist los 02.webp" alt="shot 3 from the film Was ist Los?">
                 
-                <img src="/../../../../assets/images/film-images/Harun Farocki/What&#39;s up - Was ist los/Was ist los 05.webp" alt="shot 4 from the film Was ist Los?">
+                <img src="/leff/../../../../assets/images/film-images/Harun Farocki/What&#39;s up - Was ist los/Was ist los 05.webp" alt="shot 4 from the film Was ist Los?">
                 
-                <img src="/../../../../assets/images/film-images/Harun Farocki/What&#39;s up - Was ist los/Was ist los 04.webp" alt="shot 5 from the film Was ist Los?">
+                <img src="/leff/../../../../assets/images/film-images/Harun Farocki/What&#39;s up - Was ist los/Was ist los 04.webp" alt="shot 5 from the film Was ist Los?">
                 
             
             <div class="gallery-navigation">
@@ -511,7 +520,7 @@
                                     value="Ik ga akkoord met de verwerking van mijn gegevens zoals beschreven in het privacybeleid en om de leff nieuwsbrief en updates te ontvangen.">
                                 <label for="mce-MMERGE50">
                                     Ik ga akkoord met de verwerking van mijn gegevens zoals beschreven in het
-                                    <a href="/nl/privacy/">Privacybeleid</a> en om de leff nieuwsbrief en updates te ontvangen.
+                                    <a href="/leff/nl/privacy/">Privacybeleid</a> en om de leff nieuwsbrief en updates te ontvangen.
                                 </label>
                             </div>
                             <div class="mc-field-group">
@@ -538,15 +547,15 @@
                 <h4>Navigatie</h4>
                 <ul>
                     
-                    <li><a href="/nl/">Home</a></li>
+                    <li><a href="/leff/nl/">Home</a></li>
                     
-                    <li><a href="/nl/programme/">Programma 2025</a></li>
+                    <li><a href="/leff/nl/programme/">Programma 2025</a></li>
                     
-                    <li><a href="/nl/schedule/">Blokkenschema</a></li>
+                    <li><a href="/leff/nl/schedule/">Blokkenschema</a></li>
                     
-                    <li><a href="/nl/location/">Locaties</a></li>
+                    <li><a href="/leff/nl/location/">Locaties</a></li>
                     
-                    <li><a href="/nl/tickets/">Tickets</a></li>
+                    <li><a href="/leff/nl/tickets/">Tickets</a></li>
                     
                 </ul>
             </div>
@@ -554,8 +563,8 @@
             <div class="footer-info">
                 <h4>Over leff</h4>
                 <ul>
-                    <li><a href="/nl/about/">Festival</a></li>
-                    <li><a href="/nl/organisation/">Organisatie</a></li>
+                    <li><a href="/leff/nl/about/">Festival</a></li>
+                    <li><a href="/leff/nl/organisation/">Organisatie</a></li>
                 </ul>
             </div>
 
@@ -564,7 +573,7 @@
                 <ul>
                     <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
                     <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank">Instagram</a></li>
-                    <li><a href="/nl/privacy/">Privacybeleid</a></li>
+                    <li><a href="/leff/nl/privacy/">Privacybeleid</a></li>
                 </ul>
             </div>
 
@@ -709,10 +718,10 @@
 
     <div id="custom-cursor"></div>
 
-    <script src="/scripts.js"></script>
+    <script src="/leff/scripts.js"></script>
     <script>
         // set base path for javascript to use
-        window.BASE_PATH = '/';
+        window.BASE_PATH = '/leff/';
 
         // hello screen
         console.log("\n\n\n\t" +
