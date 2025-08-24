@@ -1,0 +1,2258 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Leiden Essay Film Festival">
+    <meta name="keywords" content="leiden, film festival, leiden essay film festival, leiden film festival, leff">
+    <meta name="description" content="The first festival in the Netherlands dedicated entirely to the essay film">
+
+    <meta property="og:title" content="LEFF">
+    <meta property="og:description" content="The first festival in the Netherlands dedicated entirely to the essay film">
+    <meta property="og:image" content="/leff/assets/header/og_1200x1200.png">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="/leff/assets/header/og_1200x1200.png">
+
+    <link rel="icon" href="/leff/assets/header/favicon.ico" sizes="any">
+    <link rel="icon" href="/leff/assets/header/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/leff/assets/header/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/leff/assets/header/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/leff/assets/header/android-chrome-512x512.png">
+    <meta name="theme-color" content="#C0BEBF">
+
+    <title>Specials - LEFF</title>
+
+    <!-- base href for github pages deployment -->
+    
+    <base href="/leff/">
+    
+    <link rel="stylesheet" href="/leff/styles.f41dbe3a56.css">
+    
+
+    
+<style>
+    /*
+        specials page styles - dedicated layouts for special programme blocks
+    */
+    
+    .content-wrapper {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 2fr 10fr;
+        gap: var(--space-xl);
+    }
+
+    .search-utilities {
+        grid-column: 1 / 2;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2xl);
+        align-self: start;
+        position: sticky;
+        top: var(--space-2xl);
+    }
+
+    .search-top,
+    .search-side {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    #search-bar input {
+        width: 100%;
+        padding: var(--space-sm);
+        border: 2px solid var(--bg-main);
+        background: transparent;
+        color: var(--text-main);
+        font-family: inherit;
+        font-size: 1rem;
+        border-radius: 0;
+        transition: all 0.2s var(--transition);
+    }
+
+    #search-bar input:focus {
+        outline: none;
+        background: var(--bg-main);
+        color: var(--accent);
+    }
+
+    #search-bar input::placeholder {
+        color: var(--dark-silver);
+    }
+
+    .search-side .sort-button {
+        background: transparent;
+        border: 2px solid var(--bg-main);
+        color: var(--bg-main);
+        padding: var(--space-sm);
+        text-align: left;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: all 0.2s var(--transition);
+        font-size: 1rem;
+    }
+
+    .search-side .sort-button:hover,
+    .search-side .sort-button.active {
+        background: var(--bg-main);
+        color: var(--accent);
+    }
+    
+    .specials-container {
+        grid-column: 2 / 3;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: var(--space-5xl);
+    }
+    
+    .special-block-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        background: var(--silver);
+        transition: all 0.2s var(--transition);
+        height: 100%;
+    }
+    
+    .special-block-card:hover {
+        background: var(--bg-main);
+        color: var(--accent);
+    }
+    
+    .special-block-header {
+        grid-column: 1 / -1;
+        padding: var(--space-xl);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-lg);
+        justify-content: flex-start;
+    }
+    
+    .special-block-card h2 {
+        font-size: 2.25rem;
+        font-weight: normal;
+        margin: 0;
+        color: inherit;
+        cursor: pointer;
+    }
+    
+    .special-block-card h2 a {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.2s var(--transition);
+    }
+    
+    .special-block-card:hover h2 a {
+        text-decoration: underline;
+    }
+    
+    .special-block-description {
+        font-size: 1.25rem;
+        color: inherit;
+        line-height: 1.4;
+    }
+    
+    .special-block-description p {
+        margin-bottom: var(--space-md);
+    }
+
+    .special-block-films-container {
+        grid-column: 1 / -1;
+        padding: 0 var(--space-xl) var(--space-xl);
+        padding-top: var(--space-xl);
+    }
+
+    .special-block-films-container .film-card {
+        margin-block: var(--space-md);
+    }
+
+    .special-block-films-container .film-card:first-child {
+        /* border-top: none; */
+    }
+
+    .special-block-meta {
+        grid-column: 1 / -1;
+        padding: 0 var(--space-xl);
+        padding-bottom: var(--space-md);
+        font-size: 0.875rem;
+        color: inherit;
+        opacity: 0.8;
+    }
+    
+    @media (max-width: 768px) {
+        .content-wrapper {
+            grid-template-columns: 1fr;
+        }
+
+        .search-utilities {
+            position: static;
+            top: auto;
+            grid-column: 1 / -1;
+        }
+
+        .specials-container {
+            grid-column: 1 / -1;
+        }
+        
+        .special-block-card {
+            grid-template-columns: 1fr;
+            min-height: auto;
+        }
+        
+        .special-block-header {
+            padding: var(--space-lg);
+        }
+        
+        .special-block-card h2 {
+            font-size: 1.875rem;
+        }
+        
+        .special-block-description {
+            font-size: 1.125rem;
+        }
+
+        .special-block-films-container .film-card {
+            background: var(--silver);
+            padding-top: var(--space-lg);
+        }
+    }
+
+</style>
+
+
+    
+</head>
+
+<body>
+    <nav>
+        <a href="/leff/nl/"><img src="/leff/assets/leff-logo-yellow.svg"
+                alt="leiden essay film festival logo" id="nav-logo"></a>
+        <div id="circle-container">
+            <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
+                Tickets
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                    <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                </svg>
+            </a>
+            <div id="languages">
+                
+                
+                <a href="/leff/en/programme/specials/">
+                    <button>EN</button>
+                </a>
+                
+                
+                
+                <button class="active">NL</button>
+                
+                
+            </div>
+            <div id="circle"></div>
+            <div class="menu-close" style="display: none;">
+                <button class="close-icon" id="menu-close" aria-label="close">
+                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="menu-overlay" class="menu-overlay">
+            <div class="menu-grid grid-base">
+                <div class="menu-nav">
+                    <ul>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/nl/">Home</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="programme">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
+                                            stroke-width="2" />
+                                    </svg>
+                                    <div class="drp-dwn-item-txt">Programma 2025</div>
+                                </button>
+                                <ul class="menu-dropdown-content" id="programme-dropdown">
+                                    
+                                    <li>
+                                        <a href="/leff/nl/programme/films">A—Z film</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/nl/programme/filmmakers">A—Z filmmakers</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/nl/programme/specials">Specials</a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/nl/schedule/">Blokkenschema</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/nl/location/">Locaties</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/nl/tickets/">Tickets</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="about">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
+                                            stroke-width="2" />
+                                    </svg>
+                                    <div class="drp-dwn-item-txt">Over leff</div>
+                                </button>
+                                <ul class="menu-dropdown-content" id="about-dropdown">
+                                    
+                                    <li>
+                                        <a href="/leff/nl/about/">Festival</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/nl/organisation/">Organisatie</a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <section class="page-contents">
+        
+<div class="grid-base" id="specials-page">
+    <h1 class="page-title">
+        PROGRAMMA 2025 / SPECIALS
+    </h1>
+
+    
+    <div class="content-wrapper">
+        <div class="search-utilities">
+            <div class="search-top">
+                <div id="search-bar">
+                    <input type="text" id="specials-search"
+                        placeholder="Zoek specials...">
+                </div>
+            </div>
+            <div class="search-side">
+                <button class="sort-button active" data-sort="name">Alfabetisch A—Z</button>
+                <button class="sort-button" data-sort="films">Film Count</button>
+            </div>
+        </div> 
+
+        <div class="specials-container">
+            
+                
+                    <div class="special-block-card-link" 
+                       data-name="arbeiders verlaten de fabriek"
+                       data-films="4"
+                       data-block-id="block-1">
+                        <div class="special-block-card">
+                            <div class="special-block-header">
+                                <h2 class="special-block-title">
+                                    <a href="/leff/nl/programme/specials/arbeiders-verlaten-de-fabriek/"
+                                       title="View Arbeiders verlaten de fabriek special page">
+                                        Arbeiders verlaten de fabriek
+                                    </a>
+                                </h2>
+                                
+                                <div class="special-block-description">
+                                    La sortie de l'usine Lumière à Lyon (1895) van de gebroeders Lumière was de eerste publiek vertoonde film. De film toont een groep arbeiders die de poorten van een industriële fabriek verlaten. Deze opname van 50 seconden groeide uit tot een fundament voor de aanhoudende fascinatie onder cineasten voor de vraag hoe arbeid verbeeld kan worden. Waarom keren filmmakers zo vaak terug naar het moment waarop arbeiders vertrekken, en zelden naar het moment waarop ze werken? Wat wordt er zichtbaar – of juist verborgen – aan de fabriekspoort?<br>Vertrekkend vanuit het iconische beeld van de Lumières brengt dit themablok hedendaagse essayfilms samen die de (on)zichtbaarheid van arbeid onder mondiaal kapitalisme bevragen, evenals de cinematografische uitdagingen die dit met zich meebrengt. Harun Farocki’s Workers Leaving the Factory (1995) vormt het ankerpunt. In een analyse van de oorspronkelijke film van de Lumières wijst Farocki op het feit dat cinema fabrieken zelden als werkplekken toont, maar vooral als locaties van binnenkomst en vertrek. Farocki laat zien hoe het beeld van vertrekkende arbeiders in de loop der tijd steeds gestileerder, repetitiever en geënsceneerd werd – een visueel cliché dat iets onthult over de moeizame verhouding tussen film en arbeid.<br>Daarnaast zijn Andrew Norman Wilsons Workers Leaving the Googleplex (2011) en Ho Rui Ans film Twenty-Four Cinematic Points of View of a Factory Gate in China (2023) te zien.
+                                </div>
+                                
+                            </div>
+                            
+                            
+                            <div class="special-block-meta">
+                                4 films in this programme
+                            </div>
+                            
+                            
+                            
+                            <div class="special-block-films-container">
+                                <div class="special-block-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="twenty-four-cinematic-points-of-view-of-a-factory-gate-in-china">
+                <a href="/leff/nl/programme/films/twenty-four-cinematic-points-of-view-of-a-factory-gate-in-china/"
+                    title="View Twenty-Four Cinematic Points of View of a Factory Gate in China film page">
+                    Twenty-Four Cinematic Points of View of a Factory Gate in China
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/ho-rui-an/"
+                    title="View Ho Rui An filmmaker page">
+                    Ho Rui An
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Een onderzoek naar een fabrieksterrein in China onthult hoe de camerahoek bepaalt wie zichtbaar is – en wie verdwijnt – in het perspectief van arbeid en controle.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">China</span>
+                
+                
+                <span class="film-meta-item">2023</span>
+                
+                
+                <span class="film-meta-item">25&#39;</span>
+                
+                
+                <span class="film-meta-item">Arbeiders verlaten de fabriek</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Ho Rui An/Factory Gate_2.webp" alt="Twenty-Four Cinematic Points of View of a Factory Gate in China">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="workers-leaving-the-googleplex">
+                <a href="/leff/nl/programme/films/workers-leaving-the-googleplex/"
+                    title="View Workers Leaving the Googleplex film page">
+                    Workers Leaving the Googleplex
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/andrew-norman-wilson/"
+                    title="View Andrew Norman Wilson filmmaker page">
+                    Andrew Norman Wilson
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Een surrealistisch onderzoek naar onzichtbare arbeid bij Google, waarin Andrew Norman Wilson de grens blootlegt tussen surveillance en geheimhouding binnen hedendaagse techbedrijven.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item"> VS</span>
+                
+                
+                <span class="film-meta-item">2011</span>
+                
+                
+                <span class="film-meta-item">11&#39;</span>
+                
+                
+                <span class="film-meta-item">Arbeiders verlaten de fabriek</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Andrew Norman Wilson/GoogleStillComposite.webp" alt="Workers Leaving the Googleplex">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="la-sortie-de-l-usine-lumiere-a-lyon">
+                <a href="/leff/nl/programme/films/la-sortie-de-l-usine-lumiere-a-lyon/"
+                    title="View La sortie de l&#39;usine Lumière à Lyon film page">
+                    La sortie de l&#39;usine Lumière à Lyon
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/auguste-en-louis-lumiere/"
+                    title="View Auguste en Louis Lumière filmmaker page">
+                    Auguste en Louis Lumière
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>De allereerste publiek vertoonde film. Dit werk van de gebroeders Lumière heeft een blijvende invloed gehad op cineasten, in het bijzonder essayisten, vooral vanwege de bijzondere representatie van arbeid.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Frankrijk</span>
+                
+                
+                <span class="film-meta-item">1985</span>
+                
+                
+                <span class="film-meta-item">1&#39;</span>
+                
+                
+                <span class="film-meta-item">Arbeiders verlaten de fabriek</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Auguste and Louis Lumière/Lumiere_Workers .jpg" alt="La sortie de l&#39;usine Lumière à Lyon">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="arbeiter-verlassen-die-fabrik">
+                <a href="/leff/nl/programme/films/arbeiter-verlassen-die-fabrik/"
+                    title="View Arbeiter verlassen die Fabrik film page">
+                    Arbeiter verlassen die Fabrik
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/harun-farocki/"
+                    title="View Harun Farocki filmmaker page">
+                    Harun Farocki
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Arbeiter verlassen die Fabrik van Harun Farocki herinterpreteert de iconische film van de gebroeders Lumière uit 1895 en onderzoekt hoe het beeld van arbeiders aan het einde van de werkdag voortleeft in de filmgeschiedenis.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Duitsland</span>
+                
+                
+                <span class="film-meta-item">1995</span>
+                
+                
+                <span class="film-meta-item">36&#39;</span>
+                
+                
+                <span class="film-meta-item">Arbeiders verlaten de fabriek</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_39.webp" alt="Arbeiter verlassen die Fabrik">
+        
+    </div>
+</div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                
+                    <div class="special-block-card-link" 
+                       data-name="classics"
+                       data-films="3"
+                       data-block-id="block-2">
+                        <div class="special-block-card">
+                            <div class="special-block-header">
+                                <h2 class="special-block-title">
+                                    <a href="/leff/nl/programme/specials/classics/"
+                                       title="View Classics special page">
+                                        Classics
+                                    </a>
+                                </h2>
+                                
+                                <div class="special-block-description">
+                                    Deze editie van leff schenkt aandacht aan enkele grote, invloedrijke essayfilms uit het verleden. Chris Markers Sans Soleil (1983) is met zijn avontuurlijke, onderzoekende, reflectieve stijl, het vermengen van feit en fictie en het haast willekeurig navigeren tussen onderwerpen de essayfilm par excellence.<br>Harun Farocki gaf de essayfilm vele vernieuwende impulsen. Zijn klassieker Workers Leaving the Factory (1995) maakt deel uit van ons programma gewijd aan essayistische reacties op de beroemde ‘eerste film ooit’ van de broeders Lumière uit 1895. Samen met Antje Ehmann, Harun Farocki’s co-producer, selecteerden we daarnaast twee minder bekende titels die zijn werkwijze als essayist etaleren: Was ist Los (1991) en Gegen-Musik (2004).<br>Dat Nederland belangrijke filmessayisten heeft voortgebracht bewijst Face Value (1991), Johan van der Keukens aangrijpende beschouwing over Europese identiteiten aan het eind van de 20ste eeuw. Een film waarin portretten uit het leven van alledag van toen een aankondiging blijken van de venijnige politiek van nu.<br>In De l’autre coté (2002) onderzoekt de Belgische filmmaker Chantal Akerman met vooruitziende blik de bewegingen en emoties rondom de grens tussen de V.S. en Mexico. Haar cinematografische stijl, met statische frames en lange shots, laat een andere kant van de essayfilm zien, waarin echter, net als bij de grote montagefilms, tegenstellingen tot nieuwe gezichtspunten leiden.
+                                </div>
+                                
+                            </div>
+                            
+                            
+                            <div class="special-block-meta">
+                                3 films in this programme
+                            </div>
+                            
+                            
+                            
+                            <div class="special-block-films-container">
+                                <div class="special-block-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="sans-soleil">
+                <a href="/leff/nl/programme/films/sans-soleil/"
+                    title="View Sans Soleil film page">
+                    Sans Soleil
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/chris-marker/"
+                    title="View Chris Marker filmmaker page">
+                    Chris Marker
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Sans soleil wordt door velen gezien als de belangrijkste essayfilm. Chris Markers film gaat over herinnering, tijd en beeld via een poëtische reis tussen Japan en West-Afrika.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Frankrijk</span>
+                
+                
+                <span class="film-meta-item">1982</span>
+                
+                
+                <span class="film-meta-item">110&#39;</span>
+                
+                
+                <span class="film-meta-item">Classics</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Chris Marker/Sans soleil - Photo 1.webp" alt="Sans Soleil">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="face-value">
+                <a href="/leff/nl/programme/films/face-value/"
+                    title="View Face Value film page">
+                    Face Value
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/johan-van-der-keuken/"
+                    title="View Johan van der Keuken filmmaker page">
+                    Johan van der Keuken
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Johan van der Keuken’s ambitieuze film onderzoekt de visuele politiek in Europa en experimenteert tegelijkertijd met filmportretten. Via een mozaïek van gezichten, plaatsen en stemmen brengt hij verlangens en angsten in beeld. Een essay over zien en gezien worden.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Nederland</span>
+                
+                
+                <span class="film-meta-item">1991</span>
+                
+                
+                <span class="film-meta-item">120&#39;</span>
+                
+                
+                <span class="film-meta-item">Classics</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.51.03.webp" alt="Face Value">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="de-lautre-cote">
+                <a href="/leff/nl/programme/films/de-lautre-cote/"
+                    title="View De L’autre coté film page">
+                    De L’autre coté
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/chantal-akerman/"
+                    title="View Chantal Akerman filmmaker page">
+                    Chantal Akerman
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Een emotionele verkenning van grenspolitiek, actueler dan ooit. Persoonlijk, meervoudig en meeslepend in de wijze waarop het ons laat kijken én luisteren.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">België</span>
+                
+                
+                <span class="film-meta-item">2006</span>
+                
+                
+                <span class="film-meta-item">100&#39;</span>
+                
+                
+                <span class="film-meta-item">Classics</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Chantal Akerman/FTOS 30 surveillance 6.webp" alt="De L’autre coté">
+        
+    </div>
+</div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                
+                    <div class="special-block-card-link" 
+                       data-name="harun farocki in focus"
+                       data-films="3"
+                       data-block-id="block-3">
+                        <div class="special-block-card">
+                            <div class="special-block-header">
+                                <h2 class="special-block-title">
+                                    <a href="/leff/nl/programme/specials/harun-farocki-in-focus/"
+                                       title="View Harun Farocki in Focus special page">
+                                        Harun Farocki in Focus
+                                    </a>
+                                </h2>
+                                
+                                <div class="special-block-description">
+                                    Harun Farocki, een van Duitslands meest gevierde internationale filmmakers, bouwde een indrukwekkend oeuvre op – bijna honderd films, video’s en installaties – waarin hij de grenzen tussen documentaire, essay en experimentele film consequent vervaagde. Met zijn scherpe analytische blik en politieke inzichten onderzocht hij thema’s als arbeid, oorlog, surveillance en media. Zijn essayfilms nodigen uit om opnieuw te kijken (en te denken): hoe formuleren beelden onze werkelijkheid?<br>Dit leff in focus-blok verkent Farocki’s verzet tegen vaste classificaties aan de hand van twee relatief onbekende films. In samenwerking met zijn vaste co-producent Antje Ehmann worden Gegen-Musik (2004) en Was ist Los? (1991) gepresenteerd als twee radicale voorbeelden van Farocki’s benadering.<br>Gegen-Musik (Counter-Music) toont Farocki’s kenmerkende interesse in ‘soft montage’. We zien twee schermen naast elkaar en worden uitgedaagd om vergelijkingen te maken. De beelden, geluiden en woorden lijken aanvankelijk willekeurig, maar geleidelijk ontstaan mogelijke verbanden, verschillend voor elke kijker.<br>Was ist Los? (What’s Up?) behoort tot Farocki’s meest uitzinnige projecten. Zoals Ehmann zegt: “zijn gekste lange essayfilm! Hier probeerde Harun echt uit hoe ver je kunt gaan met een associatieve methode. Om woorden, beelden, gedachten en ideeën op een extreme manier te combineren. Hij zei dat hij zich tijdens het maken van de film dronken voelde – maar dat was hij niet!”
+                                </div>
+                                
+                            </div>
+                            
+                            
+                            <div class="special-block-meta">
+                                3 films in this programme
+                            </div>
+                            
+                            
+                            
+                            <div class="special-block-films-container">
+                                <div class="special-block-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="was-ist-los">
+                <a href="/leff/nl/programme/films/was-ist-los/"
+                    title="View Was ist Los? film page">
+                    Was ist Los?
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/harun-farocki/"
+                    title="View Harun Farocki filmmaker page">
+                    Harun Farocki
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Was ist los? ontleedt nieuwsbeelden en televisierepresentaties in het herenigde Duitsland en toont hoe mediabeelden publieke opinie en werkelijkheid vormen.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Duitsland</span>
+                
+                
+                <span class="film-meta-item">1991</span>
+                
+                
+                <span class="film-meta-item">60&#39;</span>
+                
+                
+                <span class="film-meta-item">Harun Farocki in Focus</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Harun Farocki/What&#39;s up - Was ist los/Was ist los 01.webp" alt="Was ist Los?">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="gegen-musik">
+                <a href="/leff/nl/programme/films/gegen-musik/"
+                    title="View Gegen-Musik film page">
+                    Gegen-Musik
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/harun-farocki/"
+                    title="View Harun Farocki filmmaker page">
+                    Harun Farocki
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Deze essayfilm was oorspronkelijk geproduceerd als een video-installatie. In Gegen-Musik onderzoekt Farocki hoe surveillancebeelden onze perceptie sturen.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Duitsland</span>
+                
+                
+                <span class="film-meta-item">2004</span>
+                
+                
+                <span class="film-meta-item">23&#39;</span>
+                
+                
+                <span class="film-meta-item">Harun Farocki in Focus</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_16.webp" alt="Gegen-Musik">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="getty-abortions">
+                <a href="/leff/nl/programme/films/getty-abortions/"
+                    title="View Getty Abortions film page">
+                    Getty Abortions
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/franzis-kabisch/"
+                    title="View Franzis Kabisch filmmaker page">
+                    Franzis Kabisch
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Hoe verbeeldt de media abortus en welke impact heeft dit op vrouwen die een abortus overwegen? Een indrukwekkende mix van desktopfilm en persoonlijk essay.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Duitsland, Oostenrijk</span>
+                
+                
+                <span class="film-meta-item">2023</span>
+                
+                
+                <span class="film-meta-item">22&#39;</span>
+                
+                
+                <span class="film-meta-item">Harun Farocki in Focus</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Franzis Kabisch/gettyabortions_still_1_en  @Franzis-Kabisch_VG-Bild-Kunst.webp" alt="Getty Abortions">
+        
+    </div>
+</div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                
+                    <div class="special-block-card-link" 
+                       data-name="hong kong shorts"
+                       data-films="3"
+                       data-block-id="block-4">
+                        <div class="special-block-card">
+                            <div class="special-block-header">
+                                <h2 class="special-block-title">
+                                    <a href="/leff/nl/programme/specials/hong-kong-shorts/"
+                                       title="View Hong Kong Shorts special page">
+                                        Hong Kong Shorts
+                                    </a>
+                                </h2>
+                                
+                                <div class="special-block-description">
+                                    In dit themablok zijn films bijeengebracht die anachronistisch hun licht laten schijnen over de stad Hongkong in haar overgangsfase tussen twee regimes en culturen. <br>In Bahar Noorizadeh’s Free to Choose (2023) reist een zakenman naar het jaar 2047 om geld te lenen van zijn oudere zelf, in een poging zijn bedrijf te redden tijdens de financiële crisis van 1997. Room 404 (2024) van Elysa Wendi en Shing Li speelt zich af in een hotelkamer in Hong Kong waar de tijd mysterieus lijkt stil te staan. In An Asian Ghost Story (2023) onderzoekt Bo Wang de bijzondere geschiedenis van de handel in haar in Hongkong tijdens de Koude Oorlog.
+                                </div>
+                                
+                            </div>
+                            
+                            
+                            <div class="special-block-meta">
+                                3 films in this programme
+                            </div>
+                            
+                            
+                            
+                            <div class="special-block-films-container">
+                                <div class="special-block-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="free-to-choose">
+                <a href="/leff/nl/programme/films/free-to-choose/"
+                    title="View Free to Choose film page">
+                    Free to Choose
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/bahar-noorizadeh/"
+                    title="View Bahar Noorizadeh filmmaker page">
+                    Bahar Noorizadeh
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Een speculatieve sci-fi-reis door de beloften en mislukkingen van het neoliberalisme, waarin tijdreizen een metafoor wordt voor krediet, toegang en de prijs van economische vrijheid.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">VK</span>
+                
+                
+                <span class="film-meta-item">2023</span>
+                
+                
+                <span class="film-meta-item">35&#39;</span>
+                
+                
+                <span class="film-meta-item">Hong Kong Shorts</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Bahar Noorizadeh/FTC - still 2.webp" alt="Free to Choose">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="an-asian-ghost-story">
+                <a href="/leff/nl/programme/films/an-asian-ghost-story/"
+                    title="View An Asian Ghost Story film page">
+                    An Asian Ghost Story
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/bo-wang/"
+                    title="View Bo Wang filmmaker page">
+                    Bo Wang
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Een beklemmend portet over de rol van Hongkong in de Koude Oorlog, waarin menselijk haar een spookachtige verbinding vormt tussen imperiale geschiedenissen, migratie en herinnering.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Hong Kong</span>
+                
+                
+                <span class="film-meta-item">2023</span>
+                
+                
+                <span class="film-meta-item">37&#39;</span>
+                
+                
+                <span class="film-meta-item">Hong Kong Shorts</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Bo Wang/AAGS_01.webp" alt="An Asian Ghost Story">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="room-404">
+                <a href="/leff/nl/programme/films/room-404/"
+                    title="View Room 404 film page">
+                    Room 404
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/elysa-wendi-and-shing-lee/"
+                    title="View Elysa Wendi and Shing Lee filmmaker page">
+                    Elysa Wendi and Shing Lee
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>ERROR: ROOM 404 A POTENTIAL THREAT – over moed en twijfel bij kunstenaars die blijven creëren in onzekere tijden, ondanks toenemende mediacensuur in Hongkong.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Hong Kong</span>
+                
+                
+                <span class="film-meta-item">2024</span>
+                
+                
+                <span class="film-meta-item">29&#39;</span>
+                
+                
+                <span class="film-meta-item">Hong Kong Shorts</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Elysa Wendi &amp; Shing Lee/room 404 ext film still 3.webp" alt="Room 404">
+        
+    </div>
+</div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                
+                    <div class="special-block-card-link" 
+                       data-name="kamal aljafari in focus"
+                       data-films="3"
+                       data-block-id="block-5">
+                        <div class="special-block-card">
+                            <div class="special-block-header">
+                                <h2 class="special-block-title">
+                                    <a href="/leff/nl/programme/specials/kamal-aljafari-in-focus/"
+                                       title="View Kamal Aljafari in Focus special page">
+                                        Kamal Aljafari in Focus
+                                    </a>
+                                </h2>
+                                
+                                <div class="special-block-description">
+                                    Dit focusblok is gewijd aan de Palestijnse filmmaker Kamal Aljafari, wiens werk gaat over de politieke betekenis en mogelijkheden van filmarchieven. Zijn nieuwste productie, A Fidai Film (2024), is een gedurfde daad van toe-eigening: hij gebruikt beeldmateriaal dat in 1982 door het Israëlische leger werd buitgemaakt in Beiroet, om daarmee een alternatieve visuele geschiedenis van Palestina te reconstrueren. <br>Aanvullend op Aljafari’s werk bevat dit blok twee films die in dialoog staan met zijn benadering. In Man Number 4 (Miranda Pennell, 2024) wordt een virale afbeelding van gevangen genomen Gazanen het onderwerp van forensische aandacht en ethische confrontatie. Capricorn Sunset [a constellation] (Johannes Binotto, 2024) biedt een metareflectie op het ontstaan van betekenis via constellaties van fragmenten, en herinnert ons eraan dat interpretatie zelf een politieke daad kan zijn.<br>Samen tonen deze films de kracht van de essayfilm om dominante verhalen te bevragen en ruimte te scheppen voor tegenbeelden, geworteld in herinnering en verzet.
+                                </div>
+                                
+                            </div>
+                            
+                            
+                            <div class="special-block-meta">
+                                3 films in this programme
+                            </div>
+                            
+                            
+                            
+                            <div class="special-block-films-container">
+                                <div class="special-block-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="man-number-4">
+                <a href="/leff/nl/programme/films/man-number-4/"
+                    title="View Man Number 4 film page">
+                    Man Number 4
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/miranda-pennell/"
+                    title="View Miranda Pennell filmmaker page">
+                    Miranda Pennell
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Een zoom-in op een schokkend beeld van gedetineerde Gazanen op sociale media confronteert ons met onze passieve consumptie en medeplichtigheid aan genocide.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">VK</span>
+                
+                
+                <span class="film-meta-item">2024</span>
+                
+                
+                <span class="film-meta-item">10&#39;</span>
+                
+                
+                <span class="film-meta-item">Kamal Aljafari in Focus</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/placeholder.webp" alt="Man Number 4">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="capricorn-sunset">
+                <a href="/leff/nl/programme/films/capricorn-sunset/"
+                    title="View Capricorn Sunset film page">
+                    Capricorn Sunset
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/johannes-binotto/"
+                    title="View Johannes Binotto filmmaker page">
+                    Johannes Binotto
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Een essayfilm die betekenisgeving in een grenzeloze ruimte verkent. Beelden, herinneringen en persoonlijke interpretatie vloeien naadloos samen.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Zwitserland</span>
+                
+                
+                <span class="film-meta-item">2023</span>
+                
+                
+                <span class="film-meta-item">5&#39;</span>
+                
+                
+                <span class="film-meta-item">Kamal Aljafari in Focus</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Johannes Binotto/capricorn sunset_Still_4.webp" alt="Capricorn Sunset">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="a-fidai-film">
+                <a href="/leff/nl/programme/films/a-fidai-film/"
+                    title="View A Fidai Film film page">
+                    A Fidai Film
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/kamal-aljafari/"
+                    title="View Kamal Aljafari filmmaker page">
+                    Kamal Aljafari
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Rode silhouetten schetsen een alternatieve toekomst in geplunderd Palestijns archiefmateriaal. Een intrigerende film die verleden en mogelijke toekomsten herinterpreteert.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Palestina</span>
+                
+                
+                <span class="film-meta-item">2024</span>
+                
+                
+                <span class="film-meta-item">78&#39;</span>
+                
+                
+                <span class="film-meta-item">Kamal Aljafari in Focus</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Kamal Aljafari/Fidai Still 7.webp" alt="A Fidai Film">
+        
+    </div>
+</div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                
+                    <div class="special-block-card-link" 
+                       data-name="listening with the other"
+                       data-films="5"
+                       data-block-id="block-6">
+                        <div class="special-block-card">
+                            <div class="special-block-header">
+                                <h2 class="special-block-title">
+                                    <a href="/leff/nl/programme/specials/listening-with-the-other/"
+                                       title="View Listening with the Other special page">
+                                        Listening with the Other
+                                    </a>
+                                </h2>
+                                
+                                <div class="special-block-description">
+                                    In de vijf werken die dit blok vormen – sommige zonder enig visueel beeld – staat luisteren centraal als oefening. Door te luisteren stemmen we af, verleggen we onze mentale focus, nemen we de tijd om waar te nemen waaruit onze omgeving bestaat. Listening with the Other is een uitnodiging om te onderzoeken hoe een ander luistert.<br>In het werk van geluidskunstenaar Angus Carlyle en antropoloog Rupert Cox ontsluit luisteren gelaagde vormen van aanwezigheid met verontrustende herinnering aan oorlog. Multimedia-kunstenaar Judith Westerveld onderzoekt geluid als de actieve plek waar identiteiten worden opgebouwd in een koloniale en postkoloniale context. Geluidskunstenaar Toshiya Tsunoda verdiept zich in de vibrerende aard van dingen, en geluidsverzamelaar en muzikant David Petráš onthult hoe omgeving en muziek de realiteit en lokale mythologieën verweven in geschiedenissen van overleving in de Karpaten.
+                                </div>
+                                
+                            </div>
+                            
+                            
+                            <div class="special-block-meta">
+                                5 films in this programme
+                            </div>
+                            
+                            
+                            
+                            <div class="special-block-films-container">
+                                <div class="special-block-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="the-cave-mouth-and-the-giant-voice">
+                <a href="/leff/nl/programme/films/the-cave-mouth-and-the-giant-voice/"
+                    title="View The Cave Mouth and The Giant Voice film page">
+                    The Cave Mouth and The Giant Voice
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/rupert-cox-en-angus-carlyle/"
+                    title="View Rupert Cox en Angus Carlyle filmmaker page">
+                    Rupert Cox en Angus Carlyle
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>De herinneringen van de Okinawaanse eilandbewoner Yogi-San aan het bombardement van 1945 worden hoorbaar in de resonantie van een grot — oorlog herinnerd via luisteren.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">VK</span>
+                
+                
+                <span class="film-meta-item">2015</span>
+                
+                
+                <span class="film-meta-item">10&#39;</span>
+                
+                
+                <span class="film-meta-item">Listening with the Other</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Rupert Cox &amp; Angus Carlyle/The Cave Mouth and the Giant Voice.webp" alt="The Cave Mouth and The Giant Voice">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="kapotte-muziek-track-1">
+                <a href="/leff/nl/programme/films/kapotte-muziek-track-1/"
+                    title="View Kapotte Muziek – Track 1 film page">
+                    Kapotte Muziek – Track 1
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/toshiya-tsunoda/"
+                    title="View Toshiya Tsunoda filmmaker page">
+                    Toshiya Tsunoda
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>In plaats van documentaire of naturalisme verkennen de geluidsopnames van Toshiya Tsunoda de relatie tussen ruimte en waarneming, de diepte van het landschap en de ademhaling van de dingen.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Nederland</span>
+                
+                
+                <span class="film-meta-item">2004</span>
+                
+                
+                <span class="film-meta-item">7&#39;</span>
+                
+                
+                <span class="film-meta-item">Listening with the Other</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Toshiya Tsunoda/Kapotte Muziek by Toshiya Tsunoda.webp" alt="Kapotte Muziek – Track 1">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="where-no-bell-rings">
+                <a href="/leff/nl/programme/films/where-no-bell-rings/"
+                    title="View Where no bell rings film page">
+                    Where no bell rings
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/lucia-nimcova-en-david-petras/"
+                    title="View Lucia Nimcová en David Petráš  filmmaker page">
+                    Lucia Nimcová en David Petráš 
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Hekserij en genezingsrituelen in volksliederen en verhalen van oudere vrouwen aan de grens van Slowakije, Oekraïne en Roemenië vormen overgangszones naar een mythische, onbekende wereld.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Oekraïne, Roemenië</span>
+                
+                
+                <span class="film-meta-item">2023</span>
+                
+                
+                
+                <span class="film-meta-item">Listening with the Other</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Lucia Nimcová &amp; David Petráš/Petras Nimcova_Where no bell rings_Image (2).webp" alt="Where no bell rings">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="message-from-mukalap">
+                <a href="/leff/nl/programme/films/message-from-mukalap/"
+                    title="View Message from Mukalap film page">
+                    Message from Mukalap
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/judith-westerveld/"
+                    title="View Judith Westerveld filmmaker page">
+                    Judith Westerveld
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Een meertalige reactie op een geluidsopname van Mukalap in de uitgestorven taal !ora laat koloniale erfenissen opnieuw weerklinken.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Nederland</span>
+                
+                
+                <span class="film-meta-item">2021</span>
+                
+                
+                <span class="film-meta-item">15&#39;</span>
+                
+                
+                <span class="film-meta-item">Listening with the Other</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Judith Westerveld/Message from Mukalap/Film Still Message from Mukalap 4.webp" alt="Message from Mukalap">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="the-sending-of-the-crows">
+                <a href="/leff/nl/programme/films/the-sending-of-the-crows/"
+                    title="View The Sending of the Crows film page">
+                    The Sending of the Crows
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/judith-westerveld/"
+                    title="View Judith Westerveld filmmaker page">
+                    Judith Westerveld
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Een audiovisuele meditatie over taal en cultuur vanuit een koloniaal verleden, “moving through time, reflecting on the truth of the people forgotten”.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Nederland</span>
+                
+                
+                <span class="film-meta-item">2024</span>
+                
+                
+                <span class="film-meta-item">15&#39;</span>
+                
+                
+                <span class="film-meta-item">Listening with the Other</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Landscape_The Sending of the Crows_3 (full resolution).webp" alt="The Sending of the Crows">
+        
+    </div>
+</div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                
+                    <div class="special-block-card-link" 
+                       data-name="new perspectives"
+                       data-films="6"
+                       data-block-id="block-7">
+                        <div class="special-block-card">
+                            <div class="special-block-header">
+                                <h2 class="special-block-title">
+                                    <a href="/leff/nl/programme/specials/new-perspectives/"
+                                       title="View New Perspectives special page">
+                                        New Perspectives
+                                    </a>
+                                </h2>
+                                
+                                <div class="special-block-description">
+                                    De essayfilms in dit blok vertegenwoordigen nieuwe richtingen binnen de hedendaagse essayfilm. Zowel opkomende als gevestigde makers gaan hierin op essayistische wijze in op urgente thema’s zoals ecologisch verval, auteursrecht en de wooncrisis.<br>Deze films spreken vanuit gesitueerde perspectieven – vaak tegelijk persoonlijk en politiek – en vinden hun uitdrukking in de fragmentarische, poëtische en hybride mogelijkheden van de essayfilm. Desktopopnames, negatieffilm, archiefbeelden, veldopnames, voice-over: dit zijn niet louter technieken, maar manieren om van binnenuit over een onderwerp na te denken.
+                                </div>
+                                
+                            </div>
+                            
+                            
+                            <div class="special-block-meta">
+                                6 films in this programme
+                            </div>
+                            
+                            
+                            
+                            <div class="special-block-films-container">
+                                <div class="special-block-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="perpetual-radiance">
+                <a href="/leff/nl/programme/films/perpetual-radiance/"
+                    title="View Perpetual Radiance film page">
+                    Perpetual Radiance
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/michela-meliddo/"
+                    title="View Michela Meliddo filmmaker page">
+                    Michela Meliddo
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Een poëtische reflectie op artificieel licht en het verdwijnen van de nacht. In een denkbeeldige toekomst flikkert de natuur in roze en zwart – verstoord, bestudeerd en langzaam vervagend.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Nederland</span>
+                
+                
+                <span class="film-meta-item">2024</span>
+                
+                
+                <span class="film-meta-item">14&#39;</span>
+                
+                
+                <span class="film-meta-item">New Perspectives</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Michela Meliddo/Still04.webp" alt="Perpetual Radiance">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="to-the-earthern-red">
+                <a href="/leff/nl/programme/films/to-the-earthern-red/"
+                    title="View To the Earthern Red film page">
+                    To the Earthern Red
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/nika-pecarina/"
+                    title="View Nika Pećarina filmmaker page">
+                    Nika Pećarina
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>“The enduring material bond between soil and soul&#34;; de verstrengeling van materie en innerlijk wordt poëtisch verbeeld door een jonge Tsjechische kunstenaar.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Nederland</span>
+                
+                
+                <span class="film-meta-item">2022</span>
+                
+                
+                <span class="film-meta-item">19&#39;</span>
+                
+                
+                <span class="film-meta-item">New Perspectives</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Nika Pećarina/crvenojbojizarenezemlje_v2_x4.webp" alt="To the Earthern Red">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="mariam-jafri-vs-maryam-jafri">
+                <a href="/leff/nl/programme/films/mariam-jafri-vs-maryam-jafri/"
+                    title="View Mariam Jafri vs Maryam Jafri film page">
+                    Mariam Jafri vs Maryam Jafri
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/maryam-jafri/"
+                    title="View Maryam Jafri filmmaker page">
+                    Maryam Jafri
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Mariam Jafri vs. Maryam Jafri verkent identiteit en auteurschap via een sculpturaal werk dat evolueert van object naar foto naar video, elk stadium gemarkeerd door watermerken. Jafri’s reflectie bevraagt de commodificering van kunst en de fluïditeit van waarde in een geglobaliseerde wereld.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Oostenrijk, Canada</span>
+                
+                
+                <span class="film-meta-item">2019</span>
+                
+                
+                <span class="film-meta-item">9&#39;</span>
+                
+                
+                <span class="film-meta-item">New Perspectives</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Maryam Jafri/2_MariamJafriVsMaryamJafri.webp" alt="Mariam Jafri vs Maryam Jafri">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="haunted-the-hollow">
+                <a href="/leff/nl/programme/films/haunted-the-hollow/"
+                    title="View Haunted, the Hollow film page">
+                    Haunted, the Hollow
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/veronica-munteau-karin-nakajima-sara-ouljour/"
+                    title="View Veronica Munteau, Karin Nakajima, Sara Ouljour filmmaker page">
+                    Veronica Munteau, Karin Nakajima, Sara Ouljour
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>De blijvende impact van industriële achteruitgang wordt verkend via trauma uit het verleden – Haunted, the Hollow onderzoekt herinnering, gemeenschap en de onzekerheid van de toekomst.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Nederland</span>
+                
+                
+                <span class="film-meta-item">2025</span>
+                
+                
+                <span class="film-meta-item">13&#39;</span>
+                
+                
+                <span class="film-meta-item">New Perspectives</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Veronica Munteau, Karin Nakajima, Sara Ouljour/Screenshot 2025-08-08 at 11.08.52.webp" alt="Haunted, the Hollow">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="searching-for-the-perfect-gentleman">
+                <a href="/leff/nl/programme/films/searching-for-the-perfect-gentleman/"
+                    title="View Searching for the Perfect Gentleman film page">
+                    Searching for the Perfect Gentleman
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/lena-windisch/"
+                    title="View Lena Windisch filmmaker page">
+                    Lena Windisch
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Hoe kun je de wereld ontdekken zonder van je plek te komen? Een zoektocht naar het verhaal achter een poster in het raam van een Afrikaanse barbershop.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Duitsland</span>
+                
+                
+                <span class="film-meta-item">2019</span>
+                
+                
+                <span class="film-meta-item">10&#39;</span>
+                
+                
+                <span class="film-meta-item">New Perspectives</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/placeholder.webp" alt="Searching for the Perfect Gentleman">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="the-southern-thruway">
+                <a href="/leff/nl/programme/films/the-southern-thruway/"
+                    title="View The Southern Thruway film page">
+                    The Southern Thruway
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/susanna-tomassini/"
+                    title="View Susanna Tomassini filmmaker page">
+                    Susanna Tomassini
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>The Southern Thru-Way is een persoonlijk verhaal over huisvesting en het politieke idee van toebehoren. Een filmisch essay over onzekerheid, gedwongen collectiviteit, vergankelijkheid en onconventionele vormen van liefde.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Nederland</span>
+                
+                
+                <span class="film-meta-item">2025</span>
+                
+                
+                <span class="film-meta-item">14&#39;</span>
+                
+                
+                <span class="film-meta-item">New Perspectives</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Susanna Tomassini/TST_still3.webp" alt="The Southern Thruway">
+        
+    </div>
+</div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                
+                    <div class="special-block-card-link" 
+                       data-name="nguyễn trinh thi in focus"
+                       data-films="2"
+                       data-block-id="block-8">
+                        <div class="special-block-card">
+                            <div class="special-block-header">
+                                <h2 class="special-block-title">
+                                    <a href="/leff/nl/programme/specials/nguyen-trinh-thi-in-focus/"
+                                       title="View Nguyễn Trinh Thi in Focus special page">
+                                        Nguyễn Trinh Thi in Focus
+                                    </a>
+                                </h2>
+                                
+                                <div class="special-block-description">
+                                    De Vietnamese kunstenaar Nguyễn Trinh Thi is een van de belangrijkste hedendaagse filmessayisten. Haar werk omvat film, installaties en performances, waarbij ze vaak documentaire technieken combineert met poëtische vormen. Centraal in haar werk staat een voortdurende betrokkenheid bij kwesties over culturele uitwissing. Die heeft specifiek betrekking op minderheidsgroepen in Vietnam, van wie de geschiedenis en identiteit vaak worden onderdrukt of genegeerd in officiële politieke narratieven.<br>We presenteren twee van Nguyễns belangrijkste essayfilms: Letters from Panduranga (2015) en How to Improve the World (2020–2021). Beide werken weerspiegelen haar voortdurende interesse in verzet tegen dominante manieren van kijken, en haar benadering van geluid als een politiek en epistemologisch fenomeen.<br>Dit leff In Focus-blok omvat een inleiding en een discussie met de hoofdgast van het festival, Laura Rascaroli.
+                                </div>
+                                
+                            </div>
+                            
+                            
+                            <div class="special-block-meta">
+                                2 films in this programme
+                            </div>
+                            
+                            
+                            
+                            <div class="special-block-films-container">
+                                <div class="special-block-films-list">
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="letters-from-panduranga">
+                <a href="/leff/nl/programme/films/letters-from-panduranga/"
+                    title="View Letters from Panduranga film page">
+                    Letters from Panduranga
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/nguyen-trinh-thi/"
+                    title="View Nguyễn Trinh Thi filmmaker page">
+                    Nguyễn Trinh Thi
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Een verkenning van het uitwissen van de inheemse Cham-cultuur in Vietnam, via een briefwisseling tussen een man en een vrouw, tegen de achtergrond van kernenergieplannen.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Vietnam</span>
+                
+                
+                <span class="film-meta-item">2015</span>
+                
+                
+                <span class="film-meta-item">35&#39;</span>
+                
+                
+                <span class="film-meta-item">Nguyễn Trinh Thi in Focus</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Nguyễn Trinh Thi/Letters from Panduranga/Letters from Panduranga still_maily.webp" alt="Letters from Panduranga">
+        
+    </div>
+</div>
+                                    
+                                        
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="how-to-improve-the-world">
+                <a href="/leff/nl/programme/films/how-to-improve-the-world/"
+                    title="View How to Improve the World film page">
+                    How to Improve the World
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/nl/programme/filmmakers/nguyen-trinh-thi/"
+                    title="View Nguyễn Trinh Thi filmmaker page">
+                    Nguyễn Trinh Thi
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Vertrouw je meer op beeld of geluid? Luister aandachtig naar de klanken en beelden van de inheemse bevolking in de Centrale Hooglanden van Vietnam.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Vietnam</span>
+                
+                
+                <span class="film-meta-item">2021</span>
+                
+                
+                <span class="film-meta-item">47&#39;</span>
+                
+                
+                <span class="film-meta-item">Nguyễn Trinh Thi in Focus</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Nguyễn Trinh Thi/How to Improve the World/How to Improve the World Still 6.webp" alt="How to Improve the World">
+        
+    </div>
+</div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                
+            
+        </div>
+    </div>
+    
+</div>
+
+<div class="footer-negative-space"></div>
+
+    </section>
+
+    <footer>
+        <div class="footer-container grid-base">
+            <!-- email newsletter signup -->
+            <div class="footer-newsletter-section">
+                <h3 style="text-transform: uppercase;">Blijf op de Hoogte</h3>
+                <p>Schrijf je in om meer te horen van Leiden Essay Film Festival</p>
+                <div id="mc_embed_signup">
+                    <form
+                        action="https://kabk.us8.list-manage.com/subscribe/post?u=fe6f0920a56a052079924e663&amp;id=0bef5e214f&amp;f_id=00bac6e2f0"
+                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                        target="_blank">
+                        <div id="mc_embed_signup_scroll">
+                            <div class="mc-field-group input-group footer-checkbox">
+                                <input type="radio" name="MMERGE5" id="mce-MMERGE50" required
+                                    value="Ik ga akkoord met de verwerking van mijn gegevens zoals beschreven in het privacybeleid en om de leff nieuwsbrief en updates te ontvangen.">
+                                <label for="mce-MMERGE50">
+                                    Ik ga akkoord met de verwerking van mijn gegevens zoals beschreven in het
+                                    <a href="/leff/nl/privacy/">Privacybeleid</a> en om de leff nieuwsbrief en updates te ontvangen.
+                                </label>
+                            </div>
+                            <div class="mc-field-group">
+                                <label for="mce-EMAIL" class="sr-only">Schrijf je in om meer te horen van Leiden Essay Film Festival</label>
+                                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required=""
+                                    placeholder="Voer email adres in" value="">
+                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button"
+                                    value="Aanmelden">
+                            </div>
+                            <div id="custom-mce-responses"></div>
+                            <div id="mce-responses" class="clear" style="display: none;">
+                                <div class="response" id="mce-error-response" style="display: none;"></div>
+                                <div class="response" id="mce-success-response" style="display: none;"></div>
+                            </div>
+                            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                <input type="text" name="b_fe6f0920a56a052079924e663_0bef5e214f" tabindex="-1" value="">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-nav">
+                <h4>Navigatie</h4>
+                <ul>
+                    
+                    <li><a href="/leff/nl/">Home</a></li>
+                    
+                    <li><a href="/leff/nl/programme/">Programma 2025</a></li>
+                    
+                    <li><a href="/leff/nl/schedule/">Blokkenschema</a></li>
+                    
+                    <li><a href="/leff/nl/location/">Locaties</a></li>
+                    
+                    <li><a href="/leff/nl/tickets/">Tickets</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="footer-info">
+                <h4>Over leff</h4>
+                <ul>
+                    <li><a href="/leff/nl/about/">Festival</a></li>
+                    <li><a href="/leff/nl/organisation/">Organisatie</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-outside-links">
+                <h4>Contact</h4>
+                <ul>
+                    <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
+                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank">Instagram</a></li>
+                    <li><a href="/leff/nl/privacy/">Privacybeleid</a></li>
+                </ul>
+            </div>
+
+            <!-- empty space for layout -->
+            <div class="footer-spacer"></div>
+        </div>
+
+        <!-- credits -->
+        <div class="footer-bottom grid-base">
+            <p>This website was designed by <a href="https://www.instagram.com/michela.meliddo" target="_blank"
+                    rel="noopener">Michela Meliddo</a>, Ellen Owens and coded by <a href="https://wshbd.com"
+                    target="_blank" rel="noopener">Pyotr Goloub</a></p>
+        </div>
+    </footer>
+
+    
+<script src="/leff/search.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // initialize shared search utility for specials page
+        SearchUtility.init({
+            searchInputId: 'specials-search',
+            containerSelector: '.specials-container',
+            cardLinkSelector: '.special-block-card-link',
+            searchFields: ['name'],
+            defaultSort: 'name'
+        });
+    });
+</script>
+
+
+    
+
+    <div id="custom-cursor"></div>
+
+    <script src="/leff/scripts.js"></script>
+    <script>
+        // set base path for javascript to use
+        window.BASE_PATH = '/leff/';
+
+        // hello screen
+        console.log("\n\n\n\t" +
+            "oooo             .o88o.  .o88o. \n\t" +
+            "`888             888 `\"  888 `\" \n\t" +
+            " 888   .ooooo.  o888oo  o888oo  \n\t" +
+            " 888  d88' `88b  888     888    \n\t" +
+            " 888  888ooo888  888     888    \n\t" +
+            " 888  888    .o  888     888    \n\t" +
+            "o888o `Y8bod8P' o888o   o888o   \n\n\t" +
+            "  Leiden Essay Film Festival\n\t" +
+            "http://github.com/woshibide/leff\n\t\t"
+        );
+    </script>
+</body>
+
+</html>

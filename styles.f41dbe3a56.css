@@ -402,12 +402,13 @@ a:visited {
     background: var(--silver);
     transition: all 0.2s var(--transition);
     height: 100%;
+    color: var(--text-main);
 }
 
-.film-card-link:hover .film-card {
+/* .film-card-link:hover .film-card {
     background: var(--bg-main);
     color: var(--accent);
-}
+} */
 
 .film-card-image {
     grid-column: 2 / 3;
@@ -442,8 +443,30 @@ a:visited {
     color: inherit;
 }
 
+.film-card h5 {
+    margin-top: var(--space-md);
+    font-size: 1.875rem;
+}
+
+/* film card link styles - consistent with global link behavior */
+.film-card a {
+    color: inherit;
+    text-decoration: underline solid 2px;
+}
+
+.film-card a:visited {
+    color: var(--accent);
+    text-decoration: underline 2px solid;
+}
+
+.film-card a:hover {
+    color: var(--accent);
+    text-decoration: underline 2px solid;
+}
+
 .film-card-link:hover h4 {
     text-decoration: underline;
+    color: var(--accent);
 }
 
 .film-synopsis {
@@ -452,6 +475,7 @@ a:visited {
 }
 
 .film-meta {
+    margin-top: var(--space-md);
     font-size: 1.25rem;
     color: inherit;
 }
@@ -460,8 +484,9 @@ a:visited {
     display: inline;
 }
 
-.film-meta-item:not(:last-child)::after {
-    content: ', ';
+.film-meta-item:not(:last-child) {
+    padding-right: var(--space-xs);
+    border-right: var(--text-main) solid 2px;
 }
 
 @media (max-width: 768px) {

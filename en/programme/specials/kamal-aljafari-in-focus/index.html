@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Leiden Essay Film Festival">
+    <meta name="keywords" content="leiden, film festival, leiden essay film festival, leiden film festival, leff">
+    <meta name="description" content="The first festival in the Netherlands dedicated entirely to the essay film">
+
+    <meta property="og:title" content="LEFF">
+    <meta property="og:description" content="The first festival in the Netherlands dedicated entirely to the essay film">
+    <meta property="og:image" content="/leff/assets/header/og_1200x1200.png">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="/leff/assets/header/og_1200x1200.png">
+
+    <link rel="icon" href="/leff/assets/header/favicon.ico" sizes="any">
+    <link rel="icon" href="/leff/assets/header/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/leff/assets/header/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/leff/assets/header/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/leff/assets/header/android-chrome-512x512.png">
+    <meta name="theme-color" content="#C0BEBF">
+
+    <title>Kamal Aljafari in Focus - LEFF</title>
+
+    <!-- base href for github pages deployment -->
+    
+    <base href="/leff/">
+    
+    <link rel="stylesheet" href="/leff/styles.f41dbe3a56.css">
+    
+
+    
+<style>
+    /*
+        single special page - styled like filmmaker page
+    */
+    
+    .special-hero-container {
+        grid-column: 1 / -1;
+        position: relative;
+        height: auto;
+        margin-bottom: var(--space-5xl);
+    }
+
+    .special-hero {
+        position: relative;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .special-hero img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .special-info {
+        position: absolute;
+        left: 0;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+        max-width: 100%;
+    }
+
+    .special-name {
+        font-size: 6rem;
+        font-weight: normal;
+        color: var(--accent);
+        margin: 0;
+        line-height: 1.1;
+        text-shadow: var(--shadow);
+    }
+
+    .special-title {
+        font-size: 1.875rem;
+        color: var(--accent);
+        text-shadow: var(--shadow);
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .special-description-section {
+        grid-column: 1 / 5;
+        margin-bottom: var(--space-4xl);
+    }
+
+    .special-description-section p {
+        font-size: 1.875rem;
+        color: var(--bg-main);
+        line-height: 1.4;
+        max-width: 75ch;
+        margin-bottom: var(--space-md);
+    }
+
+    .special-films-section {
+        grid-column: 1 / -1;
+        margin-bottom: var(--space-4xl);
+    }
+
+    .special-films-title {
+        font-size: 2.25rem;
+        color: var(--bg-main);
+        font-weight: normal;
+        margin-bottom: var(--space-xl);
+        text-transform: uppercase;
+    }
+
+    .special-meta {
+        grid-column: 1 / -1;
+        margin-bottom: var(--space-2xl);
+        font-size: 1.125rem;
+        color: var(--bg-main);
+        opacity: 0.8;
+    }
+
+    /* override film-card styles for special page context */
+    .special-films-section .cards-container {
+        grid-column: 1 / -1;
+    }
+
+    @media (max-width: 768px) {
+        .special-hero-container {
+            margin-bottom: var(--space-xl);
+        }
+
+        .special-hero {
+            aspect-ratio: 4 / 3;
+        }
+
+        .special-info {
+            position: inherit;
+            top: 0;
+            left: 0;
+        }
+
+        .special-name {
+            font-size: 2.25rem;
+            text-shadow: none;
+        }
+
+        .special-title {
+            font-size: 1.25rem;
+            text-shadow: none;
+        }
+
+        .special-description-section {
+            grid-column: 1 / -1;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .special-description-section p {
+            font-size: 1.25rem;
+        }
+
+        .special-films-title {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+
+
+    
+</head>
+
+<body>
+    <nav>
+        <a href="/leff/en/"><img src="/leff/assets/leff-logo-yellow.svg"
+                alt="leiden essay film festival logo" id="nav-logo"></a>
+        <div id="circle-container">
+            <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
+                Tickets
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                    <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                </svg>
+            </a>
+            <div id="languages">
+                
+                
+                <button class="active">EN</button>
+                
+                
+                
+                <a href="/leff/nl/programme/specials/kamal-aljafari-in-focus/">
+                    <button>NL</button>
+                </a>
+                
+                
+            </div>
+            <div id="circle"></div>
+            <div class="menu-close" style="display: none;">
+                <button class="close-icon" id="menu-close" aria-label="close">
+                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="menu-overlay" class="menu-overlay">
+            <div class="menu-grid grid-base">
+                <div class="menu-nav">
+                    <ul>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/en/">Home</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="programme">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
+                                            stroke-width="2" />
+                                    </svg>
+                                    <div class="drp-dwn-item-txt">Programme 2025</div>
+                                </button>
+                                <ul class="menu-dropdown-content" id="programme-dropdown">
+                                    
+                                    <li>
+                                        <a href="/leff/en/programme/films">A—Z film</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/en/programme/filmmakers">A—Z filmmakers</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/en/programme/specials">Specials</a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/en/schedule/">Block Schedule</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/en/location/">Locations</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <a href="/leff/en/tickets/">Tickets</a>
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <div class="menu-dropdown-item">
+                                <button class="menu-dropdown-toggle" data-dropdown="about">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        class="arrow-icon east-arrow dropdown-arrow">
+                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
+                                            stroke-width="2" />
+                                    </svg>
+                                    <div class="drp-dwn-item-txt">About leff</div>
+                                </button>
+                                <ul class="menu-dropdown-content" id="about-dropdown">
+                                    
+                                    <li>
+                                        <a href="/leff/en/about/">Festival</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/leff/en/organisation/">Organisation</a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <section class="page-contents">
+        
+<div class="grid-base">
+    <h1 class="page-title">
+        Programme 2025 / specials / Kamal Aljafari in Focus
+    </h1>
+    
+    <div class="special-hero-container">
+        <h2 class="special-name">
+            Kamal Aljafari in Focus
+        </h2>   
+    </div>
+    
+    
+    <div class="special-description-section">
+        <p>Harun Farocki, one of Germany’s most celebrated international filmmakers, created an impressive body of work - nearly a hundred films, videos, and installations - in which he consistently blurred the boundaries between documentary, essay, and experimental film. With his sharp analytical eye and political insight, he explored themes such as labour, war, surveillance, and media. <br>His essay films invite us to look (and think) again: how do images shape our reality?<br>This leff in focus block explores Farocki’s resistance to classification through two relatively unknown films. In collaboration with his long-time co-producer Antje Ehmann, Gegen-Musik (2004) and Was ist Los? (1991) are presented as radical examples of Farocki’s approach.<br>Gegen-Musik (Counter-Music) showcases Farocki’s interest in “soft montage.” We see two screens side by side, inviting us to draw comparisons. The images, sounds, and words may seem arbitrary, but gradually, meaningful connections emerge, different for each viewer.<br>Was ist Los? (What’s Up?) is among Farocki’s most exuberant projects. As Ehmann puts it: “his craziest long essay film! Here Harun really pushed the limits of associative methods to combine words, images, thoughts, and ideas in an extreme way. He said he felt drunk while making it—but he wasn’t!”</p>
+    </div>
+    
+
+    
+    <div class="special-meta">
+        3 films in this programme
+    </div>
+    
+
+    
+        <div class="special-films-section">
+            
+            
+<div class="cards-container">
+    
+        <div class="film-card-wrapper" 
+             data-title="man number 4"
+             data-director="miranda pennell"
+             data-letter="m"
+             data-date="16 september">
+            
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="man-number-4">
+                <a href="/leff/en/programme/films/man-number-4/"
+                    title="View Man Number 4 film page">
+                    Man Number 4
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/en/programme/filmmakers/miranda-pennell/"
+                    title="View Miranda Pennell filmmaker page">
+                    Miranda Pennell
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Zooming into a disturbing image of detained Gazans circulating on social media, our passive consumption and complicity of the genocide is questioned.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">UK</span>
+                
+                
+                <span class="film-meta-item">2024</span>
+                
+                
+                <span class="film-meta-item">10&#39;</span>
+                
+                
+                <span class="film-meta-item">Kamal Aljafari in Focus</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/placeholder.webp" alt="Man Number 4">
+        
+    </div>
+</div>
+        </div>
+    
+        <div class="film-card-wrapper" 
+             data-title="capricorn sunset"
+             data-director="johannes binotto"
+             data-letter="c"
+             data-date="16 september">
+            
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="capricorn-sunset">
+                <a href="/leff/en/programme/films/capricorn-sunset/"
+                    title="View Capricorn Sunset film page">
+                    Capricorn Sunset
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/en/programme/filmmakers/johannes-binotto/"
+                    title="View Johannes Binotto filmmaker page">
+                    Johannes Binotto
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Exploring boundless space for meaning-making. This essay film opens our eyes to the interplay of images, memory, and personal interpretation.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Switzerland</span>
+                
+                
+                <span class="film-meta-item">2023</span>
+                
+                
+                <span class="film-meta-item">5&#39;</span>
+                
+                
+                <span class="film-meta-item">Kamal Aljafari in Focus</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Johannes Binotto/capricorn sunset_Still_4.webp" alt="Capricorn Sunset">
+        
+    </div>
+</div>
+        </div>
+    
+        <div class="film-card-wrapper" 
+             data-title="a fidai film"
+             data-director="kamal aljafari"
+             data-letter="a"
+             data-date="16 september">
+            
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="a-fidai-film">
+                <a href="/leff/en/programme/films/a-fidai-film/"
+                    title="View A Fidai Film film page">
+                    A Fidai Film
+                </a>
+            </h4>
+            
+            <h5 class="filmmaker-name">
+                
+                <a href="/leff/en/programme/filmmakers/kamal-aljafari/"
+                    title="View Kamal Aljafari filmmaker page">
+                    Kamal Aljafari
+                </a>
+            </h5>
+            
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Red silhouettes draw an alternative future in looted Palestinian archival footage. A compelling film re-interpreting a past and possible future.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <span class="film-meta-item">Palestine</span>
+                
+                
+                <span class="film-meta-item">2024</span>
+                
+                
+                <span class="film-meta-item">78&#39;</span>
+                
+                
+                <span class="film-meta-item">Kamal Aljafari in Focus</span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+        <img src="/leff/assets/images/film-images/Kamal Aljafari/Fidai Still 7.webp" alt="A Fidai Film">
+        
+    </div>
+</div>
+        </div>
+    
+</div>
+        </div>
+    
+</div>
+
+<div class="footer-negative-space"></div>
+
+    </section>
+
+    <footer>
+        <div class="footer-container grid-base">
+            <!-- email newsletter signup -->
+            <div class="footer-newsletter-section">
+                <h3 style="text-transform: uppercase;">Stay Updated</h3>
+                <p>Subscribe to hear more from Leiden Essay Film Festival</p>
+                <div id="mc_embed_signup">
+                    <form
+                        action="https://kabk.us8.list-manage.com/subscribe/post?u=fe6f0920a56a052079924e663&amp;id=0bef5e214f&amp;f_id=00bac6e2f0"
+                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                        target="_blank">
+                        <div id="mc_embed_signup_scroll">
+                            <div class="mc-field-group input-group footer-checkbox">
+                                <input type="radio" name="MMERGE5" id="mce-MMERGE50" required
+                                    value="I agree to the processing of my data as described in the privacy policy and to receive the leff newsletter and updates.">
+                                <label for="mce-MMERGE50">
+                                    I agree to the processing of my data as described in the
+                                    <a href="/leff/en/privacy/">Privacy Policy</a> and to receive the leff newsletter and updates.
+                                </label>
+                            </div>
+                            <div class="mc-field-group">
+                                <label for="mce-EMAIL" class="sr-only">Subscribe to hear more from Leiden Essay Film Festival</label>
+                                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required=""
+                                    placeholder="Enter your email here" value="">
+                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button"
+                                    value="Subscribe">
+                            </div>
+                            <div id="custom-mce-responses"></div>
+                            <div id="mce-responses" class="clear" style="display: none;">
+                                <div class="response" id="mce-error-response" style="display: none;"></div>
+                                <div class="response" id="mce-success-response" style="display: none;"></div>
+                            </div>
+                            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                <input type="text" name="b_fe6f0920a56a052079924e663_0bef5e214f" tabindex="-1" value="">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-nav">
+                <h4>Navigation</h4>
+                <ul>
+                    
+                    <li><a href="/leff/en/">Home</a></li>
+                    
+                    <li><a href="/leff/en/programme/">Programme 2025</a></li>
+                    
+                    <li><a href="/leff/en/schedule/">Block Schedule</a></li>
+                    
+                    <li><a href="/leff/en/location/">Locations</a></li>
+                    
+                    <li><a href="/leff/en/tickets/">Tickets</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="footer-info">
+                <h4>About leff</h4>
+                <ul>
+                    <li><a href="/leff/en/about/">Festival</a></li>
+                    <li><a href="/leff/en/organisation/">Organisation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-outside-links">
+                <h4>Contact</h4>
+                <ul>
+                    <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
+                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank">Instagram</a></li>
+                    <li><a href="/leff/en/privacy/">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- empty space for layout -->
+            <div class="footer-spacer"></div>
+        </div>
+
+        <!-- credits -->
+        <div class="footer-bottom grid-base">
+            <p>This website was designed by <a href="https://www.instagram.com/michela.meliddo" target="_blank"
+                    rel="noopener">Michela Meliddo</a>, Ellen Owens and coded by <a href="https://wshbd.com"
+                    target="_blank" rel="noopener">Pyotr Goloub</a></p>
+        </div>
+    </footer>
+
+    
+
+    
+
+    <div id="custom-cursor"></div>
+
+    <script src="/leff/scripts.js"></script>
+    <script>
+        // set base path for javascript to use
+        window.BASE_PATH = '/leff/';
+
+        // hello screen
+        console.log("\n\n\n\t" +
+            "oooo             .o88o.  .o88o. \n\t" +
+            "`888             888 `\"  888 `\" \n\t" +
+            " 888   .ooooo.  o888oo  o888oo  \n\t" +
+            " 888  d88' `88b  888     888    \n\t" +
+            " 888  888ooo888  888     888    \n\t" +
+            " 888  888    .o  888     888    \n\t" +
+            "o888o `Y8bod8P' o888o   o888o   \n\n\t" +
+            "  Leiden Essay Film Festival\n\t" +
+            "http://github.com/woshibide/leff\n\t\t"
+        );
+    </script>
+</body>
+
+</html>

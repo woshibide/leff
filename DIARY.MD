@@ -4,11 +4,14 @@
 - [] toggleable filters on the side
 
 ## suggestions
-- [] gradient for galleries
+- [] gradients for galleries
 - [] image counter for galleries
-- [] galleries for directors?
-- [] filters restyle
-- [] in film card link to director and to film itself
+- [x] filters restyle
+- [x] film card contains link to director and to film itself
+- [] specials page
+- [] separate individual pages for every specials
+? [] get your tickets here section above footer
+? [] galleries for directors
 
 ## missing images
 
