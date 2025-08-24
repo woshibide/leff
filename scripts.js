@@ -510,6 +510,51 @@ const ValidationInputCheck = {
     }
 };
 
+/**
+ * scroll to top module
+ * handles show/hide and click functionality for scroll to top button
+ */
+const ScrollToTop = {
+    button: null,
+    scrollThreshold: 300, // show button after scrolling 300px
+
+    /**
+     * initialize scroll to top functionality
+     */
+    init() {
+        this.button = document.getElementById('scroll-to-top-btn');
+        
+        if (!this.button) return; // exit if button not found
+        
+        // add scroll event listener
+        window.addEventListener('scroll', this.handleScroll.bind(this));
+        
+        // add click event listener
+        this.button.addEventListener('click', this.scrollToTop.bind(this));
+    },
+
+    /**
+     * handle scroll event to show/hide button
+     */
+    handleScroll() {
+        if (window.pageYOffset > this.scrollThreshold) {
+            this.button.style.display = 'block';
+        } else {
+            this.button.style.display = 'none';
+        }
+    },
+
+    /**
+     * smooth scroll to top of page
+     */
+    scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+};
+
 
 /**
  * main application initialization
@@ -520,4 +565,5 @@ document.addEventListener('DOMContentLoaded', function() {
     MenuSystem.init();
     MenuDropdown.init();
     ValidationInputCheck.init();
+    ScrollToTop.init();
 });

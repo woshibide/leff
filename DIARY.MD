@@ -15,30 +15,6 @@
 ? [] should there be separate pages for directors of multiple films?
 ? [] should there be a link for specials page in each film card?
 
-## missing images
-
-- [x] Johan van der Keuken
-- [x] Miko Revereza
-- [x] Judith Westerveld
-- [x] Harun Farocki
-- [x] Mattijs van de Port
-- [x] Veronica Munteau, Karin Nakajima, Sara Ouljour
-- [] Miranda Pennell
-- [] Jean-Pierre Bekolo
-- [] Lis Rhodes
-- [x] Bo Wang
-- [x] Maryam Jafri
-- [x] Andrew Norman Wilson
-- [x] Francis Kabisch
-- [x] Johannes Binotto
-- [x] Toyisha Tsunoda
-- [x] Bahar Noorizadeh
-- [x] Ho Rui An
-- [x] Angus Carlyle & Rupert Cox
-- [x] Graeme Arnfield
-- [x] David Petráš
-- [x] Elysa Wendi
-
 
 ##
 WHATS TO BE DONE:
