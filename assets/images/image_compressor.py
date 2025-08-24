@@ -29,18 +29,18 @@ TOTAL_FILES_PROCESSED = 0
 
 def slugify(text: str) -> str:
     """
-    convert text to url-safe slug
+    convert text to url-safe slug, converting accented characters to basic latin equivalents
     
     args:
         text: the text to convert to a slug
         
     returns:
-        str: url-safe slug
+        str: url-safe slug with basic latin characters only
     """
-    # normalize unicode characters
-    text = unicodedata.normalize('NFKD', text)
-    # convert to ascii, removing non-ascii chars
-    text = text.encode('ascii', 'ignore').decode('ascii')
+    # normalize unicode characters to decomposed form (separate base chars from accents)
+    text = unicodedata.normalize('NFD', text)
+    # filter out combining characters (accents, diacritics) to get base latin characters
+    text = ''.join(char for char in text if unicodedata.category(char) != 'Mn')
     # convert to lowercase
     text = text.lower()
     # replace spaces and non-alphanumeric chars with hyphens
