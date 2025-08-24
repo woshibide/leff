@@ -28,7 +28,7 @@
     
     <base href="/leff/">
     
-    <link rel="stylesheet" href="/leff/styles.f41dbe3a56.css">
+    <link rel="stylesheet" href="/leff/styles.994643401a.css">
     
 
     
@@ -258,6 +258,112 @@
         }
     }
 
+/*
+        FILM PAGES CONTENTS
+*/
+.gallery-navigation {
+    z-index: 200;
+    position: absolute;
+    display: flex;
+    gap: var(--space-md);
+    align-items: center;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+}
+
+/* slideshow counter */
+.gallery-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    color: var(--accent);
+    text-shadow: var(--shadow);
+    font-size: 1rem;
+}
+
+/* slideshow counter */
+.gallery-counter {
+    font-family: "necto", monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    color: var(--accent);
+    text-shadow: var(--shadow);
+    font-size: 1rem;
+}
+
+/* slideshow counter */
+.gallery-counter {
+    display: flex;
+    align-items: center;
+    height: 50%;
+    color: var(--accent);
+    text-shadow: var(--shadow);
+    font-size: 1rem;
+}
+
+.gallery-arrow {
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+    border: none !important;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s var(--transition);
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+}
+
+.gallery-arrow:hover {
+    background: var(--text-main);
+    transform: scale(1.1);
+    outline: 2px solid var(--accent);
+}
+
+.gallery-arrow:focus {
+    outline: 2px solid var(--accent);
+    /* outline-offset: 1px; */
+    background-color: var(--bg-main-overlay);
+    box-shadow: var(--shadow);
+}
+
+.gallery-arrow.disabled {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s var(--transition);
+}
+
+.gallery-arrow {
+    color: var(--accent);
+    stroke: var(--accent);
+}
+
+.gallery-arrow svg {
+    stroke: var(--accent);
+    color: var(--accent);
+    width: 2rem;
+    height: 2rem;
+}
+
+#previous {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    .gallery-navigation {
+        bottom: 0;
+        right: 0;
+        padding: var(--space-sm);
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
 </style>
 
 
@@ -269,7 +375,7 @@
         <a href="/leff/en/"><img src="/leff/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
         <div id="circle-container">
-            <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
+            <a href="https://bioscopenleiden.nl/" target="_blank" rel="noopener" id="nav-tickets" class="tickets-button">
                 Tickets
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
                     <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
@@ -278,19 +384,20 @@
             <div id="languages">
                 
                 
-                <button class="active">EN</button>
+                <button type="button" class="active">EN</button>
+                
                 
                 
                 
                 <a href="/leff/nl/programme/films/la-sortie-de-l-usine-lumiere-a-lyon/">
-                    <button>NL</button>
+                    <button type="button">NL</button>
                 </a>
                 
                 
             </div>
             <div id="circle"></div>
             <div class="menu-close" style="display: none;">
-                <button class="close-icon" id="menu-close" aria-label="close">
+                <button type="button" class="close-icon" id="menu-close" aria-label="close">
                     <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
                         <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
                         <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2" />
@@ -316,7 +423,7 @@
                         <li>
                             
                             <div class="menu-dropdown-item">
-                                <button class="menu-dropdown-toggle" data-dropdown="programme">
+                                <button type="button" class="menu-dropdown-toggle" data-dropdown="programme">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         class="arrow-icon east-arrow dropdown-arrow">
                                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
@@ -373,7 +480,7 @@
                         <li>
                             
                             <div class="menu-dropdown-item">
-                                <button class="menu-dropdown-toggle" data-dropdown="about">
+                                <button type="button" class="menu-dropdown-toggle" data-dropdown="about">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         class="arrow-icon east-arrow dropdown-arrow">
                                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
@@ -408,9 +515,38 @@
     <section class="page-contents">
         
 <div class="grid-base">
-    <h1 class="page-title">
-        Programme 2025 / FILMS / La sortie de l&#39;usine Lumière à Lyon
-    </h1>
+    
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Programme 2025","item":"https://leidenessayfilmfestival.com/leff/en/programme/"},{"@type":"ListItem","position":2,"name":"Films","item":"https://leidenessayfilmfestival.com/leff/en/programme/films/"},{"@type":"ListItem","position":3,"name":"La sortie de l'usine Lumi\u00e8re \u00e0 Lyon"}]}
+</script>
+
+
+<div class="breadcrumb-container" role="navigation" aria-label="breadcrumb">
+    <ol class="breadcrumb-list">
+        
+            <li class="breadcrumb-item">
+                
+                    <a href="/leff/en/programme/" class="breadcrumb-link">Programme 2025</a>
+                
+            </li>
+        
+            <li class="breadcrumb-item">
+                
+                    <a href="/leff/en/programme/films/" class="breadcrumb-link">Films</a>
+                
+            </li>
+        
+            <li class="breadcrumb-item">
+                
+                    <h1 class="breadcrumb-current-page" aria-current="page">La sortie de l&#39;usine Lumière à Lyon</h1>
+                
+            </li>
+        
+    </ol>
+</div>
+
 
     <div class="gallery-container">
         <div id="film-shots">
@@ -424,8 +560,8 @@
             
             <div class="gallery-navigation">
                 <button class="gallery-arrow" id="previous" type="button" aria-label="Previous image">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
-                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon" style="rotate: 180deg">
+                        <path d="M19 12H5M11 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" />
                     </svg>
                 </button>
                 
@@ -434,7 +570,7 @@
                 </div>
                 
                 <button class="gallery-arrow" id="next" type="button" aria-label="Next image">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                     </svg>
                 </button>
@@ -566,7 +702,7 @@
                 <h4>Contact</h4>
                 <ul>
                     <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
-                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank" rel="noopener">Instagram</a></li>
                     <li><a href="/leff/en/privacy/">Privacy Policy</a></li>
                 </ul>
             </div>

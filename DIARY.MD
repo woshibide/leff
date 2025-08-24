@@ -41,30 +41,36 @@
 ##
 WHATS TO BE DONE:
 
-- BUG: 
-    true one:  http://127.0.0.1:5500/en/programme/filmmakers/elysa-wendi/
-    exists:    http://127.0.0.1:5500/en/programme/filmmakers/elysa-wendi-shing-lee/
-        BUG:
-            its also a problem with url linkage of the images and url page generation
+### BUGs: 
+  - []  true one:  http://127.0.0.1:5500/en/programme/filmmakers/elysa-wendi/
+        exists:    http://127.0.0.1:5500/en/programme/filmmakers/elysa-wendi-shing-lee/
+            BUG:
+                its also a problem with url linkage of the images and url page generation
+  - [x] language linking between specials that have different names is sometimes broken
+
+- [] defer offscreen images
 
 - [] Programme
 - [] filters
 - [] styling
 
-- [] Film pages
+- [x] Film pages
   - [x] data is fetched
   - [~] images
   - [] styling
+    - [] mobile
 
 - [] Filmakers
   - [x] data is fetched
   - [~] images
   - [] styling
+      - [] mobile
 
 - [] Filmakers pages
   - [x] data is fetched
   - [~] images
   - [] styling
+      - [] mobile
 
 - [] Schedule page
 - [] Special pages

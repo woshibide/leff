@@ -22,150 +22,52 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/leff/assets/header/android-chrome-512x512.png">
     <meta name="theme-color" content="#C0BEBF">
 
-    <title>programme - LEFF</title>
+    <title>Programme - LEFF</title>
 
     <!-- base href for github pages deployment -->
     
     <base href="/leff/">
     
-    <link rel="stylesheet" href="/leff/styles.f41dbe3a56.css">
+    <link rel="stylesheet" href="/leff/styles.994643401a.css">
     
 
     
+<link rel="stylesheet" href="/leff/search-utility.d0604bdcb0.css">
 <style>
     /*
-        programme page styles
+        films page styles
     */
     .content-wrapper {
         grid-column: 1 / -1;
         display: grid;
         grid-template-columns: 2fr 10fr;
         gap: var(--space-xl);
-        /* margin-top: var(--space-2xl); */
-    }
-
-    .search-utilities {
-        grid-column: 1 / 2;
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-2xl);
-        align-self: start;
-        position: sticky;
-        top: var(--space-2xl);
-    }
-
-    .search-top,
-    .search-side {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-md);
-    }
-
-    #search-bar input {
-        width: 100%;
-        padding: var(--space-sm);
-        border: 2px solid var(--bg-main);
-        background: transparent;
-        color: var(--text-main);
-        font-family: inherit;
-        font-size: 1rem;
-        border-radius: 0;
-        transition: all 0.2s var(--transition);
-    }
-
-    #search-bar input:focus {
-        outline: none;
-        background: var(--bg-main);
-        color: var(--accent);
-    }
-
-    #search-bar input::placeholder {
-        color: var(--dark-silver);
-    }
-
-    .alphabetical-search {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-xs);
-        font-family: monospace;
-    }
-
-    .alphabetical-search .alpha-filter {
-        background: transparent;
-        border: 1px solid var(--bg-main);
-        color: var(--bg-main);
-        padding: var(--space-xs) var(--space-sm);
-        cursor: pointer;
-        text-transform: uppercase;
-        transition: all 0.2s var(--transition);
-        flex-grow: 1;
-        text-align: center;
-    }
-
-    .alphabetical-search .alpha-filter:hover,
-    .alphabetical-search .alpha-filter.active {
-        background: var(--bg-main);
-        color: var(--accent);
-    }
-
-    .search-side .sort-button {
-        background: transparent;
-        border: 2px solid var(--bg-main);
-        color: var(--bg-main);
-        padding: var(--space-sm);
-        text-align: left;
-        cursor: pointer;
-        text-transform: uppercase;
-        transition: all 0.2s var(--transition);
-        font-size: 1rem;
-    }
-
-    .search-side .sort-button:hover,
-    .search-side .sort-button.active {
-        background: var(--bg-main);
-        color: var(--accent);
     }
 
     .film-card-wrapper {
-        display: block;
-        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-lg);
     }
 
     .film-card-link,
     .film-card-link:visited {
         text-decoration: none;
         color: inherit;
-        display: flex;
     }
 
     .film-card-link:hover {
-        text-decoration: none;
+        color: var(--accent);
     }
-
 
     @media (max-width: 768px) {
         .content-wrapper {
             grid-template-columns: 1fr;
+            gap: var(--space-lg);
         }
 
         .search-utilities {
             position: static;
-            top: auto;
-            grid-column: 1 / -1;
-        }
-
-        .cards-container {
-            grid-column: 1 / -1;
-        }
-
-        .film-card {
-            grid-template-columns: 1fr;
-        }
-
-        .film-card-image {
-            border-right: none;
-            border-bottom: 2px solid var(--bg-main);
-            aspect-ratio: 16/9;
         }
     }
 </style>
@@ -179,7 +81,7 @@
         <a href="/leff/nl/"><img src="/leff/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
         <div id="circle-container">
-            <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
+            <a href="https://bioscopenleiden.nl/" target="_blank" rel="noopener" id="nav-tickets" class="tickets-button">
                 Tickets
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
                     <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
@@ -188,19 +90,20 @@
             <div id="languages">
                 
                 
+                
                 <a href="/leff/en/programme/films/">
-                    <button>EN</button>
+                    <button type="button">EN</button>
                 </a>
                 
                 
                 
-                <button class="active">NL</button>
+                <button type="button" class="active">NL</button>
                 
                 
             </div>
             <div id="circle"></div>
             <div class="menu-close" style="display: none;">
-                <button class="close-icon" id="menu-close" aria-label="close">
+                <button type="button" class="close-icon" id="menu-close" aria-label="close">
                     <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
                         <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
                         <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2" />
@@ -226,7 +129,7 @@
                         <li>
                             
                             <div class="menu-dropdown-item">
-                                <button class="menu-dropdown-toggle" data-dropdown="programme">
+                                <button type="button" class="menu-dropdown-toggle" data-dropdown="programme">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         class="arrow-icon east-arrow dropdown-arrow">
                                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
@@ -283,7 +186,7 @@
                         <li>
                             
                             <div class="menu-dropdown-item">
-                                <button class="menu-dropdown-toggle" data-dropdown="about">
+                                <button type="button" class="menu-dropdown-toggle" data-dropdown="about">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         class="arrow-icon east-arrow dropdown-arrow">
                                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
@@ -318,86 +221,153 @@
     <section class="page-contents">
         
 <div class="grid-base" id="programme-page">
-    <h1 class="page-title">Programma 2025 / FILMS</h1>
+    
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Programma 2025","item":"https://leidenessayfilmfestival.com/leff/nl/programme/"},{"@type":"ListItem","position":2,"name":"Films"}]}
+</script>
+
+
+<div class="breadcrumb-container" role="navigation" aria-label="breadcrumb">
+    <ol class="breadcrumb-list">
+        
+            <li class="breadcrumb-item">
+                
+                    <a href="/leff/nl/programme/" class="breadcrumb-link">Programma 2025</a>
+                
+            </li>
+        
+            <li class="breadcrumb-item">
+                
+                    <h1 class="breadcrumb-current-page" aria-current="page">Films</h1>
+                
+            </li>
+        
+    </ol>
+</div>
+
 
     
     <div class="content-wrapper">
-        <div class="search-utilities">
-            <div class="search-top">
-                <div id="search-bar">
-                    <input type="text" id="programme-search"
-                        placeholder="search films, filmmakers...">
-                </div>
-                <div class="alphabetical-search">
-                    
-                    <button class="alpha-filter" data-letter="a">a</button>
-                    
-                    <button class="alpha-filter" data-letter="b">b</button>
-                    
-                    <button class="alpha-filter" data-letter="c">c</button>
-                    
-                    <button class="alpha-filter" data-letter="d">d</button>
-                    
-                    <button class="alpha-filter" data-letter="e">e</button>
-                    
-                    <button class="alpha-filter" data-letter="f">f</button>
-                    
-                    <button class="alpha-filter" data-letter="g">g</button>
-                    
-                    <button class="alpha-filter" data-letter="h">h</button>
-                    
-                    <button class="alpha-filter" data-letter="i">i</button>
-                    
-                    <button class="alpha-filter" data-letter="j">j</button>
-                    
-                    <button class="alpha-filter" data-letter="k">k</button>
-                    
-                    <button class="alpha-filter" data-letter="l">l</button>
-                    
-                    <button class="alpha-filter" data-letter="m">m</button>
-                    
-                    <button class="alpha-filter" data-letter="n">n</button>
-                    
-                    <button class="alpha-filter" data-letter="o">o</button>
-                    
-                    <button class="alpha-filter" data-letter="p">p</button>
-                    
-                    <button class="alpha-filter" data-letter="q">q</button>
-                    
-                    <button class="alpha-filter" data-letter="r">r</button>
-                    
-                    <button class="alpha-filter" data-letter="s">s</button>
-                    
-                    <button class="alpha-filter" data-letter="t">t</button>
-                    
-                    <button class="alpha-filter" data-letter="u">u</button>
-                    
-                    <button class="alpha-filter" data-letter="v">v</button>
-                    
-                    <button class="alpha-filter" data-letter="w">w</button>
-                    
-                    <button class="alpha-filter" data-letter="x">x</button>
-                    
-                    <button class="alpha-filter" data-letter="y">y</button>
-                    
-                    <button class="alpha-filter" data-letter="z">z</button>
-                    
-                </div>
-            </div>
-            <div class="search-side">
-                <button class="sort-button active" data-sort="title">Films A—Z</button>
-                <button class="sort-button" data-sort="director">Filmmakers A—Z</button>
-                <button class="sort-button" data-sort="date">Date &amp; Time</button>
-            </div>
+        
+        
+        
+        <!--
+    search utility component
+    reusable search sidebar for programme, filmmakers, and specials pages
+    
+    required parameters:
+    - search_input_id: unique id for the search input
+    - search_placeholder: placeholder text for search input
+    - sort_buttons: array of sort button objects with 'data_sort', 'label', and 'active' properties
+    
+    alphabetical filtering is always available and handles:
+    - first letter of film titles
+    - all first letters of filmmaker names (for multi-word names)
+-->
+
+<div class="search-utilities">
+    <div class="search-top">
+        <div id="search-bar">
+            <input type="text" 
+                   id="programme-search"
+                   placeholder="search films, filmmakers...">
         </div>
+        
+        <div class="alphabetical-search">
+            
+            <button type="button" class="alpha-filter" data-letter="a">a</button>
+            
+            <button type="button" class="alpha-filter" data-letter="b">b</button>
+            
+            <button type="button" class="alpha-filter" data-letter="c">c</button>
+            
+            <button type="button" class="alpha-filter" data-letter="d">d</button>
+            
+            <button type="button" class="alpha-filter" data-letter="e">e</button>
+            
+            <button type="button" class="alpha-filter" data-letter="f">f</button>
+            
+            <button type="button" class="alpha-filter" data-letter="g">g</button>
+            
+            <button type="button" class="alpha-filter" data-letter="h">h</button>
+            
+            <button type="button" class="alpha-filter" data-letter="i">i</button>
+            
+            <button type="button" class="alpha-filter" data-letter="j">j</button>
+            
+            <button type="button" class="alpha-filter" data-letter="k">k</button>
+            
+            <button type="button" class="alpha-filter" data-letter="l">l</button>
+            
+            <button type="button" class="alpha-filter" data-letter="m">m</button>
+            
+            <button type="button" class="alpha-filter" data-letter="n">n</button>
+            
+            <button type="button" class="alpha-filter" data-letter="o">o</button>
+            
+            <button type="button" class="alpha-filter" data-letter="p">p</button>
+            
+            <button type="button" class="alpha-filter" data-letter="q">q</button>
+            
+            <button type="button" class="alpha-filter" data-letter="r">r</button>
+            
+            <button type="button" class="alpha-filter" data-letter="s">s</button>
+            
+            <button type="button" class="alpha-filter" data-letter="t">t</button>
+            
+            <button type="button" class="alpha-filter" data-letter="u">u</button>
+            
+            <button type="button" class="alpha-filter" data-letter="v">v</button>
+            
+            <button type="button" class="alpha-filter" data-letter="w">w</button>
+            
+            <button type="button" class="alpha-filter" data-letter="x">x</button>
+            
+            <button type="button" class="alpha-filter" data-letter="y">y</button>
+            
+            <button type="button" class="alpha-filter" data-letter="z">z</button>
+            
+        </div>
+    </div>
     
-    
+    <div class="search-side">
+        
+        <button type="button" class="sort-button active" 
+                data-sort="title"
+                data-ascending="true">
+            <span class="sort-label">Films A–Z</span>
+            <svg class="sort-arrow ascending" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+            </svg>
+        </button>
+        
+        <button type="button" class="sort-button " 
+                data-sort="director"
+                data-ascending="true">
+            <span class="sort-label">Filmmakers A—Z</span>
+            <svg class="sort-arrow ascending" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+            </svg>
+        </button>
+        
+    </div>
+</div>
+        
+        
+        
 <div class="cards-container">
     
+        
+        
+        
         <div class="film-card-wrapper" 
              data-title="lezing door laura rascaroli"
              data-director=""
              data-letter="l"
+             data-filmmaker-letters=""
+             data-all-letters="l"
              data-date="14 september">
             
 <div class="film-card">
@@ -438,10 +408,37 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="undead voices (2019–2021)"
              data-director="maria iorio en raphaël cuomo"
              data-letter="u"
+             data-filmmaker-letters="m,i,e,r,c"
+             data-all-letters="u,m,i,e,r,c"
              data-date="14 september">
             
 <div class="film-card">
@@ -494,10 +491,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="sans soleil"
              data-director="chris marker"
              data-letter="s"
+             data-filmmaker-letters="c,m"
+             data-all-letters="s,c,m"
              data-date="15 september">
             
 <div class="film-card">
@@ -550,10 +562,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="juste un mouvement"
              data-director="vincent meessen"
              data-letter="j"
+             data-filmmaker-letters="v,m"
+             data-all-letters="j,v,m"
              data-date="15 september">
             
 <div class="film-card">
@@ -604,10 +631,29 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="twenty-four cinematic points of view of a factory gate in china"
              data-director="ho rui an"
              data-letter="t"
+             data-filmmaker-letters="h,r,a"
+             data-all-letters="t,h,r,a"
              data-date="15 september">
             
 <div class="film-card">
@@ -660,10 +706,29 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="workers leaving the googleplex"
              data-director="andrew norman wilson"
              data-letter="w"
+             data-filmmaker-letters="a,n,w"
+             data-all-letters="w,a,n"
              data-date="15 september">
             
 <div class="film-card">
@@ -716,10 +781,33 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="la sortie de l&#39;usine lumière à lyon"
              data-director="auguste en louis lumière"
              data-letter="l"
+             data-filmmaker-letters="a,e,l,l"
+             data-all-letters="l,a,e"
              data-date="15 september">
             
 <div class="film-card">
@@ -772,10 +860,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="arbeiter verlassen die fabrik"
              data-director="harun farocki"
              data-letter="a"
+             data-filmmaker-letters="h,f"
+             data-all-letters="a,h,f"
              data-date="15 september">
             
 <div class="film-card">
@@ -828,10 +931,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="was ist los?"
              data-director="harun farocki"
              data-letter="w"
+             data-filmmaker-letters="h,f"
+             data-all-letters="w,h,f"
              data-date="15 september">
             
 <div class="film-card">
@@ -884,10 +1002,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="gegen-musik"
              data-director="harun farocki"
              data-letter="g"
+             data-filmmaker-letters="h,f"
+             data-all-letters="g,h,f"
              data-date="15 september">
             
 <div class="film-card">
@@ -940,10 +1073,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="getty abortions"
              data-director="franzis kabisch"
              data-letter="g"
+             data-filmmaker-letters="f,k"
+             data-all-letters="g,f,k"
              data-date="15 september">
             
 <div class="film-card">
@@ -996,10 +1144,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="preemptive listening"
              data-director="aura satz"
              data-letter="p"
+             data-filmmaker-letters="a,s"
+             data-all-letters="p,a,s"
              data-date="15 september">
             
 <div class="film-card">
@@ -1050,10 +1213,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="home invasion"
              data-director="graeme arnfield"
              data-letter="h"
+             data-filmmaker-letters="g,a"
+             data-all-letters="h,g,a"
              data-date="15 september">
             
 <div class="film-card">
@@ -1104,10 +1282,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="coma"
              data-director="bertrand bonello"
              data-letter="c"
+             data-filmmaker-letters="b,b"
+             data-all-letters="c,b"
              data-date="15 september">
             
 <div class="film-card">
@@ -1158,10 +1351,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="free to choose"
              data-director="bahar noorizadeh"
              data-letter="f"
+             data-filmmaker-letters="b,n"
+             data-all-letters="f,b,n"
              data-date="15 september">
             
 <div class="film-card">
@@ -1214,10 +1422,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="an asian ghost story"
              data-director="bo wang"
              data-letter="a"
+             data-filmmaker-letters="b,w"
+             data-all-letters="a,b,w"
              data-date="15 september">
             
 <div class="film-card">
@@ -1270,10 +1493,37 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="room 404"
              data-director="elysa wendi and shing lee"
              data-letter="r"
+             data-filmmaker-letters="e,w,a,s,l"
+             data-all-letters="r,e,w,a,s,l"
              data-date="15 september">
             
 <div class="film-card">
@@ -1326,10 +1576,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="the natural history of destruction"
              data-director="sergei loznitsa"
              data-letter="t"
+             data-filmmaker-letters="s,l"
+             data-all-letters="t,s,l"
              data-date="15 september">
             
 <div class="film-card">
@@ -1380,10 +1645,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="sr"
              data-director="lea hartlaub"
              data-letter="s"
+             data-filmmaker-letters="l,h"
+             data-all-letters="s,l,h"
              data-date="15 september">
             
 <div class="film-card">
@@ -1434,10 +1714,29 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="letters from panduranga"
              data-director="nguyễn trinh thi"
              data-letter="l"
+             data-filmmaker-letters="n,t,t"
+             data-all-letters="l,n,t"
              data-date="15 september">
             
 <div class="film-card">
@@ -1490,10 +1789,29 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="how to improve the world"
              data-director="nguyễn trinh thi"
              data-letter="h"
+             data-filmmaker-letters="n,t,t"
+             data-all-letters="h,n,t"
              data-date="15 september">
             
 <div class="film-card">
@@ -1546,10 +1864,33 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="where can i get lost?"
              data-director="mattijs van de port"
              data-letter="w"
+             data-filmmaker-letters="m,v,d,p"
+             data-all-letters="w,m,v,d,p"
              data-date="16 september">
             
 <div class="film-card">
@@ -1600,10 +1941,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="man number 4"
              data-director="miranda pennell"
              data-letter="m"
+             data-filmmaker-letters="m,p"
+             data-all-letters="m,p"
              data-date="16 september">
             
 <div class="film-card">
@@ -1656,10 +2012,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="capricorn sunset"
              data-director="johannes binotto"
              data-letter="c"
+             data-filmmaker-letters="j,b"
+             data-all-letters="c,j,b"
              data-date="16 september">
             
 <div class="film-card">
@@ -1712,10 +2083,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="a fidai film"
              data-director="kamal aljafari"
              data-letter="a"
+             data-filmmaker-letters="k,a"
+             data-all-letters="a,k"
              data-date="16 september">
             
 <div class="film-card">
@@ -1768,10 +2154,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="henry fonda for president"
              data-director="alexander horwath"
              data-letter="h"
+             data-filmmaker-letters="a,h"
+             data-all-letters="h,a"
              data-date="16 september">
             
 <div class="film-card">
@@ -1822,10 +2223,33 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="face value"
              data-director="johan van der keuken"
              data-letter="f"
+             data-filmmaker-letters="j,v,d,k"
+             data-all-letters="f,j,v,d,k"
              data-date="16 september">
             
 <div class="film-card">
@@ -1878,10 +2302,37 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="my want of you partakes of me"
              data-director="sasha litvintseva en beny wagner"
              data-letter="m"
+             data-filmmaker-letters="s,l,e,b,w"
+             data-all-letters="m,s,l,e,b,w"
              data-date="16 september">
             
 <div class="film-card">
@@ -1932,10 +2383,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="perpetual radiance"
              data-director="michela meliddo"
              data-letter="p"
+             data-filmmaker-letters="m,m"
+             data-all-letters="p,m"
              data-date="16 september">
             
 <div class="film-card">
@@ -1988,10 +2454,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="to the earthern red"
              data-director="nika pećarina"
              data-letter="t"
+             data-filmmaker-letters="n,p"
+             data-all-letters="t,n,p"
              data-date="16 september">
             
 <div class="film-card">
@@ -2044,10 +2525,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="mariam jafri vs maryam jafri"
              data-director="maryam jafri"
              data-letter="m"
+             data-filmmaker-letters="m,j"
+             data-all-letters="m,j"
              data-date="16 september">
             
 <div class="film-card">
@@ -2100,10 +2596,41 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="haunted, the hollow"
              data-director="veronica munteau, karin nakajima, sara ouljour"
              data-letter="h"
+             data-filmmaker-letters="v,m,k,n,s,o"
+             data-all-letters="h,v,m,k,n,s,o"
              data-date="16 september">
             
 <div class="film-card">
@@ -2156,10 +2683,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="searching for the perfect gentleman"
              data-director="lena windisch"
              data-letter="s"
+             data-filmmaker-letters="l,w"
+             data-all-letters="s,l,w"
              data-date="16 september">
             
 <div class="film-card">
@@ -2212,10 +2754,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="the southern thruway"
              data-director="susanna tomassini"
              data-letter="t"
+             data-filmmaker-letters="s,t"
+             data-all-letters="t,s"
              data-date="16 september">
             
 <div class="film-card">
@@ -2268,10 +2825,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="in praise of slowness"
              data-director="hicham gardaf"
              data-letter="i"
+             data-filmmaker-letters="h,g"
+             data-all-letters="i,h,g"
              data-date="16 september">
             
 <div class="film-card">
@@ -2322,10 +2894,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="a letter from yene"
              data-director="manthia diawara"
              data-letter="a"
+             data-filmmaker-letters="m,d"
+             data-all-letters="a,m,d"
              data-date="16 september">
             
 <div class="film-card">
@@ -2376,10 +2963,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="de l’autre coté"
              data-director="chantal akerman"
              data-letter="d"
+             data-filmmaker-letters="c,a"
+             data-all-letters="d,c,a"
              data-date="16 september">
             
 <div class="film-card">
@@ -2432,10 +3034,37 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="the cave mouth and the giant voice"
              data-director="rupert cox en angus carlyle"
              data-letter="t"
+             data-filmmaker-letters="r,c,e,a,c"
+             data-all-letters="t,r,c,e,a"
              data-date="16 september">
             
 <div class="film-card">
@@ -2488,10 +3117,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="kapotte muziek – track 1"
              data-director="toshiya tsunoda"
              data-letter="k"
+             data-filmmaker-letters="t,t"
+             data-all-letters="k,t"
              data-date="16 september">
             
 <div class="film-card">
@@ -2544,10 +3188,37 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="where no bell rings"
              data-director="lucia nimcová en david petráš "
              data-letter="w"
+             data-filmmaker-letters="l,n,e,d,p"
+             data-all-letters="w,l,n,e,d,p"
              data-date="16 september">
             
 <div class="film-card">
@@ -2598,10 +3269,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="message from mukalap"
              data-director="judith westerveld"
              data-letter="m"
+             data-filmmaker-letters="j,w"
+             data-all-letters="m,j,w"
              data-date="16 september">
             
 <div class="film-card">
@@ -2654,10 +3340,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="the sending of the crows"
              data-director="judith westerveld"
              data-letter="t"
+             data-filmmaker-letters="j,w"
+             data-all-letters="t,j,w"
              data-date="16 september">
             
 <div class="film-card">
@@ -2710,10 +3411,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="nowhere near"
              data-director="miko revereza"
              data-letter="n"
+             data-filmmaker-letters="m,r"
+             data-all-letters="n,m,r"
              data-date="16 september">
             
 <div class="film-card">
@@ -2764,10 +3480,25 @@
 </div>
         </div>
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="disquiet"
              data-director="lis rhodes"
              data-letter="d"
+             data-filmmaker-letters="l,r"
+             data-all-letters="d,l,r"
              data-date="16 september">
             
 <div class="film-card">
@@ -2896,7 +3627,7 @@
                 <h4>Contact</h4>
                 <ul>
                     <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
-                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank" rel="noopener">Instagram</a></li>
                     <li><a href="/leff/nl/privacy/">Privacybeleid</a></li>
                 </ul>
             </div>

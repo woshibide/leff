@@ -270,7 +270,7 @@ const MenuSystem = {
                 if (!this.elements.menuText) {
                     this.elements.menuText = document.createElement('span');
                     this.elements.menuText.id = 'nav-logo-text';
-                    this.elements.menuText.textContent = 'MENU';
+                    this.elements.menuText.textContent = 'leff 2025';
                     if (this.elements.logo.className) {
                         this.elements.menuText.className = this.elements.logo.className;
                     }

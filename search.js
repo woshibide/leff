@@ -26,6 +26,7 @@ const SearchUtility = {
 
         this.cardLinks = Array.from(this.container.querySelectorAll(config.cardLinkSelector));
         this.activeSort = config.defaultSort;
+        this.activeSortAscending = true; // default to ascending
         this.activeLetter = null;
 
         console.log('SearchUtility initialized with', this.cardLinks.length, 'cards');
@@ -61,9 +62,31 @@ const SearchUtility = {
         // sort buttons
         this.sortButtons.forEach(button => {
             button.addEventListener('click', () => {
-                this.sortButtons.forEach(btn => btn.classList.remove('active'));
-                this.activeSort = button.dataset.sort;
-                button.classList.add('active');
+                const isCurrentlyActive = button.classList.contains('active');
+                
+                if (isCurrentlyActive) {
+                    // toggle ascending/descending for the active button
+                    const currentAscending = button.dataset.ascending === 'true';
+                    const newAscending = !currentAscending;
+                    button.dataset.ascending = newAscending.toString();
+                    
+                    // update arrow visual state
+                    const arrow = button.querySelector('.sort-arrow');
+                    if (arrow) {
+                        arrow.classList.toggle('ascending', newAscending);
+                        arrow.classList.toggle('descending', !newAscending);
+                    }
+                    
+                    this.activeSort = button.dataset.sort;
+                    this.activeSortAscending = newAscending;
+                } else {
+                    // switch to new sort button
+                    this.sortButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    this.activeSort = button.dataset.sort;
+                    this.activeSortAscending = button.dataset.ascending === 'true';
+                }
+                
                 this.filterAndSort();
             });
         });
@@ -108,12 +131,26 @@ const SearchUtility = {
 
     /**
      * check if card matches letter filter
+     * handles both film titles and filmmaker names (all first letters)
      * @param {Element} cardLink - card element to check
      * @returns {boolean} - whether card matches letter filter
      */
     matchesLetterFilter(cardLink) {
         if (!this.activeLetter) return true;
-        return cardLink.dataset.letter === this.activeLetter;
+        
+        // check film title first letter
+        if (cardLink.dataset.letter === this.activeLetter) {
+            return true;
+        }
+        
+        // check all filmmaker name first letters
+        const allLetters = cardLink.dataset.allLetters;
+        if (allLetters) {
+            const letters = allLetters.split(',');
+            return letters.includes(this.activeLetter);
+        }
+        
+        return false;
     },
 
     /**
@@ -136,21 +173,24 @@ const SearchUtility = {
      * @returns {number} - comparison result
      */
     compareCards(cardA, cardB, sortField) {
+        let comparison = 0;
+        
         // handle special sort fields
         if (sortField === 'date') {
-            return this.compareDates(cardA.dataset.date, cardB.dataset.date);
-        }
-
-        if (sortField === 'film_count') {
+            comparison = this.compareDates(cardA.dataset.date, cardB.dataset.date);
+        } else if (sortField === 'film_count') {
             const aCount = parseInt(cardA.dataset.filmCount, 10) || 0;
             const bCount = parseInt(cardB.dataset.filmCount, 10) || 0;
-            return bCount - aCount; // descending order
+            comparison = bCount - aCount; // default descending for count
+        } else {
+            // default alphabetical sort
+            const aValue = cardA.dataset[sortField] || '';
+            const bValue = cardB.dataset[sortField] || '';
+            comparison = aValue.localeCompare(bValue);
         }
-
-        // default alphabetical sort
-        const aValue = cardA.dataset[sortField] || '';
-        const bValue = cardB.dataset[sortField] || '';
-        return aValue.localeCompare(bValue);
+        
+        // apply ascending/descending order
+        return this.activeSortAscending ? comparison : -comparison;
     },
 
     /**

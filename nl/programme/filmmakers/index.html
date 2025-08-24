@@ -28,103 +28,15 @@
     
     <base href="/leff/">
     
-    <link rel="stylesheet" href="/leff/styles.f41dbe3a56.css">
+    <link rel="stylesheet" href="/leff/styles.994643401a.css">
     
 
     
+<link rel="stylesheet" href="/leff/search-utility.d0604bdcb0.css">
 <style>
     /*
         filmmakers page styles - replicating programme.html layout with filmmaker cards
     */
-    
-    .content-wrapper {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: 2fr 10fr;
-        gap: var(--space-xl);
-    }
-
-    .search-utilities {
-        grid-column: 1 / 2;
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-2xl);
-        align-self: start;
-        position: sticky;
-        top: var(--space-2xl);
-    }
-
-    .search-top,
-    .search-side {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-md);
-    }
-
-    #search-bar input {
-        width: 100%;
-        padding: var(--space-sm);
-        border: 2px solid var(--bg-main);
-        background: transparent;
-        color: var(--text-main);
-        font-family: inherit;
-        font-size: 1rem;
-        border-radius: 0;
-        transition: all 0.2s var(--transition);
-    }
-
-    #search-bar input:focus {
-        outline: none;
-        background: var(--bg-main);
-        color: var(--accent);
-    }
-
-    #search-bar input::placeholder {
-        color: var(--dark-silver);
-    }
-
-    .alphabetical-search {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-xs);
-        font-family: monospace;
-    }
-
-    .alphabetical-search .alpha-filter {
-        background: transparent;
-        border: 1px solid var(--bg-main);
-        color: var(--bg-main);
-        padding: var(--space-xs) var(--space-sm);
-        cursor: pointer;
-        text-transform: uppercase;
-        transition: all 0.2s var(--transition);
-        flex-grow: 1;
-        text-align: center;
-    }
-
-    .alphabetical-search .alpha-filter:hover,
-    .alphabetical-search .alpha-filter.active {
-        background: var(--bg-main);
-        color: var(--accent);
-    }
-
-    .search-side .sort-button {
-        background: transparent;
-        border: 2px solid var(--bg-main);
-        color: var(--bg-main);
-        padding: var(--space-sm);
-        text-align: left;
-        cursor: pointer;
-        text-transform: uppercase;
-        transition: all 0.2s var(--transition);
-        font-size: 1rem;
-    }
-
-    .search-side .sort-button:hover,
-    .search-side .sort-button.active {
-        background: var(--bg-main);
-        color: var(--accent);
-    }
     
     .filmmakers-container {
         grid-column: 2 / 3;
@@ -146,7 +58,7 @@
         color: var(--accent);
     }
     
-    .filmmaker-card-image {
+    /* .filmmaker-card-image {
         grid-column: 1 / 2;
         overflow: hidden;
     }
@@ -156,7 +68,7 @@
         height: 100%;
         object-fit: cover;
         transition: transform 0.3s var(--transition);
-    }
+    } */
     
     .filmmaker-card-text-wrapper {
         grid-column: 1 / -1;
@@ -186,7 +98,7 @@
     .filmmaker-bio {
         font-size: 1.25rem;
         color: inherit;
-        line-height: 1.4;
+        /* line-height: 1.4; */
     }
     
     .filmmaker-bio p {
@@ -203,7 +115,7 @@
     .filmmaker-films-list {
         display: flex;
         flex-direction: column;
-        gap: var(--space-xs);
+        gap: var(--space-lg);
     }
     
     .filmmaker-film-link {
@@ -290,7 +202,7 @@
         <a href="/leff/nl/"><img src="/leff/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
         <div id="circle-container">
-            <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
+            <a href="https://bioscopenleiden.nl/" target="_blank" rel="noopener" id="nav-tickets" class="tickets-button">
                 Tickets
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
                     <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
@@ -299,19 +211,20 @@
             <div id="languages">
                 
                 
+                
                 <a href="/leff/en/programme/filmmakers/">
-                    <button>EN</button>
+                    <button type="button">EN</button>
                 </a>
                 
                 
                 
-                <button class="active">NL</button>
+                <button type="button" class="active">NL</button>
                 
                 
             </div>
             <div id="circle"></div>
             <div class="menu-close" style="display: none;">
-                <button class="close-icon" id="menu-close" aria-label="close">
+                <button type="button" class="close-icon" id="menu-close" aria-label="close">
                     <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
                         <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
                         <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2" />
@@ -337,7 +250,7 @@
                         <li>
                             
                             <div class="menu-dropdown-item">
-                                <button class="menu-dropdown-toggle" data-dropdown="programme">
+                                <button type="button" class="menu-dropdown-toggle" data-dropdown="programme">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         class="arrow-icon east-arrow dropdown-arrow">
                                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
@@ -394,7 +307,7 @@
                         <li>
                             
                             <div class="menu-dropdown-item">
-                                <button class="menu-dropdown-toggle" data-dropdown="about">
+                                <button type="button" class="menu-dropdown-toggle" data-dropdown="about">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         class="arrow-icon east-arrow dropdown-arrow">
                                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
@@ -429,86 +342,148 @@
     <section class="page-contents">
         
 <div class="grid-base" id="filmmakers-page">
-    <h1 class="page-title">
-        PROGRAMMA 2025 / A—Z FILMMAKERS
-    </h1>
+    
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Programma 2025","item":"https://leidenessayfilmfestival.com/leff/nl/programme/"},{"@type":"ListItem","position":2,"name":"Filmmakers"}]}
+</script>
+
+
+<div class="breadcrumb-container" role="navigation" aria-label="breadcrumb">
+    <ol class="breadcrumb-list">
+        
+            <li class="breadcrumb-item">
+                
+                    <a href="/leff/nl/programme/" class="breadcrumb-link">Programma 2025</a>
+                
+            </li>
+        
+            <li class="breadcrumb-item">
+                
+                    <h1 class="breadcrumb-current-page" aria-current="page">Filmmakers</h1>
+                
+            </li>
+        
+    </ol>
+</div>
+
 
     
     <div class="content-wrapper">
-        <div class="search-utilities">
-            <div class="search-top">
-                <div id="search-bar">
-                    <input type="text" id="filmmakers-search"
-                        placeholder="search filmmakers...">
-                </div>
-                <div class="alphabetical-search">
-                    
-                    <button class="alpha-filter" data-letter="a">a</button>
-                    
-                    <button class="alpha-filter" data-letter="b">b</button>
-                    
-                    <button class="alpha-filter" data-letter="c">c</button>
-                    
-                    <button class="alpha-filter" data-letter="d">d</button>
-                    
-                    <button class="alpha-filter" data-letter="e">e</button>
-                    
-                    <button class="alpha-filter" data-letter="f">f</button>
-                    
-                    <button class="alpha-filter" data-letter="g">g</button>
-                    
-                    <button class="alpha-filter" data-letter="h">h</button>
-                    
-                    <button class="alpha-filter" data-letter="i">i</button>
-                    
-                    <button class="alpha-filter" data-letter="j">j</button>
-                    
-                    <button class="alpha-filter" data-letter="k">k</button>
-                    
-                    <button class="alpha-filter" data-letter="l">l</button>
-                    
-                    <button class="alpha-filter" data-letter="m">m</button>
-                    
-                    <button class="alpha-filter" data-letter="n">n</button>
-                    
-                    <button class="alpha-filter" data-letter="o">o</button>
-                    
-                    <button class="alpha-filter" data-letter="p">p</button>
-                    
-                    <button class="alpha-filter" data-letter="q">q</button>
-                    
-                    <button class="alpha-filter" data-letter="r">r</button>
-                    
-                    <button class="alpha-filter" data-letter="s">s</button>
-                    
-                    <button class="alpha-filter" data-letter="t">t</button>
-                    
-                    <button class="alpha-filter" data-letter="u">u</button>
-                    
-                    <button class="alpha-filter" data-letter="v">v</button>
-                    
-                    <button class="alpha-filter" data-letter="w">w</button>
-                    
-                    <button class="alpha-filter" data-letter="x">x</button>
-                    
-                    <button class="alpha-filter" data-letter="y">y</button>
-                    
-                    <button class="alpha-filter" data-letter="z">z</button>
-                    
-                </div>
-            </div>
-            <div class="search-side">
-                <button class="sort-button active" data-sort="name">Filmmakers A—Z</button>
-                <button class="sort-button" data-sort="film_count">Number of Films</button>
-            </div>
-        </div>
+        
+        
+        
+        <!--
+    search utility component
+    reusable search sidebar for programme, filmmakers, and specials pages
+    
+    required parameters:
+    - search_input_id: unique id for the search input
+    - search_placeholder: placeholder text for search input
+    - sort_buttons: array of sort button objects with 'data_sort', 'label', and 'active' properties
+    
+    alphabetical filtering is always available and handles:
+    - first letter of film titles
+    - all first letters of filmmaker names (for multi-word names)
+-->
 
-                                <div class="filmmakers-container">
+<div class="search-utilities">
+    <div class="search-top">
+        <div id="search-bar">
+            <input type="text" 
+                   id="filmmakers-search"
+                   placeholder="search filmmakers...">
+        </div>
+        
+        <div class="alphabetical-search">
+            
+            <button type="button" class="alpha-filter" data-letter="a">a</button>
+            
+            <button type="button" class="alpha-filter" data-letter="b">b</button>
+            
+            <button type="button" class="alpha-filter" data-letter="c">c</button>
+            
+            <button type="button" class="alpha-filter" data-letter="d">d</button>
+            
+            <button type="button" class="alpha-filter" data-letter="e">e</button>
+            
+            <button type="button" class="alpha-filter" data-letter="f">f</button>
+            
+            <button type="button" class="alpha-filter" data-letter="g">g</button>
+            
+            <button type="button" class="alpha-filter" data-letter="h">h</button>
+            
+            <button type="button" class="alpha-filter" data-letter="i">i</button>
+            
+            <button type="button" class="alpha-filter" data-letter="j">j</button>
+            
+            <button type="button" class="alpha-filter" data-letter="k">k</button>
+            
+            <button type="button" class="alpha-filter" data-letter="l">l</button>
+            
+            <button type="button" class="alpha-filter" data-letter="m">m</button>
+            
+            <button type="button" class="alpha-filter" data-letter="n">n</button>
+            
+            <button type="button" class="alpha-filter" data-letter="o">o</button>
+            
+            <button type="button" class="alpha-filter" data-letter="p">p</button>
+            
+            <button type="button" class="alpha-filter" data-letter="q">q</button>
+            
+            <button type="button" class="alpha-filter" data-letter="r">r</button>
+            
+            <button type="button" class="alpha-filter" data-letter="s">s</button>
+            
+            <button type="button" class="alpha-filter" data-letter="t">t</button>
+            
+            <button type="button" class="alpha-filter" data-letter="u">u</button>
+            
+            <button type="button" class="alpha-filter" data-letter="v">v</button>
+            
+            <button type="button" class="alpha-filter" data-letter="w">w</button>
+            
+            <button type="button" class="alpha-filter" data-letter="x">x</button>
+            
+            <button type="button" class="alpha-filter" data-letter="y">y</button>
+            
+            <button type="button" class="alpha-filter" data-letter="z">z</button>
+            
+        </div>
+    </div>
+    
+    <div class="search-side">
+        
+        <button type="button" class="sort-button active" 
+                data-sort="name"
+                data-ascending="true">
+            <span class="sort-label">Filmmakers A—Z</span>
+            <svg class="sort-arrow ascending" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+            </svg>
+        </button>
+        
+    </div>
+</div>
+
+        <div class="filmmakers-container">
             
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="alexander horwath"
                        data-letter="a"
+                       data-all-letters="a,h"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -583,9 +558,24 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="andrew norman wilson"
                        data-letter="a"
+                       data-all-letters="a,n,w"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -662,9 +652,30 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="angus carlyle &amp; rupert cox"
                        data-letter="a"
+                       data-all-letters="a,c,r,c"
                        data-film-count="0">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -687,9 +698,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="aura satz"
                        data-letter="a"
+                       data-all-letters="a,s"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -764,9 +786,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="bahar noorizadeh"
                        data-letter="b"
+                       data-all-letters="b,n"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -843,9 +876,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="bertrand bonello"
                        data-letter="b"
+                       data-all-letters="b,b"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -920,9 +964,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="bo wang"
                        data-letter="b"
+                       data-all-letters="b,w"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -999,9 +1054,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="chantal akerman"
                        data-letter="c"
+                       data-all-letters="c,a"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -1078,9 +1144,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="chris marker"
                        data-letter="c"
+                       data-all-letters="c,m"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -1157,9 +1234,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="elysa wendi"
                        data-letter="e"
+                       data-all-letters="e,w"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -1236,9 +1324,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="francis kabisch"
                        data-letter="f"
+                       data-all-letters="f,k"
                        data-film-count="0">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -1261,9 +1360,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="graeme arnfield"
                        data-letter="g"
+                       data-all-letters="g,a"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -1338,9 +1448,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="harun farocki"
                        data-letter="h"
+                       data-all-letters="h,f"
                        data-film-count="3">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -1517,9 +1638,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="hicham gardaf"
                        data-letter="h"
+                       data-all-letters="h,g"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -1594,9 +1726,24 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="ho rui an"
                        data-letter="h"
+                       data-all-letters="h,r,a"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -1673,9 +1820,28 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="johan van der keuken"
                        data-letter="j"
+                       data-all-letters="j,v,d,k"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -1752,9 +1918,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="johannes binotto"
                        data-letter="j"
+                       data-all-letters="j,b"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -1831,9 +2008,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="judith westerveld"
                        data-letter="j"
+                       data-all-letters="j,w"
                        data-film-count="2">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -1960,9 +2148,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="kamal aljafari"
                        data-letter="k"
+                       data-all-letters="k,a"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -2039,9 +2238,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="lea hartlaub"
                        data-letter="l"
+                       data-all-letters="l,h"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -2116,9 +2326,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="lena windisch"
                        data-letter="l"
+                       data-all-letters="l,w"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -2195,9 +2416,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="lis rhodes"
                        data-letter="l"
+                       data-all-letters="l,r"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -2272,9 +2504,30 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="lucia nimcová &amp; david petráš"
                        data-letter="l"
+                       data-all-letters="l,n,d,p"
                        data-film-count="0">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -2301,9 +2554,20 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="manthia diawara"
                        data-letter="m"
+                       data-all-letters="m,d"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -2378,9 +2642,30 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="maria iorio &amp; raphaël cuomo"
                        data-letter="m"
+                       data-all-letters="m,i,r,c"
                        data-film-count="0">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -2403,9 +2688,20 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="maryam jafri"
                        data-letter="m"
+                       data-all-letters="m,j"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -2482,9 +2778,28 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="mattijs van de port"
                        data-letter="m"
+                       data-all-letters="m,v,d,p"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -2559,9 +2874,20 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="michela meliddo"
                        data-letter="m"
+                       data-all-letters="m,m"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -2638,9 +2964,20 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="miko revereza"
                        data-letter="m"
+                       data-all-letters="m,r"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -2715,9 +3052,20 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="miranda pennell"
                        data-letter="m"
+                       data-all-letters="m,p"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -2794,9 +3142,24 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="nguyễn trinh thi"
                        data-letter="n"
+                       data-all-letters="n,t,t"
                        data-film-count="2">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -2923,9 +3286,20 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="nika pećarina"
                        data-letter="n"
+                       data-all-letters="n,p"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -3002,9 +3376,30 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="sasha litvintseva &amp; beny wagner"
                        data-letter="s"
+                       data-all-letters="s,l,b,w"
                        data-film-count="0">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -3027,9 +3422,20 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="sergey loznitsa"
                        data-letter="s"
+                       data-all-letters="s,l"
                        data-film-count="0">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -3052,9 +3458,20 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="susanna tomassini"
                        data-letter="s"
+                       data-all-letters="s,t"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -3131,9 +3548,20 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="toyisha tsunoda"
                        data-letter="t"
+                       data-all-letters="t,t"
                        data-film-count="0">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -3156,9 +3584,36 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="veronica munteau, karin nakajima, sara ouljour"
                        data-letter="v"
+                       data-all-letters="v,m,k,n,s,o"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -3235,9 +3690,20 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="filmmaker-card-link" 
                        data-name="vincent meessen"
                        data-letter="v"
+                       data-all-letters="v,m"
                        data-film-count="1">
                         <div class="filmmaker-card">
                             <!-- <div class="filmmaker-card-image">
@@ -3391,7 +3857,7 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                 <h4>Contact</h4>
                 <ul>
                     <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
-                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank" rel="noopener">Instagram</a></li>
                     <li><a href="/leff/nl/privacy/">Privacybeleid</a></li>
                 </ul>
             </div>

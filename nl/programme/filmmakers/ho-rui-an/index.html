@@ -28,7 +28,7 @@
     
     <base href="/leff/">
     
-    <link rel="stylesheet" href="/leff/styles.f41dbe3a56.css">
+    <link rel="stylesheet" href="/leff/styles.994643401a.css">
     
 
     
@@ -78,7 +78,7 @@
         color: var(--accent);
         margin: 0;
         line-height: 1.1;
-        text-shadow: var(--shadow);
+        /* text-shadow: var(--shadow); */
     }
 
     .filmmaker-title {
@@ -169,7 +169,7 @@
         <a href="/leff/nl/"><img src="/leff/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
         <div id="circle-container">
-            <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
+            <a href="https://bioscopenleiden.nl/" target="_blank" rel="noopener" id="nav-tickets" class="tickets-button">
                 Tickets
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
                     <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
@@ -178,19 +178,20 @@
             <div id="languages">
                 
                 
+                
                 <a href="/leff/en/programme/filmmakers/ho-rui-an/">
-                    <button>EN</button>
+                    <button type="button">EN</button>
                 </a>
                 
                 
                 
-                <button class="active">NL</button>
+                <button type="button" class="active">NL</button>
                 
                 
             </div>
             <div id="circle"></div>
             <div class="menu-close" style="display: none;">
-                <button class="close-icon" id="menu-close" aria-label="close">
+                <button type="button" class="close-icon" id="menu-close" aria-label="close">
                     <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
                         <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
                         <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2" />
@@ -216,7 +217,7 @@
                         <li>
                             
                             <div class="menu-dropdown-item">
-                                <button class="menu-dropdown-toggle" data-dropdown="programme">
+                                <button type="button" class="menu-dropdown-toggle" data-dropdown="programme">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         class="arrow-icon east-arrow dropdown-arrow">
                                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
@@ -273,7 +274,7 @@
                         <li>
                             
                             <div class="menu-dropdown-item">
-                                <button class="menu-dropdown-toggle" data-dropdown="about">
+                                <button type="button" class="menu-dropdown-toggle" data-dropdown="about">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         class="arrow-icon east-arrow dropdown-arrow">
                                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
@@ -308,9 +309,38 @@
     <section class="page-contents">
         
 <div class="grid-base">
-    <h1 class="page-title">
-        Programma 2025 / Filmmaker / Ho Rui An
-    </h1>
+    
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Programma 2025","item":"https://leidenessayfilmfestival.com/leff/nl/programme/"},{"@type":"ListItem","position":2,"name":"Filmmakers","item":"https://leidenessayfilmfestival.com/leff/nl/programme/filmmakers/"},{"@type":"ListItem","position":3,"name":"Ho Rui An"}]}
+</script>
+
+
+<div class="breadcrumb-container" role="navigation" aria-label="breadcrumb">
+    <ol class="breadcrumb-list">
+        
+            <li class="breadcrumb-item">
+                
+                    <a href="/leff/nl/programme/" class="breadcrumb-link">Programma 2025</a>
+                
+            </li>
+        
+            <li class="breadcrumb-item">
+                
+                    <a href="/leff/nl/programme/filmmakers/" class="breadcrumb-link">Filmmakers</a>
+                
+            </li>
+        
+            <li class="breadcrumb-item">
+                
+                    <h1 class="breadcrumb-current-page" aria-current="page">Ho Rui An</h1>
+                
+            </li>
+        
+    </ol>
+</div>
+
     <!-- <div class="filmmaker-hero-container">
         <div class="filmmaker-hero">
             <img src="/leff/assets/images/placeholder.webp" alt="Ho Rui An">
@@ -340,10 +370,29 @@
             
 <div class="cards-container">
     
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
         <div class="film-card-wrapper" 
              data-title="twenty-four cinematic points of view of a factory gate in china"
              data-director="ho rui an"
              data-letter="t"
+             data-filmmaker-letters="h,r,a"
+             data-all-letters="t,h,r,a"
              data-date="">
             
 <div class="film-card">
@@ -474,7 +523,7 @@
                 <h4>Contact</h4>
                 <ul>
                     <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
-                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank" rel="noopener">Instagram</a></li>
                     <li><a href="/leff/nl/privacy/">Privacybeleid</a></li>
                 </ul>
             </div>

@@ -28,7 +28,7 @@
     
     <base href="/leff/">
     
-    <link rel="stylesheet" href="/leff/styles.f41dbe3a56.css">
+    <link rel="stylesheet" href="/leff/styles.994643401a.css">
     
 
     
@@ -130,6 +130,10 @@ body.index-page.menu-open #nav-logo {
     text-shadow: var(--shadow);
     margin: 0;
     line-height: 96%;
+}
+/* br is used as a new paragraph in big bodys of text elsewhere */
+#hero-h1 br {
+    margin: 0 !important;
 }
 @media (max-width: 768px) {
     #hero-h1 {
@@ -338,7 +342,7 @@ nav.menu-active #hero-h1 {
         <a href="/leff/en/"><img src="/leff/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
         <div id="circle-container">
-            <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
+            <a href="https://bioscopenleiden.nl/" target="_blank" rel="noopener" id="nav-tickets" class="tickets-button">
                 Tickets
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
                     <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
@@ -347,19 +351,20 @@ nav.menu-active #hero-h1 {
             <div id="languages">
                 
                 
-                <button class="active">EN</button>
+                <button type="button" class="active">EN</button>
+                
                 
                 
                 
                 <a href="/leff/nl/">
-                    <button>NL</button>
+                    <button type="button">NL</button>
                 </a>
                 
                 
             </div>
             <div id="circle"></div>
             <div class="menu-close" style="display: none;">
-                <button class="close-icon" id="menu-close" aria-label="close">
+                <button type="button" class="close-icon" id="menu-close" aria-label="close">
                     <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
                         <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
                         <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2" />
@@ -385,7 +390,7 @@ nav.menu-active #hero-h1 {
                         <li>
                             
                             <div class="menu-dropdown-item">
-                                <button class="menu-dropdown-toggle" data-dropdown="programme">
+                                <button type="button" class="menu-dropdown-toggle" data-dropdown="programme">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         class="arrow-icon east-arrow dropdown-arrow">
                                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
@@ -442,7 +447,7 @@ nav.menu-active #hero-h1 {
                         <li>
                             
                             <div class="menu-dropdown-item">
-                                <button class="menu-dropdown-toggle" data-dropdown="about">
+                                <button type="button" class="menu-dropdown-toggle" data-dropdown="about">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         class="arrow-icon east-arrow dropdown-arrow">
                                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
@@ -775,7 +780,7 @@ nav.menu-active #hero-h1 {
                 <h4>Contact</h4>
                 <ul>
                     <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
-                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank" rel="noopener">Instagram</a></li>
                     <li><a href="/leff/en/privacy/">Privacy Policy</a></li>
                 </ul>
             </div>

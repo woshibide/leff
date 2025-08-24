@@ -28,78 +28,15 @@
     
     <base href="/leff/">
     
-    <link rel="stylesheet" href="/leff/styles.f41dbe3a56.css">
+    <link rel="stylesheet" href="/leff/styles.994643401a.css">
     
 
     
+<link rel="stylesheet" href="/leff/search-utility.d0604bdcb0.css">
 <style>
     /*
         specials page styles - dedicated layouts for special programme blocks
     */
-    
-    .content-wrapper {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: 2fr 10fr;
-        gap: var(--space-xl);
-    }
-
-    .search-utilities {
-        grid-column: 1 / 2;
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-2xl);
-        align-self: start;
-        position: sticky;
-        top: var(--space-2xl);
-    }
-
-    .search-top,
-    .search-side {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-md);
-    }
-
-    #search-bar input {
-        width: 100%;
-        padding: var(--space-sm);
-        border: 2px solid var(--bg-main);
-        background: transparent;
-        color: var(--text-main);
-        font-family: inherit;
-        font-size: 1rem;
-        border-radius: 0;
-        transition: all 0.2s var(--transition);
-    }
-
-    #search-bar input:focus {
-        outline: none;
-        background: var(--bg-main);
-        color: var(--accent);
-    }
-
-    #search-bar input::placeholder {
-        color: var(--dark-silver);
-    }
-
-    .search-side .sort-button {
-        background: transparent;
-        border: 2px solid var(--bg-main);
-        color: var(--bg-main);
-        padding: var(--space-sm);
-        text-align: left;
-        cursor: pointer;
-        text-transform: uppercase;
-        transition: all 0.2s var(--transition);
-        font-size: 1rem;
-    }
-
-    .search-side .sort-button:hover,
-    .search-side .sort-button.active {
-        background: var(--bg-main);
-        color: var(--accent);
-    }
     
     .specials-container {
         grid-column: 2 / 3;
@@ -116,7 +53,7 @@
         height: 100%;
     }
     
-    .special-block-card:hover {
+    .special-block-card-link:hover .special-block-card {
         background: var(--bg-main);
         color: var(--accent);
     }
@@ -131,7 +68,7 @@
     }
     
     .special-block-card h2 {
-        font-size: 2.25rem;
+        font-size: 3rem;
         font-weight: normal;
         margin: 0;
         color: inherit;
@@ -144,7 +81,7 @@
         transition: all 0.2s var(--transition);
     }
     
-    .special-block-card:hover h2 a {
+    .special-block-card-link:hover h2 a {
         text-decoration: underline;
     }
     
@@ -165,11 +102,7 @@
     }
 
     .special-block-films-container .film-card {
-        margin-block: var(--space-md);
-    }
-
-    .special-block-films-container .film-card:first-child {
-        /* border-top: none; */
+        margin-top: var(--space-xl);
     }
 
     .special-block-meta {
@@ -218,7 +151,6 @@
             padding-top: var(--space-lg);
         }
     }
-
 </style>
 
 
@@ -230,7 +162,7 @@
         <a href="/leff/nl/"><img src="/leff/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
         <div id="circle-container">
-            <a href="https://bioscopenleiden.nl/" target="_blank" id="nav-tickets" class="tickets-button">
+            <a href="https://bioscopenleiden.nl/" target="_blank" rel="noopener" id="nav-tickets" class="tickets-button">
                 Tickets
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
                     <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
@@ -239,19 +171,20 @@
             <div id="languages">
                 
                 
+                
                 <a href="/leff/en/programme/specials/">
-                    <button>EN</button>
+                    <button type="button">EN</button>
                 </a>
                 
                 
                 
-                <button class="active">NL</button>
+                <button type="button" class="active">NL</button>
                 
                 
             </div>
             <div id="circle"></div>
             <div class="menu-close" style="display: none;">
-                <button class="close-icon" id="menu-close" aria-label="close">
+                <button type="button" class="close-icon" id="menu-close" aria-label="close">
                     <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
                         <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
                         <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2" />
@@ -277,7 +210,7 @@
                         <li>
                             
                             <div class="menu-dropdown-item">
-                                <button class="menu-dropdown-toggle" data-dropdown="programme">
+                                <button type="button" class="menu-dropdown-toggle" data-dropdown="programme">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         class="arrow-icon east-arrow dropdown-arrow">
                                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
@@ -334,7 +267,7 @@
                         <li>
                             
                             <div class="menu-dropdown-item">
-                                <button class="menu-dropdown-toggle" data-dropdown="about">
+                                <button type="button" class="menu-dropdown-toggle" data-dropdown="about">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         class="arrow-icon east-arrow dropdown-arrow">
                                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
@@ -369,30 +302,156 @@
     <section class="page-contents">
         
 <div class="grid-base" id="specials-page">
-    <h1 class="page-title">
-        PROGRAMMA 2025 / SPECIALS
-    </h1>
+    
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Programma 2025","item":"https://leidenessayfilmfestival.com/leff/nl/programme/"},{"@type":"ListItem","position":2,"name":"Specials"}]}
+</script>
+
+
+<div class="breadcrumb-container" role="navigation" aria-label="breadcrumb">
+    <ol class="breadcrumb-list">
+        
+            <li class="breadcrumb-item">
+                
+                    <a href="/leff/nl/programme/" class="breadcrumb-link">Programma 2025</a>
+                
+            </li>
+        
+            <li class="breadcrumb-item">
+                
+                    <h1 class="breadcrumb-current-page" aria-current="page">Specials</h1>
+                
+            </li>
+        
+    </ol>
+</div>
+
 
     
     <div class="content-wrapper">
-        <div class="search-utilities">
-            <div class="search-top">
-                <div id="search-bar">
-                    <input type="text" id="specials-search"
-                        placeholder="Zoek specials...">
-                </div>
-            </div>
-            <div class="search-side">
-                <button class="sort-button active" data-sort="name">Alfabetisch A—Z</button>
-                <button class="sort-button" data-sort="films">Film Count</button>
-            </div>
-        </div> 
+        
+        
+        
+        <!--
+    search utility component
+    reusable search sidebar for programme, filmmakers, and specials pages
+    
+    required parameters:
+    - search_input_id: unique id for the search input
+    - search_placeholder: placeholder text for search input
+    - sort_buttons: array of sort button objects with 'data_sort', 'label', and 'active' properties
+    
+    alphabetical filtering is always available and handles:
+    - first letter of film titles
+    - all first letters of filmmaker names (for multi-word names)
+-->
+
+<div class="search-utilities">
+    <div class="search-top">
+        <div id="search-bar">
+            <input type="text" 
+                   id="specials-search"
+                   placeholder="Zoek specials...">
+        </div>
+        
+        <div class="alphabetical-search">
+            
+            <button type="button" class="alpha-filter" data-letter="a">a</button>
+            
+            <button type="button" class="alpha-filter" data-letter="b">b</button>
+            
+            <button type="button" class="alpha-filter" data-letter="c">c</button>
+            
+            <button type="button" class="alpha-filter" data-letter="d">d</button>
+            
+            <button type="button" class="alpha-filter" data-letter="e">e</button>
+            
+            <button type="button" class="alpha-filter" data-letter="f">f</button>
+            
+            <button type="button" class="alpha-filter" data-letter="g">g</button>
+            
+            <button type="button" class="alpha-filter" data-letter="h">h</button>
+            
+            <button type="button" class="alpha-filter" data-letter="i">i</button>
+            
+            <button type="button" class="alpha-filter" data-letter="j">j</button>
+            
+            <button type="button" class="alpha-filter" data-letter="k">k</button>
+            
+            <button type="button" class="alpha-filter" data-letter="l">l</button>
+            
+            <button type="button" class="alpha-filter" data-letter="m">m</button>
+            
+            <button type="button" class="alpha-filter" data-letter="n">n</button>
+            
+            <button type="button" class="alpha-filter" data-letter="o">o</button>
+            
+            <button type="button" class="alpha-filter" data-letter="p">p</button>
+            
+            <button type="button" class="alpha-filter" data-letter="q">q</button>
+            
+            <button type="button" class="alpha-filter" data-letter="r">r</button>
+            
+            <button type="button" class="alpha-filter" data-letter="s">s</button>
+            
+            <button type="button" class="alpha-filter" data-letter="t">t</button>
+            
+            <button type="button" class="alpha-filter" data-letter="u">u</button>
+            
+            <button type="button" class="alpha-filter" data-letter="v">v</button>
+            
+            <button type="button" class="alpha-filter" data-letter="w">w</button>
+            
+            <button type="button" class="alpha-filter" data-letter="x">x</button>
+            
+            <button type="button" class="alpha-filter" data-letter="y">y</button>
+            
+            <button type="button" class="alpha-filter" data-letter="z">z</button>
+            
+        </div>
+    </div>
+    
+    <div class="search-side">
+        
+        <button type="button" class="sort-button active" 
+                data-sort="name"
+                data-ascending="true">
+            <span class="sort-label">Alfabetisch A—Z</span>
+            <svg class="sort-arrow ascending" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+            </svg>
+        </button>
+        
+    </div>
+</div>
 
         <div class="specials-container">
             
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="special-block-card-link" 
                        data-name="arbeiders verlaten de fabriek"
+                       data-letter="a"
+                       data-all-letters="a,v,d,f"
                        data-films="4"
                        data-block-id="block-1">
                         <div class="special-block-card">
@@ -626,8 +685,16 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
                     <div class="special-block-card-link" 
                        data-name="classics"
+                       data-letter="c"
+                       data-all-letters="c"
                        data-films="3"
                        data-block-id="block-2">
                         <div class="special-block-card">
@@ -811,8 +878,28 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="special-block-card-link" 
                        data-name="harun farocki in focus"
+                       data-letter="h"
+                       data-all-letters="h,f,i,f"
                        data-films="3"
                        data-block-id="block-3">
                         <div class="special-block-card">
@@ -996,8 +1083,24 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="special-block-card-link" 
                        data-name="hong kong shorts"
+                       data-letter="h"
+                       data-all-letters="h,k,s"
                        data-films="3"
                        data-block-id="block-4">
                         <div class="special-block-card">
@@ -1181,8 +1284,28 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="special-block-card-link" 
                        data-name="kamal aljafari in focus"
+                       data-letter="k"
+                       data-all-letters="k,a,i,f"
                        data-films="3"
                        data-block-id="block-5">
                         <div class="special-block-card">
@@ -1366,8 +1489,28 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="special-block-card-link" 
                        data-name="listening with the other"
+                       data-letter="l"
+                       data-all-letters="l,w,t,o"
                        data-films="5"
                        data-block-id="block-6">
                         <div class="special-block-card">
@@ -1649,8 +1792,20 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="special-block-card-link" 
                        data-name="new perspectives"
+                       data-letter="n"
+                       data-all-letters="n,p"
                        data-films="6"
                        data-block-id="block-7">
                         <div class="special-block-card">
@@ -1984,8 +2139,32 @@
                         </div>
                     </div>
                 
+                    
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
                     <div class="special-block-card-link" 
                        data-name="nguyễn trinh thi in focus"
+                       data-letter="n"
+                       data-all-letters="n,t,t,i,f"
                        data-films="2"
                        data-block-id="block-8">
                         <div class="special-block-card">
@@ -2198,7 +2377,7 @@
                 <h4>Contact</h4>
                 <ul>
                     <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
-                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank" rel="noopener">Instagram</a></li>
                     <li><a href="/leff/nl/privacy/">Privacybeleid</a></li>
                 </ul>
             </div>
