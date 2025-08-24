@@ -67,12 +67,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/en/programme/filmmakers/angus-carlyle-rupert-cox/</loc>
-    <lastmod>2025-08-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://leidenessayfilmfestival.com/en/programme/filmmakers/aura-satz/</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -115,7 +109,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/en/programme/filmmakers/francis-kabisch/</loc>
+    <loc>https://leidenessayfilmfestival.com/en/programme/filmmakers/franzis-kabisch/</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -187,7 +181,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/en/programme/filmmakers/lucia-nimcova-david-petras/</loc>
+    <loc>https://leidenessayfilmfestival.com/en/programme/filmmakers/lucia-nimcova-and-david-petras/</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -199,7 +193,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/en/programme/filmmakers/maria-iorio-raphael-cuomo/</loc>
+    <loc>https://leidenessayfilmfestival.com/en/programme/filmmakers/maria-iorio-and-raphael-cuomo/</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -247,7 +241,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/en/programme/filmmakers/sasha-litvintseva-beny-wagner/</loc>
+    <loc>https://leidenessayfilmfestival.com/en/programme/filmmakers/rupert-cox-and-angus-carlyle/</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://leidenessayfilmfestival.com/en/programme/filmmakers/sasha-litvintseva-and-beny-wagner/</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -679,12 +679,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/nl/programme/filmmakers/angus-carlyle-rupert-cox/</loc>
-    <lastmod>2025-08-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://leidenessayfilmfestival.com/nl/programme/filmmakers/aura-satz/</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -727,7 +721,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/nl/programme/filmmakers/francis-kabisch/</loc>
+    <loc>https://leidenessayfilmfestival.com/nl/programme/filmmakers/franzis-kabisch/</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -799,7 +793,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/nl/programme/filmmakers/lucia-nimcova-david-petras/</loc>
+    <loc>https://leidenessayfilmfestival.com/nl/programme/filmmakers/lucia-nimcova-en-david-petras/</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -811,7 +805,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/nl/programme/filmmakers/maria-iorio-raphael-cuomo/</loc>
+    <loc>https://leidenessayfilmfestival.com/nl/programme/filmmakers/maria-iorio-en-raphael-cuomo/</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -859,7 +853,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/nl/programme/filmmakers/sasha-litvintseva-beny-wagner/</loc>
+    <loc>https://leidenessayfilmfestival.com/nl/programme/filmmakers/rupert-cox-en-angus-carlyle/</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://leidenessayfilmfestival.com/nl/programme/filmmakers/sasha-litvintseva-en-beny-wagner/</loc>
     <lastmod>2025-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -28,11 +28,11 @@
     
     <base href="/leff/">
     
-    <link rel="stylesheet" href="/leff/styles.994643401a.css">
+    <link rel="stylesheet" href="/leff/styles.f2886ef425.css">
     
 
     
-<link rel="stylesheet" href="/leff/search-utility.d0604bdcb0.css">
+<link rel="stylesheet" href="/leff/search-utility.e39b131882.css">
 <style>
     /*
         films page styles
@@ -253,6 +253,8 @@
         
         
         
+        
+        
         <!--
     search utility component
     reusable search sidebar for programme, filmmakers, and specials pages
@@ -352,6 +354,93 @@
             </svg>
         </button>
         
+        
+        
+        <div class="specials-dropdown">
+            <button type="button" class="dropdown-toggle" id="specials-dropdown-toggle">
+                <span class="dropdown-label">Specials</span>
+                <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6" />
+                </svg>
+            </button>
+            <div class="dropdown-content" id="specials-dropdown-content">
+                <label class="dropdown-item">
+                    <input type="checkbox" class="special-filter" data-special="separate-ticket">
+                    <span>Separate Ticket</span>
+                </label>
+                
+                <label class="dropdown-item">
+                    <input type="checkbox" class="special-filter" data-special="classics">
+                    <span>Classics</span>
+                </label>
+                
+                <label class="dropdown-item">
+                    <input type="checkbox" class="special-filter" data-special="harun-farocki-in-focus">
+                    <span>Harun Farocki in Focus</span>
+                </label>
+                
+                <label class="dropdown-item">
+                    <input type="checkbox" class="special-filter" data-special="hong-kong-shorts">
+                    <span>Hong Kong Shorts</span>
+                </label>
+                
+                <label class="dropdown-item">
+                    <input type="checkbox" class="special-filter" data-special="kamal-aljafari-in-focus">
+                    <span>Kamal Aljafari in Focus</span>
+                </label>
+                
+                <label class="dropdown-item">
+                    <input type="checkbox" class="special-filter" data-special="listening-with-the-other">
+                    <span>Listening with the Other</span>
+                </label>
+                
+                <label class="dropdown-item">
+                    <input type="checkbox" class="special-filter" data-special="new-perspectives">
+                    <span>New Perspectives</span>
+                </label>
+                
+                <label class="dropdown-item">
+                    <input type="checkbox" class="special-filter" data-special="nguyen-trinh-thi-in-focus">
+                    <span>Nguyễn Trinh Thi in Focus</span>
+                </label>
+                
+                <label class="dropdown-item">
+                    <input type="checkbox" class="special-filter" data-special="workers-leaving-the-factory">
+                    <span>Workers Leaving the Factory</span>
+                </label>
+                
+            </div>
+        </div>
+        
+        
+        
+        <div class="dates-dropdown">
+            <button type="button" class="dropdown-toggle" id="dates-dropdown-toggle">
+                <span class="dropdown-label">Dates</span>
+                <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6" />
+                </svg>
+            </button>
+            <div class="dropdown-content" id="dates-dropdown-content">
+                
+                <label class="dropdown-item">
+                    <input type="checkbox" class="date-filter" data-date="14 September">
+                    <span>14 September</span>
+                </label>
+                
+                <label class="dropdown-item">
+                    <input type="checkbox" class="date-filter" data-date="15 September">
+                    <span>15 September</span>
+                </label>
+                
+                <label class="dropdown-item">
+                    <input type="checkbox" class="date-filter" data-date="16 September">
+                    <span>16 September</span>
+                </label>
+                
+            </div>
+        </div>
+        
     </div>
 </div>
         
@@ -368,7 +457,8 @@
              data-letter="s"
              data-filmmaker-letters=""
              data-all-letters="s"
-             data-date="14 september">
+             data-date="14 September"
+             data-block="opening event">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -402,7 +492,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/placeholder.webp" alt="Special Lecture by Laura Rascaroli">
+        <img src="/leff/assets/images/placeholder.webp" alt="Shot from movie Special Lecture by Laura Rascaroli" loading="lazy">
         
     </div>
 </div>
@@ -439,7 +529,8 @@
              data-letter="u"
              data-filmmaker-letters="m,i,a,r,c"
              data-all-letters="u,m,i,a,r,c"
-             data-date="14 september">
+             data-date="14 September"
+             data-block="opening event">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -485,7 +576,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/placeholder.webp" alt="Undead Voices (2019–2021)">
+        <img src="/leff/assets/images/placeholder.webp" alt="Shot from movie Undead Voices (2019–2021) by Maria Iorio and Raphaël Cuomo" loading="lazy">
         
     </div>
 </div>
@@ -510,7 +601,8 @@
              data-letter="s"
              data-filmmaker-letters="c,m"
              data-all-letters="s,c,m"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="classics">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -556,7 +648,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Chris Marker/Sans soleil - Photo 1.webp" alt="Sans Soleil">
+        <img src="/leff/assets/images/film-images/Chris Marker/Sans soleil - Photo 1.webp" alt="Shot from movie Sans Soleil by Chris Marker" loading="lazy">
         
     </div>
 </div>
@@ -581,7 +673,8 @@
              data-letter="j"
              data-filmmaker-letters="v,m"
              data-all-letters="j,v,m"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -625,7 +718,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Vincent Meessen/15.webp" alt="Juste un mouvement">
+        <img src="/leff/assets/images/film-images/Vincent Meessen/15.webp" alt="Shot from movie Juste un mouvement by Vincent Meessen" loading="lazy">
         
     </div>
 </div>
@@ -654,7 +747,8 @@
              data-letter="t"
              data-filmmaker-letters="h,r,a"
              data-all-letters="t,h,r,a"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="workers leaving the factory">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -678,7 +772,7 @@
         <div>
             
             <div class="film-synopsis">
-                <p>An investigation of a factory gate in China leads to an in depth reflection on the history of cinema and capitalism.</p>
+                <p>An investigation of a factory gate in China leads to an in depth reflection on the history of cinema and capitalism. </p>
             </div>
             
             <div class="film-meta">
@@ -700,7 +794,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Ho Rui An/Factory Gate_2.webp" alt="Twenty-Four Cinematic Points of View of a Factory Gate in China">
+        <img src="/leff/assets/images/film-images/Ho Rui An/Factory Gate_2.webp" alt="Shot from movie Twenty-Four Cinematic Points of View of a Factory Gate in China by Ho Rui An" loading="lazy">
         
     </div>
 </div>
@@ -729,7 +823,8 @@
              data-letter="w"
              data-filmmaker-letters="a,n,w"
              data-all-letters="w,a,n"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="workers leaving the factory">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -775,7 +870,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Andrew Norman Wilson/GoogleStillComposite.webp" alt="Workers Leaving the Googleplex">
+        <img src="/leff/assets/images/film-images/Andrew Norman Wilson/GoogleStillComposite.webp" alt="Shot from movie Workers Leaving the Googleplex by Andrew Norman Wilson " loading="lazy">
         
     </div>
 </div>
@@ -796,19 +891,16 @@
                     
                 
             
-                
-                    
-                
-            
         
         
         <div class="film-card-wrapper" 
              data-title="la sortie de l&#39;usine lumière à lyon"
-             data-director="auguste and louis lumière"
+             data-director="auguste andlouis lumière"
              data-letter="l"
-             data-filmmaker-letters="a,a,l,l"
+             data-filmmaker-letters="a,a,l"
              data-all-letters="l,a"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="workers leaving the factory">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -822,9 +914,9 @@
             
             <h5 class="filmmaker-name">
                 
-                <a href="/leff/en/programme/filmmakers/auguste-and-louis-lumiere/"
-                    title="View Auguste and Louis Lumière filmmaker page">
-                    Auguste and Louis Lumière
+                <a href="/leff/en/programme/filmmakers/auguste-andlouis-lumiere/"
+                    title="View Auguste andLouis Lumière filmmaker page">
+                    Auguste andLouis Lumière
                 </a>
             </h5>
             
@@ -854,7 +946,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Auguste and Louis Lumière/Lumiere_Workers .jpg" alt="La sortie de l&#39;usine Lumière à Lyon">
+        <img src="/leff/assets/images/film-images/Auguste and Louis Lumière/Lumiere_Workers .jpg" alt="Shot from movie La sortie de l&#39;usine Lumière à Lyon by Auguste andLouis Lumière" loading="lazy">
         
     </div>
 </div>
@@ -879,7 +971,8 @@
              data-letter="a"
              data-filmmaker-letters="h,f"
              data-all-letters="a,h,f"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="workers leaving the factory">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -925,7 +1018,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_39.webp" alt="Arbeiter verlassen die Fabrik">
+        <img src="/leff/assets/images/film-images/Harun Farocki/Workers Leaving the Factory - Arbeiter verlassen die Fabrik/WorkersFactory_HFarocki_39.webp" alt="Shot from movie Arbeiter verlassen die Fabrik by Harun Farocki" loading="lazy">
         
     </div>
 </div>
@@ -950,7 +1043,8 @@
              data-letter="w"
              data-filmmaker-letters="h,f"
              data-all-letters="w,h,f"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="harun farocki in focus">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -996,7 +1090,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Harun Farocki/What&#39;s up - Was ist los/Was ist los 01.webp" alt="Was ist Los?">
+        <img src="/leff/assets/images/film-images/Harun Farocki/What&#39;s up - Was ist los/Was ist los 01.webp" alt="Shot from movie Was ist Los? by Harun Farocki" loading="lazy">
         
     </div>
 </div>
@@ -1021,7 +1115,8 @@
              data-letter="g"
              data-filmmaker-letters="h,f"
              data-all-letters="g,h,f"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="harun farocki in focus">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -1067,7 +1162,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_16.webp" alt="Gegen-Musik">
+        <img src="/leff/assets/images/film-images/Harun Farocki/Counter-Music - Gegen-Musik/GegenMusik600dpi_16.webp" alt="Shot from movie Gegen-Musik by Harun Farocki" loading="lazy">
         
     </div>
 </div>
@@ -1088,11 +1183,12 @@
         
         <div class="film-card-wrapper" 
              data-title="getty abortions"
-             data-director="francis kabisch"
+             data-director="franzis kabisch"
              data-letter="g"
              data-filmmaker-letters="f,k"
              data-all-letters="g,f,k"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="harun farocki in focus">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -1106,9 +1202,9 @@
             
             <h5 class="filmmaker-name">
                 
-                <a href="/leff/en/programme/filmmakers/francis-kabisch/"
-                    title="View Francis Kabisch filmmaker page">
-                    Francis Kabisch
+                <a href="/leff/en/programme/filmmakers/franzis-kabisch/"
+                    title="View Franzis Kabisch filmmaker page">
+                    Franzis Kabisch
                 </a>
             </h5>
             
@@ -1138,7 +1234,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Franzis Kabisch/gettyabortions_still_1_en  @Franzis-Kabisch_VG-Bild-Kunst.webp" alt="Getty Abortions">
+        <img src="/leff/assets/images/film-images/Franzis Kabisch/gettyabortions_still_1_en  @Franzis-Kabisch_VG-Bild-Kunst.webp" alt="Shot from movie Getty Abortions by Franzis Kabisch" loading="lazy">
         
     </div>
 </div>
@@ -1163,7 +1259,8 @@
              data-letter="p"
              data-filmmaker-letters="a,s"
              data-all-letters="p,a,s"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -1207,7 +1304,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Aura Satz/Preemptive Listening still1.webp" alt="Preemptive Listening">
+        <img src="/leff/assets/images/film-images/Aura Satz/Preemptive Listening still1.webp" alt="Shot from movie Preemptive Listening by Aura Satz" loading="lazy">
         
     </div>
 </div>
@@ -1232,7 +1329,8 @@
              data-letter="h"
              data-filmmaker-letters="g,a"
              data-all-letters="h,g,a"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -1276,7 +1374,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Graeme Arnfield/Home Invasion - Film still 6.webp" alt="Home Invasion">
+        <img src="/leff/assets/images/film-images/Graeme Arnfield/Home Invasion - Film still 6.webp" alt="Shot from movie Home Invasion by Graeme Arnfield" loading="lazy">
         
     </div>
 </div>
@@ -1301,7 +1399,8 @@
              data-letter="c"
              data-filmmaker-letters="b,b"
              data-all-letters="c,b"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -1345,7 +1444,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Bertrand Bonello/COMA-STILL-WEB.webp" alt="Coma">
+        <img src="/leff/assets/images/film-images/Bertrand Bonello/COMA-STILL-WEB.webp" alt="Shot from movie Coma by Bertrand Bonello" loading="lazy">
         
     </div>
 </div>
@@ -1370,7 +1469,8 @@
              data-letter="f"
              data-filmmaker-letters="b,n"
              data-all-letters="f,b,n"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="hong kong shorts">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -1416,7 +1516,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Bahar Noorizadeh/FTC - still 2.webp" alt="Free to Choose">
+        <img src="/leff/assets/images/film-images/Bahar Noorizadeh/FTC - still 2.webp" alt="Shot from movie Free to Choose by Bahar Noorizadeh" loading="lazy">
         
     </div>
 </div>
@@ -1441,7 +1541,8 @@
              data-letter="a"
              data-filmmaker-letters="b,w"
              data-all-letters="a,b,w"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="hong kong shorts">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -1487,7 +1588,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Bo Wang/AAGS_01.webp" alt="An Asian Ghost Story">
+        <img src="/leff/assets/images/film-images/Bo Wang/AAGS_01.webp" alt="Shot from movie An Asian Ghost Story by Bo Wang" loading="lazy">
         
     </div>
 </div>
@@ -1524,7 +1625,8 @@
              data-letter="r"
              data-filmmaker-letters="e,w,a,s,l"
              data-all-letters="r,e,w,a,s,l"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="hong kong shorts">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -1570,7 +1672,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Elysa Wendi &amp; Shing Lee/room 404 ext film still 3.webp" alt="Room 404">
+        <img src="/leff/assets/images/film-images/Elysa Wendi and Shing Lee/room 404 ext film still 3.webp" alt="Shot from movie Room 404 by Elysa Wendi and Shing Lee" loading="lazy">
         
     </div>
 </div>
@@ -1595,7 +1697,8 @@
              data-letter="t"
              data-filmmaker-letters="s,l"
              data-all-letters="t,s,l"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -1639,7 +1742,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Sergei Loznitsa/NHD_3.205.1.webp" alt="The Natural History of Destruction">
+        <img src="/leff/assets/images/film-images/Sergei Loznitsa/NHD_3.205.1.webp" alt="Shot from movie The Natural History of Destruction by Sergei Loznitsa" loading="lazy">
         
     </div>
 </div>
@@ -1664,7 +1767,8 @@
              data-letter="s"
              data-filmmaker-letters="l,h"
              data-all-letters="s,l,h"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -1708,7 +1812,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Lea Hartlaub/sr_film-still_06_LeaHartlaub-BlinkerFilmproduktion_hieroglyphe-sr.webp" alt="sr">
+        <img src="/leff/assets/images/film-images/Lea Hartlaub/sr_film-still_06_LeaHartlaub-BlinkerFilmproduktion_hieroglyphe-sr.webp" alt="Shot from movie sr by Lea Hartlaub" loading="lazy">
         
     </div>
 </div>
@@ -1737,7 +1841,8 @@
              data-letter="l"
              data-filmmaker-letters="n,t,t"
              data-all-letters="l,n,t"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="nguyễn trinh thi in focus">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -1783,7 +1888,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Nguyễn Trinh Thi/Letters from Panduranga/Letters from Panduranga still_maily.webp" alt="Letters from Panduranga">
+        <img src="/leff/assets/images/film-images/Nguyễn Trinh Thi/Letters from Panduranga/Letters from Panduranga still_maily.webp" alt="Shot from movie Letters from Panduranga by Nguyễn Trinh Thi" loading="lazy">
         
     </div>
 </div>
@@ -1812,7 +1917,8 @@
              data-letter="h"
              data-filmmaker-letters="n,t,t"
              data-all-letters="h,n,t"
-             data-date="15 september">
+             data-date="15 September"
+             data-block="nguyễn trinh thi in focus">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -1836,7 +1942,7 @@
         <div>
             
             <div class="film-synopsis">
-                <p>Do you trust sound or image more? Listen closely to the sounds and images of the Indigenous peoples in the Central Highlands of Vietnam.</p>
+                <p>Do you trust sound or image more? Listen closely to the sounds and images of the Indigenous peoples in the Central Highlands of Vietnam. </p>
             </div>
             
             <div class="film-meta">
@@ -1858,7 +1964,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Nguyễn Trinh Thi/How to Improve the World/How to Improve the World Still 6.webp" alt="How to Improve the World">
+        <img src="/leff/assets/images/film-images/Nguyễn Trinh Thi/How to Improve the World/How to Improve the World Still 6.webp" alt="Shot from movie How to Improve the World by Nguyễn Trinh Thi" loading="lazy">
         
     </div>
 </div>
@@ -1891,7 +1997,8 @@
              data-letter="w"
              data-filmmaker-letters="m,v,d,p"
              data-all-letters="w,m,v,d,p"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -1935,7 +2042,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Mattijs van de Port/still.webp" alt="Where can I get Lost?">
+        <img src="/leff/assets/images/film-images/Mattijs van de Port/still.webp" alt="Shot from movie Where can I get Lost? by Mattijs van de Port" loading="lazy">
         
     </div>
 </div>
@@ -1960,7 +2067,8 @@
              data-letter="m"
              data-filmmaker-letters="m,p"
              data-all-letters="m,p"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="kamal aljafari in focus">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -2006,7 +2114,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/placeholder.webp" alt="Man Number 4">
+        <img src="/leff/assets/images/placeholder.webp" alt="Shot from movie Man Number 4 by Miranda Pennell" loading="lazy">
         
     </div>
 </div>
@@ -2031,7 +2139,8 @@
              data-letter="c"
              data-filmmaker-letters="j,b"
              data-all-letters="c,j,b"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="kamal aljafari in focus">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -2077,7 +2186,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Johannes Binotto/capricorn sunset_Still_4.webp" alt="Capricorn Sunset">
+        <img src="/leff/assets/images/film-images/Johannes Binotto/capricorn sunset_Still_4.webp" alt="Shot from movie Capricorn Sunset by Johannes Binotto" loading="lazy">
         
     </div>
 </div>
@@ -2102,7 +2211,8 @@
              data-letter="a"
              data-filmmaker-letters="k,a"
              data-all-letters="a,k"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="kamal aljafari in focus">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -2148,7 +2258,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Kamal Aljafari/Fidai Still 7.webp" alt="A Fidai Film">
+        <img src="/leff/assets/images/film-images/Kamal Aljafari/Fidai Still 7.webp" alt="Shot from movie A Fidai Film by Kamal Aljafari" loading="lazy">
         
     </div>
 </div>
@@ -2173,7 +2283,8 @@
              data-letter="h"
              data-filmmaker-letters="a,h"
              data-all-letters="h,a"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -2217,7 +2328,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Alexander Horwath/parade-presse2.webp" alt="Henry Fonda for President">
+        <img src="/leff/assets/images/film-images/Alexander Horwath/parade-presse2.webp" alt="Shot from movie Henry Fonda for President by Alexander Horwath" loading="lazy">
         
     </div>
 </div>
@@ -2250,7 +2361,8 @@
              data-letter="f"
              data-filmmaker-letters="j,v,d,k"
              data-all-letters="f,j,v,d,k"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="classics">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -2296,7 +2408,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.51.03.webp" alt="Face Value">
+        <img src="/leff/assets/images/film-images/Johan van der Keuken/Scherm­afbeelding 2025-08-06 om 20.51.03.webp" alt="Shot from movie Face Value by Johan van der Keuken" loading="lazy">
         
     </div>
 </div>
@@ -2333,7 +2445,8 @@
              data-letter="m"
              data-filmmaker-letters="s,l,a,b,w"
              data-all-letters="m,s,l,a,b,w"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -2377,7 +2490,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/placeholder.webp" alt="My Want of You Partakes of Me">
+        <img src="/leff/assets/images/placeholder.webp" alt="Shot from movie My Want of You Partakes of Me by Sasha Litvintseva and Beny Wagner" loading="lazy">
         
     </div>
 </div>
@@ -2402,7 +2515,8 @@
              data-letter="p"
              data-filmmaker-letters="m,m"
              data-all-letters="p,m"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="new perspectives">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -2448,7 +2562,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Michela Meliddo/Still04.webp" alt="Perpetual Radiance">
+        <img src="/leff/assets/images/film-images/Michela Meliddo/Still04.webp" alt="Shot from movie Perpetual Radiance by Michela Meliddo" loading="lazy">
         
     </div>
 </div>
@@ -2473,7 +2587,8 @@
              data-letter="t"
              data-filmmaker-letters="n,p"
              data-all-letters="t,n,p"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="new perspectives">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -2519,7 +2634,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Nika Pećarina/crvenojbojizarenezemlje_v2_x4.webp" alt="To the Earthern Red">
+        <img src="/leff/assets/images/film-images/Nika Pećarina/crvenojbojizarenezemlje_v2_x4.webp" alt="Shot from movie To the Earthern Red by Nika Pećarina" loading="lazy">
         
     </div>
 </div>
@@ -2544,7 +2659,8 @@
              data-letter="m"
              data-filmmaker-letters="m,j"
              data-all-letters="m,j"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="new perspectives">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -2590,7 +2706,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Maryam Jafri/2_MariamJafriVsMaryamJafri.webp" alt="Mariam Jafri vs Maryam Jafri">
+        <img src="/leff/assets/images/film-images/Maryam Jafri/2_MariamJafriVsMaryamJafri.webp" alt="Shot from movie Mariam Jafri vs Maryam Jafri by Maryam Jafri" loading="lazy">
         
     </div>
 </div>
@@ -2627,11 +2743,12 @@
         
         <div class="film-card-wrapper" 
              data-title="haunted, the hollow"
-             data-director="veronica munteau, karin nakajima, sara ouljour"
+             data-director="veronica munteanu, karin nakajima, sara ouljour"
              data-letter="h"
              data-filmmaker-letters="v,m,k,n,s,o"
              data-all-letters="h,v,m,k,n,s,o"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="new perspectives">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -2645,9 +2762,9 @@
             
             <h5 class="filmmaker-name">
                 
-                <a href="/leff/en/programme/filmmakers/veronica-munteau-karin-nakajima-sara-ouljour/"
-                    title="View Veronica Munteau, Karin Nakajima, Sara Ouljour filmmaker page">
-                    Veronica Munteau, Karin Nakajima, Sara Ouljour
+                <a href="/leff/en/programme/filmmakers/veronica-munteanu-karin-nakajima-sara-ouljour/"
+                    title="View Veronica Munteanu, Karin Nakajima, Sara Ouljour filmmaker page">
+                    Veronica Munteanu, Karin Nakajima, Sara Ouljour
                 </a>
             </h5>
             
@@ -2677,7 +2794,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Veronica Munteau, Karin Nakajima, Sara Ouljour/Screenshot 2025-08-08 at 11.08.52.webp" alt="Haunted, the Hollow">
+        <img src="/leff/assets/images/film-images/Veronica Munteau, Karin Nakajima, Sara Ouljour/Screenshot 2025-08-08 at 11.08.52.webp" alt="Shot from movie Haunted, the Hollow by Veronica Munteanu, Karin Nakajima, Sara Ouljour" loading="lazy">
         
     </div>
 </div>
@@ -2702,7 +2819,8 @@
              data-letter="s"
              data-filmmaker-letters="l,w"
              data-all-letters="s,l,w"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="new perspectives">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -2748,7 +2866,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/placeholder.webp" alt="Searching for the Perfect Gentleman">
+        <img src="/leff/assets/images/placeholder.webp" alt="Shot from movie Searching for the Perfect Gentleman by Lena Windisch" loading="lazy">
         
     </div>
 </div>
@@ -2773,7 +2891,8 @@
              data-letter="t"
              data-filmmaker-letters="s,t"
              data-all-letters="t,s"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="new perspectives">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -2819,7 +2938,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Susanna Tomassini/TST_still3.webp" alt="The Southern Thruway">
+        <img src="/leff/assets/images/film-images/Susanna Tomassini/TST_still3.webp" alt="Shot from movie The Southern Thruway by Susanna Tomassini" loading="lazy">
         
     </div>
 </div>
@@ -2844,7 +2963,8 @@
              data-letter="i"
              data-filmmaker-letters="h,g"
              data-all-letters="i,h,g"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -2888,7 +3008,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Hicham Gardaf/In_Praise_of_Slowness_Film_Still_04.webp" alt="In Praise of Slowness">
+        <img src="/leff/assets/images/film-images/Hicham Gardaf/In_Praise_of_Slowness_Film_Still_04.webp" alt="Shot from movie In Praise of Slowness by Hicham Gardaf" loading="lazy">
         
     </div>
 </div>
@@ -2913,7 +3033,8 @@
              data-letter="a"
              data-filmmaker-letters="m,d"
              data-all-letters="a,m,d"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -2957,7 +3078,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Manthia Diawara/A Letter from Yene 3.webp" alt="A Letter from Yene">
+        <img src="/leff/assets/images/film-images/Manthia Diawara/A Letter from Yene 3.webp" alt="Shot from movie A Letter from Yene by Manthia Diawara" loading="lazy">
         
     </div>
 </div>
@@ -2982,7 +3103,8 @@
              data-letter="d"
              data-filmmaker-letters="c,a"
              data-all-letters="d,c,a"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="classics">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -3006,7 +3128,7 @@
         <div>
             
             <div class="film-synopsis">
-                <p>An emotional exploration on border politics, relevant now more than ever. Personal, plural and captivating in its ability to make us listen and watch carefully.</p>
+                <p>An emotional exploration on border politics, relevant now more than ever. Personal, plural and captivating in its ability to make us listen and watch carefully. </p>
             </div>
             
             <div class="film-meta">
@@ -3028,7 +3150,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Chantal Akerman/FTOS 30 surveillance 6.webp" alt="De l’autre coté">
+        <img src="/leff/assets/images/film-images/Chantal Akerman/FTOS 30 surveillance 6.webp" alt="Shot from movie De l’autre coté by Chantal Akerman" loading="lazy">
         
     </div>
 </div>
@@ -3065,7 +3187,8 @@
              data-letter="t"
              data-filmmaker-letters="r,c,a,a,c"
              data-all-letters="t,r,c,a"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="listening with the other">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -3111,7 +3234,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Rupert Cox &amp; Angus Carlyle/The Cave Mouth and the Giant Voice.webp" alt="The Cave Mouth and The Giant Voice">
+        <img src="/leff/assets/images/film-images/Rupert Cox and Angus Carlyle/The Cave Mouth and the Giant Voice.webp" alt="Shot from movie The Cave Mouth and The Giant Voice by Rupert Cox and Angus Carlyle" loading="lazy">
         
     </div>
 </div>
@@ -3136,7 +3259,8 @@
              data-letter="k"
              data-filmmaker-letters="t,t"
              data-all-letters="k,t"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="listening with the other">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -3182,7 +3306,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Toshiya Tsunoda/Kapotte Muziek by Toshiya Tsunoda.webp" alt="Kapotte Muziek – Track 1">
+        <img src="/leff/assets/images/film-images/Toshiya Tsunoda/Kapotte Muziek by Toshiya Tsunoda.webp" alt="Shot from movie Kapotte Muziek – Track 1 by Toshiya Tsunoda" loading="lazy">
         
     </div>
 </div>
@@ -3207,19 +3331,16 @@
                     
                 
             
-                
-                    
-                
-            
         
         
         <div class="film-card-wrapper" 
              data-title="where no bell rings"
-             data-director="lucia nimcová and david petráš "
+             data-director="lucia nimcová anddavid petráš "
              data-letter="w"
-             data-filmmaker-letters="l,n,a,d,p"
-             data-all-letters="w,l,n,a,d,p"
-             data-date="16 september">
+             data-filmmaker-letters="l,n,a,p"
+             data-all-letters="w,l,n,a,p"
+             data-date="16 September"
+             data-block="listening with the other">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -3233,9 +3354,9 @@
             
             <h5 class="filmmaker-name">
                 
-                <a href="/leff/en/programme/filmmakers/lucia-nimcova-and-david-petras/"
-                    title="View Lucia Nimcová and David Petráš  filmmaker page">
-                    Lucia Nimcová and David Petráš 
+                <a href="/leff/en/programme/filmmakers/lucia-nimcova-anddavid-petras/"
+                    title="View Lucia Nimcová andDavid Petráš  filmmaker page">
+                    Lucia Nimcová andDavid Petráš 
                 </a>
             </h5>
             
@@ -3263,7 +3384,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Lucia Nimcová &amp; David Petráš/Petras Nimcova_Where no bell rings_Image (2).webp" alt="Where no bell rings">
+        <img src="/leff/assets/images/film-images/Lucia Nimcová and David Petráš/Petras Nimcova_Where no bell rings_Image (2).webp" alt="Shot from movie Where no bell rings by Lucia Nimcová andDavid Petráš " loading="lazy">
         
     </div>
 </div>
@@ -3288,7 +3409,8 @@
              data-letter="m"
              data-filmmaker-letters="j,w"
              data-all-letters="m,j,w"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="listening with the other">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -3334,7 +3456,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Judith Westerveld/Message from Mukalap/Film Still Message from Mukalap 4.webp" alt="Message from Mukalap">
+        <img src="/leff/assets/images/film-images/Judith Westerveld/Message from Mukalap/Film Still Message from Mukalap 4.webp" alt="Shot from movie Message from Mukalap by Judith Westerveld" loading="lazy">
         
     </div>
 </div>
@@ -3359,7 +3481,8 @@
              data-letter="t"
              data-filmmaker-letters="j,w"
              data-all-letters="t,j,w"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="listening with the other">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -3405,7 +3528,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Landscape_The Sending of the Crows_3 (full resolution).webp" alt="The Sending of the Crows">
+        <img src="/leff/assets/images/film-images/Judith Westerveld/The Sending of the Crows/Landscape_The Sending of the Crows_3 (full resolution).webp" alt="Shot from movie The Sending of the Crows by Judith Westerveld" loading="lazy">
         
     </div>
 </div>
@@ -3430,7 +3553,8 @@
              data-letter="n"
              data-filmmaker-letters="m,r"
              data-all-letters="n,m,r"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -3474,7 +3598,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/film-images/Miko Revereza/NowhereNear_Still02.webp" alt="Nowhere Near">
+        <img src="/leff/assets/images/film-images/Miko Revereza/NowhereNear_Still02.webp" alt="Shot from movie Nowhere Near by Miko Revereza" loading="lazy">
         
     </div>
 </div>
@@ -3499,7 +3623,8 @@
              data-letter="d"
              data-filmmaker-letters="l,r"
              data-all-letters="d,l,r"
-             data-date="16 september">
+             data-date="16 September"
+             data-block="">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
@@ -3543,7 +3668,7 @@
     </div>
     <div class="film-card-image">
         
-        <img src="/leff/assets/images/placeholder.webp" alt="Disquiet">
+        <img src="/leff/assets/images/placeholder.webp" alt="Shot from movie Disquiet by Lis Rhodes" loading="lazy">
         
     </div>
 </div>

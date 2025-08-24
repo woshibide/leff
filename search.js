@@ -19,6 +19,16 @@ const SearchUtility = {
         this.sortButtons = document.querySelectorAll('.sort-button');
         this.container = document.querySelector(config.containerSelector);
 
+        // specials dropdown elements
+        this.dropdownToggle = document.getElementById('specials-dropdown-toggle');
+        this.dropdownContent = document.getElementById('specials-dropdown-content');
+        this.specialFilters = document.querySelectorAll('.special-filter');
+
+        // dates dropdown elements
+        this.datesDropdownToggle = document.getElementById('dates-dropdown-toggle');
+        this.datesDropdownContent = document.getElementById('dates-dropdown-content');
+        this.dateFilters = document.querySelectorAll('.date-filter');
+
         if (!this.container) {
             console.warn('SearchUtility: Container not found:', config.containerSelector);
             return;
@@ -28,6 +38,8 @@ const SearchUtility = {
         this.activeSort = config.defaultSort;
         this.activeSortAscending = true; // default to ascending
         this.activeLetter = null;
+        this.activeSpecials = new Set(); // track active special filters
+        this.activeDates = new Set(); // track active date filters
 
         console.log('SearchUtility initialized with', this.cardLinks.length, 'cards');
 
@@ -90,6 +102,71 @@ const SearchUtility = {
                 this.filterAndSort();
             });
         });
+
+        // specials dropdown toggle
+        if (this.dropdownToggle && this.dropdownContent) {
+            this.dropdownToggle.addEventListener('click', () => {
+                const isOpen = this.dropdownContent.classList.contains('open');
+                this.dropdownContent.classList.toggle('open', !isOpen);
+                this.dropdownToggle.classList.toggle('active', !isOpen);
+            });
+
+            // close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!this.dropdownToggle.contains(e.target) && !this.dropdownContent.contains(e.target)) {
+                    this.dropdownContent.classList.remove('open');
+                    this.dropdownToggle.classList.remove('active');
+                }
+            });
+        }
+
+        // special filters (checkboxes)
+        this.specialFilters.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const specialValue = checkbox.dataset.special;
+                
+                if (checkbox.checked) {
+                    this.activeSpecials.add(specialValue);
+                } else {
+                    this.activeSpecials.delete(specialValue);
+                }
+                
+                this.filterAndSort();
+            });
+        });
+
+        // dates dropdown toggle
+        if (this.datesDropdownToggle && this.datesDropdownContent) {
+            this.datesDropdownToggle.addEventListener('click', () => {
+                const isOpen = this.datesDropdownContent.classList.contains('open');
+                this.datesDropdownContent.classList.toggle('open', !isOpen);
+                this.datesDropdownToggle.classList.toggle('active', !isOpen);
+            });
+
+            // close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (this.datesDropdownToggle && this.datesDropdownContent &&
+                    !this.datesDropdownToggle.contains(e.target) && !this.datesDropdownContent.contains(e.target)) {
+                    this.datesDropdownContent.classList.remove('open');
+                    this.datesDropdownToggle.classList.remove('active');
+                }
+            });
+        }
+
+        // date filters (checkboxes)
+        this.dateFilters.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const dateValue = checkbox.dataset.date;
+                
+                if (checkbox.checked) {
+                    this.activeDates.add(dateValue);
+                } else {
+                    this.activeDates.delete(dateValue);
+                }
+                
+                this.filterAndSort();
+            });
+        });
     },
 
     /**
@@ -102,8 +179,10 @@ const SearchUtility = {
         this.cardLinks.forEach(cardLink => {
             const matchesSearch = this.matchesSearchTerm(cardLink, searchTerm);
             const matchesLetter = this.matchesLetterFilter(cardLink);
+            const matchesSpecial = this.matchesSpecialFilter(cardLink);
+            const matchesDate = this.matchesDateFilter(cardLink);
 
-            if (matchesSearch && matchesLetter) {
+            if (matchesSearch && matchesLetter && matchesSpecial && matchesDate) {
                 cardLink.style.display = 'block';
             } else {
                 cardLink.style.display = 'none';
@@ -151,6 +230,124 @@ const SearchUtility = {
         }
         
         return false;
+    },
+
+    /**
+     * check if card matches special filter
+     * @param {Element} cardLink - card element to check
+     * @returns {boolean} - whether card matches special filters
+     */
+    matchesSpecialFilter(cardLink) {
+        // if no special filters are active, show all films
+        if (this.activeSpecials.size === 0) return true;
+        
+        const filmBlock = cardLink.dataset.block || '';
+        
+        // check for "separate ticket" filter - show films without a block
+        if (this.activeSpecials.has('separate-ticket') && filmBlock === '') {
+            return true;
+        }
+        
+        // check if film's block matches any active special filters
+        for (const activeSpecial of this.activeSpecials) {
+            if (activeSpecial !== 'separate-ticket') {
+                // convert both to lowercase for comparison
+                const blockLower = filmBlock.toLowerCase();
+                const specialLower = activeSpecial.toLowerCase();
+                
+                // convert block name to slug format
+                const blockSlug = blockLower
+                    .replace(/\s+/g, '-')
+                    .replace(/[^\w-]/g, '-')
+                    .replace(/--+/g, '-')
+                    .replace(/^-+|-+$/g, '');
+                
+                // check if slug matches
+                if (blockSlug === specialLower) {
+                    return true;
+                }
+            }
+        }
+        
+        // if separate-ticket is selected and film has a block, don't show it
+        if (this.activeSpecials.has('separate-ticket') && filmBlock !== '') {
+            return false;
+        }
+        
+        return false;
+    },
+
+    /**
+     * check if card matches special filters
+     * @param {Element} cardLink - card element to check
+     * @returns {boolean} - whether card matches special filters
+     */
+    matchesSpecialFilter(cardLink) {
+        if (this.activeSpecials.size === 0) return true;
+        
+        const filmBlock = cardLink.dataset.block || '';
+        
+        // check for separate ticket filter (films without blocks)
+        if (this.activeSpecials.has('separate-ticket')) {
+            if (filmBlock === '') {
+                return true;
+            }
+        }
+        
+        // check if film block matches any active special
+        for (const activeSpecial of this.activeSpecials) {
+            if (activeSpecial !== 'separate-ticket' && filmBlock.includes(activeSpecial)) {
+                return true;
+            }
+        }
+        
+        return false;
+    },
+
+    /**
+     * check if card matches special filter
+     * @param {Element} cardLink - card element to check
+     * @returns {boolean} - whether card matches special filter
+     */
+    matchesSpecialFilter(cardLink) {
+        if (this.activeSpecials.size === 0) return true;
+        
+        const cardBlock = cardLink.dataset.block || '';
+        
+        // check for separate ticket (films with no block)
+        if (this.activeSpecials.has('separate-ticket') && cardBlock === '') {
+            return true;
+        }
+        
+        // convert card block to slug format for comparison
+        const cardBlockSlug = cardBlock.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+        
+        // check for exact special block matches
+        for (const activeSpecial of this.activeSpecials) {
+            if (activeSpecial !== 'separate-ticket') {
+                // compare both original block name and slug format
+                if (cardBlock.toLowerCase() === activeSpecial.toLowerCase() || 
+                    cardBlockSlug === activeSpecial.toLowerCase()) {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    },
+
+    /**
+     * check if card matches date filter
+     * @param {Element} cardLink - card element to check
+     * @returns {boolean} - whether card matches date filter
+     */
+    matchesDateFilter(cardLink) {
+        if (this.activeDates.size === 0) return true;
+        
+        const cardDate = cardLink.dataset.date || '';
+        
+        // check for exact date matches
+        return this.activeDates.has(cardDate);
     },
 
     /**

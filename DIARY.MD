@@ -4,14 +4,16 @@
 - [] toggleable filters on the side
 
 ## suggestions
-- [] gradients for galleries
-- [] image counter for galleries
+- [x] slight gradients for galleries for readability of bright yellow text against different background images
+- [x] image counter for galleries
 - [x] filters restyle
 - [x] film card contains link to director and to film itself
-- [] specials page
-- [] separate individual pages for every specials
+- [x] specials page
+- [x] separate individual pages for every specials
 ? [] get your tickets here section above footer
 ? [] galleries for directors
+? [] should there be separate pages for directors of multiple films?
+? [] should there be a link for specials page in each film card?
 
 ## missing images
 
