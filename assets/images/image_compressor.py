@@ -17,7 +17,7 @@ RECURSIVE = True        # whether to process subdirectories
 CONVERT_TO_WEBP = True  # whether to convert images to webp format
 WEBP_LOSSLESS = False   # whether to use lossless compression for webp (for png with alpha)
 DELETE_ORIGINALS = True # whether to delete original files after successful compression
-NORMALIZE_NAMES = False # whether to normalize filenames to slugified unicode normalized characters
+NORMALIZE_NAMES = True  # whether to normalize filenames to slugified unicode normalized characters
 
 # list to track unsuccessful compressions
 FAILED_COMPRESSIONS = []
