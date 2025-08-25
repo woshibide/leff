@@ -31,446 +31,276 @@
     <base href="/leff/">
     
     
-    <link rel="stylesheet" href="styles.d5dc65d2aa.css">
+    <link rel="stylesheet" href="styles.f2886ef425.css">
     >
     
 
     
+
+<!-- d3.js for timeline visualization -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
 <style>
-    /*
-        SCHEDULE PAGE
-    */
-    @media (max-width: 768px) {
-        #schedule-placeholder, .page-title{
-            padding-inline: 0.625rem;
-        }
-    }
-    #schedule-page {
-        /* UN / COMMENT FOR PUBLIC */
-        /* margin-top: var(--space-5xl);
-        padding: var(--space-2xl) var(--space-md); */
-        min-height: 100vh;
-    }
-
-    #schedule-container {
-        width:             <div class="popup-right">
-                <button type="button" class="close-icon" id="popup-close" aria-label="close">
-                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
-                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
-                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2" />
-                    </svg>
-                </button>       overflow-x: auto;
-        grid-column: 1 / -1;
-    }
-
-    .schedule-day {
-        margin-bottom: var(--space-5xl);
-    }
-
-    .schedule-date-title {
-        color: var(--text-main);
-        text-transform: uppercase;
-        padding: var(--space-md);
-        background: var(--accent);
-    }
-
-    .schedule-table {
-        width: 100%;
-        border-collapse: collapse;
-        border: none;
+    /* ultra wide container that breaks out of normal grid constraints */
+    .schedule-ultra-wide {
+        position: relative;
+        width: 100vw;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
         background: var(--silver);
-        font-family: "switzer", sans-serif;
-        margin-bottom: var(--space-xl);
-    }
-
-    .schedule-table * tr {
-        background-color: var(--silver);
-        transition: all 0.3s var(--transition);
-    }
-
-    .schedule-table tbody {
-        border: var(--text-main) 1px solid;
-    }
-
-    .schedule-table * tr:hover {
-        background-color: var(--bg-main-hover);
-    }
-
-
-    .schedule-table th,
-    .schedule-table td {
         border-top: 2px solid var(--bg-main);
-        padding: var(--space-sm);
-        text-align: left;
-        vertical-align: top;
+        border-bottom: 2px solid var(--bg-main);
+        padding: var(--space-3xl) var(--space-lg);
+        margin-top: var(--space-3xl);
+        margin-bottom: var(--space-3xl);
     }
 
-    .schedule-table th {
-        position: relative;
-        vertical-align: top;
-        bottom: 0px;
-        height: 2rem;
+    .schedule-container {
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 0;
     }
 
-    /* time marker sticks container */
-    .time-markers {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 10px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-    .time-marker-stick {
-        width: 1px;
-        height: 10px;
-        background: var(--bg-main);
-    }
-
-    .schedule-venue-header {
-        border: none !important;
-        background: var(--accent);
-        color: var(--text-main);
-        /* font-weight: bold; */
+    .schedule-container h1 {
+        font-size: 1rem;
         text-transform: uppercase;
-        width: 120px;
-        height: 2rem;
-        min-width: 120px;
-    }
-
-    .schedule-time-header {
-        border: none !important;
-        background: var(--accent);
         color: var(--text-main);
-        /* font-weight: bold; */
-        text-align: center;
-        min-width: 100px;
-        white-space: nowrap;
+        margin-bottom: var(--space-2xl);
+        font-weight: normal;
     }
 
-    .schedule-venue-cell {
+    .schedule-tba {
+        font-size: 1.25rem;
         color: var(--text-main);
-        text-transform: lowercase;
-        width: auto;
-        min-width: 120px;
-        position: sticky;
-        left: 0;
-        z-index: 1;
+        margin-bottom: var(--space-3xl);
+        line-height: 1.4;
     }
 
-    .schedule-event-cell {
-        /* min-height: 60px; */
-        padding: var(--space-xs);
-        position: relative;
-    }
-
-    .schedule-event {
-        color: var(--accent);
-        background: var(--silver);
-        outline: var(--accent) 2px solid;
-        padding: var(--space-xs) var(--space-sm);
-        font-size: 2rem;
-        transition: all 0.2s var(--transition);
-        height: 100%;
-        width: 100%;
-        min-height: 50px;
+    .day-tabs {
         display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        cursor: pointer;
+        gap: 0;
+        margin-bottom: var(--space-3xl);
+        border-bottom: 2px solid var(--bg-main);
+        font-family: 'necto', monospace;
     }
 
-    .schedule-event:hover {
+    .day-tab {
+        padding: var(--space-md) var(--space-lg);
+        background: var(--silver);
+        border: 2px solid var(--bg-main);
+        border-bottom: none;
+        border-right: none;
+        cursor: none;
+        font-size: 1rem;
+        font-weight: normal;
+        transition: all 0.2s var(--transition);
+        color: var(--text-main);
+        text-transform: uppercase;
+        font-family: inherit;
+    }
+
+    .day-tab:last-child {
+        border-right: 2px solid var(--bg-main);
+    }
+
+    .day-tab:hover {
         background: var(--bg-main);
-        transform: scale(1.02);
+        color: var(--accent);
+    }
+
+    .day-tab.active {
+        background: var(--bg-main);
+        color: var(--accent);
+        border-bottom: 2px solid var(--bg-main);
+        margin-bottom: -2px;
+    }
+
+    .timeline-container {
+        margin: 0;
+        padding: var(--space-lg);
+        background: var(--silver);
+        border: 2px solid var(--bg-main);
+        overflow-x: auto;
+        overflow-y: visible; /* changed from hidden to allow info panels to show */
+        max-width: 100%;
+        padding-bottom: 200px; /* extra space for info panels */
+    }
+
+    .timeline-svg {
+        background: var(--silver);
+        font-family: 'necto', monospace;
+        min-width: 1800px;
+        display: block;
+    }
+
+    .time-axis {
+        font-size: 14px;
+        fill: var(--text-main);
+        font-family: 'necto', monospace;
+        font-weight: normal;
+    }
+
+    .time-axis text {
+        text-anchor: middle;
+    }
+
+    .venue-label {
+        font-size: 16px;
+        font-weight: normal;
+        fill: var(--text-main);
+        font-family: 'necto', monospace;
+        text-transform: uppercase;
+    }
+
+    .venue-row {
+        stroke: var(--bg-main);
+        stroke-width: 2;
+        fill: none;
     }
 
     .event-block {
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        opacity: 0.8;
-        margin-bottom: var(--space-xs);
-    }
-
-    .event-title {
-        /* font-weight: bold; */
-        white-space: nowrap;
-        margin-bottom: var(--space-xs);
-        line-height: 1.1;
-    }
-
-    .event-director {
-        font-size: 0.7rem;
-        opacity: 0.7;
-        margin-top: auto;
-    }
-
-    .no-schedule {
-        grid-column: 1 / -1;
-        text-align: center;
-        padding: var(--space-5xl);
-        color: var(--text-main);
-    }
-
-    .no-schedule h2 {
-        font-size: 2rem;
-        margin-bottom: var(--space-xl);
-        color: var(--text-main);
-        text-transform: uppercase;
-    }
-
-    .no-schedule p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        max-width: 600px;
-        margin: 0 auto var(--space-lg);
-    }
-
-    /* popup styles */
-    .popup-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: var(--bg-main-overlay);
-        z-index: 10000;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s var(--transition);
-    }
-
-    .popup-overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .popup-container {
-        position: fixed;
-        top: var(--space-5xl);
-        left: 50%;
-        transform: translateX(-50%);
-        /* to be changed for mobile or other implementation preferably just reuse grid */
-        width: calc(100% - 160px);
-        background: var(--accent);
-        color: var(--text-main);
-        z-index: 10001;
-        opacity: 0;
-        transform: translateX(-50%) translateY(-2rem);
-        transition: all 0.3s var(--transition);
-        padding: 0 var(--space-2xl);
-    }
-
-    .popup-overlay.active .popup-container {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-
-    .popup-grid {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-column-gap: var(--space-xl);
-        padding: var(--space-2xl) 0;
-        height: 100%;
-    }
-
-    .popup-left {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-md);
-        grid-column: 1 / 4;
-    }
-
-    .popup-right {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        grid-column: 4 / 7;
-    }
-
-    .popup-right>*:nth-child(2),
-    .popup-left>*:nth-child(2) {
-        margin-top: var(--space-5xl);
-    }
-
-    #popup-close {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-
-    .popup-title {
-        font-size: 2rem;
-        /* font-weight: bold; */
-        margin: 0;
-        text-transform: lowercase;
-    }
-
-    .popup-director {
-        font-size: 1.2rem;
-        opacity: 0.8;
-        margin: 0;
-    }
-
-    .popup-synopsis {
-        font-size: 1rem;
-        line-height: 1.5;
-        margin: 0;
-    }
-
-    .popup-image {
-        width: 100%;
-        height: auto;
-        max-height: 300px;
-        object-fit: cover;
-        margin: var(--space-md) 0;
-    }
-
-    .popup-details {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: var(--space-md);
-        margin-top: auto;
-        padding-top: var(--space-md);
-    }
-
-    .popup-info {
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        opacity: 0.8;
-    }
-
-    #popup-tickets {
-        background: var(--accent);
-        color: var(--text-main);
-        border: none;
-        outline: 2px solid var(--bg-main);
-        text-decoration: none;
+        rx: 0;
+        ry: 0;
+        stroke: none;
+        stroke-width: 0px;
+        cursor: none;
         transition: all 0.2s var(--transition);
     }
 
-    #popup-tickets:hover {
+    .event-block:hover {
+        stroke-width: 2px;
+        stroke: var(--accent);
+        background-color: #1e1e1e65;
+    }
+
+    .event-text {
+        font-size: 1.25rem;
+        fill: var(--accent);
+        font-weight: normal;
+        text-anchor: start;
+        pointer-events: none;
+        font-family: 'switzer', Arial, sans-serif;
+        text-transform: uppercase;
+    }
+
+    .event-director {
+        font-size: 1.25rem;
+        fill: var(--accent);
+        text-anchor: start;
+        pointer-events: none;
+        font-family: 'switzer', Arial, sans-serif;
+    }
+
+    .event-info {
+        position: absolute;
+        background: var(--bg-main);
         color: var(--accent);
-        text-decoration: underline 2px solid;
-        background: var(--text-main);
+        padding: var(--space-sm);
+        border: 2px solid var(--accent);
+        font-size: 12px;
+        z-index: 100;
+        max-width: 300px;
+        line-height: 1.3;
+        font-family: 'switzer', Arial, sans-serif;
+        top: 100%;
+        left: 0;
+        margin-top: 4px;
+        display: none;
     }
 
+    .event-info h4 {
+        margin: 0 0 var(--space-xs) 0;
+        font-size: 13px;
+        font-weight: normal;
+        color: var(--accent);
+        text-transform: uppercase;
+    }
+
+    .event-info p {
+        margin: var(--space-xs) 0;
+        font-size: 11px;
+    }
+
+    .event-info strong {
+        color: var(--accent);
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+
+    .event-block:hover + .event-info {
+        display: block;
+    }
+
+    .event-time {
+        font-size: 1rem;
+        fill: var(--text-main);
+        text-anchor: start;
+        pointer-events: none;
+        font-family: 'necto', monospace;
+        font-weight: normal;
+    }
+
+    /* responsive adjustments */
     @media (max-width: 768px) {
-        .popup-container {
-            top: var(--space-xl);
-            width: 95%;
-            padding: 0 var(--space-sm);
+        .schedule-ultra-wide {
+            padding: var(--space-2xl) var(--space-sm);
         }
 
-        .popup-grid {
-            grid-template-columns: 1fr;
-            padding: var(--space-md) 0;
-            gap: var(--space-md);
+        .day-tabs {
+            flex-wrap: wrap;
+            gap: 0;
         }
-
-        .popup-left {
-            grid-column: 1;
-        }
-
-        .popup-right {
-            grid-column: 1;
-        }
-
-        .popup-title {
-            font-size: 1.5rem;
-        }
-
-        .popup-director {
-            font-size: 1rem;
-        }
-
-        .popup-synopsis {
+        
+        .day-tab {
+            padding: var(--space-sm) var(--space-md);
             font-size: 0.9rem;
+            flex: 1;
+            min-width: 0;
+            text-align: center;
         }
 
-        .popup-details {
-            flex-direction: column;
-            align-items: stretch;
-            gap: var(--space-sm);
+        .day-tab:not(:last-child) {
+            border-right: 2px solid var(--bg-main);
         }
-    }
-
-    /* responsive design for schedule */
-    @media (max-width: 1200px) {
-        .schedule-table {
-            font-size: 0.9rem;
+        
+        .timeline-container {
+            padding: var(--space-md);
+            padding-bottom: 150px; /* reduced for mobile */
+            -webkit-overflow-scrolling: touch;
         }
 
-        .schedule-venue-header,
-        .schedule-venue-cell {
-            width: 100px;
-            min-width: 100px;
+        .timeline-svg {
+            min-width: 1600px; /* slightly smaller on mobile but still wide */
         }
 
-        .schedule-time-header {
-            min-width: 80px;
+        .venue-label {
+            font-size: 14px;
         }
 
-        .schedule-event {
-            font-size: 0.75rem;
-            padding: var(--space-xs);
-            min-height: 45px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        #schedule-page {
-            padding: var(--space-xl) 0;
-            margin-top: var(--space-xl);
-        }
-
-        #schedule-container {
-            padding: 0 var(--space-sm);
-        }
-
-        .schedule-date-title {
-            padding: var(--space-sm);
-        }
-
-        .schedule-table {
-            font-size: 0.8rem;
-        }
-
-        .schedule-venue-header,
-        .schedule-venue-cell {
-            width: 80px;
-            min-width: 80px;
-            font-size: 0.7rem;
-        }
-
-        .schedule-time-header {
-            min-width: 70px;
-            font-size: 0.7rem;
-            padding: var(--space-xs);
-        }
-
-        .schedule-event-cell {
-            padding: 2px;
-            min-height: 40px;
-        }
-
-        .schedule-event {
-            font-size: 0.65rem;
-            padding: var(--space-xs);
-            min-height: 35px;
-            border-radius: 2px;
-        }
-
-        .event-block {
-            font-size: 0.6rem;
+        .event-text {
+            font-size: 11px;
         }
 
         .event-director {
-            font-size: 0.6rem;
+            font-size: 9px;
+        }
+
+        .event-time {
+            font-size: 8px;
+        }
+
+        .event-info {
+            max-width: 250px;
+            padding: var(--space-xs);
+        }
+    }
+
+    /* ultra wide monitors */
+    @media (min-width: 2560px) {
+        .schedule-container {
+            max-width: 2400px;
         }
     }
 </style>
@@ -626,39 +456,6 @@
 
     <section class="page-contents">
         
-<!-- popup overlay -->
-<div class="popup-overlay" id="popup-overlay">
-    <div class="popup-container">
-        <div class="popup-grid">
-            <div class="popup-left">
-                <h3 class="popup-title" id="popup-title"></h3>
-                <p class="popup-director" id="popup-director"></p>
-                <p class="popup-synopsis" id="popup-synopsis"></p>
-            </div>
-            <div class="popup-right">
-                <button class="close-icon" id="popup-close" aria-label="close">
-                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
-                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
-                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2" />
-                    </svg>
-                </button>
-                <img class="popup-image" id="popup-image" src="/leff/assets/images/sans-soleil.webp" alt="">
-                <div class="popup-details">
-                    <div class="popup-info" id="popup-info">
-
-                    </div>
-                    <a href="https://bioscopenleiden.nl/" target="_blank" id="popup-tickets" class="tickets-button">
-                        Tickets
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
-                            <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div id="schedule-page" class="grid-base">
     
 
@@ -681,990 +478,20 @@
 </div>
 
     
-    <div id="schedule-container">
-        
-        <div class="schedule-day">
-
-
-            <!-- collect all times and venues for this date -->
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            <!-- schedule table -->
-            <table class="schedule-table">
-                <thead>
-                    <tr>
-                        <th class="schedule-venue-header">
-                            <h2 class="schedule-date-title"> 14 September 2025</h2>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="14:00:00">14:00:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr>
-                        <td class="schedule-venue-cell">Lakenhal</td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="Undead Voices (2019–2021)"
-                                data-director="Maria Iorio en Raphaël Cuomo" data-synopsis="*Undead Voices* (2019–2021) onderzoekt de overblijfselen van het Italiaanse feministische activisme uit de jaren 70 aan de hand van een kapotte Super 8-film. Door archieffragmenten, persoonlijke herinneringen en geluid te verweven, verbeeldt de film hoe verborgen geschiedenissen opnieuw tot leven kunnen worden gebracht."
-                                data-block="Opening Event" data-location="Lakenhal" data-time="14:00:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block">Opening Event</div>
-                                <div class="event-title">Undead Voices (2019–2021)</div>
-                                
-                                <div class="event-director">Maria Iorio en Raphaël Cuomo</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                    </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="schedule-day">
-
-
-            <!-- collect all times and venues for this date -->
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            <!-- schedule table -->
-            <table class="schedule-table">
-                <thead>
-                    <tr>
-                        <th class="schedule-venue-header">
-                            <h2 class="schedule-date-title"> 15 September 2025</h2>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="10:30:00">10:30:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="10:45:00">10:45:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="12:45:00">12:45:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="13:00:00">13:00:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="15:15:00">15:15:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="15:30:00">15:30:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="17:15:00">17:15:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="18:15:00">18:15:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="19:45:00">19:45:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="20:45:00">20:45:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="22:15:00">22:15:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr>
-                        <td class="schedule-venue-cell">Cinema 1</td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="Sans Soleil"
-                                data-director="Chris Marker" data-synopsis="Sans soleil wordt door velen gezien als de belangrijkste essayfilm. Chris Markers film gaat over herinnering, tijd en beeld via een poëtische reis tussen Japan en West-Afrika."
-                                data-block="Classics" data-location="Cinema 1" data-time="10:30:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block">Classics</div>
-                                <div class="event-title">Sans Soleil</div>
-                                
-                                <div class="event-director">Chris Marker</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="Juste Un Mouvement"
-                                data-director="Vincent Meessen" data-synopsis="Juste un mouvement herinterpreteert Jean-Luc Godards La Chinoise via het verhaal van Omar Blondin Diop en verweeft essay, biografie en politiek tot een gelaagde reconstructie."
-                                data-block="" data-location="Cinema 1" data-time="13:00:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block"></div>
-                                <div class="event-title">Juste Un Mouvement</div>
-                                
-                                <div class="event-director">Vincent Meessen</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="Arbeiter verlassen die Fabrik"
-                                data-director="Harun Farocki" data-synopsis="Arbeiter verlassen die Fabrik van Harun Farocki herinterpreteert de iconische film van de gebroeders Lumière uit 1895 en onderzoekt hoe het beeld van arbeiders aan het einde van de werkdag voortleeft in de filmgeschiedenis."
-                                data-block="Arbeiders verlaten de fabriek" data-location="Cinema 1" data-time="15:15:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block">Arbeiders verlaten de fabriek</div>
-                                <div class="event-title">Arbeiter verlassen die Fabrik</div>
-                                
-                                <div class="event-director">Harun Farocki</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="Getty Abortions"
-                                data-director="Franzis Kabisch" data-synopsis="Hoe verbeeldt de media abortus en welke impact heeft dit op vrouwen die een abortus overwegen? Een indrukwekkende mix van desktopfilm en persoonlijk essay."
-                                data-block="Harun Farocki in Focus" data-location="Cinema 1" data-time="17:15:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block">Harun Farocki in Focus</div>
-                                <div class="event-title">Getty Abortions</div>
-                                
-                                <div class="event-director">Franzis Kabisch</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="Preemptive Listening"
-                                data-director="Aura Satz" data-synopsis="Wat is een sirene? Wat was het? Wat zou het kunnen zijn? Een verkenning van de sirene in talloze verschijningsvormen."
-                                data-block="" data-location="Cinema 1" data-time="19:45:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block"></div>
-                                <div class="event-title">Preemptive Listening</div>
-                                
-                                <div class="event-director">Aura Satz</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="Home Invasion"
-                                data-director="Graeme Arnfield" data-synopsis="Wat gebeurt er wanneer onze huizen en dromen zijn binnengedrongen? Een verkenning van de geschiedenis van de deurbel en de implicaties van bewakingsbeelden."
-                                data-block="" data-location="Cinema 1" data-time="22:15:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block"></div>
-                                <div class="event-title">Home Invasion</div>
-                                
-                                <div class="event-director">Graeme Arnfield</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                    </tr>
-                    
-                    <tr>
-                        <td class="schedule-venue-cell">Cinema 2</td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="Coma"
-                                data-director="Bertrand Bonello" data-synopsis="Animatie en live-action worden verweven in een verhaal van een tienermeisje dat vastzit in haar huis. In Coma, gemaakt gedurende de COVID-19-pandemie, ontvouwt zich een surrealistische, nachtmerrieachtige wereld. Wellicht kon alleen een essayfilm de verwarring van deze jaren vatten."
-                                data-block="" data-location="Cinema 2" data-time="10:45:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block"></div>
-                                <div class="event-title">Coma</div>
-                                
-                                <div class="event-director">Bertrand Bonello</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="Room 404"
-                                data-director="Elysa Wendi and Shing Lee" data-synopsis="ERROR: ROOM 404 A POTENTIAL THREAT – over moed en twijfel bij kunstenaars die blijven creëren in onzekere tijden, ondanks toenemende mediacensuur in Hongkong."
-                                data-block="Hong Kong Shorts" data-location="Cinema 2" data-time="12:45:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block">Hong Kong Shorts</div>
-                                <div class="event-title">Room 404</div>
-                                
-                                <div class="event-director">Elysa Wendi and Shing Lee</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="The Natural History of Destruction"
-                                data-director="Sergei Loznitsa" data-synopsis="Met archiefbeelden van Britse aanvallen op Duitse burgers tijdens WOII worden morele dubbelzinnigheden en de stilte rond deze daden blootgelegd."
-                                data-block="" data-location="Cinema 2" data-time="15:30:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block"></div>
-                                <div class="event-title">The Natural History of Destruction</div>
-                                
-                                <div class="event-director">Sergei Loznitsa</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="sr"
-                                data-director="Lea Hartlaub" data-synopsis="Aan de hand van een terugkerend motiefbeeld van een giraf worden mondiale landschappen en menselijke activiteiten verbeeld, waarbij thema’s van macht, cultuur en waarneming worden onderzocht."
-                                data-block="" data-location="Cinema 2" data-time="18:15:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block"></div>
-                                <div class="event-title">sr</div>
-                                
-                                <div class="event-director">Lea Hartlaub</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="How to Improve the World"
-                                data-director="Nguyễn Trinh Thi" data-synopsis="Vertrouw je meer op beeld of geluid? Luister aandachtig naar de klanken en beelden van de inheemse bevolking in de Centrale Hooglanden van Vietnam."
-                                data-block="Nguyễn Trinh Thi in Focus" data-location="Cinema 2" data-time="20:45:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block">Nguyễn Trinh Thi in Focus</div>
-                                <div class="event-title">How to Improve the World</div>
-                                
-                                <div class="event-director">Nguyễn Trinh Thi</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                    </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="schedule-day">
-
-
-            <!-- collect all times and venues for this date -->
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            <!-- schedule table -->
-            <table class="schedule-table">
-                <thead>
-                    <tr>
-                        <th class="schedule-venue-header">
-                            <h2 class="schedule-date-title"> 16 September 2025</h2>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="10:15:00">10:15:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="10:30:00">10:30:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="12:45:00">12:45:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="13:00:00">13:00:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="15:00:00">15:00:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="15:15:00">15:15:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="17:30:00">17:30:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="19:00:00">19:00:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="19:45:00">19:45:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="22:00:00">22:00:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                        <th class="schedule-time-header">
-                            <time datetime="22:15:00">22:15:00</time>
-                            <div class="time-markers">
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                                <div class="time-marker-stick"></div>
-                            </div>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr>
-                        <td class="schedule-venue-cell">Cinema 1</td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="Where can I get Lost?"
-                                data-director="Mattijs van de Port" data-synopsis="Dwalers van alle leeftijden en achtergronden komen samen via de lens van een antropologisch filmmaker, op zoek naar een wereld groter dan de hunne."
-                                data-block="" data-location="Cinema 1" data-time="10:30:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block"></div>
-                                <div class="event-title">Where can I get Lost?</div>
-                                
-                                <div class="event-director">Mattijs van de Port</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="A Fidai Film"
-                                data-director="Kamal Aljafari" data-synopsis="Rode silhouetten schetsen een alternatieve toekomst in geplunderd Palestijns archiefmateriaal. Een intrigerende film die verleden en mogelijke toekomsten herinterpreteert."
-                                data-block="Kamal Aljafari in Focus" data-location="Cinema 1" data-time="12:45:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block">Kamal Aljafari in Focus</div>
-                                <div class="event-title">A Fidai Film</div>
-                                
-                                <div class="event-director">Kamal Aljafari</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="Henry Fonda for President"
-                                data-director="Alexander Horwath" data-synopsis="Een meditatie over Henry Fonda’s filmlegende en de verhalen die Amerika over zichzelf vertelt — idealisme, twijfel en de kloof tussen beeld en werkelijkheid."
-                                data-block="" data-location="Cinema 1" data-time="15:15:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block"></div>
-                                <div class="event-title">Henry Fonda for President</div>
-                                
-                                <div class="event-director">Alexander Horwath</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="Face Value"
-                                data-director="Johan van der Keuken" data-synopsis="Johan van der Keuken’s ambitieuze film onderzoekt de visuele politiek in Europa en experimenteert tegelijkertijd met filmportretten. Via een mozaïek van gezichten, plaatsen en stemmen brengt hij verlangens en angsten in beeld. Een essay over zien en gezien worden."
-                                data-block="Classics" data-location="Cinema 1" data-time="19:00:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block">Classics</div>
-                                <div class="event-title">Face Value</div>
-                                
-                                <div class="event-director">Johan van der Keuken</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="My Want of You Partakes of Me"
-                                data-director="Sasha Litvintseva en Beny Wagner" data-synopsis="Een poëtische en filosofische reflectie op (on)ethische vertering die de onderlinge afhankelijkheid van lichaam en omgeving onthult, want &#34;all that you change changes you&#34;."
-                                data-block="" data-location="Cinema 1" data-time="22:15:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block"></div>
-                                <div class="event-title">My Want of You Partakes of Me</div>
-                                
-                                <div class="event-director">Sasha Litvintseva en Beny Wagner</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                    </tr>
-                    
-                    <tr>
-                        <td class="schedule-venue-cell">Cinema 2</td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="The Southern Thruway"
-                                data-director="Susanna Tomassini" data-synopsis="The Southern Thru-Way is een persoonlijk verhaal over huisvesting en het politieke idee van toebehoren. Een filmisch essay over onzekerheid, gedwongen collectiviteit, vergankelijkheid en onconventionele vormen van liefde."
-                                data-block="New Perspectives" data-location="Cinema 2" data-time="10:15:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block">New Perspectives</div>
-                                <div class="event-title">The Southern Thruway</div>
-                                
-                                <div class="event-director">Susanna Tomassini</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="A Letter from Yene"
-                                data-director="Manthia Diawara" data-synopsis="Een reflectief portret van het leven in een Senegalese kustplaats, waar veranderende landschappen aanleiding geven tot gesprekken over milieu, arbeid en gedeeld bestaan."
-                                data-block="" data-location="Cinema 2" data-time="13:00:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block"></div>
-                                <div class="event-title">A Letter from Yene</div>
-                                
-                                <div class="event-director">Manthia Diawara</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="De L’autre coté"
-                                data-director="Chantal Akerman" data-synopsis="Een emotionele verkenning van grenspolitiek, actueler dan ooit. Persoonlijk, meervoudig en meeslepend in de wijze waarop het ons laat kijken én luisteren."
-                                data-block="Classics" data-location="Cinema 2" data-time="15:00:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block">Classics</div>
-                                <div class="event-title">De L’autre coté</div>
-                                
-                                <div class="event-director">Chantal Akerman</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="The Sending of the Crows"
-                                data-director="Judith Westerveld" data-synopsis="Een audiovisuele meditatie over taal en cultuur vanuit een koloniaal verleden, “moving through time, reflecting on the truth of the people forgotten”."
-                                data-block="Listening with the Other" data-location="Cinema 2" data-time="17:30:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block">Listening with the Other</div>
-                                <div class="event-title">The Sending of the Crows</div>
-                                
-                                <div class="event-director">Judith Westerveld</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="Nowhere Near"
-                                data-director="Miko Revereza" data-synopsis="Nowhere Near van Miko Revereza is een aangrijpende essayfilm over ontheemding en migratie. Via meditatieve reflecties en indrukwekkende beelden verkent hij de complexiteit van verbondenheid en culturele grenzen."
-                                data-block="" data-location="Cinema 2" data-time="19:45:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block"></div>
-                                <div class="event-title">Nowhere Near</div>
-                                
-                                <div class="event-director">Miko Revereza</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                            
-                            <div class="schedule-event" data-title="Disquiet"
-                                data-director="Lis Rhodes" data-synopsis="De nieuwste film van Lis Rhodes opent met een  verwijzing naar de atoombom op Hiroshima en zet daarmee de toon voor een essayfilm over geluid, macht en geschiedenis. Met gefragmenteerde beelden en ontregelend geluid roept Rhodes op tot reflectie over geweld en controle in het moderne leven."
-                                data-block="" data-location="Cinema 2" data-time="22:00:00"
-                                data-image="" data-tickets="">
-                                <div class="event-block"></div>
-                                <div class="event-title">Disquiet</div>
-                                
-                                <div class="event-director">Lis Rhodes</div>
-                                
-                            </div>
-                            
-                        </td>
-                        
-                        <td class="schedule-event-cell">
-                            
-                        </td>
-                        
-                    </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-        
-    </div>
     
+</div>
+
+<!-- ultra wide schedule section that breaks out of grid -->
+<div class="schedule-ultra-wide">
+    <div class="schedule-container">
+        <!-- day tabs -->
+        <div class="day-tabs" id="day-tabs"></div>
+        
+        <!-- timeline visualization container -->
+        <div class="timeline-container">
+            <svg class="timeline-svg" id="timeline-svg"></svg>
+        </div>
+    </div>
 </div>
 
     </section>
@@ -1757,90 +584,288 @@
 
     
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // get popup elements
-        const popupOverlay = document.getElementById('popup-overlay');
-        const popupTitle = document.getElementById('popup-title');
-        const popupDirector = document.getElementById('popup-director');
-        const popupSynopsis = document.getElementById('popup-synopsis');
-        const popupImage = document.getElementById('popup-image');
-        const popupInfo = document.getElementById('popup-info');
-        // const popupTickets = document.getElementById('popup-tickets');
-        const popupClose = document.getElementById('popup-close');
-
-        // get all schedule events
-        const scheduleEvents = document.querySelectorAll('.schedule-event');
-
-        // add click listeners to schedule events
-        scheduleEvents.forEach(event => {
-            event.addEventListener('click', function () {
-                // get data from clicked event
-                const title = this.dataset.title;
-                const director = this.dataset.director;
-                const synopsis = this.dataset.synopsis;
-                const block = this.dataset.block;
-                const location = this.dataset.location;
-                const time = this.dataset.time;
-                const image = this.dataset.image;
-                const ticketsUrl = this.dataset.tickets;
-
-                // populate popup content
-                popupTitle.textContent = title;
-                popupDirector.textContent = director;
-                popupSynopsis.textContent = synopsis;
-
-                // handle image
-                if (image) {
-                    popupImage.src = image;
-                    popupImage.style.display = 'block';
-                } else {
-                    // to be changed later
-                    popupImage.style.display = 'block';
-                }
-
-                // populate info section
-                popupInfo.textContent = `${location} | ${time} | ${block}`;
-
-                // // handle tickets button
-                // if (ticketsUrl) {
-                //     popupTickets.href = ticketsUrl;
-                //     popupTickets.style.display = 'inline-flex';
-                // } else {
-                //     popupTickets.style.display = 'none';
-                // }
-
-                // show popup
-                popupOverlay.classList.add('active');
+    // schedule data from server
+    const scheduleData = {"14 September": {"14:00": {"Lakenhal": {"block": "Opening Event", "director": "Maria Iorio en Rapha\u00ebl Cuomo", "duration": "36\u0027", "duration_minutes": 36, "duration_width": 72, "grid_position": {"left_offset": 480.0, "position_within_slot": 0.0, "slot_index": 4, "width": 72.0}, "location": "Lakenhal", "room": "", "synopsis": "*Undead Voices* (2019\u20132021) onderzoekt de overblijfselen van het Italiaanse feministische activisme uit de jaren 70 aan de hand van een kapotte Super 8-film. Door archieffragmenten, persoonlijke herinneringen en geluid te verweven, verbeeldt de film hoe verborgen geschiedenissen opnieuw tot leven kunnen worden gebracht.", "tickets": "", "title": "Undead Voices (2019\u20132021)", "venue": "Lakenhal"}}}, "15 September": {"10:30": {"Cinema 1": {"block": "Classics", "director": "Chris Marker", "duration": "110\u0027", "duration_minutes": 110, "duration_width": 220, "grid_position": {"left_offset": 60.0, "position_within_slot": 0.5, "slot_index": 0, "width": 220.0}, "location": "Kijkhuis, Cinema 1", "room": "Cinema 1", "synopsis": "Sans soleil wordt door velen gezien als de belangrijkste essayfilm. Chris Markers film gaat over herinnering, tijd en beeld via een po\u00ebtische reis tussen Japan en West-Afrika.", "tickets": "", "title": "Sans Soleil", "venue": "Kijkhuis"}}, "10:45": {"Cinema 2": {"block": "", "director": "Bertrand Bonello", "duration": "80\u0027", "duration_minutes": 80, "duration_width": 160, "grid_position": {"left_offset": 90.0, "position_within_slot": 0.75, "slot_index": 0, "width": 160.0}, "location": "Kijkhuis, Cinema 2", "room": "Cinema 2", "synopsis": "Animatie en live-action worden verweven in een verhaal van een tienermeisje dat vastzit in haar huis. In Coma, gemaakt gedurende de COVID-19-pandemie, ontvouwt zich een surrealistische, nachtmerrieachtige wereld. Wellicht kon alleen een essayfilm de verwarring van deze jaren vatten.", "tickets": "", "title": "Coma", "venue": "Kijkhuis"}}, "12:45": {"Cinema 2": {"block": "Hong Kong Shorts", "director": "Elysa Wendi and Shing Lee", "duration": "29\u0027", "duration_minutes": 29, "duration_width": 60, "grid_position": {"left_offset": 330.0, "position_within_slot": 0.75, "slot_index": 2, "width": 58.0}, "location": "Kijkhuis, Cinema 2", "room": "Cinema 2", "synopsis": "ERROR: ROOM 404 A POTENTIAL THREAT \u2013 over moed en twijfel bij kunstenaars die blijven cre\u00ebren in onzekere tijden, ondanks toenemende mediacensuur in Hongkong.", "tickets": "", "title": "Room 404", "venue": "Kijkhuis"}}, "13:00": {"Cinema 1": {"block": "", "director": "Vincent Meessen", "duration": "108\u0027", "duration_minutes": 108, "duration_width": 216, "grid_position": {"left_offset": 360.0, "position_within_slot": 0.0, "slot_index": 3, "width": 216.0}, "location": "Kijkhuis, Cinema 1", "room": "Cinema 1", "synopsis": "Juste un mouvement herinterpreteert Jean-Luc Godards La Chinoise via het verhaal van Omar Blondin Diop en verweeft essay, biografie en politiek tot een gelaagde reconstructie.", "tickets": "", "title": "Juste Un Mouvement", "venue": "Kijkhuis"}}, "15:15": {"Cinema 1": {"block": "Arbeiders verlaten de fabriek", "director": "Harun Farocki", "duration": "36\u0027", "duration_minutes": 36, "duration_width": 72, "grid_position": {"left_offset": 630.0, "position_within_slot": 0.25, "slot_index": 5, "width": 72.0}, "location": "Kijkhuis, Cinema 1", "room": "Cinema 1", "synopsis": "Arbeiter verlassen die Fabrik van Harun Farocki herinterpreteert de iconische film van de gebroeders Lumi\u00e8re uit 1895 en onderzoekt hoe het beeld van arbeiders aan het einde van de werkdag voortleeft in de filmgeschiedenis.", "tickets": "", "title": "Arbeiter verlassen die Fabrik", "venue": "Kijkhuis"}}, "15:30": {"Cinema 2": {"block": "", "director": "Sergei Loznitsa", "duration": "110\u0027", "duration_minutes": 110, "duration_width": 220, "grid_position": {"left_offset": 660.0, "position_within_slot": 0.5, "slot_index": 5, "width": 220.0}, "location": "Kijkhuis, Cinema 2", "room": "Cinema 2", "synopsis": "Met archiefbeelden van Britse aanvallen op Duitse burgers tijdens WOII worden morele dubbelzinnigheden en de stilte rond deze daden blootgelegd.", "tickets": "", "title": "The Natural History of Destruction", "venue": "Kijkhuis"}}, "17:15": {"Cinema 1": {"block": "Harun Farocki in Focus", "director": "Franzis Kabisch", "duration": "22\u0027", "duration_minutes": 22, "duration_width": 60, "grid_position": {"left_offset": 870.0, "position_within_slot": 0.25, "slot_index": 7, "width": 44.0}, "location": "Kijkhuis, Cinema 1", "room": "Cinema 1", "synopsis": "Hoe verbeeldt de media abortus en welke impact heeft dit op vrouwen die een abortus overwegen? Een indrukwekkende mix van desktopfilm en persoonlijk essay.", "tickets": "", "title": "Getty Abortions", "venue": "Kijkhuis"}}, "18:15": {"Cinema 2": {"block": "", "director": "Lea Hartlaub", "duration": "110\u0027", "duration_minutes": 110, "duration_width": 220, "grid_position": {"left_offset": 990.0, "position_within_slot": 0.25, "slot_index": 8, "width": 220.0}, "location": "Kijkhuis, Cinema 2", "room": "Cinema 2", "synopsis": "Aan de hand van een terugkerend motiefbeeld van een giraf worden mondiale landschappen en menselijke activiteiten verbeeld, waarbij thema\u2019s van macht, cultuur en waarneming worden onderzocht.", "tickets": "", "title": "sr", "venue": "Kijkhuis"}}, "19:45": {"Cinema 1": {"block": "", "director": "Aura Satz", "duration": "90\u0027", "duration_minutes": 90, "duration_width": 180, "grid_position": {"left_offset": 1170.0, "position_within_slot": 0.75, "slot_index": 9, "width": 180.0}, "location": "Kijkhuis, Cinema 1", "room": "Cinema 1", "synopsis": "Wat is een sirene? Wat was het? Wat zou het kunnen zijn? Een verkenning van de sirene in talloze verschijningsvormen.", "tickets": "", "title": "Preemptive Listening", "venue": "Kijkhuis"}}, "20:45": {"Cinema 2": {"block": "Nguy\u1ec5n Trinh Thi in Focus", "director": "Nguy\u1ec5n Trinh Thi", "duration": "47\u0027", "duration_minutes": 47, "duration_width": 94, "grid_position": {"left_offset": 1290.0, "position_within_slot": 0.75, "slot_index": 10, "width": 94.0}, "location": "Kijkhuis, Cinema 2", "room": "Cinema 2", "synopsis": "Vertrouw je meer op beeld of geluid? Luister aandachtig naar de klanken en beelden van de inheemse bevolking in de Centrale Hooglanden van Vietnam.", "tickets": "", "title": "How to Improve the World", "venue": "Kijkhuis"}}, "22:15": {"Cinema 1": {"block": "", "director": "Graeme Arnfield", "duration": "90\u0027", "duration_minutes": 90, "duration_width": 180, "grid_position": {"left_offset": 1470.0, "position_within_slot": 0.25, "slot_index": 12, "width": 90.0}, "location": "Kijkhuis, Cinema 1", "room": "Cinema 1", "synopsis": "Wat gebeurt er wanneer onze huizen en dromen zijn binnengedrongen? Een verkenning van de geschiedenis van de deurbel en de implicaties van bewakingsbeelden.", "tickets": "", "title": "Home Invasion", "venue": "Kijkhuis"}}}, "16 September": {"10:15": {"Cinema 2": {"block": "New Perspectives", "director": "Susanna Tomassini", "duration": "14\u0027", "duration_minutes": 14, "duration_width": 60, "grid_position": {"left_offset": 30.0, "position_within_slot": 0.25, "slot_index": 0, "width": 40}, "location": "Kijkhuis, Cinema 2", "room": "Cinema 2", "synopsis": "The Southern Thru-Way is een persoonlijk verhaal over huisvesting en het politieke idee van toebehoren. Een filmisch essay over onzekerheid, gedwongen collectiviteit, vergankelijkheid en onconventionele vormen van liefde.", "tickets": "", "title": "The Southern Thruway", "venue": "Kijkhuis"}}, "10:30": {"Cinema 1": {"block": "", "director": "Mattijs van de Port", "duration": "70\u0027", "duration_minutes": 70, "duration_width": 140, "grid_position": {"left_offset": 60.0, "position_within_slot": 0.5, "slot_index": 0, "width": 140.0}, "location": "Kijkhuis, Cinema 1", "room": "Cinema 1", "synopsis": "Dwalers van alle leeftijden en achtergronden komen samen via de lens van een antropologisch filmmaker, op zoek naar een wereld groter dan de hunne.", "tickets": "", "title": "Where can I get Lost?", "venue": "Kijkhuis"}}, "12:45": {"Cinema 1": {"block": "Kamal Aljafari in Focus", "director": "Kamal Aljafari", "duration": "78\u0027", "duration_minutes": 78, "duration_width": 156, "grid_position": {"left_offset": 330.0, "position_within_slot": 0.75, "slot_index": 2, "width": 156.0}, "location": "Kijkhuis, Cinema 1", "room": "Cinema 1", "synopsis": "Rode silhouetten schetsen een alternatieve toekomst in geplunderd Palestijns archiefmateriaal. Een intrigerende film die verleden en mogelijke toekomsten herinterpreteert.", "tickets": "", "title": "A Fidai Film", "venue": "Kijkhuis"}}, "13:00": {"Cinema 2": {"block": "", "director": "Manthia Diawara", "duration": "50\u0027", "duration_minutes": 50, "duration_width": 100, "grid_position": {"left_offset": 360.0, "position_within_slot": 0.0, "slot_index": 3, "width": 100.0}, "location": "Kijkhuis, Cinema 2", "room": "Cinema 2", "synopsis": "Een reflectief portret van het leven in een Senegalese kustplaats, waar veranderende landschappen aanleiding geven tot gesprekken over milieu, arbeid en gedeeld bestaan.", "tickets": "", "title": "A Letter from Yene", "venue": "Kijkhuis"}}, "15:00": {"Cinema 2": {"block": "Classics", "director": "Chantal Akerman", "duration": "100\u0027", "duration_minutes": 100, "duration_width": 200, "grid_position": {"left_offset": 600.0, "position_within_slot": 0.0, "slot_index": 5, "width": 200.0}, "location": "Kijkhuis, Cinema 2", "room": "Cinema 2", "synopsis": "Een emotionele verkenning van grenspolitiek, actueler dan ooit. Persoonlijk, meervoudig en meeslepend in de wijze waarop het ons laat kijken \u00e9n luisteren.", "tickets": "", "title": "De L\u2019autre cot\u00e9", "venue": "Kijkhuis"}}, "15:15": {"Cinema 1": {"block": "", "director": "Alexander Horwath", "duration": "180\u0027", "duration_minutes": 180, "duration_width": 300, "grid_position": {"left_offset": 630.0, "position_within_slot": 0.25, "slot_index": 5, "width": 360.0}, "location": "Kijkhuis, Cinema 1", "room": "Cinema 1", "synopsis": "Een meditatie over Henry Fonda\u2019s filmlegende en de verhalen die Amerika over zichzelf vertelt \u2014 idealisme, twijfel en de kloof tussen beeld en werkelijkheid.", "tickets": "", "title": "Henry Fonda for President", "venue": "Kijkhuis"}}, "17:30": {"Cinema 2": {"block": "Listening with the Other", "director": "Judith Westerveld", "duration": "15\u0027", "duration_minutes": 15, "duration_width": 60, "grid_position": {"left_offset": 900.0, "position_within_slot": 0.5, "slot_index": 7, "width": 40}, "location": "Kijkhuis, Cinema 2", "room": "Cinema 2", "synopsis": "Een audiovisuele meditatie over taal en cultuur vanuit een koloniaal verleden, \u201cmoving through time, reflecting on the truth of the people forgotten\u201d.", "tickets": "", "title": "The Sending of the Crows", "venue": "Kijkhuis"}}, "19:00": {"Cinema 1": {"block": "Classics", "director": "Johan van der Keuken", "duration": "120\u0027", "duration_minutes": 120, "duration_width": 240, "grid_position": {"left_offset": 1080.0, "position_within_slot": 0.0, "slot_index": 9, "width": 240.0}, "location": "Kijkhuis, Cinema 1", "room": "Cinema 1", "synopsis": "Johan van der Keuken\u2019s ambitieuze film onderzoekt de visuele politiek in Europa en experimenteert tegelijkertijd met filmportretten. Via een moza\u00efek van gezichten, plaatsen en stemmen brengt hij verlangens en angsten in beeld. Een essay over zien en gezien worden.", "tickets": "", "title": "Face Value", "venue": "Kijkhuis"}}, "19:45": {"Cinema 2": {"block": "", "director": "Miko Revereza", "duration": "96\u0027", "duration_minutes": 96, "duration_width": 192, "grid_position": {"left_offset": 1170.0, "position_within_slot": 0.75, "slot_index": 9, "width": 192.0}, "location": "Kijkhuis, Cinema 2", "room": "Cinema 2", "synopsis": "Nowhere Near van Miko Revereza is een aangrijpende essayfilm over ontheemding en migratie. Via meditatieve reflecties en indrukwekkende beelden verkent hij de complexiteit van verbondenheid en culturele grenzen.", "tickets": "", "title": "Nowhere Near", "venue": "Kijkhuis"}}, "22:00": {"Cinema 2": {"block": "", "director": "Lis Rhodes", "duration": "80\u0027", "duration_minutes": 80, "duration_width": 160, "grid_position": {"left_offset": 1440.0, "position_within_slot": 0.0, "slot_index": 12, "width": 120.0}, "location": "Kijkhuis, Cinema 2", "room": "Cinema 2", "synopsis": "De nieuwste film van Lis Rhodes opent met een  verwijzing naar de atoombom op Hiroshima en zet daarmee de toon voor een essayfilm over geluid, macht en geschiedenis. Met gefragmenteerde beelden en ontregelend geluid roept Rhodes op tot reflectie over geweld en controle in het moderne leven.", "tickets": "", "title": "Disquiet", "venue": "Kijkhuis"}}, "22:15": {"Cinema 1": {"block": "", "director": "Sasha Litvintseva en Beny Wagner", "duration": "55\u0027", "duration_minutes": 55, "duration_width": 110, "grid_position": {"left_offset": 1470.0, "position_within_slot": 0.25, "slot_index": 12, "width": 90.0}, "location": "Kijkhuis, Cinema 1", "room": "Cinema 1", "synopsis": "Een po\u00ebtische en filosofische reflectie op (on)ethische vertering die de onderlinge afhankelijkheid van lichaam en omgeving onthult, want \"all that you change changes you\".", "tickets": "", "title": "My Want of You Partakes of Me", "venue": "Kijkhuis"}}}};
+    const specialsMap = [{"block_finish_time": "15:40", "block_name": "Arbeiders verlaten de fabriek", "block_start_time": "15:15", "film_count": 4, "film_titles": ["Twenty-Four Cinematic Points of View of a Factory Gate in China", "Workers Leaving the Googleplex", "La sortie de l\u0027usine Lumi\u00e8re \u00e0 Lyon", "Arbeiter verlassen die Fabrik"], "slug": "arbeiders-verlaten-de-fabriek"}, {"block_finish_time": "21:00", "block_name": "Classics", "block_start_time": "10:30", "film_count": 3, "film_titles": ["Sans Soleil", "Face Value", "De L\u2019autre cot\u00e9"], "slug": "classics"}, {"block_finish_time": "18:15", "block_name": "Harun Farocki in Focus", "block_start_time": "17:15", "film_count": 3, "film_titles": ["Was ist Los?", "Gegen-Musik", "Getty Abortions"], "slug": "harun-farocki-in-focus"}, {"block_finish_time": "13:20", "block_name": "Hong Kong Shorts", "block_start_time": "12:45", "film_count": 3, "film_titles": ["Free to Choose", "An Asian Ghost Story", "Room 404"], "slug": "hong-kong-shorts"}, {"block_finish_time": "12:55", "block_name": "Kamal Aljafari in Focus", "block_start_time": "12:45", "film_count": 3, "film_titles": ["Man Number 4", "Capricorn Sunset", "A Fidai Film"], "slug": "kamal-aljafari-in-focus"}, {"block_finish_time": "17:40", "block_name": "Listening with the Other", "block_start_time": "17:30", "film_count": 5, "film_titles": ["The Cave Mouth and The Giant Voice", "Kapotte Muziek \u2013 Track 1", "Where no bell rings", "Message from Mukalap", "The Sending of the Crows"], "slug": "listening-with-the-other"}, {"block_finish_time": "10:29", "block_name": "New Perspectives", "block_start_time": "10:15", "film_count": 6, "film_titles": ["Perpetual Radiance", "To the Earthern Red", "Mariam Jafri vs Maryam Jafri", "Haunted, the Hollow", "Searching for the Perfect Gentleman", "The Southern Thruway"], "slug": "new-perspectives"}, {"block_finish_time": "21:20", "block_name": "Nguy\u1ec5n Trinh Thi in Focus", "block_start_time": "20:45", "film_count": 2, "film_titles": ["Letters from Panduranga", "How to Improve the World"], "slug": "nguyen-trinh-thi-in-focus"}, {"block_finish_time": "16:00", "block_name": "Opening Event", "block_start_time": "14:00", "film_count": 2, "film_titles": ["Lezing door Laura Rascaroli", "Undead Voices (2019\u20132021)"], "slug": "opening-event"}];
+    
+    // timeline configuration
+    const config = {
+        margin: { top: 32, right: 16, bottom: 32, left: 16 },
+        rowHeight: 320,
+        timeStart: 10, // 10:00
+        timeEnd: 24,   // 24:00 (midnight)
+        colors: {
+            'Opening Event': '#979797',
+            'Classics': '#979797',
+            'New Perspectives': '#979797',
+            'Hong Kong Shorts': '#979797',
+            'Workers Leaving the Factory': '#979797',
+            'Harun Farocki in Focus': '#979797',
+            'Nguyễn Trinh Thi in Focus': '#979797',
+            'Kamal Aljafari in Focus': '#979797',
+            'Listening with the Other': '#979797',
+            'default': '#979797'
+        }
+    };
+    
+    let currentDay = null;
+    
+    // initialize the schedule timeline
+    function initSchedule() {
+        const days = Object.keys(scheduleData).sort();
+        if (days.length === 0) return;
+        
+        createDayTabs(days);
+        currentDay = days[0];
+        renderTimeline(currentDay);
+    }
+    
+    // create day selection tabs
+    function createDayTabs(days) {
+        const tabsContainer = d3.select('#day-tabs');
+        
+        // hardcoded date labels
+        const hardcodedDates = [
+            'Fri, Jul 4',
+            'Sat, Jul 5', 
+            'Sun, Jul 6',
+            'Mon, Jul 7',
+            'Tue, Jul 8',
+            'Wed, Jul 9',
+            'Thu, Jul 10'
+        ];
+        
+        const tabs = tabsContainer.selectAll('.day-tab')
+            .data(days)
+            .enter()
+            .append('button')
+            .attr('class', 'day-tab')
+            .text((d, i) => hardcodedDates[i] || d) // use hardcoded date or fallback to original
+            .on('click', function(event, d) {
+                // update active tab
+                tabsContainer.selectAll('.day-tab').classed('active', false);
+                d3.select(this).classed('active', true);
+                
+                // render timeline for selected day
+                currentDay = d;
+                renderTimeline(d);
+            });
+        
+        // set first tab as active
+        tabs.filter((d, i) => i === 0).classed('active', true);
+    }
+    
+    // format date for display
+    function formatDate(dateStr) {
+        const date = new Date(dateStr + ', 2025'); // add year for parsing
+        if (isNaN(date)) return dateStr; // fallback to original string
+        
+        const options = { weekday: 'short', month: 'short', day: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+    }
+    
+    // render timeline for a specific day
+    function renderTimeline(day) {
+        if (!scheduleData[day]) return;
+        
+        const dayData = scheduleData[day];
+        const events = [];
+        const venues = new Set();
+        
+        // extract events and venues
+        Object.keys(dayData).forEach(timeSlot => {
+            Object.keys(dayData[timeSlot]).forEach(venue => {
+                venues.add(venue);
+                const event = dayData[timeSlot][venue];
+                events.push({
+                    ...event,
+                    time: timeSlot,
+                    venue: venue,
+                    timeMinutes: timeToMinutes(timeSlot)
+                });
             });
         });
-
-        // close popup functionality
-        function closePopup() {
-            popupOverlay.classList.remove('active');
-
-            // remove excited cursor
-            const cursor = document.getElementById('custom-cursor');
-            if (cursor) {
-                cursor.classList.remove('excited');
-            }
+        
+        const venueList = Array.from(venues).sort();
+        const svgContainer = d3.select('#timeline-svg');
+        
+        // calculate dimensions - make timeline much wider for better readability
+        const timelineWidth = 2400; // fixed wide timeline
+        const width = timelineWidth;
+        const height = config.margin.top + config.margin.bottom + (venueList.length * config.rowHeight);
+        
+        // clear previous content
+        svgContainer.selectAll('*').remove();
+        
+        // set svg dimensions
+        svgContainer
+            .attr('width', width)
+            .attr('height', height);
+        
+        // create scales
+        const timeScale = d3.scaleLinear()
+            .domain([config.timeStart * 60, config.timeEnd * 60]) // minutes
+            .range([config.margin.left, width - config.margin.right]);
+        
+        const venueScale = d3.scaleBand()
+            .domain(venueList)
+            .range([config.margin.top, height - config.margin.bottom])
+            .paddingInner(0.15);
+        
+        // create time axis
+        const timeAxis = d3.axisTop(timeScale)
+            .tickFormat(d => {
+                const hours = Math.floor(d / 60);
+                const minutes = d % 60;
+                return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+            })
+            .tickValues(d3.range(config.timeStart * 60, (config.timeEnd + 1) * 60, 30)) // every 30 minutes
+            .tickSize(12);
+        
+        svgContainer.append('g')
+            .attr('class', 'time-axis')
+            .attr('transform', `translate(${config.margin.left}, ${config.margin.top})`)
+            .call(timeAxis);
+        
+        // add venue labels and rows
+        venueList.forEach(venue => {
+            const y = venueScale(venue);
+            
+            // venue label
+            svgContainer.append('text')
+                .attr('class', 'venue-label')
+                .attr('x', config.margin.left + 40)
+                .attr('y', y + venueScale.bandwidth() / 2)
+                .attr('text-anchor', 'end')
+                .attr('dominant-baseline', 'middle')
+                .text(venue);
+            
+            // venue row line
+            svgContainer.append('line')
+                .attr('class', 'venue-row')
+                .attr('x1', config.margin.left)
+                .attr('x2', width - config.margin.right)
+                .attr('y1', y + venueScale.bandwidth())
+                .attr('y2', y + venueScale.bandwidth());
+        });
+        
+        // add events
+        const eventGroups = svgContainer.selectAll('.event')
+            .data(events)
+            .enter()
+            .append('g')
+            .attr('class', 'event');
+        
+        // event rectangles
+        eventGroups.append('rect')
+            .attr('class', 'event-block')
+            .attr('x', d => timeScale(d.timeMinutes))
+            .attr('y', d => venueScale(d.venue) + 2)
+            .attr('width', d => Math.max(80, d.duration_minutes * 3)) // increased minimum width and scale
+            .attr('height', venueScale.bandwidth() - 4)
+            .attr('fill', d => getEventColor(d.block));
+        
+        // event titles
+        eventGroups.append('text')
+            .attr('class', 'event-text')
+            .attr('x', d => timeScale(d.timeMinutes) + 8)
+            .attr('y', d => venueScale(d.venue) + 20)
+            .text(d => truncateText(d.title, 25));
+        
+        // event directors
+        eventGroups.append('text')
+            .attr('class', 'event-director')
+            .attr('x', d => timeScale(d.timeMinutes) + 8)
+            .attr('y', d => venueScale(d.venue) + 38)
+            .text(d => d.director ? truncateText(d.director, 30) : '');
+        
+        // screening time at bottom of event
+        eventGroups.append('text')
+            .attr('class', 'event-time')
+            .attr('x', d => timeScale(d.timeMinutes) + 8)
+            .attr('y', d => venueScale(d.venue) + venueScale.bandwidth() - 8)
+            .text(d => {
+                const startTime = d.time;
+                const endTime = calculateEndTime(d.time, d.duration_minutes);
+                return `${startTime} — ${endTime}`;
+            });
+        
+        // add embedded film information using foreignObject for html content
+        eventGroups.append('foreignObject')
+            .attr('x', d => timeScale(d.timeMinutes))
+            .attr('y', d => venueScale(d.venue) + venueScale.bandwidth() + 4)
+            .attr('width', d => Math.max(300, d.duration_minutes * 3))
+            .attr('height', 150)
+            .style('pointer-events', 'none')
+            .style('opacity', 0)
+            .style('transition', 'opacity 0.3s ease')
+            .html(d => `
+                <div class="event-info">
+                    <h4>${d.title}</h4>
+                    <p><strong>Director:</strong> ${d.director || 'N/A'}</p>
+                    <p><strong>Location:</strong> ${d.location}</p>
+                    ${d.block ? `<p><strong>Block:</strong> ${d.block}</p>` : ''}
+                    ${d.synopsis ? `<p><strong>Synopsis:</strong> ${d.synopsis.substring(0, 120)}${d.synopsis.length > 120 ? '...' : ''}</p>` : ''}
+                </div>
+            `);
+        
+        // show/hide info on hover
+        eventGroups
+            .on('mouseover', function(event, d) {
+                d3.select(this).select('foreignObject').style('opacity', 1);
+            })
+            .on('mouseout', function() {
+                d3.select(this).select('foreignObject').style('opacity', 0);
+            });
+    }
+    
+    // convert time string to minutes
+    function timeToMinutes(timeStr) {
+        const [hours, minutes] = timeStr.split(':').map(Number);
+        return hours * 60 + (minutes || 0);
+    }
+    
+    // calculate end time based on start time and duration in minutes
+    function calculateEndTime(startTime, durationMinutes) {
+        const startMinutes = timeToMinutes(startTime);
+        const endMinutes = startMinutes + durationMinutes;
+        
+        const hours = Math.floor(endMinutes / 60);
+        let minutes = endMinutes % 60;
+        
+        // round minutes to next 5 or 0 (i.e., 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55)
+        minutes = Math.ceil(minutes / 5) * 5;
+        
+        // handle overflow when minutes become 60
+        if (minutes >= 60) {
+            minutes = 0;
+            hours = hours + 1;
         }
-
-        // close button
-        popupClose.addEventListener('click', closePopup);
-
-        // close on overlay click (but not on popup container)
-        popupOverlay.addEventListener('click', function (e) {
-            if (e.target === popupOverlay) {
-                closePopup();
-            }
-        });
-
-        // close on escape key
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
-                closePopup();
-            }
-        });
+        
+        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+    }
+    
+    // get color for event block based on block name
+    function getEventColor(blockName) {
+        return config.colors[blockName] || config.colors.default;
+    }
+    
+    // truncate text to fit in event blocks
+    function truncateText(text, maxLength) {
+        if (text.length <= maxLength) return text;
+        return text.substring(0, maxLength - 3) + '...';
+    }
+    
+    // handle window resize
+    window.addEventListener('resize', function() {
+        if (currentDay) {
+            renderTimeline(currentDay);
+        }
+    });
+    
+    // initialize when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        initSchedule();
     });
 </script>
 

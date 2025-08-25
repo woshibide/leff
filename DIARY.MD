@@ -1,7 +1,62 @@
 # Public version of the website
 
-- [] alphabetical search to be doing both names
-- [] toggleable filters on the side
+
+##
+WHATS TO BE DONE:
+
+- [ ] Schedule page
+  - [x] data is fetched
+  - [ ] styling
+
+- [~] Programme
+  - [ ] mobile
+
+- [ ] Films page
+  - [x] data is fetched
+  - [x] images
+  - [x] styling
+    - [ ] mobile
+- [ ] Film pages
+  - [x] data is fetched
+  - [x] images
+  - [x] styling
+    - [ ] mobile
+
+- [ ] Filmakers page
+  - [x] data is fetched
+  - [x] images
+  - [x] styling
+      - [ ] mobile
+- [ ] Filmaker pages
+  - [x] data is fetched
+  - [?] images
+  - [x] styling
+      - [ ] mobile
+
+- [ ] Special pages
+  - [x] data is fetched
+  - [~] images
+  - [x] styling
+- [ ] Special Block page
+  - [x] data is fetched
+  - [~] images
+  - [x] styling
+    - [ ] mobile
+
+
+
+- [x] defer offscreen images
+- [x] page texts clean up
+- [x] alphabetical search to be doing both names
+- [x] toggleable filters on the side
+
+### BUGs: 
+  - [x]  true one:  http://127.0.0.1:5500/en/programme/filmmakers/elysa-wendi/
+        exists:    http://127.0.0.1:5500/en/programme/filmmakers/elysa-wendi-shing-lee/
+            BUG:
+                its also a problem with url linkage of the images and url page generation
+  - [x] language linking between specials that have different names is sometimes broken
+
 
 ## suggestions
 - [x] slight gradients for galleries for readability of bright yellow text against different background images
@@ -15,48 +70,6 @@
 ? [] should there be separate pages for directors of multiple films?
 ? [] should there be a link for specials page in each film card?
 
-
-##
-WHATS TO BE DONE:
-
-### BUGs: 
-  - []  true one:  http://127.0.0.1:5500/en/programme/filmmakers/elysa-wendi/
-        exists:    http://127.0.0.1:5500/en/programme/filmmakers/elysa-wendi-shing-lee/
-            BUG:
-                its also a problem with url linkage of the images and url page generation
-  - [x] language linking between specials that have different names is sometimes broken
-
-- [] defer offscreen images
-
-- [] Programme
-- [] filters
-- [] styling
-
-- [x] Film pages
-  - [x] data is fetched
-  - [~] images
-  - [] styling
-    - [] mobile
-
-- [] Filmakers
-  - [x] data is fetched
-  - [~] images
-  - [] styling
-      - [] mobile
-
-- [] Filmakers pages
-  - [x] data is fetched
-  - [~] images
-  - [] styling
-      - [] mobile
-
-- [] Schedule page
-- [] Special pages
-
-- [] block page
-- [] separate page blocks
-
-- [] page texts clean up
 
 ================================================
 
