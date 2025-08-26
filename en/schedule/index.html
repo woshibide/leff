@@ -1032,7 +1032,7 @@
                                 event.stopPropagation(); // prevent block click
                                 const filmSlug = slugifyTitle(filmTitle); // use original title for URL
                                 const currentLang = window.location.pathname.includes('/nl/') ? 'nl' : 'en';
-                                const filmUrl = `/${currentLang}/programme/films/${filmSlug}/`;
+                                const filmUrl = `/leff//${currentLang}/programme/films/${filmSlug}/`;
                                 window.location.href = filmUrl;
                             })
                             .on('mouseover', function() {
