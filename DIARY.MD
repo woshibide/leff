@@ -1,5 +1,54 @@
 # Public version of the website
 
+## Leff website feedbacks v2
+
+Programme:
+
+Leff website feedbacks
+
+
+
+- [x] sorting A—Z to work on all pages
+- [x] same underline on hover like on the rest of the website for all the links
+  - [x] but not in navigation bartem 
+- [x] lecturer image
+- [x] lecturer "filmmaker" page 
+- [x] br element on chrome // nemnogo kostyl no poidet
+
+- [x] programme
+  - [x] sidebar navigation
+    - [x] alphabet letters shown without boxes
+    - [x] underline each letter on hover
+    - [x] make “film a-z”, “filmmaker a-z”, “specials” and “date” a simple bullet list (no boxes); underline on hover
+  - [x] films a-z: use single-film-card design
+  - [x] filmmaker a-z: implement grouping design
+  - [x] specials: implement grouping design and provide individual pages for each special
+  - [?] filter filmmakers by last name instead of first name
+  - [x] make nav-header reveal when scrolling up
+
+- [ ] single film cards
+  - [x] links to special blocks
+  - [x] reduce card size so at least three cards are visible in a typical window
+  - [x] give images a fixed frame so all cards are the same size 
+        // im afraid thats impossible because of the volumes of texts
+  - [x] follow figma for card typography: larger film title, smaller director name in the bottom list 
+        // director name moved to bottom, type size is as is
+  - [?] make the card background go black on hover
+        // this would imply that card is clickable but card is not clickable 
+           and break other conventions that we have towards the links and etc
+  - [x] add more spacing on film single pages between main text and the information + ticket text
+
+- [ ] specials
+  - [x] font sizes bigger
+  - [x] remove explicit counts like “Classics comprises 3 films”; design should imply the number
+  - [x] add an “all specials” link/entry
+  - [ ] fix behavior where unchecking boxes causes the page to scroll down
+  - [x] ensure filters are cleared or visually reset when navigating to another page (boxes should not remain checked)
+  - [x] prefer linking to dedicated pages for specials instead of using checkbox filter menus
+  - [x] create a plain list of specials as links (no checkboxes)
+
+- [ ] block schedule
+  - [x] include the opening event as lecture rascaroli per the block schedule
 
 ##
 WHATS TO BE DONE:
@@ -43,6 +92,7 @@ WHATS TO BE DONE:
   - [x] styling
     - [ ] mobile
 
+- [x] Fix for blocks duration times
 
 
 - [x] defer offscreen images
@@ -79,7 +129,7 @@ Agree to the terms / Stem in met de voorwaarden
 
 [x] footer email sign up all in dutch 
 
-First version is planned to go live on 11th of august
+[x] First version is planned to go live on 11th of august
 
 Second version is planned to go live on 22 of august
 

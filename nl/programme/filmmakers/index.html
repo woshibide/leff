@@ -31,15 +31,15 @@
     <base href="/leff/">
     
     
-    <link rel="stylesheet" href="styles.f2886ef425.css">
-    >
+    <link rel="stylesheet" href="styles.0fd3204c63.css">
+    
     
 
     
-<link rel="stylesheet" href="/leff/search-utility.76b779b404.css">
+<link rel="stylesheet" href="/leff/search-utility.40f672b388.css">
 <style>
     /*
-        filmmakers page styles - replicating programme.html layout with filmmaker cards
+        filmmakers page styles
     */
     
     .filmmakers-container {
@@ -144,10 +144,6 @@
         grid-column: 1 / -1;
         padding: 0 var(--space-xl) var(--space-xl);
     }
-
-    .filmmaker-films-container .film-card {
-        border-top: 1px solid var(--bg-main);
-    }
     
     @media (max-width: 768px) {
         .content-wrapper {
@@ -204,8 +200,10 @@
 <body>
     <nav>
         
-        <a href="/leff/nl/"><img src="assets/leff-logo-yellow.svg"
-                alt="leiden essay film festival logo" id="nav-logo"></a>
+        <a href="/leff/nl/">
+            <img src="assets/leff-logo-yellow.svg"
+                alt="leiden essay film festival logo" id="nav-logo">
+            </a>
         
         <div id="circle-container">
             <a href="https://bioscopenleiden.nl/" target="_blank" rel="noopener" id="nav-tickets" class="tickets-button">
@@ -381,14 +379,14 @@
         
         
         
+        
+        
         <!--
-    search utility component
-    reusable search sidebar for programme, filmmakers, and specials pages
-    
     required parameters:
     - search_input_id: unique id for the search input
     - search_placeholder: placeholder text for search input
     - sort_buttons: array of sort button objects with 'data_sort', 'label', and 'active' properties
+    - current_page: current page identifier ('films', 'filmmakers', 'specials')
     
     alphabetical filtering is always available and handles:
     - first letter of film titles
@@ -396,13 +394,15 @@
 -->
 
 <div class="search-utilities">
-    <div class="search-top">
+
+        <!-- search bar -->
         <div id="search-bar">
             <input type="text" 
                    id="filmmakers-search"
                    placeholder="search filmmakers...">
         </div>
         
+        <!-- letter search -->
         <div class="alphabetical-search">
             
             <button type="button" class="alpha-filter" data-letter="a">a</button>
@@ -458,58 +458,116 @@
             <button type="button" class="alpha-filter" data-letter="z">z</button>
             
         </div>
-    </div>
-    
-    <div class="search-side">
+
+        <!-- dates filter dropdown -->
         
-        <button type="button" class="sort-button active" 
-                data-sort="name"
-                data-ascending="true">
-            <span class="sort-label">Filmmakers A—Z</span>
-            <svg class="sort-arrow ascending" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
-            </svg>
-        </button>
-        
-        
-        
-        
-        
-        <div class="dates-dropdown">
-            <button type="button" class="dropdown-toggle" id="dates-dropdown-toggle">
-                <span class="dropdown-label">Dates</span>
-                <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M6 9l6 6 6-6" />
+        <div class="filter-dropdown-wrapper">
+            <button type="button" class="nav-button nav-dropdown-toggle" id="dates-dropdown-toggle" data-dropdown="dates-filter">
+                <svg class="side-menu-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                    <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                 </svg>
+                <span class="nav-label">Dates</span>
             </button>
-            <div class="dropdown-content" id="dates-dropdown-content">
+            <div class="nav-dropdown-content" id="dates-dropdown-content">
                 
-                <label class="dropdown-item">
-                    <input type="checkbox" class="date-filter" data-date="14 September">
+                <button type="button" class="nav-dropdown-item date-filter" data-date="14 September">
                     <span>14 September</span>
-                </label>
+                </button>
                 
-                <label class="dropdown-item">
-                    <input type="checkbox" class="date-filter" data-date="15 September">
+                <button type="button" class="nav-dropdown-item date-filter" data-date="15 September">
                     <span>15 September</span>
-                </label>
+                </button>
                 
-                <label class="dropdown-item">
-                    <input type="checkbox" class="date-filter" data-date="16 September">
+                <button type="button" class="nav-dropdown-item date-filter" data-date="16 September">
                     <span>16 September</span>
-                </label>
+                </button>
                 
             </div>
         </div>
         
-        
-        <!-- scroll to top button -->
-        <button type="button" class="scroll-to-top" id="scroll-to-top-btn" style="display: none;">
-            <span class="scroll-label">scroll naar boven</span>
-            <svg class="scroll-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 19V5M5 12l7-7 7 7" />
-            </svg>
-        </button>
+
+    
+    <!-- side-navigation menu -->
+    <div class="side-navigation-menu">
+        <div class="nav-item ">
+            
+            <a href="/leff/nl/programme/films/" class="nav-button nav-link">
+                <svg class="side-menu-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                    <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                </svg>
+                <span class="nav-label">A—Z film</span>
+            </a>
+            
+        </div>
+
+        <div class="nav-item active">
+            
+            <button type="button" class="nav-button sort-button active" 
+                    data-sort="director" 
+                    data-ascending="false"
+                    data-nav-type="sort">
+                <span class="nav-label">A—Z filmmakers</span>
+                <svg id="nav-sort-indicator" class="side-menu-arrow descending" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                    <path d="M12 19V5M5 12l7-7 7 7" />
+                </svg>
+            </button>
+            
+        </div>
+
+        <div class="nav-item ">
+            <div class="nav-dropdown-wrapper">
+                <button type="button" class="nav-button nav-dropdown-toggle" data-dropdown="specials-nav">
+                    <svg class="side-menu-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                    <span class="nav-label">Specials</span>
+                </button>
+                <div class="nav-dropdown-content" id="specials-nav-dropdown">
+                    <a href="/leff/nl/programme/specials/" class="nav-dropdown-item ">
+                        <span>All Specials</span>
+                    </a>
+                    
+                        
+                        <a href="/leff/nl/programme/specials/arbeiders-verlaten-de-fabriek/" class="nav-dropdown-item">
+                            <span>Arbeiders verlaten de fabriek</span>
+                        </a>
+                        
+                        <a href="/leff/nl/programme/specials/classics/" class="nav-dropdown-item">
+                            <span>Classics</span>
+                        </a>
+                        
+                        <a href="/leff/nl/programme/specials/harun-farocki-in-focus/" class="nav-dropdown-item">
+                            <span>Harun Farocki in Focus</span>
+                        </a>
+                        
+                        <a href="/leff/nl/programme/specials/hong-kong-shorts/" class="nav-dropdown-item">
+                            <span>Hong Kong Shorts</span>
+                        </a>
+                        
+                        <a href="/leff/nl/programme/specials/kamal-aljafari-in-focus/" class="nav-dropdown-item">
+                            <span>Kamal Aljafari in Focus</span>
+                        </a>
+                        
+                        <a href="/leff/nl/programme/specials/listening-with-the-other/" class="nav-dropdown-item">
+                            <span>Listening with the Other</span>
+                        </a>
+                        
+                        <a href="/leff/nl/programme/specials/new-perspectives/" class="nav-dropdown-item">
+                            <span>New Perspectives</span>
+                        </a>
+                        
+                        <a href="/leff/nl/programme/specials/nguyen-trinh-thi-in-focus/" class="nav-dropdown-item">
+                            <span>Nguyễn Trinh Thi in Focus</span>
+                        </a>
+                        
+                        <a href="/leff/nl/programme/specials/opening-event/" class="nav-dropdown-item">
+                            <span>Opening Event</span>
+                        </a>
+                        
+                    
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -567,15 +625,6 @@
                     Henry Fonda for President
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/alexander-horwath/"
-                    title="View Alexander Horwath filmmaker page">
-                    Alexander Horwath
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -584,6 +633,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/alexander-horwath/"
+                        title="View Alexander Horwath filmmaker page">
+                        Alexander Horwath
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">VS</span>
                 
@@ -668,15 +726,6 @@
                     Workers Leaving the Googleplex
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/andrew-norman-wilson/"
-                    title="View Andrew Norman Wilson filmmaker page">
-                    Andrew Norman Wilson
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -685,6 +734,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/andrew-norman-wilson/"
+                        title="View Andrew Norman Wilson filmmaker page">
+                        Andrew Norman Wilson
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item"> VS</span>
                 
@@ -695,7 +753,14 @@
                 <span class="film-meta-item">11&#39;</span>
                 
                 
-                <span class="film-meta-item">Arbeiders verlaten de fabriek</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/arbeiders-verlaten-de-fabriek/"
+                        title="View Arbeiders verlaten de fabriek special programme page">
+                        Arbeiders verlaten de fabriek
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -767,15 +832,6 @@
                     Preemptive Listening
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/aura-satz/"
-                    title="View Aura Satz filmmaker page">
-                    Aura Satz
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -784,6 +840,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/aura-satz/"
+                        title="View Aura Satz filmmaker page">
+                        Aura Satz
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">VK</span>
                 
@@ -864,15 +929,6 @@
                     Free to Choose
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/bahar-noorizadeh/"
-                    title="View Bahar Noorizadeh filmmaker page">
-                    Bahar Noorizadeh
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -881,6 +937,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/bahar-noorizadeh/"
+                        title="View Bahar Noorizadeh filmmaker page">
+                        Bahar Noorizadeh
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">VK</span>
                 
@@ -891,7 +956,14 @@
                 <span class="film-meta-item">35&#39;</span>
                 
                 
-                <span class="film-meta-item">Hong Kong Shorts</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/hong-kong-shorts/"
+                        title="View Hong Kong Shorts special programme page">
+                        Hong Kong Shorts
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -963,15 +1035,6 @@
                     Coma
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/bertrand-bonello/"
-                    title="View Bertrand Bonello filmmaker page">
-                    Bertrand Bonello
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -980,6 +1043,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/bertrand-bonello/"
+                        title="View Bertrand Bonello filmmaker page">
+                        Bertrand Bonello
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Frankrijk</span>
                 
@@ -1060,15 +1132,6 @@
                     An Asian Ghost Story
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/bo-wang/"
-                    title="View Bo Wang filmmaker page">
-                    Bo Wang
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -1077,6 +1140,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/bo-wang/"
+                        title="View Bo Wang filmmaker page">
+                        Bo Wang
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Hong Kong</span>
                 
@@ -1087,7 +1159,14 @@
                 <span class="film-meta-item">37&#39;</span>
                 
                 
-                <span class="film-meta-item">Hong Kong Shorts</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/hong-kong-shorts/"
+                        title="View Hong Kong Shorts special programme page">
+                        Hong Kong Shorts
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -1159,15 +1238,6 @@
                     De L’autre coté
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/chantal-akerman/"
-                    title="View Chantal Akerman filmmaker page">
-                    Chantal Akerman
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -1176,6 +1246,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/chantal-akerman/"
+                        title="View Chantal Akerman filmmaker page">
+                        Chantal Akerman
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">België</span>
                 
@@ -1186,7 +1265,14 @@
                 <span class="film-meta-item">100&#39;</span>
                 
                 
-                <span class="film-meta-item">Classics</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/classics/"
+                        title="View Classics special programme page">
+                        Classics
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -1258,15 +1344,6 @@
                     Sans Soleil
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/chris-marker/"
-                    title="View Chris Marker filmmaker page">
-                    Chris Marker
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -1275,6 +1352,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/chris-marker/"
+                        title="View Chris Marker filmmaker page">
+                        Chris Marker
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Frankrijk</span>
                 
@@ -1285,7 +1371,14 @@
                 <span class="film-meta-item">110&#39;</span>
                 
                 
-                <span class="film-meta-item">Classics</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/classics/"
+                        title="View Classics special programme page">
+                        Classics
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -1357,15 +1450,6 @@
                     Room 404
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/elysa-wendi-and-shing-lee/"
-                    title="View Elysa Wendi and Shing Lee filmmaker page">
-                    Elysa Wendi and Shing Lee
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -1374,6 +1458,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/elysa-wendi-and-shing-lee/"
+                        title="View Elysa Wendi and Shing Lee filmmaker page">
+                        Elysa Wendi and Shing Lee
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Hong Kong</span>
                 
@@ -1384,7 +1477,14 @@
                 <span class="film-meta-item">29&#39;</span>
                 
                 
-                <span class="film-meta-item">Hong Kong Shorts</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/hong-kong-shorts/"
+                        title="View Hong Kong Shorts special programme page">
+                        Hong Kong Shorts
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -1456,15 +1556,6 @@
                     Getty Abortions
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/franzis-kabisch/"
-                    title="View Franzis Kabisch filmmaker page">
-                    Franzis Kabisch
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -1473,6 +1564,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/franzis-kabisch/"
+                        title="View Franzis Kabisch filmmaker page">
+                        Franzis Kabisch
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Duitsland, Oostenrijk</span>
                 
@@ -1483,7 +1583,14 @@
                 <span class="film-meta-item">22&#39;</span>
                 
                 
-                <span class="film-meta-item">Harun Farocki in Focus</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/harun-farocki-in-focus/"
+                        title="View Harun Farocki in Focus special programme page">
+                        Harun Farocki in Focus
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -1555,15 +1662,6 @@
                     Home Invasion
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/graeme-arnfield/"
-                    title="View Graeme Arnfield filmmaker page">
-                    Graeme Arnfield
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -1572,6 +1670,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/graeme-arnfield/"
+                        title="View Graeme Arnfield filmmaker page">
+                        Graeme Arnfield
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">VS</span>
                 
@@ -1656,15 +1763,6 @@
                     Arbeiter verlassen die Fabrik
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/harun-farocki/"
-                    title="View Harun Farocki filmmaker page">
-                    Harun Farocki
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -1673,6 +1771,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/harun-farocki/"
+                        title="View Harun Farocki filmmaker page">
+                        Harun Farocki
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Duitsland</span>
                 
@@ -1683,7 +1790,14 @@
                 <span class="film-meta-item">36&#39;</span>
                 
                 
-                <span class="film-meta-item">Arbeiders verlaten de fabriek</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/arbeiders-verlaten-de-fabriek/"
+                        title="View Arbeiders verlaten de fabriek special programme page">
+                        Arbeiders verlaten de fabriek
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -1708,15 +1822,6 @@
                     Was ist Los?
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/harun-farocki/"
-                    title="View Harun Farocki filmmaker page">
-                    Harun Farocki
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -1725,6 +1830,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/harun-farocki/"
+                        title="View Harun Farocki filmmaker page">
+                        Harun Farocki
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Duitsland</span>
                 
@@ -1735,7 +1849,14 @@
                 <span class="film-meta-item">60&#39;</span>
                 
                 
-                <span class="film-meta-item">Harun Farocki in Focus</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/harun-farocki-in-focus/"
+                        title="View Harun Farocki in Focus special programme page">
+                        Harun Farocki in Focus
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -1760,15 +1881,6 @@
                     Gegen-Musik
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/harun-farocki/"
-                    title="View Harun Farocki filmmaker page">
-                    Harun Farocki
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -1777,6 +1889,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/harun-farocki/"
+                        title="View Harun Farocki filmmaker page">
+                        Harun Farocki
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Duitsland</span>
                 
@@ -1787,7 +1908,14 @@
                 <span class="film-meta-item">23&#39;</span>
                 
                 
-                <span class="film-meta-item">Harun Farocki in Focus</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/harun-farocki-in-focus/"
+                        title="View Harun Farocki in Focus special programme page">
+                        Harun Farocki in Focus
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -1859,15 +1987,6 @@
                     In Praise of Slowness
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/hicham-gardaf/"
-                    title="View Hicham Gardaf filmmaker page">
-                    Hicham Gardaf
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -1876,6 +1995,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/hicham-gardaf/"
+                        title="View Hicham Gardaf filmmaker page">
+                        Hicham Gardaf
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">VK, Italië</span>
                 
@@ -1960,15 +2088,6 @@
                     Twenty-Four Cinematic Points of View of a Factory Gate in China
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/ho-rui-an/"
-                    title="View Ho Rui An filmmaker page">
-                    Ho Rui An
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -1977,6 +2096,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/ho-rui-an/"
+                        title="View Ho Rui An filmmaker page">
+                        Ho Rui An
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">China</span>
                 
@@ -1987,7 +2115,14 @@
                 <span class="film-meta-item">25&#39;</span>
                 
                 
-                <span class="film-meta-item">Arbeiders verlaten de fabriek</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/arbeiders-verlaten-de-fabriek/"
+                        title="View Arbeiders verlaten de fabriek special programme page">
+                        Arbeiders verlaten de fabriek
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -2067,15 +2202,6 @@
                     Face Value
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/johan-van-der-keuken/"
-                    title="View Johan van der Keuken filmmaker page">
-                    Johan van der Keuken
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -2084,6 +2210,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/johan-van-der-keuken/"
+                        title="View Johan van der Keuken filmmaker page">
+                        Johan van der Keuken
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Nederland</span>
                 
@@ -2094,7 +2229,14 @@
                 <span class="film-meta-item">120&#39;</span>
                 
                 
-                <span class="film-meta-item">Classics</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/classics/"
+                        title="View Classics special programme page">
+                        Classics
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -2166,15 +2308,6 @@
                     Capricorn Sunset
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/johannes-binotto/"
-                    title="View Johannes Binotto filmmaker page">
-                    Johannes Binotto
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -2183,6 +2316,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/johannes-binotto/"
+                        title="View Johannes Binotto filmmaker page">
+                        Johannes Binotto
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Zwitserland</span>
                 
@@ -2193,7 +2335,14 @@
                 <span class="film-meta-item">5&#39;</span>
                 
                 
-                <span class="film-meta-item">Kamal Aljafari in Focus</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/kamal-aljafari-in-focus/"
+                        title="View Kamal Aljafari in Focus special programme page">
+                        Kamal Aljafari in Focus
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -2267,15 +2416,6 @@
                     Message from Mukalap
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/judith-westerveld/"
-                    title="View Judith Westerveld filmmaker page">
-                    Judith Westerveld
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -2284,6 +2424,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/judith-westerveld/"
+                        title="View Judith Westerveld filmmaker page">
+                        Judith Westerveld
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Nederland</span>
                 
@@ -2294,7 +2443,14 @@
                 <span class="film-meta-item">15&#39;</span>
                 
                 
-                <span class="film-meta-item">Listening with the Other</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/listening-with-the-other/"
+                        title="View Listening with the Other special programme page">
+                        Listening with the Other
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -2319,15 +2475,6 @@
                     The Sending of the Crows
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/judith-westerveld/"
-                    title="View Judith Westerveld filmmaker page">
-                    Judith Westerveld
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -2336,6 +2483,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/judith-westerveld/"
+                        title="View Judith Westerveld filmmaker page">
+                        Judith Westerveld
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Nederland</span>
                 
@@ -2346,7 +2502,14 @@
                 <span class="film-meta-item">15&#39;</span>
                 
                 
-                <span class="film-meta-item">Listening with the Other</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/listening-with-the-other/"
+                        title="View Listening with the Other special programme page">
+                        Listening with the Other
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -2418,15 +2581,6 @@
                     A Fidai Film
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/kamal-aljafari/"
-                    title="View Kamal Aljafari filmmaker page">
-                    Kamal Aljafari
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -2435,6 +2589,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/kamal-aljafari/"
+                        title="View Kamal Aljafari filmmaker page">
+                        Kamal Aljafari
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Palestina</span>
                 
@@ -2445,7 +2608,14 @@
                 <span class="film-meta-item">78&#39;</span>
                 
                 
-                <span class="film-meta-item">Kamal Aljafari in Focus</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/kamal-aljafari-in-focus/"
+                        title="View Kamal Aljafari in Focus special programme page">
+                        Kamal Aljafari in Focus
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -2517,15 +2687,6 @@
                     sr
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/lea-hartlaub/"
-                    title="View Lea Hartlaub filmmaker page">
-                    Lea Hartlaub
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -2534,6 +2695,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/lea-hartlaub/"
+                        title="View Lea Hartlaub filmmaker page">
+                        Lea Hartlaub
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Duitsland</span>
                 
@@ -2614,15 +2784,6 @@
                     Searching for the Perfect Gentleman
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/lena-windisch/"
-                    title="View Lena Windisch filmmaker page">
-                    Lena Windisch
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -2631,6 +2792,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/lena-windisch/"
+                        title="View Lena Windisch filmmaker page">
+                        Lena Windisch
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Duitsland</span>
                 
@@ -2641,7 +2811,14 @@
                 <span class="film-meta-item">10&#39;</span>
                 
                 
-                <span class="film-meta-item">New Perspectives</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/new-perspectives/"
+                        title="View New Perspectives special programme page">
+                        New Perspectives
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -2713,15 +2890,6 @@
                     Disquiet
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/lis-rhodes/"
-                    title="View Lis Rhodes filmmaker page">
-                    Lis Rhodes
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -2730,6 +2898,15 @@
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/lis-rhodes/"
+                        title="View Lis Rhodes filmmaker page">
+                        Lis Rhodes
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">VK</span>
                 
@@ -2826,15 +3003,6 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                     Where no bell rings
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/lucia-nimcova-en-david-petras/"
-                    title="View Lucia Nimcová en David Petráš  filmmaker page">
-                    Lucia Nimcová en David Petráš 
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -2844,6 +3012,15 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             
             <div class="film-meta">
                 
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/lucia-nimcova-en-david-petras/"
+                        title="View Lucia Nimcová en David Petráš  filmmaker page">
+                        Lucia Nimcová en David Petráš 
+                    </a>
+                </h5>
+                
+                
                 <span class="film-meta-item">Oekraïne, Roemenië</span>
                 
                 
@@ -2851,7 +3028,14 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                 
                 
                 
-                <span class="film-meta-item">Listening with the Other</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/listening-with-the-other/"
+                        title="View Listening with the Other special programme page">
+                        Listening with the Other
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -2923,15 +3107,6 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                     A Letter from Yene
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/manthia-diawara/"
-                    title="View Manthia Diawara filmmaker page">
-                    Manthia Diawara
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -2940,6 +3115,15 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/manthia-diawara/"
+                        title="View Manthia Diawara filmmaker page">
+                        Manthia Diawara
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Senegal</span>
                 
@@ -3032,15 +3216,6 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                     Undead Voices (2019–2021)
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/maria-iorio-en-raphael-cuomo/"
-                    title="View Maria Iorio en Raphaël Cuomo filmmaker page">
-                    Maria Iorio en Raphaël Cuomo
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -3049,6 +3224,15 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/maria-iorio-en-raphael-cuomo/"
+                        title="View Maria Iorio en Raphaël Cuomo filmmaker page">
+                        Maria Iorio en Raphaël Cuomo
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Zwitserland</span>
                 
@@ -3059,7 +3243,14 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                 <span class="film-meta-item">36&#39;</span>
                 
                 
-                <span class="film-meta-item">Opening Event</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/opening-event/"
+                        title="View Opening Event special programme page">
+                        Opening Event
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -3131,15 +3322,6 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                     Mariam Jafri vs Maryam Jafri
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/maryam-jafri/"
-                    title="View Maryam Jafri filmmaker page">
-                    Maryam Jafri
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -3148,6 +3330,15 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/maryam-jafri/"
+                        title="View Maryam Jafri filmmaker page">
+                        Maryam Jafri
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Oostenrijk, Canada</span>
                 
@@ -3158,7 +3349,14 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                 <span class="film-meta-item">9&#39;</span>
                 
                 
-                <span class="film-meta-item">New Perspectives</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/new-perspectives/"
+                        title="View New Perspectives special programme page">
+                        New Perspectives
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -3238,15 +3436,6 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                     Where can I get Lost?
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/mattijs-van-de-port/"
-                    title="View Mattijs van de Port filmmaker page">
-                    Mattijs van de Port
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -3255,6 +3444,15 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/mattijs-van-de-port/"
+                        title="View Mattijs van de Port filmmaker page">
+                        Mattijs van de Port
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Nederland</span>
                 
@@ -3335,15 +3533,6 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                     Perpetual Radiance
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/michela-meliddo/"
-                    title="View Michela Meliddo filmmaker page">
-                    Michela Meliddo
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -3352,6 +3541,15 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/michela-meliddo/"
+                        title="View Michela Meliddo filmmaker page">
+                        Michela Meliddo
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Nederland</span>
                 
@@ -3362,7 +3560,14 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                 <span class="film-meta-item">14&#39;</span>
                 
                 
-                <span class="film-meta-item">New Perspectives</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/new-perspectives/"
+                        title="View New Perspectives special programme page">
+                        New Perspectives
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -3434,15 +3639,6 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                     Nowhere Near
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/miko-revereza/"
-                    title="View Miko Revereza filmmaker page">
-                    Miko Revereza
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -3451,6 +3647,15 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/miko-revereza/"
+                        title="View Miko Revereza filmmaker page">
+                        Miko Revereza
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">VS, Filipijnen</span>
                 
@@ -3531,15 +3736,6 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                     Man Number 4
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/miranda-pennell/"
-                    title="View Miranda Pennell filmmaker page">
-                    Miranda Pennell
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -3548,6 +3744,15 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/miranda-pennell/"
+                        title="View Miranda Pennell filmmaker page">
+                        Miranda Pennell
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">VK</span>
                 
@@ -3558,7 +3763,14 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                 <span class="film-meta-item">10&#39;</span>
                 
                 
-                <span class="film-meta-item">Kamal Aljafari in Focus</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/kamal-aljafari-in-focus/"
+                        title="View Kamal Aljafari in Focus special programme page">
+                        Kamal Aljafari in Focus
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -3636,15 +3848,6 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                     Letters from Panduranga
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/nguyen-trinh-thi/"
-                    title="View Nguyễn Trinh Thi filmmaker page">
-                    Nguyễn Trinh Thi
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -3653,6 +3856,15 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/nguyen-trinh-thi/"
+                        title="View Nguyễn Trinh Thi filmmaker page">
+                        Nguyễn Trinh Thi
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Vietnam</span>
                 
@@ -3663,7 +3875,14 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                 <span class="film-meta-item">35&#39;</span>
                 
                 
-                <span class="film-meta-item">Nguyễn Trinh Thi in Focus</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/nguyen-trinh-thi-in-focus/"
+                        title="View Nguyễn Trinh Thi in Focus special programme page">
+                        Nguyễn Trinh Thi in Focus
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -3688,15 +3907,6 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                     How to Improve the World
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/nguyen-trinh-thi/"
-                    title="View Nguyễn Trinh Thi filmmaker page">
-                    Nguyễn Trinh Thi
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -3705,6 +3915,15 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/nguyen-trinh-thi/"
+                        title="View Nguyễn Trinh Thi filmmaker page">
+                        Nguyễn Trinh Thi
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Vietnam</span>
                 
@@ -3715,7 +3934,14 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                 <span class="film-meta-item">47&#39;</span>
                 
                 
-                <span class="film-meta-item">Nguyễn Trinh Thi in Focus</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/nguyen-trinh-thi-in-focus/"
+                        title="View Nguyễn Trinh Thi in Focus special programme page">
+                        Nguyễn Trinh Thi in Focus
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -3787,15 +4013,6 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                     To the Earthern Red
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/nika-pecarina/"
-                    title="View Nika Pećarina filmmaker page">
-                    Nika Pećarina
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -3804,6 +4021,15 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/nika-pecarina/"
+                        title="View Nika Pećarina filmmaker page">
+                        Nika Pećarina
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Nederland</span>
                 
@@ -3814,7 +4040,14 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                 <span class="film-meta-item">19&#39;</span>
                 
                 
-                <span class="film-meta-item">New Perspectives</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/new-perspectives/"
+                        title="View New Perspectives special programme page">
+                        New Perspectives
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -3898,15 +4131,6 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                     The Cave Mouth and The Giant Voice
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/rupert-cox-en-angus-carlyle/"
-                    title="View Rupert Cox en Angus Carlyle filmmaker page">
-                    Rupert Cox en Angus Carlyle
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -3915,6 +4139,15 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/rupert-cox-en-angus-carlyle/"
+                        title="View Rupert Cox en Angus Carlyle filmmaker page">
+                        Rupert Cox en Angus Carlyle
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">VK</span>
                 
@@ -3925,7 +4158,14 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                 <span class="film-meta-item">10&#39;</span>
                 
                 
-                <span class="film-meta-item">Listening with the Other</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/listening-with-the-other/"
+                        title="View Listening with the Other special programme page">
+                        Listening with the Other
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -4009,15 +4249,6 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                     My Want of You Partakes of Me
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/sasha-litvintseva-en-beny-wagner/"
-                    title="View Sasha Litvintseva en Beny Wagner filmmaker page">
-                    Sasha Litvintseva en Beny Wagner
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -4026,6 +4257,15 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/sasha-litvintseva-en-beny-wagner/"
+                        title="View Sasha Litvintseva en Beny Wagner filmmaker page">
+                        Sasha Litvintseva en Beny Wagner
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">VK</span>
                 
@@ -4145,15 +4385,6 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                     The Southern Thruway
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/susanna-tomassini/"
-                    title="View Susanna Tomassini filmmaker page">
-                    Susanna Tomassini
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -4162,6 +4393,15 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/susanna-tomassini/"
+                        title="View Susanna Tomassini filmmaker page">
+                        Susanna Tomassini
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">Nederland</span>
                 
@@ -4172,7 +4412,14 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                 <span class="film-meta-item">14&#39;</span>
                 
                 
-                <span class="film-meta-item">New Perspectives</span>
+                <span class="film-meta-item">
+                    
+                    <a href="/leff/nl/programme/specials/new-perspectives/"
+                        title="View New Perspectives special programme page">
+                        New Perspectives
+                    </a>
+                    
+                </span>
                 
                 <span class="film-meta-item">leff 2025</span>
             </div>
@@ -4338,15 +4585,6 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
                     Juste Un Mouvement
                 </a>
             </h4>
-            
-            <h5 class="filmmaker-name">
-                
-                <a href="/leff/nl/programme/filmmakers/vincent-meessen/"
-                    title="View Vincent Meessen filmmaker page">
-                    Vincent Meessen
-                </a>
-            </h5>
-            
         </div>
         <div>
             
@@ -4355,6 +4593,15 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             </div>
             
             <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/leff/nl/programme/filmmakers/vincent-meessen/"
+                        title="View Vincent Meessen filmmaker page">
+                        Vincent Meessen
+                    </a>
+                </h5>
+                
                 
                 <span class="film-meta-item">België</span>
                 
@@ -4490,7 +4737,11 @@ Lucia Nimcová is een bekroond fotograaf en beeldend kunstenaar, David Petráš 
             containerSelector: '.filmmakers-container',
             cardLinkSelector: '.filmmaker-card-link',
             searchFields: ['name'],
-            defaultSort: 'name'
+            defaultSort: 'name',
+            sortFieldMap: {
+                'director': 'name',  // director sort button maps to name data attribute
+                'name': 'name'
+            }
         });
     });
 </script>

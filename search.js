@@ -11,9 +11,16 @@ const SearchUtility = {
      * @param {string} config.cardLinkSelector - selector for individual card links
      * @param {Array} config.searchFields - array of data attributes to search in
      * @param {string} config.defaultSort - default sort field
+     * @param {Object} config.sortFieldMap - mapping of sort button values to data attributes
      */
     init(config) {
         this.config = config;
+        // set default sort field mapping if not provided
+        this.config.sortFieldMap = config.sortFieldMap || {
+            'title': 'title',
+            'director': 'name', 
+            'name': 'name'
+        };
         this.searchInput = document.getElementById(config.searchInputId);
         this.alphaFilters = document.querySelectorAll('.alpha-filter');
         this.sortButtons = document.querySelectorAll('.sort-button');
@@ -28,6 +35,10 @@ const SearchUtility = {
         this.datesDropdownToggle = document.getElementById('dates-dropdown-toggle');
         this.datesDropdownContent = document.getElementById('dates-dropdown-content');
         this.dateFilters = document.querySelectorAll('.date-filter');
+
+        // navigation dropdown elements
+        this.navDropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+        this.navDropdownContents = document.querySelectorAll('.nav-dropdown-content');
 
         if (!this.container) {
             console.warn('SearchUtility: Container not found:', config.containerSelector);
@@ -83,7 +94,8 @@ const SearchUtility = {
                     button.dataset.ascending = newAscending.toString();
                     
                     // update arrow visual state
-                    const arrow = button.querySelector('.sort-arrow');
+                    const arrow = button.querySelector('.side-menu-arrow');
+                    
                     if (arrow) {
                         arrow.classList.toggle('ascending', newAscending);
                         arrow.classList.toggle('descending', !newAscending);
@@ -120,15 +132,18 @@ const SearchUtility = {
             });
         }
 
-        // special filters (checkboxes)
-        this.specialFilters.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                const specialValue = checkbox.dataset.special;
+        // special filters (buttons)
+        this.specialFilters.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation(); // prevent dropdown from closing
+                const specialValue = button.dataset.special;
                 
-                if (checkbox.checked) {
-                    this.activeSpecials.add(specialValue);
-                } else {
+                if (button.classList.contains('active')) {
+                    button.classList.remove('active');
                     this.activeSpecials.delete(specialValue);
+                } else {
+                    button.classList.add('active');
+                    this.activeSpecials.add(specialValue);
                 }
                 
                 this.filterAndSort();
@@ -153,19 +168,73 @@ const SearchUtility = {
             });
         }
 
-        // date filters (checkboxes)
-        this.dateFilters.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                const dateValue = checkbox.dataset.date;
+        // date filters (buttons)
+        this.dateFilters.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation(); // prevent dropdown from closing
+                const dateValue = button.dataset.date;
                 
-                if (checkbox.checked) {
-                    this.activeDates.add(dateValue);
-                } else {
+                if (button.classList.contains('active')) {
+                    button.classList.remove('active');
                     this.activeDates.delete(dateValue);
+                } else {
+                    button.classList.add('active');
+                    this.activeDates.add(dateValue);
                 }
                 
                 this.filterAndSort();
             });
+        });
+
+        // navigation dropdown toggles
+        this.navDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const dropdownId = toggle.dataset.dropdown;
+                const dropdownContent = document.getElementById(dropdownId + '-dropdown');
+                
+                if (dropdownContent) {
+                    const isOpen = dropdownContent.classList.contains('open');
+                    
+                    // close all other nav dropdowns
+                    this.navDropdownContents.forEach(content => {
+                        if (content !== dropdownContent) {
+                            content.classList.remove('open');
+                        }
+                    });
+                    this.navDropdownToggles.forEach(t => {
+                        if (t !== toggle) {
+                            t.classList.remove('active');
+                        }
+                    });
+                    
+                    // toggle current dropdown
+                    dropdownContent.classList.toggle('open', !isOpen);
+                    toggle.classList.toggle('active', !isOpen);
+                }
+            });
+        });
+
+        // close nav dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            let clickedInsideDropdown = false;
+            
+            this.navDropdownToggles.forEach(toggle => {
+                const dropdownId = toggle.dataset.dropdown;
+                const dropdownContent = document.getElementById(dropdownId + '-dropdown');
+                
+                if (toggle.contains(e.target) || (dropdownContent && dropdownContent.contains(e.target))) {
+                    clickedInsideDropdown = true;
+                }
+            });
+            
+            if (!clickedInsideDropdown) {
+                this.navDropdownContents.forEach(content => {
+                    content.classList.remove('open');
+                });
+                this.navDropdownToggles.forEach(toggle => {
+                    toggle.classList.remove('active');
+                });
+            }
         });
     },
 
@@ -235,78 +304,6 @@ const SearchUtility = {
     /**
      * check if card matches special filter
      * @param {Element} cardLink - card element to check
-     * @returns {boolean} - whether card matches special filters
-     */
-    matchesSpecialFilter(cardLink) {
-        // if no special filters are active, show all films
-        if (this.activeSpecials.size === 0) return true;
-        
-        const filmBlock = cardLink.dataset.block || '';
-        
-        // check for "separate ticket" filter - show films without a block
-        if (this.activeSpecials.has('separate-ticket') && filmBlock === '') {
-            return true;
-        }
-        
-        // check if film's block matches any active special filters
-        for (const activeSpecial of this.activeSpecials) {
-            if (activeSpecial !== 'separate-ticket') {
-                // convert both to lowercase for comparison
-                const blockLower = filmBlock.toLowerCase();
-                const specialLower = activeSpecial.toLowerCase();
-                
-                // convert block name to slug format
-                const blockSlug = blockLower
-                    .replace(/\s+/g, '-')
-                    .replace(/[^\w-]/g, '-')
-                    .replace(/--+/g, '-')
-                    .replace(/^-+|-+$/g, '');
-                
-                // check if slug matches
-                if (blockSlug === specialLower) {
-                    return true;
-                }
-            }
-        }
-        
-        // if separate-ticket is selected and film has a block, don't show it
-        if (this.activeSpecials.has('separate-ticket') && filmBlock !== '') {
-            return false;
-        }
-        
-        return false;
-    },
-
-    /**
-     * check if card matches special filters
-     * @param {Element} cardLink - card element to check
-     * @returns {boolean} - whether card matches special filters
-     */
-    matchesSpecialFilter(cardLink) {
-        if (this.activeSpecials.size === 0) return true;
-        
-        const filmBlock = cardLink.dataset.block || '';
-        
-        // check for separate ticket filter (films without blocks)
-        if (this.activeSpecials.has('separate-ticket')) {
-            if (filmBlock === '') {
-                return true;
-            }
-        }
-        
-        // check if film block matches any active special
-        for (const activeSpecial of this.activeSpecials) {
-            if (activeSpecial !== 'separate-ticket' && filmBlock.includes(activeSpecial)) {
-                return true;
-            }
-        }
-        
-        return false;
-    },
-
-    /**
-     * check if card matches special filter
-     * @param {Element} cardLink - card element to check
      * @returns {boolean} - whether card matches special filter
      */
     matchesSpecialFilter(cardLink) {
@@ -366,23 +363,27 @@ const SearchUtility = {
      * compare two cards for sorting
      * @param {Element} cardA - first card element
      * @param {Element} cardB - second card element
-     * @param {string} sortField - field to sort by
+     * @param {string} sortField - field to sort by (button value)
      * @returns {number} - comparison result
      */
     compareCards(cardA, cardB, sortField) {
         let comparison = 0;
         
+        // map the sort field to the actual data attribute
+        const actualField = this.config.sortFieldMap[sortField] || sortField;
+        
         // handle special sort fields
-        if (sortField === 'date') {
+        if (actualField === 'date') {
             comparison = this.compareDates(cardA.dataset.date, cardB.dataset.date);
-        } else if (sortField === 'film_count') {
-            const aCount = parseInt(cardA.dataset.filmCount, 10) || 0;
-            const bCount = parseInt(cardB.dataset.filmCount, 10) || 0;
+        } else if (actualField === 'film_count' || actualField === 'films') {
+            // handle both film_count (filmmakers) and films (specials) attributes
+            const aCount = parseInt(cardA.dataset.filmCount || cardA.dataset.films, 10) || 0;
+            const bCount = parseInt(cardB.dataset.filmCount || cardB.dataset.films, 10) || 0;
             comparison = bCount - aCount; // default descending for count
         } else {
-            // default alphabetical sort
-            const aValue = cardA.dataset[sortField] || '';
-            const bValue = cardB.dataset[sortField] || '';
+            // default alphabetical sort using mapped field
+            const aValue = cardA.dataset[actualField] || '';
+            const bValue = cardB.dataset[actualField] || '';
             comparison = aValue.localeCompare(bValue);
         }
         

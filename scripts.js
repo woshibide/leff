@@ -325,7 +325,7 @@ const MenuSystem = {
 
 /**
  * menu dropdown module
- * handles dropdown functionality in the menu
+ * handles dropdown functionality in the menu and search utility
  */
 const MenuDropdown = {
     /**
@@ -333,10 +333,11 @@ const MenuDropdown = {
      */
     init() {
         this.setupDropdownToggles();
+        this.setupSearchUtilityDropdowns();
     },
 
     /**
-     * setup dropdown toggle event listeners
+     * setup dropdown toggle event listeners for menu
      */
     setupDropdownToggles() {
         const dropdownToggles = document.querySelectorAll('.menu-dropdown-toggle');
@@ -350,7 +351,29 @@ const MenuDropdown = {
     },
 
     /**
-     * toggle dropdown open/close state
+     * setup dropdown functionality for search utility
+     */
+    setupSearchUtilityDropdowns() {
+        const searchDropdownToggles = document.querySelectorAll('.search-utilities .dropdown-toggle');
+        
+        searchDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.toggleSearchDropdown(toggle);
+            });
+        });
+
+        // close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-utilities .dropdown-toggle') && 
+                !e.target.closest('.search-utilities .dropdown-content')) {
+                this.closeAllSearchDropdowns();
+            }
+        });
+    },
+
+    /**
+     * toggle dropdown open/close state for menu
      * @param {element} toggle - the dropdown toggle button
      */
     toggleDropdown(toggle) {
@@ -362,6 +385,49 @@ const MenuDropdown = {
         // toggle 'expanded' class on both the toggle and the content
         toggle.classList.toggle('expanded');
         dropdownContent.classList.toggle('expanded');
+    },
+
+    /**
+     * toggle dropdown for search utility
+     * @param {element} toggle - the dropdown toggle button
+     */
+    toggleSearchDropdown(toggle) {
+        const dropdownContent = toggle.nextElementSibling;
+        
+        if (!dropdownContent || !dropdownContent.classList.contains('dropdown-content')) return;
+
+        // close other dropdowns first
+        this.closeAllSearchDropdowns();
+
+        // toggle current dropdown
+        toggle.classList.toggle('expanded');
+        dropdownContent.classList.toggle('expanded');
+        
+        // update arrow direction
+        const arrow = toggle.querySelector('.dropdown-arrow');
+        if (arrow) {
+            arrow.style.transform = dropdownContent.classList.contains('expanded') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+    },
+
+    /**
+     * close all search utility dropdowns
+     */
+    closeAllSearchDropdowns() {
+        const searchDropdowns = document.querySelectorAll('.search-utilities .dropdown-content');
+        const searchToggles = document.querySelectorAll('.search-utilities .dropdown-toggle');
+        
+        searchDropdowns.forEach(dropdown => {
+            dropdown.classList.remove('expanded');
+        });
+        
+        searchToggles.forEach(toggle => {
+            toggle.classList.remove('expanded');
+            const arrow = toggle.querySelector('.dropdown-arrow');
+            if (arrow) {
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        });
     }
 };
 
@@ -555,6 +621,107 @@ const ScrollToTop = {
     }
 };
 
+/**
+ * navigation scroll behavior module
+ * handles hiding/showing navigation based on scroll direction
+ */
+const NavigationScroll = {
+    nav: null,
+    lastScrollTop: 0,
+    scrollThreshold: 5, // minimum scroll distance to trigger hide/show
+    isHidden: false,
+
+    /**
+     * initialize navigation scroll behavior
+     */
+    init() {
+        this.nav = document.querySelector('nav');
+        if (!this.nav) return;
+
+        // add initial visible class
+        this.nav.classList.add('nav-visible');
+        
+        this.setupScrollListener();
+    },
+
+    /**
+     * setup scroll event listener with throttling
+     */
+    setupScrollListener() {
+        let ticking = false;
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    this.handleScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    },
+
+    /**
+     * handle scroll events to show/hide navigation
+     */
+    handleScroll() {
+        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // prevent negative values when overscrolling at top
+        const scrollTop = Math.max(currentScrollTop, 0);
+        
+        // don't hide navigation when menu is active
+        if (this.nav.classList.contains('menu-active')) {
+            this.showNavigation();
+            this.lastScrollTop = scrollTop;
+            return;
+        }
+        
+        // don't hide navigation when at the very top of the page
+        if (scrollTop < this.scrollThreshold) {
+            this.showNavigation();
+            this.lastScrollTop = scrollTop;
+            return;
+        }
+        
+        // determine scroll direction
+        const scrollDifference = scrollTop - this.lastScrollTop;
+        
+        // only trigger if scroll difference is significant enough
+        if (Math.abs(scrollDifference) < this.scrollThreshold) {
+            return;
+        }
+        
+        if (scrollDifference > 0 && !this.isHidden) {
+            // scrolling down - hide navigation
+            this.hideNavigation();
+        } else if (scrollDifference < 0 && this.isHidden) {
+            // scrolling up - show navigation
+            this.showNavigation();
+        }
+        
+        this.lastScrollTop = scrollTop;
+    },
+
+    /**
+     * hide the navigation bar
+     */
+    hideNavigation() {
+        this.nav.classList.remove('nav-visible');
+        this.nav.classList.add('nav-hidden');
+        this.isHidden = true;
+    },
+
+    /**
+     * show the navigation bar
+     */
+    showNavigation() {
+        this.nav.classList.remove('nav-hidden');
+        this.nav.classList.add('nav-visible');
+        this.isHidden = false;
+    }
+};
+
 
 /**
  * main application initialization
@@ -566,4 +733,5 @@ document.addEventListener('DOMContentLoaded', function() {
     MenuDropdown.init();
     ValidationInputCheck.init();
     ScrollToTop.init();
+    NavigationScroll.init();
 });
