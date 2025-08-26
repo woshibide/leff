@@ -1032,7 +1032,7 @@
                                 event.stopPropagation(); // prevent block click
                                 const filmSlug = slugifyTitle(filmTitle); // use original title for URL
                                 const currentLang = window.location.pathname.includes('/nl/') ? 'nl' : 'en';
-                                const filmUrl = `/leff//${currentLang}/programme/films/${filmSlug}/`;
+                                const filmUrl = `/leff/${currentLang}/programme/films/${filmSlug}/`;
                                 window.location.href = filmUrl;
                             })
                             .on('mouseover', function() {
@@ -1112,13 +1112,13 @@
         if (eventData.isBlock && eventData.blockInfo) {
             // navigate to special page using slug from blockInfo
             const slug = eventData.blockInfo.slug;
-            return `/${currentLang}/programme/specials/${slug}/`;
+            return `/leff/${currentLang}/programme/specials/${slug}/`;
         } else {
             // navigate to individual film page using title
             // note: this creates a basic slug, but the actual site uses more sophisticated slugification
             // this should work for most cases, but might need refinement for edge cases
             const filmSlug = slugifyTitle(eventData.title);
-            return `/${currentLang}/programme/films/${filmSlug}/`;
+            return `/leff/${currentLang}/programme/films/${filmSlug}/`;
         }
     }
     
