@@ -26,6 +26,11 @@ const SearchUtility = {
         this.sortButtons = document.querySelectorAll('.sort-button');
         this.container = document.querySelector(config.containerSelector);
 
+        // mobile menu elements
+        this.mobileToggle = document.getElementById('mobile-search-toggle');
+        this.mobileOverlay = document.getElementById('mobile-search-overlay');
+        this.searchUtilities = document.getElementById('search-utilities');
+
         // specials dropdown elements
         this.dropdownToggle = document.getElementById('specials-dropdown-toggle');
         this.dropdownContent = document.getElementById('specials-dropdown-content');
@@ -62,6 +67,24 @@ const SearchUtility = {
      * bind event listeners
      */
     bindEvents() {
+        // mobile menu toggle
+        if (this.mobileToggle && this.mobileOverlay && this.searchUtilities) {
+            this.mobileToggle.addEventListener('click', () => {
+                this.toggleMobileMenu();
+            });
+
+            this.mobileOverlay.addEventListener('click', () => {
+                this.closeMobileMenu();
+            });
+
+            // close mobile menu on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && this.searchUtilities.classList.contains('active')) {
+                    this.closeMobileMenu();
+                }
+            });
+        }
+
         // search input
         if (this.searchInput) {
             this.searchInput.addEventListener('input', () => this.filterAndSort());
@@ -416,5 +439,53 @@ const SearchUtility = {
         const parsedDateA = parseDate(dateA);
         const parsedDateB = parseDate(dateB);
         return parsedDateA - parsedDateB;
+    },
+
+    /**
+     * toggle mobile menu open/closed
+     */
+    toggleMobileMenu() {
+        const isActive = this.searchUtilities.classList.contains('active');
+        
+        if (isActive) {
+            this.closeMobileMenu();
+        } else {
+            this.openMobileMenu();
+        }
+    },
+
+    /**
+     * open mobile menu
+     */
+    openMobileMenu() {
+        this.searchUtilities.classList.add('active');
+        this.mobileOverlay.classList.add('active');
+        this.mobileToggle.classList.add('active');
+        this.mobileOverlay.style.display = 'block';
+        
+        // ensure menu content is scrolled to top when opened
+        this.searchUtilities.scrollTop = 0;
+        
+        // prevent body scroll when menu is open
+        document.body.style.overflow = 'hidden';
+    },
+
+    /**
+     * close mobile menu
+     */
+    closeMobileMenu() {
+        this.searchUtilities.classList.remove('active');
+        this.mobileOverlay.classList.remove('active');
+        this.mobileToggle.classList.remove('active');
+        
+        // small delay before hiding overlay to allow for transition
+        setTimeout(() => {
+            if (!this.mobileOverlay.classList.contains('active')) {
+                this.mobileOverlay.style.display = 'none';
+            }
+        }, 300);
+        
+        // restore body scroll
+        document.body.style.overflow = '';
     }
 };

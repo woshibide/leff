@@ -7,7 +7,7 @@ Programme:
 Leff website feedbacks
 
 
-
+- [x] footer new things to be added
 - [x] sorting A—Z to work on all pages
 - [x] same underline on hover like on the rest of the website for all the links
   - [x] but not in navigation bartem 
@@ -55,10 +55,11 @@ WHATS TO BE DONE:
 
 - [ ] Schedule page
   - [x] data is fetched
-  - [ ] styling
+  - [x] styling
+  - [ ] mobile
 
 - [~] Programme
-  - [ ] mobile
+  - [?] mobile
 
 - [ ] Films page
   - [x] data is fetched

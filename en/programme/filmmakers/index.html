@@ -31,12 +31,12 @@
     <base href="/leff/">
     
     
-    <link rel="stylesheet" href="styles.0fd3204c63.css">
+    <link rel="stylesheet" href="styles.1e45207cfc.css">
     
     
 
     
-<link rel="stylesheet" href="/leff/search-utility.40f672b388.css">
+<link rel="stylesheet" href="/leff/search-utility.8ecfe8570e.css">
 <style>
     /*
         filmmakers page styles
@@ -146,6 +146,10 @@
     }
     
     @media (max-width: 768px) {
+        .filmmaker-films-container {
+            padding: var(--space-sm);
+        }
+
         .content-wrapper {
             grid-template-columns: 1fr;
         }
@@ -393,7 +397,24 @@
     - all first letters of filmmaker names (for multi-word names)
 -->
 
-<div class="search-utilities">
+<!-- mobile menu toggle button -->
+<button id="mobile-search-toggle" class="mobile-search-toggle" aria-label="Toggle search menu">
+    <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.35-4.35"/>
+        <line x1="8" y1="11" x2="14" y2="11"/>
+        <line x1="11" y1="8" x2="11" y2="14"/>
+    </svg>
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+</button>
+
+<!-- mobile menu overlay -->
+<div id="mobile-search-overlay" class="mobile-search-overlay"></div>
+
+<div class="search-utilities" id="search-utilities">
 
         <!-- search bar -->
         <div id="search-bar">
@@ -4685,6 +4706,7 @@ Lucia Nimcová is an award-winning photographer and visual artist, David Petrá�
                 <h4>Navigation</h4>
                 <ul>
                     
+                    
                     <li><a href="/leff/en/">Home</a></li>
                     
                     <li><a href="/leff/en/programme/">Programme 2025</a></li>
@@ -4695,21 +4717,42 @@ Lucia Nimcová is an award-winning photographer and visual artist, David Petrá�
                     
                     <li><a href="/leff/en/tickets/">Tickets</a></li>
                     
+                    
+                        
+                        
+                        
+                            
+                            <li><a href="/leff/en/programme/films">A—Z film</a></li>
+                            
+                            <li><a href="/leff/en/programme/filmmakers">A—Z filmmakers</a></li>
+                            
+                            <li><a href="/leff/en/programme/specials">Specials</a></li>
+                            
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                 </ul>
             </div>
 
             <div class="footer-info">
-                <h4>About leff</h4>
-                <ul>
-                    <li><a href="/leff/en/about/">Festival</a></li>
-                    <li><a href="/leff/en/organisation/">Organisation</a></li>
-                </ul>
+                    <h4>About leff</h4>
+                    <ul>
+                        <li><a href="/leff/en/about/">Festival</a></li>
+                        <li><a href="/leff/en/organisation/">Organisation</a></li>
+                    </ul>
             </div>
 
             <div class="footer-outside-links">
                 <h4>Contact</h4>
                 <ul>
-                    <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
+                    <li><a href="mailto:leff@hum.leidenuniv.nl">leff@hum.leidenuniv.nl</a></li>
                     <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank" rel="noopener">Instagram</a></li>
                     <li><a href="/leff/en/privacy/">Privacy Policy</a></li>
                 </ul>
@@ -4729,6 +4772,7 @@ Lucia Nimcová is an award-winning photographer and visual artist, David Petrá�
 
     
 <script src="/leff/search.js"></script>
+<script src="/leff/hover-sim.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         // initialize shared search utility for filmmakers page
@@ -4753,10 +4797,18 @@ Lucia Nimcová is an award-winning photographer and visual artist, David Petrá�
 
     <script src="/leff/scripts.js"></script>
     <script>
-        // set base path for javascript to use
+        // this is for approvals on github pages 
         window.BASE_PATH = '/leff/';
 
-        // hello screen
+        // heeeeeyyyyyyyy, my name is pyotr and
+        // im very likely looking for new projects
+        // shall we talk about your website?
+        // do you want to know more about this
+        // static bilingual vanilla js html css website?
+
+        // best way to reach out to me is t.me/itspyotr
+        // otherwise my website is here wshbd.com
+
         console.log("\n\n\n\t" +
             "oooo             .o88o.  .o88o. \n\t" +
             "`888             888 `\"  888 `\" \n\t" +

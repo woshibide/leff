@@ -31,7 +31,7 @@
     <base href="/leff/">
     
     
-    <link rel="stylesheet" href="styles.0fd3204c63.css">
+    <link rel="stylesheet" href="styles.1e45207cfc.css">
     
     
 
@@ -98,6 +98,15 @@
         flex-direction: column;
         gap: var(--space-md);
         max-width: 80%;
+    }
+
+    @media (max-width: 768px) {
+        .film-info {
+            max-width: 100%;
+        }
+        div.gallery-container div.film-info div.film-details.readeable-text{
+            margin-block: 0;
+        }
     }
 
     .film-title {
@@ -245,9 +254,9 @@
 
         .film-screening-info {
             grid-column: 1 / -1;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: space-between;
-            align-items: flex-end;
+            align-items: flex-start;
             gap: var(--space-lg);
         }
 
@@ -259,6 +268,11 @@
             padding: var(--space-sm) var(--space-lg);
             font-size: 1rem;
             white-space: nowrap;
+        }
+
+        div.film-screening-info a#nav-tickets.tickets-button{
+            margin: 1rem;
+            width: 90%;
         }
     }
 
@@ -693,6 +707,7 @@
                 <h4>Navigatie</h4>
                 <ul>
                     
+                    
                     <li><a href="/leff/nl/">Home</a></li>
                     
                     <li><a href="/leff/nl/programme/">Programma 2025</a></li>
@@ -703,21 +718,42 @@
                     
                     <li><a href="/leff/nl/tickets/">Tickets</a></li>
                     
+                    
+                        
+                        
+                        
+                            
+                            <li><a href="/leff/nl/programme/films">A—Z film</a></li>
+                            
+                            <li><a href="/leff/nl/programme/filmmakers">A—Z filmmakers</a></li>
+                            
+                            <li><a href="/leff/nl/programme/specials">Specials</a></li>
+                            
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                 </ul>
             </div>
 
             <div class="footer-info">
-                <h4>Over leff</h4>
-                <ul>
-                    <li><a href="/leff/nl/about/">Festival</a></li>
-                    <li><a href="/leff/nl/organisation/">Organisatie</a></li>
-                </ul>
+                    <h4>Over leff</h4>
+                    <ul>
+                        <li><a href="/leff/nl/about/">Festival</a></li>
+                        <li><a href="/leff/nl/organisation/">Organisatie</a></li>
+                    </ul>
             </div>
 
             <div class="footer-outside-links">
                 <h4>Contact</h4>
                 <ul>
-                    <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
+                    <li><a href="mailto:leff@hum.leidenuniv.nl">leff@hum.leidenuniv.nl</a></li>
                     <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank" rel="noopener">Instagram</a></li>
                     <li><a href="/leff/nl/privacy/">Privacybeleid</a></li>
                 </ul>
@@ -866,10 +902,18 @@
 
     <script src="/leff/scripts.js"></script>
     <script>
-        // set base path for javascript to use
+        // this is for approvals on github pages 
         window.BASE_PATH = '/leff/';
 
-        // hello screen
+        // heeeeeyyyyyyyy, my name is pyotr and
+        // im very likely looking for new projects
+        // shall we talk about your website?
+        // do you want to know more about this
+        // static bilingual vanilla js html css website?
+
+        // best way to reach out to me is t.me/itspyotr
+        // otherwise my website is here wshbd.com
+
         console.log("\n\n\n\t" +
             "oooo             .o88o.  .o88o. \n\t" +
             "`888             888 `\"  888 `\" \n\t" +

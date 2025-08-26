@@ -31,7 +31,7 @@
     <base href="/leff/">
     
     
-    <link rel="stylesheet" href="styles.0fd3204c63.css">
+    <link rel="stylesheet" href="styles.1e45207cfc.css">
     
     
 
@@ -52,7 +52,7 @@
         background: var(--silver);
         border-top: 2px solid var(--bg-main);
         border-bottom: 2px solid var(--bg-main);
-        padding: var(--space-3xl) var(--space-lg);
+        padding-block: var(--space-2xl);
         margin-top: var(--space-3xl);
         margin-bottom: var(--space-3xl);
     }
@@ -89,7 +89,7 @@
     .day-tab {
         padding: var(--space-md) var(--space-lg);
         background: var(--silver);
-        border: 2px solid var(--bg-main);
+        border: none;
         border-bottom: none;
         border-right: none;
         cursor: none;
@@ -102,7 +102,7 @@
     }
 
     .day-tab:last-child {
-        border-right: 2px solid var(--bg-main);
+        /* border-right: 2px solid var(--bg-main); */
     }
 
     .day-tab:hover {
@@ -121,8 +121,8 @@
         margin: 0;
         padding: var(--space-lg);
         background: var(--silver);
-        border-left: 2px solid var(--bg-main);
-        border-bottom: 2px solid var(--bg-main);
+        border: 2px solid var(--bg-main);
+        /* border-bottom: 2px solid var(--bg-main); */
         overflow-x: auto;
         overflow-y: visible; /* changed from hidden to allow info panels to show */
         max-width: 100%;
@@ -136,14 +136,24 @@
     }
 
     .time-axis {
-        font-size: 14px;
-        /* fill: var(--text-main); */
+        font-size: 11px;
         font-family: 'necto', monospace;
         font-weight: normal;
     }
 
     .time-axis text {
         text-anchor: middle;
+        fill: var(--text-main);
+    }
+
+    .time-axis line {
+        stroke: var(--text-main);
+        stroke-width: 1px;
+    }
+
+    .time-axis path {
+        stroke: var(--text-main);
+        stroke-width: 1px;
     }
 
     .venue-label {
@@ -161,31 +171,33 @@
     }
 
     .event-block {
-        rx: 0;
-        ry: 0;
+        rx: 2;
+        ry: 2;
         stroke: none;
         stroke-width: 0px;
-        cursor: none;
+        cursor: pointer;
         transition: all 0.2s var(--transition);
-    }
-
-    .event-block:hover {
-        stroke-width: 2px;
-        stroke: var(--accent);
-        background-color: #1e1e1e65;
+        /* opacity: 0.9; */
     }
     
     /* special styling for block events */
     .event-block.block-event {
         stroke: var(--text-main);
         stroke-width: 1px;
-        /* stroke-dasharray: 2,2; */
+        stroke-dasharray: none;
+        opacity: 0.95;
+        cursor: pointer;
     }
-    
-    .event-block.block-event:hover {
-        stroke: var(--accent);
+
+    /* duration-based visual treatment */
+    .event-block.short-duration {
+        stroke-dasharray: 3,2;
+    }
+
+    .event-block.long-duration {
         stroke-width: 2px;
-        /* stroke-dasharray: none; */
+        stroke: var(--text-main);
+        stroke-opacity: 0.4;
     }
 
     .event-text {
@@ -206,53 +218,33 @@
         font-family: 'switzer', Arial, sans-serif;
     }
 
-    .event-info {
-        position: absolute;
-        background: var(--bg-main);
-        color: var(--accent);
-        padding: var(--space-sm);
-        border: 2px solid var(--accent);
-        font-size: 12px;
-        z-index: 100;
-        max-width: 300px;
-        line-height: 1.3;
-        font-family: 'switzer', Arial, sans-serif;
-        top: 100%;
-        left: 0;
-        margin-top: 4px;
-        display: none;
-    }
-
-    .event-info h4 {
-        margin: 0 0 var(--space-xs) 0;
-        font-size: 13px;
-        font-weight: normal;
-        color: var(--accent);
-        text-transform: uppercase;
-    }
-
-    .event-info p {
-        margin: var(--space-xs) 0;
-        font-size: 11px;
-    }
-
-    .event-info strong {
-        color: var(--accent);
-        font-weight: normal;
-        text-transform: uppercase;
-    }
-
-    .event-block:hover + .event-info {
-        display: block;
-    }
-
     .event-time {
         font-size: 1rem;
-        fill: var(--text-main);
+        fill: var(--accent);
         text-anchor: start;
         pointer-events: none;
         font-family: 'necto', monospace;
         font-weight: normal;
+    }
+
+    .schedule-film-arrow {
+        /* arrow graphic removed */
+    }
+
+    .event-film-link {
+        cursor: pointer;
+        transition: all 0.2s var(--transition);
+        background: var(--text-main);
+        color: var(--accent);
+        padding: var(--space-xs) var(--space-sm);
+        margin-bottom: var(--space-xs);
+        display: inline-block;
+        border-radius: 0;
+    }
+
+    .event-film-link:hover {
+        background: var(--accent);
+        color: var(--text-main);
     }
 
     /* responsive adjustments */
@@ -284,27 +276,27 @@
         }
 
         .timeline-svg {
-            min-width: 1600px; /* slightly smaller on mobile but still wide */
+            min-width: 2000px; /* ensure minimum width maintains time accuracy */
         }
 
         .venue-label {
-            font-size: 14px;
+            font-size: 1rem;
         }
 
         .event-text {
-            font-size: 11px;
+            font-size: 1rem;
         }
 
         .event-director {
-            font-size: 9px;
+            font-size: 1rem;
         }
 
         .event-time {
-            font-size: 8px;
+            font-size: 0.875rem;
         }
 
         .event-info {
-            max-width: 250px;
+            /* max-width: 250px; */
             padding: var(--space-xs);
         }
     }
@@ -554,6 +546,7 @@
                 <h4>Navigatie</h4>
                 <ul>
                     
+                    
                     <li><a href="/leff/nl/">Home</a></li>
                     
                     <li><a href="/leff/nl/programme/">Programma 2025</a></li>
@@ -564,21 +557,42 @@
                     
                     <li><a href="/leff/nl/tickets/">Tickets</a></li>
                     
+                    
+                        
+                        
+                        
+                            
+                            <li><a href="/leff/nl/programme/films">A—Z film</a></li>
+                            
+                            <li><a href="/leff/nl/programme/filmmakers">A—Z filmmakers</a></li>
+                            
+                            <li><a href="/leff/nl/programme/specials">Specials</a></li>
+                            
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                 </ul>
             </div>
 
             <div class="footer-info">
-                <h4>Over leff</h4>
-                <ul>
-                    <li><a href="/leff/nl/about/">Festival</a></li>
-                    <li><a href="/leff/nl/organisation/">Organisatie</a></li>
-                </ul>
+                    <h4>Over leff</h4>
+                    <ul>
+                        <li><a href="/leff/nl/about/">Festival</a></li>
+                        <li><a href="/leff/nl/organisation/">Organisatie</a></li>
+                    </ul>
             </div>
 
             <div class="footer-outside-links">
                 <h4>Contact</h4>
                 <ul>
-                    <!-- <li><a href="mailto:hi@leidenessayfilmfestival.com">hi@leidenessayfilmfestival.com</a></li> -->
+                    <li><a href="mailto:leff@hum.leidenuniv.nl">leff@hum.leidenuniv.nl</a></li>
                     <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank" rel="noopener">Instagram</a></li>
                     <li><a href="/leff/nl/privacy/">Privacybeleid</a></li>
                 </ul>
@@ -621,6 +635,16 @@
             'default': '#979797'
         }
     };
+    
+    // enhanced time-representative d3 schedule visualization
+    // improvements include:
+    // - precise time positioning based on actual start/end times
+    // - proportional width calculation representing actual durations
+    // - 15-minute interval time axis with visual grid lines
+    // - duration-based visual styling (short/long events)
+    // - "now" indicator for current day viewing
+    // - responsive timeline width scaling with time range
+    // - clickable navigation to film/special pages (no popups)
     
     let currentDay = null;
     
@@ -698,46 +722,35 @@
             Object.keys(dayData[timeSlot]).forEach(venue => {
                 venues.add(venue);
                 const event = dayData[timeSlot][venue];
-                
                 const blockName = event.block;
-                
-                // check if this is a block (except classics) that should be displayed as a block
-                if (blockName && blockName.toLowerCase() !== 'classics' && !processedBlocks.has(blockName)) {
-                    // find the block info from specialsMap
-                    const blockInfo = specialsMap.find(block => block.block_name === blockName);
-                    if (blockInfo) {
-                        // create a single block event
-                        events.push({
-                            ...event,
-                            time: timeSlot,
-                            venue: venue,
-                            timeMinutes: timeToMinutes(timeSlot),
-                            isBlock: true,
-                            blockInfo: blockInfo,
-                            title: blockName,
-                            director: `${blockInfo.film_count} films`,
-                            synopsis: `Block featuring: ${blockInfo.film_titles.join(', ')}`
-                        });
-                        processedBlocks.add(blockName);
-                    } else {
-                        // fallback to individual film if block info not found
-                        events.push({
-                            ...event,
-                            time: timeSlot,
-                            venue: venue,
-                            timeMinutes: timeToMinutes(timeSlot),
-                            isBlock: false
-                        });
+
+                // special handling for blocks: group them and use block-level timings.
+                if (blockName && blockName.toLowerCase() !== 'classics') {
+                    if (!processedBlocks.has(blockName)) {
+                        const blockInfo = specialsMap.find(b => b.block_name === blockName);
+                        if (blockInfo) {
+                            // create a single event for the entire block
+                            events.push({
+                                ...event,
+                                time: blockInfo.block_start_time,
+                                venue: venue,
+                                timeMinutes: timeToMinutes(blockInfo.block_start_time),
+                                isBlock: true,
+                                blockInfo: blockInfo,
+                                title: blockName,
+                                director: `${blockInfo.film_count} films`,
+                                synopsis: `block featuring: ${blockInfo.film_titles.join(', ')}`
+                            });
+                            processedBlocks.add(blockName);
+                        } else {
+                            // if block info isn't in specialsmap, treat as an individual film.
+                            events.push({ ...event, time: timeSlot, venue: venue, timeMinutes: timeToMinutes(timeSlot), isBlock: false });
+                        }
                     }
+                    // if block has been processed, we do nothing, as we don't want to render individual films from it.
                 } else {
-                    // display as individual film (no block, or classics block, or already processed block)
-                    events.push({
-                        ...event,
-                        time: timeSlot,
-                        venue: venue,
-                        timeMinutes: timeToMinutes(timeSlot),
-                        isBlock: false
-                    });
+                    // no block name, or a 'classics' block which we treat as individual films.
+                    events.push({ ...event, time: timeSlot, venue: venue, timeMinutes: timeToMinutes(timeSlot), isBlock: false });
                 }
             });
         });
@@ -745,9 +758,11 @@
         const venueList = Array.from(venues).sort();
         const svgContainer = d3.select('#timeline-svg');
         
-        // calculate dimensions - make timeline much wider for better readability
-        const timelineWidth = 2400; // fixed wide timeline
-        const width = timelineWidth;
+        // calculate dimensions - make timeline wider for better time representation
+        // use approximately 4-5 pixels per minute for good readability
+        const totalMinutes = (config.timeEnd - config.timeStart) * 60;
+        const timelineWidth = Math.max(2400, totalMinutes * 4.5); // minimum 2400px, scale with time range
+        const width = timelineWidth + config.margin.left + config.margin.right;
         const height = config.margin.top + config.margin.bottom + (venueList.length * config.rowHeight);
         
         // clear previous content
@@ -768,20 +783,93 @@
             .range([config.margin.top, height - config.margin.bottom])
             .paddingInner(0.15);
         
-        // create time axis
+        // create time axis - show only hour labels but keep quarter-hour tick marks
         const timeAxis = d3.axisTop(timeScale)
             .tickFormat(d => {
                 const hours = Math.floor(d / 60);
                 const minutes = d % 60;
-                return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+                // only show label for exact hours (when minutes = 0)
+                if (minutes === 0) {
+                    return `${hours.toString().padStart(2, '0')}:00`;
+                }
+                return ''; // empty string for quarter-hour marks
             })
-            .tickValues(d3.range(config.timeStart * 60, (config.timeEnd + 1) * 60, 30)) // every 30 minutes
-            .tickSize(12);
+            .tickValues(d3.range(config.timeStart * 60, (config.timeEnd + 1) * 60, 15)) // every 15 minutes for tick marks
+            .tickSize(8); // smaller tick marks
         
         svgContainer.append('g')
             .attr('class', 'time-axis')
-            .attr('transform', `translate(${config.margin.left}, ${config.margin.top})`)
-            .call(timeAxis);
+            .attr('transform', `translate(0, ${config.margin.top})`)
+            .call(timeAxis)
+            .selectAll('text')
+            .style('text-anchor', 'middle')
+            .style('font-size', '11px');
+        
+        // add vertical grid lines for better time reference
+        const gridLines = svgContainer.append('g')
+            .attr('class', 'grid-lines');
+        
+        // major grid lines (every hour)
+        gridLines.selectAll('.grid-line-major')
+            .data(d3.range(config.timeStart * 60, (config.timeEnd + 1) * 60, 60))
+            .enter()
+            .append('line')
+            .attr('class', 'grid-line-major')
+            .attr('x1', d => timeScale(d))
+            .attr('x2', d => timeScale(d))
+            .attr('y1', config.margin.top)
+            .attr('y2', height - config.margin.bottom)
+            .style('stroke', 'var(--text-main)')
+            .style('stroke-width', '1px')
+            .style('stroke-opacity', '0.3');
+        
+        // minor grid lines (every 30 minutes)
+        gridLines.selectAll('.grid-line-minor')
+            .data(d3.range(config.timeStart * 60 + 30, config.timeEnd * 60, 60))
+            .enter()
+            .append('line')
+            .attr('class', 'grid-line-minor')
+            .attr('x1', d => timeScale(d))
+            .attr('x2', d => timeScale(d))
+            .attr('y1', config.margin.top)
+            .attr('y2', height - config.margin.bottom)
+            .style('stroke', 'var(--text-main)')
+            .style('stroke-width', '1px')
+            .style('stroke-opacity', '0.15');
+        
+        // add "now" line if viewing current day
+        const now = new Date();
+        const currentDate = `${now.getDate()} ${now.toLocaleDateString('en-US', { month: 'long' })}`;
+        
+        if (day === currentDate) {
+            const currentHour = now.getHours();
+            const currentMinute = now.getMinutes();
+            const currentTimeMinutes = currentHour * 60 + currentMinute;
+            
+            // only show if within timeline bounds
+            if (currentTimeMinutes >= config.timeStart * 60 && currentTimeMinutes <= config.timeEnd * 60) {
+                svgContainer.append('line')
+                    .attr('class', 'now-line')
+                    .attr('x1', timeScale(currentTimeMinutes))
+                    .attr('x2', timeScale(currentTimeMinutes))
+                    .attr('y1', config.margin.top)
+                    .attr('y2', height - config.margin.bottom)
+                    .style('stroke', 'var(--accent)')
+                    .style('stroke-width', '2px')
+                    .style('stroke-opacity', '0.8');
+                
+                // add "now" label
+                svgContainer.append('text')
+                    .attr('class', 'now-label')
+                    .attr('x', timeScale(currentTimeMinutes) + 5)
+                    .attr('y', config.margin.top - 5)
+                    .style('fill', 'var(--accent)')
+                    .style('font-size', '10px')
+                    .style('font-family', 'necto, monospace')
+                    .style('text-transform', 'uppercase')
+                    .text('now');
+            }
+        }
         
         // add venue labels and rows
         venueList.forEach(venue => {
@@ -812,30 +900,64 @@
             .append('g')
             .attr('class', 'event');
         
-        // event rectangles
+        // event rectangles with duration-based styling
         eventGroups.append('rect')
-            .attr('class', d => d.isBlock ? 'event-block block-event' : 'event-block')
-            .attr('x', d => timeScale(d.timeMinutes))
+            .attr('class', d => {
+                let classes = d.isBlock ? 'event-block block-event' : 'event-block';
+                
+                // add duration-based classes for visual variety
+                const duration = d.isBlock && d.blockInfo ? 
+                    calculateTimeDifference(d.blockInfo.block_start_time, d.blockInfo.block_finish_time) :
+                    (d.duration_minutes || 90);
+                
+                if (duration <= 30) {
+                    classes += ' short-duration';
+                } else if (duration >= 120) {
+                    classes += ' long-duration';
+                }
+                
+                return classes;
+            })
+            .attr('x', d => {
+                // ensure precise time positioning
+                const startTime = d.isBlock && d.blockInfo ? 
+                    timeToMinutes(d.blockInfo.block_start_time) : d.timeMinutes;
+                return timeScale(Math.max(startTime, config.timeStart * 60));
+            })
             .attr('y', d => venueScale(d.venue) + 2)
             .attr('width', d => {
+                let startMins, endMins;
                 if (d.isBlock && d.blockInfo) {
-                    // for blocks, calculate width based on block duration
-                    const startTime = d.blockInfo.block_start_time;
-                    const endTime = d.blockInfo.block_finish_time;
-                    const blockDuration = calculateTimeDifference(startTime, endTime);
-                    return Math.max(120, blockDuration * 3); // wider blocks
+                    startMins = timeToMinutes(d.blockInfo.block_start_time);
+                    endMins = timeToMinutes(d.blockInfo.block_finish_time);
                 } else {
-                    // for individual films, use existing logic
-                    return Math.max(80, d.duration_minutes * 3);
+                    startMins = d.timeMinutes;
+                    // use actual duration for precise width calculation
+                    endMins = d.timeMinutes + (d.duration_minutes || 90); // default 90min if no duration
                 }
+                
+                // clamp to timeline bounds but maintain proportional representation
+                const clampedStart = Math.max(startMins, config.timeStart * 60);
+                const clampedEnd = Math.min(endMins, config.timeEnd * 60);
+                
+                // calculate actual width based on time difference
+                const actualDuration = clampedEnd - clampedStart;
+                const pixelWidth = timeScale(clampedStart + actualDuration) - timeScale(clampedStart);
+                
+                // minimum width for visibility (15px) but respect actual duration
+                return Math.max(15, pixelWidth);
             })
             .attr('height', venueScale.bandwidth() - 4)
             .attr('fill', d => d.isBlock ? getBlockColor(d.blockInfo?.block_name) : getEventColor(d.block));
         
-        // event titles
+        // event titles - position based on actual start time
         eventGroups.append('text')
             .attr('class', 'event-text')
-            .attr('x', d => timeScale(d.timeMinutes) + 8)
+            .attr('x', d => {
+                const startTime = d.isBlock && d.blockInfo ? 
+                    timeToMinutes(d.blockInfo.block_start_time) : d.timeMinutes;
+                return timeScale(Math.max(startTime, config.timeStart * 60)) + 8;
+            })
             .attr('y', d => venueScale(d.venue) + 20)
             .text(d => {
                 if (d.isBlock) {
@@ -845,23 +967,94 @@
                 }
             });
         
-        // event directors or film count
+        // event directors or film count - position based on actual start time
         eventGroups.append('text')
             .attr('class', 'event-director')
-            .attr('x', d => timeScale(d.timeMinutes) + 8)
+            .attr('x', d => {
+                const startTime = d.isBlock && d.blockInfo ? 
+                    timeToMinutes(d.blockInfo.block_start_time) : d.timeMinutes;
+                // add extra space for arrow if it's a block
+                const baseX = timeScale(Math.max(startTime, config.timeStart * 60)) + 8;
+                return d.isBlock ? baseX + 20 : baseX; // move text right to make room for arrow
+            })
             .attr('y', d => venueScale(d.venue) + 38)
             .text(d => {
                 if (d.isBlock) {
-                    return `${d.blockInfo?.film_count || 0} films`;
+                    // for blocks, we'll create individual film links instead of this text
+                    return '';
                 } else {
                     return d.director ? truncateText(d.director, 30) : '';
                 }
             });
         
-        // screening time at bottom of event
+        // create individual film links for block events (arranged in column)
+        eventGroups
+            .filter(d => d.isBlock)
+            .each(function(d) {
+                const group = d3.select(this);
+                const filmNames = d.blockInfo?.film_titles || [];
+                const startTime = d.isBlock && d.blockInfo ? 
+                    timeToMinutes(d.blockInfo.block_start_time) : d.timeMinutes;
+                const baseX = timeScale(Math.max(startTime, config.timeStart * 60)) + 16; 
+                const baseY = venueScale(d.venue) + 56;
+                
+                filmNames.forEach((filmTitle, index) => {
+                    // truncate long film titles
+                    const maxLength = 25; // adjust as needed
+                    const truncatedTitle = filmTitle.length > maxLength ? 
+                        filmTitle.substring(0, maxLength) + '...' : filmTitle;
+                    
+                    // create background rect (initially hidden)
+                    const linkBg = group.append('rect')
+                        .attr('class', 'event-film-link-bg')
+                        .attr('x', baseX - 4)
+                        .attr('y', baseY + (index * 32) - 16) // increased spacing to 32px
+                        .attr('width', truncatedTitle.length * 10 + 16) // width based on truncated text
+                        .attr('height', 20)
+                        .style('fill', 'var(--text-main)')
+                        .style('opacity', 0) // initially hidden
+                        .style('cursor', 'pointer');
+                    
+                    const filmLink = group.append('text')
+                        .attr('class', 'event-film-link')
+                        .attr('x', baseX)
+                        .attr('y', baseY + (index * 32)) // increased spacing to 32px
+                        .style('fill', 'var(--accent)')
+                        .style('font-size', '1.25rem')
+                        .style('font-family', 'switzer, Arial, sans-serif')
+                        .style('cursor', 'pointer')
+                        .text(truncatedTitle);
+                    
+                    // add click handlers to both background and text
+                    [linkBg, filmLink].forEach(element => {
+                        element
+                            .on('click', function(event) {
+                                event.stopPropagation(); // prevent block click
+                                const filmSlug = slugifyTitle(filmTitle); // use original title for URL
+                                const currentLang = window.location.pathname.includes('/nl/') ? 'nl' : 'en';
+                                const filmUrl = `/${currentLang}/programme/films/${filmSlug}/`;
+                                window.location.href = filmUrl;
+                            })
+                            .on('mouseover', function() {
+                                linkBg.style('opacity', 1).style('fill', 'var(--text-main)');
+                                filmLink.style('fill', 'var(--accent)');
+                            })
+                            .on('mouseout', function() {
+                                linkBg.style('opacity', 0);
+                                filmLink.style('fill', 'var(--accent)');
+                            });
+                    });
+                });
+            });
+        
+        // screening time at bottom of event - position based on actual start time
         eventGroups.append('text')
             .attr('class', 'event-time')
-            .attr('x', d => timeScale(d.timeMinutes) + 8)
+            .attr('x', d => {
+                const startTime = d.isBlock && d.blockInfo ? 
+                    timeToMinutes(d.blockInfo.block_start_time) : d.timeMinutes;
+                return timeScale(Math.max(startTime, config.timeStart * 60)) + 8;
+            })
             .attr('y', d => venueScale(d.venue) + venueScale.bandwidth() - 8)
             .text(d => {
                 if (d.isBlock && d.blockInfo) {
@@ -870,60 +1063,38 @@
                     return `${startTime} — ${endTime}`;
                 } else {
                     const startTime = d.time;
-                    const endTime = calculateEndTime(d.time, d.duration_minutes);
+                    const endTime = calculateEndTime(d.time, d.duration_minutes || 90);
                     return `${startTime} — ${endTime}`;
                 }
             });
         
-        // add embedded film information using foreignObject for html content
-        eventGroups.append('foreignObject')
-            .attr('x', d => timeScale(d.timeMinutes))
-            .attr('y', d => venueScale(d.venue) + venueScale.bandwidth() + 4)
-            .attr('width', d => {
-                if (d.isBlock && d.blockInfo) {
-                    const startTime = d.blockInfo.block_start_time;
-                    const endTime = d.blockInfo.block_finish_time;
-                    const blockDuration = calculateTimeDifference(startTime, endTime);
-                    return Math.max(350, blockDuration * 3);
-                } else {
-                    return Math.max(300, d.duration_minutes * 3);
-                }
-            })
-            .attr('height', 150)
-            .style('pointer-events', 'none')
-            .style('opacity', 0)
-            .style('transition', 'opacity 0.3s ease')
-            .html(d => {
-                if (d.isBlock && d.blockInfo) {
-                    return `
-                        <div class="event-info">
-                            <h4>${d.blockInfo.block_name}</h4>
-                            <p><strong>Type:</strong> Special Block</p>
-                            <p><strong>Films:</strong> ${d.blockInfo.film_count}</p>
-                            <p><strong>Location:</strong> ${d.location}</p>
-                            <p><strong>Programme:</strong> ${d.blockInfo.film_titles.join(', ')}</p>
-                        </div>
-                    `;
-                } else {
-                    return `
-                        <div class="event-info">
-                            <h4>${d.title}</h4>
-                            <p><strong>Director:</strong> ${d.director || 'N/A'}</p>
-                            <p><strong>Location:</strong> ${d.location}</p>
-                            ${d.block ? `<p><strong>Block:</strong> ${d.block}</p>` : ''}
-                            ${d.synopsis ? `<p><strong>Synopsis:</strong> ${d.synopsis.substring(0, 120)}${d.synopsis.length > 120 ? '...' : ''}</p>` : ''}
-                        </div>
-                    `;
-                }
-            });
-        
-        // show/hide info on hover
+        // add click navigation to film/special pages
         eventGroups
-            .on('mouseover', function(event, d) {
-                d3.select(this).select('foreignObject').style('opacity', 1);
+            .style('cursor', 'pointer')
+            .on('click', function(event, d) {
+                // only handle block navigation if it's not a film link click
+                if (!event.target.classList.contains('event-film-link')) {
+                    const url = generateEventUrl(d);
+                    window.location.href = url;
+                }
             })
-            .on('mouseout', function() {
-                d3.select(this).select('foreignObject').style('opacity', 0);
+            .on('mouseover', function(event, d) {
+                // only apply hover effect to the block, not when hovering over film links
+                if (!event.target.classList.contains('event-film-link')) {
+                    d3.select(this).select('.event-block')
+                        .style('fill', 'var(--bg-main)')
+                        .style('stroke', 'var(--accent)')
+                        .style('stroke-width', '2px');
+                }
+            })
+            .on('mouseout', function(event, d) {
+                // restore original colors when leaving the event group
+                if (!event.target.classList.contains('event-film-link')) {
+                    d3.select(this).select('.event-block')
+                        .style('fill', d.isBlock ? getBlockColor(d.blockInfo?.block_name) : getEventColor(d.block))
+                        .style('stroke', d.isBlock ? 'var(--text-main)' : 'none')
+                        .style('stroke-width', d.isBlock ? '1px' : '0px');
+                }
             });
     }
     
@@ -933,10 +1104,47 @@
         return hours * 60 + (minutes || 0);
     }
     
+    // generate URL for film or special based on current language and data
+    function generateEventUrl(eventData) {
+        // detect current language from URL
+        const currentLang = window.location.pathname.includes('/nl/') ? 'nl' : 'en';
+        
+        if (eventData.isBlock && eventData.blockInfo) {
+            // navigate to special page using slug from blockInfo
+            const slug = eventData.blockInfo.slug;
+            return `/${currentLang}/programme/specials/${slug}/`;
+        } else {
+            // navigate to individual film page using title
+            // note: this creates a basic slug, but the actual site uses more sophisticated slugification
+            // this should work for most cases, but might need refinement for edge cases
+            const filmSlug = slugifyTitle(eventData.title);
+            return `/${currentLang}/programme/films/${filmSlug}/`;
+        }
+    }
+    
+    // simple slugify function for film titles (matches server-side logic)
+    function slugifyTitle(title) {
+        if (!title) return '';
+        return title
+            .toLowerCase()
+            .normalize('NFD') // normalize unicode characters
+            .replace(/[\u0300-\u036f]/g, '') // remove diacritics
+            .replace(/[^\w\s-]/g, '') // remove special characters except word chars, spaces, hyphens
+            .replace(/\s+/g, '-') // replace spaces with hyphens
+            .replace(/-+/g, '-') // remove multiple consecutive hyphens
+            .replace(/^-+|-+$/g, ''); // remove leading/trailing hyphens
+    }
+    
     // calculate time difference in minutes between two time strings
     function calculateTimeDifference(startTime, endTime) {
         const startMinutes = timeToMinutes(startTime);
         const endMinutes = timeToMinutes(endTime);
+        
+        // handle case where end time might be next day
+        if (endMinutes < startMinutes) {
+            return (endMinutes + 24 * 60) - startMinutes;
+        }
+        
         return endMinutes - startMinutes;
     }
     
@@ -975,10 +1183,10 @@
         return config.colors[blockName] || config.colors.default;
     }
     
-    // truncate text to fit in event blocks
+    // return full text (do not truncate)
     function truncateText(text, maxLength) {
-        if (text.length <= maxLength) return text;
-        return text.substring(0, maxLength - 3) + '...';
+        // return original text or empty string when falsy
+        return text || '';
     }
     
     // handle window resize
@@ -1001,10 +1209,18 @@
 
     <script src="/leff/scripts.js"></script>
     <script>
-        // set base path for javascript to use
+        // this is for approvals on github pages 
         window.BASE_PATH = '/leff/';
 
-        // hello screen
+        // heeeeeyyyyyyyy, my name is pyotr and
+        // im very likely looking for new projects
+        // shall we talk about your website?
+        // do you want to know more about this
+        // static bilingual vanilla js html css website?
+
+        // best way to reach out to me is t.me/itspyotr
+        // otherwise my website is here wshbd.com
+
         console.log("\n\n\n\t" +
             "oooo             .o88o.  .o88o. \n\t" +
             "`888             888 `\"  888 `\" \n\t" +
