@@ -565,19 +565,25 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/en/programme/specials/harun-farocki-in-focus/</loc>
-    <lastmod>2025-08-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://leidenessayfilmfestival.com/en/programme/specials/hong-kong-shorts/</loc>
     <lastmod>2025-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/en/programme/specials/kamal-aljafari-in-focus/</loc>
+    <loc>https://leidenessayfilmfestival.com/en/programme/specials/in-focus-the-films-of-harun-farocki/</loc>
+    <lastmod>2025-08-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://leidenessayfilmfestival.com/en/programme/specials/in-focus-the-films-of-kamal-aljafari/</loc>
+    <lastmod>2025-08-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://leidenessayfilmfestival.com/en/programme/specials/in-focus-the-films-of-nguyen-trinh-thi/</loc>
     <lastmod>2025-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -590,12 +596,6 @@
   </url>
   <url>
     <loc>https://leidenessayfilmfestival.com/en/programme/specials/new-perspectives/</loc>
-    <lastmod>2025-08-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://leidenessayfilmfestival.com/en/programme/specials/nguyen-trinh-thi-in-focus/</loc>
     <lastmod>2025-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1189,19 +1189,25 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/nl/programme/specials/harun-farocki-in-focus/</loc>
-    <lastmod>2025-08-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://leidenessayfilmfestival.com/nl/programme/specials/hong-kong-shorts/</loc>
     <lastmod>2025-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/nl/programme/specials/kamal-aljafari-in-focus/</loc>
+    <loc>https://leidenessayfilmfestival.com/nl/programme/specials/in-focus-harun-farocki/</loc>
+    <lastmod>2025-08-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://leidenessayfilmfestival.com/nl/programme/specials/in-focus-kamal-aljafari/</loc>
+    <lastmod>2025-08-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://leidenessayfilmfestival.com/nl/programme/specials/in-focus-nguyen-trinh-thi/</loc>
     <lastmod>2025-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1214,12 +1220,6 @@
   </url>
   <url>
     <loc>https://leidenessayfilmfestival.com/nl/programme/specials/new-perspectives/</loc>
-    <lastmod>2025-08-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://leidenessayfilmfestival.com/nl/programme/specials/nguyen-trinh-thi-in-focus/</loc>
     <lastmod>2025-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

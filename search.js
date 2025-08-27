@@ -124,6 +124,9 @@ const SearchUtility = {
                         arrow.classList.toggle('descending', !newAscending);
                     }
                     
+                    // animate letter swap
+                    this.animateLetterSwap(button);
+                    
                     this.activeSort = button.dataset.sort;
                     this.activeSortAscending = newAscending;
                 } else {
@@ -468,6 +471,38 @@ const SearchUtility = {
         
         // prevent body scroll when menu is open
         document.body.style.overflow = 'hidden';
+    },
+
+    /**
+     * animate letter swap for sort buttons
+     * @param {Element} button - sort button element
+     */
+    animateLetterSwap(button) {
+        const letterA = button.querySelector('.letter-a');
+        const letterZ = button.querySelector('.letter-z');
+        
+        if (!letterA || !letterZ) return;
+        
+        // get current text content
+        const aText = letterA.textContent;
+        const zText = letterZ.textContent;
+        
+        // add animation class
+        const sortLetters = button.querySelector('.sort-letters');
+        if (sortLetters) {
+            sortLetters.classList.add('swapping');
+            
+            // swap the letters after a short delay for visual effect
+            setTimeout(() => {
+                letterA.textContent = zText;
+                letterZ.textContent = aText;
+                
+                // remove animation class after animation completes
+                setTimeout(() => {
+                    sortLetters.classList.remove('swapping');
+                }, 300);
+            }, 150);
+        }
     },
 
     /**

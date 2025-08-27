@@ -1,5 +1,39 @@
 # Public version of the website
 
+## final-final feedback
+
+### specials
+
+- [x] specials (in focus) titles fix
+- [x] special individual page no shadow for text
+- [x] specials dropdown: first openning event, last "all specials"
+
+### block schedule
+
+- [ ] paragraph of text for block schedule page, for vision impaired people who use screen readers to navigate websites
+- [ ] should there be available at block schedule page pdf that can be saved?
+- [ ] normalize filter button for mobile 
+- [x] blocks in timeline of block schedule to have more space,padding
+- [x] consistent spacing for schedule
+- [x] schedule page: no mono font
+- [x] schedule dates format: weekday date month, (no commas)
+
+### side menu
+
+- [x] side menu pushes down when nav comes down
+- [x] main menu: film_s_ a—z // double check in nl
+- [x] footer: film_s_ a—z // double check in nl
+
+### film cards
+
+- [x] large film card images: make them 4:3 ratio (laura & kapotte)
+
+### sorting
+
+- [x] a–z becomes z–a when sorting
+- [x] arrows are a fraction smaller
+
+
 ## Leff website feedbacks v2
 
 Programme:

@@ -576,50 +576,6 @@ const ValidationInputCheck = {
     }
 };
 
-/**
- * scroll to top module
- * handles show/hide and click functionality for scroll to top button
- */
-const ScrollToTop = {
-    button: null,
-    scrollThreshold: 300, // show button after scrolling 300px
-
-    /**
-     * initialize scroll to top functionality
-     */
-    init() {
-        this.button = document.getElementById('scroll-to-top-btn');
-        
-        if (!this.button) return; // exit if button not found
-        
-        // add scroll event listener
-        window.addEventListener('scroll', this.handleScroll.bind(this));
-        
-        // add click event listener
-        this.button.addEventListener('click', this.scrollToTop.bind(this));
-    },
-
-    /**
-     * handle scroll event to show/hide button
-     */
-    handleScroll() {
-        if (window.pageYOffset > this.scrollThreshold) {
-            this.button.style.display = 'block';
-        } else {
-            this.button.style.display = 'none';
-        }
-    },
-
-    /**
-     * smooth scroll to top of page
-     */
-    scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-};
 
 /**
  * navigation scroll behavior module
@@ -627,6 +583,7 @@ const ScrollToTop = {
  */
 const NavigationScroll = {
     nav: null,
+    searchUtilities: null,
     lastScrollTop: 0,
     scrollThreshold: 5, // minimum scroll distance to trigger hide/show
     isHidden: false,
@@ -637,6 +594,9 @@ const NavigationScroll = {
     init() {
         this.nav = document.querySelector('nav');
         if (!this.nav) return;
+
+        // find search utilities if present on page
+        this.searchUtilities = document.querySelector('.search-utilities');
 
         // add initial visible class
         this.nav.classList.add('nav-visible');
@@ -709,6 +669,15 @@ const NavigationScroll = {
     hideNavigation() {
         this.nav.classList.remove('nav-visible');
         this.nav.classList.add('nav-hidden');
+        
+        // move search utilities up when navigation hides to use the freed space
+        if (this.searchUtilities) {
+            // get navigation height to move search utilities up by the same amount
+            const navHeight = this.nav.offsetHeight;
+            this.searchUtilities.style.transform = `translateY(-${navHeight}px)`;
+            this.searchUtilities.style.transition = 'transform 0.3s var(--transition)';
+        }
+        
         this.isHidden = true;
     },
 
@@ -718,6 +687,13 @@ const NavigationScroll = {
     showNavigation() {
         this.nav.classList.remove('nav-hidden');
         this.nav.classList.add('nav-visible');
+        
+        // move search utilities back to original position when navigation shows
+        if (this.searchUtilities) {
+            this.searchUtilities.style.transform = 'translateY(0)';
+            this.searchUtilities.style.transition = 'transform 0.3s var(--transition)';
+        }
+        
         this.isHidden = false;
     }
 };
@@ -732,6 +708,5 @@ document.addEventListener('DOMContentLoaded', function() {
     MenuSystem.init();
     MenuDropdown.init();
     ValidationInputCheck.init();
-    ScrollToTop.init();
     NavigationScroll.init();
 });
