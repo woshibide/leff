@@ -3,6 +3,132 @@
   "total_films": 52,
   "films_with_images": 52,
   "mapping": {
+    "Vincent Meessen::Juste un mouvement": {
+      "director": "Vincent Meessen",
+      "title": "Juste un mouvement",
+      "images": [
+        "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp",
+        "/assets/images/film-images/vincent-meessen/02-SELECTED-4.webp",
+        "/assets/images/film-images/vincent-meessen/03-SELECTED-2.webp",
+        "/assets/images/film-images/vincent-meessen/04-SELECTED-7.webp",
+        "/assets/images/film-images/vincent-meessen/05-SELECTED-11.webp",
+        "/assets/images/film-images/vincent-meessen/06-SELECTED-And_7_DoudouFall.webp",
+        "/assets/images/film-images/vincent-meessen/07-SELECTED-14.webp",
+        "/assets/images/film-images/vincent-meessen/08-SELECTED-15.webp",
+        "/assets/images/film-images/vincent-meessen/09-SELECTED-1.webp",
+        "/assets/images/film-images/vincent-meessen/10-SELECTED-12.webp"
+      ],
+      "image_count": 10,
+      "primary_image": "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp"
+    },
+    "Sergei Loznitsa::The Natural History of Destruction": {
+      "director": "Sergei Loznitsa",
+      "title": "The Natural History of Destruction",
+      "images": [
+        "/assets/images/film-images/sergey-loznitsa/01-SELECTED-NHD_3.205.1.webp",
+        "/assets/images/film-images/sergey-loznitsa/02-SELECTED-0112788.webp",
+        "/assets/images/film-images/sergey-loznitsa/03-SELECTED-0085797.webp",
+        "/assets/images/film-images/sergey-loznitsa/04-SELECTED-0028555.webp",
+        "/assets/images/film-images/sergey-loznitsa/05-SELECTED-0110449.webp"
+      ],
+      "image_count": 5,
+      "primary_image": "/assets/images/film-images/sergey-loznitsa/01-SELECTED-NHD_3.205.1.webp"
+    },
+    "Susanna Tomassini::The Southern Thruway": {
+      "director": "Susanna Tomassini",
+      "title": "The Southern Thruway",
+      "images": [
+        "/assets/images/film-images/susanna-tomassini/01-SELECTED-TST_still1.webp",
+        "/assets/images/film-images/susanna-tomassini/02-SELECTED-TST_still2.webp",
+        "/assets/images/film-images/susanna-tomassini/03-SELECTED-TST_still3.webp",
+        "/assets/images/film-images/susanna-tomassini/04-SELECTED-TST_still4.webp",
+        "/assets/images/film-images/susanna-tomassini/05-SELECTED-TST_still5.webp",
+        "/assets/images/film-images/susanna-tomassini/06-SELECTED-TST_still6.webp",
+        "/assets/images/film-images/susanna-tomassini/07-SELECTED-TST_still7.webp"
+      ],
+      "image_count": 7,
+      "primary_image": "/assets/images/film-images/susanna-tomassini/01-SELECTED-TST_still1.webp"
+    },
+    "Nika Pećarina::To the Earthern Red": {
+      "director": "Nika Pećarina",
+      "title": "To the Earthern Red",
+      "images": [
+        "/assets/images/film-images/nika-pecarina/01-SELECTED-printcrvenojbojizarenezemlje (1).webp",
+        "/assets/images/film-images/nika-pecarina/02-SELECTED-printcrvenojbojizarenezemlje (2).webp",
+        "/assets/images/film-images/nika-pecarina/03-SELECTED-printcrvenojbojizarenezemlje.webp"
+      ],
+      "image_count": 3,
+      "primary_image": "/assets/images/film-images/nika-pecarina/01-SELECTED-printcrvenojbojizarenezemlje (1).webp"
+    },
+    "Manthia Diawara::A Letter from Yene": {
+      "director": "Manthia Diawara",
+      "title": "A Letter from Yene",
+      "images": [
+        "/assets/images/film-images/manthia-diawara/01-SELECTED-A Letter from Yene 1.webp",
+        "/assets/images/film-images/manthia-diawara/02-SELECTED-A Letter from Yene 2.webp",
+        "/assets/images/film-images/manthia-diawara/03-SELECTED-A Letter from Yene 4.webp",
+        "/assets/images/film-images/manthia-diawara/04-SELECTED-A Letter from Yene 5.webp",
+        "/assets/images/film-images/manthia-diawara/05-SELECTED-A Letter from Yene 3.webp"
+      ],
+      "image_count": 5,
+      "primary_image": "/assets/images/film-images/manthia-diawara/01-SELECTED-A Letter from Yene 1.webp"
+    },
+    "Lea Hartlaub::sr": {
+      "director": "Lea Hartlaub",
+      "title": "sr",
+      "images": [
+        "/assets/images/film-images/lea-hartlaub/01-SELECTED-sr_film-still_02_LeaHartlaub-BlinkerFilmproduktion_watching-giraffe-Nairobi.webp",
+        "/assets/images/film-images/lea-hartlaub/02-SELECTED-sr_film-still_01_LeaHartlaub-BlinkerFilmproduktion_port-of-Eilat.webp",
+        "/assets/images/film-images/lea-hartlaub/02-SELECTED-sr_film-still_03_LeaHartlaub-BlinkerFilmproduktion_Liuli-Factory.webp",
+        "/assets/images/film-images/lea-hartlaub/03-SELECTED-sr_film-still_06_LeaHartlaub-BlinkerFilmproduktion_hieroglyphe-sr.webp",
+        "/assets/images/film-images/lea-hartlaub/04-SELECTED-sr_film-still_04_LeaHartlaub-BlinkerFilmproduktion_rockart-slide-copyright-by-D.Coulson.webp",
+        "/assets/images/film-images/lea-hartlaub/04-SELECTED-sr_film-still_07_LeaHartlaub-BlinkerFilmproduktion_newsreel-1945.webp"
+      ],
+      "image_count": 6,
+      "primary_image": "/assets/images/film-images/lea-hartlaub/01-SELECTED-sr_film-still_02_LeaHartlaub-BlinkerFilmproduktion_watching-giraffe-Nairobi.webp"
+    },
+    "Lucia Nimcová and David Petráš::Where no bell rings": {
+      "director": "Lucia Nimcová and David Petráš",
+      "title": "Where no bell rings",
+      "images": [
+        "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
+        "/assets/images/film-images/lucia-nimcova-and-david-petras/02-SELECTED-Petras Nimcova_Where no bell rings_Image.webp"
+      ],
+      "image_count": 2,
+      "primary_image": "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp"
+    },
+    "Vincent Meessen::Juste Un Mouvement": {
+      "director": "Vincent Meessen",
+      "title": "Juste Un Mouvement",
+      "images": [
+        "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp",
+        "/assets/images/film-images/vincent-meessen/02-SELECTED-4.webp",
+        "/assets/images/film-images/vincent-meessen/03-SELECTED-2.webp",
+        "/assets/images/film-images/vincent-meessen/04-SELECTED-7.webp",
+        "/assets/images/film-images/vincent-meessen/05-SELECTED-11.webp",
+        "/assets/images/film-images/vincent-meessen/06-SELECTED-And_7_DoudouFall.webp",
+        "/assets/images/film-images/vincent-meessen/07-SELECTED-14.webp",
+        "/assets/images/film-images/vincent-meessen/08-SELECTED-15.webp",
+        "/assets/images/film-images/vincent-meessen/09-SELECTED-1.webp",
+        "/assets/images/film-images/vincent-meessen/10-SELECTED-12.webp"
+      ],
+      "image_count": 10,
+      "primary_image": "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp"
+    },
+    "Kamal Aljafari::A Fidai Film": {
+      "director": "Kamal Aljafari",
+      "title": "A Fidai Film",
+      "images": [
+        "/assets/images/film-images/kamal-aljafari/01-SELECTED-Fidai Still 3.webp",
+        "/assets/images/film-images/kamal-aljafari/02-SELECTED-Fidai Still 1.webp",
+        "/assets/images/film-images/kamal-aljafari/02-SELECTED-Fidai Still 4.webp",
+        "/assets/images/film-images/kamal-aljafari/03-SELECTED-Fidai Still 9.webp",
+        "/assets/images/film-images/kamal-aljafari/04-SELECTED-Fidai Still 5.webp",
+        "/assets/images/film-images/kamal-aljafari/05-SELECTED-Fidai Still 2.webp"
+      ],
+      "image_count": 6,
+      "primary_image": "/assets/images/film-images/kamal-aljafari/01-SELECTED-Fidai Still 3.webp"
+    },
     "Bo Wang::An Asian Ghost Story": {
       "director": "Bo Wang",
       "title": "An Asian Ghost Story",
@@ -17,6 +143,75 @@
       "image_count": 6,
       "primary_image": "/assets/images/film-images/bo-wang/01-SELECTED-AAGS_03.webp"
     },
+    "Toshiya Tsunoda::Kapotte Muziek – Track 1": {
+      "director": "Toshiya Tsunoda",
+      "title": "Kapotte Muziek – Track 1",
+      "images": [
+        "/assets/images/film-images/toyisha-tsunoda/Kapotte Muziek by Toshiya Tsunoda.webp"
+      ],
+      "image_count": 1,
+      "primary_image": "/assets/images/film-images/toyisha-tsunoda/Kapotte Muziek by Toshiya Tsunoda.webp"
+    },
+    "Lis Rhodes::Disquiet": {
+      "director": "Lis Rhodes",
+      "title": "Disquiet",
+      "images": [
+        "/assets/images/film-images/lis-rhodes/01-SELECTED-STILL-for-DISQUIET.webp"
+      ],
+      "image_count": 1,
+      "primary_image": "/assets/images/film-images/lis-rhodes/01-SELECTED-STILL-for-DISQUIET.webp"
+    },
+    "Harun Farocki::Was ist Los?": {
+      "director": "Harun Farocki",
+      "title": "Was ist Los?",
+      "images": [
+        "/assets/images/film-images/harun-farocki/Was ist los What's up/01-SELECTED-Was ist los 01.webp",
+        "/assets/images/film-images/harun-farocki/Was ist los What's up/02-SELECTED-Was ist los 02.webp",
+        "/assets/images/film-images/harun-farocki/Was ist los What's up/03-SELECTED-Was ist los 03.webp",
+        "/assets/images/film-images/harun-farocki/Was ist los What's up/04-SELECTED-Was ist los 04.webp",
+        "/assets/images/film-images/harun-farocki/Was ist los What's up/05-SELECTED-Was ist los 05.webp"
+      ],
+      "image_count": 5,
+      "primary_image": "/assets/images/film-images/harun-farocki/Was ist los What's up/01-SELECTED-Was ist los 01.webp"
+    },
+    "Bertrand Bonello::Coma": {
+      "director": "Bertrand Bonello",
+      "title": "Coma",
+      "images": [
+        "/assets/images/film-images/bertrand-bonello/01-SELECTED-COMA - STILL 3.webp",
+        "/assets/images/film-images/bertrand-bonello/02-SELECTED-COMA - STILL 2.webp",
+        "/assets/images/film-images/bertrand-bonello/03-SELECTED-COMA - STILL 4.webp",
+        "/assets/images/film-images/bertrand-bonello/04-SELECTED-COMA-STILL-WEB.webp"
+      ],
+      "image_count": 4,
+      "primary_image": "/assets/images/film-images/bertrand-bonello/01-SELECTED-COMA - STILL 3.webp"
+    },
+    "Bahar Noorizadeh::Free to Choose": {
+      "director": "Bahar Noorizadeh",
+      "title": "Free to Choose",
+      "images": [
+        "/assets/images/film-images/bahar-noorizadeh/01-SELECTED-FTC - still 9.webp",
+        "/assets/images/film-images/bahar-noorizadeh/02-SELECTED-FTC - still 1.webp",
+        "/assets/images/film-images/bahar-noorizadeh/03-SELECTED-FTC - still 10.webp",
+        "/assets/images/film-images/bahar-noorizadeh/04-SELECTED-FTC - still 11.webp",
+        "/assets/images/film-images/bahar-noorizadeh/05-SELECTED-FTC - still 2.webp",
+        "/assets/images/film-images/bahar-noorizadeh/06-SELECTED-FTC - still 3.webp",
+        "/assets/images/film-images/bahar-noorizadeh/07-SELECTED-FTC - still 4.webp"
+      ],
+      "image_count": 7,
+      "primary_image": "/assets/images/film-images/bahar-noorizadeh/01-SELECTED-FTC - still 9.webp"
+    },
+    "Nguyễn Trinh Thi::Letters from Panduranga": {
+      "director": "Nguyễn Trinh Thi",
+      "title": "Letters from Panduranga",
+      "images": [
+        "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/01-SELECTED-Letters future 1.webp",
+        "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/02-SELECTED-Letters future 2.webp",
+        "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/03-SELECTED-5-Thi Nguyen-Letters from Panduranga-2015.webp"
+      ],
+      "image_count": 3,
+      "primary_image": "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/01-SELECTED-Letters future 1.webp"
+    },
     "Johannes Binotto::Capricorn Sunset": {
       "director": "Johannes Binotto",
       "title": "Capricorn Sunset",
@@ -28,26 +223,187 @@
       "image_count": 3,
       "primary_image": "/assets/images/film-images/johannes-binotto/01-SELECTED-capricorn sunset_Still_2.webp"
     },
-    "Nika Pećarina::To the Earthern Red": {
-      "director": "Nika Pećarina",
-      "title": "To the Earthern Red",
+    "Johan van der Keuken::Face Value": {
+      "director": "Johan van der Keuken",
+      "title": "Face Value",
       "images": [
-        "/assets/images/film-images/nika-pecarina/01-SELECTED-printcrvenojbojizarenezemlje (1).webp",
-        "/assets/images/film-images/nika-pecarina/02-SELECTED-printcrvenojbojizarenezemlje (2).webp",
-        "/assets/images/film-images/nika-pecarina/03-SELECTED-printcrvenojbojizarenezemlje.webp"
+        "/assets/images/film-images/johan-van-der-keuken/01-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.29.webp",
+        "/assets/images/film-images/johan-van-der-keuken/02-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
+        "/assets/images/film-images/johan-van-der-keuken/03-SELECTED-Scherm­afbeelding 2025-08-06 om 20.56.09.webp"
       ],
       "image_count": 3,
-      "primary_image": "/assets/images/film-images/nika-pecarina/01-SELECTED-printcrvenojbojizarenezemlje (1).webp"
+      "primary_image": "/assets/images/film-images/johan-van-der-keuken/01-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.29.webp"
     },
-    "Ho Rui An::Twenty-Four Cinematic Points of View of a Factory Gate in China": {
-      "director": "Ho Rui An",
-      "title": "Twenty-Four Cinematic Points of View of a Factory Gate in China",
+    "Chantal Akerman::De L’autre coté": {
+      "director": "Chantal Akerman",
+      "title": "De L’autre coté",
       "images": [
-        "/assets/images/film-images/ho-rui-an/01-SELECTED-Factory Gate_1.webp",
-        "/assets/images/film-images/ho-rui-an/02-SELECTED-Factory Gate_2.webp"
+        "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp",
+        "/assets/images/film-images/chantal-akerman/02-SELECTED-FTOS 14.webp",
+        "/assets/images/film-images/chantal-akerman/03-SELECTED-FTOS 9.webp",
+        "/assets/images/film-images/chantal-akerman/04-SELECTED-FTOS 16.webp",
+        "/assets/images/film-images/chantal-akerman/05-SELECTED-FTOS 17.webp",
+        "/assets/images/film-images/chantal-akerman/06-SELECTED-FTOS 25 surveillance 1.webp",
+        "/assets/images/film-images/chantal-akerman/07-SELECTED-FTOS 1.webp",
+        "/assets/images/film-images/chantal-akerman/08-SELECTED-FTOS 21.webp"
+      ],
+      "image_count": 8,
+      "primary_image": "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp"
+    },
+    "Franzis Kabisch::Getty Abortions": {
+      "director": "Franzis Kabisch",
+      "title": "Getty Abortions",
+      "images": [
+        "/assets/images/film-images/franzis-kabisch/00-SELECTED-gettyabortions_postcard_english-1 C_Franzis-Kabisch_VG-Bild-Kunst.webp",
+        "/assets/images/film-images/franzis-kabisch/01-SELECTED-gettyabortions_still_1_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
+        "/assets/images/film-images/franzis-kabisch/02-SELECTED-gettyabortions_still_2_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
+        "/assets/images/film-images/franzis-kabisch/03-SELECTED-gettyabortions_still_6_en  @Franzis-Kabisch_VG-Bild-Kunst.webp"
+      ],
+      "image_count": 4,
+      "primary_image": "/assets/images/film-images/franzis-kabisch/00-SELECTED-gettyabortions_postcard_english-1 C_Franzis-Kabisch_VG-Bild-Kunst.webp"
+    },
+    "Miko Revereza::Nowhere Near": {
+      "director": "Miko Revereza",
+      "title": "Nowhere Near",
+      "images": [
+        "/assets/images/film-images/miko-revereza/01-SELECTED-NowhereNear_Still03.webp",
+        "/assets/images/film-images/miko-revereza/02-SELECTED-NowhereNear_Still02.webp",
+        "/assets/images/film-images/miko-revereza/03-SELECTED-NowhereNear_Still04.webp",
+        "/assets/images/film-images/miko-revereza/04-SELECTED-NowhereNear_Still05.webp"
+      ],
+      "image_count": 4,
+      "primary_image": "/assets/images/film-images/miko-revereza/01-SELECTED-NowhereNear_Still03.webp"
+    },
+    "Laura Rascaroli::Special Lecture by Laura Rascaroli": {
+      "director": "Laura Rascaroli",
+      "title": "Special Lecture by Laura Rascaroli",
+      "images": [
+        "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp"
+      ],
+      "image_count": 1,
+      "primary_image": "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp"
+    },
+    "Aura Satz::Preemptive Listening": {
+      "director": "Aura Satz",
+      "title": "Preemptive Listening",
+      "images": [
+        "/assets/images/film-images/aura-satz/01-SELECTED-Preemptive Listening still1 (1).webp",
+        "/assets/images/film-images/aura-satz/02-SELECTED-Preemptive Listening still2.webp",
+        "/assets/images/film-images/aura-satz/03-SELECTED-Preemptive Listening still5.webp",
+        "/assets/images/film-images/aura-satz/04-SELECTED-Preemptive Listening still4.webp",
+        "/assets/images/film-images/aura-satz/05-SELECTED-Preemptive Listening still3.webp"
+      ],
+      "image_count": 5,
+      "primary_image": "/assets/images/film-images/aura-satz/01-SELECTED-Preemptive Listening still1 (1).webp"
+    },
+    "Auguste and Louis Lumière::La sortie de l'usine Lumière à Lyon": {
+      "director": "Auguste and Louis Lumière",
+      "title": "La sortie de l'usine Lumière à Lyon",
+      "images": [
+        "/assets/images/film-images/auguste-louis-lumiere/01-SELECTED-Lumiere Brothers - Still of 1st ever film - shot on the 19th March 1895.webp",
+        "/assets/images/film-images/auguste-louis-lumiere/02-SELECTED-Lumiere_Workers .webp"
       ],
       "image_count": 2,
-      "primary_image": "/assets/images/film-images/ho-rui-an/01-SELECTED-Factory Gate_1.webp"
+      "primary_image": "/assets/images/film-images/auguste-louis-lumiere/01-SELECTED-Lumiere Brothers - Still of 1st ever film - shot on the 19th March 1895.webp"
+    },
+    "Rupert Cox en Angus Carlyle::The Cave Mouth and The Giant Voice": {
+      "director": "Rupert Cox en Angus Carlyle",
+      "title": "The Cave Mouth and The Giant Voice",
+      "images": [
+        "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp",
+        "/assets/images/film-images/rupert-cox-and-angus-carlyle/02-SELECTED-The Cave Mouth Rupert & Cox.webp"
+      ],
+      "image_count": 2,
+      "primary_image": "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp"
+    },
+    "Maria Iorio en Raphaël Cuomo::Undead Voices (2019–2021)": {
+      "director": "Maria Iorio en Raphaël Cuomo",
+      "title": "Undead Voices (2019–2021)",
+      "images": [
+        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
+        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/02-SELECTED-Iorio-Cuomo_Undead Voices_Feminist demo.webp",
+        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/03-SELECTED-Iorio-Cuomo_Undead Voices_Reel.webp",
+        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/04-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_LP_RE_01_12.1.1_RE-DEF.webp",
+        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/05-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_RE_9.1.1_RE-DEF.webp"
+      ],
+      "image_count": 5,
+      "primary_image": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp"
+    },
+    "Veronica Munteanu, Karin Nakajima, Sara Ouljour::Haunted, the Hollow": {
+      "director": "Veronica Munteanu, Karin Nakajima, Sara Ouljour",
+      "title": "Haunted, the Hollow",
+      "images": [
+        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/01-SELECTED-Screenshot 2025-08-08 at 11.11.46.webp",
+        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/02-SELECTED-Screenshot 2025-08-08 at 11.11.21.webp",
+        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/03-SELECTED-DSC_0025.webp",
+        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/04-SELECTED-Screenshot 2025-08-08 at 11.12.01.webp",
+        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/05-SELECTED-Screenshot 2025-08-08 at 11.07.55.webp",
+        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/06-SELECTED-DSC_0020.webp",
+        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/07-SELECTED-Screenshot 2025-08-08 at 11.07.00.webp",
+        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/08-SELECTED-Screenshot 2025-08-08 at 11.10.21.webp"
+      ],
+      "image_count": 8,
+      "primary_image": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/01-SELECTED-Screenshot 2025-08-08 at 11.11.46.webp"
+    },
+    "Graeme Arnfield::Home Invasion": {
+      "director": "Graeme Arnfield",
+      "title": "Home Invasion",
+      "images": [
+        "/assets/images/film-images/graeme-arnfield/01-SELECTED-Home Invasion - Film still 5.webp",
+        "/assets/images/film-images/graeme-arnfield/02-SELECTED-Home Invasion - Film still 1.webp",
+        "/assets/images/film-images/graeme-arnfield/03-SELECTED-Home Invasion - Film still 6.webp",
+        "/assets/images/film-images/graeme-arnfield/04-SELECTED-Home Invasion - Film still 2.webp",
+        "/assets/images/film-images/graeme-arnfield/05-SELECTED-Home Invasion - Film still 3.webp"
+      ],
+      "image_count": 5,
+      "primary_image": "/assets/images/film-images/graeme-arnfield/01-SELECTED-Home Invasion - Film still 5.webp"
+    },
+    "Miranda Pennell::Man Number 4": {
+      "director": "Miranda Pennell",
+      "title": "Man Number 4",
+      "images": [
+        "/assets/images/film-images/miranda-pennell/01-SELECTED-Feet_Mannumber4_MPennell_1.webp",
+        "/assets/images/film-images/miranda-pennell/02-SELECTED-Solders-2500-2.webp"
+      ],
+      "image_count": 2,
+      "primary_image": "/assets/images/film-images/miranda-pennell/01-SELECTED-Feet_Mannumber4_MPennell_1.webp"
+    },
+    "Rupert Cox and Angus Carlyle::The Cave Mouth and The Giant Voice": {
+      "director": "Rupert Cox and Angus Carlyle",
+      "title": "The Cave Mouth and The Giant Voice",
+      "images": [
+        "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp",
+        "/assets/images/film-images/rupert-cox-and-angus-carlyle/02-SELECTED-The Cave Mouth Rupert & Cox.webp"
+      ],
+      "image_count": 2,
+      "primary_image": "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp"
+    },
+    "Chantal Akerman::De l’autre coté": {
+      "director": "Chantal Akerman",
+      "title": "De l’autre coté",
+      "images": [
+        "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp",
+        "/assets/images/film-images/chantal-akerman/02-SELECTED-FTOS 14.webp",
+        "/assets/images/film-images/chantal-akerman/03-SELECTED-FTOS 9.webp",
+        "/assets/images/film-images/chantal-akerman/04-SELECTED-FTOS 16.webp",
+        "/assets/images/film-images/chantal-akerman/05-SELECTED-FTOS 17.webp",
+        "/assets/images/film-images/chantal-akerman/06-SELECTED-FTOS 25 surveillance 1.webp",
+        "/assets/images/film-images/chantal-akerman/07-SELECTED-FTOS 1.webp",
+        "/assets/images/film-images/chantal-akerman/08-SELECTED-FTOS 21.webp"
+      ],
+      "image_count": 8,
+      "primary_image": "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp"
+    },
+    "Alexander Horwath::Henry Fonda for President": {
+      "director": "Alexander Horwath",
+      "title": "Henry Fonda for President",
+      "images": [
+        "/assets/images/film-images/alexander-horwath/01-SELECTED-timessquare-presse3.webp",
+        "/assets/images/film-images/alexander-horwath/02-SELECTED-village-fonda-presse1.webp",
+        "/assets/images/film-images/alexander-horwath/03-SELECTED-parade-presse2.webp"
+      ],
+      "image_count": 3,
+      "primary_image": "/assets/images/film-images/alexander-horwath/01-SELECTED-timessquare-presse3.webp"
     },
     "Judith Westerveld::Message from Mukalap": {
       "director": "Judith Westerveld",
@@ -78,68 +434,40 @@
       "image_count": 10,
       "primary_image": "/assets/images/film-images/harun-farocki/Arbeiter verlassen die Fabrik Workers Leaving the Factory/01-SELECTED-WorkersFactory_HFarocki_03.webp"
     },
-    "Nguyễn Trinh Thi::Letters from Panduranga": {
-      "director": "Nguyễn Trinh Thi",
-      "title": "Letters from Panduranga",
+    "Maria Iorio and Raphaël Cuomo::Undead Voices (2019–2021)": {
+      "director": "Maria Iorio and Raphaël Cuomo",
+      "title": "Undead Voices (2019–2021)",
       "images": [
-        "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/01-SELECTED-Letters future 1.webp",
-        "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/02-SELECTED-Letters future 2.webp",
-        "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/03-SELECTED-5-Thi Nguyen-Letters from Panduranga-2015.webp"
+        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
+        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/02-SELECTED-Iorio-Cuomo_Undead Voices_Feminist demo.webp",
+        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/03-SELECTED-Iorio-Cuomo_Undead Voices_Reel.webp",
+        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/04-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_LP_RE_01_12.1.1_RE-DEF.webp",
+        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/05-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_RE_9.1.1_RE-DEF.webp"
       ],
-      "image_count": 3,
-      "primary_image": "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/01-SELECTED-Letters future 1.webp"
+      "image_count": 5,
+      "primary_image": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp"
     },
-    "Bahar Noorizadeh::Free to Choose": {
-      "director": "Bahar Noorizadeh",
-      "title": "Free to Choose",
+    "Judith Westerveld::The Sending of the Crows": {
+      "director": "Judith Westerveld",
+      "title": "The Sending of the Crows",
       "images": [
-        "/assets/images/film-images/bahar-noorizadeh/01-SELECTED-FTC - still 9.webp",
-        "/assets/images/film-images/bahar-noorizadeh/02-SELECTED-FTC - still 1.webp",
-        "/assets/images/film-images/bahar-noorizadeh/03-SELECTED-FTC - still 10.webp",
-        "/assets/images/film-images/bahar-noorizadeh/04-SELECTED-FTC - still 11.webp",
-        "/assets/images/film-images/bahar-noorizadeh/05-SELECTED-FTC - still 2.webp",
-        "/assets/images/film-images/bahar-noorizadeh/06-SELECTED-FTC - still 3.webp",
-        "/assets/images/film-images/bahar-noorizadeh/07-SELECTED-FTC - still 4.webp"
+        "/assets/images/film-images/judith-westerveld/The sending of the crows/01-SELECTED-Landscape_The Sending of the Crows_4 (full resolution).webp",
+        "/assets/images/film-images/judith-westerveld/The sending of the crows/02-SELECTED-Landscape_The Sending of the Crows_3 (full resolution).webp",
+        "/assets/images/film-images/judith-westerveld/The sending of the crows/03-SELECTED-Landscape_The Sending of the Crows_1 (full resolution).webp",
+        "/assets/images/film-images/judith-westerveld/The sending of the crows/04-SELECTED-Landscape_The Sending of the Crows_2 (full resolution).webp"
       ],
-      "image_count": 7,
-      "primary_image": "/assets/images/film-images/bahar-noorizadeh/01-SELECTED-FTC - still 9.webp"
+      "image_count": 4,
+      "primary_image": "/assets/images/film-images/judith-westerveld/The sending of the crows/01-SELECTED-Landscape_The Sending of the Crows_4 (full resolution).webp"
     },
-    "Chantal Akerman::De L’autre coté": {
-      "director": "Chantal Akerman",
-      "title": "De L’autre coté",
+    "Lucia Nimcová en David Petráš::Where no bell rings": {
+      "director": "Lucia Nimcová en David Petráš",
+      "title": "Where no bell rings",
       "images": [
-        "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp",
-        "/assets/images/film-images/chantal-akerman/02-SELECTED-FTOS 14.webp",
-        "/assets/images/film-images/chantal-akerman/03-SELECTED-FTOS 9.webp",
-        "/assets/images/film-images/chantal-akerman/04-SELECTED-FTOS 16.webp",
-        "/assets/images/film-images/chantal-akerman/05-SELECTED-FTOS 17.webp",
-        "/assets/images/film-images/chantal-akerman/06-SELECTED-FTOS 25 surveillance 1.webp",
-        "/assets/images/film-images/chantal-akerman/07-SELECTED-FTOS 1.webp",
-        "/assets/images/film-images/chantal-akerman/08-SELECTED-FTOS 21.webp"
-      ],
-      "image_count": 8,
-      "primary_image": "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp"
-    },
-    "Alexander Horwath::Henry Fonda for President": {
-      "director": "Alexander Horwath",
-      "title": "Henry Fonda for President",
-      "images": [
-        "/assets/images/film-images/alexander-horwath/01-SELECTED-timessquare-presse3.webp",
-        "/assets/images/film-images/alexander-horwath/02-SELECTED-village-fonda-presse1.webp",
-        "/assets/images/film-images/alexander-horwath/03-SELECTED-parade-presse2.webp"
-      ],
-      "image_count": 3,
-      "primary_image": "/assets/images/film-images/alexander-horwath/01-SELECTED-timessquare-presse3.webp"
-    },
-    "Rupert Cox en Angus Carlyle::The Cave Mouth and The Giant Voice": {
-      "director": "Rupert Cox en Angus Carlyle",
-      "title": "The Cave Mouth and The Giant Voice",
-      "images": [
-        "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp",
-        "/assets/images/film-images/rupert-cox-and-angus-carlyle/02-SELECTED-The Cave Mouth Rupert & Cox.webp"
+        "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
+        "/assets/images/film-images/lucia-nimcova-and-david-petras/02-SELECTED-Petras Nimcova_Where no bell rings_Image.webp"
       ],
       "image_count": 2,
-      "primary_image": "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp"
+      "primary_image": "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp"
     },
     "Nguyễn Trinh Thi::How to Improve the World": {
       "director": "Nguyễn Trinh Thi",
@@ -151,54 +479,15 @@
       "image_count": 2,
       "primary_image": "/assets/images/film-images/nguyen-trinh-thi/How to Imporove the World/01-SELECTED-How to Improve the World Still 2.webp"
     },
-    "Chantal Akerman::De l’autre coté": {
-      "director": "Chantal Akerman",
-      "title": "De l’autre coté",
+    "Maryam Jafri::Mariam Jafri vs Maryam Jafri": {
+      "director": "Maryam Jafri",
+      "title": "Mariam Jafri vs Maryam Jafri",
       "images": [
-        "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp",
-        "/assets/images/film-images/chantal-akerman/02-SELECTED-FTOS 14.webp",
-        "/assets/images/film-images/chantal-akerman/03-SELECTED-FTOS 9.webp",
-        "/assets/images/film-images/chantal-akerman/04-SELECTED-FTOS 16.webp",
-        "/assets/images/film-images/chantal-akerman/05-SELECTED-FTOS 17.webp",
-        "/assets/images/film-images/chantal-akerman/06-SELECTED-FTOS 25 surveillance 1.webp",
-        "/assets/images/film-images/chantal-akerman/07-SELECTED-FTOS 1.webp",
-        "/assets/images/film-images/chantal-akerman/08-SELECTED-FTOS 21.webp"
+        "/assets/images/film-images/maryam-jafri/01-SELECTED-2_MariamJafriVsMaryamJafri.webp",
+        "/assets/images/film-images/maryam-jafri/02-SELECTED-1_MariamJafriVsMaryamJafri.webp"
       ],
-      "image_count": 8,
-      "primary_image": "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp"
-    },
-    "Miko Revereza::Nowhere Near": {
-      "director": "Miko Revereza",
-      "title": "Nowhere Near",
-      "images": [
-        "/assets/images/film-images/miko-revereza/01-SELECTED-NowhereNear_Still03.webp",
-        "/assets/images/film-images/miko-revereza/02-SELECTED-NowhereNear_Still02.webp",
-        "/assets/images/film-images/miko-revereza/03-SELECTED-NowhereNear_Still04.webp",
-        "/assets/images/film-images/miko-revereza/04-SELECTED-NowhereNear_Still05.webp"
-      ],
-      "image_count": 4,
-      "primary_image": "/assets/images/film-images/miko-revereza/01-SELECTED-NowhereNear_Still03.webp"
-    },
-    "Laura Rascaroli::Lezing door Laura Rascaroli": {
-      "director": "Laura Rascaroli",
-      "title": "Lezing door Laura Rascaroli",
-      "images": [
-        "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp"
-      ],
-      "image_count": 1,
-      "primary_image": "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp"
-    },
-    "Mattijs van de Port::Where can I get Lost?": {
-      "director": "Mattijs van de Port",
-      "title": "Where can I get Lost?",
-      "images": [
-        "/assets/images/film-images/mattijs-van-de-port/01-SELECTED-still.webp",
-        "/assets/images/film-images/mattijs-van-de-port/02-SELECTED-still 2.webp",
-        "/assets/images/film-images/mattijs-van-de-port/03-SELECTED-still 4.webp",
-        "/assets/images/film-images/mattijs-van-de-port/04-SELECTED-still 7.webp"
-      ],
-      "image_count": 4,
-      "primary_image": "/assets/images/film-images/mattijs-van-de-port/01-SELECTED-still.webp"
+      "image_count": 2,
+      "primary_image": "/assets/images/film-images/maryam-jafri/01-SELECTED-2_MariamJafriVsMaryamJafri.webp"
     },
     "Hicham Gardaf::In Praise of Slowness": {
       "director": "Hicham Gardaf",
@@ -213,37 +502,35 @@
       "image_count": 5,
       "primary_image": "/assets/images/film-images/hicham-gardaf/01-SELECTED-In_Praise_of_Slowness_Film_Still_04.webp"
     },
-    "Lucia Nimcová and David Petráš::Where no bell rings": {
-      "director": "Lucia Nimcová and David Petráš",
-      "title": "Where no bell rings",
+    "Andrew Norman Wilson::Workers Leaving the Googleplex": {
+      "director": "Andrew Norman Wilson",
+      "title": "Workers Leaving the Googleplex",
       "images": [
-        "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
-        "/assets/images/film-images/lucia-nimcova-and-david-petras/02-SELECTED-Petras Nimcova_Where no bell rings_Image.webp"
+        "/assets/images/film-images/andrew-norman-wilson/01-SELECTED-Googleplex 5.webp",
+        "/assets/images/film-images/andrew-norman-wilson/01-SELECTED-Googleplex 4.webp",
+        "/assets/images/film-images/andrew-norman-wilson/03-SELECTED-GoogleStillComposite.webp"
+      ],
+      "image_count": 3,
+      "primary_image": "/assets/images/film-images/andrew-norman-wilson/01-SELECTED-Googleplex 5.webp"
+    },
+    "Ho Rui An::Twenty-Four Cinematic Points of View of a Factory Gate in China": {
+      "director": "Ho Rui An",
+      "title": "Twenty-Four Cinematic Points of View of a Factory Gate in China",
+      "images": [
+        "/assets/images/film-images/ho-rui-an/01-SELECTED-Factory Gate_1.webp",
+        "/assets/images/film-images/ho-rui-an/02-SELECTED-Factory Gate_2.webp"
       ],
       "image_count": 2,
-      "primary_image": "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp"
+      "primary_image": "/assets/images/film-images/ho-rui-an/01-SELECTED-Factory Gate_1.webp"
     },
-    "Manthia Diawara::A Letter from Yene": {
-      "director": "Manthia Diawara",
-      "title": "A Letter from Yene",
+    "Laura Rascaroli::Lezing door Laura Rascaroli": {
+      "director": "Laura Rascaroli",
+      "title": "Lezing door Laura Rascaroli",
       "images": [
-        "/assets/images/film-images/manthia-diawara/01-SELECTED-A Letter from Yene 1.webp",
-        "/assets/images/film-images/manthia-diawara/02-SELECTED-A Letter from Yene 2.webp",
-        "/assets/images/film-images/manthia-diawara/03-SELECTED-A Letter from Yene 4.webp",
-        "/assets/images/film-images/manthia-diawara/04-SELECTED-A Letter from Yene 5.webp",
-        "/assets/images/film-images/manthia-diawara/05-SELECTED-A Letter from Yene 3.webp"
-      ],
-      "image_count": 5,
-      "primary_image": "/assets/images/film-images/manthia-diawara/01-SELECTED-A Letter from Yene 1.webp"
-    },
-    "Toshiya Tsunoda::Kapotte Muziek – Track 1": {
-      "director": "Toshiya Tsunoda",
-      "title": "Kapotte Muziek – Track 1",
-      "images": [
-        "/assets/images/film-images/toyisha-tsunoda/Kapotte Muziek by Toshiya Tsunoda.webp"
+        "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp"
       ],
       "image_count": 1,
-      "primary_image": "/assets/images/film-images/toyisha-tsunoda/Kapotte Muziek by Toshiya Tsunoda.webp"
+      "primary_image": "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp"
     },
     "Harun Farocki::Gegen-Musik": {
       "director": "Harun Farocki",
@@ -266,20 +553,42 @@
       "image_count": 13,
       "primary_image": "/assets/images/film-images/harun-farocki/Gegen Musik Counter-Music/00-SELECTED-GegenMusik600dpi_15.webp"
     },
-    "Bertrand Bonello::Coma": {
-      "director": "Bertrand Bonello",
-      "title": "Coma",
+    "Sasha Litvintseva and Beny Wagner::My Want of You Partakes of Me": {
+      "director": "Sasha Litvintseva and Beny Wagner",
+      "title": "My Want of You Partakes of Me",
       "images": [
-        "/assets/images/film-images/bertrand-bonello/01-SELECTED-COMA - STILL 3.webp",
-        "/assets/images/film-images/bertrand-bonello/02-SELECTED-COMA - STILL 2.webp",
-        "/assets/images/film-images/bertrand-bonello/03-SELECTED-COMA - STILL 4.webp",
-        "/assets/images/film-images/bertrand-bonello/04-SELECTED-COMA-STILL-WEB.webp"
+        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
+        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/02-SELECTED-My Want of You Partakes of Me - Still 2.webp",
+        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/03-SELECTED-My Want of You Partakes of Me - Still 4.webp",
+        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/04-SELECTED-My Want of You Partakes of Me - Still 3.webp"
       ],
       "image_count": 4,
-      "primary_image": "/assets/images/film-images/bertrand-bonello/01-SELECTED-COMA - STILL 3.webp"
+      "primary_image": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp"
     },
-    "Auguste and Louis Lumière::La sortie de l'usine Lumière à Lyon": {
-      "director": "Auguste and Louis Lumière",
+    "Sasha Litvintseva en Beny Wagner::My Want of You Partakes of Me": {
+      "director": "Sasha Litvintseva en Beny Wagner",
+      "title": "My Want of You Partakes of Me",
+      "images": [
+        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
+        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/02-SELECTED-My Want of You Partakes of Me - Still 2.webp",
+        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/03-SELECTED-My Want of You Partakes of Me - Still 4.webp",
+        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/04-SELECTED-My Want of You Partakes of Me - Still 3.webp"
+      ],
+      "image_count": 4,
+      "primary_image": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp"
+    },
+    "Elysa Wendi and Shing Lee::Room 404": {
+      "director": "Elysa Wendi and Shing Lee",
+      "title": "Room 404",
+      "images": [
+        "/assets/images/film-images/elysa-wendi-and-wai-shing-lee/01-SELECTED-room 404 ext film still 2.webp",
+        "/assets/images/film-images/elysa-wendi-and-wai-shing-lee/02-SELECTED-room 404 ext film still 3.webp"
+      ],
+      "image_count": 2,
+      "primary_image": "/assets/images/film-images/elysa-wendi-and-wai-shing-lee/01-SELECTED-room 404 ext film still 2.webp"
+    },
+    "Auguste en Louis Lumière::La sortie de l'usine Lumière à Lyon": {
+      "director": "Auguste en Louis Lumière",
       "title": "La sortie de l'usine Lumière à Lyon",
       "images": [
         "/assets/images/film-images/auguste-louis-lumiere/01-SELECTED-Lumiere Brothers - Still of 1st ever film - shot on the 19th March 1895.webp",
@@ -287,30 +596,6 @@
       ],
       "image_count": 2,
       "primary_image": "/assets/images/film-images/auguste-louis-lumiere/01-SELECTED-Lumiere Brothers - Still of 1st ever film - shot on the 19th March 1895.webp"
-    },
-    "Susanna Tomassini::The Southern Thruway": {
-      "director": "Susanna Tomassini",
-      "title": "The Southern Thruway",
-      "images": [
-        "/assets/images/film-images/susanna-tomassini/01-SELECTED-TST_still1.webp",
-        "/assets/images/film-images/susanna-tomassini/02-SELECTED-TST_still2.webp",
-        "/assets/images/film-images/susanna-tomassini/03-SELECTED-TST_still3.webp",
-        "/assets/images/film-images/susanna-tomassini/04-SELECTED-TST_still4.webp",
-        "/assets/images/film-images/susanna-tomassini/05-SELECTED-TST_still5.webp",
-        "/assets/images/film-images/susanna-tomassini/06-SELECTED-TST_still6.webp",
-        "/assets/images/film-images/susanna-tomassini/07-SELECTED-TST_still7.webp"
-      ],
-      "image_count": 7,
-      "primary_image": "/assets/images/film-images/susanna-tomassini/01-SELECTED-TST_still1.webp"
-    },
-    "Lis Rhodes::Disquiet": {
-      "director": "Lis Rhodes",
-      "title": "Disquiet",
-      "images": [
-        "/assets/images/film-images/lis-rhodes/01-SELECTED-STILL-for-DISQUIET.webp"
-      ],
-      "image_count": 1,
-      "primary_image": "/assets/images/film-images/lis-rhodes/01-SELECTED-STILL-for-DISQUIET.webp"
     },
     "Chris Marker::Sans Soleil": {
       "director": "Chris Marker",
@@ -326,18 +611,32 @@
       "image_count": 6,
       "primary_image": "/assets/images/film-images/chris-marker/01-SELECTED-Sunless 1.webp"
     },
-    "Maria Iorio and Raphaël Cuomo::Undead Voices (2019–2021)": {
-      "director": "Maria Iorio and Raphaël Cuomo",
-      "title": "Undead Voices (2019–2021)",
+    "Lena Windisch::Searching for the Perfect Gentleman": {
+      "director": "Lena Windisch",
+      "title": "Searching for the Perfect Gentleman",
       "images": [
-        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
-        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/02-SELECTED-Iorio-Cuomo_Undead Voices_Feminist demo.webp",
-        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/03-SELECTED-Iorio-Cuomo_Undead Voices_Reel.webp",
-        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/04-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_LP_RE_01_12.1.1_RE-DEF.webp",
-        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/05-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_RE_9.1.1_RE-DEF.webp"
+        "/assets/images/film-images/lena-windisch/01-SELECTED-Perfect_Gentleman_STILL_10.webp",
+        "/assets/images/film-images/lena-windisch/02-SELECTED-Perfect_Gentleman_STILL_09.webp",
+        "/assets/images/film-images/lena-windisch/03-SELECTED-Perfect_Gentleman_STILL_05.webp",
+        "/assets/images/film-images/lena-windisch/04-SELECTED-Perfect_Gentleman_STILL_01.webp",
+        "/assets/images/film-images/lena-windisch/05-SELECTED-Perfect_Gentleman_STILL_02.webp",
+        "/assets/images/film-images/lena-windisch/06-SELECTED-Perfect_Gentleman_STILL_08.webp",
+        "/assets/images/film-images/lena-windisch/07-SELECTED-Perfect_Gentleman_STILL_04.webp"
       ],
-      "image_count": 5,
-      "primary_image": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp"
+      "image_count": 7,
+      "primary_image": "/assets/images/film-images/lena-windisch/01-SELECTED-Perfect_Gentleman_STILL_10.webp"
+    },
+    "Mattijs van de Port::Where can I get Lost?": {
+      "director": "Mattijs van de Port",
+      "title": "Where can I get Lost?",
+      "images": [
+        "/assets/images/film-images/mattijs-van-de-port/01-SELECTED-still.webp",
+        "/assets/images/film-images/mattijs-van-de-port/02-SELECTED-still 2.webp",
+        "/assets/images/film-images/mattijs-van-de-port/03-SELECTED-still 4.webp",
+        "/assets/images/film-images/mattijs-van-de-port/04-SELECTED-still 7.webp"
+      ],
+      "image_count": 4,
+      "primary_image": "/assets/images/film-images/mattijs-van-de-port/01-SELECTED-still.webp"
     },
     "Michela Meliddo::Perpetual Radiance": {
       "director": "Michela Meliddo",
@@ -355,305 +654,6 @@
       ],
       "image_count": 9,
       "primary_image": "/assets/images/film-images/michela-meliddo/01-SELECTED-Still03.webp"
-    },
-    "Miranda Pennell::Man Number 4": {
-      "director": "Miranda Pennell",
-      "title": "Man Number 4",
-      "images": [
-        "/assets/images/film-images/miranda-pennell/01-SELECTED-Feet_Mannumber4_MPennell_1.webp",
-        "/assets/images/film-images/miranda-pennell/02-SELECTED-Solders-2500-2.webp"
-      ],
-      "image_count": 2,
-      "primary_image": "/assets/images/film-images/miranda-pennell/01-SELECTED-Feet_Mannumber4_MPennell_1.webp"
-    },
-    "Auguste en Louis Lumière::La sortie de l'usine Lumière à Lyon": {
-      "director": "Auguste en Louis Lumière",
-      "title": "La sortie de l'usine Lumière à Lyon",
-      "images": [
-        "/assets/images/film-images/auguste-louis-lumiere/01-SELECTED-Lumiere Brothers - Still of 1st ever film - shot on the 19th March 1895.webp",
-        "/assets/images/film-images/auguste-louis-lumiere/02-SELECTED-Lumiere_Workers .webp"
-      ],
-      "image_count": 2,
-      "primary_image": "/assets/images/film-images/auguste-louis-lumiere/01-SELECTED-Lumiere Brothers - Still of 1st ever film - shot on the 19th March 1895.webp"
-    },
-    "Andrew Norman Wilson::Workers Leaving the Googleplex": {
-      "director": "Andrew Norman Wilson",
-      "title": "Workers Leaving the Googleplex",
-      "images": [
-        "/assets/images/film-images/andrew-norman-wilson/01-SELECTED-Googleplex 5.webp",
-        "/assets/images/film-images/andrew-norman-wilson/01-SELECTED-Googleplex 4.webp",
-        "/assets/images/film-images/andrew-norman-wilson/03-SELECTED-GoogleStillComposite.webp"
-      ],
-      "image_count": 3,
-      "primary_image": "/assets/images/film-images/andrew-norman-wilson/01-SELECTED-Googleplex 5.webp"
-    },
-    "Rupert Cox and Angus Carlyle::The Cave Mouth and The Giant Voice": {
-      "director": "Rupert Cox and Angus Carlyle",
-      "title": "The Cave Mouth and The Giant Voice",
-      "images": [
-        "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp",
-        "/assets/images/film-images/rupert-cox-and-angus-carlyle/02-SELECTED-The Cave Mouth Rupert & Cox.webp"
-      ],
-      "image_count": 2,
-      "primary_image": "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp"
-    },
-    "Maria Iorio en Raphaël Cuomo::Undead Voices (2019–2021)": {
-      "director": "Maria Iorio en Raphaël Cuomo",
-      "title": "Undead Voices (2019–2021)",
-      "images": [
-        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
-        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/02-SELECTED-Iorio-Cuomo_Undead Voices_Feminist demo.webp",
-        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/03-SELECTED-Iorio-Cuomo_Undead Voices_Reel.webp",
-        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/04-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_LP_RE_01_12.1.1_RE-DEF.webp",
-        "/assets/images/film-images/maria-iorio-and-raphael-cuomo/05-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_RE_9.1.1_RE-DEF.webp"
-      ],
-      "image_count": 5,
-      "primary_image": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp"
-    },
-    "Sergei Loznitsa::The Natural History of Destruction": {
-      "director": "Sergei Loznitsa",
-      "title": "The Natural History of Destruction",
-      "images": [
-        "/assets/images/film-images/sergey-loznitsa/01-SELECTED-NHD_3.205.1.webp",
-        "/assets/images/film-images/sergey-loznitsa/02-SELECTED-0112788.webp",
-        "/assets/images/film-images/sergey-loznitsa/03-SELECTED-0085797.webp",
-        "/assets/images/film-images/sergey-loznitsa/04-SELECTED-0028555.webp",
-        "/assets/images/film-images/sergey-loznitsa/05-SELECTED-0110449.webp"
-      ],
-      "image_count": 5,
-      "primary_image": "/assets/images/film-images/sergey-loznitsa/01-SELECTED-NHD_3.205.1.webp"
-    },
-    "Lucia Nimcová en David Petráš::Where no bell rings": {
-      "director": "Lucia Nimcová en David Petráš",
-      "title": "Where no bell rings",
-      "images": [
-        "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
-        "/assets/images/film-images/lucia-nimcova-and-david-petras/02-SELECTED-Petras Nimcova_Where no bell rings_Image.webp"
-      ],
-      "image_count": 2,
-      "primary_image": "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp"
-    },
-    "Franzis Kabisch::Getty Abortions": {
-      "director": "Franzis Kabisch",
-      "title": "Getty Abortions",
-      "images": [
-        "/assets/images/film-images/franzis-kabisch/00-SELECTED-gettyabortions_postcard_english-1 C_Franzis-Kabisch_VG-Bild-Kunst.webp",
-        "/assets/images/film-images/franzis-kabisch/01-SELECTED-gettyabortions_still_1_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
-        "/assets/images/film-images/franzis-kabisch/02-SELECTED-gettyabortions_still_2_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
-        "/assets/images/film-images/franzis-kabisch/03-SELECTED-gettyabortions_still_6_en  @Franzis-Kabisch_VG-Bild-Kunst.webp"
-      ],
-      "image_count": 4,
-      "primary_image": "/assets/images/film-images/franzis-kabisch/00-SELECTED-gettyabortions_postcard_english-1 C_Franzis-Kabisch_VG-Bild-Kunst.webp"
-    },
-    "Harun Farocki::Was ist Los?": {
-      "director": "Harun Farocki",
-      "title": "Was ist Los?",
-      "images": [
-        "/assets/images/film-images/harun-farocki/Was ist los What's up/01-SELECTED-Was ist los 01.webp",
-        "/assets/images/film-images/harun-farocki/Was ist los What's up/02-SELECTED-Was ist los 02.webp",
-        "/assets/images/film-images/harun-farocki/Was ist los What's up/03-SELECTED-Was ist los 03.webp",
-        "/assets/images/film-images/harun-farocki/Was ist los What's up/04-SELECTED-Was ist los 04.webp",
-        "/assets/images/film-images/harun-farocki/Was ist los What's up/05-SELECTED-Was ist los 05.webp"
-      ],
-      "image_count": 5,
-      "primary_image": "/assets/images/film-images/harun-farocki/Was ist los What's up/01-SELECTED-Was ist los 01.webp"
-    },
-    "Veronica Munteanu, Karin Nakajima, Sara Ouljour::Haunted, the Hollow": {
-      "director": "Veronica Munteanu, Karin Nakajima, Sara Ouljour",
-      "title": "Haunted, the Hollow",
-      "images": [
-        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/01-SELECTED-Screenshot 2025-08-08 at 11.11.46.webp",
-        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/02-SELECTED-Screenshot 2025-08-08 at 11.11.21.webp",
-        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/03-SELECTED-DSC_0025.webp",
-        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/04-SELECTED-Screenshot 2025-08-08 at 11.12.01.webp",
-        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/05-SELECTED-Screenshot 2025-08-08 at 11.07.55.webp",
-        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/06-SELECTED-DSC_0020.webp",
-        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/07-SELECTED-Screenshot 2025-08-08 at 11.07.00.webp",
-        "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/08-SELECTED-Screenshot 2025-08-08 at 11.10.21.webp"
-      ],
-      "image_count": 8,
-      "primary_image": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/01-SELECTED-Screenshot 2025-08-08 at 11.11.46.webp"
-    },
-    "Sasha Litvintseva en Beny Wagner::My Want of You Partakes of Me": {
-      "director": "Sasha Litvintseva en Beny Wagner",
-      "title": "My Want of You Partakes of Me",
-      "images": [
-        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
-        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/02-SELECTED-My Want of You Partakes of Me - Still 2.webp",
-        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/03-SELECTED-My Want of You Partakes of Me - Still 4.webp",
-        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/04-SELECTED-My Want of You Partakes of Me - Still 3.webp"
-      ],
-      "image_count": 4,
-      "primary_image": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp"
-    },
-    "Vincent Meessen::Juste un mouvement": {
-      "director": "Vincent Meessen",
-      "title": "Juste un mouvement",
-      "images": [
-        "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp",
-        "/assets/images/film-images/vincent-meessen/02-SELECTED-4.webp",
-        "/assets/images/film-images/vincent-meessen/03-SELECTED-2.webp",
-        "/assets/images/film-images/vincent-meessen/04-SELECTED-7.webp",
-        "/assets/images/film-images/vincent-meessen/05-SELECTED-11.webp",
-        "/assets/images/film-images/vincent-meessen/06-SELECTED-And_7_DoudouFall.webp",
-        "/assets/images/film-images/vincent-meessen/07-SELECTED-14.webp",
-        "/assets/images/film-images/vincent-meessen/08-SELECTED-15.webp",
-        "/assets/images/film-images/vincent-meessen/09-SELECTED-1.webp",
-        "/assets/images/film-images/vincent-meessen/10-SELECTED-12.webp"
-      ],
-      "image_count": 10,
-      "primary_image": "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp"
-    },
-    "Maryam Jafri::Mariam Jafri vs Maryam Jafri": {
-      "director": "Maryam Jafri",
-      "title": "Mariam Jafri vs Maryam Jafri",
-      "images": [
-        "/assets/images/film-images/maryam-jafri/01-SELECTED-2_MariamJafriVsMaryamJafri.webp",
-        "/assets/images/film-images/maryam-jafri/02-SELECTED-1_MariamJafriVsMaryamJafri.webp"
-      ],
-      "image_count": 2,
-      "primary_image": "/assets/images/film-images/maryam-jafri/01-SELECTED-2_MariamJafriVsMaryamJafri.webp"
-    },
-    "Judith Westerveld::The Sending of the Crows": {
-      "director": "Judith Westerveld",
-      "title": "The Sending of the Crows",
-      "images": [
-        "/assets/images/film-images/judith-westerveld/The sending of the crows/01-SELECTED-Landscape_The Sending of the Crows_4 (full resolution).webp",
-        "/assets/images/film-images/judith-westerveld/The sending of the crows/02-SELECTED-Landscape_The Sending of the Crows_3 (full resolution).webp",
-        "/assets/images/film-images/judith-westerveld/The sending of the crows/03-SELECTED-Landscape_The Sending of the Crows_1 (full resolution).webp",
-        "/assets/images/film-images/judith-westerveld/The sending of the crows/04-SELECTED-Landscape_The Sending of the Crows_2 (full resolution).webp"
-      ],
-      "image_count": 4,
-      "primary_image": "/assets/images/film-images/judith-westerveld/The sending of the crows/01-SELECTED-Landscape_The Sending of the Crows_4 (full resolution).webp"
-    },
-    "Sasha Litvintseva and Beny Wagner::My Want of You Partakes of Me": {
-      "director": "Sasha Litvintseva and Beny Wagner",
-      "title": "My Want of You Partakes of Me",
-      "images": [
-        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
-        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/02-SELECTED-My Want of You Partakes of Me - Still 2.webp",
-        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/03-SELECTED-My Want of You Partakes of Me - Still 4.webp",
-        "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/04-SELECTED-My Want of You Partakes of Me - Still 3.webp"
-      ],
-      "image_count": 4,
-      "primary_image": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp"
-    },
-    "Aura Satz::Preemptive Listening": {
-      "director": "Aura Satz",
-      "title": "Preemptive Listening",
-      "images": [
-        "/assets/images/film-images/aura-satz/01-SELECTED-Preemptive Listening still1 (1).webp",
-        "/assets/images/film-images/aura-satz/02-SELECTED-Preemptive Listening still2.webp",
-        "/assets/images/film-images/aura-satz/03-SELECTED-Preemptive Listening still5.webp",
-        "/assets/images/film-images/aura-satz/04-SELECTED-Preemptive Listening still4.webp",
-        "/assets/images/film-images/aura-satz/05-SELECTED-Preemptive Listening still3.webp"
-      ],
-      "image_count": 5,
-      "primary_image": "/assets/images/film-images/aura-satz/01-SELECTED-Preemptive Listening still1 (1).webp"
-    },
-    "Johan van der Keuken::Face Value": {
-      "director": "Johan van der Keuken",
-      "title": "Face Value",
-      "images": [
-        "/assets/images/film-images/johan-van-der-keuken/01-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.29.webp",
-        "/assets/images/film-images/johan-van-der-keuken/02-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
-        "/assets/images/film-images/johan-van-der-keuken/03-SELECTED-Scherm­afbeelding 2025-08-06 om 20.56.09.webp"
-      ],
-      "image_count": 3,
-      "primary_image": "/assets/images/film-images/johan-van-der-keuken/01-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.29.webp"
-    },
-    "Lea Hartlaub::sr": {
-      "director": "Lea Hartlaub",
-      "title": "sr",
-      "images": [
-        "/assets/images/film-images/lea-hartlaub/01-SELECTED-sr_film-still_02_LeaHartlaub-BlinkerFilmproduktion_watching-giraffe-Nairobi.webp",
-        "/assets/images/film-images/lea-hartlaub/02-SELECTED-sr_film-still_01_LeaHartlaub-BlinkerFilmproduktion_port-of-Eilat.webp",
-        "/assets/images/film-images/lea-hartlaub/02-SELECTED-sr_film-still_03_LeaHartlaub-BlinkerFilmproduktion_Liuli-Factory.webp",
-        "/assets/images/film-images/lea-hartlaub/03-SELECTED-sr_film-still_06_LeaHartlaub-BlinkerFilmproduktion_hieroglyphe-sr.webp",
-        "/assets/images/film-images/lea-hartlaub/04-SELECTED-sr_film-still_04_LeaHartlaub-BlinkerFilmproduktion_rockart-slide-copyright-by-D.Coulson.webp",
-        "/assets/images/film-images/lea-hartlaub/04-SELECTED-sr_film-still_07_LeaHartlaub-BlinkerFilmproduktion_newsreel-1945.webp"
-      ],
-      "image_count": 6,
-      "primary_image": "/assets/images/film-images/lea-hartlaub/01-SELECTED-sr_film-still_02_LeaHartlaub-BlinkerFilmproduktion_watching-giraffe-Nairobi.webp"
-    },
-    "Laura Rascaroli::Special Lecture by Laura Rascaroli": {
-      "director": "Laura Rascaroli",
-      "title": "Special Lecture by Laura Rascaroli",
-      "images": [
-        "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp"
-      ],
-      "image_count": 1,
-      "primary_image": "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp"
-    },
-    "Kamal Aljafari::A Fidai Film": {
-      "director": "Kamal Aljafari",
-      "title": "A Fidai Film",
-      "images": [
-        "/assets/images/film-images/kamal-aljafari/01-SELECTED-Fidai Still 3.webp",
-        "/assets/images/film-images/kamal-aljafari/02-SELECTED-Fidai Still 1.webp",
-        "/assets/images/film-images/kamal-aljafari/02-SELECTED-Fidai Still 4.webp",
-        "/assets/images/film-images/kamal-aljafari/03-SELECTED-Fidai Still 9.webp",
-        "/assets/images/film-images/kamal-aljafari/04-SELECTED-Fidai Still 5.webp",
-        "/assets/images/film-images/kamal-aljafari/05-SELECTED-Fidai Still 2.webp"
-      ],
-      "image_count": 6,
-      "primary_image": "/assets/images/film-images/kamal-aljafari/01-SELECTED-Fidai Still 3.webp"
-    },
-    "Elysa Wendi and Shing Lee::Room 404": {
-      "director": "Elysa Wendi and Shing Lee",
-      "title": "Room 404",
-      "images": [
-        "/assets/images/film-images/elysa-wendi-and-wai-shing-lee/01-SELECTED-room 404 ext film still 2.webp",
-        "/assets/images/film-images/elysa-wendi-and-wai-shing-lee/02-SELECTED-room 404 ext film still 3.webp"
-      ],
-      "image_count": 2,
-      "primary_image": "/assets/images/film-images/elysa-wendi-and-wai-shing-lee/01-SELECTED-room 404 ext film still 2.webp"
-    },
-    "Vincent Meessen::Juste Un Mouvement": {
-      "director": "Vincent Meessen",
-      "title": "Juste Un Mouvement",
-      "images": [
-        "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp",
-        "/assets/images/film-images/vincent-meessen/02-SELECTED-4.webp",
-        "/assets/images/film-images/vincent-meessen/03-SELECTED-2.webp",
-        "/assets/images/film-images/vincent-meessen/04-SELECTED-7.webp",
-        "/assets/images/film-images/vincent-meessen/05-SELECTED-11.webp",
-        "/assets/images/film-images/vincent-meessen/06-SELECTED-And_7_DoudouFall.webp",
-        "/assets/images/film-images/vincent-meessen/07-SELECTED-14.webp",
-        "/assets/images/film-images/vincent-meessen/08-SELECTED-15.webp",
-        "/assets/images/film-images/vincent-meessen/09-SELECTED-1.webp",
-        "/assets/images/film-images/vincent-meessen/10-SELECTED-12.webp"
-      ],
-      "image_count": 10,
-      "primary_image": "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp"
-    },
-    "Lena Windisch::Searching for the Perfect Gentleman": {
-      "director": "Lena Windisch",
-      "title": "Searching for the Perfect Gentleman",
-      "images": [
-        "/assets/images/film-images/lena-windisch/01-SELECTED-Perfect_Gentleman_STILL_10.webp",
-        "/assets/images/film-images/lena-windisch/02-SELECTED-Perfect_Gentleman_STILL_09.webp",
-        "/assets/images/film-images/lena-windisch/03-SELECTED-Perfect_Gentleman_STILL_05.webp",
-        "/assets/images/film-images/lena-windisch/04-SELECTED-Perfect_Gentleman_STILL_01.webp",
-        "/assets/images/film-images/lena-windisch/05-SELECTED-Perfect_Gentleman_STILL_02.webp",
-        "/assets/images/film-images/lena-windisch/06-SELECTED-Perfect_Gentleman_STILL_08.webp",
-        "/assets/images/film-images/lena-windisch/07-SELECTED-Perfect_Gentleman_STILL_04.webp"
-      ],
-      "image_count": 7,
-      "primary_image": "/assets/images/film-images/lena-windisch/01-SELECTED-Perfect_Gentleman_STILL_10.webp"
-    },
-    "Graeme Arnfield::Home Invasion": {
-      "director": "Graeme Arnfield",
-      "title": "Home Invasion",
-      "images": [
-        "/assets/images/film-images/graeme-arnfield/01-SELECTED-Home Invasion - Film still 5.webp",
-        "/assets/images/film-images/graeme-arnfield/02-SELECTED-Home Invasion - Film still 1.webp",
-        "/assets/images/film-images/graeme-arnfield/03-SELECTED-Home Invasion - Film still 6.webp",
-        "/assets/images/film-images/graeme-arnfield/04-SELECTED-Home Invasion - Film still 2.webp",
-        "/assets/images/film-images/graeme-arnfield/05-SELECTED-Home Invasion - Film still 3.webp"
-      ],
-      "image_count": 5,
-      "primary_image": "/assets/images/film-images/graeme-arnfield/01-SELECTED-Home Invasion - Film still 5.webp"
     }
   },
   "audit": [],
@@ -2026,99 +2026,459 @@
   },
   "programme_inventory": {
     "en": [
-      "Bo Wang::An Asian Ghost Story",
-      "Johannes Binotto::Capricorn Sunset",
+      "Vincent Meessen::Juste un mouvement",
+      "Sergei Loznitsa::The Natural History of Destruction",
+      "Susanna Tomassini::The Southern Thruway",
       "Maria Iorio and Raphaël Cuomo::Undead Voices (2019–2021)",
       "Nika Pećarina::To the Earthern Red",
-      "Ho Rui An::Twenty-Four Cinematic Points of View of a Factory Gate in China",
-      "Michela Meliddo::Perpetual Radiance",
-      "Judith Westerveld::Message from Mukalap",
-      "Miranda Pennell::Man Number 4",
-      "Andrew Norman Wilson::Workers Leaving the Googleplex",
-      "Harun Farocki::Arbeiter verlassen die Fabrik",
-      "Rupert Cox and Angus Carlyle::The Cave Mouth and The Giant Voice",
-      "Nguyễn Trinh Thi::Letters from Panduranga",
-      "Bahar Noorizadeh::Free to Choose",
-      "Alexander Horwath::Henry Fonda for President",
-      "Sergei Loznitsa::The Natural History of Destruction",
-      "Nguyễn Trinh Thi::How to Improve the World",
-      "Chantal Akerman::De l’autre coté",
-      "Miko Revereza::Nowhere Near",
-      "Franzis Kabisch::Getty Abortions",
-      "Harun Farocki::Was ist Los?",
-      "Veronica Munteanu, Karin Nakajima, Sara Ouljour::Haunted, the Hollow",
-      "Mattijs van de Port::Where can I get Lost?",
-      "Hicham Gardaf::In Praise of Slowness",
-      "Lucia Nimcová and David Petráš::Where no bell rings",
-      "Vincent Meessen::Juste un mouvement",
       "Manthia Diawara::A Letter from Yene",
-      "Toshiya Tsunoda::Kapotte Muziek – Track 1",
-      "Maryam Jafri::Mariam Jafri vs Maryam Jafri",
-      "Harun Farocki::Gegen-Musik",
-      "Judith Westerveld::The Sending of the Crows",
-      "Bertrand Bonello::Coma",
-      "Auguste and Louis Lumière::La sortie de l'usine Lumière à Lyon",
-      "Sasha Litvintseva and Beny Wagner::My Want of You Partakes of Me",
-      "Susanna Tomassini::The Southern Thruway",
-      "Aura Satz::Preemptive Listening",
-      "Johan van der Keuken::Face Value",
       "Lea Hartlaub::sr",
-      "Laura Rascaroli::Special Lecture by Laura Rascaroli",
+      "Lucia Nimcová and David Petráš::Where no bell rings",
+      "Michela Meliddo::Perpetual Radiance",
       "Kamal Aljafari::A Fidai Film",
+      "Bo Wang::An Asian Ghost Story",
+      "Toshiya Tsunoda::Kapotte Muziek – Track 1",
+      "Judith Westerveld::The Sending of the Crows",
+      "Nguyễn Trinh Thi::How to Improve the World",
+      "Maryam Jafri::Mariam Jafri vs Maryam Jafri",
+      "Hicham Gardaf::In Praise of Slowness",
+      "Andrew Norman Wilson::Workers Leaving the Googleplex",
       "Lis Rhodes::Disquiet",
+      "Harun Farocki::Was ist Los?",
+      "Ho Rui An::Twenty-Four Cinematic Points of View of a Factory Gate in China",
+      "Bertrand Bonello::Coma",
+      "Harun Farocki::Gegen-Musik",
+      "Sasha Litvintseva and Beny Wagner::My Want of You Partakes of Me",
+      "Bahar Noorizadeh::Free to Choose",
+      "Nguyễn Trinh Thi::Letters from Panduranga",
+      "Johannes Binotto::Capricorn Sunset",
+      "Johan van der Keuken::Face Value",
+      "Franzis Kabisch::Getty Abortions",
+      "Miko Revereza::Nowhere Near",
+      "Laura Rascaroli::Special Lecture by Laura Rascaroli",
+      "Aura Satz::Preemptive Listening",
       "Elysa Wendi and Shing Lee::Room 404",
-      "Lena Windisch::Searching for the Perfect Gentleman",
       "Chris Marker::Sans Soleil",
-      "Graeme Arnfield::Home Invasion"
+      "Auguste and Louis Lumière::La sortie de l'usine Lumière à Lyon",
+      "Lena Windisch::Searching for the Perfect Gentleman",
+      "Veronica Munteanu, Karin Nakajima, Sara Ouljour::Haunted, the Hollow",
+      "Graeme Arnfield::Home Invasion",
+      "Mattijs van de Port::Where can I get Lost?",
+      "Miranda Pennell::Man Number 4",
+      "Rupert Cox and Angus Carlyle::The Cave Mouth and The Giant Voice",
+      "Chantal Akerman::De l’autre coté",
+      "Alexander Horwath::Henry Fonda for President",
+      "Judith Westerveld::Message from Mukalap",
+      "Harun Farocki::Arbeiter verlassen die Fabrik"
     ],
     "nl": [
-      "Bo Wang::An Asian Ghost Story",
-      "Johannes Binotto::Capricorn Sunset",
-      "Nika Pećarina::To the Earthern Red",
-      "Ho Rui An::Twenty-Four Cinematic Points of View of a Factory Gate in China",
-      "Michela Meliddo::Perpetual Radiance",
-      "Judith Westerveld::Message from Mukalap",
-      "Auguste en Louis Lumière::La sortie de l'usine Lumière à Lyon",
-      "Miranda Pennell::Man Number 4",
-      "Andrew Norman Wilson::Workers Leaving the Googleplex",
-      "Harun Farocki::Arbeiter verlassen die Fabrik",
-      "Nguyễn Trinh Thi::Letters from Panduranga",
-      "Bahar Noorizadeh::Free to Choose",
-      "Chantal Akerman::De L’autre coté",
-      "Maria Iorio en Raphaël Cuomo::Undead Voices (2019–2021)",
-      "Alexander Horwath::Henry Fonda for President",
-      "Rupert Cox en Angus Carlyle::The Cave Mouth and The Giant Voice",
       "Sergei Loznitsa::The Natural History of Destruction",
-      "Nguyễn Trinh Thi::How to Improve the World",
-      "Lucia Nimcová en David Petráš::Where no bell rings",
-      "Miko Revereza::Nowhere Near",
-      "Franzis Kabisch::Getty Abortions",
-      "Harun Farocki::Was ist Los?",
-      "Laura Rascaroli::Lezing door Laura Rascaroli",
-      "Veronica Munteanu, Karin Nakajima, Sara Ouljour::Haunted, the Hollow",
-      "Mattijs van de Port::Where can I get Lost?",
-      "Hicham Gardaf::In Praise of Slowness",
-      "Sasha Litvintseva en Beny Wagner::My Want of You Partakes of Me",
-      "Manthia Diawara::A Letter from Yene",
-      "Toshiya Tsunoda::Kapotte Muziek – Track 1",
-      "Maryam Jafri::Mariam Jafri vs Maryam Jafri",
-      "Harun Farocki::Gegen-Musik",
-      "Judith Westerveld::The Sending of the Crows",
-      "Bertrand Bonello::Coma",
       "Susanna Tomassini::The Southern Thruway",
-      "Aura Satz::Preemptive Listening",
-      "Johan van der Keuken::Face Value",
+      "Nika Pećarina::To the Earthern Red",
+      "Manthia Diawara::A Letter from Yene",
       "Lea Hartlaub::sr",
-      "Kamal Aljafari::A Fidai Film",
-      "Lis Rhodes::Disquiet",
-      "Elysa Wendi and Shing Lee::Room 404",
       "Vincent Meessen::Juste Un Mouvement",
-      "Lena Windisch::Searching for the Perfect Gentleman",
+      "Michela Meliddo::Perpetual Radiance",
+      "Kamal Aljafari::A Fidai Film",
+      "Bo Wang::An Asian Ghost Story",
+      "Toshiya Tsunoda::Kapotte Muziek – Track 1",
+      "Lucia Nimcová en David Petráš::Where no bell rings",
+      "Judith Westerveld::The Sending of the Crows",
+      "Nguyễn Trinh Thi::How to Improve the World",
+      "Maryam Jafri::Mariam Jafri vs Maryam Jafri",
+      "Hicham Gardaf::In Praise of Slowness",
+      "Andrew Norman Wilson::Workers Leaving the Googleplex",
+      "Lis Rhodes::Disquiet",
+      "Harun Farocki::Was ist Los?",
+      "Ho Rui An::Twenty-Four Cinematic Points of View of a Factory Gate in China",
+      "Laura Rascaroli::Lezing door Laura Rascaroli",
+      "Bertrand Bonello::Coma",
+      "Harun Farocki::Gegen-Musik",
+      "Bahar Noorizadeh::Free to Choose",
+      "Nguyễn Trinh Thi::Letters from Panduranga",
+      "Johannes Binotto::Capricorn Sunset",
+      "Johan van der Keuken::Face Value",
+      "Chantal Akerman::De L’autre coté",
+      "Franzis Kabisch::Getty Abortions",
+      "Miko Revereza::Nowhere Near",
+      "Sasha Litvintseva en Beny Wagner::My Want of You Partakes of Me",
+      "Aura Satz::Preemptive Listening",
+      "Elysa Wendi and Shing Lee::Room 404",
+      "Auguste en Louis Lumière::La sortie de l'usine Lumière à Lyon",
       "Chris Marker::Sans Soleil",
-      "Graeme Arnfield::Home Invasion"
+      "Rupert Cox en Angus Carlyle::The Cave Mouth and The Giant Voice",
+      "Lena Windisch::Searching for the Perfect Gentleman",
+      "Maria Iorio en Raphaël Cuomo::Undead Voices (2019–2021)",
+      "Veronica Munteanu, Karin Nakajima, Sara Ouljour::Haunted, the Hollow",
+      "Graeme Arnfield::Home Invasion",
+      "Mattijs van de Port::Where can I get Lost?",
+      "Miranda Pennell::Man Number 4",
+      "Alexander Horwath::Henry Fonda for President",
+      "Judith Westerveld::Message from Mukalap",
+      "Harun Farocki::Arbeiter verlassen die Fabrik"
     ]
   },
   "final_mapping": {
+    "Vincent Meessen::Juste un mouvement": {
+      "director": "Vincent Meessen",
+      "title": "Juste un mouvement",
+      "asset_director_folder": "vincent-meessen",
+      "images": [
+        {
+          "filename": "01-SELECTED-JUM_ (1-38-17-15).webp",
+          "path": "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-4.webp",
+          "path": "/assets/images/film-images/vincent-meessen/02-SELECTED-4.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-2.webp",
+          "path": "/assets/images/film-images/vincent-meessen/03-SELECTED-2.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-7.webp",
+          "path": "/assets/images/film-images/vincent-meessen/04-SELECTED-7.webp",
+          "location": "root"
+        },
+        {
+          "filename": "05-SELECTED-11.webp",
+          "path": "/assets/images/film-images/vincent-meessen/05-SELECTED-11.webp",
+          "location": "root"
+        },
+        {
+          "filename": "06-SELECTED-And_7_DoudouFall.webp",
+          "path": "/assets/images/film-images/vincent-meessen/06-SELECTED-And_7_DoudouFall.webp",
+          "location": "root"
+        },
+        {
+          "filename": "07-SELECTED-14.webp",
+          "path": "/assets/images/film-images/vincent-meessen/07-SELECTED-14.webp",
+          "location": "root"
+        },
+        {
+          "filename": "08-SELECTED-15.webp",
+          "path": "/assets/images/film-images/vincent-meessen/08-SELECTED-15.webp",
+          "location": "root"
+        },
+        {
+          "filename": "09-SELECTED-1.webp",
+          "path": "/assets/images/film-images/vincent-meessen/09-SELECTED-1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "10-SELECTED-12.webp",
+          "path": "/assets/images/film-images/vincent-meessen/10-SELECTED-12.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 10,
+      "primary_image": "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp",
+      "has_film_specific_folder": false
+    },
+    "Sergei Loznitsa::The Natural History of Destruction": {
+      "director": "Sergei Loznitsa",
+      "title": "The Natural History of Destruction",
+      "asset_director_folder": "sergey-loznitsa",
+      "images": [
+        {
+          "filename": "01-SELECTED-NHD_3.205.1.webp",
+          "path": "/assets/images/film-images/sergey-loznitsa/01-SELECTED-NHD_3.205.1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-0112788.webp",
+          "path": "/assets/images/film-images/sergey-loznitsa/02-SELECTED-0112788.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-0085797.webp",
+          "path": "/assets/images/film-images/sergey-loznitsa/03-SELECTED-0085797.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-0028555.webp",
+          "path": "/assets/images/film-images/sergey-loznitsa/04-SELECTED-0028555.webp",
+          "location": "root"
+        },
+        {
+          "filename": "05-SELECTED-0110449.webp",
+          "path": "/assets/images/film-images/sergey-loznitsa/05-SELECTED-0110449.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 5,
+      "primary_image": "/assets/images/film-images/sergey-loznitsa/01-SELECTED-NHD_3.205.1.webp",
+      "has_film_specific_folder": false
+    },
+    "Susanna Tomassini::The Southern Thruway": {
+      "director": "Susanna Tomassini",
+      "title": "The Southern Thruway",
+      "asset_director_folder": "susanna-tomassini",
+      "images": [
+        {
+          "filename": "01-SELECTED-TST_still1.webp",
+          "path": "/assets/images/film-images/susanna-tomassini/01-SELECTED-TST_still1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-TST_still2.webp",
+          "path": "/assets/images/film-images/susanna-tomassini/02-SELECTED-TST_still2.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-TST_still3.webp",
+          "path": "/assets/images/film-images/susanna-tomassini/03-SELECTED-TST_still3.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-TST_still4.webp",
+          "path": "/assets/images/film-images/susanna-tomassini/04-SELECTED-TST_still4.webp",
+          "location": "root"
+        },
+        {
+          "filename": "05-SELECTED-TST_still5.webp",
+          "path": "/assets/images/film-images/susanna-tomassini/05-SELECTED-TST_still5.webp",
+          "location": "root"
+        },
+        {
+          "filename": "06-SELECTED-TST_still6.webp",
+          "path": "/assets/images/film-images/susanna-tomassini/06-SELECTED-TST_still6.webp",
+          "location": "root"
+        },
+        {
+          "filename": "07-SELECTED-TST_still7.webp",
+          "path": "/assets/images/film-images/susanna-tomassini/07-SELECTED-TST_still7.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 7,
+      "primary_image": "/assets/images/film-images/susanna-tomassini/01-SELECTED-TST_still1.webp",
+      "has_film_specific_folder": false
+    },
+    "Nika Pećarina::To the Earthern Red": {
+      "director": "Nika Pećarina",
+      "title": "To the Earthern Red",
+      "asset_director_folder": "nika-pecarina",
+      "images": [
+        {
+          "filename": "01-SELECTED-printcrvenojbojizarenezemlje (1).webp",
+          "path": "/assets/images/film-images/nika-pecarina/01-SELECTED-printcrvenojbojizarenezemlje (1).webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-printcrvenojbojizarenezemlje (2).webp",
+          "path": "/assets/images/film-images/nika-pecarina/02-SELECTED-printcrvenojbojizarenezemlje (2).webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-printcrvenojbojizarenezemlje.webp",
+          "path": "/assets/images/film-images/nika-pecarina/03-SELECTED-printcrvenojbojizarenezemlje.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 3,
+      "primary_image": "/assets/images/film-images/nika-pecarina/01-SELECTED-printcrvenojbojizarenezemlje (1).webp",
+      "has_film_specific_folder": false
+    },
+    "Manthia Diawara::A Letter from Yene": {
+      "director": "Manthia Diawara",
+      "title": "A Letter from Yene",
+      "asset_director_folder": "manthia-diawara",
+      "images": [
+        {
+          "filename": "01-SELECTED-A Letter from Yene 1.webp",
+          "path": "/assets/images/film-images/manthia-diawara/01-SELECTED-A Letter from Yene 1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-A Letter from Yene 2.webp",
+          "path": "/assets/images/film-images/manthia-diawara/02-SELECTED-A Letter from Yene 2.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-A Letter from Yene 4.webp",
+          "path": "/assets/images/film-images/manthia-diawara/03-SELECTED-A Letter from Yene 4.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-A Letter from Yene 5.webp",
+          "path": "/assets/images/film-images/manthia-diawara/04-SELECTED-A Letter from Yene 5.webp",
+          "location": "root"
+        },
+        {
+          "filename": "05-SELECTED-A Letter from Yene 3.webp",
+          "path": "/assets/images/film-images/manthia-diawara/05-SELECTED-A Letter from Yene 3.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 5,
+      "primary_image": "/assets/images/film-images/manthia-diawara/01-SELECTED-A Letter from Yene 1.webp",
+      "has_film_specific_folder": false
+    },
+    "Lea Hartlaub::sr": {
+      "director": "Lea Hartlaub",
+      "title": "sr",
+      "asset_director_folder": "lea-hartlaub",
+      "images": [
+        {
+          "filename": "01-SELECTED-sr_film-still_02_LeaHartlaub-BlinkerFilmproduktion_watching-giraffe-Nairobi.webp",
+          "path": "/assets/images/film-images/lea-hartlaub/01-SELECTED-sr_film-still_02_LeaHartlaub-BlinkerFilmproduktion_watching-giraffe-Nairobi.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-sr_film-still_01_LeaHartlaub-BlinkerFilmproduktion_port-of-Eilat.webp",
+          "path": "/assets/images/film-images/lea-hartlaub/02-SELECTED-sr_film-still_01_LeaHartlaub-BlinkerFilmproduktion_port-of-Eilat.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-sr_film-still_03_LeaHartlaub-BlinkerFilmproduktion_Liuli-Factory.webp",
+          "path": "/assets/images/film-images/lea-hartlaub/02-SELECTED-sr_film-still_03_LeaHartlaub-BlinkerFilmproduktion_Liuli-Factory.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-sr_film-still_06_LeaHartlaub-BlinkerFilmproduktion_hieroglyphe-sr.webp",
+          "path": "/assets/images/film-images/lea-hartlaub/03-SELECTED-sr_film-still_06_LeaHartlaub-BlinkerFilmproduktion_hieroglyphe-sr.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-sr_film-still_04_LeaHartlaub-BlinkerFilmproduktion_rockart-slide-copyright-by-D.Coulson.webp",
+          "path": "/assets/images/film-images/lea-hartlaub/04-SELECTED-sr_film-still_04_LeaHartlaub-BlinkerFilmproduktion_rockart-slide-copyright-by-D.Coulson.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-sr_film-still_07_LeaHartlaub-BlinkerFilmproduktion_newsreel-1945.webp",
+          "path": "/assets/images/film-images/lea-hartlaub/04-SELECTED-sr_film-still_07_LeaHartlaub-BlinkerFilmproduktion_newsreel-1945.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 6,
+      "primary_image": "/assets/images/film-images/lea-hartlaub/01-SELECTED-sr_film-still_02_LeaHartlaub-BlinkerFilmproduktion_watching-giraffe-Nairobi.webp",
+      "has_film_specific_folder": false
+    },
+    "Lucia Nimcová and David Petráš::Where no bell rings": {
+      "director": "Lucia Nimcová and David Petráš",
+      "title": "Where no bell rings",
+      "asset_director_folder": "lucia-nimcova-and-david-petras",
+      "images": [
+        {
+          "filename": "01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
+          "path": "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-Petras Nimcova_Where no bell rings_Image.webp",
+          "path": "/assets/images/film-images/lucia-nimcova-and-david-petras/02-SELECTED-Petras Nimcova_Where no bell rings_Image.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 2,
+      "primary_image": "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
+      "has_film_specific_folder": false
+    },
+    "Vincent Meessen::Juste Un Mouvement": {
+      "director": "Vincent Meessen",
+      "title": "Juste Un Mouvement",
+      "asset_director_folder": "vincent-meessen",
+      "images": [
+        {
+          "filename": "01-SELECTED-JUM_ (1-38-17-15).webp",
+          "path": "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-4.webp",
+          "path": "/assets/images/film-images/vincent-meessen/02-SELECTED-4.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-2.webp",
+          "path": "/assets/images/film-images/vincent-meessen/03-SELECTED-2.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-7.webp",
+          "path": "/assets/images/film-images/vincent-meessen/04-SELECTED-7.webp",
+          "location": "root"
+        },
+        {
+          "filename": "05-SELECTED-11.webp",
+          "path": "/assets/images/film-images/vincent-meessen/05-SELECTED-11.webp",
+          "location": "root"
+        },
+        {
+          "filename": "06-SELECTED-And_7_DoudouFall.webp",
+          "path": "/assets/images/film-images/vincent-meessen/06-SELECTED-And_7_DoudouFall.webp",
+          "location": "root"
+        },
+        {
+          "filename": "07-SELECTED-14.webp",
+          "path": "/assets/images/film-images/vincent-meessen/07-SELECTED-14.webp",
+          "location": "root"
+        },
+        {
+          "filename": "08-SELECTED-15.webp",
+          "path": "/assets/images/film-images/vincent-meessen/08-SELECTED-15.webp",
+          "location": "root"
+        },
+        {
+          "filename": "09-SELECTED-1.webp",
+          "path": "/assets/images/film-images/vincent-meessen/09-SELECTED-1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "10-SELECTED-12.webp",
+          "path": "/assets/images/film-images/vincent-meessen/10-SELECTED-12.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 10,
+      "primary_image": "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp",
+      "has_film_specific_folder": false
+    },
+    "Kamal Aljafari::A Fidai Film": {
+      "director": "Kamal Aljafari",
+      "title": "A Fidai Film",
+      "asset_director_folder": "kamal-aljafari",
+      "images": [
+        {
+          "filename": "01-SELECTED-Fidai Still 3.webp",
+          "path": "/assets/images/film-images/kamal-aljafari/01-SELECTED-Fidai Still 3.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-Fidai Still 1.webp",
+          "path": "/assets/images/film-images/kamal-aljafari/02-SELECTED-Fidai Still 1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-Fidai Still 4.webp",
+          "path": "/assets/images/film-images/kamal-aljafari/02-SELECTED-Fidai Still 4.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-Fidai Still 9.webp",
+          "path": "/assets/images/film-images/kamal-aljafari/03-SELECTED-Fidai Still 9.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-Fidai Still 5.webp",
+          "path": "/assets/images/film-images/kamal-aljafari/04-SELECTED-Fidai Still 5.webp",
+          "location": "root"
+        },
+        {
+          "filename": "05-SELECTED-Fidai Still 2.webp",
+          "path": "/assets/images/film-images/kamal-aljafari/05-SELECTED-Fidai Still 2.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 6,
+      "primary_image": "/assets/images/film-images/kamal-aljafari/01-SELECTED-Fidai Still 3.webp",
+      "has_film_specific_folder": false
+    },
     "Bo Wang::An Asian Ghost Story": {
       "director": "Bo Wang",
       "title": "An Asian Ghost Story",
@@ -2159,6 +2519,171 @@
       "primary_image": "/assets/images/film-images/bo-wang/01-SELECTED-AAGS_03.webp",
       "has_film_specific_folder": false
     },
+    "Toshiya Tsunoda::Kapotte Muziek – Track 1": {
+      "director": "Toshiya Tsunoda",
+      "title": "Kapotte Muziek – Track 1",
+      "asset_director_folder": "toyisha-tsunoda",
+      "images": [
+        {
+          "filename": "Kapotte Muziek by Toshiya Tsunoda.webp",
+          "path": "/assets/images/film-images/toyisha-tsunoda/Kapotte Muziek by Toshiya Tsunoda.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 1,
+      "primary_image": "/assets/images/film-images/toyisha-tsunoda/Kapotte Muziek by Toshiya Tsunoda.webp",
+      "has_film_specific_folder": false
+    },
+    "Lis Rhodes::Disquiet": {
+      "director": "Lis Rhodes",
+      "title": "Disquiet",
+      "asset_director_folder": "lis-rhodes",
+      "images": [
+        {
+          "filename": "01-SELECTED-STILL-for-DISQUIET.webp",
+          "path": "/assets/images/film-images/lis-rhodes/01-SELECTED-STILL-for-DISQUIET.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 1,
+      "primary_image": "/assets/images/film-images/lis-rhodes/01-SELECTED-STILL-for-DISQUIET.webp",
+      "has_film_specific_folder": false
+    },
+    "Harun Farocki::Was ist Los?": {
+      "director": "Harun Farocki",
+      "title": "Was ist Los?",
+      "asset_director_folder": "harun-farocki",
+      "images": [
+        {
+          "filename": "01-SELECTED-Was ist los 01.webp",
+          "path": "/assets/images/film-images/harun-farocki/Was ist los What's up/01-SELECTED-Was ist los 01.webp",
+          "location": "subdirectory"
+        },
+        {
+          "filename": "02-SELECTED-Was ist los 02.webp",
+          "path": "/assets/images/film-images/harun-farocki/Was ist los What's up/02-SELECTED-Was ist los 02.webp",
+          "location": "subdirectory"
+        },
+        {
+          "filename": "03-SELECTED-Was ist los 03.webp",
+          "path": "/assets/images/film-images/harun-farocki/Was ist los What's up/03-SELECTED-Was ist los 03.webp",
+          "location": "subdirectory"
+        },
+        {
+          "filename": "04-SELECTED-Was ist los 04.webp",
+          "path": "/assets/images/film-images/harun-farocki/Was ist los What's up/04-SELECTED-Was ist los 04.webp",
+          "location": "subdirectory"
+        },
+        {
+          "filename": "05-SELECTED-Was ist los 05.webp",
+          "path": "/assets/images/film-images/harun-farocki/Was ist los What's up/05-SELECTED-Was ist los 05.webp",
+          "location": "subdirectory"
+        }
+      ],
+      "image_count": 5,
+      "primary_image": "/assets/images/film-images/harun-farocki/Was ist los What's up/01-SELECTED-Was ist los 01.webp",
+      "has_film_specific_folder": true
+    },
+    "Bertrand Bonello::Coma": {
+      "director": "Bertrand Bonello",
+      "title": "Coma",
+      "asset_director_folder": "bertrand-bonello",
+      "images": [
+        {
+          "filename": "01-SELECTED-COMA - STILL 3.webp",
+          "path": "/assets/images/film-images/bertrand-bonello/01-SELECTED-COMA - STILL 3.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-COMA - STILL 2.webp",
+          "path": "/assets/images/film-images/bertrand-bonello/02-SELECTED-COMA - STILL 2.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-COMA - STILL 4.webp",
+          "path": "/assets/images/film-images/bertrand-bonello/03-SELECTED-COMA - STILL 4.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-COMA-STILL-WEB.webp",
+          "path": "/assets/images/film-images/bertrand-bonello/04-SELECTED-COMA-STILL-WEB.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 4,
+      "primary_image": "/assets/images/film-images/bertrand-bonello/01-SELECTED-COMA - STILL 3.webp",
+      "has_film_specific_folder": false
+    },
+    "Bahar Noorizadeh::Free to Choose": {
+      "director": "Bahar Noorizadeh",
+      "title": "Free to Choose",
+      "asset_director_folder": "bahar-noorizadeh",
+      "images": [
+        {
+          "filename": "01-SELECTED-FTC - still 9.webp",
+          "path": "/assets/images/film-images/bahar-noorizadeh/01-SELECTED-FTC - still 9.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-FTC - still 1.webp",
+          "path": "/assets/images/film-images/bahar-noorizadeh/02-SELECTED-FTC - still 1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-FTC - still 10.webp",
+          "path": "/assets/images/film-images/bahar-noorizadeh/03-SELECTED-FTC - still 10.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-FTC - still 11.webp",
+          "path": "/assets/images/film-images/bahar-noorizadeh/04-SELECTED-FTC - still 11.webp",
+          "location": "root"
+        },
+        {
+          "filename": "05-SELECTED-FTC - still 2.webp",
+          "path": "/assets/images/film-images/bahar-noorizadeh/05-SELECTED-FTC - still 2.webp",
+          "location": "root"
+        },
+        {
+          "filename": "06-SELECTED-FTC - still 3.webp",
+          "path": "/assets/images/film-images/bahar-noorizadeh/06-SELECTED-FTC - still 3.webp",
+          "location": "root"
+        },
+        {
+          "filename": "07-SELECTED-FTC - still 4.webp",
+          "path": "/assets/images/film-images/bahar-noorizadeh/07-SELECTED-FTC - still 4.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 7,
+      "primary_image": "/assets/images/film-images/bahar-noorizadeh/01-SELECTED-FTC - still 9.webp",
+      "has_film_specific_folder": false
+    },
+    "Nguyễn Trinh Thi::Letters from Panduranga": {
+      "director": "Nguyễn Trinh Thi",
+      "title": "Letters from Panduranga",
+      "asset_director_folder": "nguyen-trinh-thi",
+      "images": [
+        {
+          "filename": "01-SELECTED-Letters future 1.webp",
+          "path": "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/01-SELECTED-Letters future 1.webp",
+          "location": "subdirectory"
+        },
+        {
+          "filename": "02-SELECTED-Letters future 2.webp",
+          "path": "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/02-SELECTED-Letters future 2.webp",
+          "location": "subdirectory"
+        },
+        {
+          "filename": "03-SELECTED-5-Thi Nguyen-Letters from Panduranga-2015.webp",
+          "path": "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/03-SELECTED-5-Thi Nguyen-Letters from Panduranga-2015.webp",
+          "location": "subdirectory"
+        }
+      ],
+      "image_count": 3,
+      "primary_image": "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/01-SELECTED-Letters future 1.webp",
+      "has_film_specific_folder": true
+    },
     "Johannes Binotto::Capricorn Sunset": {
       "director": "Johannes Binotto",
       "title": "Capricorn Sunset",
@@ -2184,49 +2709,464 @@
       "primary_image": "/assets/images/film-images/johannes-binotto/01-SELECTED-capricorn sunset_Still_2.webp",
       "has_film_specific_folder": false
     },
-    "Nika Pećarina::To the Earthern Red": {
-      "director": "Nika Pećarina",
-      "title": "To the Earthern Red",
-      "asset_director_folder": "nika-pecarina",
+    "Johan van der Keuken::Face Value": {
+      "director": "Johan van der Keuken",
+      "title": "Face Value",
+      "asset_director_folder": "johan-van-der-keuken",
       "images": [
         {
-          "filename": "01-SELECTED-printcrvenojbojizarenezemlje (1).webp",
-          "path": "/assets/images/film-images/nika-pecarina/01-SELECTED-printcrvenojbojizarenezemlje (1).webp",
+          "filename": "01-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.29.webp",
+          "path": "/assets/images/film-images/johan-van-der-keuken/01-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.29.webp",
           "location": "root"
         },
         {
-          "filename": "02-SELECTED-printcrvenojbojizarenezemlje (2).webp",
-          "path": "/assets/images/film-images/nika-pecarina/02-SELECTED-printcrvenojbojizarenezemlje (2).webp",
+          "filename": "02-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
+          "path": "/assets/images/film-images/johan-van-der-keuken/02-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
           "location": "root"
         },
         {
-          "filename": "03-SELECTED-printcrvenojbojizarenezemlje.webp",
-          "path": "/assets/images/film-images/nika-pecarina/03-SELECTED-printcrvenojbojizarenezemlje.webp",
+          "filename": "03-SELECTED-Scherm­afbeelding 2025-08-06 om 20.56.09.webp",
+          "path": "/assets/images/film-images/johan-van-der-keuken/03-SELECTED-Scherm­afbeelding 2025-08-06 om 20.56.09.webp",
           "location": "root"
         }
       ],
       "image_count": 3,
-      "primary_image": "/assets/images/film-images/nika-pecarina/01-SELECTED-printcrvenojbojizarenezemlje (1).webp",
+      "primary_image": "/assets/images/film-images/johan-van-der-keuken/01-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.29.webp",
       "has_film_specific_folder": false
     },
-    "Ho Rui An::Twenty-Four Cinematic Points of View of a Factory Gate in China": {
-      "director": "Ho Rui An",
-      "title": "Twenty-Four Cinematic Points of View of a Factory Gate in China",
-      "asset_director_folder": "ho-rui-an",
+    "Chantal Akerman::De L’autre coté": {
+      "director": "Chantal Akerman",
+      "title": "De L’autre coté",
+      "asset_director_folder": "chantal-akerman",
       "images": [
         {
-          "filename": "01-SELECTED-Factory Gate_1.webp",
-          "path": "/assets/images/film-images/ho-rui-an/01-SELECTED-Factory Gate_1.webp",
+          "filename": "01-SELECTED-FTOS 15.webp",
+          "path": "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp",
           "location": "root"
         },
         {
-          "filename": "02-SELECTED-Factory Gate_2.webp",
-          "path": "/assets/images/film-images/ho-rui-an/02-SELECTED-Factory Gate_2.webp",
+          "filename": "02-SELECTED-FTOS 14.webp",
+          "path": "/assets/images/film-images/chantal-akerman/02-SELECTED-FTOS 14.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-FTOS 9.webp",
+          "path": "/assets/images/film-images/chantal-akerman/03-SELECTED-FTOS 9.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-FTOS 16.webp",
+          "path": "/assets/images/film-images/chantal-akerman/04-SELECTED-FTOS 16.webp",
+          "location": "root"
+        },
+        {
+          "filename": "05-SELECTED-FTOS 17.webp",
+          "path": "/assets/images/film-images/chantal-akerman/05-SELECTED-FTOS 17.webp",
+          "location": "root"
+        },
+        {
+          "filename": "06-SELECTED-FTOS 25 surveillance 1.webp",
+          "path": "/assets/images/film-images/chantal-akerman/06-SELECTED-FTOS 25 surveillance 1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "07-SELECTED-FTOS 1.webp",
+          "path": "/assets/images/film-images/chantal-akerman/07-SELECTED-FTOS 1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "08-SELECTED-FTOS 21.webp",
+          "path": "/assets/images/film-images/chantal-akerman/08-SELECTED-FTOS 21.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 8,
+      "primary_image": "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp",
+      "has_film_specific_folder": false
+    },
+    "Franzis Kabisch::Getty Abortions": {
+      "director": "Franzis Kabisch",
+      "title": "Getty Abortions",
+      "asset_director_folder": "franzis-kabisch",
+      "images": [
+        {
+          "filename": "00-SELECTED-gettyabortions_postcard_english-1 C_Franzis-Kabisch_VG-Bild-Kunst.webp",
+          "path": "/assets/images/film-images/franzis-kabisch/00-SELECTED-gettyabortions_postcard_english-1 C_Franzis-Kabisch_VG-Bild-Kunst.webp",
+          "location": "root"
+        },
+        {
+          "filename": "01-SELECTED-gettyabortions_still_1_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
+          "path": "/assets/images/film-images/franzis-kabisch/01-SELECTED-gettyabortions_still_1_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-gettyabortions_still_2_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
+          "path": "/assets/images/film-images/franzis-kabisch/02-SELECTED-gettyabortions_still_2_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-gettyabortions_still_6_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
+          "path": "/assets/images/film-images/franzis-kabisch/03-SELECTED-gettyabortions_still_6_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 4,
+      "primary_image": "/assets/images/film-images/franzis-kabisch/00-SELECTED-gettyabortions_postcard_english-1 C_Franzis-Kabisch_VG-Bild-Kunst.webp",
+      "has_film_specific_folder": false
+    },
+    "Miko Revereza::Nowhere Near": {
+      "director": "Miko Revereza",
+      "title": "Nowhere Near",
+      "asset_director_folder": "miko-revereza",
+      "images": [
+        {
+          "filename": "01-SELECTED-NowhereNear_Still03.webp",
+          "path": "/assets/images/film-images/miko-revereza/01-SELECTED-NowhereNear_Still03.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-NowhereNear_Still02.webp",
+          "path": "/assets/images/film-images/miko-revereza/02-SELECTED-NowhereNear_Still02.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-NowhereNear_Still04.webp",
+          "path": "/assets/images/film-images/miko-revereza/03-SELECTED-NowhereNear_Still04.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-NowhereNear_Still05.webp",
+          "path": "/assets/images/film-images/miko-revereza/04-SELECTED-NowhereNear_Still05.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 4,
+      "primary_image": "/assets/images/film-images/miko-revereza/01-SELECTED-NowhereNear_Still03.webp",
+      "has_film_specific_folder": false
+    },
+    "Laura Rascaroli::Special Lecture by Laura Rascaroli": {
+      "director": "Laura Rascaroli",
+      "title": "Special Lecture by Laura Rascaroli",
+      "asset_director_folder": "laura-rascaroli",
+      "images": [
+        {
+          "filename": "laura-rascaroli-w-rms-blob-common.webp",
+          "path": "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 1,
+      "primary_image": "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp",
+      "has_film_specific_folder": false
+    },
+    "Aura Satz::Preemptive Listening": {
+      "director": "Aura Satz",
+      "title": "Preemptive Listening",
+      "asset_director_folder": "aura-satz",
+      "images": [
+        {
+          "filename": "01-SELECTED-Preemptive Listening still1 (1).webp",
+          "path": "/assets/images/film-images/aura-satz/01-SELECTED-Preemptive Listening still1 (1).webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-Preemptive Listening still2.webp",
+          "path": "/assets/images/film-images/aura-satz/02-SELECTED-Preemptive Listening still2.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-Preemptive Listening still5.webp",
+          "path": "/assets/images/film-images/aura-satz/03-SELECTED-Preemptive Listening still5.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-Preemptive Listening still4.webp",
+          "path": "/assets/images/film-images/aura-satz/04-SELECTED-Preemptive Listening still4.webp",
+          "location": "root"
+        },
+        {
+          "filename": "05-SELECTED-Preemptive Listening still3.webp",
+          "path": "/assets/images/film-images/aura-satz/05-SELECTED-Preemptive Listening still3.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 5,
+      "primary_image": "/assets/images/film-images/aura-satz/01-SELECTED-Preemptive Listening still1 (1).webp",
+      "has_film_specific_folder": false
+    },
+    "Auguste and Louis Lumière::La sortie de l'usine Lumière à Lyon": {
+      "director": "Auguste and Louis Lumière",
+      "title": "La sortie de l'usine Lumière à Lyon",
+      "asset_director_folder": "auguste-louis-lumiere",
+      "images": [
+        {
+          "filename": "01-SELECTED-Lumiere Brothers - Still of 1st ever film - shot on the 19th March 1895.webp",
+          "path": "/assets/images/film-images/auguste-louis-lumiere/01-SELECTED-Lumiere Brothers - Still of 1st ever film - shot on the 19th March 1895.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-Lumiere_Workers .webp",
+          "path": "/assets/images/film-images/auguste-louis-lumiere/02-SELECTED-Lumiere_Workers .webp",
           "location": "root"
         }
       ],
       "image_count": 2,
-      "primary_image": "/assets/images/film-images/ho-rui-an/01-SELECTED-Factory Gate_1.webp",
+      "primary_image": "/assets/images/film-images/auguste-louis-lumiere/01-SELECTED-Lumiere Brothers - Still of 1st ever film - shot on the 19th March 1895.webp",
+      "has_film_specific_folder": false
+    },
+    "Rupert Cox en Angus Carlyle::The Cave Mouth and The Giant Voice": {
+      "director": "Rupert Cox en Angus Carlyle",
+      "title": "The Cave Mouth and The Giant Voice",
+      "asset_director_folder": "rupert-cox-and-angus-carlyle",
+      "images": [
+        {
+          "filename": "01-SELECTED-The Cave Mouth and the Giant Voice.webp",
+          "path": "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-The Cave Mouth Rupert & Cox.webp",
+          "path": "/assets/images/film-images/rupert-cox-and-angus-carlyle/02-SELECTED-The Cave Mouth Rupert & Cox.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 2,
+      "primary_image": "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp",
+      "has_film_specific_folder": false
+    },
+    "Maria Iorio en Raphaël Cuomo::Undead Voices (2019–2021)": {
+      "director": "Maria Iorio en Raphaël Cuomo",
+      "title": "Undead Voices (2019–2021)",
+      "asset_director_folder": "maria-iorio-and-raphael-cuomo",
+      "images": [
+        {
+          "filename": "01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
+          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-Iorio-Cuomo_Undead Voices_Feminist demo.webp",
+          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/02-SELECTED-Iorio-Cuomo_Undead Voices_Feminist demo.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-Iorio-Cuomo_Undead Voices_Reel.webp",
+          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/03-SELECTED-Iorio-Cuomo_Undead Voices_Reel.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_LP_RE_01_12.1.1_RE-DEF.webp",
+          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/04-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_LP_RE_01_12.1.1_RE-DEF.webp",
+          "location": "root"
+        },
+        {
+          "filename": "05-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_RE_9.1.1_RE-DEF.webp",
+          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/05-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_RE_9.1.1_RE-DEF.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 5,
+      "primary_image": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
+      "has_film_specific_folder": false
+    },
+    "Veronica Munteanu, Karin Nakajima, Sara Ouljour::Haunted, the Hollow": {
+      "director": "Veronica Munteanu, Karin Nakajima, Sara Ouljour",
+      "title": "Haunted, the Hollow",
+      "asset_director_folder": "veronica-munteau-karin-nakajima-sara-ouljour",
+      "images": [
+        {
+          "filename": "01-SELECTED-Screenshot 2025-08-08 at 11.11.46.webp",
+          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/01-SELECTED-Screenshot 2025-08-08 at 11.11.46.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-Screenshot 2025-08-08 at 11.11.21.webp",
+          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/02-SELECTED-Screenshot 2025-08-08 at 11.11.21.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-DSC_0025.webp",
+          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/03-SELECTED-DSC_0025.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-Screenshot 2025-08-08 at 11.12.01.webp",
+          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/04-SELECTED-Screenshot 2025-08-08 at 11.12.01.webp",
+          "location": "root"
+        },
+        {
+          "filename": "05-SELECTED-Screenshot 2025-08-08 at 11.07.55.webp",
+          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/05-SELECTED-Screenshot 2025-08-08 at 11.07.55.webp",
+          "location": "root"
+        },
+        {
+          "filename": "06-SELECTED-DSC_0020.webp",
+          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/06-SELECTED-DSC_0020.webp",
+          "location": "root"
+        },
+        {
+          "filename": "07-SELECTED-Screenshot 2025-08-08 at 11.07.00.webp",
+          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/07-SELECTED-Screenshot 2025-08-08 at 11.07.00.webp",
+          "location": "root"
+        },
+        {
+          "filename": "08-SELECTED-Screenshot 2025-08-08 at 11.10.21.webp",
+          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/08-SELECTED-Screenshot 2025-08-08 at 11.10.21.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 8,
+      "primary_image": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/01-SELECTED-Screenshot 2025-08-08 at 11.11.46.webp",
+      "has_film_specific_folder": false
+    },
+    "Graeme Arnfield::Home Invasion": {
+      "director": "Graeme Arnfield",
+      "title": "Home Invasion",
+      "asset_director_folder": "graeme-arnfield",
+      "images": [
+        {
+          "filename": "01-SELECTED-Home Invasion - Film still 5.webp",
+          "path": "/assets/images/film-images/graeme-arnfield/01-SELECTED-Home Invasion - Film still 5.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-Home Invasion - Film still 1.webp",
+          "path": "/assets/images/film-images/graeme-arnfield/02-SELECTED-Home Invasion - Film still 1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-Home Invasion - Film still 6.webp",
+          "path": "/assets/images/film-images/graeme-arnfield/03-SELECTED-Home Invasion - Film still 6.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-Home Invasion - Film still 2.webp",
+          "path": "/assets/images/film-images/graeme-arnfield/04-SELECTED-Home Invasion - Film still 2.webp",
+          "location": "root"
+        },
+        {
+          "filename": "05-SELECTED-Home Invasion - Film still 3.webp",
+          "path": "/assets/images/film-images/graeme-arnfield/05-SELECTED-Home Invasion - Film still 3.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 5,
+      "primary_image": "/assets/images/film-images/graeme-arnfield/01-SELECTED-Home Invasion - Film still 5.webp",
+      "has_film_specific_folder": false
+    },
+    "Miranda Pennell::Man Number 4": {
+      "director": "Miranda Pennell",
+      "title": "Man Number 4",
+      "asset_director_folder": "miranda-pennell",
+      "images": [
+        {
+          "filename": "01-SELECTED-Feet_Mannumber4_MPennell_1.webp",
+          "path": "/assets/images/film-images/miranda-pennell/01-SELECTED-Feet_Mannumber4_MPennell_1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-Solders-2500-2.webp",
+          "path": "/assets/images/film-images/miranda-pennell/02-SELECTED-Solders-2500-2.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 2,
+      "primary_image": "/assets/images/film-images/miranda-pennell/01-SELECTED-Feet_Mannumber4_MPennell_1.webp",
+      "has_film_specific_folder": false
+    },
+    "Rupert Cox and Angus Carlyle::The Cave Mouth and The Giant Voice": {
+      "director": "Rupert Cox and Angus Carlyle",
+      "title": "The Cave Mouth and The Giant Voice",
+      "asset_director_folder": "rupert-cox-and-angus-carlyle",
+      "images": [
+        {
+          "filename": "01-SELECTED-The Cave Mouth and the Giant Voice.webp",
+          "path": "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-The Cave Mouth Rupert & Cox.webp",
+          "path": "/assets/images/film-images/rupert-cox-and-angus-carlyle/02-SELECTED-The Cave Mouth Rupert & Cox.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 2,
+      "primary_image": "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp",
+      "has_film_specific_folder": false
+    },
+    "Chantal Akerman::De l’autre coté": {
+      "director": "Chantal Akerman",
+      "title": "De l’autre coté",
+      "asset_director_folder": "chantal-akerman",
+      "images": [
+        {
+          "filename": "01-SELECTED-FTOS 15.webp",
+          "path": "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-FTOS 14.webp",
+          "path": "/assets/images/film-images/chantal-akerman/02-SELECTED-FTOS 14.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-FTOS 9.webp",
+          "path": "/assets/images/film-images/chantal-akerman/03-SELECTED-FTOS 9.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-FTOS 16.webp",
+          "path": "/assets/images/film-images/chantal-akerman/04-SELECTED-FTOS 16.webp",
+          "location": "root"
+        },
+        {
+          "filename": "05-SELECTED-FTOS 17.webp",
+          "path": "/assets/images/film-images/chantal-akerman/05-SELECTED-FTOS 17.webp",
+          "location": "root"
+        },
+        {
+          "filename": "06-SELECTED-FTOS 25 surveillance 1.webp",
+          "path": "/assets/images/film-images/chantal-akerman/06-SELECTED-FTOS 25 surveillance 1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "07-SELECTED-FTOS 1.webp",
+          "path": "/assets/images/film-images/chantal-akerman/07-SELECTED-FTOS 1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "08-SELECTED-FTOS 21.webp",
+          "path": "/assets/images/film-images/chantal-akerman/08-SELECTED-FTOS 21.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 8,
+      "primary_image": "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp",
+      "has_film_specific_folder": false
+    },
+    "Alexander Horwath::Henry Fonda for President": {
+      "director": "Alexander Horwath",
+      "title": "Henry Fonda for President",
+      "asset_director_folder": "alexander-horwath",
+      "images": [
+        {
+          "filename": "01-SELECTED-timessquare-presse3.webp",
+          "path": "/assets/images/film-images/alexander-horwath/01-SELECTED-timessquare-presse3.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-village-fonda-presse1.webp",
+          "path": "/assets/images/film-images/alexander-horwath/02-SELECTED-village-fonda-presse1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-parade-presse2.webp",
+          "path": "/assets/images/film-images/alexander-horwath/03-SELECTED-parade-presse2.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 3,
+      "primary_image": "/assets/images/film-images/alexander-horwath/01-SELECTED-timessquare-presse3.webp",
       "has_film_specific_folder": false
     },
     "Judith Westerveld::Message from Mukalap": {
@@ -2314,169 +3254,89 @@
       "primary_image": "/assets/images/film-images/harun-farocki/Arbeiter verlassen die Fabrik Workers Leaving the Factory/01-SELECTED-WorkersFactory_HFarocki_03.webp",
       "has_film_specific_folder": true
     },
-    "Nguyễn Trinh Thi::Letters from Panduranga": {
-      "director": "Nguyễn Trinh Thi",
-      "title": "Letters from Panduranga",
-      "asset_director_folder": "nguyen-trinh-thi",
+    "Maria Iorio and Raphaël Cuomo::Undead Voices (2019–2021)": {
+      "director": "Maria Iorio and Raphaël Cuomo",
+      "title": "Undead Voices (2019–2021)",
+      "asset_director_folder": "maria-iorio-and-raphael-cuomo",
       "images": [
         {
-          "filename": "01-SELECTED-Letters future 1.webp",
-          "path": "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/01-SELECTED-Letters future 1.webp",
+          "filename": "01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
+          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-Iorio-Cuomo_Undead Voices_Feminist demo.webp",
+          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/02-SELECTED-Iorio-Cuomo_Undead Voices_Feminist demo.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-Iorio-Cuomo_Undead Voices_Reel.webp",
+          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/03-SELECTED-Iorio-Cuomo_Undead Voices_Reel.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_LP_RE_01_12.1.1_RE-DEF.webp",
+          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/04-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_LP_RE_01_12.1.1_RE-DEF.webp",
+          "location": "root"
+        },
+        {
+          "filename": "05-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_RE_9.1.1_RE-DEF.webp",
+          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/05-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_RE_9.1.1_RE-DEF.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 5,
+      "primary_image": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
+      "has_film_specific_folder": false
+    },
+    "Judith Westerveld::The Sending of the Crows": {
+      "director": "Judith Westerveld",
+      "title": "The Sending of the Crows",
+      "asset_director_folder": "judith-westerveld",
+      "images": [
+        {
+          "filename": "01-SELECTED-Landscape_The Sending of the Crows_4 (full resolution).webp",
+          "path": "/assets/images/film-images/judith-westerveld/The sending of the crows/01-SELECTED-Landscape_The Sending of the Crows_4 (full resolution).webp",
           "location": "subdirectory"
         },
         {
-          "filename": "02-SELECTED-Letters future 2.webp",
-          "path": "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/02-SELECTED-Letters future 2.webp",
+          "filename": "02-SELECTED-Landscape_The Sending of the Crows_3 (full resolution).webp",
+          "path": "/assets/images/film-images/judith-westerveld/The sending of the crows/02-SELECTED-Landscape_The Sending of the Crows_3 (full resolution).webp",
           "location": "subdirectory"
         },
         {
-          "filename": "03-SELECTED-5-Thi Nguyen-Letters from Panduranga-2015.webp",
-          "path": "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/03-SELECTED-5-Thi Nguyen-Letters from Panduranga-2015.webp",
+          "filename": "03-SELECTED-Landscape_The Sending of the Crows_1 (full resolution).webp",
+          "path": "/assets/images/film-images/judith-westerveld/The sending of the crows/03-SELECTED-Landscape_The Sending of the Crows_1 (full resolution).webp",
+          "location": "subdirectory"
+        },
+        {
+          "filename": "04-SELECTED-Landscape_The Sending of the Crows_2 (full resolution).webp",
+          "path": "/assets/images/film-images/judith-westerveld/The sending of the crows/04-SELECTED-Landscape_The Sending of the Crows_2 (full resolution).webp",
           "location": "subdirectory"
         }
       ],
-      "image_count": 3,
-      "primary_image": "/assets/images/film-images/nguyen-trinh-thi/Selection Letters from Panduranga/01-SELECTED-Letters future 1.webp",
+      "image_count": 4,
+      "primary_image": "/assets/images/film-images/judith-westerveld/The sending of the crows/01-SELECTED-Landscape_The Sending of the Crows_4 (full resolution).webp",
       "has_film_specific_folder": true
     },
-    "Bahar Noorizadeh::Free to Choose": {
-      "director": "Bahar Noorizadeh",
-      "title": "Free to Choose",
-      "asset_director_folder": "bahar-noorizadeh",
+    "Lucia Nimcová en David Petráš::Where no bell rings": {
+      "director": "Lucia Nimcová en David Petráš",
+      "title": "Where no bell rings",
+      "asset_director_folder": "lucia-nimcova-and-david-petras",
       "images": [
         {
-          "filename": "01-SELECTED-FTC - still 9.webp",
-          "path": "/assets/images/film-images/bahar-noorizadeh/01-SELECTED-FTC - still 9.webp",
+          "filename": "01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
+          "path": "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
           "location": "root"
         },
         {
-          "filename": "02-SELECTED-FTC - still 1.webp",
-          "path": "/assets/images/film-images/bahar-noorizadeh/02-SELECTED-FTC - still 1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-FTC - still 10.webp",
-          "path": "/assets/images/film-images/bahar-noorizadeh/03-SELECTED-FTC - still 10.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-FTC - still 11.webp",
-          "path": "/assets/images/film-images/bahar-noorizadeh/04-SELECTED-FTC - still 11.webp",
-          "location": "root"
-        },
-        {
-          "filename": "05-SELECTED-FTC - still 2.webp",
-          "path": "/assets/images/film-images/bahar-noorizadeh/05-SELECTED-FTC - still 2.webp",
-          "location": "root"
-        },
-        {
-          "filename": "06-SELECTED-FTC - still 3.webp",
-          "path": "/assets/images/film-images/bahar-noorizadeh/06-SELECTED-FTC - still 3.webp",
-          "location": "root"
-        },
-        {
-          "filename": "07-SELECTED-FTC - still 4.webp",
-          "path": "/assets/images/film-images/bahar-noorizadeh/07-SELECTED-FTC - still 4.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 7,
-      "primary_image": "/assets/images/film-images/bahar-noorizadeh/01-SELECTED-FTC - still 9.webp",
-      "has_film_specific_folder": false
-    },
-    "Chantal Akerman::De L’autre coté": {
-      "director": "Chantal Akerman",
-      "title": "De L’autre coté",
-      "asset_director_folder": "chantal-akerman",
-      "images": [
-        {
-          "filename": "01-SELECTED-FTOS 15.webp",
-          "path": "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-FTOS 14.webp",
-          "path": "/assets/images/film-images/chantal-akerman/02-SELECTED-FTOS 14.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-FTOS 9.webp",
-          "path": "/assets/images/film-images/chantal-akerman/03-SELECTED-FTOS 9.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-FTOS 16.webp",
-          "path": "/assets/images/film-images/chantal-akerman/04-SELECTED-FTOS 16.webp",
-          "location": "root"
-        },
-        {
-          "filename": "05-SELECTED-FTOS 17.webp",
-          "path": "/assets/images/film-images/chantal-akerman/05-SELECTED-FTOS 17.webp",
-          "location": "root"
-        },
-        {
-          "filename": "06-SELECTED-FTOS 25 surveillance 1.webp",
-          "path": "/assets/images/film-images/chantal-akerman/06-SELECTED-FTOS 25 surveillance 1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "07-SELECTED-FTOS 1.webp",
-          "path": "/assets/images/film-images/chantal-akerman/07-SELECTED-FTOS 1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "08-SELECTED-FTOS 21.webp",
-          "path": "/assets/images/film-images/chantal-akerman/08-SELECTED-FTOS 21.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 8,
-      "primary_image": "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp",
-      "has_film_specific_folder": false
-    },
-    "Alexander Horwath::Henry Fonda for President": {
-      "director": "Alexander Horwath",
-      "title": "Henry Fonda for President",
-      "asset_director_folder": "alexander-horwath",
-      "images": [
-        {
-          "filename": "01-SELECTED-timessquare-presse3.webp",
-          "path": "/assets/images/film-images/alexander-horwath/01-SELECTED-timessquare-presse3.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-village-fonda-presse1.webp",
-          "path": "/assets/images/film-images/alexander-horwath/02-SELECTED-village-fonda-presse1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-parade-presse2.webp",
-          "path": "/assets/images/film-images/alexander-horwath/03-SELECTED-parade-presse2.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 3,
-      "primary_image": "/assets/images/film-images/alexander-horwath/01-SELECTED-timessquare-presse3.webp",
-      "has_film_specific_folder": false
-    },
-    "Rupert Cox en Angus Carlyle::The Cave Mouth and The Giant Voice": {
-      "director": "Rupert Cox en Angus Carlyle",
-      "title": "The Cave Mouth and The Giant Voice",
-      "asset_director_folder": "rupert-cox-and-angus-carlyle",
-      "images": [
-        {
-          "filename": "01-SELECTED-The Cave Mouth and the Giant Voice.webp",
-          "path": "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-The Cave Mouth Rupert & Cox.webp",
-          "path": "/assets/images/film-images/rupert-cox-and-angus-carlyle/02-SELECTED-The Cave Mouth Rupert & Cox.webp",
+          "filename": "02-SELECTED-Petras Nimcova_Where no bell rings_Image.webp",
+          "path": "/assets/images/film-images/lucia-nimcova-and-david-petras/02-SELECTED-Petras Nimcova_Where no bell rings_Image.webp",
           "location": "root"
         }
       ],
       "image_count": 2,
-      "primary_image": "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp",
+      "primary_image": "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
       "has_film_specific_folder": false
     },
     "Nguyễn Trinh Thi::How to Improve the World": {
@@ -2499,129 +3359,24 @@
       "primary_image": "/assets/images/film-images/nguyen-trinh-thi/How to Imporove the World/01-SELECTED-How to Improve the World Still 2.webp",
       "has_film_specific_folder": true
     },
-    "Chantal Akerman::De l’autre coté": {
-      "director": "Chantal Akerman",
-      "title": "De l’autre coté",
-      "asset_director_folder": "chantal-akerman",
+    "Maryam Jafri::Mariam Jafri vs Maryam Jafri": {
+      "director": "Maryam Jafri",
+      "title": "Mariam Jafri vs Maryam Jafri",
+      "asset_director_folder": "maryam-jafri",
       "images": [
         {
-          "filename": "01-SELECTED-FTOS 15.webp",
-          "path": "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp",
+          "filename": "01-SELECTED-2_MariamJafriVsMaryamJafri.webp",
+          "path": "/assets/images/film-images/maryam-jafri/01-SELECTED-2_MariamJafriVsMaryamJafri.webp",
           "location": "root"
         },
         {
-          "filename": "02-SELECTED-FTOS 14.webp",
-          "path": "/assets/images/film-images/chantal-akerman/02-SELECTED-FTOS 14.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-FTOS 9.webp",
-          "path": "/assets/images/film-images/chantal-akerman/03-SELECTED-FTOS 9.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-FTOS 16.webp",
-          "path": "/assets/images/film-images/chantal-akerman/04-SELECTED-FTOS 16.webp",
-          "location": "root"
-        },
-        {
-          "filename": "05-SELECTED-FTOS 17.webp",
-          "path": "/assets/images/film-images/chantal-akerman/05-SELECTED-FTOS 17.webp",
-          "location": "root"
-        },
-        {
-          "filename": "06-SELECTED-FTOS 25 surveillance 1.webp",
-          "path": "/assets/images/film-images/chantal-akerman/06-SELECTED-FTOS 25 surveillance 1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "07-SELECTED-FTOS 1.webp",
-          "path": "/assets/images/film-images/chantal-akerman/07-SELECTED-FTOS 1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "08-SELECTED-FTOS 21.webp",
-          "path": "/assets/images/film-images/chantal-akerman/08-SELECTED-FTOS 21.webp",
+          "filename": "02-SELECTED-1_MariamJafriVsMaryamJafri.webp",
+          "path": "/assets/images/film-images/maryam-jafri/02-SELECTED-1_MariamJafriVsMaryamJafri.webp",
           "location": "root"
         }
       ],
-      "image_count": 8,
-      "primary_image": "/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp",
-      "has_film_specific_folder": false
-    },
-    "Miko Revereza::Nowhere Near": {
-      "director": "Miko Revereza",
-      "title": "Nowhere Near",
-      "asset_director_folder": "miko-revereza",
-      "images": [
-        {
-          "filename": "01-SELECTED-NowhereNear_Still03.webp",
-          "path": "/assets/images/film-images/miko-revereza/01-SELECTED-NowhereNear_Still03.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-NowhereNear_Still02.webp",
-          "path": "/assets/images/film-images/miko-revereza/02-SELECTED-NowhereNear_Still02.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-NowhereNear_Still04.webp",
-          "path": "/assets/images/film-images/miko-revereza/03-SELECTED-NowhereNear_Still04.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-NowhereNear_Still05.webp",
-          "path": "/assets/images/film-images/miko-revereza/04-SELECTED-NowhereNear_Still05.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 4,
-      "primary_image": "/assets/images/film-images/miko-revereza/01-SELECTED-NowhereNear_Still03.webp",
-      "has_film_specific_folder": false
-    },
-    "Laura Rascaroli::Lezing door Laura Rascaroli": {
-      "director": "Laura Rascaroli",
-      "title": "Lezing door Laura Rascaroli",
-      "asset_director_folder": "laura-rascaroli",
-      "images": [
-        {
-          "filename": "laura-rascaroli-w-rms-blob-common.webp",
-          "path": "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 1,
-      "primary_image": "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp",
-      "has_film_specific_folder": false
-    },
-    "Mattijs van de Port::Where can I get Lost?": {
-      "director": "Mattijs van de Port",
-      "title": "Where can I get Lost?",
-      "asset_director_folder": "mattijs-van-de-port",
-      "images": [
-        {
-          "filename": "01-SELECTED-still.webp",
-          "path": "/assets/images/film-images/mattijs-van-de-port/01-SELECTED-still.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-still 2.webp",
-          "path": "/assets/images/film-images/mattijs-van-de-port/02-SELECTED-still 2.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-still 4.webp",
-          "path": "/assets/images/film-images/mattijs-van-de-port/03-SELECTED-still 4.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-still 7.webp",
-          "path": "/assets/images/film-images/mattijs-van-de-port/04-SELECTED-still 7.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 4,
-      "primary_image": "/assets/images/film-images/mattijs-van-de-port/01-SELECTED-still.webp",
+      "image_count": 2,
+      "primary_image": "/assets/images/film-images/maryam-jafri/01-SELECTED-2_MariamJafriVsMaryamJafri.webp",
       "has_film_specific_folder": false
     },
     "Hicham Gardaf::In Praise of Slowness": {
@@ -2659,74 +3414,64 @@
       "primary_image": "/assets/images/film-images/hicham-gardaf/01-SELECTED-In_Praise_of_Slowness_Film_Still_04.webp",
       "has_film_specific_folder": false
     },
-    "Lucia Nimcová and David Petráš::Where no bell rings": {
-      "director": "Lucia Nimcová and David Petráš",
-      "title": "Where no bell rings",
-      "asset_director_folder": "lucia-nimcova-and-david-petras",
+    "Andrew Norman Wilson::Workers Leaving the Googleplex": {
+      "director": "Andrew Norman Wilson",
+      "title": "Workers Leaving the Googleplex",
+      "asset_director_folder": "andrew-norman-wilson",
       "images": [
         {
-          "filename": "01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
-          "path": "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
+          "filename": "01-SELECTED-Googleplex 5.webp",
+          "path": "/assets/images/film-images/andrew-norman-wilson/01-SELECTED-Googleplex 5.webp",
           "location": "root"
         },
         {
-          "filename": "02-SELECTED-Petras Nimcova_Where no bell rings_Image.webp",
-          "path": "/assets/images/film-images/lucia-nimcova-and-david-petras/02-SELECTED-Petras Nimcova_Where no bell rings_Image.webp",
+          "filename": "01-SELECTED-Googleplex 4.webp",
+          "path": "/assets/images/film-images/andrew-norman-wilson/01-SELECTED-Googleplex 4.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-GoogleStillComposite.webp",
+          "path": "/assets/images/film-images/andrew-norman-wilson/03-SELECTED-GoogleStillComposite.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 3,
+      "primary_image": "/assets/images/film-images/andrew-norman-wilson/01-SELECTED-Googleplex 5.webp",
+      "has_film_specific_folder": false
+    },
+    "Ho Rui An::Twenty-Four Cinematic Points of View of a Factory Gate in China": {
+      "director": "Ho Rui An",
+      "title": "Twenty-Four Cinematic Points of View of a Factory Gate in China",
+      "asset_director_folder": "ho-rui-an",
+      "images": [
+        {
+          "filename": "01-SELECTED-Factory Gate_1.webp",
+          "path": "/assets/images/film-images/ho-rui-an/01-SELECTED-Factory Gate_1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-Factory Gate_2.webp",
+          "path": "/assets/images/film-images/ho-rui-an/02-SELECTED-Factory Gate_2.webp",
           "location": "root"
         }
       ],
       "image_count": 2,
-      "primary_image": "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
+      "primary_image": "/assets/images/film-images/ho-rui-an/01-SELECTED-Factory Gate_1.webp",
       "has_film_specific_folder": false
     },
-    "Manthia Diawara::A Letter from Yene": {
-      "director": "Manthia Diawara",
-      "title": "A Letter from Yene",
-      "asset_director_folder": "manthia-diawara",
+    "Laura Rascaroli::Lezing door Laura Rascaroli": {
+      "director": "Laura Rascaroli",
+      "title": "Lezing door Laura Rascaroli",
+      "asset_director_folder": "laura-rascaroli",
       "images": [
         {
-          "filename": "01-SELECTED-A Letter from Yene 1.webp",
-          "path": "/assets/images/film-images/manthia-diawara/01-SELECTED-A Letter from Yene 1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-A Letter from Yene 2.webp",
-          "path": "/assets/images/film-images/manthia-diawara/02-SELECTED-A Letter from Yene 2.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-A Letter from Yene 4.webp",
-          "path": "/assets/images/film-images/manthia-diawara/03-SELECTED-A Letter from Yene 4.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-A Letter from Yene 5.webp",
-          "path": "/assets/images/film-images/manthia-diawara/04-SELECTED-A Letter from Yene 5.webp",
-          "location": "root"
-        },
-        {
-          "filename": "05-SELECTED-A Letter from Yene 3.webp",
-          "path": "/assets/images/film-images/manthia-diawara/05-SELECTED-A Letter from Yene 3.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 5,
-      "primary_image": "/assets/images/film-images/manthia-diawara/01-SELECTED-A Letter from Yene 1.webp",
-      "has_film_specific_folder": false
-    },
-    "Toshiya Tsunoda::Kapotte Muziek – Track 1": {
-      "director": "Toshiya Tsunoda",
-      "title": "Kapotte Muziek – Track 1",
-      "asset_director_folder": "toyisha-tsunoda",
-      "images": [
-        {
-          "filename": "Kapotte Muziek by Toshiya Tsunoda.webp",
-          "path": "/assets/images/film-images/toyisha-tsunoda/Kapotte Muziek by Toshiya Tsunoda.webp",
+          "filename": "laura-rascaroli-w-rms-blob-common.webp",
+          "path": "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp",
           "location": "root"
         }
       ],
       "image_count": 1,
-      "primary_image": "/assets/images/film-images/toyisha-tsunoda/Kapotte Muziek by Toshiya Tsunoda.webp",
+      "primary_image": "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp",
       "has_film_specific_folder": false
     },
     "Harun Farocki::Gegen-Musik": {
@@ -2804,38 +3549,88 @@
       "primary_image": "/assets/images/film-images/harun-farocki/Gegen Musik Counter-Music/00-SELECTED-GegenMusik600dpi_15.webp",
       "has_film_specific_folder": true
     },
-    "Bertrand Bonello::Coma": {
-      "director": "Bertrand Bonello",
-      "title": "Coma",
-      "asset_director_folder": "bertrand-bonello",
+    "Sasha Litvintseva and Beny Wagner::My Want of You Partakes of Me": {
+      "director": "Sasha Litvintseva and Beny Wagner",
+      "title": "My Want of You Partakes of Me",
+      "asset_director_folder": "sasha-litvintseva-and-beny-wagner",
       "images": [
         {
-          "filename": "01-SELECTED-COMA - STILL 3.webp",
-          "path": "/assets/images/film-images/bertrand-bonello/01-SELECTED-COMA - STILL 3.webp",
+          "filename": "01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
+          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
           "location": "root"
         },
         {
-          "filename": "02-SELECTED-COMA - STILL 2.webp",
-          "path": "/assets/images/film-images/bertrand-bonello/02-SELECTED-COMA - STILL 2.webp",
+          "filename": "02-SELECTED-My Want of You Partakes of Me - Still 2.webp",
+          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/02-SELECTED-My Want of You Partakes of Me - Still 2.webp",
           "location": "root"
         },
         {
-          "filename": "03-SELECTED-COMA - STILL 4.webp",
-          "path": "/assets/images/film-images/bertrand-bonello/03-SELECTED-COMA - STILL 4.webp",
+          "filename": "03-SELECTED-My Want of You Partakes of Me - Still 4.webp",
+          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/03-SELECTED-My Want of You Partakes of Me - Still 4.webp",
           "location": "root"
         },
         {
-          "filename": "04-SELECTED-COMA-STILL-WEB.webp",
-          "path": "/assets/images/film-images/bertrand-bonello/04-SELECTED-COMA-STILL-WEB.webp",
+          "filename": "04-SELECTED-My Want of You Partakes of Me - Still 3.webp",
+          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/04-SELECTED-My Want of You Partakes of Me - Still 3.webp",
           "location": "root"
         }
       ],
       "image_count": 4,
-      "primary_image": "/assets/images/film-images/bertrand-bonello/01-SELECTED-COMA - STILL 3.webp",
+      "primary_image": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
       "has_film_specific_folder": false
     },
-    "Auguste and Louis Lumière::La sortie de l'usine Lumière à Lyon": {
-      "director": "Auguste and Louis Lumière",
+    "Sasha Litvintseva en Beny Wagner::My Want of You Partakes of Me": {
+      "director": "Sasha Litvintseva en Beny Wagner",
+      "title": "My Want of You Partakes of Me",
+      "asset_director_folder": "sasha-litvintseva-and-beny-wagner",
+      "images": [
+        {
+          "filename": "01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
+          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-My Want of You Partakes of Me - Still 2.webp",
+          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/02-SELECTED-My Want of You Partakes of Me - Still 2.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-My Want of You Partakes of Me - Still 4.webp",
+          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/03-SELECTED-My Want of You Partakes of Me - Still 4.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-My Want of You Partakes of Me - Still 3.webp",
+          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/04-SELECTED-My Want of You Partakes of Me - Still 3.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 4,
+      "primary_image": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
+      "has_film_specific_folder": false
+    },
+    "Elysa Wendi and Shing Lee::Room 404": {
+      "director": "Elysa Wendi and Shing Lee",
+      "title": "Room 404",
+      "asset_director_folder": "elysa-wendi-and-wai-shing-lee",
+      "images": [
+        {
+          "filename": "01-SELECTED-room 404 ext film still 2.webp",
+          "path": "/assets/images/film-images/elysa-wendi-and-wai-shing-lee/01-SELECTED-room 404 ext film still 2.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-room 404 ext film still 3.webp",
+          "path": "/assets/images/film-images/elysa-wendi-and-wai-shing-lee/02-SELECTED-room 404 ext film still 3.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 2,
+      "primary_image": "/assets/images/film-images/elysa-wendi-and-wai-shing-lee/01-SELECTED-room 404 ext film still 2.webp",
+      "has_film_specific_folder": false
+    },
+    "Auguste en Louis Lumière::La sortie de l'usine Lumière à Lyon": {
+      "director": "Auguste en Louis Lumière",
       "title": "La sortie de l'usine Lumière à Lyon",
       "asset_director_folder": "auguste-louis-lumiere",
       "images": [
@@ -2852,66 +3647,6 @@
       ],
       "image_count": 2,
       "primary_image": "/assets/images/film-images/auguste-louis-lumiere/01-SELECTED-Lumiere Brothers - Still of 1st ever film - shot on the 19th March 1895.webp",
-      "has_film_specific_folder": false
-    },
-    "Susanna Tomassini::The Southern Thruway": {
-      "director": "Susanna Tomassini",
-      "title": "The Southern Thruway",
-      "asset_director_folder": "susanna-tomassini",
-      "images": [
-        {
-          "filename": "01-SELECTED-TST_still1.webp",
-          "path": "/assets/images/film-images/susanna-tomassini/01-SELECTED-TST_still1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-TST_still2.webp",
-          "path": "/assets/images/film-images/susanna-tomassini/02-SELECTED-TST_still2.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-TST_still3.webp",
-          "path": "/assets/images/film-images/susanna-tomassini/03-SELECTED-TST_still3.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-TST_still4.webp",
-          "path": "/assets/images/film-images/susanna-tomassini/04-SELECTED-TST_still4.webp",
-          "location": "root"
-        },
-        {
-          "filename": "05-SELECTED-TST_still5.webp",
-          "path": "/assets/images/film-images/susanna-tomassini/05-SELECTED-TST_still5.webp",
-          "location": "root"
-        },
-        {
-          "filename": "06-SELECTED-TST_still6.webp",
-          "path": "/assets/images/film-images/susanna-tomassini/06-SELECTED-TST_still6.webp",
-          "location": "root"
-        },
-        {
-          "filename": "07-SELECTED-TST_still7.webp",
-          "path": "/assets/images/film-images/susanna-tomassini/07-SELECTED-TST_still7.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 7,
-      "primary_image": "/assets/images/film-images/susanna-tomassini/01-SELECTED-TST_still1.webp",
-      "has_film_specific_folder": false
-    },
-    "Lis Rhodes::Disquiet": {
-      "director": "Lis Rhodes",
-      "title": "Disquiet",
-      "asset_director_folder": "lis-rhodes",
-      "images": [
-        {
-          "filename": "01-SELECTED-STILL-for-DISQUIET.webp",
-          "path": "/assets/images/film-images/lis-rhodes/01-SELECTED-STILL-for-DISQUIET.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 1,
-      "primary_image": "/assets/images/film-images/lis-rhodes/01-SELECTED-STILL-for-DISQUIET.webp",
       "has_film_specific_folder": false
     },
     "Chris Marker::Sans Soleil": {
@@ -2954,39 +3689,79 @@
       "primary_image": "/assets/images/film-images/chris-marker/01-SELECTED-Sunless 1.webp",
       "has_film_specific_folder": false
     },
-    "Maria Iorio and Raphaël Cuomo::Undead Voices (2019–2021)": {
-      "director": "Maria Iorio and Raphaël Cuomo",
-      "title": "Undead Voices (2019–2021)",
-      "asset_director_folder": "maria-iorio-and-raphael-cuomo",
+    "Lena Windisch::Searching for the Perfect Gentleman": {
+      "director": "Lena Windisch",
+      "title": "Searching for the Perfect Gentleman",
+      "asset_director_folder": "lena-windisch",
       "images": [
         {
-          "filename": "01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
-          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
+          "filename": "01-SELECTED-Perfect_Gentleman_STILL_10.webp",
+          "path": "/assets/images/film-images/lena-windisch/01-SELECTED-Perfect_Gentleman_STILL_10.webp",
           "location": "root"
         },
         {
-          "filename": "02-SELECTED-Iorio-Cuomo_Undead Voices_Feminist demo.webp",
-          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/02-SELECTED-Iorio-Cuomo_Undead Voices_Feminist demo.webp",
+          "filename": "02-SELECTED-Perfect_Gentleman_STILL_09.webp",
+          "path": "/assets/images/film-images/lena-windisch/02-SELECTED-Perfect_Gentleman_STILL_09.webp",
           "location": "root"
         },
         {
-          "filename": "03-SELECTED-Iorio-Cuomo_Undead Voices_Reel.webp",
-          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/03-SELECTED-Iorio-Cuomo_Undead Voices_Reel.webp",
+          "filename": "03-SELECTED-Perfect_Gentleman_STILL_05.webp",
+          "path": "/assets/images/film-images/lena-windisch/03-SELECTED-Perfect_Gentleman_STILL_05.webp",
           "location": "root"
         },
         {
-          "filename": "04-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_LP_RE_01_12.1.1_RE-DEF.webp",
-          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/04-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_LP_RE_01_12.1.1_RE-DEF.webp",
+          "filename": "04-SELECTED-Perfect_Gentleman_STILL_01.webp",
+          "path": "/assets/images/film-images/lena-windisch/04-SELECTED-Perfect_Gentleman_STILL_01.webp",
           "location": "root"
         },
         {
-          "filename": "05-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_RE_9.1.1_RE-DEF.webp",
-          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/05-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_RE_9.1.1_RE-DEF.webp",
+          "filename": "05-SELECTED-Perfect_Gentleman_STILL_02.webp",
+          "path": "/assets/images/film-images/lena-windisch/05-SELECTED-Perfect_Gentleman_STILL_02.webp",
+          "location": "root"
+        },
+        {
+          "filename": "06-SELECTED-Perfect_Gentleman_STILL_08.webp",
+          "path": "/assets/images/film-images/lena-windisch/06-SELECTED-Perfect_Gentleman_STILL_08.webp",
+          "location": "root"
+        },
+        {
+          "filename": "07-SELECTED-Perfect_Gentleman_STILL_04.webp",
+          "path": "/assets/images/film-images/lena-windisch/07-SELECTED-Perfect_Gentleman_STILL_04.webp",
           "location": "root"
         }
       ],
-      "image_count": 5,
-      "primary_image": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
+      "image_count": 7,
+      "primary_image": "/assets/images/film-images/lena-windisch/01-SELECTED-Perfect_Gentleman_STILL_10.webp",
+      "has_film_specific_folder": false
+    },
+    "Mattijs van de Port::Where can I get Lost?": {
+      "director": "Mattijs van de Port",
+      "title": "Where can I get Lost?",
+      "asset_director_folder": "mattijs-van-de-port",
+      "images": [
+        {
+          "filename": "01-SELECTED-still.webp",
+          "path": "/assets/images/film-images/mattijs-van-de-port/01-SELECTED-still.webp",
+          "location": "root"
+        },
+        {
+          "filename": "02-SELECTED-still 2.webp",
+          "path": "/assets/images/film-images/mattijs-van-de-port/02-SELECTED-still 2.webp",
+          "location": "root"
+        },
+        {
+          "filename": "03-SELECTED-still 4.webp",
+          "path": "/assets/images/film-images/mattijs-van-de-port/03-SELECTED-still 4.webp",
+          "location": "root"
+        },
+        {
+          "filename": "04-SELECTED-still 7.webp",
+          "path": "/assets/images/film-images/mattijs-van-de-port/04-SELECTED-still 7.webp",
+          "location": "root"
+        }
+      ],
+      "image_count": 4,
+      "primary_image": "/assets/images/film-images/mattijs-van-de-port/01-SELECTED-still.webp",
       "has_film_specific_folder": false
     },
     "Michela Meliddo::Perpetual Radiance": {
@@ -3042,781 +3817,6 @@
       ],
       "image_count": 9,
       "primary_image": "/assets/images/film-images/michela-meliddo/01-SELECTED-Still03.webp",
-      "has_film_specific_folder": false
-    },
-    "Miranda Pennell::Man Number 4": {
-      "director": "Miranda Pennell",
-      "title": "Man Number 4",
-      "asset_director_folder": "miranda-pennell",
-      "images": [
-        {
-          "filename": "01-SELECTED-Feet_Mannumber4_MPennell_1.webp",
-          "path": "/assets/images/film-images/miranda-pennell/01-SELECTED-Feet_Mannumber4_MPennell_1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-Solders-2500-2.webp",
-          "path": "/assets/images/film-images/miranda-pennell/02-SELECTED-Solders-2500-2.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 2,
-      "primary_image": "/assets/images/film-images/miranda-pennell/01-SELECTED-Feet_Mannumber4_MPennell_1.webp",
-      "has_film_specific_folder": false
-    },
-    "Auguste en Louis Lumière::La sortie de l'usine Lumière à Lyon": {
-      "director": "Auguste en Louis Lumière",
-      "title": "La sortie de l'usine Lumière à Lyon",
-      "asset_director_folder": "auguste-louis-lumiere",
-      "images": [
-        {
-          "filename": "01-SELECTED-Lumiere Brothers - Still of 1st ever film - shot on the 19th March 1895.webp",
-          "path": "/assets/images/film-images/auguste-louis-lumiere/01-SELECTED-Lumiere Brothers - Still of 1st ever film - shot on the 19th March 1895.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-Lumiere_Workers .webp",
-          "path": "/assets/images/film-images/auguste-louis-lumiere/02-SELECTED-Lumiere_Workers .webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 2,
-      "primary_image": "/assets/images/film-images/auguste-louis-lumiere/01-SELECTED-Lumiere Brothers - Still of 1st ever film - shot on the 19th March 1895.webp",
-      "has_film_specific_folder": false
-    },
-    "Andrew Norman Wilson::Workers Leaving the Googleplex": {
-      "director": "Andrew Norman Wilson",
-      "title": "Workers Leaving the Googleplex",
-      "asset_director_folder": "andrew-norman-wilson",
-      "images": [
-        {
-          "filename": "01-SELECTED-Googleplex 5.webp",
-          "path": "/assets/images/film-images/andrew-norman-wilson/01-SELECTED-Googleplex 5.webp",
-          "location": "root"
-        },
-        {
-          "filename": "01-SELECTED-Googleplex 4.webp",
-          "path": "/assets/images/film-images/andrew-norman-wilson/01-SELECTED-Googleplex 4.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-GoogleStillComposite.webp",
-          "path": "/assets/images/film-images/andrew-norman-wilson/03-SELECTED-GoogleStillComposite.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 3,
-      "primary_image": "/assets/images/film-images/andrew-norman-wilson/01-SELECTED-Googleplex 5.webp",
-      "has_film_specific_folder": false
-    },
-    "Rupert Cox and Angus Carlyle::The Cave Mouth and The Giant Voice": {
-      "director": "Rupert Cox and Angus Carlyle",
-      "title": "The Cave Mouth and The Giant Voice",
-      "asset_director_folder": "rupert-cox-and-angus-carlyle",
-      "images": [
-        {
-          "filename": "01-SELECTED-The Cave Mouth and the Giant Voice.webp",
-          "path": "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-The Cave Mouth Rupert & Cox.webp",
-          "path": "/assets/images/film-images/rupert-cox-and-angus-carlyle/02-SELECTED-The Cave Mouth Rupert & Cox.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 2,
-      "primary_image": "/assets/images/film-images/rupert-cox-and-angus-carlyle/01-SELECTED-The Cave Mouth and the Giant Voice.webp",
-      "has_film_specific_folder": false
-    },
-    "Maria Iorio en Raphaël Cuomo::Undead Voices (2019–2021)": {
-      "director": "Maria Iorio en Raphaël Cuomo",
-      "title": "Undead Voices (2019–2021)",
-      "asset_director_folder": "maria-iorio-and-raphael-cuomo",
-      "images": [
-        {
-          "filename": "01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
-          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-Iorio-Cuomo_Undead Voices_Feminist demo.webp",
-          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/02-SELECTED-Iorio-Cuomo_Undead Voices_Feminist demo.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-Iorio-Cuomo_Undead Voices_Reel.webp",
-          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/03-SELECTED-Iorio-Cuomo_Undead Voices_Reel.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_LP_RE_01_12.1.1_RE-DEF.webp",
-          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/04-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_LP_RE_01_12.1.1_RE-DEF.webp",
-          "location": "root"
-        },
-        {
-          "filename": "05-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_RE_9.1.1_RE-DEF.webp",
-          "path": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/05-SELECTED-Iorio-Cuomo_Undead Voices_Undead Voices_DJ Fred Hystere_4k_RE_9.1.1_RE-DEF.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 5,
-      "primary_image": "/assets/images/film-images/maria-iorio-and-raphael-cuomo/01-SELECTED-Iorio-Cuomo_Undead Voices_Feminist assembly-Concert.webp",
-      "has_film_specific_folder": false
-    },
-    "Sergei Loznitsa::The Natural History of Destruction": {
-      "director": "Sergei Loznitsa",
-      "title": "The Natural History of Destruction",
-      "asset_director_folder": "sergey-loznitsa",
-      "images": [
-        {
-          "filename": "01-SELECTED-NHD_3.205.1.webp",
-          "path": "/assets/images/film-images/sergey-loznitsa/01-SELECTED-NHD_3.205.1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-0112788.webp",
-          "path": "/assets/images/film-images/sergey-loznitsa/02-SELECTED-0112788.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-0085797.webp",
-          "path": "/assets/images/film-images/sergey-loznitsa/03-SELECTED-0085797.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-0028555.webp",
-          "path": "/assets/images/film-images/sergey-loznitsa/04-SELECTED-0028555.webp",
-          "location": "root"
-        },
-        {
-          "filename": "05-SELECTED-0110449.webp",
-          "path": "/assets/images/film-images/sergey-loznitsa/05-SELECTED-0110449.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 5,
-      "primary_image": "/assets/images/film-images/sergey-loznitsa/01-SELECTED-NHD_3.205.1.webp",
-      "has_film_specific_folder": false
-    },
-    "Lucia Nimcová en David Petráš::Where no bell rings": {
-      "director": "Lucia Nimcová en David Petráš",
-      "title": "Where no bell rings",
-      "asset_director_folder": "lucia-nimcova-and-david-petras",
-      "images": [
-        {
-          "filename": "01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
-          "path": "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-Petras Nimcova_Where no bell rings_Image.webp",
-          "path": "/assets/images/film-images/lucia-nimcova-and-david-petras/02-SELECTED-Petras Nimcova_Where no bell rings_Image.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 2,
-      "primary_image": "/assets/images/film-images/lucia-nimcova-and-david-petras/01-SELECTED-Petras Nimcova_Where no bell rings_Image (2).webp",
-      "has_film_specific_folder": false
-    },
-    "Franzis Kabisch::Getty Abortions": {
-      "director": "Franzis Kabisch",
-      "title": "Getty Abortions",
-      "asset_director_folder": "franzis-kabisch",
-      "images": [
-        {
-          "filename": "00-SELECTED-gettyabortions_postcard_english-1 C_Franzis-Kabisch_VG-Bild-Kunst.webp",
-          "path": "/assets/images/film-images/franzis-kabisch/00-SELECTED-gettyabortions_postcard_english-1 C_Franzis-Kabisch_VG-Bild-Kunst.webp",
-          "location": "root"
-        },
-        {
-          "filename": "01-SELECTED-gettyabortions_still_1_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
-          "path": "/assets/images/film-images/franzis-kabisch/01-SELECTED-gettyabortions_still_1_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-gettyabortions_still_2_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
-          "path": "/assets/images/film-images/franzis-kabisch/02-SELECTED-gettyabortions_still_2_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-gettyabortions_still_6_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
-          "path": "/assets/images/film-images/franzis-kabisch/03-SELECTED-gettyabortions_still_6_en  @Franzis-Kabisch_VG-Bild-Kunst.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 4,
-      "primary_image": "/assets/images/film-images/franzis-kabisch/00-SELECTED-gettyabortions_postcard_english-1 C_Franzis-Kabisch_VG-Bild-Kunst.webp",
-      "has_film_specific_folder": false
-    },
-    "Harun Farocki::Was ist Los?": {
-      "director": "Harun Farocki",
-      "title": "Was ist Los?",
-      "asset_director_folder": "harun-farocki",
-      "images": [
-        {
-          "filename": "01-SELECTED-Was ist los 01.webp",
-          "path": "/assets/images/film-images/harun-farocki/Was ist los What's up/01-SELECTED-Was ist los 01.webp",
-          "location": "subdirectory"
-        },
-        {
-          "filename": "02-SELECTED-Was ist los 02.webp",
-          "path": "/assets/images/film-images/harun-farocki/Was ist los What's up/02-SELECTED-Was ist los 02.webp",
-          "location": "subdirectory"
-        },
-        {
-          "filename": "03-SELECTED-Was ist los 03.webp",
-          "path": "/assets/images/film-images/harun-farocki/Was ist los What's up/03-SELECTED-Was ist los 03.webp",
-          "location": "subdirectory"
-        },
-        {
-          "filename": "04-SELECTED-Was ist los 04.webp",
-          "path": "/assets/images/film-images/harun-farocki/Was ist los What's up/04-SELECTED-Was ist los 04.webp",
-          "location": "subdirectory"
-        },
-        {
-          "filename": "05-SELECTED-Was ist los 05.webp",
-          "path": "/assets/images/film-images/harun-farocki/Was ist los What's up/05-SELECTED-Was ist los 05.webp",
-          "location": "subdirectory"
-        }
-      ],
-      "image_count": 5,
-      "primary_image": "/assets/images/film-images/harun-farocki/Was ist los What's up/01-SELECTED-Was ist los 01.webp",
-      "has_film_specific_folder": true
-    },
-    "Veronica Munteanu, Karin Nakajima, Sara Ouljour::Haunted, the Hollow": {
-      "director": "Veronica Munteanu, Karin Nakajima, Sara Ouljour",
-      "title": "Haunted, the Hollow",
-      "asset_director_folder": "veronica-munteau-karin-nakajima-sara-ouljour",
-      "images": [
-        {
-          "filename": "01-SELECTED-Screenshot 2025-08-08 at 11.11.46.webp",
-          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/01-SELECTED-Screenshot 2025-08-08 at 11.11.46.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-Screenshot 2025-08-08 at 11.11.21.webp",
-          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/02-SELECTED-Screenshot 2025-08-08 at 11.11.21.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-DSC_0025.webp",
-          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/03-SELECTED-DSC_0025.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-Screenshot 2025-08-08 at 11.12.01.webp",
-          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/04-SELECTED-Screenshot 2025-08-08 at 11.12.01.webp",
-          "location": "root"
-        },
-        {
-          "filename": "05-SELECTED-Screenshot 2025-08-08 at 11.07.55.webp",
-          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/05-SELECTED-Screenshot 2025-08-08 at 11.07.55.webp",
-          "location": "root"
-        },
-        {
-          "filename": "06-SELECTED-DSC_0020.webp",
-          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/06-SELECTED-DSC_0020.webp",
-          "location": "root"
-        },
-        {
-          "filename": "07-SELECTED-Screenshot 2025-08-08 at 11.07.00.webp",
-          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/07-SELECTED-Screenshot 2025-08-08 at 11.07.00.webp",
-          "location": "root"
-        },
-        {
-          "filename": "08-SELECTED-Screenshot 2025-08-08 at 11.10.21.webp",
-          "path": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/08-SELECTED-Screenshot 2025-08-08 at 11.10.21.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 8,
-      "primary_image": "/assets/images/film-images/veronica-munteau-karin-nakajima-sara-ouljour/01-SELECTED-Screenshot 2025-08-08 at 11.11.46.webp",
-      "has_film_specific_folder": false
-    },
-    "Sasha Litvintseva en Beny Wagner::My Want of You Partakes of Me": {
-      "director": "Sasha Litvintseva en Beny Wagner",
-      "title": "My Want of You Partakes of Me",
-      "asset_director_folder": "sasha-litvintseva-and-beny-wagner",
-      "images": [
-        {
-          "filename": "01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
-          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-My Want of You Partakes of Me - Still 2.webp",
-          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/02-SELECTED-My Want of You Partakes of Me - Still 2.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-My Want of You Partakes of Me - Still 4.webp",
-          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/03-SELECTED-My Want of You Partakes of Me - Still 4.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-My Want of You Partakes of Me - Still 3.webp",
-          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/04-SELECTED-My Want of You Partakes of Me - Still 3.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 4,
-      "primary_image": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
-      "has_film_specific_folder": false
-    },
-    "Vincent Meessen::Juste un mouvement": {
-      "director": "Vincent Meessen",
-      "title": "Juste un mouvement",
-      "asset_director_folder": "vincent-meessen",
-      "images": [
-        {
-          "filename": "01-SELECTED-JUM_ (1-38-17-15).webp",
-          "path": "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-4.webp",
-          "path": "/assets/images/film-images/vincent-meessen/02-SELECTED-4.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-2.webp",
-          "path": "/assets/images/film-images/vincent-meessen/03-SELECTED-2.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-7.webp",
-          "path": "/assets/images/film-images/vincent-meessen/04-SELECTED-7.webp",
-          "location": "root"
-        },
-        {
-          "filename": "05-SELECTED-11.webp",
-          "path": "/assets/images/film-images/vincent-meessen/05-SELECTED-11.webp",
-          "location": "root"
-        },
-        {
-          "filename": "06-SELECTED-And_7_DoudouFall.webp",
-          "path": "/assets/images/film-images/vincent-meessen/06-SELECTED-And_7_DoudouFall.webp",
-          "location": "root"
-        },
-        {
-          "filename": "07-SELECTED-14.webp",
-          "path": "/assets/images/film-images/vincent-meessen/07-SELECTED-14.webp",
-          "location": "root"
-        },
-        {
-          "filename": "08-SELECTED-15.webp",
-          "path": "/assets/images/film-images/vincent-meessen/08-SELECTED-15.webp",
-          "location": "root"
-        },
-        {
-          "filename": "09-SELECTED-1.webp",
-          "path": "/assets/images/film-images/vincent-meessen/09-SELECTED-1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "10-SELECTED-12.webp",
-          "path": "/assets/images/film-images/vincent-meessen/10-SELECTED-12.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 10,
-      "primary_image": "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp",
-      "has_film_specific_folder": false
-    },
-    "Maryam Jafri::Mariam Jafri vs Maryam Jafri": {
-      "director": "Maryam Jafri",
-      "title": "Mariam Jafri vs Maryam Jafri",
-      "asset_director_folder": "maryam-jafri",
-      "images": [
-        {
-          "filename": "01-SELECTED-2_MariamJafriVsMaryamJafri.webp",
-          "path": "/assets/images/film-images/maryam-jafri/01-SELECTED-2_MariamJafriVsMaryamJafri.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-1_MariamJafriVsMaryamJafri.webp",
-          "path": "/assets/images/film-images/maryam-jafri/02-SELECTED-1_MariamJafriVsMaryamJafri.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 2,
-      "primary_image": "/assets/images/film-images/maryam-jafri/01-SELECTED-2_MariamJafriVsMaryamJafri.webp",
-      "has_film_specific_folder": false
-    },
-    "Judith Westerveld::The Sending of the Crows": {
-      "director": "Judith Westerveld",
-      "title": "The Sending of the Crows",
-      "asset_director_folder": "judith-westerveld",
-      "images": [
-        {
-          "filename": "01-SELECTED-Landscape_The Sending of the Crows_4 (full resolution).webp",
-          "path": "/assets/images/film-images/judith-westerveld/The sending of the crows/01-SELECTED-Landscape_The Sending of the Crows_4 (full resolution).webp",
-          "location": "subdirectory"
-        },
-        {
-          "filename": "02-SELECTED-Landscape_The Sending of the Crows_3 (full resolution).webp",
-          "path": "/assets/images/film-images/judith-westerveld/The sending of the crows/02-SELECTED-Landscape_The Sending of the Crows_3 (full resolution).webp",
-          "location": "subdirectory"
-        },
-        {
-          "filename": "03-SELECTED-Landscape_The Sending of the Crows_1 (full resolution).webp",
-          "path": "/assets/images/film-images/judith-westerveld/The sending of the crows/03-SELECTED-Landscape_The Sending of the Crows_1 (full resolution).webp",
-          "location": "subdirectory"
-        },
-        {
-          "filename": "04-SELECTED-Landscape_The Sending of the Crows_2 (full resolution).webp",
-          "path": "/assets/images/film-images/judith-westerveld/The sending of the crows/04-SELECTED-Landscape_The Sending of the Crows_2 (full resolution).webp",
-          "location": "subdirectory"
-        }
-      ],
-      "image_count": 4,
-      "primary_image": "/assets/images/film-images/judith-westerveld/The sending of the crows/01-SELECTED-Landscape_The Sending of the Crows_4 (full resolution).webp",
-      "has_film_specific_folder": true
-    },
-    "Sasha Litvintseva and Beny Wagner::My Want of You Partakes of Me": {
-      "director": "Sasha Litvintseva and Beny Wagner",
-      "title": "My Want of You Partakes of Me",
-      "asset_director_folder": "sasha-litvintseva-and-beny-wagner",
-      "images": [
-        {
-          "filename": "01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
-          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-My Want of You Partakes of Me - Still 2.webp",
-          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/02-SELECTED-My Want of You Partakes of Me - Still 2.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-My Want of You Partakes of Me - Still 4.webp",
-          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/03-SELECTED-My Want of You Partakes of Me - Still 4.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-My Want of You Partakes of Me - Still 3.webp",
-          "path": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/04-SELECTED-My Want of You Partakes of Me - Still 3.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 4,
-      "primary_image": "/assets/images/film-images/sasha-litvintseva-and-beny-wagner/01-SELECTED-My Want of You Partakes of Me - Still 1.webp",
-      "has_film_specific_folder": false
-    },
-    "Aura Satz::Preemptive Listening": {
-      "director": "Aura Satz",
-      "title": "Preemptive Listening",
-      "asset_director_folder": "aura-satz",
-      "images": [
-        {
-          "filename": "01-SELECTED-Preemptive Listening still1 (1).webp",
-          "path": "/assets/images/film-images/aura-satz/01-SELECTED-Preemptive Listening still1 (1).webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-Preemptive Listening still2.webp",
-          "path": "/assets/images/film-images/aura-satz/02-SELECTED-Preemptive Listening still2.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-Preemptive Listening still5.webp",
-          "path": "/assets/images/film-images/aura-satz/03-SELECTED-Preemptive Listening still5.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-Preemptive Listening still4.webp",
-          "path": "/assets/images/film-images/aura-satz/04-SELECTED-Preemptive Listening still4.webp",
-          "location": "root"
-        },
-        {
-          "filename": "05-SELECTED-Preemptive Listening still3.webp",
-          "path": "/assets/images/film-images/aura-satz/05-SELECTED-Preemptive Listening still3.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 5,
-      "primary_image": "/assets/images/film-images/aura-satz/01-SELECTED-Preemptive Listening still1 (1).webp",
-      "has_film_specific_folder": false
-    },
-    "Johan van der Keuken::Face Value": {
-      "director": "Johan van der Keuken",
-      "title": "Face Value",
-      "asset_director_folder": "johan-van-der-keuken",
-      "images": [
-        {
-          "filename": "01-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.29.webp",
-          "path": "/assets/images/film-images/johan-van-der-keuken/01-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.29.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
-          "path": "/assets/images/film-images/johan-van-der-keuken/02-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.16.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-Scherm­afbeelding 2025-08-06 om 20.56.09.webp",
-          "path": "/assets/images/film-images/johan-van-der-keuken/03-SELECTED-Scherm­afbeelding 2025-08-06 om 20.56.09.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 3,
-      "primary_image": "/assets/images/film-images/johan-van-der-keuken/01-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.29.webp",
-      "has_film_specific_folder": false
-    },
-    "Lea Hartlaub::sr": {
-      "director": "Lea Hartlaub",
-      "title": "sr",
-      "asset_director_folder": "lea-hartlaub",
-      "images": [
-        {
-          "filename": "01-SELECTED-sr_film-still_02_LeaHartlaub-BlinkerFilmproduktion_watching-giraffe-Nairobi.webp",
-          "path": "/assets/images/film-images/lea-hartlaub/01-SELECTED-sr_film-still_02_LeaHartlaub-BlinkerFilmproduktion_watching-giraffe-Nairobi.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-sr_film-still_01_LeaHartlaub-BlinkerFilmproduktion_port-of-Eilat.webp",
-          "path": "/assets/images/film-images/lea-hartlaub/02-SELECTED-sr_film-still_01_LeaHartlaub-BlinkerFilmproduktion_port-of-Eilat.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-sr_film-still_03_LeaHartlaub-BlinkerFilmproduktion_Liuli-Factory.webp",
-          "path": "/assets/images/film-images/lea-hartlaub/02-SELECTED-sr_film-still_03_LeaHartlaub-BlinkerFilmproduktion_Liuli-Factory.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-sr_film-still_06_LeaHartlaub-BlinkerFilmproduktion_hieroglyphe-sr.webp",
-          "path": "/assets/images/film-images/lea-hartlaub/03-SELECTED-sr_film-still_06_LeaHartlaub-BlinkerFilmproduktion_hieroglyphe-sr.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-sr_film-still_04_LeaHartlaub-BlinkerFilmproduktion_rockart-slide-copyright-by-D.Coulson.webp",
-          "path": "/assets/images/film-images/lea-hartlaub/04-SELECTED-sr_film-still_04_LeaHartlaub-BlinkerFilmproduktion_rockart-slide-copyright-by-D.Coulson.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-sr_film-still_07_LeaHartlaub-BlinkerFilmproduktion_newsreel-1945.webp",
-          "path": "/assets/images/film-images/lea-hartlaub/04-SELECTED-sr_film-still_07_LeaHartlaub-BlinkerFilmproduktion_newsreel-1945.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 6,
-      "primary_image": "/assets/images/film-images/lea-hartlaub/01-SELECTED-sr_film-still_02_LeaHartlaub-BlinkerFilmproduktion_watching-giraffe-Nairobi.webp",
-      "has_film_specific_folder": false
-    },
-    "Laura Rascaroli::Special Lecture by Laura Rascaroli": {
-      "director": "Laura Rascaroli",
-      "title": "Special Lecture by Laura Rascaroli",
-      "asset_director_folder": "laura-rascaroli",
-      "images": [
-        {
-          "filename": "laura-rascaroli-w-rms-blob-common.webp",
-          "path": "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 1,
-      "primary_image": "/assets/images/film-images/laura-rascaroli/laura-rascaroli-w-rms-blob-common.webp",
-      "has_film_specific_folder": false
-    },
-    "Kamal Aljafari::A Fidai Film": {
-      "director": "Kamal Aljafari",
-      "title": "A Fidai Film",
-      "asset_director_folder": "kamal-aljafari",
-      "images": [
-        {
-          "filename": "01-SELECTED-Fidai Still 3.webp",
-          "path": "/assets/images/film-images/kamal-aljafari/01-SELECTED-Fidai Still 3.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-Fidai Still 1.webp",
-          "path": "/assets/images/film-images/kamal-aljafari/02-SELECTED-Fidai Still 1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-Fidai Still 4.webp",
-          "path": "/assets/images/film-images/kamal-aljafari/02-SELECTED-Fidai Still 4.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-Fidai Still 9.webp",
-          "path": "/assets/images/film-images/kamal-aljafari/03-SELECTED-Fidai Still 9.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-Fidai Still 5.webp",
-          "path": "/assets/images/film-images/kamal-aljafari/04-SELECTED-Fidai Still 5.webp",
-          "location": "root"
-        },
-        {
-          "filename": "05-SELECTED-Fidai Still 2.webp",
-          "path": "/assets/images/film-images/kamal-aljafari/05-SELECTED-Fidai Still 2.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 6,
-      "primary_image": "/assets/images/film-images/kamal-aljafari/01-SELECTED-Fidai Still 3.webp",
-      "has_film_specific_folder": false
-    },
-    "Elysa Wendi and Shing Lee::Room 404": {
-      "director": "Elysa Wendi and Shing Lee",
-      "title": "Room 404",
-      "asset_director_folder": "elysa-wendi-and-wai-shing-lee",
-      "images": [
-        {
-          "filename": "01-SELECTED-room 404 ext film still 2.webp",
-          "path": "/assets/images/film-images/elysa-wendi-and-wai-shing-lee/01-SELECTED-room 404 ext film still 2.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-room 404 ext film still 3.webp",
-          "path": "/assets/images/film-images/elysa-wendi-and-wai-shing-lee/02-SELECTED-room 404 ext film still 3.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 2,
-      "primary_image": "/assets/images/film-images/elysa-wendi-and-wai-shing-lee/01-SELECTED-room 404 ext film still 2.webp",
-      "has_film_specific_folder": false
-    },
-    "Vincent Meessen::Juste Un Mouvement": {
-      "director": "Vincent Meessen",
-      "title": "Juste Un Mouvement",
-      "asset_director_folder": "vincent-meessen",
-      "images": [
-        {
-          "filename": "01-SELECTED-JUM_ (1-38-17-15).webp",
-          "path": "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-4.webp",
-          "path": "/assets/images/film-images/vincent-meessen/02-SELECTED-4.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-2.webp",
-          "path": "/assets/images/film-images/vincent-meessen/03-SELECTED-2.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-7.webp",
-          "path": "/assets/images/film-images/vincent-meessen/04-SELECTED-7.webp",
-          "location": "root"
-        },
-        {
-          "filename": "05-SELECTED-11.webp",
-          "path": "/assets/images/film-images/vincent-meessen/05-SELECTED-11.webp",
-          "location": "root"
-        },
-        {
-          "filename": "06-SELECTED-And_7_DoudouFall.webp",
-          "path": "/assets/images/film-images/vincent-meessen/06-SELECTED-And_7_DoudouFall.webp",
-          "location": "root"
-        },
-        {
-          "filename": "07-SELECTED-14.webp",
-          "path": "/assets/images/film-images/vincent-meessen/07-SELECTED-14.webp",
-          "location": "root"
-        },
-        {
-          "filename": "08-SELECTED-15.webp",
-          "path": "/assets/images/film-images/vincent-meessen/08-SELECTED-15.webp",
-          "location": "root"
-        },
-        {
-          "filename": "09-SELECTED-1.webp",
-          "path": "/assets/images/film-images/vincent-meessen/09-SELECTED-1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "10-SELECTED-12.webp",
-          "path": "/assets/images/film-images/vincent-meessen/10-SELECTED-12.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 10,
-      "primary_image": "/assets/images/film-images/vincent-meessen/01-SELECTED-JUM_ (1-38-17-15).webp",
-      "has_film_specific_folder": false
-    },
-    "Lena Windisch::Searching for the Perfect Gentleman": {
-      "director": "Lena Windisch",
-      "title": "Searching for the Perfect Gentleman",
-      "asset_director_folder": "lena-windisch",
-      "images": [
-        {
-          "filename": "01-SELECTED-Perfect_Gentleman_STILL_10.webp",
-          "path": "/assets/images/film-images/lena-windisch/01-SELECTED-Perfect_Gentleman_STILL_10.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-Perfect_Gentleman_STILL_09.webp",
-          "path": "/assets/images/film-images/lena-windisch/02-SELECTED-Perfect_Gentleman_STILL_09.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-Perfect_Gentleman_STILL_05.webp",
-          "path": "/assets/images/film-images/lena-windisch/03-SELECTED-Perfect_Gentleman_STILL_05.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-Perfect_Gentleman_STILL_01.webp",
-          "path": "/assets/images/film-images/lena-windisch/04-SELECTED-Perfect_Gentleman_STILL_01.webp",
-          "location": "root"
-        },
-        {
-          "filename": "05-SELECTED-Perfect_Gentleman_STILL_02.webp",
-          "path": "/assets/images/film-images/lena-windisch/05-SELECTED-Perfect_Gentleman_STILL_02.webp",
-          "location": "root"
-        },
-        {
-          "filename": "06-SELECTED-Perfect_Gentleman_STILL_08.webp",
-          "path": "/assets/images/film-images/lena-windisch/06-SELECTED-Perfect_Gentleman_STILL_08.webp",
-          "location": "root"
-        },
-        {
-          "filename": "07-SELECTED-Perfect_Gentleman_STILL_04.webp",
-          "path": "/assets/images/film-images/lena-windisch/07-SELECTED-Perfect_Gentleman_STILL_04.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 7,
-      "primary_image": "/assets/images/film-images/lena-windisch/01-SELECTED-Perfect_Gentleman_STILL_10.webp",
-      "has_film_specific_folder": false
-    },
-    "Graeme Arnfield::Home Invasion": {
-      "director": "Graeme Arnfield",
-      "title": "Home Invasion",
-      "asset_director_folder": "graeme-arnfield",
-      "images": [
-        {
-          "filename": "01-SELECTED-Home Invasion - Film still 5.webp",
-          "path": "/assets/images/film-images/graeme-arnfield/01-SELECTED-Home Invasion - Film still 5.webp",
-          "location": "root"
-        },
-        {
-          "filename": "02-SELECTED-Home Invasion - Film still 1.webp",
-          "path": "/assets/images/film-images/graeme-arnfield/02-SELECTED-Home Invasion - Film still 1.webp",
-          "location": "root"
-        },
-        {
-          "filename": "03-SELECTED-Home Invasion - Film still 6.webp",
-          "path": "/assets/images/film-images/graeme-arnfield/03-SELECTED-Home Invasion - Film still 6.webp",
-          "location": "root"
-        },
-        {
-          "filename": "04-SELECTED-Home Invasion - Film still 2.webp",
-          "path": "/assets/images/film-images/graeme-arnfield/04-SELECTED-Home Invasion - Film still 2.webp",
-          "location": "root"
-        },
-        {
-          "filename": "05-SELECTED-Home Invasion - Film still 3.webp",
-          "path": "/assets/images/film-images/graeme-arnfield/05-SELECTED-Home Invasion - Film still 3.webp",
-          "location": "root"
-        }
-      ],
-      "image_count": 5,
-      "primary_image": "/assets/images/film-images/graeme-arnfield/01-SELECTED-Home Invasion - Film still 5.webp",
       "has_film_specific_folder": false
     }
   }
