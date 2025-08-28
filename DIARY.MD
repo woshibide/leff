@@ -10,9 +10,9 @@
 
 ### block schedule
 
-- [ ] paragraph of text for block schedule page, for vision impaired people who use screen readers to navigate websites
+- [x] paragraph of text for block schedule page, for vision impaired people who use screen readers to navigate websites
 - [ ] should there be available at block schedule page pdf that can be saved?
-- [ ] normalize filter button for mobile 
+- [x] normalize filter button for mobile 
 - [x] blocks in timeline of block schedule to have more space,padding
 - [x] consistent spacing for schedule
 - [x] schedule page: no mono font

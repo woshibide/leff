@@ -671,7 +671,8 @@ const NavigationScroll = {
         this.nav.classList.add('nav-hidden');
         
         // move search utilities up when navigation hides to use the freed space
-        if (this.searchUtilities) {
+        // but only on desktop (not mobile where we have our own menu system)
+        if (this.searchUtilities && window.innerWidth > 768) {
             // get navigation height to move search utilities up by the same amount
             const navHeight = this.nav.offsetHeight;
             this.searchUtilities.style.transform = `translateY(-${navHeight}px)`;
@@ -689,7 +690,8 @@ const NavigationScroll = {
         this.nav.classList.add('nav-visible');
         
         // move search utilities back to original position when navigation shows
-        if (this.searchUtilities) {
+        // but only on desktop (not mobile where we have our own menu system)
+        if (this.searchUtilities && window.innerWidth > 768) {
             this.searchUtilities.style.transform = 'translateY(0)';
             this.searchUtilities.style.transition = 'transform 0.3s var(--transition)';
         }
