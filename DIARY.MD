@@ -1,9 +1,42 @@
 # Public version of the website
 
+## TBA
+- [] face value actual duration is 120 minutes
+
+- [] man number 4 new images
+- [] actual end times for blocks + face value
+- [] disquet new images
+- [] sort out a thing with two films in one
+
+
+    | current    |  desired
+    | --------------------------
+    | hong kong shorts 
+    | 12:30-14:45|  12:30–15:00
+    |            |
+    | workers leaving factory
+    | 15:15—16:48|  15:15—16:45
+    |            |
+    | harun farocki
+    | 17:15–19:15|  17:15–19:15
+    |            |
+    | kamal      |
+    | 12:45—14:43|  12:45-15:00
+    |            |
+    | face value |
+    | 19:00—21:00|  19:00—21:45 
+    |            |
+    | new perspectives
+    | 10:15—12:04|  10:15—12:30
+    |            |
+    | listenning |
+    | 17:30—18:42|  17:30—19:15
+
+
 ## final-final-final feedback
 
 - [x] tickets new-new text
-- [] individual specials add tickets
+- [x] individual specials add tickets
 
 ## final-final feedback
 
