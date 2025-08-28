@@ -89,7 +89,7 @@
     }
 
     .special-description-section {
-        grid-column: 1 / 6;
+        grid-column: 1 / 5;
         margin-bottom: var(--space-4xl);
     }
 
@@ -125,6 +125,36 @@
     /* override film-card styles for special page context */
     .special-films-section .cards-container {
         grid-column: 1 / -1;
+    }
+
+    /* special screening info section (copied from film.html) */
+    .special-screening-info {
+        padding-left: var(--space-5xl);
+        grid-column: 5 / -1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl);
+        align-self: start;
+        margin-bottom: var(--space-4xl);
+    }
+
+    .special-screening-info ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .special-screening-info li {
+        font-size: 1.875rem;
+        color: var(--bg-main);
+        font-weight: normal;
+    }
+
+    .special-screening-info a {
+        text-decoration: none;
     }
 
     @media (max-width: 768px) {
@@ -163,6 +193,25 @@
 
         .special-films-title {
             font-size: 1.5rem;
+        }
+
+        .special-screening-info {
+            grid-column: 1 / -1;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-lg);
+            padding-left: 0;
+        }
+
+        .special-screening-info ul {
+            flex: 1;
+            align-items: center;
+        }
+
+        div.special-screening-info a#nav-tickets.tickets-button{
+            margin: 1rem;
+            width: 90%;
         }
     }
 </style>
@@ -361,11 +410,15 @@
     
     
     <div class="special-description-section">
-        <p>This edition of leff highlights several major essay films from the past. Chris Marker’s Sans Soleil (1983) is a quintessential essay film, known for its adventurous, investigative, and reflective style, its merging of fact and fiction, and its seemingly free navigation between subjects.<br>Harun Farocki brought many innovations to the essay film. His classic Workers Leaving the Factory (1995) is part of our programme dedicated to essayistic responses to the famous ‘first film ever’ by the Lumière brothers from 1895. Together with Antje Ehmann, Farocki’s co-producer, we also selected two lesser-known titles that showcase his work as an essayist: Was ist Los (1991) and Gegen-Musik (2004).<br>The Netherlands has also produced significant essay filmmakers, as evidenced by Face Value (1991), Johan van der Keuken’s moving reflection on European identities at the end of the twentieth century. A film in which everyday portraits from the past become a prelude to the toxic politics of the present.<br>In De l’autre côté (2002), Belgian filmmaker Chantal Akerman explores the movements and emotions surrounding the US–Mexico border. Her cinematic style, with static frames and long takes, shows another side of the essay film, one in which, much like in the great montage films, contradictions lead to new perspectives.</p>
+        <p>This edition of leff highlights several major essay films from the past. Chris Marker’s Sans Soleil (1983) is a quintessential essay film, known for its adventurous, investigative, and reflective style, its merging of fact and fiction, and its seemingly free navigation between subjects.<br>Harun Farocki brought many innovations to the essay film. His classic Workers Leaving the Factory (1995) is part of our programme dedicated to essayistic responses to the famous ‘first film ever’ by the Lumière brothers from 1895. Together with Antje Ehmann, Farocki’s co-producer, we also selected two lesser-known titles that showcase his work as an essayist: Was ist Los (1991) and Gegen-Musik (2004).<br>The Netherlands has also produced significant essay filmmakers, as evidenced by Face Value (1991), Johan van der Keuken’s moving reflection on European identities at the end of the twentieth century. A film in which everyday portraits from the past become a prelude to the toxic politics of the present.<br>In De l’autre côté (2002), Belgian filmmaker Chantal Akerman explores the movements and emotions surrounding the US–Mexico border. Her cinematic style, with static frames and long takes, shows another side of the essay film, one in which, much like in the great montage films, contradictions lead to new perspectives.</p> 
     </div>
     
 
     
+        
+        
+        
+
         <div class="special-films-section">
             
             

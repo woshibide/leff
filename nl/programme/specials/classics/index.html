@@ -89,7 +89,7 @@
     }
 
     .special-description-section {
-        grid-column: 1 / 6;
+        grid-column: 1 / 5;
         margin-bottom: var(--space-4xl);
     }
 
@@ -125,6 +125,36 @@
     /* override film-card styles for special page context */
     .special-films-section .cards-container {
         grid-column: 1 / -1;
+    }
+
+    /* special screening info section (copied from film.html) */
+    .special-screening-info {
+        padding-left: var(--space-5xl);
+        grid-column: 5 / -1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl);
+        align-self: start;
+        margin-bottom: var(--space-4xl);
+    }
+
+    .special-screening-info ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .special-screening-info li {
+        font-size: 1.875rem;
+        color: var(--bg-main);
+        font-weight: normal;
+    }
+
+    .special-screening-info a {
+        text-decoration: none;
     }
 
     @media (max-width: 768px) {
@@ -163,6 +193,25 @@
 
         .special-films-title {
             font-size: 1.5rem;
+        }
+
+        .special-screening-info {
+            grid-column: 1 / -1;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-lg);
+            padding-left: 0;
+        }
+
+        .special-screening-info ul {
+            flex: 1;
+            align-items: center;
+        }
+
+        div.special-screening-info a#nav-tickets.tickets-button{
+            margin: 1rem;
+            width: 90%;
         }
     }
 </style>
@@ -361,11 +410,15 @@
     
     
     <div class="special-description-section">
-        <p>Deze editie van leff schenkt aandacht aan enkele grote, invloedrijke essayfilms uit het verleden. Chris Markers Sans Soleil (1983) is met zijn avontuurlijke, onderzoekende, reflectieve stijl, het vermengen van feit en fictie en het haast willekeurig navigeren tussen onderwerpen de essayfilm par excellence.<br>Harun Farocki gaf de essayfilm vele vernieuwende impulsen. Zijn klassieker Workers Leaving the Factory (1995) maakt deel uit van ons programma gewijd aan essayistische reacties op de beroemde ‘eerste film ooit’ van de broeders Lumière uit 1895. Samen met Antje Ehmann, Harun Farocki’s co-producer, selecteerden we daarnaast twee minder bekende titels die zijn werkwijze als essayist etaleren: Was ist Los (1991) en Gegen-Musik (2004).<br>Dat Nederland belangrijke filmessayisten heeft voortgebracht bewijst Face Value (1991), Johan van der Keukens aangrijpende beschouwing over Europese identiteiten aan het eind van de 20ste eeuw. Een film waarin portretten uit het leven van alledag van toen een aankondiging blijken van de venijnige politiek van nu.<br>In De l’autre coté (2002) onderzoekt de Belgische filmmaker Chantal Akerman met vooruitziende blik de bewegingen en emoties rondom de grens tussen de V.S. en Mexico. Haar cinematografische stijl, met statische frames en lange shots, laat een andere kant van de essayfilm zien, waarin echter, net als bij de grote montagefilms, tegenstellingen tot nieuwe gezichtspunten leiden.</p>
+        <p>Deze editie van leff schenkt aandacht aan enkele grote, invloedrijke essayfilms uit het verleden. Chris Markers Sans Soleil (1983) is met zijn avontuurlijke, onderzoekende, reflectieve stijl, het vermengen van feit en fictie en het haast willekeurig navigeren tussen onderwerpen de essayfilm par excellence.<br>Harun Farocki gaf de essayfilm vele vernieuwende impulsen. Zijn klassieker Workers Leaving the Factory (1995) maakt deel uit van ons programma gewijd aan essayistische reacties op de beroemde ‘eerste film ooit’ van de broeders Lumière uit 1895. Samen met Antje Ehmann, Harun Farocki’s co-producer, selecteerden we daarnaast twee minder bekende titels die zijn werkwijze als essayist etaleren: Was ist Los (1991) en Gegen-Musik (2004).<br>Dat Nederland belangrijke filmessayisten heeft voortgebracht bewijst Face Value (1991), Johan van der Keukens aangrijpende beschouwing over Europese identiteiten aan het eind van de 20ste eeuw. Een film waarin portretten uit het leven van alledag van toen een aankondiging blijken van de venijnige politiek van nu.<br>In De l’autre coté (2002) onderzoekt de Belgische filmmaker Chantal Akerman met vooruitziende blik de bewegingen en emoties rondom de grens tussen de V.S. en Mexico. Haar cinematografische stijl, met statische frames en lange shots, laat een andere kant van de essayfilm zien, waarin echter, net als bij de grote montagefilms, tegenstellingen tot nieuwe gezichtspunten leiden.</p> 
     </div>
     
 
     
+        
+        
+        
+
         <div class="special-films-section">
             
             

@@ -89,7 +89,7 @@
     }
 
     .special-description-section {
-        grid-column: 1 / 6;
+        grid-column: 1 / 5;
         margin-bottom: var(--space-4xl);
     }
 
@@ -125,6 +125,36 @@
     /* override film-card styles for special page context */
     .special-films-section .cards-container {
         grid-column: 1 / -1;
+    }
+
+    /* special screening info section (copied from film.html) */
+    .special-screening-info {
+        padding-left: var(--space-5xl);
+        grid-column: 5 / -1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl);
+        align-self: start;
+        margin-bottom: var(--space-4xl);
+    }
+
+    .special-screening-info ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .special-screening-info li {
+        font-size: 1.875rem;
+        color: var(--bg-main);
+        font-weight: normal;
+    }
+
+    .special-screening-info a {
+        text-decoration: none;
     }
 
     @media (max-width: 768px) {
@@ -163,6 +193,25 @@
 
         .special-films-title {
             font-size: 1.5rem;
+        }
+
+        .special-screening-info {
+            grid-column: 1 / -1;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-lg);
+            padding-left: 0;
+        }
+
+        .special-screening-info ul {
+            flex: 1;
+            align-items: center;
+        }
+
+        div.special-screening-info a#nav-tickets.tickets-button{
+            margin: 1rem;
+            width: 90%;
         }
     }
 </style>
@@ -362,6 +411,10 @@
     
 
     
+        
+        
+        
+
         <div class="special-films-section">
             
             

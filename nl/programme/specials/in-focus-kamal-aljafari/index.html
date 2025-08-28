@@ -89,7 +89,7 @@
     }
 
     .special-description-section {
-        grid-column: 1 / 6;
+        grid-column: 1 / 5;
         margin-bottom: var(--space-4xl);
     }
 
@@ -125,6 +125,36 @@
     /* override film-card styles for special page context */
     .special-films-section .cards-container {
         grid-column: 1 / -1;
+    }
+
+    /* special screening info section (copied from film.html) */
+    .special-screening-info {
+        padding-left: var(--space-5xl);
+        grid-column: 5 / -1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl);
+        align-self: start;
+        margin-bottom: var(--space-4xl);
+    }
+
+    .special-screening-info ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .special-screening-info li {
+        font-size: 1.875rem;
+        color: var(--bg-main);
+        font-weight: normal;
+    }
+
+    .special-screening-info a {
+        text-decoration: none;
     }
 
     @media (max-width: 768px) {
@@ -163,6 +193,25 @@
 
         .special-films-title {
             font-size: 1.5rem;
+        }
+
+        .special-screening-info {
+            grid-column: 1 / -1;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-lg);
+            padding-left: 0;
+        }
+
+        .special-screening-info ul {
+            flex: 1;
+            align-items: center;
+        }
+
+        div.special-screening-info a#nav-tickets.tickets-button{
+            margin: 1rem;
+            width: 90%;
         }
     }
 </style>
@@ -361,11 +410,42 @@
     
     
     <div class="special-description-section">
-        <p>Harun Farocki, een van Duitslands meest gevierde internationale filmmakers, bouwde een indrukwekkend oeuvre op – bijna honderd films, video’s en installaties – waarin hij de grenzen tussen documentaire, essay en experimentele film consequent vervaagde. Met zijn scherpe analytische blik en politieke inzichten onderzocht hij thema’s als arbeid, oorlog, surveillance en media. Zijn essayfilms nodigen uit om opnieuw te kijken (en te denken): hoe formuleren beelden onze werkelijkheid?<br>Dit leff in focus-blok verkent Farocki’s verzet tegen vaste classificaties aan de hand van twee relatief onbekende films. In samenwerking met zijn vaste co-producent Antje Ehmann worden Gegen-Musik (2004) en Was ist Los? (1991) gepresenteerd als twee radicale voorbeelden van Farocki’s benadering.<br>Gegen-Musik (Counter-Music) toont Farocki’s kenmerkende interesse in ‘soft montage’. We zien twee schermen naast elkaar en worden uitgedaagd om vergelijkingen te maken. De beelden, geluiden en woorden lijken aanvankelijk willekeurig, maar geleidelijk ontstaan mogelijke verbanden, verschillend voor elke kijker.<br>Was ist Los? (What’s Up?) behoort tot Farocki’s meest uitzinnige projecten. Zoals Ehmann zegt: “zijn gekste lange essayfilm! Hier probeerde Harun echt uit hoe ver je kunt gaan met een associatieve methode. Om woorden, beelden, gedachten en ideeën op een extreme manier te combineren. Hij zei dat hij zich tijdens het maken van de film dronken voelde – maar dat was hij niet!”</p>
+        <p>Harun Farocki, een van Duitslands meest gevierde internationale filmmakers, bouwde een indrukwekkend oeuvre op – bijna honderd films, video’s en installaties – waarin hij de grenzen tussen documentaire, essay en experimentele film consequent vervaagde. Met zijn scherpe analytische blik en politieke inzichten onderzocht hij thema’s als arbeid, oorlog, surveillance en media. Zijn essayfilms nodigen uit om opnieuw te kijken (en te denken): hoe formuleren beelden onze werkelijkheid?<br>Dit leff in focus-blok verkent Farocki’s verzet tegen vaste classificaties aan de hand van twee relatief onbekende films. In samenwerking met zijn vaste co-producent Antje Ehmann worden Gegen-Musik (2004) en Was ist Los? (1991) gepresenteerd als twee radicale voorbeelden van Farocki’s benadering.<br>Gegen-Musik (Counter-Music) toont Farocki’s kenmerkende interesse in ‘soft montage’. We zien twee schermen naast elkaar en worden uitgedaagd om vergelijkingen te maken. De beelden, geluiden en woorden lijken aanvankelijk willekeurig, maar geleidelijk ontstaan mogelijke verbanden, verschillend voor elke kijker.<br>Was ist Los? (What’s Up?) behoort tot Farocki’s meest uitzinnige projecten. Zoals Ehmann zegt: “zijn gekste lange essayfilm! Hier probeerde Harun echt uit hoe ver je kunt gaan met een associatieve methode. Om woorden, beelden, gedachten en ideeën op een extreme manier te combineren. Hij zei dat hij zich tijdens het maken van de film dronken voelde – maar dat was hij niet!”</p> 
     </div>
     
 
     
+        
+        
+        
+            
+            
+            
+            
+            
+            <div class="special-screening-info">
+                <ul>
+                    
+                    <li>16 September</li>
+                    
+                    
+                    
+                    <li>12:45</li>
+                    
+                    
+                    
+                    <li>Kijkhuis, Cinema 1</li>
+                    
+                </ul>
+                <a href="https://book.kijkhuis.bioscopenleiden.nl/nl/#/book/118531" target="_blank" id="nav-tickets" class="tickets-button">
+                    Tickets
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </a>
+            </div>
+        
+
         <div class="special-films-section">
             
             

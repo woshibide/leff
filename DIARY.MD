@@ -1,5 +1,10 @@
 # Public version of the website
 
+## final-final-final feedback
+
+- [x] tickets new-new text
+- [] individual specials add tickets
+
 ## final-final feedback
 
 ### specials
