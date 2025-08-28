@@ -60,6 +60,9 @@ body.index-page footer {
 @media (max-width: 768px) {
     #main-page {
         min-height: 120vh;
+        position: relative;
+        overflow: visible;
+        height: auto;
     }
 }
 
@@ -70,6 +73,12 @@ body.index-page footer {
     width: 100%;
     height: 100%;
     z-index: 1;
+}
+@media (max-width: 768px) {
+    .background-slideshow {
+        position: fixed;
+        height: 100vh;
+    }
 }
 
 .background-slide {
