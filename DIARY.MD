@@ -1,11 +1,11 @@
 # Public version of the website
 
 ## TBA
-- [] face value actual duration is 120 minutes
+- [x] face value actual duration is 120 minutes
 
-- [] man number 4 new images
+- [x] man number 4 new images
 - [] actual end times for blocks + face value
-- [] disquet new images
+- [x] disquet new images
 - [] sort out a thing with two films in one
 
 

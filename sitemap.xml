@@ -253,7 +253,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/en/programme/filmmakers/sergey-loznitsa/</loc>
+    <loc>https://leidenessayfilmfestival.com/en/programme/filmmakers/sergei-loznitsa/</loc>
     <lastmod>2025-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -565,6 +565,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://leidenessayfilmfestival.com/en/programme/specials/face-value/</loc>
+    <lastmod>2025-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://leidenessayfilmfestival.com/en/programme/specials/hong-kong-shorts/</loc>
     <lastmod>2025-08-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -871,7 +877,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://leidenessayfilmfestival.com/nl/programme/filmmakers/sergey-loznitsa/</loc>
+    <loc>https://leidenessayfilmfestival.com/nl/programme/filmmakers/sergei-loznitsa/</loc>
     <lastmod>2025-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1184,6 +1190,12 @@
   </url>
   <url>
     <loc>https://leidenessayfilmfestival.com/nl/programme/specials/classics/</loc>
+    <lastmod>2025-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://leidenessayfilmfestival.com/nl/programme/specials/face-value/</loc>
     <lastmod>2025-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Leiden Essay Film Festival">
-    <meta name="keywords" content="leiden, film festival, leiden essay film festival, leiden film festival, leff, Sergey Loznitsa">
+    <meta name="keywords" content="leiden, film festival, leiden essay film festival, leiden film festival, leff">
     <meta name="description" content="14—16 September, Leiden. The first festival in the Netherlands dedicated entirely to the essay film.">
 
     <meta property="og:title" content="LEFF">
@@ -24,7 +24,7 @@
     
     <meta name="theme-color" content="#C0BEBF">
 
-    <title>Sergey Loznitsa - LEFF</title>
+    <title>Face Value - LEFF</title>
 
     <!-- base href for github pages deployment -->
     
@@ -36,36 +36,31 @@
     
 <style>
     /*
-        single filmmaker page - styled like film page
+        single special page - styled like filmmaker page
     */
     
-    .filmmaker-hero-container {
+    .special-hero-container {
         grid-column: 1 / -1;
         position: relative;
         height: auto;
-        margin-block: var(--space-5xl) var(--space-3xl);
+        margin-bottom: var(--space-5xl);
     }
 
-    .filmmaker-hero {
+    .special-hero {
         position: relative;
-        /* background: var(--bg-main); */
         overflow: hidden;
-        /* aspect-ratio: 16 / 9; */
-        /* display: flex; */
         align-items: center;
         justify-content: center;
         width: 100%;
     }
 
-    .filmmaker-hero img {
+    .special-hero img {
         width: 100%;
-        /* height: 100%; */
         object-fit: cover;
     }
 
-    .filmmaker-info {
+    .special-info {
         position: absolute;
-        /* bottom: var(--space-xl); */
         left: 0;
         z-index: 2;
         display: flex;
@@ -74,7 +69,7 @@
         max-width: 100%;
     }
 
-    .filmmaker-name {
+    .special-name {
         font-size: 6rem;
         font-weight: normal;
         color: var(--accent);
@@ -83,20 +78,20 @@
         /* text-shadow: var(--shadow); */
     }
 
-    .filmmaker-title {
+    .special-title {
         font-size: 1.875rem;
         color: var(--accent);
-        text-shadow: var(--shadow);
+        /* text-shadow: var(--shadow); */
         font-weight: normal;
         margin: 0;
     }
 
-    .filmmaker-bio-section {
-        grid-column: 1 / 6;
+    .special-description-section {
+        grid-column: 1 / 5;
         margin-bottom: var(--space-4xl);
     }
 
-    .filmmaker-bio-section p {
+    .special-description-section p {
         font-size: 1.875rem;
         color: var(--bg-main);
         line-height: 1.4;
@@ -104,12 +99,12 @@
         margin-bottom: var(--space-md);
     }
 
-    .filmmaker-films-section {
+    .special-films-section {
         grid-column: 1 / -1;
         margin-bottom: var(--space-4xl);
     }
 
-    .filmmaker-films-title {
+    .special-films-title {
         font-size: 2.25rem;
         color: var(--bg-main);
         font-weight: normal;
@@ -117,47 +112,104 @@
         text-transform: uppercase;
     }
 
-    /* override film-card styles for filmmaker page context */
-    .filmmaker-films-section .cards-container {
+    .special-meta {
+        grid-column: 1 / -1;
+        margin-bottom: var(--space-2xl);
+        font-size: 1.125rem;
+        color: var(--bg-main);
+        opacity: 0.8;
+    }
+
+    /* override film-card styles for special page context */
+    .special-films-section .cards-container {
         grid-column: 1 / -1;
     }
 
+    /* special screening info section (copied from film.html) */
+    .special-screening-info {
+        padding-left: var(--space-5xl);
+        grid-column: 5 / -1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl);
+        align-self: start;
+        margin-bottom: var(--space-4xl);
+    }
+
+    .special-screening-info ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .special-screening-info li {
+        font-size: 1.875rem;
+        color: var(--bg-main);
+        font-weight: normal;
+    }
+
+    .special-screening-info a {
+        text-decoration: none;
+    }
+
     @media (max-width: 768px) {
-        .filmmaker-hero-container {
+        .special-hero-container {
             margin-bottom: var(--space-xl);
         }
 
-        .filmmaker-hero {
+        .special-hero {
             aspect-ratio: 4 / 3;
         }
 
-        .filmmaker-info {
+        .special-info {
             position: inherit;
             top: 0;
             left: 0;
         }
 
-        .filmmaker-name {
+        .special-name {
             font-size: 2.25rem;
             text-shadow: none;
         }
 
-        .filmmaker-title {
+        .special-title {
             font-size: 1.25rem;
             text-shadow: none;
         }
 
-        .filmmaker-bio-section {
+        .special-description-section {
             grid-column: 1 / -1;
             margin-bottom: var(--space-2xl);
         }
 
-        .filmmaker-bio-section p {
+        .special-description-section p {
             font-size: 1.25rem;
         }
 
-        .filmmaker-films-title {
+        .special-films-title {
             font-size: 1.5rem;
+        }
+
+        .special-screening-info {
+            grid-column: 1 / -1;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-lg);
+            padding-left: 0;
+        }
+
+        .special-screening-info ul {
+            flex: 1;
+            align-items: center;
+        }
+
+        div.special-screening-info a#nav-tickets.tickets-button{
+            margin: 1rem;
+            width: 90%;
         }
     }
 </style>
@@ -187,7 +239,7 @@
                 
                 
                 
-                <a href="/nl/programme/filmmakers/sergey-loznitsa/">
+                <a href="/nl/programme/specials/face-value/">
                     <button type="button">NL</button>
                 </a>
                 
@@ -317,7 +369,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Programme 2025","item":"https://leidenessayfilmfestival.com/en/programme/"},{"@type":"ListItem","position":2,"name":"Filmmakers","item":"https://leidenessayfilmfestival.com/en/programme/filmmakers/"},{"@type":"ListItem","position":3,"name":"Sergey Loznitsa"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Programme 2025","item":"https://leidenessayfilmfestival.com/en/programme/"},{"@type":"ListItem","position":2,"name":"Specials","item":"https://leidenessayfilmfestival.com/en/programme/specials/"},{"@type":"ListItem","position":3,"name":"Face Value"}]}
 </script>
 
 
@@ -332,31 +384,155 @@
         
             <li class="breadcrumb-item">
                 
-                    <a href="/en/programme/filmmakers/" class="breadcrumb-link">Filmmakers</a>
+                    <a href="/en/programme/specials/" class="breadcrumb-link">Specials</a>
                 
             </li>
         
             <li class="breadcrumb-item">
                 
-                    <h1 class="breadcrumb-current-page" aria-current="page">Sergey Loznitsa</h1>
+                    <h1 class="breadcrumb-current-page" aria-current="page">Face Value</h1>
                 
             </li>
         
     </ol>
 </div>
 
-    <div class="filmmaker-hero-container">
-        <h2 class="filmmaker-name">
-            Sergey Loznitsa
+    
+    <div class="special-hero-container">
+        <h2 class="special-name">
+            Face Value
         </h2>   
     </div>
-    <div class="filmmaker-bio-section">
-        <p>Sergei Loznitsa (b. 1964, Belarus; raised in Kyiv) is a Ukrainian director of Belarusian origin known for both documentary and fiction films. A former applied‑mathematician who worked on AI research, he studied cinema at Moscow’s VGIK before turning to filmmaking in the mid‑1990s. His documentaries (Maidan, Austerlitz) and features (My Joy, In the Fog, The History of Natural Destruction) offer nuanced, often bleak examinations of post‑Soviet politics, memory, collective history and the erosion of truth in contemporary society.</p>
-    </div>
+    
+    
 
     
-        <div class="filmmaker-films-section">
-            <p><em>No films found in current programme.</em></p>
+        
+        
+        
+            
+            
+            
+            
+            
+            <div class="special-screening-info">
+                <ul>
+                    
+                    <li>16 September</li>
+                    
+                    
+                    
+                    <li>19:00</li>
+                    
+                    
+                    
+                    <li>Kijkhuis, Cinema 1</li>
+                    
+                </ul>
+                <a href="https://book.kijkhuis.bioscopenleiden.nl/en/#/book/118533" target="_blank" id="nav-tickets" class="tickets-button">
+                    Tickets
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </a>
+            </div>
+        
+
+        <div class="special-films-section">
+            
+            
+<div class="cards-container">
+    
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
+        <div class="film-card-wrapper" 
+             data-title="face value"
+             data-director="johan van der keuken"
+             data-letter="f"
+             data-filmmaker-letters="j,v,d,k"
+             data-all-letters="f,j,v,d,k"
+             data-date="16 September"
+             data-block="classics">
+            
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="face-value">
+                <a href="/en/programme/films/face-value/"
+                    title="View Face Value film page">
+                    Face Value
+                </a>
+            </h4>
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Johan van der Keuken’s formally distinct essay film navigates the politics of vision across Europe, but also experiments with cinematic portraiture in wild ways. Through a mosaic of vignettes—of faces, places, and voices—this classic essay film explores the desire and fear of being seen, the struggle for self-perception, and the tensions within shifting cultural landscapes. A prescient film in many ways.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/en/programme/filmmakers/johan-van-der-keuken/"
+                        title="View Johan van der Keuken filmmaker page">
+                        Johan van der Keuken
+                    </a>
+                </h5>
+                
+                
+                <span class="film-meta-item">Netherlands</span>
+                
+                
+                <span class="film-meta-item">1991</span>
+                
+                
+                <span class="film-meta-item">120&#39;</span>
+                
+                
+                <span class="film-meta-item">
+                    
+                    <a href="/en/programme/specials/classics/"
+                        title="View Classics special programme page">
+                        Classics
+                    </a>
+                    
+                </span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+            
+        <img src="/assets/images/film-images/johan-van-der-keuken/01-SELECTED-Scherm­afbeelding 2025-08-06 om 20.50.29.webp" alt="Shot from movie Face Value by Johan van der Keuken" loading="lazy">
+            
+        
+    </div>
+</div>
+        </div>
+    
+</div>
         </div>
     
 </div>
