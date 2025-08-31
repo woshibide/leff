@@ -1,5 +1,82 @@
 # Public version of the website
 
+## post-final-final-final changes
+
+- **Title:** Juste un mouvement
+  **Director:** Vincent Meessen
+  **Production Country:** Belgium, France
+
+- **Title:** Twenty-Four Cinematic Points of View of a Factory Gate in China
+  **Director:** Ho Rui An
+  **Production Country:** Singapore, Spain
+
+- **Title:** Preemptive Listening
+  **Director:** Aura Satz
+  **Production Country:** UK, Finland
+
+- **Title:** Home Invasion
+  **Director:** Graeme Arnfield
+  **Production Country:** UK
+
+- **Title:** Room 404
+  **Director:** Elysa Wendi and Wai Shing Lee
+  **Production Country:** Poland, Hong Kong
+  **Additional Changes:**
+  - Director’s name: Elysa Wendi and Wai Shing Lee
+  - In the card: Change "Elysa Wendi and Shing Lee" to "Elysa Wendi and Wai Shing Lee"
+  - Change "Hong Kong" to "Poland, Hong Kong"
+  - In the Specials description: Change "… Room 404 (2024) by Elysa Wendi and Shing Li is set in a Hong Kong hotel room …" to "… Room 404 (2024) by Elysa Wendi and Wai Shing Lee is set in a Hong Kong hotel room …"
+  - In the film page, 2nd paragraph: Change "… Wendi and Shing Lee’s Room 404 serves as an…" to "… Wendi and Wai Shing’s Room 404 serves as an…"
+
+- **Title:** An Asian Ghost Story
+  **Director:** Bo Wang
+  **Production Country:** Hong Kong, Netherlands
+
+- **Title:** The Natural History of Destruction
+  **Director:** Sergei Loznitsa
+  **Production Country:** Germany, Netherlands
+
+- **Title:** A Fidai Film
+  **Director:** Kamal Aljafari
+  **Production Country:** Palestine, Germany, Qatar, Brazil, France
+
+- **Title:** Henry Fonda for President
+  **Director:** Alexander Horwath
+  **Production Country:** Austria, Germany
+
+- **Title:** My Want of You Partakes of Me
+  **Director:** Sasha Litvintseva & Beny Wagner
+  **Production Country:** UK, Netherlands
+
+- **Title:** Mariam Jafri vs Maryam Jafri
+  **Director:** Mariam Jafri
+  **Production Country:** Denmark, UK
+
+- **Title:** De l’autre coté
+  **Director:** Chantal Akerman
+  **Production Country:** Belgium, France
+
+- **Title:** Nowhere Near
+  **Director:** Miko Revereza
+  **Production Country:** Philippines, Mexico, USA
+
+### Block Schedule
+- [ ] The films in the curated blocks are not in the right order. Is it possible to change that with the original block schedule as example? See the other attachment for the detailed block schedule.
+
+### Ticket Page
+- [x] Change: "A Festival Pass is available here" Into: "A festival pass is available here" [in lower case]
+- [x] Add a general link to Cinema Kijkhuis (and another one to a-z films on our site), just below the sentence of the festival pass (with a line in between):
+  - **EN:** Single tickets are available via the film pages of this website or on the Cinema Kijkhuis website.
+  - **NL:** Afzonderlijke tickets zijn verkrijgbaar via de filmpagina’s van deze website, of op de website van het Kijkhuis.
+- [x] This would link to the same page on their website as the previous one, that we removed.
+
+### Specials Title
+- [x] **EN:** Change: "In Focus: Kamal Aljafari and the Imagination of Palestine" Into: "In Focus: Kamal Aljafari and the Imagination of Palestine"
+- [x] **NL:** Change: "In Focus: Kamal Aljafari" Into: "In Focus: Kamal Aljafari en de verbeelding van Palestina"
+
+### Image
+- [ч] Remove the photo with the musicians (no 1) in the card of the film ‘Where no Bell Rings’ by Lucia Nimcová and David Petráš. (this was meant by them as a photo for their bio, but we don’t use that). Only the photo of the old woman should stay.
+
 ## TBA
 - [x] face value actual duration is 120 minutes
 

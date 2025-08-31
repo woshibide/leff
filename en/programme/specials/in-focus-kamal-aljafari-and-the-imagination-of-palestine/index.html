@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Leiden Essay Film Festival">
-    <meta name="keywords" content="leiden, film festival, leiden essay film festival, leiden film festival, leff, Kamal Aljafari">
+    <meta name="keywords" content="leiden, film festival, leiden essay film festival, leiden film festival, leff">
     <meta name="description" content="14—16 September, Leiden. The first festival in the Netherlands dedicated entirely to the essay film.">
 
     <meta property="og:title" content="LEFF">
@@ -24,7 +24,7 @@
     
     <meta name="theme-color" content="#C0BEBF">
 
-    <title>Kamal Aljafari - LEFF</title>
+    <title>In Focus: Kamal Aljafari and the Imagination of Palestine - LEFF</title>
 
     <!-- base href for github pages deployment -->
     
@@ -36,36 +36,31 @@
     
 <style>
     /*
-        single filmmaker page - styled like film page
+        single special page - styled like filmmaker page
     */
     
-    .filmmaker-hero-container {
+    .special-hero-container {
         grid-column: 1 / -1;
         position: relative;
         height: auto;
-        margin-block: var(--space-5xl) var(--space-3xl);
+        margin-bottom: var(--space-5xl);
     }
 
-    .filmmaker-hero {
+    .special-hero {
         position: relative;
-        /* background: var(--bg-main); */
         overflow: hidden;
-        /* aspect-ratio: 16 / 9; */
-        /* display: flex; */
         align-items: center;
         justify-content: center;
         width: 100%;
     }
 
-    .filmmaker-hero img {
+    .special-hero img {
         width: 100%;
-        /* height: 100%; */
         object-fit: cover;
     }
 
-    .filmmaker-info {
+    .special-info {
         position: absolute;
-        /* bottom: var(--space-xl); */
         left: 0;
         z-index: 2;
         display: flex;
@@ -74,7 +69,7 @@
         max-width: 100%;
     }
 
-    .filmmaker-name {
+    .special-name {
         font-size: 6rem;
         font-weight: normal;
         color: var(--accent);
@@ -83,20 +78,20 @@
         /* text-shadow: var(--shadow); */
     }
 
-    .filmmaker-title {
+    .special-title {
         font-size: 1.875rem;
         color: var(--accent);
-        text-shadow: var(--shadow);
+        /* text-shadow: var(--shadow); */
         font-weight: normal;
         margin: 0;
     }
 
-    .filmmaker-bio-section {
-        grid-column: 1 / 6;
+    .special-description-section {
+        grid-column: 1 / 5;
         margin-bottom: var(--space-4xl);
     }
 
-    .filmmaker-bio-section p {
+    .special-description-section p {
         font-size: 1.875rem;
         color: var(--bg-main);
         line-height: 1.4;
@@ -104,12 +99,12 @@
         margin-bottom: var(--space-md);
     }
 
-    .filmmaker-films-section {
+    .special-films-section {
         grid-column: 1 / -1;
         margin-bottom: var(--space-4xl);
     }
 
-    .filmmaker-films-title {
+    .special-films-title {
         font-size: 2.25rem;
         color: var(--bg-main);
         font-weight: normal;
@@ -117,47 +112,104 @@
         text-transform: uppercase;
     }
 
-    /* override film-card styles for filmmaker page context */
-    .filmmaker-films-section .cards-container {
+    .special-meta {
+        grid-column: 1 / -1;
+        margin-bottom: var(--space-2xl);
+        font-size: 1.125rem;
+        color: var(--bg-main);
+        opacity: 0.8;
+    }
+
+    /* override film-card styles for special page context */
+    .special-films-section .cards-container {
         grid-column: 1 / -1;
     }
 
+    /* special screening info section (copied from film.html) */
+    .special-screening-info {
+        padding-left: var(--space-5xl);
+        grid-column: 5 / -1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl);
+        align-self: start;
+        margin-bottom: var(--space-4xl);
+    }
+
+    .special-screening-info ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .special-screening-info li {
+        font-size: 1.875rem;
+        color: var(--bg-main);
+        font-weight: normal;
+    }
+
+    .special-screening-info a {
+        text-decoration: none;
+    }
+
     @media (max-width: 768px) {
-        .filmmaker-hero-container {
+        .special-hero-container {
             margin-bottom: var(--space-xl);
         }
 
-        .filmmaker-hero {
+        .special-hero {
             aspect-ratio: 4 / 3;
         }
 
-        .filmmaker-info {
+        .special-info {
             position: inherit;
             top: 0;
             left: 0;
         }
 
-        .filmmaker-name {
+        .special-name {
             font-size: 2.25rem;
             text-shadow: none;
         }
 
-        .filmmaker-title {
+        .special-title {
             font-size: 1.25rem;
             text-shadow: none;
         }
 
-        .filmmaker-bio-section {
+        .special-description-section {
             grid-column: 1 / -1;
             margin-bottom: var(--space-2xl);
         }
 
-        .filmmaker-bio-section p {
+        .special-description-section p {
             font-size: 1.25rem;
         }
 
-        .filmmaker-films-title {
+        .special-films-title {
             font-size: 1.5rem;
+        }
+
+        .special-screening-info {
+            grid-column: 1 / -1;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-lg);
+            padding-left: 0;
+        }
+
+        .special-screening-info ul {
+            flex: 1;
+            align-items: center;
+        }
+
+        div.special-screening-info a#nav-tickets.tickets-button{
+            margin: 1rem;
+            width: 90%;
         }
     }
 </style>
@@ -169,7 +221,7 @@
 <body>
     <nav>
         
-        <a href="/nl/"><img src="/assets/leff-logo-yellow.svg"
+        <a href="/en/"><img src="/assets/leff-logo-yellow.svg"
                 alt="leiden essay film festival logo" id="nav-logo"></a>
         
         <div id="circle-container">
@@ -182,14 +234,14 @@
             <div id="languages">
                 
                 
+                <button type="button" class="active">EN</button>
                 
-                <a href="/en/programme/filmmakers/kamal-aljafari/">
-                    <button type="button">EN</button>
+                
+                
+                
+                <a href="/nl/programme/specials/in-focus-kamal-aljafari-en-de-verbeelding-van-palestina/">
+                    <button type="button">NL</button>
                 </a>
-                
-                
-                
-                <button type="button" class="active">NL</button>
                 
                 
             </div>
@@ -214,7 +266,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
-                            <a href="/nl/">Home</a>
+                            <a href="/en/">Home</a>
                             
                         </li>
                         
@@ -227,20 +279,20 @@
                                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
                                             stroke-width="2" />
                                     </svg>
-                                    <div class="drp-dwn-item-txt">Programma 2025</div>
+                                    <div class="drp-dwn-item-txt">Programme 2025</div>
                                 </button>
                                 <ul class="menu-dropdown-content" id="programme-dropdown">
                                     
                                     <li>
-                                        <a href="/nl/programme/films">A—Z films</a>
+                                        <a href="/en/programme/films">A—Z films</a>
                                     </li>
                                     
                                     <li>
-                                        <a href="/nl/programme/filmmakers">A—Z filmmakers</a>
+                                        <a href="/en/programme/filmmakers">A—Z filmmakers</a>
                                     </li>
                                     
                                     <li>
-                                        <a href="/nl/programme/specials">Specials</a>
+                                        <a href="/en/programme/specials">Specials</a>
                                     </li>
                                     
                                 </ul>
@@ -253,7 +305,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
-                            <a href="/nl/schedule/">Blokkenschema</a>
+                            <a href="/en/schedule/">Block Schedule</a>
                             
                         </li>
                         
@@ -262,7 +314,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
-                            <a href="/nl/location/">Locaties</a>
+                            <a href="/en/location/">Locations</a>
                             
                         </li>
                         
@@ -271,7 +323,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
                                 <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                             </svg>
-                            <a href="/nl/tickets/">Tickets</a>
+                            <a href="/en/tickets/">Tickets</a>
                             
                         </li>
                         
@@ -284,16 +336,16 @@
                                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
                                             stroke-width="2" />
                                     </svg>
-                                    <div class="drp-dwn-item-txt">Over leff</div>
+                                    <div class="drp-dwn-item-txt">About leff</div>
                                 </button>
                                 <ul class="menu-dropdown-content" id="about-dropdown">
                                     
                                     <li>
-                                        <a href="/nl/about/">Festival</a>
+                                        <a href="/en/about/">Festival</a>
                                     </li>
                                     
                                     <li>
-                                        <a href="/nl/organisation/">Organisatie</a>
+                                        <a href="/en/organisation/">Organisation</a>
                                     </li>
                                     
                                 </ul>
@@ -317,7 +369,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Programma 2025","item":"https://leidenessayfilmfestival.com/nl/programme/"},{"@type":"ListItem","position":2,"name":"Filmmakers","item":"https://leidenessayfilmfestival.com/nl/programme/filmmakers/"},{"@type":"ListItem","position":3,"name":"Kamal Aljafari"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Programme 2025","item":"https://leidenessayfilmfestival.com/en/programme/"},{"@type":"ListItem","position":2,"name":"Specials","item":"https://leidenessayfilmfestival.com/en/programme/specials/"},{"@type":"ListItem","position":3,"name":"In Focus: Kamal Aljafari and the Imagination of Palestine"}]}
 </script>
 
 
@@ -326,39 +378,236 @@
         
             <li class="breadcrumb-item">
                 
-                    <a href="/nl/programme/" class="breadcrumb-link">Programma 2025</a>
+                    <a href="/en/programme/" class="breadcrumb-link">Programme 2025</a>
                 
             </li>
         
             <li class="breadcrumb-item">
                 
-                    <a href="/nl/programme/filmmakers/" class="breadcrumb-link">Filmmakers</a>
+                    <a href="/en/programme/specials/" class="breadcrumb-link">Specials</a>
                 
             </li>
         
             <li class="breadcrumb-item">
                 
-                    <h1 class="breadcrumb-current-page" aria-current="page">Kamal Aljafari</h1>
+                    <h1 class="breadcrumb-current-page" aria-current="page">In Focus: Kamal Aljafari and the Imagination of Palestine</h1>
                 
             </li>
         
     </ol>
 </div>
 
-    <div class="filmmaker-hero-container">
-        <h2 class="filmmaker-name">
-            Kamal Aljafari
+    
+    <div class="special-hero-container">
+        <h2 class="special-name">
+            In Focus: Kamal Aljafari and the Imagination of Palestine
         </h2>   
     </div>
-    <div class="filmmaker-bio-section">
-        <p>Kamal Aljafari (geb. 1972, Ramla, Palestina; woont in Berlijn) is een toonaangevende Palestijnse filmmaker en beeldend kunstenaar wiens formeel gelaagde werk herinnering en onteigening reconstrueert. Hij studeerde aan de Kunsthochschule für Medien in Keulen en maakt poëtische cinema die zich uitstrekt van speelfilms (The Roof, Port of Memory, Recollection) tot installaties zoals The Camera of the Dispossessed. Zijn werk werd vertoond op festivals als Berlinale, Rotterdam, Locarno en CPH:DOX, en in instellingen zoals MoMA en Tate Modern.</p>
+    
+    
+    <div class="special-description-section">
+        <p>Harun Farocki, one of Germany’s most celebrated international filmmakers, created an impressive body of work - nearly a hundred films, videos, and installations - in which he consistently blurred the boundaries between documentary, essay, and experimental film. With his sharp analytical eye and political insight, he explored themes such as labour, war, surveillance, and media. <br>His essay films invite us to look (and think) again: how do images shape our reality?<br>This leff in focus block explores Farocki’s resistance to classification through two relatively unknown films. In collaboration with his long-time co-producer Antje Ehmann, Gegen-Musik (2004) and Was ist Los? (1991) are presented as radical examples of Farocki’s approach.<br>Gegen-Musik (Counter-Music) showcases Farocki’s interest in “soft montage.” We see two screens side by side, inviting us to draw comparisons. The images, sounds, and words may seem arbitrary, but gradually, meaningful connections emerge, different for each viewer.<br>Was ist Los? (What’s Up?) is among Farocki’s most exuberant projects. As Ehmann puts it: “his craziest long essay film! Here Harun really pushed the limits of associative methods to combine words, images, thoughts, and ideas in an extreme way. He said he felt drunk while making it—but he wasn’t!”</p> 
     </div>
+    
 
     
-        <div class="filmmaker-films-section">
+        
+        
+        
+            
+            
+            
+            
+            
+            <div class="special-screening-info">
+                <ul>
+                    
+                    <li>16 September</li>
+                    
+                    
+                    
+                    <li>12:45</li>
+                    
+                    
+                    
+                    <li>Kijkhuis, Cinema 1</li>
+                    
+                </ul>
+                <a href="https://book.kijkhuis.bioscopenleiden.nl/en/#/book/118531" target="_blank" id="nav-tickets" class="tickets-button">
+                    Tickets
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
+                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </a>
+            </div>
+        
+
+        <div class="special-films-section">
             
             
 <div class="cards-container">
+    
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
+        <div class="film-card-wrapper" 
+             data-title="man number 4"
+             data-director="miranda pennell"
+             data-letter="m"
+             data-filmmaker-letters="m,p"
+             data-all-letters="m,p"
+             data-date="16 September"
+             data-block="in focus: kamal aljafari and the imagination of palestine">
+            
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="man-number-4">
+                <a href="/en/programme/films/man-number-4/"
+                    title="View Man Number 4 film page">
+                    Man Number 4
+                </a>
+            </h4>
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Zooming into a disturbing image of detained Gazans circulating on social media, our passive consumption and complicity of the genocide is questioned.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/en/programme/filmmakers/miranda-pennell/"
+                        title="View Miranda Pennell filmmaker page">
+                        Miranda Pennell
+                    </a>
+                </h5>
+                
+                
+                <span class="film-meta-item">UK</span>
+                
+                
+                <span class="film-meta-item">2024</span>
+                
+                
+                <span class="film-meta-item">10&#39;</span>
+                
+                
+                <span class="film-meta-item">
+                    
+                    <a href="/en/programme/specials/in-focus-kamal-aljafari-and-the-imagination-of-palestine/"
+                        title="View In Focus: Kamal Aljafari and the Imagination of Palestine special programme page">
+                        In Focus: Kamal Aljafari and the Imagination of Palestine
+                    </a>
+                    
+                </span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+            
+        <img src="/assets/images/film-images/miranda-pennell/01-SELECTED-Feet_Mannumber4_MPennell_1.webp" alt="Shot from movie Man Number 4 by Miranda Pennell" loading="lazy">
+            
+        
+    </div>
+</div>
+        </div>
+    
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
+        <div class="film-card-wrapper" 
+             data-title="capricorn sunset"
+             data-director="johannes binotto"
+             data-letter="c"
+             data-filmmaker-letters="j,b"
+             data-all-letters="c,j,b"
+             data-date="16 September"
+             data-block="in focus: kamal aljafari and the imagination of palestine">
+            
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="capricorn-sunset">
+                <a href="/en/programme/films/capricorn-sunset/"
+                    title="View Capricorn Sunset film page">
+                    Capricorn Sunset
+                </a>
+            </h4>
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Exploring boundless space for meaning-making. This essay film opens our eyes to the interplay of images, memory, and personal interpretation.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/en/programme/filmmakers/johannes-binotto/"
+                        title="View Johannes Binotto filmmaker page">
+                        Johannes Binotto
+                    </a>
+                </h5>
+                
+                
+                <span class="film-meta-item">Switzerland</span>
+                
+                
+                <span class="film-meta-item">2023</span>
+                
+                
+                <span class="film-meta-item">5&#39;</span>
+                
+                
+                <span class="film-meta-item">
+                    
+                    <a href="/en/programme/specials/in-focus-kamal-aljafari-and-the-imagination-of-palestine/"
+                        title="View In Focus: Kamal Aljafari and the Imagination of Palestine special programme page">
+                        In Focus: Kamal Aljafari and the Imagination of Palestine
+                    </a>
+                    
+                </span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+            
+        <img src="/assets/images/film-images/johannes-binotto/01-SELECTED-capricorn sunset_Still_2.webp" alt="Shot from movie Capricorn Sunset by Johannes Binotto" loading="lazy">
+            
+        
+    </div>
+</div>
+        </div>
     
         
         
@@ -380,13 +629,13 @@
              data-filmmaker-letters="k,a"
              data-all-letters="a,k"
              data-date="16 September"
-             data-block="in focus: kamal aljafari en de verbeelding van palestina">
+             data-block="in focus: kamal aljafari and the imagination of palestine">
             
 <div class="film-card">
     <div class="film-card-text-wrapper">
         <div>
             <h4 id="a-fidai-film">
-                <a href="/nl/programme/films/a-fidai-film/"
+                <a href="/en/programme/films/a-fidai-film/"
                     title="View A Fidai Film film page">
                     A Fidai Film
                 </a>
@@ -395,21 +644,21 @@
         <div>
             
             <div class="film-synopsis">
-                <p>Rode silhouetten schetsen een alternatieve toekomst in geplunderd Palestijns archiefmateriaal. Een intrigerende film die verleden en mogelijke toekomsten herinterpreteert.</p>
+                <p>Red silhouettes draw an alternative future in looted Palestinian archival footage. A compelling film re-interpreting a past and possible future.</p>
             </div>
             
             <div class="film-meta">
                 
                 <h5 class="card-filmmaker-name">
                     
-                    <a href="/nl/programme/filmmakers/kamal-aljafari/"
+                    <a href="/en/programme/filmmakers/kamal-aljafari/"
                         title="View Kamal Aljafari filmmaker page">
                         Kamal Aljafari
                     </a>
                 </h5>
                 
                 
-                <span class="film-meta-item">Palestina, Duitsland, Qatar, Brazilië, Frankrijk</span>
+                <span class="film-meta-item">Palestine, Germany, Qatar, Brazil, France</span>
                 
                 
                 <span class="film-meta-item">2024</span>
@@ -420,9 +669,9 @@
                 
                 <span class="film-meta-item">
                     
-                    <a href="/nl/programme/specials/in-focus-kamal-aljafari-en-de-verbeelding-van-palestina/"
-                        title="View In Focus: Kamal Aljafari en de verbeelding van Palestina special programme page">
-                        In Focus: Kamal Aljafari en de verbeelding van Palestina
+                    <a href="/en/programme/specials/in-focus-kamal-aljafari-and-the-imagination-of-palestine/"
+                        title="View In Focus: Kamal Aljafari and the Imagination of Palestine special programme page">
+                        In Focus: Kamal Aljafari and the Imagination of Palestine
                     </a>
                     
                 </span>
@@ -454,8 +703,8 @@
         <div class="footer-container grid-base">
             <!-- email newsletter signup -->
             <div class="footer-newsletter-section">
-                <h3 style="text-transform: uppercase;">Blijf op de Hoogte</h3>
-                <p>Schrijf je in om meer te horen van Leiden Essay Film Festival</p>
+                <h3 style="text-transform: uppercase;">Stay Updated</h3>
+                <p>Subscribe to hear more from Leiden Essay Film Festival</p>
                 <div id="mc_embed_signup">
                     <form
                         action="https://kabk.us8.list-manage.com/subscribe/post?u=fe6f0920a56a052079924e663&amp;id=0bef5e214f&amp;f_id=00bac6e2f0"
@@ -464,18 +713,18 @@
                         <div id="mc_embed_signup_scroll">
                             <div class="mc-field-group input-group footer-checkbox">
                                 <input type="radio" name="MMERGE5" id="mce-MMERGE50" required
-                                    value="Ik ga akkoord met de verwerking van mijn gegevens zoals beschreven in het privacybeleid en om de leff nieuwsbrief en updates te ontvangen.">
+                                    value="I agree to the processing of my data as described in the privacy policy and to receive the leff newsletter and updates.">
                                 <label for="mce-MMERGE50">
-                                    Ik ga akkoord met de verwerking van mijn gegevens zoals beschreven in het
-                                    <a href="/nl/privacy/">Privacybeleid</a> en om de leff nieuwsbrief en updates te ontvangen.
+                                    I agree to the processing of my data as described in the
+                                    <a href="/en/privacy/">Privacy Policy</a> and to receive the leff newsletter and updates.
                                 </label>
                             </div>
                             <div class="mc-field-group">
-                                <label for="mce-EMAIL" class="sr-only">Schrijf je in om meer te horen van Leiden Essay Film Festival</label>
+                                <label for="mce-EMAIL" class="sr-only">Subscribe to hear more from Leiden Essay Film Festival</label>
                                 <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required=""
-                                    placeholder="Voer email adres in" value="">
+                                    placeholder="Enter your email here" value="">
                                 <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button"
-                                    value="Aanmelden">
+                                    value="Subscribe">
                             </div>
                             <div id="custom-mce-responses"></div>
                             <div id="mce-responses" class="clear" style="display: none;">
@@ -491,30 +740,30 @@
             </div>
 
             <div class="footer-nav">
-                <h4>Navigatie</h4>
+                <h4>Navigation</h4>
                 <ul>
                     
                     
-                    <li><a href="/nl/">Home</a></li>
+                    <li><a href="/en/">Home</a></li>
                     
-                    <li><a href="/nl/programme/">Programma 2025</a></li>
+                    <li><a href="/en/programme/">Programme 2025</a></li>
                     
-                    <li><a href="/nl/schedule/">Blokkenschema</a></li>
+                    <li><a href="/en/schedule/">Block Schedule</a></li>
                     
-                    <li><a href="/nl/location/">Locaties</a></li>
+                    <li><a href="/en/location/">Locations</a></li>
                     
-                    <li><a href="/nl/tickets/">Tickets</a></li>
+                    <li><a href="/en/tickets/">Tickets</a></li>
                     
                     
                         
                         
                         
                             
-                            <li><a href="/nl/programme/films">A—Z films</a></li>
+                            <li><a href="/en/programme/films">A—Z films</a></li>
                             
-                            <li><a href="/nl/programme/filmmakers">A—Z filmmakers</a></li>
+                            <li><a href="/en/programme/filmmakers">A—Z filmmakers</a></li>
                             
-                            <li><a href="/nl/programme/specials">Specials</a></li>
+                            <li><a href="/en/programme/specials">Specials</a></li>
                             
                         
                         
@@ -530,10 +779,10 @@
             </div>
 
             <div class="footer-info">
-                    <h4>Over leff</h4>
+                    <h4>About leff</h4>
                     <ul>
-                        <li><a href="/nl/about/">Festival</a></li>
-                        <li><a href="/nl/organisation/">Organisatie</a></li>
+                        <li><a href="/en/about/">Festival</a></li>
+                        <li><a href="/en/organisation/">Organisation</a></li>
                     </ul>
             </div>
 
@@ -542,7 +791,7 @@
                 <ul>
                     <li><a href="mailto:leff@hum.leidenuniv.nl">leff@hum.leidenuniv.nl</a></li>
                     <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank" rel="noopener">Instagram</a></li>
-                    <li><a href="/nl/privacy/">Privacybeleid</a></li>
+                    <li><a href="/en/privacy/">Privacy Policy</a></li>
                 </ul>
             </div>
 

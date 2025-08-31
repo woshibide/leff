@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Leiden Essay Film Festival">
-    <meta name="keywords" content="leiden, film festival, leiden essay film festival, leiden film festival, leff, Elysa Wendi and Wai Shing Lee, Room 404">
+    <meta name="keywords" content="leiden, film festival, leiden essay film festival, leiden film festival, leff">
     <meta name="description" content="14—16 September, Leiden. The first festival in the Netherlands dedicated entirely to the essay film.">
 
     <meta property="og:title" content="LEFF">
@@ -24,7 +24,7 @@
     
     <meta name="theme-color" content="#C0BEBF">
 
-    <title> Room 404 - LEFF</title>
+    <title>In Focus: Kamal Aljafari en de verbeelding van Palestina - LEFF</title>
 
     <!-- base href for github pages deployment -->
     
@@ -36,141 +36,107 @@
     
 <style>
     /*
-        separate film page
+        single special page - styled like filmmaker page
     */
     
-    .gallery-container {
+    .special-hero-container {
         grid-column: 1 / -1;
         position: relative;
+        height: auto;
         margin-bottom: var(--space-5xl);
     }
 
-    #film-shots {
+    .special-hero {
         position: relative;
-        background: var(--bg-main);
         overflow: hidden;
-        aspect-ratio: 16 / 9;
-        display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
     }
 
-    #film-shots::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 60%;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-        pointer-events: none;
-        z-index: 1;
-    }
-
-    #film-shots img {
+    .special-hero img {
         width: 100%;
-        height: 100%;
         object-fit: cover;
+    }
+
+    .special-info {
         position: absolute;
-        top: 0;
         left: 0;
-        opacity: 0;
-        transition: opacity 0.4s var(--transition);
-    }
-
-    #film-shots img.active {
-        opacity: 1;
-    }
-
-    #film-shots img:first-child {
-        opacity: 1;
-    }
-
-    .film-info {
-        position: absolute;
-        bottom: var(--space-xl);
-        left: var(--space-xl);
         z-index: 2;
         display: flex;
         flex-direction: column;
         gap: var(--space-md);
-        max-width: 80%;
+        max-width: 100%;
     }
 
-    @media (max-width: 768px) {
-        .film-info {
-            max-width: 100%;
-        }
-        div.gallery-container div.film-info div.film-details.readeable-text{
-            margin-block: 0;
-        }
-    }
-
-    .film-title {
-        font-size: 4rem;
+    .special-name {
+        font-size: 6rem;
         font-weight: normal;
         color: var(--accent);
         margin: 0;
         line-height: 1.1;
-        text-shadow: var(--shadow)
+        /* text-shadow: var(--shadow); */
     }
 
-    .film-details {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: var(--space-xs);
-    }
-
-    .film-details h3 {
+    .special-title {
+        font-size: 1.875rem;
+        color: var(--accent);
+        /* text-shadow: var(--shadow); */
         font-weight: normal;
-        color: var(--accent);
-        text-shadow: var(--shadow);
+        margin: 0;
     }
 
-    .film-details p {
-        color: var(--accent);
-        text-shadow: var(--shadow);
-    }
-
-    .film-details * {
-        font-size: 1.25rem;
-        vertical-align: baseline;
-        margin-right: var(--space-sm);
-    }
-    
-    .film-details * {
-        border-right: 2px solid var(--accent);
-        padding-right: var(--space-sm);
-    }
-    .film-details *:last-child{
-        border: none;
-        padding: 0;
-    }
-
-    .film-description {
+    .special-description-section {
         grid-column: 1 / 5;
         margin-bottom: var(--space-4xl);
     }
 
-    .film-description p {
+    .special-description-section p {
         font-size: 1.875rem;
         color: var(--bg-main);
         line-height: 1.4;
         max-width: 75ch;
+        margin-bottom: var(--space-md);
     }
 
-    .film-screening-info {
+    .special-films-section {
+        grid-column: 1 / -1;
+        margin-bottom: var(--space-4xl);
+    }
+
+    .special-films-title {
+        font-size: 2.25rem;
+        color: var(--bg-main);
+        font-weight: normal;
+        margin-bottom: var(--space-xl);
+        text-transform: uppercase;
+    }
+
+    .special-meta {
+        grid-column: 1 / -1;
+        margin-bottom: var(--space-2xl);
+        font-size: 1.125rem;
+        color: var(--bg-main);
+        opacity: 0.8;
+    }
+
+    /* override film-card styles for special page context */
+    .special-films-section .cards-container {
+        grid-column: 1 / -1;
+    }
+
+    /* special screening info section (copied from film.html) */
+    .special-screening-info {
         padding-left: var(--space-5xl);
         grid-column: 5 / -1;
         display: flex;
         flex-direction: column;
         gap: var(--space-xl);
         align-self: start;
+        margin-bottom: var(--space-4xl);
     }
 
-    .film-screening-info ul {
+    .special-screening-info ul {
         list-style: none;
         padding: 0;
         margin: 0;
@@ -179,79 +145,55 @@
         gap: var(--space-sm);
     }
 
-    .film-screening-info li {
+    .special-screening-info li {
         font-size: 1.875rem;
         color: var(--bg-main);
         font-weight: normal;
     }
 
-    .film-screening-info button {
-        background: transparent;
-        border: 2px solid var(--bg-main);
-        color: var(--bg-main);
-        padding: var(--space-md) var(--space-xl);
-        border-radius: var(--radius-medium);
-        font-family: inherit;
-        font-size: 1.875rem;
-        font-weight: normal;
-        cursor: pointer;
-        transition: all 0.2s var(--transition);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-
-    .film-screening-info button:hover {
-        background: var(--bg-main);
-        color: var(--accent);
-    }
-
-    .film-screening-info a {
+    .special-screening-info a {
         text-decoration: none;
     }
 
     @media (max-width: 768px) {
-        .gallery-container {
+        .special-hero-container {
             margin-bottom: var(--space-xl);
         }
 
-        #film-shots {
+        .special-hero {
             aspect-ratio: 4 / 3;
         }
 
-        .film-info {
+        .special-info {
             position: inherit;
             top: 0;
             left: 0;
-            /* max-width: 70%; */
         }
 
-        .film-title {
+        .special-name {
             font-size: 2.25rem;
             text-shadow: none;
         }
 
-        .film-details *{
-            text-shadow: none !important;
-        }
-
-        .film-details h3 {
+        .special-title {
             font-size: 1.25rem;
+            text-shadow: none;
         }
 
-        .film-details p {
-            font-size: 1.25rem;
-        }
-
-        .film-description {
+        .special-description-section {
             grid-column: 1 / -1;
             margin-bottom: var(--space-2xl);
         }
 
-        .film-description p {
+        .special-description-section p {
             font-size: 1.25rem;
         }
 
-        .film-screening-info {
+        .special-films-title {
+            font-size: 1.5rem;
+        }
+
+        .special-screening-info {
             grid-column: 1 / -1;
             flex-direction: column;
             justify-content: space-between;
@@ -260,129 +202,16 @@
             padding-left: 0;
         }
 
-        .film-screening-info ul {
+        .special-screening-info ul {
             flex: 1;
             align-items: center;
         }
 
-        .film-screening-info button {
-            padding: var(--space-sm) var(--space-lg);
-            font-size: 1rem;
-            white-space: nowrap;
-        }
-
-        div.film-screening-info a#nav-tickets.tickets-button{
+        div.special-screening-info a#nav-tickets.tickets-button{
             margin: 1rem;
             width: 90%;
         }
     }
-
-/*
-        FILM PAGES CONTENTS
-*/
-.gallery-navigation {
-    z-index: 200;
-    position: absolute;
-    display: flex;
-    gap: var(--space-md);
-    align-items: center;
-    bottom: var(--space-lg);
-    right: var(--space-lg);
-}
-
-/* slideshow counter */
-.gallery-counter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50%;
-    color: var(--accent);
-    text-shadow: var(--shadow);
-    font-size: 1rem;
-}
-
-/* slideshow counter */
-.gallery-counter {
-    font-family: "necto", monospace;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50%;
-    color: var(--accent);
-    text-shadow: var(--shadow);
-    font-size: 1rem;
-}
-
-/* slideshow counter */
-.gallery-counter {
-    display: flex;
-    align-items: center;
-    height: 50%;
-    color: var(--accent);
-    text-shadow: var(--shadow);
-    font-size: 1rem;
-}
-
-.gallery-arrow {
-    width: 3rem;
-    height: 3rem;
-    background: transparent;
-    border: none !important;
-    border-radius: var(--radius-full);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s var(--transition);
-    cursor: pointer;
-    font-family: inherit;
-    padding: 0;
-}
-
-.gallery-arrow:hover {
-    background: var(--text-main);
-    transform: scale(1.1);
-    outline: 2px solid var(--accent);
-}
-
-.gallery-arrow:focus {
-    outline: 2px solid var(--accent);
-    /* outline-offset: 1px; */
-    background-color: var(--bg-main-overlay);
-    box-shadow: var(--shadow);
-}
-
-.gallery-arrow.disabled {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s var(--transition);
-}
-
-.gallery-arrow {
-    color: var(--accent);
-    stroke: var(--accent);
-}
-
-.gallery-arrow svg {
-    stroke: var(--accent);
-    color: var(--accent);
-    width: 2rem;
-    height: 2rem;
-}
-
-#previous {
-    transform: rotate(180deg);
-}
-
-@media (max-width: 768px) {
-    .gallery-navigation {
-        bottom: 0;
-        right: 0;
-        padding: var(--space-sm);
-        width: 100%;
-        justify-content: space-between;
-    }
-}
-
 </style>
 
 
@@ -406,7 +235,7 @@
                 
                 
                 
-                <a href="/en/programme/films/room-404/">
+                <a href="/en/programme/specials/in-focus-kamal-aljafari-and-the-imagination-of-palestine/">
                     <button type="button">EN</button>
                 </a>
                 
@@ -540,7 +369,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Programma 2025","item":"https://leidenessayfilmfestival.com/nl/programme/"},{"@type":"ListItem","position":2,"name":"Films","item":"https://leidenessayfilmfestival.com/nl/programme/films/"},{"@type":"ListItem","position":3,"name":"Room 404"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Programma 2025","item":"https://leidenessayfilmfestival.com/nl/programme/"},{"@type":"ListItem","position":2,"name":"Specials","item":"https://leidenessayfilmfestival.com/nl/programme/specials/"},{"@type":"ListItem","position":3,"name":"In Focus: Kamal Aljafari en de verbeelding van Palestina"}]}
 </script>
 
 
@@ -555,104 +384,316 @@
         
             <li class="breadcrumb-item">
                 
-                    <a href="/nl/programme/films/" class="breadcrumb-link">Films</a>
+                    <a href="/nl/programme/specials/" class="breadcrumb-link">Specials</a>
                 
             </li>
         
             <li class="breadcrumb-item">
                 
-                    <h1 class="breadcrumb-current-page" aria-current="page">Room 404</h1>
+                    <h1 class="breadcrumb-current-page" aria-current="page">In Focus: Kamal Aljafari en de verbeelding van Palestina</h1>
                 
             </li>
         
     </ol>
 </div>
 
+    
+    <div class="special-hero-container">
+        <h2 class="special-name">
+            In Focus: Kamal Aljafari en de verbeelding van Palestina
+        </h2>   
+    </div>
+    
+    
+    <div class="special-description-section">
+        <p>Harun Farocki, een van Duitslands meest gevierde internationale filmmakers, bouwde een indrukwekkend oeuvre op – bijna honderd films, video’s en installaties – waarin hij de grenzen tussen documentaire, essay en experimentele film consequent vervaagde. Met zijn scherpe analytische blik en politieke inzichten onderzocht hij thema’s als arbeid, oorlog, surveillance en media. Zijn essayfilms nodigen uit om opnieuw te kijken (en te denken): hoe formuleren beelden onze werkelijkheid?<br>Dit leff in focus-blok verkent Farocki’s verzet tegen vaste classificaties aan de hand van twee relatief onbekende films. In samenwerking met zijn vaste co-producent Antje Ehmann worden Gegen-Musik (2004) en Was ist Los? (1991) gepresenteerd als twee radicale voorbeelden van Farocki’s benadering.<br>Gegen-Musik (Counter-Music) toont Farocki’s kenmerkende interesse in ‘soft montage’. We zien twee schermen naast elkaar en worden uitgedaagd om vergelijkingen te maken. De beelden, geluiden en woorden lijken aanvankelijk willekeurig, maar geleidelijk ontstaan mogelijke verbanden, verschillend voor elke kijker.<br>Was ist Los? (What’s Up?) behoort tot Farocki’s meest uitzinnige projecten. Zoals Ehmann zegt: “zijn gekste lange essayfilm! Hier probeerde Harun echt uit hoe ver je kunt gaan met een associatieve methode. Om woorden, beelden, gedachten en ideeën op een extreme manier te combineren. Hij zei dat hij zich tijdens het maken van de film dronken voelde – maar dat was hij niet!”</p> 
+    </div>
+    
 
-    <div class="gallery-container">
-        <div id="film-shots">
+    
+        
+        
+        
             
             
-                
-                
-                <img src="../../../../assets/images/film-images/elysa-wendi-and-wai-shing-lee/01-SELECTED-room 404 ext film still 2.webp" alt="shot 1 from movie Room 404 by Elysa Wendi and Wai Shing Lee" loading="lazy">
-                
-                
-                
-                <img src="../../../../assets/images/film-images/elysa-wendi-and-wai-shing-lee/02-SELECTED-room 404 ext film still 3.webp" alt="shot 2 from movie Room 404 by Elysa Wendi and Wai Shing Lee" loading="lazy">
-                
-                
             
-            <div class="gallery-navigation">
-                <button class="gallery-arrow" id="previous" type="button" aria-label="Previous image">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon" style="rotate: 180deg">
-                        <path d="M19 12H5M11 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" />
-                    </svg>
-                </button>
-                
-                <div class="gallery-counter">
-                    <span id="current-image">1</span> / <span id="total-images">2</span>
-                </div>
-                
-                <button class="gallery-arrow" id="next" type="button" aria-label="Next image">
+            
+            
+            <div class="special-screening-info">
+                <ul>
+                    
+                    <li>16 September</li>
+                    
+                    
+                    
+                    <li>12:45</li>
+                    
+                    
+                    
+                    <li>Kijkhuis, Cinema 1</li>
+                    
+                </ul>
+                <a href="https://book.kijkhuis.bioscopenleiden.nl/nl/#/book/118531" target="_blank" id="nav-tickets" class="tickets-button">
+                    Tickets
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
                         <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
                     </svg>
-                </button>
+                </a>
             </div>
+        
+
+        <div class="special-films-section">
+            
+            
+<div class="cards-container">
+    
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
+        <div class="film-card-wrapper" 
+             data-title="man number 4"
+             data-director="miranda pennell"
+             data-letter="m"
+             data-filmmaker-letters="m,p"
+             data-all-letters="m,p"
+             data-date="16 September"
+             data-block="in focus: kamal aljafari en de verbeelding van palestina">
+            
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="man-number-4">
+                <a href="/nl/programme/films/man-number-4/"
+                    title="View Man Number 4 film page">
+                    Man Number 4
+                </a>
+            </h4>
         </div>
-        <div class="film-info">
-            <h2 class="film-title">
-                Room 404
-            </h2>
-            <div class="film-details readeable-text">
-                <h3>
-                    Elysa Wendi and Wai Shing Lee
-                </h3>
-                <p>
-                    Polen, Hong Kong
-                </p>
-                <p>
-                    2024
-                </p>
-                <p>
-                    29&#39;
-                </p>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Een zoom-in op een schokkend beeld van gedetineerde Gazanen op sociale media confronteert ons met onze passieve consumptie en medeplichtigheid aan genocide.</p>
+            </div>
+            
+            <div class="film-meta">
                 
-                <p>
-                    Hong Kong Shorts
-                </p>
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/nl/programme/filmmakers/miranda-pennell/"
+                        title="View Miranda Pennell filmmaker page">
+                        Miranda Pennell
+                    </a>
+                </h5>
                 
-                <p>
-                    leff 2025
-                </p>
+                
+                <span class="film-meta-item">VK</span>
+                
+                
+                <span class="film-meta-item">2024</span>
+                
+                
+                <span class="film-meta-item">10&#39;</span>
+                
+                
+                <span class="film-meta-item">
+                    
+                    <a href="/nl/programme/specials/in-focus-kamal-aljafari-en-de-verbeelding-van-palestina/"
+                        title="View In Focus: Kamal Aljafari en de verbeelding van Palestina special programme page">
+                        In Focus: Kamal Aljafari en de verbeelding van Palestina
+                    </a>
+                    
+                </span>
+                
+                <span class="film-meta-item">leff 2025</span>
             </div>
         </div>
     </div>
-    <div class="film-description">
-        <p>Terwijl Hongkong steeds sterker in de greep komt van repressie onder de Nationale Veiligheidswet, bieden de onafhankelijke filmmakers Elysa Wendi en Wai Shing Lee een krachtig sociaal-artistiek antwoord op de censuur van artistieke expressie. Hun essayfilm Room 404, geselecteerd voor het Berlinale Forum Expanded, reflecteert op de politieke potentie van film in tijden van onderdrukking.<br><br>Sinds 2020 zijn de vrijheden van Hongkongers fors ingeperkt. Protesten uit sociale bewegingen worden regelmatig met geweld onderdrukt, waardoor kunstenaars zich genoodzaakt zien hun rol en bestaansrecht in de maatschappelijke strijd te heroverwegen.<br><br>Na eerdere samenwerking aan hybride documentaireprojecten, vormt Room 404 een essayistisch vervolg op hun documentaire Room 525 (2019), waarin ze pleitten voor samenwerking tussen kunstenaars onder een autoritair regime. In een hotelkamer, overigens ook refererend aan Room 666 (1982) van Wim Wenders, komen stemmen van Zuidoost-Aziatische kunstenaars samen. Ze delen woede, ongemak en een verlangen naar verzet.<br><br>Gevangen tussen de plicht om sociale strijd vast te leggen en het besef van hun eigen geprivilegieerde positie als kunstenaars, creëren Wendi en Lee een ruimte voor collectieve bevraging. De film laat zien hoe het audiovisuele medium, via de vermenging van persoonlijke ervaring en maatschappelijke kritiek, politieke kracht kan genereren.<br><br>Room 404 maakt deel uit van een themablok over de politieke en economische transformatie van hedendaags Hongkong.</p>
-    </div>
-    <div class="film-screening-info">
-        <ul>
-            <li>
-                15 September
-            </li>
-            <li>
-                12:45
-            </li>
-            <li>
-                Kijkhuis, Cinema 2
-            </li>
-        </ul>
-        <a href="https://book.kijkhuis.bioscopenleiden.nl/nl/#/book/118526" target="_blank" id="nav-tickets" class="tickets-button">
-            Tickets
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
-                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
-            </svg>
-        </a>
+    <div class="film-card-image">
+        
+            
+        <img src="/assets/images/film-images/miranda-pennell/01-SELECTED-Feet_Mannumber4_MPennell_1.webp" alt="Shot from movie Man Number 4 by Miranda Pennell" loading="lazy">
+            
+        
     </div>
 </div>
-
+        </div>
+    
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
+        <div class="film-card-wrapper" 
+             data-title="capricorn sunset"
+             data-director="johannes binotto"
+             data-letter="c"
+             data-filmmaker-letters="j,b"
+             data-all-letters="c,j,b"
+             data-date="16 September"
+             data-block="in focus: kamal aljafari en de verbeelding van palestina">
+            
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="capricorn-sunset">
+                <a href="/nl/programme/films/capricorn-sunset/"
+                    title="View Capricorn Sunset film page">
+                    Capricorn Sunset
+                </a>
+            </h4>
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Een essayfilm die betekenisgeving in een grenzeloze ruimte verkent. Beelden, herinneringen en persoonlijke interpretatie vloeien naadloos samen.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/nl/programme/filmmakers/johannes-binotto/"
+                        title="View Johannes Binotto filmmaker page">
+                        Johannes Binotto
+                    </a>
+                </h5>
+                
+                
+                <span class="film-meta-item">Zwitserland</span>
+                
+                
+                <span class="film-meta-item">2023</span>
+                
+                
+                <span class="film-meta-item">5&#39;</span>
+                
+                
+                <span class="film-meta-item">
+                    
+                    <a href="/nl/programme/specials/in-focus-kamal-aljafari-en-de-verbeelding-van-palestina/"
+                        title="View In Focus: Kamal Aljafari en de verbeelding van Palestina special programme page">
+                        In Focus: Kamal Aljafari en de verbeelding van Palestina
+                    </a>
+                    
+                </span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+            
+        <img src="/assets/images/film-images/johannes-binotto/01-SELECTED-capricorn sunset_Still_2.webp" alt="Shot from movie Capricorn Sunset by Johannes Binotto" loading="lazy">
+            
+        
+    </div>
+</div>
+        </div>
+    
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
+        <div class="film-card-wrapper" 
+             data-title="a fidai film"
+             data-director="kamal aljafari"
+             data-letter="a"
+             data-filmmaker-letters="k,a"
+             data-all-letters="a,k"
+             data-date="16 September"
+             data-block="in focus: kamal aljafari en de verbeelding van palestina">
+            
+<div class="film-card">
+    <div class="film-card-text-wrapper">
+        <div>
+            <h4 id="a-fidai-film">
+                <a href="/nl/programme/films/a-fidai-film/"
+                    title="View A Fidai Film film page">
+                    A Fidai Film
+                </a>
+            </h4>
+        </div>
+        <div>
+            
+            <div class="film-synopsis">
+                <p>Rode silhouetten schetsen een alternatieve toekomst in geplunderd Palestijns archiefmateriaal. Een intrigerende film die verleden en mogelijke toekomsten herinterpreteert.</p>
+            </div>
+            
+            <div class="film-meta">
+                
+                <h5 class="card-filmmaker-name">
+                    
+                    <a href="/nl/programme/filmmakers/kamal-aljafari/"
+                        title="View Kamal Aljafari filmmaker page">
+                        Kamal Aljafari
+                    </a>
+                </h5>
+                
+                
+                <span class="film-meta-item">Palestina, Duitsland, Qatar, Brazilië, Frankrijk</span>
+                
+                
+                <span class="film-meta-item">2024</span>
+                
+                
+                <span class="film-meta-item">78&#39;</span>
+                
+                
+                <span class="film-meta-item">
+                    
+                    <a href="/nl/programme/specials/in-focus-kamal-aljafari-en-de-verbeelding-van-palestina/"
+                        title="View In Focus: Kamal Aljafari en de verbeelding van Palestina special programme page">
+                        In Focus: Kamal Aljafari en de verbeelding van Palestina
+                    </a>
+                    
+                </span>
+                
+                <span class="film-meta-item">leff 2025</span>
+            </div>
+        </div>
+    </div>
+    <div class="film-card-image">
+        
+            
+        <img src="/assets/images/film-images/kamal-aljafari/01-SELECTED-Fidai Still 3.webp" alt="Shot from movie A Fidai Film by Kamal Aljafari" loading="lazy">
+            
+        
+    </div>
+</div>
+        </div>
+    
+</div>
+        </div>
+    
+</div>
 
 <div class="footer-negative-space"></div>
 
@@ -767,129 +808,6 @@
     </footer>
 
     
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('#film-shots img');
-            const prevButton = document.getElementById('previous');
-            const nextButton = document.getElementById('next');
-            const currentImageSpan = document.getElementById('current-image');
-            let currentIndex = 0;
-            let autoSlideInterval = null;
-            let autoSlideTimeout = null;
-
-            // only initialize if there are multiple images
-            if (images.length <= 1) {
-                if (prevButton) prevButton.style.display = 'none';
-                if (nextButton) nextButton.style.display = 'none';
-                return;
-            }
-
-            function showImage(index) {
-                // remove active class from all images
-                images.forEach(img => img.classList.remove('active'));
-                
-                // add active class to current image
-                images[index].classList.add('active');
-                
-                // update counter
-                if (currentImageSpan) {
-                    currentImageSpan.textContent = index + 1;
-                }
-                
-                // update arrow opacity based on position
-                if (prevButton) {
-                    prevButton.classList.toggle('disabled', index === 0);
-                }
-                if (nextButton) {
-                    nextButton.classList.toggle('disabled', index === images.length - 1);
-                }
-            }
-
-            function nextImage() {
-                if (currentIndex < images.length - 1) {
-                    currentIndex++;
-                } else {
-                    // loop back to start for auto-advance
-                    currentIndex = 0;
-                }
-                showImage(currentIndex);
-            }
-
-            function previousImage() {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    showImage(currentIndex);
-                }
-            }
-
-            function startAutoSlide() {
-                // clear any existing interval
-                if (autoSlideInterval) {
-                    clearInterval(autoSlideInterval);
-                }
-                
-                // start automatic slideshow every 8 seconds
-                autoSlideInterval = setInterval(() => {
-                    nextImage();
-                }, 8000);
-            }
-
-            function pauseAutoSlide() {
-                // clear the auto slide interval
-                if (autoSlideInterval) {
-                    clearInterval(autoSlideInterval);
-                    autoSlideInterval = null;
-                }
-                
-                // clear any pending timeout
-                if (autoSlideTimeout) {
-                    clearTimeout(autoSlideTimeout);
-                }
-                
-                // resume auto slide after 30 seconds
-                autoSlideTimeout = setTimeout(() => {
-                    startAutoSlide();
-                }, 30000);
-            }
-
-            // event listeners with auto-slide pause
-            if (nextButton) {
-                nextButton.addEventListener('click', () => {
-                    if (currentIndex < images.length - 1) {
-                        currentIndex++;
-                        showImage(currentIndex);
-                    }
-                    pauseAutoSlide();
-                });
-            }
-            
-            if (prevButton) {
-                prevButton.addEventListener('click', () => {
-                    previousImage();
-                    pauseAutoSlide();
-                });
-            }
-
-            // keyboard navigation with auto-slide pause
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowRight') {
-                    if (currentIndex < images.length - 1) {
-                        currentIndex++;
-                        showImage(currentIndex);
-                    }
-                    pauseAutoSlide();
-                } else if (e.key === 'ArrowLeft') {
-                    previousImage();
-                    pauseAutoSlide();
-                }
-            });
-
-            // initialize
-            showImage(0);
-            startAutoSlide();
-        });
-    </script>
-
 
     
 
