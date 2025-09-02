@@ -262,7 +262,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // only initialize on pages with cards
     const hasCards = document.querySelector('.film-card-link, .film-card-wrapper, .filmmaker-card-link, .special-block-card-link');
     
-    if (hasCards) {
+    // check if screen width is 768px or less
+    const isSmallScreen = window.innerWidth <= 768;
+    
+    if (hasCards && isSmallScreen) {
         window.hoverSimulator = new HoverSimulator({
             debug: false, // set to false to hide the line
             interval: 100 // check every 100ms for intersections
@@ -275,5 +278,26 @@ document.addEventListener('DOMContentLoaded', function() {
         //  console.log('- hoverSimulator.refresh() - refresh card detection');
         //  console.log('- hoverSimulator.stopSimulation() - stop simulation');
         //  console.log('- hoverSimulator.startSimulation() - start simulation');
+    }
+});
+
+// handle window resize to start/stop simulator based on screen size
+window.addEventListener('resize', function() {
+    const hasCards = document.querySelector('.film-card-link, .film-card-wrapper, .filmmaker-card-link, .special-block-card-link');
+    const isSmallScreen = window.innerWidth <= 768;
+    
+    if (hasCards && isSmallScreen && !window.hoverSimulator) {
+        // start simulator if not already running
+        window.hoverSimulator = new HoverSimulator({
+            debug: false,
+            interval: 100
+        });
+    } else if ((!hasCards || !isSmallScreen) && window.hoverSimulator) {
+        // stop simulator if running and conditions no longer met
+        window.hoverSimulator.stopSimulation();
+        if (window.hoverSimulator.line) {
+            window.hoverSimulator.line.remove();
+        }
+        window.hoverSimulator = null;
     }
 });
