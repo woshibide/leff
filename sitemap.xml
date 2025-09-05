@@ -613,6 +613,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://leidenessayfilmfestival.com/en/programme/specials/single-ticket/</loc>
+    <lastmod>2025-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://leidenessayfilmfestival.com/en/programme/specials/workers-leaving-the-factory/</loc>
     <lastmod>2025-09-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -1238,6 +1244,12 @@
   </url>
   <url>
     <loc>https://leidenessayfilmfestival.com/nl/programme/specials/opening-event/</loc>
+    <lastmod>2025-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://leidenessayfilmfestival.com/nl/programme/specials/single-ticket/</loc>
     <lastmod>2025-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
