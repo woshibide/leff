@@ -1,3 +1,4 @@
+- for tickets links, its worthwhile to check whether link is up and available
 - an interface is very much needed
 - a better data structures are needed for text content
 - it can be a json like nesting
