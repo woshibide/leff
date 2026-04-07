@@ -120,14 +120,14 @@ const CustomCursor = {
         const selectors = CONFIG.CLICKABLE_SELECTORS.join(', ');
         
         document.addEventListener('mouseenter', (e) => {
-            if (e.target.matches(selectors)) {
+            if (e.target && e.target.matches && e.target.matches(selectors)) {
                 console.log('cursor should be excited')
                 this.cursor.classList.add('excited');
             }
         }, true);
         
         document.addEventListener('mouseleave', (e) => {
-            if (e.target.matches(selectors)) {
+            if (e.target && e.target.matches && e.target.matches(selectors)) {
                 this.cursor.classList.remove('excited');
             }
         }, true);
@@ -702,6 +702,384 @@ const NavigationScroll = {
 
 
 /**
+ * color palette editor module
+ * handles changing color variables and exporting palette
+ */
+const ColorPaletteEditor = {
+    colorVariables: [
+        { name: '--accent', label: 'accent' },
+        { name: '--accent-off', label: 'accent off' },
+        { name: '--silver', label: 'silver' },
+        { name: '--dark-silver', label: 'dark silver' },
+        { name: '--text-main', label: 'text main' },
+        { name: '--bg-main', label: 'bg main' },
+        { name: '--bg-main-overlay', label: 'bg main overlay' },
+        { name: '--bg-main-hover', label: 'bg main hover' }
+    ],
+    menu: null,
+    colorsList: null,
+    isOpen: false,
+    originalLogoSvg: null,
+
+    /**
+     * initialize the color palette editor
+     */
+    init() {
+        this.menu = document.getElementById('palette-menu');
+        this.colorsList = this.menu.querySelector('.palette-colors-list');
+        
+        if (!this.menu) return;
+
+        this.renderColorInputs();
+        this.setupEventListeners();
+        this.fetchOriginalLogo();
+    },
+
+    /**
+     * fetch the original SVG logo to enable dynamic coloring
+     */
+    fetchOriginalLogo() {
+        const logo = document.getElementById('nav-logo');
+        if (logo && logo.src) {
+            // Only fetch if it's an HTTP/S url or relative, not data URI already
+            if (!logo.src.startsWith('data:')) {
+                fetch(logo.src)
+                    .then(res => res.text())
+                    .then(svgText => {
+                        this.originalLogoSvg = svgText;
+                        this.updateLogoColor(this.getColorValue('--accent'));
+                    })
+                    .catch(err => console.log('Could not load logo SVG for coloring', err));
+            }
+        }
+    },
+
+    /**
+     * update the SVG logo color dynamically via data URI
+     * @param {string} color - the hex color value
+     */
+    updateLogoColor(color) {
+        if (!this.originalLogoSvg) return;
+        
+        const updatedSvg = this.originalLogoSvg.replace(/#f0ff00/gi, color);
+        
+        const logo = document.getElementById('nav-logo');
+        if (logo && logo.tagName === 'IMG') {
+            const encodedSvg = encodeURIComponent(updatedSvg);
+            logo.src = 'data:image/svg+xml;charset=utf-8,' + encodedSvg;
+        }
+    },
+
+    /**
+     * render color input fields for each variable
+     */
+    renderColorInputs() {
+        this.colorsList.innerHTML = '';
+        
+        this.colorVariables.forEach(variable => {
+            const currentValue = this.getColorValue(variable.name);
+            const container = document.createElement('div');
+            container.className = 'palette-color-item';
+            
+            const label = document.createElement('label');
+            label.textContent = variable.label;
+            
+            const inputContainer = document.createElement('div');
+            inputContainer.className = 'palette-input-container';
+            
+            const hexInput = document.createElement('input');
+            hexInput.type = 'text';
+            hexInput.placeholder = '#000000';
+            hexInput.value = currentValue;
+            hexInput.className = 'palette-hex-input';
+            hexInput.dataset.variable = variable.name;
+            
+            hexInput.addEventListener('input', (e) => this.handleColorInput(e.target));
+            hexInput.addEventListener('blur', (e) => this.validateAndUpdateColor(e.target));
+            
+            const colorPicker = document.createElement('input');
+            colorPicker.type = 'color';
+            colorPicker.value = this.normalizeHex(currentValue);
+            colorPicker.className = 'palette-color-picker';
+            colorPicker.dataset.variable = variable.name;
+            
+            colorPicker.addEventListener('input', (e) => {
+                hexInput.value = e.target.value.toUpperCase();
+                this.updateCSSVariable(variable.name, e.target.value);
+            });
+            
+            inputContainer.appendChild(hexInput);
+            inputContainer.appendChild(colorPicker);
+            
+            container.appendChild(label);
+            container.appendChild(inputContainer);
+            this.colorsList.appendChild(container);
+        });
+    },
+
+    /**
+     * setup event listeners for key presses and buttons
+     */
+    setupEventListeners() {
+        // listen for c key to toggle palette
+        document.addEventListener('keydown', (e) => {
+            if ((e.key === 'c' || e.key === 'C') && !this.isInputFocused(e.target)) {
+                e.preventDefault();
+                this.toggleMenu();
+            }
+        });
+        
+        // close button
+        const closeBtn = this.menu.querySelector('.palette-close-btn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => this.closeMenu());
+        }
+        
+        // export button
+        const exportBtn = this.menu.querySelector('.palette-export-btn');
+        if (exportBtn) {
+            exportBtn.addEventListener('click', () => this.exportPalette());
+        }
+        
+        // close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (this.isOpen && !this.menu.contains(e.target)) {
+                this.closeMenu();
+            }
+        });
+    },
+
+    /**
+     * check if target is an input element
+     * @param {Element} target - the element to check
+     * @returns {boolean} - true if target is an input
+     */
+    isInputFocused(target) {
+        return target.tagName === 'INPUT' || target.tagName === 'TEXTAREA';
+    },
+
+    /**
+     * toggle palette menu open/close
+     */
+    toggleMenu() {
+        if (this.isOpen) {
+            this.closeMenu();
+        } else {
+            this.openMenu();
+        }
+    },
+
+    /**
+     * open the palette menu
+     */
+    openMenu() {
+        this.menu.classList.add('palette-menu-active');
+        this.isOpen = true;
+    },
+
+    /**
+     * close the palette menu
+     */
+    closeMenu() {
+        this.menu.classList.remove('palette-menu-active');
+        this.isOpen = false;
+    },
+
+    /**
+     * get current color value from css variable
+     * @param {string} variableName - the css variable name
+     * @returns {string} - the hex color value
+     */
+    getColorValue(variableName) {
+        const value = getComputedStyle(document.documentElement).getPropertyValue(variableName).trim();
+        return this.normalizeHex(value);
+    },
+
+    /**
+     * normalize a color value to hex format
+     * @param {string} value - the color value
+     * @returns {string} - the hex value
+     */
+    normalizeHex(value) {
+        value = value.trim();
+        
+        // if already hex, return as-is
+        if (value.startsWith('#')) {
+            return value.length === 7 ? value : value;
+        }
+        
+        // convert hsl to hex
+        if (value.startsWith('hsl')) {
+            return this.hslToHex(value);
+        }
+        
+        // convert rgba to hex
+        if (value.startsWith('rgb')) {
+            return this.rgbToHex(value);
+        }
+        
+        return value;
+    },
+
+    /**
+     * convert hsl to hex
+     * @param {string} hsl - hsl color string
+     * @returns {string} - hex color
+     */
+    hslToHex(hsl) {
+        const matches = hsl.match(/\d+/g);
+        if (!matches || matches.length < 3) return '#000000';
+        
+        let h = parseInt(matches[0]) / 360;
+        let s = parseInt(matches[1]) / 100;
+        let l = parseInt(matches[2]) / 100;
+        
+        let r, g, b;
+        
+        if (s === 0) {
+            r = g = b = l;
+        } else {
+            const hue2rgb = (p, q, t) => {
+                if (t < 0) t += 1;
+                if (t > 1) t -= 1;
+                if (t < 1/6) return p + (q - p) * 6 * t;
+                if (t < 1/2) return q;
+                if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+                return p;
+            };
+            
+            const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+            const p = 2 * l - q;
+            
+            r = hue2rgb(p, q, h + 1/3);
+            g = hue2rgb(p, q, h);
+            b = hue2rgb(p, q, h - 1/3);
+        }
+        
+        const toHex = (x) => {
+            const hex = Math.round(x * 255).toString(16);
+            return hex.length === 1 ? '0' + hex : hex;
+        };
+        
+        return '#' + toHex(r) + toHex(g) + toHex(b);
+    },
+
+    /**
+     * convert rgb(a) to hex
+     * @param {string} rgb - rgb or rgba color string
+     * @returns {string} - hex color
+     */
+    rgbToHex(rgb) {
+        const matches = rgb.match(/\d+/g);
+        if (!matches || matches.length < 3) return '#000000';
+        
+        const r = parseInt(matches[0]);
+        const g = parseInt(matches[1]);
+        const b = parseInt(matches[2]);
+        
+        return '#' + [r, g, b].map(x => {
+            const hex = x.toString(16);
+            return hex.length === 1 ? '0' + hex : hex;
+        }).join('').toUpperCase();
+    },
+
+    /**
+     * handle color input as user types without reverting
+     * @param {HTMLElement} input - the input element
+     */
+    handleColorInput(input) {
+        let value = input.value.trim();
+        
+        if (value && !value.startsWith('#')) {
+            value = '#' + value;
+        }
+        
+        // apply color if it matches the valid form smoothly while typing
+        if (/^#[0-9A-Fa-f]{6}$/.test(value)) {
+            this.updateCSSVariable(input.dataset.variable, value);
+            
+            const colorPicker = this.menu.querySelector(`.palette-color-picker[data-variable="${input.dataset.variable}"]`);
+            if (colorPicker) {
+                colorPicker.value = value.toLowerCase();
+            }
+        }
+    },
+
+    /**
+     * validate and update color from hex input on blur
+     * @param {HTMLElement} input - the input element
+     */
+    validateAndUpdateColor(input) {
+        let value = input.value.trim();
+        
+        // add # if missing
+        if (!value.startsWith('#')) {
+            value = '#' + value;
+        }
+        
+        // validate hex format
+        if (!/^#[0-9A-Fa-f]{6}$/.test(value)) {
+            // revert to previous value on invalid input
+            const prev = this.getColorValue(input.dataset.variable);
+            input.value = prev;
+            return;
+        }
+        
+        input.value = value.toUpperCase();
+        this.updateCSSVariable(input.dataset.variable, value);
+        
+        // update color picker
+        const colorPicker = this.menu.querySelector(`.palette-color-picker[data-variable="${input.dataset.variable}"]`);
+        if (colorPicker) {
+            colorPicker.value = value.toLowerCase();
+        }
+    },
+
+    /**
+     * update a css variable value
+     * @param {string} variableName - the css variable name
+     * @param {string} value - the new value
+     */
+    updateCSSVariable(variableName, value) {
+        document.documentElement.style.setProperty(variableName, value);
+        
+        if (variableName === '--accent') {
+            this.updateLogoColor(value);
+        }
+    },
+
+    /**
+     * export current palette to a .txt file
+     */
+    exportPalette() {
+        const lines = [
+            'leff color palette export',
+            'generated on: ' + new Date().toLocaleString(),
+            '',
+            'color variables:'
+        ];
+        
+        this.colorVariables.forEach(variable => {
+            const value = this.getColorValue(variable.name);
+            lines.push(`${variable.name}: ${value}`);
+        });
+        
+        const content = lines.join('\n');
+        const blob = new Blob([content], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `leff-palette-${new Date().getTime()}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+};
+
+
+/**
  * main application initialization
  */
 document.addEventListener('DOMContentLoaded', function() {
@@ -711,4 +1089,5 @@ document.addEventListener('DOMContentLoaded', function() {
     MenuDropdown.init();
     ValidationInputCheck.init();
     NavigationScroll.init();
+    ColorPaletteEditor.init();
 });

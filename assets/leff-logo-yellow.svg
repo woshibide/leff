@@ -3,7 +3,7 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #f0ff00;
+        fill: var(--accent, #f0ff00);
       }
     </style>
   </defs>
