@@ -10,17 +10,17 @@
 
     <meta property="og:title" content="LEFF">
     <meta property="og:description" content="14—16 September, Leiden. The first festival in the Netherlands dedicated entirely to the essay film.">
-    <meta property="og:image" content="/assets/header/og_1200x1200.png">
+    <meta property="og:image" content="/leff/assets/header/og_1200x1200.png">
     <meta property="og:url" content="">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="/assets/header/og_1200x1200.png">
+    <meta name="twitter:image" content="/leff/assets/header/og_1200x1200.png">
 
     
-    <link rel="icon" href="/assets/header/favicon.ico" sizes="any">
-    <link rel="icon" href="/assets/header/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/header/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/header/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/assets/header/android-chrome-512x512.png">
+    <link rel="icon" href="assets/header/favicon.ico" sizes="any">
+    <link rel="icon" href="assets/header/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/header/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/header/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/header/android-chrome-512x512.png">
     
     <meta name="theme-color" content="#C0BEBF">
 
@@ -28,8 +28,10 @@
 
     <!-- base href for github pages deployment -->
     
+    <base href="/leff/">
     
-    <link rel="stylesheet" href="/styles.391383e723.css">
+    
+    <link rel="stylesheet" href="styles.652b6ebe09.css">
     
     
 
@@ -219,146 +221,182 @@
 </head>
 
 <body>
-    <nav>
+<nav>
+    <a href="/leff/en/">
+        <img src="/leff/assets/leff-logo-yellow.svg" id="nav-logo">
+    </a>
+
+    <div class="not-logo">
+
+        <div id="languages">
         
-        <a href="/en/"><img src="/assets/leff-logo-yellow.svg"
-                alt="leiden essay film festival logo" id="nav-logo"></a>
-        
-        <div id="circle-container">
-            <!-- <a href="https://bioscopenleiden.nl/kijkhuis/special/leff/" target="_blank" rel="noopener" id="nav-tickets" class="tickets-button">
-                Tickets
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon">
-                    <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
-                </svg>
-            </a> -->
-            <div id="languages">
-                
-                
+            
                 <button type="button" class="active">EN</button>
+            
+        
+            
                 
-                
-                
-                
-                <a href="/nl/programme/specials/classics/">
+                <a href="/leff/nl/programme/specials/classics/">
                     <button type="button">NL</button>
                 </a>
-                
-                
-            </div>
-            <div id="circle"></div>
-            <div class="menu-close" style="display: none;">
-                <button type="button" class="close-icon" id="menu-close" aria-label="close">
-                    <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
-                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
-                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2" />
-                    </svg>
-                </button>
-            </div>
+            
+        
         </div>
 
-        <div id="menu-overlay" class="menu-overlay">
-            <div class="menu-grid grid-base">
-                <div class="menu-nav">
-                    <ul>
-                        
-                        <li>
-                            
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
-                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
-                            </svg>
-                            <a href="/en/">Home</a>
-                            
-                        </li>
-                        
-                        <li>
-                            
-                            <div class="menu-dropdown-item">
-                                <button type="button" class="menu-dropdown-toggle" data-dropdown="programme">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                        class="arrow-icon east-arrow dropdown-arrow">
-                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
-                                            stroke-width="2" />
-                                    </svg>
-                                    <div class="drp-dwn-item-txt">Programme 2025</div>
-                                </button>
-                                <ul class="menu-dropdown-content" id="programme-dropdown">
-                                    
-                                    <li>
-                                        <a href="/en/programme/films">A—Z films</a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="/en/programme/filmmakers">A—Z filmmakers</a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="/en/programme/specials">Specials</a>
-                                    </li>
-                                    
-                                </ul>
-                            </div>
-                            
-                        </li>
-                        
-                        <li>
-                            
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
-                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
-                            </svg>
-                            <a href="/en/schedule/">Block Schedule</a>
-                            
-                        </li>
-                        
-                        <li>
-                            
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
-                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
-                            </svg>
-                            <a href="/en/location/">Locations</a>
-                            
-                        </li>
-                        
-                        <li>
-                            
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-icon east-arrow">
-                                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
-                            </svg>
-                            <a href="/en/tickets/">Tickets</a>
-                            
-                        </li>
-                        
-                        <li>
-                            
-                            <div class="menu-dropdown-item">
-                                <button type="button" class="menu-dropdown-toggle" data-dropdown="about">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                        class="arrow-icon east-arrow dropdown-arrow">
-                                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor"
-                                            stroke-width="2" />
-                                    </svg>
-                                    <div class="drp-dwn-item-txt">About leff</div>
-                                </button>
-                                <ul class="menu-dropdown-content" id="about-dropdown">
-                                    
-                                    <li>
-                                        <a href="/en/about/">Festival</a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="/en/organisation/">Organisation</a>
-                                    </li>
-                                    
-                                </ul>
-                            </div>
-                            
-                        </li>
-                        
-                    </ul>
-                </div>
+        <!-- state -->
+        <input type="checkbox" id="nav-toggle" hidden>
 
+        <!-- trigger -->
+        <label for="nav-toggle" class="menu-toggle" aria-label="menu">
+            <span class="menu-text">menu</span>
+            <svg class="menu-icon" viewBox="0 0 24 24">
+                <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
+                <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </label>
+
+        <div id="drawer">
+            <div class="menu-nav">
+                <ul>
+                    
+                    <li>
+                        
+                        <a href="/leff/en/">
+                            <svg viewBox="0 0 24 24" class="arrow-icon">
+                                <path d="M5 12h14M13 5l7 7-7 7"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"/>
+                            </svg>
+                            <span>
+                                Home
+                            </span>
+                        </a>
+                        
+                    </li>
+                    
+                    <li>
+                        
+                        <details class="menu-item">
+                            <summary>
+                                <svg viewBox="0 0 24 24" class="arrow-icon">
+                                    <path d="M5 12h14M13 5l7 7-7 7"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"/>
+                                </svg>
+                                <span class="link-text">Programme 2026</span>
+                            </summary>
+                            <ul>
+                                
+                                <li><a href="/leff/en/programme/2026">new programm is coming soon</a></li>
+                                
+                            </ul>
+                        </details>
+                        
+                    </li>
+                    
+                    <li>
+                        
+                        <details class="menu-item">
+                            <summary>
+                                <svg viewBox="0 0 24 24" class="arrow-icon">
+                                    <path d="M5 12h14M13 5l7 7-7 7"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"/>
+                                </svg>
+                                <span class="link-text">Programme 2025</span>
+                            </summary>
+                            <ul>
+                                
+                                <li><a href="/leff/en/programme/films">A—Z films</a></li>
+                                
+                                <li><a href="/leff/en/programme/filmmakers">A—Z filmmakers</a></li>
+                                
+                                <li><a href="/leff/en/programme/specials">Specials</a></li>
+                                
+                            </ul>
+                        </details>
+                        
+                    </li>
+                    
+                    <li>
+                        
+                        <a href="/leff/en/schedule/">
+                            <svg viewBox="0 0 24 24" class="arrow-icon">
+                                <path d="M5 12h14M13 5l7 7-7 7"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"/>
+                            </svg>
+                            <span>
+                                Block Schedule
+                            </span>
+                        </a>
+                        
+                    </li>
+                    
+                    <li>
+                        
+                        <a href="/leff/en/location/">
+                            <svg viewBox="0 0 24 24" class="arrow-icon">
+                                <path d="M5 12h14M13 5l7 7-7 7"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"/>
+                            </svg>
+                            <span>
+                                Locations
+                            </span>
+                        </a>
+                        
+                    </li>
+                    
+                    <li>
+                        
+                        <a href="/leff/en/tickets/">
+                            <svg viewBox="0 0 24 24" class="arrow-icon">
+                                <path d="M5 12h14M13 5l7 7-7 7"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"/>
+                            </svg>
+                            <span>
+                                Tickets
+                            </span>
+                        </a>
+                        
+                    </li>
+                    
+                    <li>
+                        
+                        <details class="menu-item">
+                            <summary>
+                                <svg viewBox="0 0 24 24" class="arrow-icon">
+                                    <path d="M5 12h14M13 5l7 7-7 7"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"/>
+                                </svg>
+                                <span class="link-text">About leff</span>
+                            </summary>
+                            <ul>
+                                
+                                <li><a href="/leff/en/about/">Festival</a></li>
+                                
+                                <li><a href="/leff/en/organisation/">Organisation</a></li>
+                                
+                            </ul>
+                        </details>
+                        
+                    </li>
+                    
+                </ul>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
     
 
@@ -369,7 +407,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Programme 2025","item":"https://leidenessayfilmfestival.com/en/programme/"},{"@type":"ListItem","position":2,"name":"Specials","item":"https://leidenessayfilmfestival.com/en/programme/specials/"},{"@type":"ListItem","position":3,"name":"Classics"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Programme","item":"https://leidenessayfilmfestival.com/leff/en/programme/"},{"@type":"ListItem","position":2,"name":"Specials","item":"https://leidenessayfilmfestival.com/leff/en/programme/specials/"},{"@type":"ListItem","position":3,"name":"Classics"}]}
 </script>
 
 
@@ -378,13 +416,13 @@
         
             <li class="breadcrumb-item">
                 
-                    <a href="/en/programme/" class="breadcrumb-link">Programme 2025</a>
+                    <a href="/leff/en/programme/" class="breadcrumb-link">Programme</a>
                 
             </li>
         
             <li class="breadcrumb-item">
                 
-                    <a href="/en/programme/specials/" class="breadcrumb-link">Specials</a>
+                    <a href="/leff/en/programme/specials/" class="breadcrumb-link">Specials</a>
                 
             </li>
         
@@ -446,7 +484,7 @@
     <div class="film-card-text-wrapper">
         <div>
             <h4 id="sans-soleil">
-                <a href="/en/programme/films/sans-soleil/"
+                <a href="/leff/en/programme/films/sans-soleil/"
                     title="View Sans Soleil film page">
                     Sans Soleil
                 </a>
@@ -462,7 +500,7 @@
                 
                 <h5 class="card-filmmaker-name">
                     
-                    <a href="/en/programme/filmmakers/chris-marker/"
+                    <a href="/leff/en/programme/filmmakers/chris-marker/"
                         title="View Chris Marker filmmaker page">
                         Chris Marker
                     </a>
@@ -480,7 +518,7 @@
                 
                 <span class="film-meta-item">
                     
-                    <a href="/en/programme/specials/classics/"
+                    <a href="/leff/en/programme/specials/classics/"
                         title="View Classics special programme page">
                         Classics
                     </a>
@@ -494,8 +532,8 @@
     <div class="film-card-image">
         
             
-        <a href="/en/programme/films/sans-soleil/" title="View Sans Soleil film page">
-        <img src="/assets/images/film-images/chris-marker/01-SELECTED-Sunless 1.webp" alt="Shot from movie Sans Soleil by Chris Marker" loading="lazy">
+        <a href="/leff/en/programme/films/sans-soleil/" title="View Sans Soleil film page">
+        <img src="assets/images/film-images/chris-marker/01-SELECTED-Sunless 1.webp" alt="Shot from movie Sans Soleil by Chris Marker" loading="lazy">
         </a>
             
         
@@ -529,7 +567,7 @@
     <div class="film-card-text-wrapper">
         <div>
             <h4 id="de-lautre-cote">
-                <a href="/en/programme/films/de-lautre-cote/"
+                <a href="/leff/en/programme/films/de-lautre-cote/"
                     title="View De l’autre coté film page">
                     De l’autre coté
                 </a>
@@ -545,7 +583,7 @@
                 
                 <h5 class="card-filmmaker-name">
                     
-                    <a href="/en/programme/filmmakers/chantal-akerman/"
+                    <a href="/leff/en/programme/filmmakers/chantal-akerman/"
                         title="View Chantal Akerman filmmaker page">
                         Chantal Akerman
                     </a>
@@ -563,7 +601,7 @@
                 
                 <span class="film-meta-item">
                     
-                    <a href="/en/programme/specials/classics/"
+                    <a href="/leff/en/programme/specials/classics/"
                         title="View Classics special programme page">
                         Classics
                     </a>
@@ -577,8 +615,8 @@
     <div class="film-card-image">
         
             
-        <a href="/en/programme/films/de-lautre-cote/" title="View De l’autre coté film page">
-        <img src="/assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp" alt="Shot from movie De l’autre coté by Chantal Akerman" loading="lazy">
+        <a href="/leff/en/programme/films/de-lautre-cote/" title="View De l’autre coté film page">
+        <img src="assets/images/film-images/chantal-akerman/01-SELECTED-FTOS 15.webp" alt="Shot from movie De l’autre coté by Chantal Akerman" loading="lazy">
         </a>
             
         
@@ -612,7 +650,7 @@
                                     value="I agree to the processing of my data as described in the privacy policy and to receive the leff newsletter and updates.">
                                 <label for="mce-MMERGE50">
                                     I agree to the processing of my data as described in the
-                                    <a href="/en/privacy/">Privacy Policy</a> and to receive the leff newsletter and updates.
+                                    <a href="/leff/en/privacy/">Privacy Policy</a> and to receive the leff newsletter and updates.
                                 </label>
                             </div>
                             <div class="mc-field-group">
@@ -640,27 +678,23 @@
                 <ul>
                     
                     
-                    <li><a href="/en/">Home</a></li>
+                    <li><a href="/leff/en/">Home</a></li>
                     
-                    <li><a href="/en/programme/">Programme 2025</a></li>
+                    <li><a href="/leff/en/programme/2026">Programme 2026</a></li>
                     
-                    <li><a href="/en/schedule/">Block Schedule</a></li>
+                    <li><a href="/leff/en/programme/">Programme 2025</a></li>
                     
-                    <li><a href="/en/location/">Locations</a></li>
+                    <li><a href="/leff/en/schedule/">Block Schedule</a></li>
                     
-                    <li><a href="/en/tickets/">Tickets</a></li>
+                    <li><a href="/leff/en/location/">Locations</a></li>
+                    
+                    <li><a href="/leff/en/tickets/">Tickets</a></li>
                     
                     
                         
                         
                         
-                            
-                            <li><a href="/en/programme/films">A—Z films</a></li>
-                            
-                            <li><a href="/en/programme/filmmakers">A—Z filmmakers</a></li>
-                            
-                            <li><a href="/en/programme/specials">Specials</a></li>
-                            
+                        
                         
                         
                         
@@ -677,8 +711,8 @@
             <div class="footer-info">
                     <h4>About leff</h4>
                     <ul>
-                        <li><a href="/en/about/">Festival</a></li>
-                        <li><a href="/en/organisation/">Organisation</a></li>
+                        <li><a href="/leff/en/about/">Festival</a></li>
+                        <li><a href="/leff/en/organisation/">Organisation</a></li>
                     </ul>
             </div>
 
@@ -687,7 +721,7 @@
                 <ul>
                     <li><a href="mailto:leff@hum.leidenuniv.nl">leff@hum.leidenuniv.nl</a></li>
                     <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank" rel="noopener">Instagram</a></li>
-                    <li><a href="/en/privacy/">Privacy Policy</a></li>
+                    <li><a href="/leff/en/privacy/">Privacy Policy</a></li>
                 </ul>
             </div>
 
@@ -707,22 +741,12 @@
 
     
 
-    <div id="custom-cursor"></div>
+    <!-- <div id="custom-cursor"></div> -->
 
-    <!-- color palette editor menu -->
-    <div id="palette-menu" class="palette-menu">
-        <div class="palette-menu-header">
-            <h3>color palette</h3>
-            <button type="button" class="palette-close-btn" aria-label="close palette menu">&times;</button>
-        </div>
-        <div class="palette-colors-list"></div>
-        <button type="button" class="palette-export-btn">export palette</button>
-    </div>
-
-    <script src="/scripts.js"></script>
+    <script src="/leff/scripts.js"></script>
     <script>
         // this is for approvals on github pages 
-        window.BASE_PATH = '/';
+        window.BASE_PATH = '/leff/';
 
         // heeeeeyyyyyyyy, my name is pyotr and
         // im very likely looking for new projects
@@ -731,7 +755,7 @@
         // static bilingual vanilla js html css website?
 
         // best way to reach out to me is t.me/itspyotr
-        // otherwise my website is here wshbd.com
+        // otherwise my portfolio is here wshbd.com
 
         console.log("\n\n\n\t" +
             "oooo             .o88o.  .o88o. \n\t" +

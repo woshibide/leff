@@ -5,9 +5,9 @@ const CONFIG = {
         'a', 'button', '.clickable', '[role="button"]', 
         'input[type="submit"]', 'input[type="button"]', 
         '.tickets-button', '.programme-table tbody tr', 
-        '.programme-table th', '#circle', '#search-icon',
+        '.programme-table th', '#square', '#search-icon',
         '#languages button', '.schedule-event-cell', '#menu-close', '#popup-close',
-        '#circle-placeholder'
+        '#square-placeholder'
     ]
 };
 
@@ -21,69 +21,6 @@ function getAssetPath(path) {
     return basePath + path.replace(/^\//, '');
 }
 
-/**
- * text replacement module
- * replaces "leff" with italicized version in text nodes
- */
-const TextReplacer = {
-    /**
-     * replace all occurrences of "leff" with stylized version
-     */
-    init() {
-        const walker = document.createTreeWalker(
-            document.body,
-            NodeFilter.SHOW_TEXT,
-            this.createTextFilter()
-        );
-        
-        const textNodes = this.findTextNodes(walker);
-        this.replaceTextInNodes(textNodes);
-    },
-
-    /**
-     * create filter for text walker to exclude script/style/title elements
-     * @returns {function} filter function
-     */
-    createTextFilter() {
-        return node => {
-            const excludedTags = /^(SCRIPT|STYLE|TITLE)$/;
-            return node.parentElement?.tagName.match(excludedTags) 
-                ? NodeFilter.FILTER_REJECT 
-                : NodeFilter.FILTER_ACCEPT;
-        };
-    },
-
-    /**
-     * find all text nodes containing "leff"
-     * @param {TreeWalker} walker - the tree walker
-     * @returns {Array} array of text nodes
-     */
-    findTextNodes(walker) {
-        const textNodes = [];
-        let node;
-        while (node = walker.nextNode()) {
-            if (/\bleff\b/i.test(node.textContent)) {
-                textNodes.push(node);
-            }
-        }
-        return textNodes;
-    },
-
-    /**
-     * replace text in the found nodes
-     * @param {Array} textNodes - array of text nodes to process
-     */
-    replaceTextInNodes(textNodes) {
-        textNodes.forEach(textNode => {
-            const span = document.createElement('span');
-            span.innerHTML = textNode.textContent.replace(
-                /\bleff\b/gi, 
-                '<span style="text-transform: lowercase;">l<em>e</em>ff</span>'
-            );
-            textNode.parentNode.replaceChild(span, textNode);
-        });
-    }
-};
 
 /**
  * custom cursor module
@@ -120,208 +57,20 @@ const CustomCursor = {
         const selectors = CONFIG.CLICKABLE_SELECTORS.join(', ');
         
         document.addEventListener('mouseenter', (e) => {
-            if (e.target && e.target.matches && e.target.matches(selectors)) {
-                console.log('cursor should be excited')
+            if (e.target.matches(selectors)) {
+                // console.log('cursor should be excited')
                 this.cursor.classList.add('excited');
             }
         }, true);
         
         document.addEventListener('mouseleave', (e) => {
-            if (e.target && e.target.matches && e.target.matches(selectors)) {
+            if (e.target.matches(selectors)) {
                 this.cursor.classList.remove('excited');
             }
         }, true);
     }
 };
 
-/**
- * menu system module
- * handles menu opening, closing, and interactions
- */
-const MenuSystem = {
-    elements: {},
-
-    /**
-     * initialize menu system
-     */
-    init() {
-        this.cacheElements();
-        this.setupEventListeners();
-        this.ensureLogoLoads();
-    },
-
-    /**
-     * cache frequently used dom elements
-     */
-    cacheElements() {
-        this.elements = {
-            circle: document.getElementById('circle'),
-            circleContainer: document.getElementById('circle-container'),
-            menuOverlay: document.getElementById('menu-overlay'),
-            closeButton: document.getElementById('menu-close'),
-            nav: document.querySelector('nav'),
-            logo: document.getElementById('nav-logo'),
-            menuText: null
-        };
-    },
-
-    /**
-     * ensure logo loads properly on page load
-     */
-    ensureLogoLoads() {
-        if (this.elements.logo) {
-            // check if logo is already loaded
-            if (this.elements.logo.complete && this.elements.logo.naturalWidth > 0) {
-                return; // logo is already loaded
-            }
-            
-            // force reload the yellow logo to ensure it displays
-            const logoSrc = getAssetPath('assets/leff-logo-yellow.svg');
-            
-            // add load handler to confirm success
-            this.elements.logo.onload = () => {
-                // console.log('logo loaded successfully');
-            };
-            
-            // add error handler in case the logo fails to load
-            this.elements.logo.onerror = () => {
-                console.warn('logo failed to load, trying relative path...');
-                // try relative path as fallback
-                this.elements.logo.src = 'assets/leff-logo-yellow.svg';
-                
-                // if that also fails, try one more time with cache bust
-                this.elements.logo.onerror = () => {
-                    console.warn('logo still failing, trying cache bust...');
-                    this.elements.logo.src = logoSrc + '?t=' + Date.now();
-                };
-            };
-            
-            // set the source (this should trigger load/error event)
-            this.elements.logo.src = logoSrc;
-        }
-    },
-
-    /**
-     * setup all menu-related event listeners
-     */
-    setupEventListeners() {
-        this.setupMenuToggle();
-        this.setupCloseHandlers();
-        this.setupOverlayClick();
-    },
-
-    /**
-     * setup menu toggle functionality
-     */
-    setupMenuToggle() {
-        this.elements.circle.addEventListener('click', () => {
-            this.openMenu();
-        });
-    },
-
-    /**
-     * setup close button handlers
-     */
-    setupCloseHandlers() {
-        if (this.elements.closeButton) {
-            this.elements.closeButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.closeMenu();
-            });
-        }
-    },
-
-    /**
-     * setup overlay click to close menu
-     */
-    setupOverlayClick() {
-        this.elements.menuOverlay.addEventListener('click', (e) => {
-            if (e.target === this.elements.menuOverlay) {
-                this.closeMenu();
-            }
-        });
-    },
-
-    /**
-     * open the menu with animation
-     */
-    openMenu() {
-        // show close button
-        if (this.elements.closeButton) {
-            this.elements.closeButton.parentElement.style.display = 'block';
-        }
-        
-        // get circle position for expansion animation
-        const circleRect = this.elements.circle.getBoundingClientRect();
-        const circleTop = circleRect.top + (circleRect.height / 2);
-        const circleLeft = circleRect.left + (circleRect.width / 2);
-
-        // set css variables for the animation origin
-        this.elements.circle.style.setProperty('--circle-top', `${circleTop}px`);
-        this.elements.circle.style.setProperty('--circle-left', `${circleLeft}px`);
-
-        this.elements.circle.classList.add('expanded');
-        this.elements.nav.classList.add('menu-active');
-        document.body.classList.add('menu-active');
-        
-        // swap logo to text 'menu'
-        setTimeout(() => {
-            if (this.elements.logo && this.elements.logo.parentNode) {
-                if (!this.elements.menuText) {
-                    this.elements.menuText = document.createElement('span');
-                    this.elements.menuText.id = 'nav-logo-text';
-                    this.elements.menuText.textContent = 'leff 2025';
-                    if (this.elements.logo.className) {
-                        this.elements.menuText.className = this.elements.logo.className;
-                    }
-                }
-                this.elements.logo.parentNode.replaceChild(this.elements.menuText, this.elements.logo);
-            }
-        }, 50);
-        
-        setTimeout(() => {
-            this.elements.menuOverlay.classList.add('active');
-        }, CONFIG.MENU_ANIMATION_DELAY);
-    },
-
-    /**
-     * close the menu with animation
-     */
-    closeMenu() {
-        this.elements.menuOverlay.classList.remove('active');
-        this.elements.nav.classList.remove('menu-active');
-        document.body.classList.remove('menu-active');
-        
-        setTimeout(() => {
-            this.elements.circle.classList.remove('expanded');
-            // hide close button
-            if (this.elements.closeButton) {
-                this.elements.closeButton.parentElement.style.display = 'none';
-            }
-            // swap back to yellow logo after the menu animation completes
-            if (this.elements.menuText && this.elements.menuText.parentNode) {
-                this.elements.menuText.parentNode.replaceChild(this.elements.logo, this.elements.menuText);
-            }
-            // clean up css variables
-            this.elements.circle.style.removeProperty('--circle-top');
-            this.elements.circle.style.removeProperty('--circle-left');
-        }, CONFIG.MENU_ANIMATION_DELAY);
-    },
-
-    /**
-     * create a placeholder circle to maintain nav layout during animation
-     */
-    createPlaceholderCircle() {
-        // no longer needed
-    },
-
-    /**
-     * remove the placeholder circle
-     */
-    removePlaceholderCircle() {
-        // no longer needed
-    }
-};
 
 /**
  * menu dropdown module
@@ -583,33 +332,34 @@ const ValidationInputCheck = {
  */
 const NavigationScroll = {
     nav: null,
+    toggle: null,
     searchUtilities: null,
     lastScrollTop: 0,
-    scrollThreshold: 5, // minimum scroll distance to trigger hide/show
+    scrollThreshold: 5,
     isHidden: false,
 
-    /**
-     * initialize navigation scroll behavior
-     */
     init() {
         this.nav = document.querySelector('nav');
         if (!this.nav) return;
 
-        // find search utilities if present on page
+        this.toggle = document.getElementById('nav-toggle');
         this.searchUtilities = document.querySelector('.search-utilities');
 
-        // add initial visible class
         this.nav.classList.add('nav-visible');
-        
+
+        // sync menu-open class (optional but useful)
+        if (this.toggle) {
+            this.toggle.addEventListener('change', () => {
+                this.nav.classList.toggle('menu-open', this.toggle.checked);
+            });
+        }
+
         this.setupScrollListener();
     },
 
-    /**
-     * setup scroll event listener with throttling
-     */
     setupScrollListener() {
         let ticking = false;
-        
+
         window.addEventListener('scroll', () => {
             if (!ticking) {
                 requestAnimationFrame(() => {
@@ -621,473 +371,74 @@ const NavigationScroll = {
         });
     },
 
-    /**
-     * handle scroll events to show/hide navigation
-     */
     handleScroll() {
         const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // prevent negative values when overscrolling at top
         const scrollTop = Math.max(currentScrollTop, 0);
-        
-        // don't hide navigation when menu is active
-        if (this.nav.classList.contains('menu-active')) {
+
+        // menu open → never hide nav
+        if (this.toggle && this.toggle.checked) {
             this.showNavigation();
             this.lastScrollTop = scrollTop;
             return;
         }
-        
-        // don't hide navigation when at the very top of the page
+
         if (scrollTop < this.scrollThreshold) {
             this.showNavigation();
             this.lastScrollTop = scrollTop;
             return;
         }
-        
-        // determine scroll direction
-        const scrollDifference = scrollTop - this.lastScrollTop;
-        
-        // only trigger if scroll difference is significant enough
-        if (Math.abs(scrollDifference) < this.scrollThreshold) {
-            return;
-        }
-        
-        if (scrollDifference > 0 && !this.isHidden) {
-            // scrolling down - hide navigation
+
+        const diff = scrollTop - this.lastScrollTop;
+
+        if (Math.abs(diff) < this.scrollThreshold) return;
+
+        if (diff > 0 && !this.isHidden) {
             this.hideNavigation();
-        } else if (scrollDifference < 0 && this.isHidden) {
-            // scrolling up - show navigation
+        } else if (diff < 0 && this.isHidden) {
             this.showNavigation();
         }
-        
+
         this.lastScrollTop = scrollTop;
     },
 
-    /**
-     * hide the navigation bar
-     */
     hideNavigation() {
         this.nav.classList.remove('nav-visible');
         this.nav.classList.add('nav-hidden');
-        
-        // move search utilities up when navigation hides to use the freed space
-        // but only on desktop (not mobile where we have our own menu system)
+
         if (this.searchUtilities && window.innerWidth > 768) {
-            // get navigation height to move search utilities up by the same amount
             const navHeight = this.nav.offsetHeight;
             this.searchUtilities.style.transform = `translateY(-${navHeight}px)`;
             this.searchUtilities.style.transition = 'transform 0.3s var(--transition)';
         }
-        
+
         this.isHidden = true;
     },
 
-    /**
-     * show the navigation bar
-     */
     showNavigation() {
         this.nav.classList.remove('nav-hidden');
         this.nav.classList.add('nav-visible');
-        
-        // move search utilities back to original position when navigation shows
-        // but only on desktop (not mobile where we have our own menu system)
+
         if (this.searchUtilities && window.innerWidth > 768) {
             this.searchUtilities.style.transform = 'translateY(0)';
             this.searchUtilities.style.transition = 'transform 0.3s var(--transition)';
         }
-        
+
         this.isHidden = false;
     }
 };
 
-
-/**
- * color palette editor module
- * handles changing color variables and exporting palette
- */
-const ColorPaletteEditor = {
-    colorVariables: [
-        { name: '--accent', label: 'accent' },
-        { name: '--accent-off', label: 'accent off' },
-        { name: '--silver', label: 'silver' },
-        { name: '--dark-silver', label: 'dark silver' },
-        { name: '--text-main', label: 'text main' },
-        { name: '--bg-main', label: 'bg main' },
-        { name: '--bg-main-overlay', label: 'bg main overlay' },
-        { name: '--bg-main-hover', label: 'bg main hover' }
-    ],
-    menu: null,
-    colorsList: null,
-    isOpen: false,
-    originalLogoSvg: null,
-
-    /**
-     * initialize the color palette editor
-     */
-    init() {
-        this.menu = document.getElementById('palette-menu');
-        this.colorsList = this.menu.querySelector('.palette-colors-list');
-        
-        if (!this.menu) return;
-
-        this.renderColorInputs();
-        this.setupEventListeners();
-        this.fetchOriginalLogo();
-    },
-
-    /**
-     * fetch the original SVG logo to enable dynamic coloring
-     */
-    fetchOriginalLogo() {
-        const logo = document.getElementById('nav-logo');
-        if (logo && logo.src) {
-            // Only fetch if it's an HTTP/S url or relative, not data URI already
-            if (!logo.src.startsWith('data:')) {
-                fetch(logo.src)
-                    .then(res => res.text())
-                    .then(svgText => {
-                        this.originalLogoSvg = svgText;
-                        this.updateLogoColor(this.getColorValue('--accent'));
-                    })
-                    .catch(err => console.log('Could not load logo SVG for coloring', err));
-            }
-        }
-    },
-
-    /**
-     * update the SVG logo color dynamically via data URI
-     * @param {string} color - the hex color value
-     */
-    updateLogoColor(color) {
-        if (!this.originalLogoSvg) return;
-        
-        const updatedSvg = this.originalLogoSvg.replace(/#f0ff00/gi, color);
-        
-        const logo = document.getElementById('nav-logo');
-        if (logo && logo.tagName === 'IMG') {
-            const encodedSvg = encodeURIComponent(updatedSvg);
-            logo.src = 'data:image/svg+xml;charset=utf-8,' + encodedSvg;
-        }
-    },
-
-    /**
-     * render color input fields for each variable
-     */
-    renderColorInputs() {
-        this.colorsList.innerHTML = '';
-        
-        this.colorVariables.forEach(variable => {
-            const currentValue = this.getColorValue(variable.name);
-            const container = document.createElement('div');
-            container.className = 'palette-color-item';
-            
-            const label = document.createElement('label');
-            label.textContent = variable.label;
-            
-            const inputContainer = document.createElement('div');
-            inputContainer.className = 'palette-input-container';
-            
-            const hexInput = document.createElement('input');
-            hexInput.type = 'text';
-            hexInput.placeholder = '#000000';
-            hexInput.value = currentValue;
-            hexInput.className = 'palette-hex-input';
-            hexInput.dataset.variable = variable.name;
-            
-            hexInput.addEventListener('input', (e) => this.handleColorInput(e.target));
-            hexInput.addEventListener('blur', (e) => this.validateAndUpdateColor(e.target));
-            
-            const colorPicker = document.createElement('input');
-            colorPicker.type = 'color';
-            colorPicker.value = this.normalizeHex(currentValue);
-            colorPicker.className = 'palette-color-picker';
-            colorPicker.dataset.variable = variable.name;
-            
-            colorPicker.addEventListener('input', (e) => {
-                hexInput.value = e.target.value.toUpperCase();
-                this.updateCSSVariable(variable.name, e.target.value);
-            });
-            
-            inputContainer.appendChild(hexInput);
-            inputContainer.appendChild(colorPicker);
-            
-            container.appendChild(label);
-            container.appendChild(inputContainer);
-            this.colorsList.appendChild(container);
-        });
-    },
-
-    /**
-     * setup event listeners for key presses and buttons
-     */
-    setupEventListeners() {
-        // listen for c key to toggle palette
-        document.addEventListener('keydown', (e) => {
-            if ((e.key === 'c' || e.key === 'C') && !this.isInputFocused(e.target)) {
-                e.preventDefault();
-                this.toggleMenu();
-            }
-        });
-        
-        // close button
-        const closeBtn = this.menu.querySelector('.palette-close-btn');
-        if (closeBtn) {
-            closeBtn.addEventListener('click', () => this.closeMenu());
-        }
-        
-        // export button
-        const exportBtn = this.menu.querySelector('.palette-export-btn');
-        if (exportBtn) {
-            exportBtn.addEventListener('click', () => this.exportPalette());
-        }
-        
-        // close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (this.isOpen && !this.menu.contains(e.target)) {
-                this.closeMenu();
-            }
-        });
-    },
-
-    /**
-     * check if target is an input element
-     * @param {Element} target - the element to check
-     * @returns {boolean} - true if target is an input
-     */
-    isInputFocused(target) {
-        return target.tagName === 'INPUT' || target.tagName === 'TEXTAREA';
-    },
-
-    /**
-     * toggle palette menu open/close
-     */
-    toggleMenu() {
-        if (this.isOpen) {
-            this.closeMenu();
-        } else {
-            this.openMenu();
-        }
-    },
-
-    /**
-     * open the palette menu
-     */
-    openMenu() {
-        this.menu.classList.add('palette-menu-active');
-        this.isOpen = true;
-    },
-
-    /**
-     * close the palette menu
-     */
-    closeMenu() {
-        this.menu.classList.remove('palette-menu-active');
-        this.isOpen = false;
-    },
-
-    /**
-     * get current color value from css variable
-     * @param {string} variableName - the css variable name
-     * @returns {string} - the hex color value
-     */
-    getColorValue(variableName) {
-        const value = getComputedStyle(document.documentElement).getPropertyValue(variableName).trim();
-        return this.normalizeHex(value);
-    },
-
-    /**
-     * normalize a color value to hex format
-     * @param {string} value - the color value
-     * @returns {string} - the hex value
-     */
-    normalizeHex(value) {
-        value = value.trim();
-        
-        // if already hex, return as-is
-        if (value.startsWith('#')) {
-            return value.length === 7 ? value : value;
-        }
-        
-        // convert hsl to hex
-        if (value.startsWith('hsl')) {
-            return this.hslToHex(value);
-        }
-        
-        // convert rgba to hex
-        if (value.startsWith('rgb')) {
-            return this.rgbToHex(value);
-        }
-        
-        return value;
-    },
-
-    /**
-     * convert hsl to hex
-     * @param {string} hsl - hsl color string
-     * @returns {string} - hex color
-     */
-    hslToHex(hsl) {
-        const matches = hsl.match(/\d+/g);
-        if (!matches || matches.length < 3) return '#000000';
-        
-        let h = parseInt(matches[0]) / 360;
-        let s = parseInt(matches[1]) / 100;
-        let l = parseInt(matches[2]) / 100;
-        
-        let r, g, b;
-        
-        if (s === 0) {
-            r = g = b = l;
-        } else {
-            const hue2rgb = (p, q, t) => {
-                if (t < 0) t += 1;
-                if (t > 1) t -= 1;
-                if (t < 1/6) return p + (q - p) * 6 * t;
-                if (t < 1/2) return q;
-                if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-                return p;
-            };
-            
-            const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-            const p = 2 * l - q;
-            
-            r = hue2rgb(p, q, h + 1/3);
-            g = hue2rgb(p, q, h);
-            b = hue2rgb(p, q, h - 1/3);
-        }
-        
-        const toHex = (x) => {
-            const hex = Math.round(x * 255).toString(16);
-            return hex.length === 1 ? '0' + hex : hex;
-        };
-        
-        return '#' + toHex(r) + toHex(g) + toHex(b);
-    },
-
-    /**
-     * convert rgb(a) to hex
-     * @param {string} rgb - rgb or rgba color string
-     * @returns {string} - hex color
-     */
-    rgbToHex(rgb) {
-        const matches = rgb.match(/\d+/g);
-        if (!matches || matches.length < 3) return '#000000';
-        
-        const r = parseInt(matches[0]);
-        const g = parseInt(matches[1]);
-        const b = parseInt(matches[2]);
-        
-        return '#' + [r, g, b].map(x => {
-            const hex = x.toString(16);
-            return hex.length === 1 ? '0' + hex : hex;
-        }).join('').toUpperCase();
-    },
-
-    /**
-     * handle color input as user types without reverting
-     * @param {HTMLElement} input - the input element
-     */
-    handleColorInput(input) {
-        let value = input.value.trim();
-        
-        if (value && !value.startsWith('#')) {
-            value = '#' + value;
-        }
-        
-        // apply color if it matches the valid form smoothly while typing
-        if (/^#[0-9A-Fa-f]{6}$/.test(value)) {
-            this.updateCSSVariable(input.dataset.variable, value);
-            
-            const colorPicker = this.menu.querySelector(`.palette-color-picker[data-variable="${input.dataset.variable}"]`);
-            if (colorPicker) {
-                colorPicker.value = value.toLowerCase();
-            }
-        }
-    },
-
-    /**
-     * validate and update color from hex input on blur
-     * @param {HTMLElement} input - the input element
-     */
-    validateAndUpdateColor(input) {
-        let value = input.value.trim();
-        
-        // add # if missing
-        if (!value.startsWith('#')) {
-            value = '#' + value;
-        }
-        
-        // validate hex format
-        if (!/^#[0-9A-Fa-f]{6}$/.test(value)) {
-            // revert to previous value on invalid input
-            const prev = this.getColorValue(input.dataset.variable);
-            input.value = prev;
-            return;
-        }
-        
-        input.value = value.toUpperCase();
-        this.updateCSSVariable(input.dataset.variable, value);
-        
-        // update color picker
-        const colorPicker = this.menu.querySelector(`.palette-color-picker[data-variable="${input.dataset.variable}"]`);
-        if (colorPicker) {
-            colorPicker.value = value.toLowerCase();
-        }
-    },
-
-    /**
-     * update a css variable value
-     * @param {string} variableName - the css variable name
-     * @param {string} value - the new value
-     */
-    updateCSSVariable(variableName, value) {
-        document.documentElement.style.setProperty(variableName, value);
-        
-        if (variableName === '--accent') {
-            this.updateLogoColor(value);
-        }
-    },
-
-    /**
-     * export current palette to a .txt file
-     */
-    exportPalette() {
-        const lines = [
-            'leff color palette export',
-            'generated on: ' + new Date().toLocaleString(),
-            '',
-            'color variables:'
-        ];
-        
-        this.colorVariables.forEach(variable => {
-            const value = this.getColorValue(variable.name);
-            lines.push(`${variable.name}: ${value}`);
-        });
-        
-        const content = lines.join('\n');
-        const blob = new Blob([content], { type: 'text/plain' });
-        const url = URL.createObjectURL(blob);
-        
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `leff-palette-${new Date().getTime()}.txt`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-    }
-};
+// init
+document.addEventListener('DOMContentLoaded', () => {
+    NavigationScroll.init();
+});
 
 
 /**
  * main application initialization
  */
 document.addEventListener('DOMContentLoaded', function() {
-    // TextReplacer.init();
-    CustomCursor.init();
-    MenuSystem.init();
+    // CustomCursor.init();
     MenuDropdown.init();
     ValidationInputCheck.init();
     NavigationScroll.init();
-    ColorPaletteEditor.init();
 });
