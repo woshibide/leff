@@ -31,15 +31,14 @@
     <base href="/leff/">
     
     
-    <link rel="stylesheet" href="styles.ed463b8388.css">
+    <link rel="stylesheet" href="styles.a0195836a0.css">
     
     
 
     
 <style>
     /*
-        MAIN PAGE
-    */
+    MAIN PAGE*/
 
 /* hide footer on index page */
 body.index-page footer {
@@ -48,14 +47,14 @@ body.index-page footer {
 
 
 #main-page {
-    height: 100%;
+    height: 200%;
     width: 100%;
     padding-top: var(--space-2xl);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
-    overflow: hidden;
+    overflow-y: scroll;
 }
 @media (max-width: 768px) {
     #main-page {
@@ -66,12 +65,103 @@ body.index-page footer {
     }
 }
 
-.background-slideshow {
+#entro-block {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    color: var(--accent);
+    z-index: 3; /* sit above the slideshow overlay */
+}
+
+#the-e {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
+    z-index: 5;
+}
+
+#the-e svg {
+    width: 35vmin;
+    height: auto;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* intro animation keyframes and scoped play class */
+@keyframes e-normalize {
+    from { transform: scale(2); }
+    to   { transform: scale(1); }
+}
+
+@keyframes bg-unblur {
+    from { filter: blur(4rem); }
+    to   { filter: blur(0); }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Default (final) states when no intro play: elements visible and background clear */
+body.index-page nav,
+body.index-page #slogan h1,
+body.index-page #festival-date,
+body.index-page #location-spots,
+body.index-page #image-caption .image-caption-inner,
+body.index-page .text-layer #tagline,
+body.index-page #hero-h1,
+body.index-page #logo {
+    opacity: 1;
+    transform: none;
+}
+
+/* When playing intro, start with hidden/blurred states then animate to final */
+body.index-page.play-intro #the-e {
+    transform: scale(2);
+    animation: e-normalize 2s var(--in) forwards;
+}
+
+body.index-page.play-intro .background-slideshow {
+    filter: blur(8px);
+    animation: bg-unblur 3s var(--out) forwards;
+}
+
+/* fade targets animate after e is normalised (delay = 2s) */
+body.index-page.play-intro nav,
+body.index-page.play-intro #slogan h1,
+body.index-page.play-intro #festival-date,
+body.index-page.play-intro #location-spots,
+body.index-page.play-intro #image-caption .image-caption-inner,
+body.index-page.play-intro .text-layer #tagline,
+body.index-page.play-intro #hero-h1,
+body.index-page.play-intro #logo {
+    opacity: 0;
+    transform: translateY(6px);
+    animation: fade-in 0.8s var(--in) forwards;
+    animation-delay: 2s; /* start after the 2s e-normalize */
+}
+
+#slogan h1{
+    font-size: var(--fs-lg);
+    padding-bottom: var(--space-xl);
+}
+
+
+.background-slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
     z-index: 1;
 }
 .background-slideshow::before {
@@ -82,8 +172,74 @@ body.index-page footer {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 2;
+    z-index: 0; /* keep overlay behind the intro block */
     background: linear-gradient(to bottom, #00000080 0%, transparent 100%);
+}
+
+
+#fixed-info {
+    color: var(--accent);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    pointer-events: none; /* let clicks pass through except where children enable it */
+    z-index: 40;
+}
+
+#fixed-info > #festival-date {
+    grid-column: 1 / 2;
+    align-self: start;
+    justify-self: start;
+    margin: var(--space-md);
+    margin-top: 50vh;
+    pointer-events: auto;
+    z-index: 41;
+}
+
+/* tagline lives in the second, scrollable block */
+.text-layer #tagline {
+    grid-column: 2 / -2;
+    align-self: start;
+    justify-self: start;
+    margin: 10px var(--space-md) var(--space-lg);
+    font-size: var(--fs-sm) !important;
+    z-index: 10;
+}
+
+#fixed-info > #location-spots {
+    grid-column: 6 / 7;
+    align-self: start;
+    justify-self: end;
+    margin: var(--space-md);
+    margin-top: 50vh;
+    pointer-events: auto;
+    z-index: 41;
+}
+
+/* place image caption in the last column, bottom */
+#fixed-info > #image-caption {
+    /* TODO: caption is a bit off */
+    grid-column: 6 / 7;
+    align-self: end;
+    justify-self: end;
+    width: auto;
+    height: auto;
+    position: relative; /* positioned inside fixed grid */
+    pointer-events: none; /* outer wrapper shouldn't capture events */
+    z-index: 42;
+}
+
+#fixed-info > #image-caption .image-caption-inner {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    width: 14rem;
+    padding: 0;
+    pointer-events: auto; /* allow interactions inside caption */
 }
 
 @media (max-width: 768px) {
@@ -181,37 +337,13 @@ nav.menu-active #hero-h1 {
 }
 
 .text-layer {
-    max-height: 110svh;
+    /* max-height: 110svh; */
     height: 100%;
-}
-
-#festival-date{
-    text-shadow: var(--shadow);
-    font-size: var(--fs-sm);
-    grid-column: 2 / 6;
-    margin-top: 35vh;
     color: var(--accent);
-    z-index: 50;
-}
-
-    #tagline {
-    grid-column: 1 / 6;
-    grid-row: 6 / 7;
-    z-index: 10;
-    color: var(--accent);
-    text-shadow: var(--shadow);
-    align-self: center;
-        font-size: var(--fs-lg);
-    margin-bottom: var(--space-xl);
-}
-
-#location-spots {
-    grid-column: 4 / 6;
-    z-index: 10;
-    color: var(--accent);
-    text-shadow: var(--shadow);
-    align-self: center;
-    justify-self: center;
+    margin-top: 100vh; /* place this block after the 1st (intro) block */
+    min-height: 100vh; /* ensure it fills the remaining viewport */
+    position: relative;
+    z-index: 4;
 }
 
     @media (max-width: 768px) {
@@ -237,57 +369,41 @@ nav.menu-active #hero-h1 {
     }
 }
 
-/* the caption */
-    #image-caption {
-    position: fixed;
-    right: auto;
-    left: 0;
-    top: 0;
+
+#image-caption {
+    position: relative;
     z-index: 50;
     color: var(--accent);
     text-shadow: var(--shadow);
-        font-size: var(--fs-base);
+    font-size: var(--fs-base);
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     text-align: left;
-    pointer-events: none; /* let clicks pass through unless on inner */
-    width: 100%;
-    height: 100%;
-    /* border: 3px red solid; */
+    pointer-events: none;
+    width: auto;
+    height: auto;
 }
 
 #image-caption.visible {
     opacity: 1;
 }
 
+
 #image-caption .image-caption-inner {
-	/* border: 3px greenyellow solid; */
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: end;
-	align-items: flex-start;
-	transform-origin: bottom left;
-	pointer-events: auto;
-    padding: 0 60px 60px 0;
-	height: 100%;
-    /*  
-        if you know better approach
-        please reach out to hi@wshbd.com,
-        i guarantee a reward 
-    */
-	width: 7.5rem; 
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+    transform-origin: bottom left;
+    pointer-events: auto;
+    width: 7.5rem;
 }
 
 .actual-f-text {
-	position: absolute;
-	/* border: 3px slateblue solid; */
-	rotate: -90deg;
-	width: 80vh;
-	transform-origin: top left;
-	bottom: var(--space-md);
+    position: absolute;
+    width: auto;
+    transform-origin: top left;
+    bottom: var(--space-md);
 }
 
 #image-caption .film-title {
@@ -548,15 +664,22 @@ nav.menu-active #hero-h1 {
     <section class="page-contents">
         
 <div id="main-page">
-    <div class="text-layer grid-base">
-        
-        <h2 id="tagline">
-            Blijf ons volgen voor updates over de data en het programma van het aankomende festival. We hopen je in september 2026 te zien.
-        </h2>
-        
-        <p id="festival-date">Dank je wel voor je bezoek aan onze website. De eerste editie van het Leiden Essay Film Festival in september 2025 was een daverend succes. Er kwamen meer dan 1200 bezoekers en we kregen talloze enthousiaste reacties. Sindsdien worden we geregeld geattendeerd op nieuwe essayfilms en vragen bezoekers ons wanneer de volgende editie van het festival gepland staat. Daarover kunnen we je snel meer laten weten.</p>
-        
-        <p id="location-spots"></p>
+
+    <div id="entro-block">
+        <div id="the-e">
+            <svg width="346" height="419" viewBox="0 0 346 419" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path d="M111.179 120.485L94.3497 156.237L89.6632 173.262H96.267H114.267L257.42 173.368L256.035 150.172L241.23 122.081L217.371 101.013L190.211 88.2441L172.849 87.0736L141.854 95.9052L111.179 120.485ZM252.946 291.903L266.686 275.41L316.214 330.635L299.918 348.936L274.355 372.771L230.685 401.926L177.855 410.332L174.447 410.119L138.765 407.672L132.055 406.501L82.2074 380.219L42.6914 342.339L18.8327 276.581L8.39453 223.591L12.5485 168.261L30.4425 115.909L58.9877 67.2823L111.924 22.0602L128.327 17.3784C153.89 10.0364 180.624 7.16348 207.146 8.75955L231.111 20.2513C247.088 27.9125 261.68 38.0209 274.355 50.3639L295.551 70.7937L322.179 121.442L333.682 169.005L336.452 206.673L306.522 206.779L306.628 234.445L81.7813 233.806L84.7636 265.834L101.593 295.308L120.871 313.716L150.588 329.677L176.47 331.805L208.211 326.804L235.052 308.822L252.946 291.903Z" fill="#FFFF00" stroke="#FFFF00" stroke-width="16.6632" stroke-miterlimit="10"/>
+            </svg>
+        </div>
+        <div id="slogan">
+            <h1>“e” is for essay</h1>
+        </div>
+    </div>
+
+    <div id="fixed-info" class="grid-base">
+
+        <p id="festival-date">19—22 September 2026</p>
+        <p id="location-spots">Cinema Kijkhuis &amp; Museum De Lakenhal</p>
 
         <div id="image-caption">
             <div class="image-caption-inner">
@@ -566,7 +689,14 @@ nav.menu-active #hero-h1 {
                 </div>
             </div>
         </div>
-        
+
+    </div>
+
+    <div class="text-layer grid-base">
+        <!-- tagline belongs in the scrollable second block -->
+        <h2 id="tagline">
+            Dank je wel voor je bezoek aan onze website. De eerste editie van het Leiden Essay Film Festival in september 2025 was een daverend succes. Er kwamen meer dan 1200 bezoekers en we kregen talloze enthousiaste reacties. Sindsdien worden we geregeld geattendeerd op nieuwe essayfilms en vragen bezoekers ons wanneer de volgende editie van het festival gepland staat. Daarover kunnen we je snel meer laten weten.
+        </h2>
     </div>
 
     <div class="background-slideshow">
@@ -880,10 +1010,23 @@ nav.menu-active #hero-h1 {
 
     
 <script>
-    // add index page class to body for styling
+    // add index page class to body for styling and trigger intro once per tab session
     document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('index-page');
-        
+
+        // play intro once per tab (sessionStorage)
+        try {
+            var played = sessionStorage.getItem('leffIntroPlayed');
+            if (!played) {
+                // add class that scopes CSS animations
+                document.body.classList.add('play-intro');
+                sessionStorage.setItem('leffIntroPlayed', '1');
+            }
+        } catch (e) {
+            // sessionStorage might be unavailable; fall back to playing animation
+            document.body.classList.add('play-intro');
+        }
+
         const navLogo = document.getElementById('nav-logo');
         const heroText = document.getElementById('hero-h1');
         const nav = document.querySelector('nav');
@@ -892,6 +1035,24 @@ nav.menu-active #hero-h1 {
         if (window.innerWidth > 768 && heroText && nav) {
             nav.appendChild(heroText);
         }
+
+        // debug: press `r` to replay intro animation (resets CSS animations)
+        function replayIntro() {
+            try {
+                document.body.classList.remove('play-intro');
+                // force reflow to reset animations
+                void document.body.offsetWidth;
+                document.body.classList.add('play-intro');
+            } catch (e) {
+                // ignore
+            }
+        }
+
+        document.addEventListener('keydown', function (ev) {
+            if (ev.key === 'r' || ev.key === 'R') {
+                replayIntro();
+            }
+        });
         
         
         
