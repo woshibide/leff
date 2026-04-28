@@ -31,7 +31,7 @@
     <base href="/leff/">
     
     
-    <link rel="stylesheet" href="styles.652b6ebe09.css">
+    <link rel="stylesheet" href="styles.ed463b8388.css">
     
     
 
@@ -42,13 +42,13 @@
     */
 
     p {
-        font-size: 1.875rem;
+        font-size: var(--fs-md);
     }
 
     h2,
     h3,
     h4 {
-        font-size: 1.875rem;
+        font-size: var(--fs-md);
     }
 
     @media (max-width: 768px) {
@@ -56,7 +56,7 @@
         h2,
         h3,
         h4,p {
-            font-size: 1.25rem;
+            font-size: var(--fs-sm);
         }
     }
 
@@ -112,7 +112,7 @@
 
     @media (max-width: 768px) {
         #transport-info {
-            font-size: 1.25rem;
+            font-size: var(--fs-sm);
             grid-column: 1 / -1;
         }
     }
@@ -175,14 +175,14 @@
     .custom-popup {
         color: var(--accent) !important;
         font-family: inherit;
-        font-size: 1rem;
+        font-size: var(--fs-base);
         color: var(--text-main);
         margin: 0;
         background: var(--bg-main) !important;
         /* padding: 8px 12px; */
     }
     .gmaps-link a{
-        font-size: 0.8rem;
+        font-size: var(--fs-xs);
         color: var(--accent) !important;
         text-decoration: none;
     }
@@ -232,7 +232,7 @@
 
         <!-- trigger -->
         <label for="nav-toggle" class="menu-toggle" aria-label="menu">
-            <span class="menu-text">menu</span>
+            <span class="menu-text">MENU</span>
             <svg class="menu-icon" viewBox="0 0 24 24">
                 <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
                 <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
