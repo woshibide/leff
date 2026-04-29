@@ -77,11 +77,11 @@
     }
 
     #credits > div:first-child {
-        grid-column: 1 / 4;
+        /* grid-column: 1 / 4; */
     }
 
     #credits > div:last-child {
-        grid-column: 4 / 7;
+        /* grid-column: 4 / 7; */
     }
 
     .credit-activity{
@@ -111,11 +111,64 @@
 
     #credits ul li{
         margin-bottom: var(--space-md);
-        line-height: 113%;
+        line-height: 103%;
     }
 
     .readeable-text{
         margin-bottom: var(--space-md);
+    }
+
+    #panel-2026 * h2, #panel-2025 * h2 {
+        /* font-size: var(--fs-lg); */
+        margin: var(--space-md);
+    }
+
+    /* tabs for years (pure css) */
+    .tabs {
+        grid-column: 1 / 7;
+        margin-top: var(--space-md);
+    }
+    .tabs input[type="radio"] {
+        display: none;
+    }
+    .tab-label {
+        display: inline-block;
+        padding: .5rem 1rem;
+        margin-right: .5rem;
+        cursor: pointer;
+        border-radius: 6px 6px 0 0;
+    }
+    .tab-label:hover {
+        opacity: .9;
+    }
+    .tabs input[type="radio"]:checked + .tab-label {
+        background: var(--bg-main);
+        color: var(--accent);
+        border-bottom: 2px solid var(--accent);
+    }
+    .tab-panels {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        border-top: 1px solid var(--bg-main);
+        padding-top: var(--space-md);
+        width: 100%;
+        grid-column: 1 / 7;
+    }
+    .tab-panel {
+        display: none;
+        gap: var(--space-2xl);
+        grid-column: 1 / 7;
+    }
+    .tab-panel > div:first-child {
+        grid-column: 1 / 4;
+    }
+    .tab-panel > div:last-child {
+        grid-column: 4 / 7;
+    }
+    #tab-2026:checked ~ .tab-panels #panel-2026,
+    #tab-2025:checked ~ .tab-panels #panel-2025 {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
     }
 
 </style>
@@ -346,48 +399,110 @@
         </div>
     </div>
     <div id="credits" class="grid-base">
-        <div>
-            <h2>
-                TEAM
-            </h2>
-            <ul>
-                <li>Lelani Antar – Coördinatie filmbeschrijvingen</li>
-                <li>Georgie Brinkman – Programmering</li>
-                <li>Anna Chatzioti – Filmbeschrijvingen</li>
-                <li>Pyotr Goloub – Ontwikkeling website</li>
-                <li>Emma de Looij – Communicatie</li>
-                <li>Annemarie Montulet – Fondsenwerving</li>
-                <li>Michela Meliddo – Design visuele identiteit, website, drukwerk</li>
-                <li>Veronica Munteanu – Filmbeschrijvingen</li>
-                <li>Ellen Owens – Design visuele identiteit, website, drukwerk</li>
-                <li>Rosalien van der Poel – Overall coördinatie</li>
-                <li>Gabriel Paiuk – Programmering</li>
-                <li>Merel Pol – Filmbeschrijvingen</li>
-                <li>Gert Staal – Teksten en fondsenwerving</li>
-                <li>Frederique van Staveren – Filmbeschrijvingen</li>
-                <li>Erik Viskil – Programmering en overall coördinatie</li>
-                <li>Esmee de Vette – Filmbeschrijvingen</li>
-                <li>Bo Wang – Programmering</li>
-                <li>Thijs Witty – Programmering en overall coördinatie</li>
-            </ul>
-        </div>
-        <div>
-            <h2>
-                RAAD VAN ADVIES
-            </h2>
-            <ul>
-                <li>Matthew Barrington – Onderzoeker Birkbeck Institute of the Moving Image, Curator Essay Film Festival London</li>
-                <li>Janilda Bartholomeu – Filmmaker, programmeur, onderzoeker</li>
-                <li>María Palacios Cruz – Directeur Open City Documentary Festival, London</li>
-                <li>Joost Daamen – Hoofdprogrammeur IDFA, Amsterdam</li>
-                <li>Linda van Deursen – Ontwerper, docent KABK Den Haag, Yale School of Art, New Haven, Connecticut</li>
-                <li>Julia Morandeira Arrizabalaga – Director of Studies, Reina Sofia Museum, Madrid</li>
-                <li>Francesco Ragazzi, Universitair hoofddocent Instituut Politieke Wetenschap en co-directeur ReCNTR, Leiden University</li>
-                <li>Julian Ross – Hoofd Programmering en Distributie, Eye Filmmuseum Amsterdam</li>
-                <li>Ali Shobeiri – Universitair Docent Photography and Visual Culture, Leiden University Center for the Arts in Society</li>
-                <li>Ingrid van Tol – Adviseur en Coach Documentaire Film</li>
-                <li>Barbara Visser – Beeldend kunstenaar, voormalig Directeur IDFA and Voorzitter Academie der Kunsten KNAW</li>
-            </ul>
+        <div class="tabs">
+
+            <input type="radio" name="org-year" id="tab-2025">
+            <label for="tab-2025" class="tab-label">2025</label>
+
+            <input type="radio" name="org-year" id="tab-2026" checked>
+            <label for="tab-2026" class="tab-label">2026</label>
+
+            
+            <div class="tab-panels">
+                <div class="tab-panel" id="panel-2026">
+                    <div>
+                        <h2>
+                            TEAM
+                        </h2>
+                        <ul>
+
+                            <li>Matthew Barrington – Onderzoeker Birkbeck Institute of the Moving Image, Curator Essay Film Festival London</li>
+                            <li>Janilda Bartholomeu – Filmmaker, programmeur, onderzoeker</li>
+                            <li>María Palacios Cruz – Directeur Open City Documentary Festival, London</li>
+                            <li>Joost Daamen – Hoofdprogrammeur IDFA, Amsterdam</li>
+                            <li>Linda van Deursen – Ontwerper, docent KABK Den Haag, Yale School of Art, New Haven, Connecticut</li>
+                            <li>Julia Morandeira Arrizabalaga – Director of Studies, Reina Sofia Museum, Madrid</li>
+                            <li>Francesco Ragazzi, Universitair hoofddocent Instituut Politieke Wetenschap en co-directeur ReCNTR, Leiden University</li>
+                            <li>Julian Ross – Hoofd Programmering en Distributie, Eye Filmmuseum Amsterdam</li>
+                            <li>Ali Shobeiri – Universitair Docent Photography and Visual Culture, Leiden University Center for the Arts in Society</li>
+                            <li>Ingrid van Tol – Adviseur en Coach Documentaire Film</li>
+                            <li>Barbara Visser – Beeldend kunstenaar, voormalig Directeur IDFA and Voorzitter Academie der Kunsten KNAW</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>
+                            RAAD VAN ADVIES
+                        </h2>
+                        <ul>
+                            <li>Lelani Antar – Coördinatie filmbeschrijvingen</li>
+                            <li>Georgie Brinkman – Programmering</li>
+                            <li>Anna Chatzioti – Filmbeschrijvingen</li>
+                            <li>Pyotr Goloub – Ontwikkeling website</li>
+                            <li>Emma de Looij – Communicatie</li>
+                            <li>Annemarie Montulet – Fondsenwerving</li>
+                            <li>Michela Meliddo – Design visuele identiteit, website, drukwerk</li>
+                            <li>Veronica Munteanu – Filmbeschrijvingen</li>
+                            <li>Ellen Owens – Design visuele identiteit, website, drukwerk</li>
+                            <li>Rosalien van der Poel – Overall coördinatie</li>
+                            <li>Gabriel Paiuk – Programmering</li>
+                            <li>Merel Pol – Filmbeschrijvingen</li>
+                            <li>Gert Staal – Teksten en fondsenwerving</li>
+                            <li>Frederique van Staveren – Filmbeschrijvingen</li>
+                            <li>Erik Viskil – Programmering en overall coördinatie</li>
+                            <li>Esmee de Vette – Filmbeschrijvingen</li>
+                            <li>Bo Wang – Programmering</li>
+                            <li>Thijs Witty – Programmering en overall coördinatie</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- duplicated content for 2025 (allowed) -->
+                <div class="tab-panel" id="panel-2025">
+                    <div>
+                        <h2>
+                            TEAM
+                        </h2>
+                        <ul>
+                            <li>Lelani Antar – Coördinatie filmbeschrijvingen</li>
+                            <li>Georgie Brinkman – Programmering</li>
+                            <li>Anna Chatzioti – Filmbeschrijvingen</li>
+                            <li>Pyotr Goloub – Ontwikkeling website</li>
+                            <li>Emma de Looij – Communicatie</li>
+                            <li>Annemarie Montulet – Fondsenwerving</li>
+                            <li>Michela Meliddo – Design visuele identiteit, website, drukwerk</li>
+                            <li>Veronica Munteanu – Filmbeschrijvingen</li>
+                            <li>Ellen Owens – Design visuele identiteit, website, drukwerk</li>
+                            <li>Rosalien van der Poel – Overall coördinatie</li>
+                            <li>Gabriel Paiuk – Programmering</li>
+                            <li>Merel Pol – Filmbeschrijvingen</li>
+                            <li>Gert Staal – Teksten en fondsenwerving</li>
+                            <li>Frederique van Staveren – Filmbeschrijvingen</li>
+                            <li>Erik Viskil – Programmering en overall coördinatie</li>
+                            <li>Esmee de Vette – Filmbeschrijvingen</li>
+                            <li>Bo Wang – Programmering</li>
+                            <li>Thijs Witty – Programmering en overall coördinatie</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>
+                            RAAD VAN ADVIES
+                        </h2>
+                        <ul>
+                            <li>Matthew Barrington – Onderzoeker Birkbeck Institute of the Moving Image, Curator Essay Film Festival London</li>
+                            <li>Janilda Bartholomeu – Filmmaker, programmeur, onderzoeker</li>
+                            <li>María Palacios Cruz – Directeur Open City Documentary Festival, London</li>
+                            <li>Joost Daamen – Hoofdprogrammeur IDFA, Amsterdam</li>
+                            <li>Linda van Deursen – Ontwerper, docent KABK Den Haag, Yale School of Art, New Haven, Connecticut</li>
+                            <li>Julia Morandeira Arrizabalaga – Director of Studies, Reina Sofia Museum, Madrid</li>
+                            <li>Francesco Ragazzi, Universitair hoofddocent Instituut Politieke Wetenschap en co-directeur ReCNTR, Leiden University</li>
+                            <li>Julian Ross – Hoofd Programmering en Distributie, Eye Filmmuseum Amsterdam</li>
+                            <li>Ali Shobeiri – Universitair Docent Photography and Visual Culture, Leiden University Center for the Arts in Society</li>
+                            <li>Ingrid van Tol – Adviseur en Coach Documentaire Film</li>
+                            <li>Barbara Visser – Beeldend kunstenaar, voormalig Directeur IDFA and Voorzitter Academie der Kunsten KNAW</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
