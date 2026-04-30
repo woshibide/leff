@@ -1,6 +1,6 @@
 // configuration constants
 const CONFIG = {
-    MENU_ANIMATION_DELAY: 200,
+    MENU_ANIMATION_DELAY: 300,
     CLICKABLE_SELECTORS: [
         'a', 'button', '.clickable', '[role="button"]', 
         'input[type="submit"]', 'input[type="button"]', 
@@ -57,14 +57,14 @@ const CustomCursor = {
         const selectors = CONFIG.CLICKABLE_SELECTORS.join(', ');
         
         document.addEventListener('mouseenter', (e) => {
-            if (e.target.matches(selectors)) {
+            if (e.target instanceof Element && e.target.matches(selectors)) {
                 // console.log('cursor should be excited')
                 this.cursor.classList.add('excited');
             }
         }, true);
         
         document.addEventListener('mouseleave', (e) => {
-            if (e.target.matches(selectors)) {
+            if (e.target instanceof Element && e.target.matches(selectors)) {
                 this.cursor.classList.remove('excited');
             }
         }, true);
@@ -437,7 +437,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * main application initialization
  */
 document.addEventListener('DOMContentLoaded', function() {
-    // CustomCursor.init();
+    CustomCursor.init();
     MenuDropdown.init();
     ValidationInputCheck.init();
     NavigationScroll.init();

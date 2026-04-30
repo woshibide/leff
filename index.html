@@ -31,7 +31,7 @@
     <base href="/leff/">
     
     
-    <link rel="stylesheet" href="styles.a0195836a0.css">
+    <link rel="stylesheet" href="styles.ab1c25ff20.css">
     
     
 
@@ -47,9 +47,9 @@ body.index-page footer {
 
 
 #main-page {
-    height: 200%;
+    height: 100%;
     width: 100%;
-    padding-top: var(--space-2xl);
+    /* padding-top: var(--space-2xl); */
     position: fixed;
     top: 0;
     left: 0;
@@ -202,10 +202,13 @@ body.index-page.play-intro #logo {
 
 /* tagline lives in the second, scrollable block */
 .text-layer #tagline {
-    grid-column: 2 / -2;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    grid-column: span 4;
     align-self: start;
     justify-self: start;
-    margin: 10px var(--space-md) var(--space-lg);
+    padding: var(--space-lg);
     font-size: var(--fs-sm) !important;
     z-index: 10;
 }
@@ -273,7 +276,7 @@ body.index-page #nav-logo {
     position: static;
     grid-column: 1 / 2;
     grid-row: 1 / 1;
-    width: calc(100% - 1.5rem);
+    width: 165px;
     height: auto;
     z-index: 10;
     display: block !important;
@@ -283,13 +286,6 @@ body.index-page #nav-logo {
         width: auto;
         height: 100%;
     }
-}
-
-/* when menu is open on index page, remove grid positioning */
-body.index-page.menu-open #nav-logo {
-    grid-column: unset;
-    grid-row: unset;
-    width: calc(100% - 1.5rem);
 }
 
 #hero-h1 {
@@ -338,10 +334,10 @@ nav.menu-active #hero-h1 {
 
 .text-layer {
     /* max-height: 110svh; */
-    height: 100%;
+    /* height: 100%; */
     color: var(--accent);
     margin-top: 100vh; /* place this block after the 1st (intro) block */
-    min-height: 100vh; /* ensure it fills the remaining viewport */
+    /* min-height: 100vh; */
     position: relative;
     z-index: 4;
 }
@@ -702,197 +698,93 @@ nav.menu-active #hero-h1 {
     <div class="background-slideshow">
         
         <div class="background-slide active" 
-             style="background-image: url('/leff/assets/images/home-gallery/Preemptive-Listening.webp');" 
-             data-title="Preemptive Listening" 
-             data-director="Aura Satz" 
-             data-country="Spain" 
-             data-year="2024">
+             style="background-image: url('/leff/assets/images/home-gallery/Alex Schröder 1.jpg');" 
+             data-title="Photo by Alex Schröder, leff 2025" 
+             data-director="" 
+             data-country="" 
+             data-year="">
             <!-- seo-friendlifier -->
             <div class="sr-only">
-                <h2>Preemptive Listening</h2>
-                <p>directed by Aura Satz (Spain, 2024)</p>
+                <h2>Photo by Alex Schröder, leff 2025</h2>
+                <p>directed by  (, )</p>
             </div>
         </div>
         
         <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/Sans-Soleil.webp');" 
-             data-title="Sans Soleil" 
-             data-director="Chris Marker" 
-             data-country="France" 
-             data-year="1983 Argos film, all rights reserved">
+             style="background-image: url('/leff/assets/images/home-gallery/Alex Schröder 3.jpeg');" 
+             data-title="Photo by Alex Schröder, leff 2025" 
+             data-director="" 
+             data-country="" 
+             data-year="">
             <!-- seo-friendlifier -->
             <div class="sr-only">
-                <h2>Sans Soleil</h2>
-                <p>directed by Chris Marker (France, 1983 Argos film, all rights reserved)</p>
+                <h2>Photo by Alex Schröder, leff 2025</h2>
+                <p>directed by  (, )</p>
             </div>
         </div>
         
         <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/FTC - still 9.webp');" 
-             data-title="Free to Choose" 
-             data-director="Bahar Noorizadeh" 
-             data-country="UK" 
-             data-year="2023">
+             style="background-image: url('/leff/assets/images/home-gallery/Esmee de Vette 1.jpg');" 
+             data-title="Photo by Esmee de Vette, leff 2025" 
+             data-director="" 
+             data-country="" 
+             data-year="">
             <!-- seo-friendlifier -->
             <div class="sr-only">
-                <h2>Free to Choose</h2>
-                <p>directed by Bahar Noorizadeh (UK, 2023)</p>
+                <h2>Photo by Esmee de Vette, leff 2025</h2>
+                <p>directed by  (, )</p>
             </div>
         </div>
         
         <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/AAGS_03.webp');" 
-             data-title="An Asian Ghost Story" 
-             data-director="Bo Wang" 
-             data-country="Hong Kong" 
-             data-year="2023">
+             style="background-image: url('/leff/assets/images/home-gallery/Esmee de Vette 2.jpg');" 
+             data-title="Photo by Esmee de Vette, leff 2025" 
+             data-director="" 
+             data-country="" 
+             data-year="">
             <!-- seo-friendlifier -->
             <div class="sr-only">
-                <h2>An Asian Ghost Story</h2>
-                <p>directed by Bo Wang (Hong Kong, 2023)</p>
+                <h2>Photo by Esmee de Vette, leff 2025</h2>
+                <p>directed by  (, )</p>
             </div>
         </div>
         
         <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/Home Invasion - still 5.webp');" 
-             data-title="Home Invasion" 
-             data-director="Graeme Arnfield" 
-             data-country="US" 
-             data-year="2024">
+             style="background-image: url('/leff/assets/images/home-gallery/Esmee de Vette 3.jpg');" 
+             data-title="Photo by Esmee de Vette, leff 2025" 
+             data-director="" 
+             data-country="" 
+             data-year="">
             <!-- seo-friendlifier -->
             <div class="sr-only">
-                <h2>Home Invasion</h2>
-                <p>directed by Graeme Arnfield (US, 2024)</p>
+                <h2>Photo by Esmee de Vette, leff 2025</h2>
+                <p>directed by  (, )</p>
             </div>
         </div>
         
         <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/timessquare-presse3.webp');" 
-             data-title="Henry Fonda for President" 
-             data-director="Alexander Horwath" 
-             data-country="US" 
-             data-year="2024">
+             style="background-image: url('/leff/assets/images/home-gallery/Esmee de Vette 4.jpg');" 
+             data-title="Photo by Esmee de Vette, leff 2025" 
+             data-director="" 
+             data-country="" 
+             data-year="">
             <!-- seo-friendlifier -->
             <div class="sr-only">
-                <h2>Henry Fonda for President</h2>
-                <p>directed by Alexander Horwath (US, 2024)</p>
+                <h2>Photo by Esmee de Vette, leff 2025</h2>
+                <p>directed by  (, )</p>
             </div>
         </div>
         
         <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/Perpetual-Radiance.webp');" 
-             data-title="Perpetual Radiance" 
-             data-director="Michela Meliddo" 
-             data-country="Italy" 
-             data-year="2024">
+             style="background-image: url('/leff/assets/images/home-gallery/Esmee de Vette 5.jpg');" 
+             data-title="Photo by Esmee de Vette, leff 2025" 
+             data-director="" 
+             data-country="" 
+             data-year="">
             <!-- seo-friendlifier -->
             <div class="sr-only">
-                <h2>Perpetual Radiance</h2>
-                <p>directed by Michela Meliddo (Italy, 2024)</p>
-            </div>
-        </div>
-        
-        <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/TST_still1.webp');" 
-             data-title="The Southern Thruway" 
-             data-director="Susanna Tomassini" 
-             data-country="Italy" 
-             data-year="2023  ">
-            <!-- seo-friendlifier -->
-            <div class="sr-only">
-                <h2>The Southern Thruway</h2>
-                <p>directed by Susanna Tomassini (Italy, 2023  )</p>
-            </div>
-        </div>
-        
-        <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/nhd_3.webp');" 
-             data-title="The Natural History of Destruction" 
-             data-director="Sergei Loznitsa" 
-             data-country="Poland" 
-             data-year="2022">
-            <!-- seo-friendlifier -->
-            <div class="sr-only">
-                <h2>The Natural History of Destruction</h2>
-                <p>directed by Sergei Loznitsa (Poland, 2022)</p>
-            </div>
-        </div>
-        
-        <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/printcrvenojbojizarenezemlje (2).webp');" 
-             data-title="To the Earthen Red" 
-             data-director="Nika Pećarina" 
-             data-country="Netherlands" 
-             data-year="2022">
-            <!-- seo-friendlifier -->
-            <div class="sr-only">
-                <h2>To the Earthen Red</h2>
-                <p>directed by Nika Pećarina (Netherlands, 2022)</p>
-            </div>
-        </div>
-        
-        <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/Factory Gate_1.webp');" 
-             data-title="Twenty-Four Cinematic Points of View of a Factory Gate in China" 
-             data-director="Ho Rui An" 
-             data-country="China" 
-             data-year="2023">
-            <!-- seo-friendlifier -->
-            <div class="sr-only">
-                <h2>Twenty-Four Cinematic Points of View of a Factory Gate in China</h2>
-                <p>directed by Ho Rui An (China, 2023)</p>
-            </div>
-        </div>
-        
-        <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/My Want of You Partakes of Me - Still 1.webp');" 
-             data-title="My Want of You Partakes of Me" 
-             data-director="Sasha Litvintseva and Beny Wagner" 
-             data-country="UK" 
-             data-year="2024">
-            <!-- seo-friendlifier -->
-            <div class="sr-only">
-                <h2>My Want of You Partakes of Me</h2>
-                <p>directed by Sasha Litvintseva and Beny Wagner (UK, 2024)</p>
-            </div>
-        </div>
-        
-        <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/Letters future 1.webp');" 
-             data-title="Letters from Panduranga" 
-             data-director="Nguyễn Trinh Thi" 
-             data-country="Vietnam" 
-             data-year="2015">
-            <!-- seo-friendlifier -->
-            <div class="sr-only">
-                <h2>Letters from Panduranga</h2>
-                <p>directed by Nguyễn Trinh Thi (Vietnam, 2015)</p>
-            </div>
-        </div>
-        
-        <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/In_Praise_of_Slowness_Film_Still_04.webp');" 
-             data-title="In Praise of Slowness" 
-             data-director="Hicham Gardaf" 
-             data-country="UK/Italy" 
-             data-year="2024">
-            <!-- seo-friendlifier -->
-            <div class="sr-only">
-                <h2>In Praise of Slowness</h2>
-                <p>directed by Hicham Gardaf (UK/Italy, 2024)</p>
-            </div>
-        </div>
-        
-        <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/A Letter from Yene 1.webp');" 
-             data-title="A Letter from Yene" 
-             data-director="Manthia Diawara" 
-             data-country="Senegal" 
-             data-year="2022">
-            <!-- seo-friendlifier -->
-            <div class="sr-only">
-                <h2>A Letter from Yene</h2>
-                <p>directed by Manthia Diawara (Senegal, 2022)</p>
+                <h2>Photo by Esmee de Vette, leff 2025</h2>
+                <p>directed by  (, )</p>
             </div>
         </div>
         
@@ -1130,7 +1022,9 @@ nav.menu-active #hero-h1 {
 
     
 
-    <!-- <div id="custom-cursor"></div> -->
+    <div id="custom-cursor">
+        
+    </div>
 
     <script src="/leff/scripts.js"></script>
     <script>
