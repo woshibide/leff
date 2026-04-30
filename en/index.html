@@ -10,17 +10,17 @@
 
     <meta property="og:title" content="LEFF">
     <meta property="og:description" content="14—16 September, Leiden. The first festival in the Netherlands dedicated entirely to the essay film.">
-    <meta property="og:image" content="/leff/assets/header/og_1200x1200.png">
+    <meta property="og:image" content="/assets/header/og_1200x1200.png">
     <meta property="og:url" content="">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="/leff/assets/header/og_1200x1200.png">
+    <meta name="twitter:image" content="/assets/header/og_1200x1200.png">
 
     
-    <link rel="icon" href="assets/header/favicon.ico" sizes="any">
-    <link rel="icon" href="assets/header/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="assets/header/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/header/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="assets/header/android-chrome-512x512.png">
+    <link rel="icon" href="/assets/header/favicon.ico" sizes="any">
+    <link rel="icon" href="/assets/header/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/header/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/header/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/header/android-chrome-512x512.png">
     
     <meta name="theme-color" content="#C0BEBF">
 
@@ -28,10 +28,8 @@
 
     <!-- base href for github pages deployment -->
     
-    <base href="/leff/">
     
-    
-    <link rel="stylesheet" href="styles.ab1c25ff20.css">
+    <link rel="stylesheet" href="/styles.8e6fc7c00c.css">
     
     
 
@@ -127,12 +125,12 @@ body.index-page #logo {
 /* When playing intro, start with hidden/blurred states then animate to final */
 body.index-page.play-intro #the-e {
     transform: scale(2);
-    animation: e-normalize 2s var(--in) forwards;
+    animation: e-normalize 3s cubic-bezier(0.6, 0, 0.84, 0) forwards;
 }
 
 body.index-page.play-intro .background-slideshow {
-    filter: blur(8px);
-    animation: bg-unblur 3s var(--out) forwards;
+    filter: blur(10rem);
+    animation: bg-unblur 5s var(--out) forwards;
 }
 
 /* fade targets animate after e is normalised (delay = 2s) */
@@ -479,8 +477,8 @@ nav.menu-active #hero-h1 {
 
 <body>
 <nav>
-    <a href="/leff/en/">
-        <img src="/leff/assets/leff-logo-yellow.svg" id="nav-logo">
+    <a href="/en/">
+        <img src="/assets/leff-logo-yellow.svg" id="nav-logo">
     </a>
 
     <div class="not-logo">
@@ -493,7 +491,7 @@ nav.menu-active #hero-h1 {
         
             
                 
-                <a href="/leff/nl/">
+                <a href="/nl/">
                     <button type="button">NL</button>
                 </a>
             
@@ -518,7 +516,7 @@ nav.menu-active #hero-h1 {
                     
                     <li>
                         
-                        <a href="/leff/en/">
+                        <a href="/en/">
                             <svg viewBox="0 0 24 24" class="arrow-icon">
                                 <path d="M5 12h14M13 5l7 7-7 7"
                                     fill="none"
@@ -546,7 +544,7 @@ nav.menu-active #hero-h1 {
                             </summary>
                             <ul>
                                 
-                                <li><a href="/leff/en/programme/2026">new programm is coming soon</a></li>
+                                <li><a href="/en/programme/2026">new programm is coming soon</a></li>
                                 
                             </ul>
                         </details>
@@ -567,11 +565,11 @@ nav.menu-active #hero-h1 {
                             </summary>
                             <ul>
                                 
-                                <li><a href="/leff/en/programme/films">A—Z films</a></li>
+                                <li><a href="/en/programme/films">A—Z films</a></li>
                                 
-                                <li><a href="/leff/en/programme/filmmakers">A—Z filmmakers</a></li>
+                                <li><a href="/en/programme/filmmakers">A—Z filmmakers</a></li>
                                 
-                                <li><a href="/leff/en/programme/specials">Specials</a></li>
+                                <li><a href="/en/programme/specials">Specials</a></li>
                                 
                             </ul>
                         </details>
@@ -580,7 +578,7 @@ nav.menu-active #hero-h1 {
                     
                     <li>
                         
-                        <a href="/leff/en/schedule/">
+                        <a href="/en/schedule/">
                             <svg viewBox="0 0 24 24" class="arrow-icon">
                                 <path d="M5 12h14M13 5l7 7-7 7"
                                     fill="none"
@@ -596,7 +594,7 @@ nav.menu-active #hero-h1 {
                     
                     <li>
                         
-                        <a href="/leff/en/location/">
+                        <a href="/en/location/">
                             <svg viewBox="0 0 24 24" class="arrow-icon">
                                 <path d="M5 12h14M13 5l7 7-7 7"
                                     fill="none"
@@ -612,7 +610,7 @@ nav.menu-active #hero-h1 {
                     
                     <li>
                         
-                        <a href="/leff/en/tickets/">
+                        <a href="/en/tickets/">
                             <svg viewBox="0 0 24 24" class="arrow-icon">
                                 <path d="M5 12h14M13 5l7 7-7 7"
                                     fill="none"
@@ -640,9 +638,9 @@ nav.menu-active #hero-h1 {
                             </summary>
                             <ul>
                                 
-                                <li><a href="/leff/en/about/">Festival</a></li>
+                                <li><a href="/en/about/">Festival</a></li>
                                 
-                                <li><a href="/leff/en/organisation/">Organisation</a></li>
+                                <li><a href="/en/organisation/">Organisation</a></li>
                                 
                             </ul>
                         </details>
@@ -698,7 +696,7 @@ nav.menu-active #hero-h1 {
     <div class="background-slideshow">
         
         <div class="background-slide active" 
-             style="background-image: url('/leff/assets/images/home-gallery/Alex Schröder 1.jpg');" 
+             style="background-image: url('/assets/images/home-gallery/Alex Schröder 1.jpg');" 
              data-title="Photo by Alex Schröder, leff 2025" 
              data-director="" 
              data-country="" 
@@ -711,7 +709,7 @@ nav.menu-active #hero-h1 {
         </div>
         
         <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/Alex Schröder 3.jpeg');" 
+             style="background-image: url('/assets/images/home-gallery/Alex Schröder 3.jpeg');" 
              data-title="Photo by Alex Schröder, leff 2025" 
              data-director="" 
              data-country="" 
@@ -724,7 +722,7 @@ nav.menu-active #hero-h1 {
         </div>
         
         <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/Esmee de Vette 1.jpg');" 
+             style="background-image: url('/assets/images/home-gallery/Esmee de Vette 1.jpg');" 
              data-title="Photo by Esmee de Vette, leff 2025" 
              data-director="" 
              data-country="" 
@@ -737,7 +735,7 @@ nav.menu-active #hero-h1 {
         </div>
         
         <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/Esmee de Vette 2.jpg');" 
+             style="background-image: url('/assets/images/home-gallery/Esmee de Vette 2.jpg');" 
              data-title="Photo by Esmee de Vette, leff 2025" 
              data-director="" 
              data-country="" 
@@ -750,7 +748,7 @@ nav.menu-active #hero-h1 {
         </div>
         
         <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/Esmee de Vette 3.jpg');" 
+             style="background-image: url('/assets/images/home-gallery/Esmee de Vette 3.jpg');" 
              data-title="Photo by Esmee de Vette, leff 2025" 
              data-director="" 
              data-country="" 
@@ -763,7 +761,7 @@ nav.menu-active #hero-h1 {
         </div>
         
         <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/Esmee de Vette 4.jpg');" 
+             style="background-image: url('/assets/images/home-gallery/Esmee de Vette 4.jpg');" 
              data-title="Photo by Esmee de Vette, leff 2025" 
              data-director="" 
              data-country="" 
@@ -776,7 +774,7 @@ nav.menu-active #hero-h1 {
         </div>
         
         <div class="background-slide" 
-             style="background-image: url('/leff/assets/images/home-gallery/Esmee de Vette 5.jpg');" 
+             style="background-image: url('/assets/images/home-gallery/Esmee de Vette 5.jpg');" 
              data-title="Photo by Esmee de Vette, leff 2025" 
              data-director="" 
              data-country="" 
@@ -813,7 +811,7 @@ nav.menu-active #hero-h1 {
                                     value="I agree to the processing of my data as described in the privacy policy and to receive the leff newsletter and updates.">
                                 <label for="mce-MMERGE50">
                                     I agree to the processing of my data as described in the
-                                    <a href="/leff/en/privacy/">Privacy Policy</a> and to receive the leff newsletter and updates.
+                                    <a href="/en/privacy/">Privacy Policy</a> and to receive the leff newsletter and updates.
                                 </label>
                             </div>
                             <div class="mc-field-group">
@@ -841,17 +839,17 @@ nav.menu-active #hero-h1 {
                 <ul>
                     
                     
-                    <li><a href="/leff/en/">Home</a></li>
+                    <li><a href="/en/">Home</a></li>
                     
-                    <li><a href="/leff/en/programme/2026">Programme 2026</a></li>
+                    <li><a href="/en/programme/2026">Programme 2026</a></li>
                     
-                    <li><a href="/leff/en/programme/">Programme 2025</a></li>
+                    <li><a href="/en/programme/">Programme 2025</a></li>
                     
-                    <li><a href="/leff/en/schedule/">Block Schedule</a></li>
+                    <li><a href="/en/schedule/">Block Schedule</a></li>
                     
-                    <li><a href="/leff/en/location/">Locations</a></li>
+                    <li><a href="/en/location/">Locations</a></li>
                     
-                    <li><a href="/leff/en/tickets/">Tickets</a></li>
+                    <li><a href="/en/tickets/">Tickets</a></li>
                     
                     
                         
@@ -874,8 +872,8 @@ nav.menu-active #hero-h1 {
             <div class="footer-info">
                     <h4>About leff</h4>
                     <ul>
-                        <li><a href="/leff/en/about/">Festival</a></li>
-                        <li><a href="/leff/en/organisation/">Organisation</a></li>
+                        <li><a href="/en/about/">Festival</a></li>
+                        <li><a href="/en/organisation/">Organisation</a></li>
                     </ul>
             </div>
 
@@ -884,7 +882,7 @@ nav.menu-active #hero-h1 {
                 <ul>
                     <li><a href="mailto:leff@hum.leidenuniv.nl">leff@hum.leidenuniv.nl</a></li>
                     <li><a href="https://www.instagram.com/leidenessayfilmfestival" target="_blank" rel="noopener">Instagram</a></li>
-                    <li><a href="/leff/en/privacy/">Privacy Policy</a></li>
+                    <li><a href="/en/privacy/">Privacy Policy</a></li>
                 </ul>
             </div>
 
@@ -1026,10 +1024,10 @@ nav.menu-active #hero-h1 {
         
     </div>
 
-    <script src="/leff/scripts.js"></script>
+    <script src="/scripts.js"></script>
     <script>
         // this is for approvals on github pages 
-        window.BASE_PATH = '/leff/';
+        window.BASE_PATH = '/';
 
         // heeeeeyyyyyyyy, my name is pyotr and
         // im very likely looking for new projects
