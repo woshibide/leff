@@ -22,7 +22,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="assets/header/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/header/android-chrome-512x512.png">
     
-    <meta name="theme-color" content="#C0BEBF">
+    <meta name="theme-color" content="#2d2526">
 
     <title>LEFF</title>
 
@@ -31,12 +31,47 @@
     <base href="/leff/">
     
     
-    <link rel="stylesheet" href="styles.a2ba5fa206.css">
+    <link rel="stylesheet" href="styles.d10e24fd0f.css">
     
     
 
     
+<script>
+    (function(){
+        try {
+            if (sessionStorage.getItem('leffIntroPlayed')) {
+                document.documentElement.classList.add('intro-played');
+            }
+        } catch (e) {
+            /* ignore sessionStorage errors */
+        }
+    })();
+</script>
+
 <style>
+/* if intro already played, present the final rendered state immediately */
+html.intro-played #entro-block {
+    background: rgba(0,0,0,0) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+html.intro-played #the-e,
+html.intro-played #the-e svg,
+html.intro-played #slogan {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+html.intro-played #program-coming {
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+/* keep program at bottom even when other intro elements are removed */
+#entro-block #program-coming {
+    margin-top: auto;
+    align-self: center;
+}
     /*
     MAIN PAGE*/
 
@@ -76,7 +111,10 @@ body.index-page footer {
     justify-content: space-between;
     text-align: center;
     color: var(--accent);
-    z-index: 3; /* sit above the slideshow overlay */
+    backdrop-filter: blur(2rem);
+    -webkit-backdrop-filter: blur(2rem);
+    background: rgba(0,0,0,0);
+    z-index: 99999; 
 }
 
 #the-e {
@@ -95,63 +133,8 @@ body.index-page footer {
     max-height: 90%;
 }
 
-/* intro animation keyframes and scoped play class */
-@keyframes e-normalize {
-    from { transform: scale(2); }
-    to   { transform: scale(1); }
-}
-
-@keyframes bg-unblur {
-    from { filter: blur(4rem); }
-    to   { filter: blur(0); }
-}
-
-@keyframes fade-in {
-    from { opacity: 0; transform: translateY(6px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Default (final) states when no intro play: elements visible and background clear */
-body.index-page nav,
-body.index-page #slogan h1,
-body.index-page #festival-date,
-body.index-page #location-spots,
-body.index-page #image-caption .image-caption-inner,
-body.index-page .text-layer #tagline,
-body.index-page #hero-h1,
-body.index-page #logo {
-    opacity: 1;
-    transform: none;
-}
-
-/* When playing intro, start with hidden/blurred states then animate to final */
-body.index-page.play-intro #the-e {
-    transform: scale(2);
-    animation: e-normalize 3s cubic-bezier(0.6, 0, 0.84, 0) forwards;
-}
-
-body.index-page.play-intro .background-slideshow {
-    filter: blur(10rem);
-    animation: bg-unblur 5s var(--out) forwards;
-}
-
-/* fade targets animate after e is normalised (delay = 2s) */
-body.index-page.play-intro nav,
-body.index-page.play-intro #slogan h1,
-body.index-page.play-intro #festival-date,
-body.index-page.play-intro #location-spots,
-body.index-page.play-intro #image-caption .image-caption-inner,
-body.index-page.play-intro .text-layer #tagline,
-body.index-page.play-intro #hero-h1,
-body.index-page.play-intro #logo {
-    opacity: 0;
-    transform: translateY(6px);
-    animation: fade-in 0.8s var(--in) forwards;
-    animation-delay: 2s; /* start after the 2s e-normalize */
-}
-
-#slogan h1{
-    font-size: var(--fs-lg);
+#slogan h1, #program-coming{
+    font-size: var(--fs-md);
     padding-bottom: var(--space-xl);
 }
 
@@ -664,12 +647,13 @@ nav.menu-active #hero-h1 {
     <div id="entro-block">
         <div id="the-e">
             <svg width="346" height="419" viewBox="0 0 346 419" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                <path d="M111.179 120.485L94.3497 156.237L89.6632 173.262H96.267H114.267L257.42 173.368L256.035 150.172L241.23 122.081L217.371 101.013L190.211 88.2441L172.849 87.0736L141.854 95.9052L111.179 120.485ZM252.946 291.903L266.686 275.41L316.214 330.635L299.918 348.936L274.355 372.771L230.685 401.926L177.855 410.332L174.447 410.119L138.765 407.672L132.055 406.501L82.2074 380.219L42.6914 342.339L18.8327 276.581L8.39453 223.591L12.5485 168.261L30.4425 115.909L58.9877 67.2823L111.924 22.0602L128.327 17.3784C153.89 10.0364 180.624 7.16348 207.146 8.75955L231.111 20.2513C247.088 27.9125 261.68 38.0209 274.355 50.3639L295.551 70.7937L322.179 121.442L333.682 169.005L336.452 206.673L306.522 206.779L306.628 234.445L81.7813 233.806L84.7636 265.834L101.593 295.308L120.871 313.716L150.588 329.677L176.47 331.805L208.211 326.804L235.052 308.822L252.946 291.903Z" fill="#FFFF00" stroke="#FFFF00" stroke-width="16.6632" stroke-miterlimit="10"/>
+                <path d="M111.179 120.485L94.3497 156.237L89.6632 173.262H96.267H114.267L257.42 173.368L256.035 150.172L241.23 122.081L217.371 101.013L190.211 88.2441L172.849 87.0736L141.854 95.9052L111.179 120.485ZM252.946 291.903L266.686 275.41L316.214 330.635L299.918 348.936L274.355 372.771L230.685 401.926L177.855 410.332L174.447 410.119L138.765 407.672L132.055 406.501L82.2074 380.219L42.6914 342.339L18.8327 276.581L8.39453 223.591L12.5485 168.261L30.4425 115.909L58.9877 67.2823L111.924 22.0602L128.327 17.3784C153.89 10.0364 180.624 7.16348 207.146 8.75955L231.111 20.2513C247.088 27.9125 261.68 38.0209 274.355 50.3639L295.551 70.7937L322.179 121.442L333.682 169.005L336.452 206.673L306.522 206.779L306.628 234.445L81.7813 233.806L84.7636 265.834L101.593 295.308L120.871 313.716L150.588 329.677L176.47 331.805L208.211 326.804L235.052 308.822L252.946 291.903Z" stroke=inherit stroke-width="16.6632" stroke-miterlimit="10"/>
             </svg>
         </div>
         <div id="slogan">
             <h1>“e” is for essay</h1>
         </div>
+        <div id="program-coming">Programme 2026 coming soon</div>
     </div>
 
     <div id="fixed-info" class="grid-base">
@@ -901,122 +885,136 @@ nav.menu-active #hero-h1 {
     </footer>
 
     
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+<script src="/leff/entro-gsap.js"></script>
+
 <script>
-    // add index page class to body for styling and trigger intro once per tab session
-    document.addEventListener('DOMContentLoaded', function() {
-        document.body.classList.add('index-page');
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.classList.add('index-page');
 
-        // play intro once per tab (sessionStorage)
-        try {
-            var played = sessionStorage.getItem('leffIntroPlayed');
-            if (!played) {
-                // add class that scopes CSS animations
-                document.body.classList.add('play-intro');
-                sessionStorage.setItem('leffIntroPlayed', '1');
-            }
-        } catch (e) {
-            // sessionStorage might be unavailable; fall back to playing animation
+    try {
+        var played = sessionStorage.getItem('leffIntroPlayed');
+
+        if (!played) {
             document.body.classList.add('play-intro');
+
+            if (window.leffIntro) {
+                window.leffIntro.play();
+            }
+
+            sessionStorage.setItem('leffIntroPlayed', '1');
         }
+    } catch (e) {
+        // sessionStorage failed → just play
+        document.body.classList.add('play-intro');
 
-        const navLogo = document.getElementById('nav-logo');
-        const heroText = document.getElementById('hero-h1');
-        const nav = document.querySelector('nav');
-
-        // only move hero text into nav if screen size is larger than 768px
-        if (window.innerWidth > 768 && heroText && nav) {
-            nav.appendChild(heroText);
+        if (window.leffIntro) {
+            window.leffIntro.play();
         }
+    }
 
-        // debug: press `r` to replay intro animation (resets CSS animations)
-        function replayIntro() {
+    // replay on "r" — clear saved state, restore elements and restart intro
+    document.addEventListener('keydown', function (ev) {
+        if (ev.key === 'r' || ev.key === 'R') {
+            try { sessionStorage.removeItem('leffIntroPlayed'); } catch (e) {}
+            try { document.documentElement.classList.remove('intro-played'); } catch (e) {}
+
+            // restore elements that may have been hidden by CSS or GSAP
             try {
-                document.body.classList.remove('play-intro');
-                // force reflow to reset animations
-                void document.body.offsetWidth;
-                document.body.classList.add('play-intro');
-            } catch (e) {
-                // ignore
-            }
-        }
+                const svgEl = document.querySelector('#the-e svg');
+                const sloganEl = document.querySelector('#slogan');
+                const programEl = document.querySelector('#program-coming');
 
-        document.addEventListener('keydown', function (ev) {
-            if (ev.key === 'r' || ev.key === 'R') {
-                replayIntro();
-            }
-        });
-        
-        
-        
-        // background slideshow functionality
-        const slides = document.querySelectorAll('.background-slide');
-        const caption = document.getElementById('image-caption');
-        const titleElement = caption.querySelector('.film-title');
-        const detailsElement = caption.querySelector('.film-details');
-        let currentSlide = 0;
-        let slideInterval = null;
-        
-        // console.log('slideshow initialized with', slides.length, 'slides');
-        
-        function updateCaption(slide) {
-            const title = slide.dataset.title || '';
-            const director = slide.dataset.director || '';
-            const country = slide.dataset.country || '';
-            const year = slide.dataset.year || '';
-            
-            // console.log('updating caption for:', title);
-            
-            // clear previous content
-            titleElement.textContent = '';
-            detailsElement.textContent = '';
-            
-            // only show caption if we have meaningful content
-            if (title && title !== 'Leiden Essay Film Festival') {
-                titleElement.textContent = title;
-                
-                let details = '';
-                if (director) details += director;
-                if (country) details += (details ? ', ' : '') + country;
-                if (year) details += (details ? ', ' : '') + year;
-                
-                detailsElement.textContent = details;
-                caption.classList.add('visible');
-            } else {
-                caption.classList.remove('visible');
-            }
-        }
-        
-        function showSlide(index) {
-            // console.log('showing slide:', index);
-            
-            // remove active from all slides
-            slides.forEach(slide => slide.classList.remove('active'));
-            
-            // add active to current slide
-            if (slides[index]) {
-                slides[index].classList.add('active');
-                updateCaption(slides[index]);
-            }
-        }
-        
-        function nextSlide() {
-            const timestamp = new Date().toLocaleTimeString();
-            // console.log(`[${timestamp}] advancing to next slide`);
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-        
-        // initialize and start slideshow
-        if (slides.length > 0) {
-            // console.log('starting slideshow');
-            showSlide(0);
-            
-            if (slides.length > 1) {
-                slideInterval = setInterval(nextSlide, 8000);
-                // console.log('interval started');
+                if (svgEl) {
+                    svgEl.style.display = '';
+                    svgEl.style.opacity = '';
+                    svgEl.style.visibility = '';
+                    svgEl.style.transform = '';
+                }
+                if (sloganEl) {
+                    sloganEl.style.display = '';
+                    sloganEl.style.opacity = '';
+                    sloganEl.style.visibility = '';
+                    sloganEl.style.transform = '';
+                }
+                if (programEl) {
+                    programEl.style.display = 'none';
+                    programEl.style.opacity = 0;
+                }
+            } catch (e) {}
+
+            if (window.leffIntro) {
+                window.leffIntro.restart(); // GSAP-native way
+                try { sessionStorage.setItem('leffIntroPlayed','1'); } catch (e) {}
             }
         }
     });
+
+    // move hero text into nav
+    const heroText = document.getElementById('hero-h1');
+    const nav = document.querySelector('nav');
+    if (window.innerWidth > 768 && heroText && nav) {
+        nav.appendChild(heroText);
+    }
+
+    // slideshow
+    const slides = document.querySelectorAll('.background-slide');
+    const caption = document.getElementById('image-caption');
+    const titleElement = caption?.querySelector('.film-title');
+    const detailsElement = caption?.querySelector('.film-details');
+
+    let currentSlide = 0;
+    let slideInterval = null;
+
+    function updateCaption(slide) {
+        if (!caption || !titleElement || !detailsElement) return;
+
+        const title = slide.dataset.title || '';
+        const director = slide.dataset.director || '';
+        const country = slide.dataset.country || '';
+        const year = slide.dataset.year || '';
+
+        titleElement.textContent = '';
+        detailsElement.textContent = '';
+
+        if (title && title !== 'Leiden Essay Film Festival') {
+            titleElement.textContent = title;
+
+            let details = '';
+            if (director) details += director;
+            if (country) details += (details ? ', ' : '') + country;
+            if (year) details += (details ? ', ' : '') + year;
+
+            detailsElement.textContent = details;
+            caption.classList.add('visible');
+        } else {
+            caption.classList.remove('visible');
+        }
+    }
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+
+        if (slides[index]) {
+            slides[index].classList.add('active');
+            updateCaption(slides[index]);
+        }
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    if (slides.length > 0) {
+        showSlide(0);
+
+        if (slides.length > 1) {
+            slideInterval = setInterval(nextSlide, 8000);
+        }
+    }
+});
 </script>
 
 
