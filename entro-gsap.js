@@ -4,18 +4,20 @@ function runIntro() {
     const slogan = document.querySelector('#slogan h1');
     const program = document.querySelector('#program-coming');
     const navbar = document.querySelector('nav');
-
-    console.log(program);
-
     const styles = getComputedStyle(document.documentElement);
     const blue = styles.getPropertyValue('--blue').trim() || '#5f7cef';
     const yellow = styles.getPropertyValue('--yellow').trim() || '#ffff00';
     const bgMain = styles.getPropertyValue('--bg-main').trim() || '#2d2526';
+    // guard missing elements gracefully — return a paused timeline if
+    // the essentials aren't present
+    if (!entro || !program || !navbar) {
+        return gsap.timeline({ paused: true });
+    }
 
     gsap.set(navbar, { opacity: 0 });
     gsap.set(entro, { backgroundColor: "rgba(45, 37, 38, 1)" });
-    gsap.set(svg, { scale: 20, opacity: 0, transformOrigin: "50% 50%", fill: 'rgba(95, 124, 239, 1)' });
-    gsap.set(slogan, { opacity: 0 });
+    if (svg) gsap.set(svg, { scale: 20, opacity: 0, transformOrigin: "50% 50%", fill: 'rgba(95, 124, 239, 1)' });
+    if (slogan) gsap.set(slogan, { opacity: 0 });
     gsap.set(program, { opacity: 0, display: "none" });
 
     const tl = gsap.timeline({ paused: true });

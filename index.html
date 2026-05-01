@@ -39,16 +39,60 @@
 <script>
     (function(){
         try {
+            /* mark that JS is available as early as possible so CSS can
+               present JS-specific pre-animation rules before paint */
+            document.documentElement.classList.add('js');
+
             if (sessionStorage.getItem('leffIntroPlayed')) {
                 document.documentElement.classList.add('intro-played');
             }
         } catch (e) {
-            /* ignore sessionStorage errors */
+            /* ignore sessionStorage or DOM errors */
         }
     })();
 </script>
 
 <style>
+/* no-js fallback: present the final, static layout when JS is disabled */
+html:not(.js) #the-e,
+html:not(.js) #the-e svg,
+html:not(.js) #slogan {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+html:not(.js) #program-coming {
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+html:not(.js) nav {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+/* when JS is present, allow the intro elements to be visible so JS/GASP
+   can set explicit pre-animation states (via gsap.set) before playing */
+/* keep the-e as flex so its contents remain centered when JS is enabled */
+html.js #the-e {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+html.js #the-e svg,
+html.js #slogan {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+html.js #program-coming {
+    display: none !important;
+    opacity: 0 !important;
+}
+
 /* if intro already played, present the final rendered state immediately */
 html.intro-played #entro-block {
     background: rgba(0,0,0,0) !important;
