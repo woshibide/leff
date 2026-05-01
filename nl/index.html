@@ -72,6 +72,12 @@ html.intro-played #program-coming {
     margin-top: auto;
     align-self: center;
 }
+/* ensure navbar is visible after intro has been played (GSAP may have set it to 0) */
+html.intro-played nav {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
     /*
     MAIN PAGE*/
 
