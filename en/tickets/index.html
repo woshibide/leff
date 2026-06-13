@@ -320,6 +320,32 @@
 
 <div class="footer-negative-space"></div>
 
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('a[href="#email-subscription-form"]');
+        const emailInput = document.getElementById('mce-EMAIL');
+        
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.getElementById('email-subscription-form');
+                
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    
+                    if (emailInput) {
+                        // Focus the input, but prevent instant jump to keep the smooth scroll
+                        emailInput.focus({ preventScroll: true });
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+
+
     </section>
 
     <footer>
@@ -427,6 +453,29 @@
     </footer>
 
     
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('a[href="#email-subscription-form"]');
+        const emailInput = document.getElementById('mce-EMAIL');
+        
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.getElementById('email-subscription-form');
+                
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    
+                    if (emailInput) {
+                        // Focus the input, but prevent instant jump to keep the smooth scroll
+                        emailInput.focus({ preventScroll: true });
+                    }
+                }
+            });
+        });
+    });
+</script>
+
 
     
 
