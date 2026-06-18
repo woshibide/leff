@@ -149,7 +149,7 @@ body.index-page footer {
 }
 
 #entro-block {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -184,6 +184,16 @@ body.index-page footer {
 #slogan h1, #program-coming{
     font-size: var(--fs-md);
     padding-bottom: var(--space-xl);
+}
+
+
+@media (max-width: 768px) {
+    #program-coming{
+        text-align: left;
+        margin-bottom: var(--space-xl);
+        padding-left: 1rem;
+        padding-right: 25%;
+}
 }
 
 
@@ -241,6 +251,7 @@ body.index-page footer {
     justify-self: start;
     padding: var(--space-lg);
     font-size: var(--fs-sm) !important;
+    text-shadow: 0px 0px 4px black;
     z-index: 10;
 }
 
@@ -249,9 +260,13 @@ body.index-page footer {
     align-self: start;
     justify-self: end;
     margin: var(--space-md);
-    margin-top: 50vh;
+    margin-top: 50vh !important;
     pointer-events: auto;
     z-index: 41;
+
+    @media (max-width: 768px) {
+        margin: 0;
+    }
 }
 
 #fixed-info > #image-caption {
@@ -380,16 +395,17 @@ nav.menu-active #hero-h1 {
     }
 
     #location-spots {
-        grid-column: 1 / -1;
-        margin-left: 50%;
-        margin-right: var(--space-md);
+        /* grid-column: 1 / -1; */
+        /* justify-self: end; */
+        /* margin: 0 !important;
+        margin-top: 50vh !important; */
         margin-block: var(--space-lg);
-        justify-self: start;
-        text-align: right;
-        margin-top: 50vh;
+        /* text-align: right; */
+        font-size: var(--fs-sm);
     }
     #festival-date{
-        margin-top: 40vh;
+        margin: 0 !important;
+        margin-top: 40vh !important;
         font-size: var(--fs-sm);
         grid-column: 1 / 4;
         /* margin-top: 15vh; */
@@ -734,91 +750,91 @@ nav.menu-active #hero-h1 {
         
         <div class="background-slide active" 
              style="background-image: url('/assets/images/home-gallery/Alex Schröder 1.jpg');" 
-             data-title="Photo by Alex Schröder, leff 2025" 
+             data-title="Photograph by Alex Schröder, leff 2025" 
              data-director="" 
              data-country="" 
              data-year="">
             <!-- seo-friendlifier -->
             <div class="sr-only">
-                <h2>Photo by Alex Schröder, leff 2025</h2>
+                <h2>Photograph by Alex Schröder, leff 2025</h2>
                 <p>directed by  (, )</p>
             </div>
         </div>
         
         <div class="background-slide" 
              style="background-image: url('/assets/images/home-gallery/Alex Schröder 3.jpeg');" 
-             data-title="Photo by Alex Schröder, leff 2025" 
+             data-title="Photograph by Alex Schröder, leff 2025" 
              data-director="" 
              data-country="" 
              data-year="">
             <!-- seo-friendlifier -->
             <div class="sr-only">
-                <h2>Photo by Alex Schröder, leff 2025</h2>
+                <h2>Photograph by Alex Schröder, leff 2025</h2>
                 <p>directed by  (, )</p>
             </div>
         </div>
         
         <div class="background-slide" 
              style="background-image: url('/assets/images/home-gallery/Esmee de Vette 1.jpg');" 
-             data-title="Photo by Esmee de Vette, leff 2025" 
+             data-title="Photograph by Esmee de Vette, leff 2025" 
              data-director="" 
              data-country="" 
              data-year="">
             <!-- seo-friendlifier -->
             <div class="sr-only">
-                <h2>Photo by Esmee de Vette, leff 2025</h2>
+                <h2>Photograph by Esmee de Vette, leff 2025</h2>
                 <p>directed by  (, )</p>
             </div>
         </div>
         
         <div class="background-slide" 
              style="background-image: url('/assets/images/home-gallery/Esmee de Vette 2.jpg');" 
-             data-title="Photo by Esmee de Vette, leff 2025" 
+             data-title="Photograph by Esmee de Vette, leff 2025" 
              data-director="" 
              data-country="" 
              data-year="">
             <!-- seo-friendlifier -->
             <div class="sr-only">
-                <h2>Photo by Esmee de Vette, leff 2025</h2>
+                <h2>Photograph by Esmee de Vette, leff 2025</h2>
                 <p>directed by  (, )</p>
             </div>
         </div>
         
         <div class="background-slide" 
              style="background-image: url('/assets/images/home-gallery/Esmee de Vette 3.jpg');" 
-             data-title="Photo by Esmee de Vette, leff 2025" 
+             data-title="Photograph by Esmee de Vette, leff 2025" 
              data-director="" 
              data-country="" 
              data-year="">
             <!-- seo-friendlifier -->
             <div class="sr-only">
-                <h2>Photo by Esmee de Vette, leff 2025</h2>
+                <h2>Photograph by Esmee de Vette, leff 2025</h2>
                 <p>directed by  (, )</p>
             </div>
         </div>
         
         <div class="background-slide" 
              style="background-image: url('/assets/images/home-gallery/Esmee de Vette 4.jpg');" 
-             data-title="Photo by Esmee de Vette, leff 2025" 
+             data-title="Photograph by Esmee de Vette, leff 2025" 
              data-director="" 
              data-country="" 
              data-year="">
             <!-- seo-friendlifier -->
             <div class="sr-only">
-                <h2>Photo by Esmee de Vette, leff 2025</h2>
+                <h2>Photograph by Esmee de Vette, leff 2025</h2>
                 <p>directed by  (, )</p>
             </div>
         </div>
         
         <div class="background-slide" 
              style="background-image: url('/assets/images/home-gallery/Esmee de Vette 5.jpg');" 
-             data-title="Photo by Esmee de Vette, leff 2025" 
+             data-title="Photograph by Esmee de Vette, leff 2025" 
              data-director="" 
              data-country="" 
              data-year="">
             <!-- seo-friendlifier -->
             <div class="sr-only">
-                <h2>Photo by Esmee de Vette, leff 2025</h2>
+                <h2>Photograph by Esmee de Vette, leff 2025</h2>
                 <p>directed by  (, )</p>
             </div>
         </div>
